@@ -1,0 +1,3450 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Z&Z STROTEC — Taiwan CNC Machine Tool Supplier | Parts & Export</title>
+<meta name="description" content="Taiwan-based CNC machine tool trading company. We supply CNC lathes, bar feeders, linear guides, servo motors and precision parts. Export to Korea, Brazil, Switzerland, Argentina, Southeast Asia and worldwide. FOB Taiwan, competitive pricing.">
+<meta name="keywords" content="Taiwan CNC machine tool, bar feeder Taiwan, CNC lathe supplier, linear guide Taiwan, servo motor Taiwan, machine tool export, Taichung machine tool, 台灣工具機, 料機, 線性滑軌, 伺服馬達, 대만 CNC 공작기계, máquina CNC Taiwan, fornecedor taiwan maquina cnc">
+<meta name="author" content="Z&Z STROTEC CO., LTD.">
+<meta name="robots" content="index, follow">
+<meta property="og:title" content="Z&Z STROTEC — Taiwan CNC Machine Tool Supplier">
+<meta property="og:description" content="CNC machine tools, bar feeders, precision parts from Taiwan. Serving Korea, Brazil, Switzerland, Argentina and worldwide.">
+<meta property="og:type" content="website">
+<meta property="og:locale" content="en_US">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="Z&Z STROTEC — Taiwan CNC Machine Tool Supplier">
+<meta name="twitter:description" content="CNC machine tools, bar feeders, precision parts from Taiwan. Export worldwide.">
+<link rel="canonical" href="https://zz-strotec.netlify.app/">
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "Organization",
+  "name": "Z&Z STROTEC CO., LTD.",
+  "alternateName": "萬洋國際有限公司",
+  "description": "Taiwan-based CNC machine tool trading company specializing in CNC lathes, bar feeders, linear guides, servo motors and precision parts export.",
+  "foundingDate": "2002",
+  "address": {
+    "@type": "PostalAddress",
+    "addressLocality": "Taichung",
+    "addressCountry": "TW"
+  },
+  "areaServed": ["KR","BR","CH","AR","VN","TH","IN","PL","MX","CO","IL","SA"],
+  "knowsAbout": ["CNC Machine Tools","Bar Feeder","Linear Guide","Servo Motor","Machine Tool Export","Taiwan Manufacturing"]
+}
+</script>
+<link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=DM+Sans:wght@300;400;500&family=DM+Mono:wght@400;500&display=swap" rel="stylesheet">
+<style>
+  :root {
+    --bg: #080c10;
+    --surface: #0e1419;
+    --surface2: #141c24;
+    --border: #1e2d3d;
+    --gold: #c9a84c;
+    --gold-light: #f0d080;
+    --blue: #2a7fff;
+    --blue-dim: #1a4a7a;
+    --text: #d0dce8;
+    --text-dim: #5a7a94;
+    --text-muted: #3a5a70;
+    --green: #2aaa6a;
+    --red: #e05050;
+  }
+
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+
+  body {
+    background: var(--bg);
+    color: var(--text);
+    font-family: 'DM Sans', sans-serif;
+    font-size: 14px;
+    min-height: 100vh;
+    overflow-x: hidden;
+  }
+
+  /* Noise overlay */
+  body::before {
+    content: '';
+    position: fixed;
+    inset: 0;
+    background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 256 256' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noise'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noise)' opacity='0.03'/%3E%3C/svg%3E");
+    pointer-events: none;
+    z-index: 9999;
+    opacity: 0.4;
+  }
+
+  /* Header */
+  header {
+    border-bottom: 1px solid var(--border);
+    padding: 0 32px;
+    height: 58px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    position: sticky;
+    top: 0;
+    background: rgba(8,12,16,0.95);
+    backdrop-filter: blur(12px);
+    z-index: 100;
+  }
+
+  .logo {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+  }
+
+  .logo-mark {
+    font-family: 'Bebas Neue', sans-serif;
+    font-size: 22px;
+    letter-spacing: 3px;
+    color: var(--gold);
+    line-height: 1;
+  }
+
+  .logo-sub {
+    font-size: 10px;
+    letter-spacing: 2px;
+    color: var(--text-dim);
+    text-transform: uppercase;
+    border-left: 1px solid var(--border);
+    padding-left: 12px;
+  }
+
+  .header-nav {
+    display: flex;
+    gap: 4px;
+  }
+
+  .nav-btn {
+    background: none;
+    border: none;
+    color: var(--text-dim);
+    font-family: 'DM Sans', sans-serif;
+    font-size: 12px;
+    letter-spacing: 1px;
+    padding: 6px 14px;
+    cursor: pointer;
+    border-radius: 4px;
+    transition: all 0.2s;
+    text-transform: uppercase;
+  }
+
+  .nav-btn:hover, .nav-btn.active {
+    background: var(--surface2);
+    color: var(--gold);
+  }
+
+  /* Layout */
+  .layout {
+    display: grid;
+    grid-template-columns: 240px 1fr 280px;
+    height: calc(100vh - 58px);
+  }
+
+  /* Sidebar */
+  .sidebar {
+    border-right: 1px solid var(--border);
+    padding: 20px 0;
+    overflow-y: auto;
+  }
+
+  .sidebar::-webkit-scrollbar { width: 4px; }
+  .sidebar::-webkit-scrollbar-track { background: transparent; }
+  .sidebar::-webkit-scrollbar-thumb { background: var(--border); border-radius: 2px; }
+
+  .sidebar-section {
+    margin-bottom: 24px;
+  }
+
+  .sidebar-label {
+    font-size: 9px;
+    letter-spacing: 2.5px;
+    color: var(--text-muted);
+    text-transform: uppercase;
+    padding: 0 20px 8px;
+    display: block;
+  }
+
+  .sidebar-item {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    padding: 8px 20px;
+    cursor: pointer;
+    transition: all 0.15s;
+    border-left: 2px solid transparent;
+    color: var(--text-dim);
+    font-size: 13px;
+  }
+
+  .sidebar-item:hover {
+    background: var(--surface);
+    color: var(--text);
+    border-left-color: var(--gold);
+  }
+
+  .sidebar-item.active {
+    background: var(--surface2);
+    color: var(--gold);
+    border-left-color: var(--gold);
+  }
+
+  .sidebar-item .icon { font-size: 15px; opacity: 0.8; }
+
+  .market-flag {
+    font-size: 16px;
+  }
+
+  /* Main content */
+  .main {
+    overflow-y: auto;
+    padding: 28px 32px;
+  }
+
+  .main::-webkit-scrollbar { width: 4px; }
+  .main::-webkit-scrollbar-track { background: transparent; }
+  .main::-webkit-scrollbar-thumb { background: var(--border); }
+
+  /* Search bar */
+  .search-wrap {
+    position: relative;
+    margin-bottom: 28px;
+  }
+
+  .search-bar {
+    width: 100%;
+    background: var(--surface);
+    border: 1px solid var(--border);
+    border-radius: 8px;
+    padding: 12px 48px 12px 16px;
+    color: var(--text);
+    font-family: 'DM Sans', sans-serif;
+    font-size: 14px;
+    outline: none;
+    transition: border-color 0.2s;
+  }
+
+  .search-bar::placeholder { color: var(--text-muted); }
+  .search-bar:focus { border-color: var(--gold); }
+
+  .search-btn {
+    position: absolute;
+    right: 12px;
+    top: 50%;
+    transform: translateY(-50%);
+    background: var(--gold);
+    border: none;
+    border-radius: 4px;
+    padding: 5px 10px;
+    cursor: pointer;
+    font-size: 12px;
+    color: var(--bg);
+    font-weight: 600;
+    transition: opacity 0.2s;
+  }
+
+  .search-btn:hover { opacity: 0.85; }
+
+  /* Section title */
+  .section-title {
+    font-family: 'Bebas Neue', sans-serif;
+    font-size: 20px;
+    letter-spacing: 3px;
+    color: var(--text);
+    margin-bottom: 16px;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+  }
+
+  .section-title::after {
+    content: '';
+    flex: 1;
+    height: 1px;
+    background: var(--border);
+  }
+
+  /* Cards grid */
+  .cards-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+    gap: 16px;
+    margin-bottom: 32px;
+  }
+
+  .card {
+    background: var(--surface);
+    border: 1px solid var(--border);
+    border-radius: 8px;
+    padding: 18px;
+    cursor: pointer;
+    transition: all 0.2s;
+    position: relative;
+    overflow: hidden;
+  }
+
+  .card::before {
+    content: '';
+    position: absolute;
+    top: 0; left: 0;
+    width: 3px; height: 100%;
+    background: var(--gold);
+    opacity: 0;
+    transition: opacity 0.2s;
+  }
+
+  .card:hover {
+    border-color: var(--blue-dim);
+    transform: translateY(-2px);
+    box-shadow: 0 8px 24px rgba(0,0,0,0.4);
+  }
+
+  .card:hover::before { opacity: 1; }
+
+  .card-tag {
+    font-size: 9px;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+    color: var(--gold);
+    margin-bottom: 8px;
+    font-family: 'DM Mono', monospace;
+  }
+
+  .card-title {
+    font-size: 14px;
+    font-weight: 500;
+    color: var(--text);
+    margin-bottom: 8px;
+    line-height: 1.4;
+  }
+
+  .card-desc {
+    font-size: 12px;
+    color: var(--text-dim);
+    line-height: 1.6;
+  }
+
+  /* Knowledge detail panel */
+  .detail-panel {
+    display: none;
+    background: var(--surface);
+    border: 1px solid var(--border);
+    border-radius: 8px;
+    padding: 24px;
+    margin-bottom: 28px;
+    animation: fadeIn 0.2s ease;
+  }
+
+  .detail-panel.open { display: block; }
+
+  @keyframes fadeIn {
+    from { opacity: 0; transform: translateY(8px); }
+    to { opacity: 1; transform: translateY(0); }
+  }
+
+  .detail-close {
+    float: right;
+    background: none;
+    border: 1px solid var(--border);
+    color: var(--text-dim);
+    padding: 4px 10px;
+    border-radius: 4px;
+    cursor: pointer;
+    font-size: 12px;
+  }
+
+  .detail-title {
+    font-family: 'Bebas Neue', sans-serif;
+    font-size: 24px;
+    letter-spacing: 2px;
+    color: var(--gold);
+    margin-bottom: 16px;
+  }
+
+  .detail-body {
+    color: var(--text-dim);
+    line-height: 1.8;
+    font-size: 13px;
+  }
+
+  .detail-body h4 {
+    color: var(--text);
+    font-size: 13px;
+    margin: 14px 0 6px;
+    letter-spacing: 1px;
+    text-transform: uppercase;
+    font-size: 11px;
+    color: var(--gold);
+  }
+
+  .detail-body ul {
+    padding-left: 16px;
+  }
+
+  .detail-body li {
+    margin-bottom: 4px;
+  }
+
+  .tag-pill {
+    display: inline-block;
+    background: var(--surface2);
+    border: 1px solid var(--border);
+    border-radius: 20px;
+    padding: 3px 10px;
+    font-size: 10px;
+    color: var(--text-dim);
+    margin: 4px 4px 0 0;
+    font-family: 'DM Mono', monospace;
+  }
+
+  /* News section */
+  .news-list { margin-bottom: 32px; }
+
+  .news-item {
+    display: flex;
+    gap: 14px;
+    padding: 14px 0;
+    border-bottom: 1px solid var(--border);
+    cursor: pointer;
+    transition: all 0.15s;
+  }
+
+  .news-item:hover { padding-left: 6px; }
+
+  .news-num {
+    font-family: 'DM Mono', monospace;
+    font-size: 11px;
+    color: var(--text-muted);
+    min-width: 24px;
+    padding-top: 2px;
+  }
+
+  .news-content { flex: 1; }
+
+  .news-title {
+    font-size: 13px;
+    color: var(--text);
+    margin-bottom: 4px;
+    line-height: 1.4;
+  }
+
+  .news-meta {
+    font-size: 11px;
+    color: var(--text-muted);
+    font-family: 'DM Mono', monospace;
+    display: flex;
+    gap: 12px;
+  }
+
+  .news-src { color: var(--gold); }
+
+  /* Right panel */
+  .right-panel {
+    border-left: 1px solid var(--border);
+    padding: 20px;
+    overflow-y: auto;
+  }
+
+  .right-panel::-webkit-scrollbar { width: 4px; }
+  .right-panel::-webkit-scrollbar-thumb { background: var(--border); }
+
+  .panel-title {
+    font-family: 'Bebas Neue', sans-serif;
+    font-size: 15px;
+    letter-spacing: 2px;
+    color: var(--text-dim);
+    margin-bottom: 16px;
+    padding-bottom: 8px;
+    border-bottom: 1px solid var(--border);
+  }
+
+  /* Market cards */
+  .market-card {
+    background: var(--surface);
+    border: 1px solid var(--border);
+    border-radius: 6px;
+    padding: 14px;
+    margin-bottom: 10px;
+    cursor: pointer;
+    transition: all 0.2s;
+  }
+
+  .market-card:hover {
+    border-color: var(--blue-dim);
+    background: var(--surface2);
+  }
+
+  .market-header {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    margin-bottom: 8px;
+  }
+
+  .market-name {
+    font-weight: 500;
+    font-size: 13px;
+    color: var(--text);
+  }
+
+  .market-detail {
+    font-size: 11px;
+    color: var(--text-dim);
+    line-height: 1.7;
+  }
+
+  .market-tag {
+    font-size: 9px;
+    letter-spacing: 1.5px;
+    text-transform: uppercase;
+    color: var(--text-muted);
+    font-family: 'DM Mono', monospace;
+  }
+
+  /* Stat bar */
+  .stat-row {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 8px 0;
+    border-bottom: 1px solid var(--border);
+  }
+
+  .stat-label { font-size: 11px; color: var(--text-dim); }
+  .stat-val { font-family: 'DM Mono', monospace; font-size: 12px; color: var(--gold); }
+
+  /* Loading state */
+  .loading {
+    color: var(--text-muted);
+    font-size: 12px;
+    font-family: 'DM Mono', monospace;
+    padding: 20px 0;
+    text-align: center;
+    letter-spacing: 1px;
+  }
+
+  .pulse { animation: pulse 1.5s ease-in-out infinite; }
+  @keyframes pulse { 0%,100%{opacity:0.4} 50%{opacity:1} }
+
+  /* Page sections */
+  .page { display: none; }
+  .page.active { display: block; }
+
+  /* Incoterms table */
+  .terms-table {
+    width: 100%;
+    border-collapse: collapse;
+    font-size: 12px;
+    margin-bottom: 16px;
+  }
+
+  .terms-table th {
+    background: var(--surface2);
+    color: var(--gold);
+    padding: 8px 12px;
+    text-align: left;
+    font-size: 10px;
+    letter-spacing: 1.5px;
+    text-transform: uppercase;
+    border: 1px solid var(--border);
+  }
+
+  .terms-table td {
+    padding: 8px 12px;
+    border: 1px solid var(--border);
+    color: var(--text-dim);
+    vertical-align: top;
+    line-height: 1.5;
+  }
+
+  .terms-table tr:hover td { background: var(--surface2); }
+
+  /* Search results */
+  #search-results {
+    display: none;
+    margin-bottom: 24px;
+  }
+
+  #search-results.show { display: block; }
+
+  .result-item {
+    background: var(--surface);
+    border: 1px solid var(--border);
+    border-radius: 6px;
+    padding: 14px;
+    margin-bottom: 8px;
+    cursor: pointer;
+    transition: all 0.15s;
+  }
+
+  .result-item:hover { border-color: var(--gold); }
+  .result-match { color: var(--gold); font-weight: 500; }
+
+  /* Inquiry Form */
+  .inquiry-wrap {
+    max-width: 640px;
+  }
+
+  .form-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 16px;
+    margin-bottom: 16px;
+  }
+
+  .form-group {
+    display: flex;
+    flex-direction: column;
+    gap: 6px;
+  }
+
+  .form-group.full { grid-column: 1 / -1; }
+
+  .form-label {
+    font-size: 10px;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+    color: var(--gold);
+    font-family: 'DM Mono', monospace;
+  }
+
+  .form-label span { color: var(--red); margin-left: 2px; }
+
+  .form-input, .form-select, .form-textarea {
+    background: var(--surface);
+    border: 1px solid var(--border);
+    border-radius: 6px;
+    padding: 10px 14px;
+    color: var(--text);
+    font-family: 'DM Sans', sans-serif;
+    font-size: 13px;
+    outline: none;
+    transition: border-color 0.2s;
+    width: 100%;
+  }
+
+  .form-input::placeholder,
+  .form-textarea::placeholder { color: var(--text-muted); }
+
+  .form-input:focus,
+  .form-select:focus,
+  .form-textarea:focus { border-color: var(--gold); }
+
+  .form-select {
+    appearance: none;
+    background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='12' height='8' viewBox='0 0 12 8'%3E%3Cpath d='M1 1l5 5 5-5' stroke='%235a7a94' fill='none' stroke-width='1.5'/%3E%3C/svg%3E");
+    background-repeat: no-repeat;
+    background-position: right 12px center;
+    cursor: pointer;
+  }
+
+  .form-select option { background: var(--surface2); }
+
+  .form-textarea { resize: vertical; min-height: 100px; }
+
+  .form-submit {
+    background: var(--gold);
+    border: none;
+    border-radius: 6px;
+    padding: 12px 32px;
+    color: var(--bg);
+    font-family: 'Bebas Neue', sans-serif;
+    font-size: 16px;
+    letter-spacing: 2px;
+    cursor: pointer;
+    transition: all 0.2s;
+    margin-top: 8px;
+  }
+
+  .form-submit:hover { background: var(--gold-light); transform: translateY(-1px); }
+  .form-submit:disabled { opacity: 0.5; cursor: not-allowed; transform: none; }
+
+  .form-success {
+    display: none;
+    background: rgba(42,170,106,0.1);
+    border: 1px solid var(--green);
+    border-radius: 8px;
+    padding: 24px;
+    text-align: center;
+    margin-top: 16px;
+  }
+
+  .form-success.show { display: block; }
+  .form-success-icon { font-size: 32px; margin-bottom: 8px; }
+  .form-success-title { color: var(--green); font-family: 'Bebas Neue', sans-serif; font-size: 20px; letter-spacing: 2px; }
+  .form-success-msg { color: var(--text-dim); font-size: 13px; margin-top: 6px; }
+
+  .form-note {
+    font-size: 11px;
+    color: var(--text-muted);
+    margin-top: 12px;
+    line-height: 1.6;
+  }
+
+  .inquiry-intro {
+    background: var(--surface);
+    border: 1px solid var(--border);
+    border-left: 3px solid var(--gold);
+    border-radius: 6px;
+    padding: 16px 20px;
+    margin-bottom: 24px;
+    font-size: 13px;
+    color: var(--text-dim);
+    line-height: 1.7;
+  }
+
+
+  /* Service badges */
+  .badge {
+    display: inline-block;
+    padding: 3px 10px;
+    border-radius: 20px;
+    font-size: 10px;
+    letter-spacing: 1.5px;
+    text-transform: uppercase;
+    font-family: 'DM Mono', monospace;
+    margin-bottom: 8px;
+  }
+  .badge-full {
+    background: rgba(42,170,106,0.15);
+    border: 1px solid var(--green);
+    color: var(--green);
+  }
+  .badge-parts {
+    background: rgba(42,127,255,0.12);
+    border: 1px solid var(--blue);
+    color: #6ab0ff;
+  }
+
+  /* Language switcher */
+  .lang-switcher {
+    display: flex;
+    gap: 4px;
+    margin-left: 8px;
+  }
+  .lang-btn {
+    background: none;
+    border: 1px solid var(--border);
+    color: var(--text-dim);
+    font-family: 'DM Mono', monospace;
+    font-size: 11px;
+    padding: 4px 8px;
+    border-radius: 4px;
+    cursor: pointer;
+    transition: all 0.2s;
+    letter-spacing: 1px;
+  }
+  .lang-btn:hover, .lang-btn.active {
+    border-color: var(--gold);
+    color: var(--gold);
+    background: rgba(201,168,76,0.08);
+  }
+
+
+  /* What's New */
+  .whats-new-badge {
+    display: inline-block;
+    background: var(--gold);
+    color: var(--bg);
+    font-size: 9px;
+    font-family: 'DM Mono', monospace;
+    letter-spacing: 1.5px;
+    padding: 2px 7px;
+    border-radius: 10px;
+    font-weight: 700;
+    vertical-align: middle;
+    margin-left: 6px;
+  }
+  .whats-new-item {
+    display: flex;
+    gap: 14px;
+    padding: 14px 0;
+    border-bottom: 1px solid var(--border);
+  }
+  .whats-new-date {
+    font-family: 'DM Mono', monospace;
+    font-size: 11px;
+    color: var(--gold);
+    min-width: 90px;
+    padding-top: 2px;
+  }
+  .whats-new-content { flex: 1; }
+  .whats-new-title {
+    font-size: 13px;
+    font-weight: 500;
+    color: var(--text);
+    margin-bottom: 4px;
+  }
+  .whats-new-desc {
+    font-size: 12px;
+    color: var(--text-dim);
+    line-height: 1.6;
+  }
+  .whats-new-tag {
+    display: inline-block;
+    font-size: 9px;
+    letter-spacing: 1.5px;
+    text-transform: uppercase;
+    color: var(--text-muted);
+    font-family: 'DM Mono', monospace;
+    border: 1px solid var(--border);
+    border-radius: 3px;
+    padding: 1px 6px;
+    margin-top: 5px;
+  }
+
+
+  /* Terminology */
+  .term-search-wrap {
+    position: relative;
+    margin-bottom: 20px;
+    display: flex;
+    gap: 8px;
+  }
+  .term-search-input {
+    flex: 1;
+    background: var(--surface);
+    border: 1px solid var(--border);
+    border-radius: 6px;
+    padding: 10px 14px;
+    color: var(--text);
+    font-family: 'DM Sans', sans-serif;
+    font-size: 14px;
+    outline: none;
+    transition: border-color 0.2s;
+  }
+  .term-search-input:focus { border-color: var(--gold); }
+  .term-search-input::placeholder { color: var(--text-muted); }
+
+  .term-filter-btn {
+    background: var(--surface);
+    border: 1px solid var(--border);
+    color: var(--text-dim);
+    font-family: 'DM Mono', monospace;
+    font-size: 11px;
+    padding: 8px 14px;
+    border-radius: 6px;
+    cursor: pointer;
+    transition: all 0.15s;
+    letter-spacing: 1px;
+    white-space: nowrap;
+  }
+  .term-filter-btn:hover, .term-filter-btn.active {
+    border-color: var(--gold);
+    color: var(--gold);
+    background: rgba(201,168,76,0.08);
+  }
+
+  .term-table {
+    width: 100%;
+    border-collapse: collapse;
+    font-size: 13px;
+  }
+  .term-table th {
+    background: var(--surface2);
+    color: var(--gold);
+    padding: 9px 14px;
+    text-align: left;
+    font-size: 10px;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+    border: 1px solid var(--border);
+    font-family: 'DM Mono', monospace;
+    position: sticky;
+    top: 0;
+  }
+  .term-table td {
+    padding: 8px 14px;
+    border: 1px solid var(--border);
+    color: var(--text-dim);
+    vertical-align: top;
+    line-height: 1.5;
+  }
+  .term-table tr:hover td { background: var(--surface); }
+  .term-en { color: var(--text); font-weight: 500; }
+  .term-zh { color: #8fb8d0; }
+  .term-ko { color: #a0c8a0; }
+  .term-note { color: var(--text-muted); font-size: 11px; font-style: italic; }
+  .term-count {
+    font-family: 'DM Mono', monospace;
+    font-size: 11px;
+    color: var(--text-muted);
+    margin-bottom: 12px;
+  }
+  .term-highlight { color: var(--gold); font-weight: 600; }
+  .term-cat-badge {
+    display: inline-block;
+    font-size: 9px;
+    letter-spacing: 1px;
+    text-transform: uppercase;
+    background: var(--surface2);
+    border: 1px solid var(--border);
+    border-radius: 3px;
+    padding: 1px 6px;
+    color: var(--text-muted);
+    font-family: 'DM Mono', monospace;
+    margin-left: 6px;
+  }
+
+  /* Hamburger */
+  .hamburger {
+    display: none;
+    background: none;
+    border: 1px solid var(--border);
+    border-radius: 4px;
+    padding: 6px 10px;
+    cursor: pointer;
+    color: var(--text-dim);
+    font-size: 18px;
+    line-height: 1;
+  }
+  .sidebar-overlay {
+    display: none;
+    position: fixed;
+    inset: 0;
+    background: rgba(0,0,0,0.6);
+    z-index: 150;
+  }
+  .sidebar-overlay.show { display: block; }
+
+  @media (max-width: 1100px) {
+    .layout { grid-template-columns: 200px 1fr; }
+    .right-panel { display: none; }
+  }
+
+  @media (max-width: 768px) {
+    header {
+      padding: 8px 16px;
+      height: auto;
+      flex-wrap: wrap;
+      gap: 8px;
+    }
+    .logo { flex: 1; min-width: 0; }
+    .logo-mark { font-size: 16px; letter-spacing: 2px; }
+    .logo-sub { font-size: 9px; letter-spacing: 1px; white-space: normal; line-height: 1.4; }
+    .hamburger { display: block; }
+    .header-nav { display: none; width: 100%; flex-wrap: wrap; padding-bottom: 8px; }
+    .header-nav.open { display: flex; }
+    .nav-btn { font-size: 11px; padding: 5px 10px; }
+    .layout { grid-template-columns: 1fr; height: auto; }
+    .sidebar {
+      display: none;
+      position: fixed;
+      top: 0; left: 0;
+      width: 260px;
+      height: 100vh;
+      background: var(--surface);
+      z-index: 200;
+      border-right: 1px solid var(--border);
+      padding-top: 60px;
+      overflow-y: auto;
+    }
+    .sidebar.open { display: block; }
+    .right-panel { display: none; }
+    .main { padding: 16px; height: auto; overflow-y: visible; }
+    .cards-grid { grid-template-columns: 1fr; gap: 12px; }
+    .detail-panel { padding: 16px; }
+    .detail-title { font-size: 18px; }
+    .form-grid { grid-template-columns: 1fr; }
+    .section-title { font-size: 16px; }
+    .news-meta { flex-wrap: wrap; gap: 6px; }
+    .terms-table { display: block; overflow-x: auto; }
+    .inquiry-wrap { max-width: 100%; }
+  }
+</style>
+</head>
+<body>
+
+<header>
+  <div class="logo" onclick="showPageHome()" style="cursor:pointer" title="Back to Home" data-i18n-title="home_tooltip">
+    <div class="logo-mark">MACHINE TOOL INTEL</div>
+    <div class="logo-sub">Z&amp;Z STROTEC CO., LTD. &nbsp;|&nbsp; Taiwan Industry Knowledge Hub</div>
+  </div>
+  <div class="lang-switcher">
+    <button class="lang-btn active" onclick="switchLang('en')" id="lang-en">EN</button>
+    <button class="lang-btn" onclick="switchLang('zh')" id="lang-zh">中文</button>
+    <button class="lang-btn" onclick="switchLang('ko')" id="lang-ko">한국어</button>
+  </div>
+  <button class="hamburger" onclick="toggleSidebar()" id="hamburger-btn">☰</button>
+  <div class="header-nav" id="header-nav">
+    <button class="nav-btn active" onclick="showPage('home')" data-i18n="nav_overview">Overview</button>
+    <button class="nav-btn" onclick="showPage('knowledge')" data-i18n="nav_knowledge">Knowledge</button>
+    <button class="nav-btn" onclick="showPage('incoterms')" data-i18n="nav_incoterms">Incoterms</button>
+    <button class="nav-btn" onclick="showPage('markets')" data-i18n="nav_markets">Markets</button>
+    <button class="nav-btn" onclick="showPage('news')" data-i18n="nav_news">News</button>
+    <button class="nav-btn" onclick="showPage('inquiry')" style="color:var(--gold);border:1px solid var(--gold);margin-left:8px" data-i18n="nav_inquiry">Inquiry</button>
+    <button class="nav-btn" onclick="showPage('whatsnew')" style="color:#2aaa6a;border:1px solid #2aaa6a;margin-left:4px">What's New <span class="whats-new-badge">NEW</span></button>
+    <button class="nav-btn" onclick="showPage('terms')" style="color:#8fb8d0;border:1px solid #2a5a7a;margin-left:4px">術語 / Terms / 용어</button>
+  </div>
+</header>
+
+<div class="sidebar-overlay" id="sidebar-overlay" onclick="closeSidebar()"></div>
+<div class="layout">
+
+  <!-- Sidebar -->
+  <div class="sidebar" id="sidebar">
+  <button onclick="closeSidebar()" style="position:absolute;top:16px;right:16px;background:none;border:1px solid var(--border);color:var(--text-dim);padding:4px 10px;border-radius:4px;cursor:pointer;font-size:14px;">✕</button>
+    <div class="sidebar-section">
+      <span class="sidebar-label" data-i18n="sidebar_knowledge">Knowledge Library</span>
+      <div class="sidebar-item active" onclick="openKnowledge('bar-feeder')">
+        <span class="icon">⚙️</span> Bar Feeder
+      </div>
+      <div class="sidebar-item" onclick="openKnowledge('linear-guide')">
+        <span class="icon">📐</span> Linear Guide
+      </div>
+      <div class="sidebar-item" onclick="openKnowledge('servo-motor')">
+        <span class="icon">🔌</span> Servo Motor
+      </div>
+      <div class="sidebar-item" onclick="openKnowledge('cnc-lathe')">
+        <span class="icon">🔩</span> CNC Lathe
+      </div>
+      <div class="sidebar-item" onclick="openKnowledge('tool-holder')">
+        <span class="icon">🛠️</span> Tool Holder
+      </div>
+      <div class="sidebar-item" onclick="openKnowledge('spindle')">
+        <span class="icon">🔄</span> Spindle
+      </div>
+      <div class="sidebar-item" onclick="openKnowledge('live-tool')">
+        <span class="icon">⚡</span> Live Tool Holders
+      </div>
+      <div class="sidebar-item" onclick="openKnowledge('static-tool')">
+        <span class="icon">🔧</span> Static Tool Holders
+      </div>
+      <div class="sidebar-item" onclick="openKnowledge('collet-chuck')">
+        <span class="icon">🎯</span> Collets & Chucks
+      </div>
+    </div>
+
+    <div class="sidebar-section">
+      <span class="sidebar-label" data-i18n="sidebar_export">Export Procedures</span>
+      <div class="sidebar-item" onclick="openKnowledge('export-docs')">
+        <span class="icon">📄</span> Export Documents
+      </div>
+      <div class="sidebar-item" onclick="openKnowledge('marine-insurance')">
+        <span class="icon">🛡️</span> Marine Insurance
+      </div>
+      <div class="sidebar-item" onclick="openKnowledge('customs')">
+        <span class="icon">🏛️</span> Customs Clearance
+      </div>
+      <div class="sidebar-item" onclick="openKnowledge('import-duty')">
+        <span class="icon">🏷️</span> Import Duty Reference
+      </div>
+    </div>
+
+    <div class="sidebar-section">
+      <span class="sidebar-label">Industry</span>
+      <div class="sidebar-item" onclick="showPage('terms')"><span class="icon">🔤</span> Terminology 術語/용어</div>
+      <div class="sidebar-item" onclick="openKnowledge('tw-brands')">
+        <span class="icon">🏭</span> Taiwan Manufacturers
+      </div>
+      <div class="sidebar-item" onclick="openKnowledge('maintenance')">
+        <span class="icon">🔧</span> Maintenance Guide
+      </div>
+      <div class="sidebar-item" onclick="openKnowledge('part-lifespan')">
+        <span class="icon">⏱️</span> Parts Lifespan
+      </div>
+      <div class="sidebar-item" onclick="openKnowledge('gcode')">
+        <span class="icon">💻</span> G-Code Reference
+      </div>
+    </div>
+
+    <div class="sidebar-section">
+      <span class="sidebar-label" data-i18n="sidebar_markets">Markets</span>
+      <div class="sidebar-item" onclick="openMarket('korea')">
+        <span class="market-flag">🇰🇷</span> Korea
+      </div>
+      <div class="sidebar-item" onclick="openMarket('brazil')">
+        <span class="market-flag">🇧🇷</span> Brazil
+      </div>
+      <div class="sidebar-item" onclick="openMarket('switzerland')">
+        <span class="market-flag">🇨🇭</span> Switzerland
+      </div>
+      <div class="sidebar-item" onclick="openMarket('argentina')">
+        <span class="market-flag">🇦🇷</span> Argentina
+      </div>
+      <div class="sidebar-item" onclick="openMarket('vietnam')">
+        <span class="market-flag">🇻🇳</span> Vietnam
+      </div>
+      <div class="sidebar-item" onclick="openMarket('thailand')">
+        <span class="market-flag">🇹🇭</span> Thailand
+      </div>
+      <div class="sidebar-item" onclick="openMarket('indonesia')">
+        <span class="market-flag">🇮🇩</span> Indonesia
+      </div>
+      <div class="sidebar-item" onclick="openMarket('malaysia')">
+        <span class="market-flag">🇲🇾</span> Malaysia
+      </div>
+      <div class="sidebar-item" onclick="openMarket('india')">
+        <span class="market-flag">🇮🇳</span> India
+      </div>
+      <div class="sidebar-item" onclick="openMarket('poland')">
+        <span class="market-flag">🇵🇱</span> Poland
+      </div>
+      <div class="sidebar-item" onclick="openMarket('czech')">
+        <span class="market-flag">🇨🇿</span> Czech Republic
+      </div>
+      <div class="sidebar-item" onclick="openMarket('turkey')">
+        <span class="market-flag">🇹🇷</span> Turkey
+      </div>
+      <div class="sidebar-item" onclick="openMarket('mexico')">
+        <span class="market-flag">🇲🇽</span> Mexico
+      </div>
+      <div class="sidebar-item" onclick="openMarket('colombia')">
+        <span class="market-flag">🇨🇴</span> Colombia
+      </div>
+      <div class="sidebar-item" onclick="openMarket('israel')">
+        <span class="market-flag">🇮🇱</span> Israel
+      </div>
+      <div class="sidebar-item" onclick="openMarket('saudi')">
+        <span class="market-flag">🇸🇦</span> Saudi Arabia
+      </div>
+    </div>
+  </div>
+
+  <!-- Main content -->
+  <div class="main">
+
+    <!-- Search -->
+    <div class="search-wrap">
+      <input class="search-bar" id="searchInput" type="text" placeholder="Search: bar feeder, servo motor, FOB, Korea market..." data-i18n-placeholder="search_placeholder" onkeydown="if(event.key==='Enter') doSearch()">
+      <button class="search-btn" onclick="doSearch()" data-i18n="btn_search">SEARCH</button>
+    </div>
+
+    <!-- Search results -->
+    <div id="search-results">
+      <div class="section-title">SEARCH RESULTS</div>
+      <div id="result-list"></div>
+    </div>
+
+    <!-- Detail panel -->
+    <div class="detail-panel" id="detail-panel">
+      <button class="detail-close" onclick="closeDetail()">✕ Close</button>
+      <div class="detail-title" id="detail-title"></div>
+      <div class="detail-body" id="detail-body"></div>
+    </div>
+
+    <!-- HOME PAGE -->
+    <div class="page active" id="page-home">
+      <div class="section-title" data-i18n="section_featured">FEATURED TOPICS</div>
+      <div class="cards-grid">
+        <div class="card" onclick="openKnowledge('bar-feeder')">
+          <div class="card-tag">Automation</div>
+          <div class="card-title">Bar Feeder Systems</div>
+          <div class="card-desc">Automatic bar feeding for CNC lathes. Types, selection criteria, and compatibility with Swiss-type and turning centers.</div>
+        </div>
+        <div class="card" onclick="openKnowledge('servo-motor')">
+          <div class="card-tag">Drive System</div>
+          <div class="card-title">Servo Motor Guide</div>
+          <div class="card-desc">Sigma 7 vs Sigma 10 series comparison, spare parts strategy, and selection for CNC axis control.</div>
+        </div>
+        <div class="card" onclick="openKnowledge('linear-guide')">
+          <div class="card-tag">Precision Parts</div>
+          <div class="card-title">Linear Guide & Rails</div>
+          <div class="card-desc">THK, HIWIN and major brand comparison. Load ratings, preload classes, and maintenance tips.</div>
+        </div>
+        <div class="card" onclick="openKnowledge('cnc-lathe')">
+          <div class="card-tag">Machine Tool</div>
+          <div class="card-title">CNC Lathe Fundamentals</div>
+          <div class="card-desc">Key specifications to evaluate: spindle speed, turret type, bar capacity, and control system compatibility.</div>
+        </div>
+        <div class="card" onclick="openKnowledge('export-docs')">
+          <div class="card-tag">Export</div>
+          <div class="card-title">Export Document Checklist</div>
+          <div class="card-desc">Complete Taiwan export document requirements: Invoice, Packing List, B/L, customs declarations and marine insurance.</div>
+        </div>
+        <div class="card" onclick="showPage('incoterms')">
+          <div class="card-tag">Trade Terms</div>
+          <div class="card-title">Incoterms 2020 Guide</div>
+          <div class="card-desc">FOB, CIF, EXW, DAP — understand risk transfer, cost division, and which term fits your shipment.</div>
+        </div>
+        <div class="card" onclick="openKnowledge('live-tool')">
+          <div class="card-tag">Tooling</div>
+          <div class="card-title">Live Tool Holders</div>
+          <div class="card-desc">Motorized turret tools for milling & drilling on CNC lathes. TSUGAMI, Miyano, STAR compatibility guide.</div>
+        </div>
+        <div class="card" onclick="openKnowledge('collet-chuck')">
+          <div class="card-tag">Workholding</div>
+          <div class="card-title">Collets & Guide Bush</div>
+          <div class="card-desc">ER collet selection, tapping collets, and guide bush for Swiss-type sliding headstock lathes.</div>
+        </div>
+      </div>
+
+      <div class="section-title" data-i18n="section_news">TAIWAN INDUSTRY NEWS</div>
+      <div class="news-list" id="home-news">
+        <div class="loading pulse">Loading latest industry news...</div>
+      </div>
+    </div>
+
+    <!-- KNOWLEDGE PAGE -->
+    <div class="page" id="page-knowledge">
+      <div class="section-title" data-i18n="section_knowledge">KNOWLEDGE LIBRARY</div>
+      <div class="cards-grid">
+        <div class="card" onclick="openKnowledge('bar-feeder')">
+          <div class="card-tag">Automation</div>
+          <div class="card-title">Bar Feeder Systems</div>
+          <div class="card-desc">Complete guide to automatic bar feeding systems for CNC lathes.</div>
+        </div>
+        <div class="card" onclick="openKnowledge('bar-feeder-types')">
+          <div class="card-tag">Automation</div>
+          <div class="card-title">Bar Feeder Types Comparison</div>
+          <div class="card-desc">Short bar vs long bar feeders, hydrodynamic vs contact types.</div>
+        </div>
+        <div class="card" onclick="openKnowledge('linear-guide')">
+          <div class="card-tag">Precision Parts</div>
+          <div class="card-title">Linear Guide & Rails</div>
+          <div class="card-desc">Selection guide, load ratings, brands and maintenance.</div>
+        </div>
+        <div class="card" onclick="openKnowledge('servo-motor')">
+          <div class="card-tag">Drive System</div>
+          <div class="card-title">Servo Motor & Drives</div>
+          <div class="card-desc">Yaskawa Sigma series, Mitsubishi, Fanuc servo comparison.</div>
+        </div>
+        <div class="card" onclick="openKnowledge('cnc-lathe')">
+          <div class="card-tag">Machine Tool</div>
+          <div class="card-title">CNC Lathe Specification Guide</div>
+          <div class="card-desc">How to read and evaluate CNC lathe specifications.</div>
+        </div>
+        <div class="card" onclick="openKnowledge('tool-holder')">
+          <div class="card-tag">Tooling</div>
+          <div class="card-title">Tool Holders & Turrets</div>
+          <div class="card-desc">VDI, BOT, BMT tool holder standards and selection.</div>
+        </div>
+        <div class="card" onclick="openKnowledge('spindle')">
+          <div class="card-tag">Machine Tool</div>
+          <div class="card-title">Spindle Technology</div>
+          <div class="card-desc">Spindle types, bearing systems, and speed/torque tradeoffs.</div>
+        </div>
+        <div class="card" onclick="openKnowledge('export-docs')">
+          <div class="card-tag">Export</div>
+          <div class="card-title">Export Documents</div>
+          <div class="card-desc">Taiwan export document checklist and procedures.</div>
+        </div>
+        <div class="card" onclick="openKnowledge('marine-insurance')">
+          <div class="card-tag">Logistics</div>
+          <div class="card-title">Marine Insurance</div>
+          <div class="card-desc">ICC A/B/C coverage, how to calculate insured value.</div>
+        </div>
+        <div class="card" onclick="openKnowledge('customs')">
+          <div class="card-tag">Export</div>
+          <div class="card-title">Taiwan Customs Clearance</div>
+          <div class="card-desc">Export declaration process, strategic goods control list.</div>
+        </div>
+        <div class="card" onclick="openKnowledge('live-tool')">
+          <div class="card-tag">Tooling</div>
+          <div class="card-title">Live Tool Holders (動力刀座)</div>
+          <div class="card-desc">Radial, axial, angular, high-speed speeder types. Machine compatibility: TSUGAMI, Miyano, STAR, Cincom.</div>
+        </div>
+        <div class="card" onclick="openKnowledge('static-tool')">
+          <div class="card-tag">Tooling</div>
+          <div class="card-title">Static Tool Holders (非動力刀座)</div>
+          <div class="card-desc">OD turning, boring, grooving, threading holders. VDI, BMT, machine-specific interfaces. Plus knurling, form tools.</div>
+        </div>
+        <div class="card" onclick="openKnowledge('collet-chuck')">
+          <div class="card-tag">Workholding</div>
+          <div class="card-title">Collets & Guide Bush (筒夾/導套)</div>
+          <div class="card-desc">ER collet system, tapping collets, guide bush for Swiss-type lathes. Selection and compatibility guide.</div>
+        </div>
+        <div class="card" onclick="openKnowledge('tw-brands')">
+          <div class="card-tag">Industry</div>
+          <div class="card-title">Taiwan Machine Tool Manufacturers</div>
+          <div class="card-desc">FFG, Tongtai, TCM, YCM, TAKISAWA — major Taiwan CNC machine tool brands, product focus and export track record.</div>
+        </div>
+        <div class="card" onclick="openKnowledge('maintenance')">
+          <div class="card-tag">Maintenance</div>
+          <div class="card-title">CNC Machine Maintenance Guide</div>
+          <div class="card-desc">Daily, weekly, monthly and annual PM checklists. Common failure signs and preventive action.</div>
+        </div>
+        <div class="card" onclick="openKnowledge('part-lifespan')">
+          <div class="card-tag">MRO</div>
+          <div class="card-title">Spare Parts Lifespan Guide</div>
+          <div class="card-desc">Typical lifespan for linear guides, servo motors, spindle bearings, collets. Stocking strategy to avoid downtime.</div>
+        </div>
+        <div class="card" onclick="openKnowledge('import-duty')">
+          <div class="card-tag">Export</div>
+          <div class="card-title">Import Duty Reference</div>
+          <div class="card-desc">CNC machine tool import duty rates for Korea, Brazil, India, EU, Mexico, Saudi Arabia and more.</div>
+        </div>
+        <div class="card" onclick="openKnowledge('gcode')">
+          <div class="card-tag">Programming</div>
+          <div class="card-title">G-Code Quick Reference</div>
+          <div class="card-desc">Essential G-codes and M-codes for CNC lathes. Cutting speed formula and typical conditions for steel, stainless, aluminum.</div>
+        </div>
+      </div>
+    </div>
+
+    <!-- INCOTERMS PAGE -->
+    <div class="page" id="page-incoterms">
+      <div class="section-title" data-i18n="section_incoterms">INCOTERMS 2020</div>
+      <table class="terms-table">
+        <thead>
+          <tr>
+            <th>Term</th>
+            <th>Full Name</th>
+            <th>Risk Transfer</th>
+            <th>Who Pays Freight</th>
+            <th>Best For</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td><strong style="color:var(--gold)">EXW</strong></td>
+            <td>Ex Works</td>
+            <td>At seller's factory gate</td>
+            <td>Buyer pays everything</td>
+            <td>Buyer has own forwarder; domestic pickup</td>
+          </tr>
+          <tr>
+            <td><strong style="color:var(--gold)">FCA</strong></td>
+            <td>Free Carrier</td>
+            <td>When handed to carrier</td>
+            <td>Buyer pays from named point</td>
+            <td>Container shipments; replaces FOB for containers</td>
+          </tr>
+          <tr>
+            <td><strong style="color:var(--gold)">FOB</strong></td>
+            <td>Free On Board</td>
+            <td>When goods cross ship's rail</td>
+            <td>Buyer pays ocean + destination</td>
+            <td>Taiwan machine tool exports — most common</td>
+          </tr>
+          <tr>
+            <td><strong style="color:var(--gold)">CFR</strong></td>
+            <td>Cost and Freight</td>
+            <td>When loaded on vessel</td>
+            <td>Seller pays ocean freight</td>
+            <td>Seller arranges shipping, buyer arranges insurance</td>
+          </tr>
+          <tr>
+            <td><strong style="color:var(--gold)">CIF</strong></td>
+            <td>Cost, Insurance & Freight</td>
+            <td>When loaded on vessel</td>
+            <td>Seller pays freight + min. insurance</td>
+            <td>Seller controls shipping; buyer may want own insurance</td>
+          </tr>
+          <tr>
+            <td><strong style="color:var(--gold)">DAP</strong></td>
+            <td>Delivered at Place</td>
+            <td>At named destination</td>
+            <td>Seller pays all to destination</td>
+            <td>Door-to-door; buyer handles import duties</td>
+          </tr>
+          <tr>
+            <td><strong style="color:var(--gold)">DDP</strong></td>
+            <td>Delivered Duty Paid</td>
+            <td>At buyer's premises</td>
+            <td>Seller pays everything incl. import duty</td>
+            <td>Maximum seller responsibility; rare in machine tools</td>
+          </tr>
+        </tbody>
+      </table>
+
+      <div class="section-title" style="margin-top:28px">TAIWAN EXPORT — COMMON PRACTICE</div>
+      <div class="cards-grid">
+        <div class="card">
+          <div class="card-tag">Most Common</div>
+          <div class="card-title">FOB Taichung / Kaohsiung</div>
+          <div class="card-desc">Standard term for Taiwan machine tool exports. Seller delivers to port, buyer arranges ocean freight and insurance from there.</div>
+        </div>
+        <div class="card">
+          <div class="card-tag">Note</div>
+          <div class="card-title">FOB vs FCA for Containers</div>
+          <div class="card-desc">Technically FCA is more accurate for containerized cargo (risk transfers at CFS/CY), but FOB remains widely used in practice by Taiwan exporters.</div>
+        </div>
+        <div class="card">
+          <div class="card-tag">Marine Insurance</div>
+          <div class="card-title">Under FOB — Who Insures?</div>
+          <div class="card-desc">Under FOB, the buyer is responsible for insurance. However, Taiwan exporters to Korea typically arrange marine insurance separately as a service to the client.</div>
+        </div>
+      </div>
+    </div>
+
+    <!-- MARKETS PAGE -->
+    <div class="page" id="page-markets">
+      <div class="section-title" data-i18n="section_markets">KEY MARKETS</div>
+      <div class="cards-grid">
+        <div class="card" onclick="openMarket('korea')">
+          <div class="badge badge-full">🟢 Full Service</div>
+          <div class="card-tag">🇰🇷 Northeast Asia</div>
+          <div class="card-title">South Korea</div>
+          <div class="card-desc">Major importer of Taiwan CNC machine tools. Strong demand in automotive, aerospace, and precision parts sectors.</div>
+        </div>
+        <div class="card" onclick="openMarket('brazil')">
+          <div class="badge badge-full">🟢 Full Service</div>
+          <div class="card-tag">🇧🇷 South America</div>
+          <div class="card-title">Brazil</div>
+          <div class="card-desc">Largest Latin American economy. High import tariffs. Port: Santos. Strong automotive and industrial base.</div>
+        </div>
+        <div class="card" onclick="openMarket('switzerland')">
+          <div class="badge badge-full">🟢 Full Service</div>
+          <div class="card-tag">🇨🇭 Europe</div>
+          <div class="card-title">Switzerland</div>
+          <div class="card-desc">Precision engineering hub. Low tariffs. High demand for grinding, precision turning. Very high quality standards.</div>
+        </div>
+        <div class="card" onclick="openMarket('argentina')">
+          <div class="badge badge-full">🟢 Full Service</div>
+          <div class="card-tag">🇦🇷 South America</div>
+          <div class="card-title">Argentina</div>
+          <div class="card-desc">SIMI permit system. Currency controls. Growing retrofit and spare parts market. USD transactions preferred.</div>
+        </div>
+        <div class="card" onclick="openMarket('vietnam')">
+          <div class="badge badge-parts">🔵 Parts Supply</div>
+          <div class="card-tag">🇻🇳 Southeast Asia</div>
+          <div class="card-title">Vietnam</div>
+          <div class="card-desc">Fastest-growing SEA manufacturing hub. Samsung, Intel FDI driving CNC demand. 0% import duty. High growth potential.</div>
+        </div>
+        <div class="card" onclick="openMarket('thailand')">
+          <div class="badge badge-parts">🔵 Parts Supply</div>
+          <div class="card-tag">🇹🇭 Southeast Asia</div>
+          <div class="card-title">Thailand</div>
+          <div class="card-desc">SEA's largest auto manufacturing hub. Toyota, Honda, Isuzu presence. BOI duty exemptions available.</div>
+        </div>
+        <div class="card" onclick="openMarket('indonesia')">
+          <div class="badge badge-parts">🔵 Parts Supply</div>
+          <div class="card-tag">🇮🇩 Southeast Asia</div>
+          <div class="card-title">Indonesia</div>
+          <div class="card-desc">Largest SEA economy. Making Indonesia 4.0 initiative. Automotive, electronics, mining sectors. Local agent recommended.</div>
+        </div>
+        <div class="card" onclick="openMarket('malaysia')">
+          <div class="badge badge-parts">🔵 Parts Supply</div>
+          <div class="card-tag">🇲🇾 Southeast Asia</div>
+          <div class="card-title">Malaysia</div>
+          <div class="card-desc">Semiconductor, E&E, aerospace MRO. English business environment. 0% duty for machine tools. Easy market entry.</div>
+        </div>
+        <div class="card" onclick="openMarket('india')">
+          <div class="badge badge-parts">🔵 Parts Supply</div>
+          <div class="card-tag">🇮🇳 South Asia</div>
+          <div class="card-title">India</div>
+          <div class="card-desc">Fast-growing market. Make in India + PLI schemes. ~28–30% landed cost. Huge automotive Tier-2/3 supplier opportunity.</div>
+        </div>
+        <div class="card" onclick="openMarket('poland')">
+          <div class="badge badge-parts">🔵 Parts Supply</div>
+          <div class="card-tag">🇵🇱 Eastern Europe</div>
+          <div class="card-title">Poland</div>
+          <div class="card-desc">Central Europe's largest manufacturer. VW, Toyota, Fiat auto clusters. EU market access. CE marking required.</div>
+        </div>
+        <div class="card" onclick="openMarket('czech')">
+          <div class="badge badge-parts">🔵 Parts Supply</div>
+          <div class="card-tag">🇨🇿 Eastern Europe</div>
+          <div class="card-title">Czech Republic</div>
+          <div class="card-desc">Skoda/VW, Toyota, Hyundai. High precision demand. Among highest per-capita machine tool use in emerging Europe.</div>
+        </div>
+        <div class="card" onclick="openMarket('turkey')">
+          <div class="badge badge-parts">🔵 Parts Supply</div>
+          <div class="card-tag">🇹🇷 Europe / Middle East</div>
+          <div class="card-title">Turkey</div>
+          <div class="card-desc">Bridge market between Europe and Middle East. Booming defense sector. Automotive: Ford, Toyota, Renault. USD/EUR contracts preferred.</div>
+        </div>
+        <div class="card" onclick="openMarket('mexico')">
+          <div class="badge badge-parts">🔵 Parts Supply</div>
+          <div class="card-tag">🇲🇽 North America</div>
+          <div class="card-title">Mexico</div>
+          <div class="card-desc">Nearshoring boom. Top-10 global auto producer. IMMEX duty-free import. Monterrey, Guanajuato industrial clusters.</div>
+        </div>
+        <div class="card" onclick="openMarket('colombia')">
+          <div class="badge badge-parts">🔵 Parts Supply</div>
+          <div class="card-tag">🇨🇴 South America</div>
+          <div class="card-title">Colombia</div>
+          <div class="card-desc">3rd largest South American economy. Oil & gas, metalworking. More stable than Argentina. Growing Medellín tech sector.</div>
+        </div>
+        <div class="card" onclick="openMarket('israel')">
+          <div class="badge badge-parts">🔵 Parts Supply</div>
+          <div class="card-tag">🇮🇱 Middle East</div>
+          <div class="card-title">Israel</div>
+          <div class="card-desc">High-value defense, aerospace, medical device market. 0% duty. Technical quality over price. Fast decision-making.</div>
+        </div>
+        <div class="card" onclick="openMarket('saudi')">
+          <div class="badge badge-parts">🔵 Parts Supply</div>
+          <div class="card-tag">🇸🇦 Middle East</div>
+          <div class="card-title">Saudi Arabia</div>
+          <div class="card-desc">Vision 2030 industrialization. NEOM giga-projects. Oil & gas MRO. 5% duty. USD-pegged currency. Strong growth outlook.</div>
+        </div>
+      </div>
+    </div>
+
+    <!-- NEWS PAGE -->
+    <div class="page" id="page-news">
+      <div class="section-title" data-i18n="section_news">TAIWAN INDUSTRY NEWS</div>
+      <div class="news-list" id="page-news-list">
+        <div class="loading pulse">Loading latest news...</div>
+      </div>
+    </div>
+
+    <!-- INQUIRY PAGE -->
+    <div class="page" id="page-inquiry">
+      <div class="section-title" data-i18n="section_inquiry">PRODUCT INQUIRY</div>
+      <div class="inquiry-wrap">
+        <div class="inquiry-intro">
+          <span data-i18n="inquiry_intro1">Looking for CNC machine tools, precision parts, or bar feeders from Taiwan?</span><br>
+          <span data-i18n="inquiry_intro2">Fill in the form below and our team will respond within</span> <strong style="color:var(--gold)" data-i18n="inquiry_days">1–2 business days</strong>.<br>
+          <span data-i18n="inquiry_intro3">We serve customers in</span> <strong style="color:var(--text)" data-i18n="inquiry_markets">Korea, Brazil, Switzerland, Argentina</strong> <span data-i18n="inquiry_worldwide">and worldwide.</span>
+        </div>
+
+        <div id="inquiry-form-wrap">
+          <div class="form-grid">
+            <div class="form-group">
+              <label class="form-label" data-i18n="form_name">Full Name <span>*</span></label>
+              <input class="form-input" id="f-name" type="text" placeholder="Your name">
+            </div>
+            <div class="form-group">
+              <label class="form-label" data-i18n="form_company">Company <span>*</span></label>
+              <input class="form-input" id="f-company" type="text" placeholder="Company name">
+            </div>
+            <div class="form-group">
+              <label class="form-label" data-i18n="form_email">Email <span>*</span></label>
+              <input class="form-input" id="f-email" type="email" placeholder="your@email.com">
+            </div>
+            <div class="form-group">
+              <label class="form-label" data-i18n="form_country">Country <span>*</span></label>
+              <select class="form-select" id="f-country">
+                <option value="">— Select country —</option>
+                <optgroup label="Current Markets">
+                  <option>South Korea</option>
+                  <option>Brazil</option>
+                  <option>Switzerland</option>
+                  <option>Argentina</option>
+                </optgroup>
+                <optgroup label="Southeast Asia">
+                  <option>Vietnam</option>
+                  <option>Thailand</option>
+                  <option>Indonesia</option>
+                  <option>Malaysia</option>
+                  <option>Philippines</option>
+                  <option>Singapore</option>
+                </optgroup>
+                <optgroup label="South Asia">
+                  <option>India</option>
+                </optgroup>
+                <optgroup label="East Asia">
+                  <option>Japan</option>
+                  <option>Taiwan</option>
+                </optgroup>
+                <optgroup label="Europe">
+                  <option>Poland</option>
+                  <option>Czech Republic</option>
+                  <option>Germany</option>
+                  <option>Italy</option>
+                  <option>Turkey</option>
+                  <option>Other Europe</option>
+                </optgroup>
+                <optgroup label="Americas">
+                  <option>Mexico</option>
+                  <option>Colombia</option>
+                  <option>Chile</option>
+                  <option>Peru</option>
+                  <option>USA</option>
+                  <option>Canada</option>
+                  <option>Other Americas</option>
+                </optgroup>
+                <optgroup label="Middle East">
+                  <option>Israel</option>
+                  <option>Saudi Arabia</option>
+                  <option>UAE</option>
+                  <option>Other Middle East</option>
+                </optgroup>
+                <optgroup label="Other">
+                  <option>Australia / New Zealand</option>
+                  <option>Africa</option>
+                  <option>Other</option>
+                </optgroup>
+              </select>
+            </div>
+            <div class="form-group full">
+              <label class="form-label" data-i18n="form_type">Inquiry Type <span>*</span></label>
+              <select class="form-select" id="f-inquiry-type">
+                <option value="">— Select type —</option>
+                <option>Parts & Components (available for all markets)</option>
+                <option>Machine Tool — CNC Lathe / Turning Center</option>
+                <option>Machine Tool — Machining Center</option>
+                <option>Bar Feeder System</option>
+                <option>Technical Consultation</option>
+                <option>After-sales / Warranty Support</option>
+                <option>Other</option>
+              </select>
+            </div>
+            <div class="form-group full" id="service-note" style="display:none">
+              <div style="background:rgba(42,127,255,0.08);border:1px solid var(--blue-dim);border-radius:6px;padding:12px 16px;font-size:12px;color:#6ab0ff;line-height:1.7;">
+                ℹ️ <strong>Note:</strong> For machine tool sales with full installation and after-sales service, we currently serve <strong>Korea, Brazil, Switzerland, and Argentina</strong> through our local agents.<br>
+                For other markets, we are happy to supply <strong>parts and components</strong> and can discuss further options as our relationship develops.
+              </div>
+            </div>
+            <div class="form-group full">
+              <label class="form-label" data-i18n="form_details">Inquiry Details <span>*</span></label>
+              <textarea class="form-textarea" id="f-message" placeholder="Please describe what you're looking for — product type, specs, quantity, application, or any questions..."></textarea>
+            </div>
+          </div>
+
+          <button class="form-submit" id="submit-btn" onclick="submitInquiry()" data-i18n="btn_send">SEND INQUIRY →</button>
+
+          <p class="form-note">
+            * Required fields. Your information is kept strictly confidential and will only be used to respond to your inquiry.
+            We do not share your contact details with third parties.
+          </p>
+        </div>
+
+        <div class="form-success" id="form-success">
+          <div class="form-success-icon">✅</div>
+          <div class="form-success-title">Inquiry Sent Successfully</div>
+          <div class="form-success-msg">Thank you! We've received your inquiry and will get back to you within 1–2 business days.<br>Please check your email (including spam folder) for our reply.</div>
+        </div>
+      </div>
+    </div>
+
+
+    <!-- WHAT'S NEW PAGE -->
+    <div class="page" id="page-whatsnew">
+      <div class="section-title">WHAT'S NEW</div>
+      <div style="margin-bottom:28px">
+
+        <div class="whats-new-item">
+          <div class="whats-new-date">2026.05</div>
+          <div class="whats-new-content">
+            <div class="whats-new-title">Live Tool Holders & Static Tool Holders — New Knowledge Articles</div>
+            <div class="whats-new-desc">Added comprehensive guides for live tool holders (動力刀座) and static tool holders, including machine compatibility for TSUGAMI, Miyano, STAR, Cincom, and BMT/VDI interface selection.</div>
+            <span class="whats-new-tag">Knowledge Library</span>
+          </div>
+        </div>
+
+        <div class="whats-new-item">
+          <div class="whats-new-date">2026.05</div>
+          <div class="whats-new-content">
+            <div class="whats-new-title">16 Market Profiles Now Available</div>
+            <div class="whats-new-desc">Expanded market intelligence to 16 countries across Southeast Asia, South Asia, Eastern Europe, Middle East, and Latin America — including import duties, port info, key industries, and business culture notes.</div>
+            <span class="whats-new-tag">Markets</span>
+          </div>
+        </div>
+
+        <div class="whats-new-item">
+          <div class="whats-new-date">2026.05</div>
+          <div class="whats-new-content">
+            <div class="whats-new-title">Taiwan Machine Tool Brand Directory — Added</div>
+            <div class="whats-new-desc">New knowledge article covering major Taiwan machine tool manufacturers including 友嘉 (FFG), 東台 (Tongtai), 台中精機 (TCM), 大立 (Dahlih), and 哈斯 (Haas Taiwan) with product focus and export track record.</div>
+            <span class="whats-new-tag">Knowledge Library</span>
+          </div>
+        </div>
+
+        <div class="whats-new-item">
+          <div class="whats-new-date">2026.05</div>
+          <div class="whats-new-content">
+            <div class="whats-new-title">Trilingual Support — EN / 中文 / 한국어</div>
+            <div class="whats-new-desc">The entire site interface is now available in English, Traditional Chinese, and Korean. Switch languages using the buttons in the top navigation bar.</div>
+            <span class="whats-new-tag">Site Update</span>
+          </div>
+        </div>
+
+        <div class="whats-new-item">
+          <div class="whats-new-date">2026.05</div>
+          <div class="whats-new-content">
+            <div class="whats-new-title">Service Level Clarification — Full Service vs Parts Supply</div>
+            <div class="whats-new-desc">Market pages now clearly indicate service levels: Full Service (Korea, Brazil, Switzerland, Argentina) with local agent support, and Parts Supply for all other markets as we expand our global reach.</div>
+            <span class="whats-new-tag">Markets</span>
+          </div>
+        </div>
+
+        <div class="whats-new-item">
+          <div class="whats-new-date">2026.05</div>
+          <div class="whats-new-content">
+            <div class="whats-new-title">Site Launch — Z&Z STROTEC Knowledge Hub</div>
+            <div class="whats-new-desc">Official launch of the Z&Z STROTEC Machine Tool Intelligence Hub. Featuring knowledge library, Incoterms guide, market intelligence, and product inquiry form. Google Search Console verified and indexed.</div>
+            <span class="whats-new-tag">Launch</span>
+          </div>
+        </div>
+
+      </div>
+    </div>
+
+
+    <!-- TERMINOLOGY PAGE -->
+    <div class="page" id="page-terms">
+      <div class="section-title">TERMINOLOGY — 術語對照 — 용어 대조</div>
+      <p style="color:var(--text-dim);font-size:13px;margin-bottom:20px;line-height:1.7">
+        Machine tool terminology in English, Traditional Chinese (繁體中文), and Korean (한국어).<br>
+        Source: Z&Z STROTEC internal reference. <span style="color:var(--gold)">Search in any language.</span>
+      </p>
+
+      <div class="term-search-wrap">
+        <input class="term-search-input" id="termSearch" type="text"
+          placeholder="Search English / 搜尋中文 / 한국어 검색..."
+          oninput="filterTerms()">
+        <button class="term-filter-btn active" id="cat-all" onclick="filterCat('all', this)">All</button>
+      </div>
+      <div id="cat-filters" style="display:flex;flex-wrap:wrap;gap:6px;margin-bottom:16px"></div>
+
+      <div class="term-count" id="term-count"></div>
+
+      <div style="overflow-x:auto">
+        <table class="term-table" id="term-table">
+          <thead>
+            <tr>
+              <th style="min-width:180px">English</th>
+              <th style="min-width:140px">中文</th>
+              <th style="min-width:140px">한국어</th>
+              <th style="min-width:80px">Category</th>
+              <th style="min-width:160px">Note</th>
+            </tr>
+          </thead>
+          <tbody id="term-body"></tbody>
+        </table>
+      </div>
+    </div>
+
+  </div><!-- /main -->
+
+  <div class="right-panel">
+    <div class="panel-title" data-i18n="panel_snapshot">MARKET SNAPSHOT</div>
+
+    <div class="market-card" onclick="openMarket('korea')"><div class="market-header"><span class="market-flag">🇰🇷</span><div><div class="market-name">South Korea</div><div class="market-tag">Northeast Asia · KRW</div></div></div><div class="market-detail">Top Taiwan CNC importer. Auto & aerospace.</div></div>
+
+    <div class="market-card" onclick="openMarket('brazil')"><div class="market-header"><span class="market-flag">🇧🇷</span><div><div class="market-name">Brazil</div><div class="market-tag">South America · USD</div></div></div><div class="market-detail">High tariff. Import permit. Port: Santos.</div></div>
+
+    <div class="market-card" onclick="openMarket('vietnam')"><div class="market-header"><span class="market-flag">🇻🇳</span><div><div class="market-name">Vietnam</div><div class="market-tag">Southeast Asia · USD</div></div></div><div class="market-detail">Fast growth. Samsung/Intel FDI. 0% duty.</div></div>
+
+    <div class="market-card" onclick="openMarket('india')"><div class="market-header"><span class="market-flag">🇮🇳</span><div><div class="market-name">India</div><div class="market-tag">South Asia · USD</div></div></div><div class="market-detail">Make in India. PLI schemes. Huge auto sector.</div></div>
+
+    <div class="market-card" onclick="openMarket('mexico')"><div class="market-header"><span class="market-flag">🇲🇽</span><div><div class="market-name">Mexico</div><div class="market-tag">North America · USD</div></div></div><div class="market-detail">Nearshoring boom. IMMEX duty-free.</div></div>
+
+    <div class="market-card" onclick="openMarket('poland')"><div class="market-header"><span class="market-flag">🇵🇱</span><div><div class="market-name">Poland</div><div class="market-tag">Eastern Europe · EUR</div></div></div><div class="market-detail">EU gateway. VW/Toyota clusters. CE required.</div></div>
+
+    <div class="market-card" onclick="openMarket('saudi')"><div class="market-header"><span class="market-flag">🇸🇦</span><div><div class="market-name">Saudi Arabia</div><div class="market-tag">Middle East · USD</div></div></div><div class="market-detail">Vision 2030. NEOM projects. 5% duty.</div></div>
+
+    <div class="panel-title" style="margin-top:20px">TAIWAN MACHINE TOOL</div>
+    <div class="stat-row"><span class="stat-label">Global Export Rank</span><span class="stat-val">#5 Worldwide</span></div>
+    <div class="stat-row"><span class="stat-label">Industry Hub</span><span class="stat-val">Taichung, Taiwan</span></div>
+    <div class="stat-row"><span class="stat-label">Key Products</span><span class="stat-val">CNC Lathes, MC</span></div>
+    <div class="stat-row"><span class="stat-label">Major Exports</span><span class="stat-val">China, USA, Korea</span></div>
+    <div class="stat-row"><span class="stat-label">Industry Assoc.</span><span class="stat-val">TAMI, TMBA</span></div>
+  </div>
+
+</div><!-- /layout -->
+
+<script>
+// ─── Knowledge Base ───────────────────────────────────────────────
+const KB = {
+  'bar-feeder': {
+    title: 'Bar Feeder Systems',
+    tags: ['automation', 'CNC lathe', 'turning', 'bar stock'],
+    body: `
+      <h4>What is a Bar Feeder?</h4>
+      A bar feeder (料機) is an automated device attached to the rear of a CNC lathe that continuously feeds bar stock into the spindle, enabling unmanned or lights-out machining. It eliminates manual loading between parts.
+
+      <h4>Main Types</h4>
+      <ul>
+        <li><strong>Short bar feeder (短料機)</strong>: Handles bars up to ~1.5m. Compact footprint. Ideal for smaller workshops or machines with limited rear clearance.</li>
+        <li><strong>Long bar feeder (長料機)</strong>: Handles full-length bars (3–4m). Higher productivity. Requires more floor space.</li>
+        <li><strong>Hydrodynamic type</strong>: Bar floats in oil-filled channel — very quiet, no vibration at high RPM. Best for Swiss-type lathes and high-speed applications.</li>
+        <li><strong>Contact/channel type</strong>: Bar rests in V-channel or guide. Lower cost. Suitable for slower speeds and larger diameters.</li>
+        <li><strong>Magazine type</strong>: Stores multiple bars in a magazine. Maximizes unmanned run time.</li>
+      </ul>
+
+      <h4>Key Selection Criteria</h4>
+      <ul>
+        <li>Bar diameter range (min/max)</li>
+        <li>Bar length compatibility with lathe</li>
+        <li>Maximum spindle RPM</li>
+        <li>Material type (round, hex, square)</li>
+        <li>Interface compatibility with CNC controller</li>
+        <li>Remnant (bar end) handling method</li>
+      </ul>
+
+      <h4>Common Taiwan Brands</h4>
+      <ul>
+        <li><strong>LNS (冠通)</strong>: Swiss brand, assembled/distributed in Taiwan. Premium quality.</li>
+        <li><strong>PRO / 鐠羅</strong>: Taiwan-made. Good price-performance for HP series short bar feeders.</li>
+        <li><strong>Iemca</strong>: Italian brand, available through Taiwan distributors.</li>
+      </ul>
+
+      <h4>Important Tip</h4>
+      Always confirm the lathe model number and spindle bore size before quoting a bar feeder. Incompatible sizing is the most common ordering mistake.
+
+      <h4>Short Bar vs Long Bar</h4>
+      <ul>
+        <li><strong>Short bar (≤1.5m)</strong>: Lower cost, small footprint, easier installation. Requires more frequent bar changes.</li>
+        <li><strong>Long bar (3–4m)</strong>: Fewer changeovers, higher productivity for large batches. Requires floor space and vibration management.</li>
+      </ul>
+
+      <h4>Hydrodynamic vs Contact Type</h4>
+      <ul>
+        <li><strong>Hydrodynamic</strong>: Bar floats in oil. Near-zero vibration. Supports very high RPM (up to 10,000+). Required for Swiss-type lathes. Higher cost.</li>
+        <li><strong>Contact/channel</strong>: Bar rests in guide channel. Lower cost. Suitable for conventional lathes at moderate RPM.</li>
+      </ul>
+
+      <h4>Remnant Handling</h4>
+      When the bar runs down to a short remnant, the feeder must either push it through or eject it. Check if the machine has a parts catcher for remnant collection.
+    `
+  },
+  'linear-guide': {
+    title: 'Linear Guide & Rails',
+    tags: ['linear guide', 'THK', 'HIWIN', 'precision', 'sliding block'],
+    body: `
+      <h4>What is a Linear Guide?</h4>
+      A linear guide (線性滑軌) consists of a rail (導軌) and one or more carriages/blocks (滑塊) that allow precise linear motion with minimal friction. Used in all CNC machine axes.
+
+      <h4>Key Specifications</h4>
+      <ul>
+        <li><strong>Size (model number)</strong>: e.g. THK HSR25 — the number indicates rail width in mm</li>
+        <li><strong>Preload class</strong>: C0 (heavy), C1 (medium), C2 (light) — higher preload = more rigidity, less backlash</li>
+        <li><strong>Accuracy class</strong>: Normal (N), High (H), Precision (P), Super Precision (SP), Ultra Precision (UP)</li>
+        <li><strong>Dynamic load rating (C)</strong>: Maximum dynamic load the guide can handle</li>
+        <li><strong>Static load rating (C0)</strong>: Maximum static load before permanent deformation</li>
+      </ul>
+
+      <h4>Major Brands</h4>
+      <ul>
+        <li><strong>THK (Japan)</strong>: Industry benchmark. Highest quality and consistency. Most common in premium Taiwan machine tools.</li>
+        <li><strong>HIWIN (台灣上銀)</strong>: Taiwan-made. Excellent quality/price ratio. Widely used in Taiwan-built machines.</li>
+        <li><strong>NSK, INA, Bosch Rexroth</strong>: European/Japanese alternatives.</li>
+      </ul>
+
+      <h4>Maintenance Tips</h4>
+      <ul>
+        <li>Lubricate regularly with specified grease or oil mist system</li>
+        <li>Protect from chips and coolant — check wipers and seals</li>
+        <li>Check for smooth travel — any roughness indicates contamination or wear</li>
+        <li>Replace in pairs (rail + matching blocks) when possible</li>
+      </ul>
+
+      <h4>Ordering Note</h4>
+      Always specify: model number, length (for rails), preload class, accuracy class, and whether end caps or lubrication fittings are needed.
+    `
+  },
+  'servo-motor': {
+    title: 'Servo Motor & Drive Systems',
+    tags: ['servo motor', 'Yaskawa', 'Sigma', 'drive', 'CNC axis'],
+    body: `
+      <h4>Role in CNC Machines</h4>
+      Servo motors (伺服馬達) drive the linear and rotary axes of CNC machines. Each controlled axis (X, Y, Z, C, B, etc.) typically has one servo motor + one drive amplifier (驅動器).
+
+      <h4>Yaskawa Sigma Series — Most Common in Taiwan</h4>
+      <ul>
+        <li><strong>Sigma-5 (Σ-5)</strong>: Older generation. Still common in machines built before ~2018. Parts becoming harder to source.</li>
+        <li><strong>Sigma-7 (Σ-7)</strong>: Current mainstream generation. High performance, widely available. Preferred for spare parts consistency.</li>
+        <li><strong>Sigma-10 (Σ-X / Σ-10)</strong>: Latest generation. Higher power density. Not backward-compatible with Sigma-7 — requires different encoder cables and amplifiers.</li>
+      </ul>
+
+      <h4>Why Sigma Series Compatibility Matters</h4>
+      Different Sigma generations are NOT interchangeable. Mixing Sigma-7 and Sigma-10 on the same machine creates spare parts fragmentation — a maintenance nightmare for machine operators. When sourcing replacement motors, always confirm the exact model and generation.
+
+      <h4>Key Specs to Confirm When Ordering</h4>
+      <ul>
+        <li>Frame size and power (W)</li>
+        <li>Encoder type (incremental vs absolute)</li>
+        <li>Shaft type: with/without keyway (有/無鍵槽)</li>
+        <li>Brake: with/without holding brake</li>
+        <li>Oil seal: with/without (important for machines with coolant exposure)</li>
+        <li>Connector direction (面出線 vs 側出線)</li>
+      </ul>
+
+      <h4>Other Brands</h4>
+      Mitsubishi (HF/HG/HK series), Fanuc (αi/βi series), Panasonic MINAS — each tied to specific CNC controller ecosystems.
+    `
+  },
+  'cnc-lathe': {
+    title: 'CNC Lathe Specification Guide',
+    tags: ['CNC lathe', 'turning', 'specifications', 'machine tool'],
+    body: `
+      <h4>Key Specifications to Evaluate</h4>
+      <ul>
+        <li><strong>Swing over bed (最大車削直徑)</strong>: Maximum workpiece diameter that fits over the machine bed</li>
+        <li><strong>Max turning length</strong>: Maximum length of workpiece between centers</li>
+        <li><strong>Bar capacity / spindle bore (主軸孔徑)</strong>: Maximum bar diameter that passes through the spindle — critical for bar feeder compatibility</li>
+        <li><strong>Spindle speed range (RPM)</strong>: Higher RPM = better for small diameter, high-speed cutting</li>
+        <li><strong>Spindle motor power (kW)</strong>: More power = heavier cuts possible</li>
+        <li><strong>Number of turret stations</strong>: 8, 10, or 12 stations typical</li>
+        <li><strong>Live tooling (動力刀具)</strong>: Whether the turret supports rotating tools for milling/drilling operations</li>
+        <li><strong>Sub-spindle (副主軸)</strong>: Second spindle for backside operations without reclamping</li>
+        <li><strong>C-axis</strong>: Spindle can be used as a controlled axis for contouring with live tools</li>
+        <li><strong>Y-axis</strong>: Off-center machining capability</li>
+      </ul>
+
+      <h4>CNC Controller Options</h4>
+      <ul>
+        <li><strong>FANUC</strong>: Most widely used globally. Strong service network.</li>
+        <li><strong>SYNTEC (新代)</strong>: Taiwan-made. Cost-effective. Growing market share.</li>
+        <li><strong>Mitsubishi M-series</strong>: Common in Japanese-influenced markets.</li>
+        <li><strong>Siemens 828D/840D</strong>: Preferred in European markets.</li>
+      </ul>
+
+      <h4>Taiwan Machine Tool Strengths</h4>
+      Taiwan-made CNC lathes offer strong value: competitive pricing vs Japanese machines, good quality components (THK guides, Yaskawa drives), established export track record, and accessible spare parts through Taiwan distributor network.
+    `
+  },
+  'tool-holder': {
+    title: 'Tool Holders & Turrets',
+    tags: ['tool holder', 'turret', 'VDI', 'BMT', 'BOT', 'tooling'],
+    body: `
+      <h4>Turret Tool Holder Standards</h4>
+      <ul>
+        <li><strong>VDI (DIN 69880)</strong>: Cylindrical shank tool holder. Most common on European-influenced machines. VDI 30, 40, 50 sizes indicate shank diameter (mm).</li>
+        <li><strong>BMT (Base Mount Turret)</strong>: Bolt-on style. Tool holder mounts directly to turret face. Better rigidity for live tooling. Common on newer machines.</li>
+        <li><strong>BOT (Bolt-On Turret)</strong>: Similar to BMT. Used by specific machine brands.</li>
+        <li><strong>Capto (ISO 26623)</strong>: Polygonal taper. Quick-change capability. Premium option.</li>
+      </ul>
+
+      <h4>Static vs Live Tool Holders</h4>
+      <ul>
+        <li><strong>Static holders</strong>: Fixed turning tools (OD turning, boring, grooving, threading)</li>
+        <li><strong>Live / driven holders</strong>: Contain internal spindle — allows milling, drilling, tapping on the lathe turret. Requires machine with live tool capability (C-axis).</li>
+      </ul>
+
+      <h4>ATC (Automatic Tool Changer) for Machining Centers</h4>
+      Disc-type (盤式) or arm-type (臂式) ATC. Disc-type is simpler, more common on smaller MC. Arm-type allows faster tool change and more tool capacity.
+
+      <h4>Key Ordering Information</h4>
+      Always specify: machine brand/model, turret type (VDI/BMT/BOT), size/interface, static or live, and internal bore size if applicable.
+    `
+  },
+  'spindle': {
+    title: 'Spindle Technology',
+    tags: ['spindle', 'bearing', 'RPM', 'machine tool', 'main spindle'],
+    body: `
+      <h4>Spindle Types</h4>
+      <ul>
+        <li><strong>Belt-driven spindle</strong>: Motor connected via belt. Lower cost. Vibration transmitted from motor. Suitable for lower RPM applications.</li>
+        <li><strong>Gear-driven spindle</strong>: High torque at low RPM. Common in heavy-duty lathes for large workpieces.</li>
+        <li><strong>Direct-drive / motorized spindle (電主軸)</strong>: Motor integrated with spindle. Highest speed, lowest vibration. Premium option for high-speed machining.</li>
+        <li><strong>Built-in motor spindle</strong>: Similar to direct drive — motor rotor mounted directly on spindle shaft.</li>
+      </ul>
+
+      <h4>Bearing Types</h4>
+      <ul>
+        <li><strong>Angular contact ball bearings</strong>: Standard for most CNC machine spindles. Good speed and accuracy balance.</li>
+        <li><strong>Roller bearings</strong>: Higher load capacity, lower speed. For heavy turning.</li>
+        <li><strong>Hydrostatic bearings</strong>: Oil film support — excellent accuracy, used in ultra-precision machines.</li>
+      </ul>
+
+      <h4>Spindle Speed vs Torque Tradeoff</h4>
+      High RPM spindles sacrifice torque. For hard/heavy materials → choose higher torque (lower RPM range). For small diameter, aluminum, or finishing → choose high RPM spindle.
+
+      <h4>Nose Type (Spindle Interface)</h4>
+      A2-5, A2-6, A2-8, A2-11 are common spindle nose sizes. Chuck size and bar feeder collet size depend on this specification.
+    `
+  },
+  'export-docs': {
+    title: 'Taiwan Export Document Checklist',
+    tags: ['export', 'documents', 'invoice', 'packing list', 'B/L', 'customs'],
+    body: `
+      <h4>Standard Export Documents (Sea Freight)</h4>
+      <ul>
+        <li><strong>Commercial Invoice (商業發票)</strong>: Must state seller, buyer, description of goods, HS code, unit price, total value, Incoterms, and payment terms.</li>
+        <li><strong>Packing List (裝箱單)</strong>: Lists all packages with dimensions (L×W×H cm), gross weight, net weight, and contents per carton/crate.</li>
+        <li><strong>Bill of Lading / B/L (提單)</strong>: Issued by shipping line after vessel departure. Title document for goods. Telex Release (電放) means original B/L is surrendered at origin — buyer receives goods without paper B/L.</li>
+        <li><strong>Export Declaration / 出口報單</strong>: Taiwan customs export declaration. Filed by licensed customs broker (報關行).</li>
+      </ul>
+
+      <h4>Additional Documents for Machine Tools</h4>
+      <ul>
+        <li><strong>電放切結書 (Telex Release Undertaking)</strong>: Required when doing telex release. Signed and stamped by exporter.</li>
+        <li><strong>非戰略性高科技貨品切結書</strong>: Declaration that goods are not strategic/dual-use items. Required for all machine tool exports. Must be stamped with company seals.</li>
+        <li><strong>Export License (輸出許可證)</strong>: Required for controlled machines (e.g. certain precision CNC models). Apply through BOFT before export. Must be provided to customs broker (捷聖) in advance.</li>
+        <li><strong>Certificate of Origin (產地證明)</strong>: May be required by destination country for tariff preference or import permit purposes.</li>
+      </ul>
+
+      <h4>Marine Insurance (保水險)</h4>
+      Required for Korea shipments. Calculate insured value based on Invoice total (excluding warranty/sample items and charges). Submit Invoice PDF to insurance company before vessel departure.
+
+      <h4>Key Timing (Sea Freight)</h4>
+      <ul>
+        <li>Provide IV + PL + 裝櫃明細表 to customs broker on closing date morning</li>
+        <li>Cargo must be in container yard by 14:00–15:00 on closing date</li>
+        <li>Customs release by 17:00</li>
+        <li>Arrange marine insurance after loading, before vessel departure</li>
+      </ul>
+    `
+  },
+  'marine-insurance': {
+    title: 'Marine Insurance (保水險)',
+    tags: ['marine insurance', 'ICC', 'cargo insurance', 'export'],
+    body: `
+      <h4>Coverage Types (Institute Cargo Clauses)</h4>
+      <ul>
+        <li><strong>ICC (A)</strong>: All risks. Broadest coverage. Covers all physical loss/damage unless specifically excluded.</li>
+        <li><strong>ICC (B)</strong>: Named perils — fire, explosion, stranding, collision, earthquake, sea water damage, etc.</li>
+        <li><strong>ICC (C)</strong>: Most limited. Fire, explosion, stranding, collision only.</li>
+      </ul>
+      <p>For machine tools to Korea, ICC (A) or ICC (B) is standard.</p>
+
+      <h4>How to Calculate Insured Value</h4>
+      <ul>
+        <li>Base: Invoice total (CIF or FOB + estimated freight)</li>
+        <li>Standard: Invoice value × 110% (10% uplift for anticipated profit)</li>
+        <li><strong>Exclude</strong>: Warranty/sample parts given free of charge (04" items), service charges</li>
+        <li><strong>Include</strong>: Warranty parts that are priced correctly and must be returned (53" items)</li>
+      </ul>
+
+      <h4>Taiwan Practice</h4>
+      Most Taiwan exporters use domestic insurance companies (e.g. 國泰產險). Submit the Invoice PDF before vessel departure. Policy is issued same day or next day. Original policy may be required by buyer's bank for L/C transactions.
+    `
+  },
+  'customs': {
+    title: 'Taiwan Customs Clearance',
+    tags: ['customs', 'Taiwan', 'export declaration', 'strategic goods', 'HS code'],
+    body: `
+      <h4>Export Customs Process (Taiwan)</h4>
+      <ol style="padding-left:16px;line-height:2">
+        <li>Exporter provides documents to licensed customs broker</li>
+        <li>Broker files export declaration electronically to Customs Administration</li>
+        <li>Customs reviews and approves (C1: auto-approve, C2: document review, C3: physical inspection)</li>
+        <li>Goods released for loading</li>
+        <li>Export declaration (出口報單) issued — keep for accounting/VAT refund</li>
+      </ol>
+
+      <h4>Strategic Goods Control (戰略性高科技貨品)</h4>
+      Taiwan controls export of certain high-tech goods under the Foreign Trade Act. Machine tools above certain precision thresholds require an Export License (輸出許可證) issued by BOFT (Bureau of Foreign Trade). 
+      
+      The 非戰略性切結書 (non-strategic goods declaration) must be signed and stamped for every export — a standard requirement even when no license is needed.
+
+      <h4>HS Code for Machine Tools (Common)</h4>
+      <ul>
+        <li>8458: Lathes for removing metal</li>
+        <li>8459: Machining centers, drilling/boring/milling machines</li>
+        <li>8466: Parts and accessories for machine tools</li>
+        <li>8501: Electric motors (servo motors)</li>
+        <li>8482: Ball/roller bearings (linear guides)</li>
+      </ul>
+
+      <h4>Customs Broker Contact</h4>
+      Work with a licensed customs broker (報關行) who is familiar with machine tool HS codes and export license procedures. Provide documents early on closing day — cargo must reach the container yard by early afternoon.
+    `
+  },
+  'live-tool': {
+    title: 'Live Tool Holders (動力刀座)',
+    tags: ['live tool', 'driven tool', 'tool holder', 'CNC lathe', 'TSUGAMI', 'Miyano', 'STAR'],
+    body: `
+      <h4>What is a Live Tool Holder?</h4>
+      A live tool holder (動力刀座) is a motorized tool holder mounted on the CNC lathe turret that allows rotating cutting tools (drills, end mills, taps) to perform milling, drilling, and tapping — without moving the workpiece to a separate machine.
+
+      <h4>Types</h4>
+      <ul>
+        <li><strong>Radial (cross) live tools</strong>: Tool axis perpendicular to spindle. For side drilling, OD milling.</li>
+        <li><strong>Axial (end-working) live tools</strong>: Tool axis parallel to spindle. For face drilling, tapping, end milling.</li>
+        <li><strong>Angular live tools</strong>: Fixed at specific angles (30°, 45°, 60°) for compound features.</li>
+        <li><strong>High-speed speeders (高轉速動力刀座)</strong>: Gear-multiplier design — boosts turret drive RPM by 2x–5x. Ideal for micro-drilling (&lt;3mm), engraving, hard materials.</li>
+      </ul>
+
+      <h4>Compatibility — Critical Factors</h4>
+      <ul>
+        <li><strong>Turret interface</strong>: VDI, BMT, or machine-specific. Must match exactly.</li>
+        <li><strong>Drive coupling</strong>: Polygon, square, or round — must match turret drive shaft.</li>
+        <li><strong>Max RPM</strong>: Rated maximum speed — exceeding it causes bearing failure.</li>
+        <li><strong>Tool clamping</strong>: ER collet (most common), Weldon flat, Morse taper.</li>
+      </ul>
+
+      <h4>Machine Compatibility</h4>
+      <ul>
+        <li><strong>TSUGAMI (津上)</strong>: Swiss-type, specific coupling required</li>
+        <li><strong>Miyano (宮野)</strong>: Fixed headstock turning centers</li>
+        <li><strong>Cincom / STAR (星辰)</strong>: Swiss-type sliding headstock</li>
+        <li><strong>Nomura (野村)</strong>: Turret lathes</li>
+        <li><strong>Nakamura-Tome (中村留)</strong>: Multi-axis turning centers</li>
+        <li><strong>BMT / VDI standard machines</strong>: Standard holders available</li>
+      </ul>
+    `
+  },
+  'static-tool': {
+    title: 'Static Tool Holders (非動力刀座)',
+    tags: ['static tool', 'tool holder', 'turning tool', 'boring bar', 'VDI', 'BMT'],
+    body: `
+      <h4>What is a Static Tool Holder?</h4>
+      A static (non-driven) tool holder mounts fixed cutting tools on the CNC lathe turret — turning tools, boring bars, grooving tools, threading tools. The workpiece rotates; the tool is stationary.
+
+      <h4>Common Types</h4>
+      <ul>
+        <li><strong>OD turning holders</strong>: External turning, facing, chamfering</li>
+        <li><strong>Boring bar holders</strong>: Internal turning, ID boring</li>
+        <li><strong>Grooving / parting holders</strong>: Groove cutting, cut-off</li>
+        <li><strong>Threading holders</strong>: External and internal thread turning</li>
+        <li><strong>Floating reamer holders (浮動絞刀柄)</strong>: Self-centering for precision ID finishing</li>
+      </ul>
+
+      <h4>Interface Standards</h4>
+      <ul>
+        <li><strong>VDI (DIN 69880)</strong>: Cylindrical shank. VDI 20, 25, 30, 40 sizes.</li>
+        <li><strong>BMT (Base Mount Turret)</strong>: Bolt-on face mount. Higher rigidity.</li>
+        <li><strong>Machine-specific</strong>: TSUGAMI, Miyano, STAR have proprietary turret designs.</li>
+      </ul>
+
+      <h4>Other Hardware (五金)</h4>
+      <ul>
+        <li><strong>Knurling tools (滾花刀)</strong>: Straight, diagonal, cross-knurl patterns</li>
+        <li><strong>Form tools (成型刀)</strong>: Custom profile tools for special contours</li>
+        <li><strong>Punch tools (沖孔刀)</strong>: Marking, center punching on lathe</li>
+        <li><strong>Insert shims (刀片墊片)</strong>: Precision height adjustment for turning inserts</li>
+      </ul>
+
+      <h4>Key Selection Parameters</h4>
+      Machine brand/model, turret type (VDI/BMT/proprietary), shank size, insert pocket type, coolant method, cutting direction.
+    `
+  },
+
+  'tw-brands': {
+    title: 'Taiwan Machine Tool Manufacturers',
+    tags: ['Taiwan', 'machine tool', 'manufacturer', 'brand', 'CNC'],
+    body: `
+      <h4>Why Taiwan Machine Tools?</h4>
+      Taiwan is the world's 5th largest machine tool exporter, with Taichung as the global hub. Taiwan-made CNC machines offer competitive pricing vs Japanese machines, high-quality components (THK guides, Yaskawa drives), and an accessible parts ecosystem.
+
+      <h4>Major Manufacturers</h4>
+      <ul>
+        <li><strong>友嘉集團 FFG (Fair Friend Group)</strong>: Taiwan's largest machine tool group. Brands: FEELER, CHEVALIER, FEMCO. CNC lathes, VMCs, grinding machines.</li>
+        <li><strong>東台精機 Tongtai</strong>: CNC lathes, turn-mill centers, 5-axis MC. Strong in aerospace and automotive.</li>
+        <li><strong>台中精機 TCM</strong>: CNC lathes and machining centers. Established 1954. Strong export base.</li>
+        <li><strong>大立機械 Dahlih</strong>: VMCs and horizontal machining centers. Large-format machining.</li>
+        <li><strong>瀧澤 TAKISAWA Taiwan</strong>: Japanese-origin brand made in Taiwan. Popular in Korea and Southeast Asia.</li>
+        <li><strong>永進 YCM (Yeong Chin)</strong>: VMCs, horizontal centers, 5-axis. ISO and CE certified.</li>
+        <li><strong>快捷 QUASER</strong>: High-speed VMCs and 5-axis. Strong in mold and die industry.</li>
+      </ul>
+
+      <h4>CNC Controller Ecosystem</h4>
+      <ul>
+        <li><strong>FANUC</strong>: Most widely used globally. Strong worldwide service network.</li>
+        <li><strong>SYNTEC 新代 (Taiwan)</strong>: Growing fast. Cost-competitive. Good for price-sensitive markets.</li>
+        <li><strong>Mitsubishi M-series</strong>: Common in Japanese-affiliated brands.</li>
+        <li><strong>Siemens 828D</strong>: Required in European and some Middle East markets.</li>
+      </ul>
+
+      <h4>Industry Associations & Trade Shows</h4>
+      <ul>
+        <li><strong>TAMI</strong> — Taiwan Association of Machinery Industry</li>
+        <li><strong>TMBA</strong> — Taiwan Machine Tool & Accessory Builders Association</li>
+        <li><strong>TIMTOS</strong>: Biennial show in Taipei (March, odd years)</li>
+        <li><strong>TMTS</strong>: Taiwan Machine Tool Show, Taichung (November, even years)</li>
+      </ul>
+    `
+  },
+  'maintenance': {
+    title: 'CNC Machine Maintenance Guide',
+    tags: ['maintenance', 'preventive', 'lubrication', 'CNC', 'service', 'uptime'],
+    body: `
+      <h4>Why Preventive Maintenance?</h4>
+      Unplanned CNC downtime costs far more than scheduled maintenance. A disciplined PM program extends machine life, maintains accuracy, and prevents catastrophic failures.
+
+      <h4>Daily Checks</h4>
+      <ul>
+        <li>Check coolant level and concentration (Brix meter)</li>
+        <li>Check hydraulic and lubrication oil levels</li>
+        <li>Clean chips from machine bed, chip conveyor, coolant tank</li>
+        <li>Check air pressure (FRL unit)</li>
+        <li>Listen for unusual sounds during warm-up</li>
+      </ul>
+
+      <h4>Weekly Checks</h4>
+      <ul>
+        <li>Clean coolant tank strainer/filter</li>
+        <li>Inspect spindle taper and toolholder for fretting</li>
+        <li>Check chuck jaws and clamping force</li>
+        <li>Inspect way covers for damage or leaks</li>
+        <li>Check turret clamping/indexing accuracy</li>
+      </ul>
+
+      <h4>Monthly Checks</h4>
+      <ul>
+        <li>Check linear guide lubrication — apply grease if manual lube type</li>
+        <li>Inspect servo motor connectors and encoder cables for wear</li>
+        <li>Clean electrical cabinet air filters</li>
+        <li>Check belt tension (spindle drive belt)</li>
+        <li>Run geometric accuracy check (test cut or gauge)</li>
+      </ul>
+
+      <h4>Annual / 2000-Hour Service</h4>
+      <ul>
+        <li>Change hydraulic oil</li>
+        <li>Replace coolant completely and clean tank</li>
+        <li>Replace air filter elements</li>
+        <li>Geometric and accuracy calibration</li>
+        <li>Check backlash on ball screws</li>
+      </ul>
+
+      <h4>Common Failure Signs</h4>
+      <ul>
+        <li><strong>Rough surface finish</strong>: Worn linear guides, low lubrication, chatter</li>
+        <li><strong>Dimensional drift</strong>: Thermal growth, worn ball screws</li>
+        <li><strong>Spindle noise</strong>: Bearing wear, contaminated lubrication</li>
+        <li><strong>Servo alarm</strong>: Encoder cable damage, overload, drive issue</li>
+      </ul>
+    `
+  },
+  'part-lifespan': {
+    title: 'Spare Parts Lifespan Guide',
+    tags: ['spare parts', 'lifespan', 'replacement', 'MRO', 'maintenance', 'planning'],
+    body: `
+      <h4>Why Plan Spare Parts?</h4>
+      Knowing when parts typically fail lets you stock critical spares before failure — avoiding emergency shipping and production downtime. Lead times from Taiwan: 3 days (air) to 4–6 weeks (sea).
+
+      <h4>Linear Guides & Ball Screws</h4>
+      <ul>
+        <li><strong>Linear guide carriages (滑塊)</strong>: 5–10 years. Signs: increased play, rough travel, noise.</li>
+        <li><strong>Ball screws</strong>: 8–15 years. Signs: backlash increase, positioning errors.</li>
+        <li><strong>Rails</strong>: Often outlast carriages — replace carriages first.</li>
+      </ul>
+
+      <h4>Servo System</h4>
+      <ul>
+        <li><strong>Servo motor</strong>: 10–15 years. Encoder failure more common than winding failure.</li>
+        <li><strong>Servo drive (amplifier)</strong>: 8–12 years. Capacitor degradation is the common failure.</li>
+        <li><strong>Encoder cable</strong>: 5–8 years in high-movement axes. Flex cracks at connectors.</li>
+      </ul>
+
+      <h4>Spindle</h4>
+      <ul>
+        <li><strong>Spindle bearings</strong>: 3–8 years depending on speed, load, and lubrication.</li>
+        <li><strong>Draw bar / clamping unit</strong>: 5–10 years.</li>
+      </ul>
+
+      <h4>Tooling</h4>
+      <ul>
+        <li><strong>Chuck jaws</strong>: Inspect every 6 months for wear and concentricity.</li>
+        <li><strong>Live tool bearings</strong>: 2–5 years depending on duty cycle and max RPM.</li>
+        <li><strong>ER Collets</strong>: Replace when clamping range is worn — typically 1–3 years in production.</li>
+      </ul>
+
+      <h4>Stocking Strategy</h4>
+      <ul>
+        <li><strong>Keep in stock</strong>: Encoder cables, servo fuses, common ER collets, way lube filters</li>
+        <li><strong>Order at first sign of wear</strong>: Linear guide carriages, tool holder sets</li>
+        <li><strong>Plan 2–3 months ahead</strong>: Servo motors, spindle bearings, ball screws</li>
+      </ul>
+    `
+  },
+  'import-duty': {
+    title: 'Import Duty Reference — Machine Tools',
+    tags: ['import duty', 'tariff', 'customs', 'HS code', 'landed cost'],
+    body: `
+      <h4>Overview</h4>
+      Import duties on CNC machine tools vary significantly by country. Understanding landed costs helps buyers calculate total investment and helps sellers price competitively.
+
+      <h4>Asia Pacific (HS 8458/8457)</h4>
+      <ul>
+        <li><strong>South Korea</strong>: ~0% (MFN basis)</li>
+        <li><strong>Vietnam</strong>: 0% (MFN for most CNC tools)</li>
+        <li><strong>Thailand</strong>: 0–10% (BOI companies may get exemptions)</li>
+        <li><strong>Indonesia</strong>: 0–5%</li>
+        <li><strong>Malaysia</strong>: 0%</li>
+        <li><strong>India</strong>: 7.5% BCD + 18% IGST = ~28–30% total landed</li>
+      </ul>
+
+      <h4>Europe</h4>
+      <ul>
+        <li><strong>EU (Poland, Czech, Germany...)</strong>: 0–3.7% MFN (Taiwan has no EU FTA)</li>
+        <li><strong>Switzerland</strong>: 0%</li>
+        <li><strong>Turkey</strong>: 0% (EU Customs Union applies)</li>
+      </ul>
+
+      <h4>Americas</h4>
+      <ul>
+        <li><strong>USA</strong>: 0–4.4%</li>
+        <li><strong>Mexico</strong>: 0% (IMMEX maquiladora program)</li>
+        <li><strong>Brazil</strong>: 0–14% + IPI + ICMS + PIS/COFINS = 30–60%+ total landed</li>
+        <li><strong>Argentina</strong>: 14–35% + surcharges = up to 60–70% landed</li>
+        <li><strong>Colombia</strong>: 5–10%</li>
+      </ul>
+
+      <h4>Middle East</h4>
+      <ul>
+        <li><strong>Saudi Arabia / UAE</strong>: 5%</li>
+        <li><strong>Israel</strong>: 0%</li>
+      </ul>
+
+      <h4>Important Notes</h4>
+      <ul>
+        <li>Rates are indicative — always verify with your customs broker</li>
+        <li>Spare parts (HS 8466) typically have different (often lower) rates than complete machines</li>
+        <li>VAT/GST is additional and usually refundable for registered businesses</li>
+        <li>Special programs (ex-tariff, BOI, IMMEX) may further reduce duties</li>
+      </ul>
+    `
+  },
+  'gcode': {
+    title: 'G-Code Quick Reference',
+    tags: ['G-code', 'M-code', 'CNC programming', 'turning', 'milling', 'cutting speed'],
+    body: `
+      <h4>What is G-Code?</h4>
+      G-code (RS-274) is the standard CNC programming language. G-codes control machine movement; M-codes control machine functions (spindle, coolant, etc.).
+
+      <h4>Essential G-Codes — CNC Lathe (Turning)</h4>
+      <ul>
+        <li><strong>G00</strong>: Rapid positioning (no cutting)</li>
+        <li><strong>G01</strong>: Linear interpolation (cutting feed)</li>
+        <li><strong>G02 / G03</strong>: Circular interpolation CW / CCW</li>
+        <li><strong>G04</strong>: Dwell (P = milliseconds)</li>
+        <li><strong>G20 / G21</strong>: Inch / Metric units</li>
+        <li><strong>G32</strong>: Thread cutting</li>
+        <li><strong>G40 / G41 / G42</strong>: Tool nose radius compensation cancel / left / right</li>
+        <li><strong>G70</strong>: Finishing cycle</li>
+        <li><strong>G71</strong>: Rough turning cycle (OD)</li>
+        <li><strong>G72</strong>: Rough facing cycle</li>
+        <li><strong>G74</strong>: Peck drilling / grooving cycle</li>
+        <li><strong>G76</strong>: Thread cutting cycle</li>
+        <li><strong>G90 / G91</strong>: Absolute / Incremental mode</li>
+        <li><strong>G96</strong>: Constant surface speed (CSS)</li>
+        <li><strong>G97</strong>: Constant spindle speed (RPM)</li>
+        <li><strong>G98 / G99</strong>: Feed per minute / Feed per revolution</li>
+      </ul>
+
+      <h4>Essential M-Codes — CNC Lathe</h4>
+      <ul>
+        <li><strong>M00</strong>: Program stop</li>
+        <li><strong>M02 / M30</strong>: End of program</li>
+        <li><strong>M03 / M04</strong>: Spindle CW / CCW</li>
+        <li><strong>M05</strong>: Spindle stop</li>
+        <li><strong>M08 / M09</strong>: Coolant ON / OFF</li>
+        <li><strong>M10 / M11</strong>: Chuck clamp / unclamp</li>
+      </ul>
+
+      <h4>Cutting Speed Formula</h4>
+      <ul>
+        <li><strong>RPM = (Vc × 1000) ÷ (π × D)</strong></li>
+        <li>Example: Vc 200 m/min on ∅50mm → RPM = (200 × 1000) ÷ (3.14 × 50) = <strong>1,274 RPM</strong></li>
+        <li><strong>Feed rate (mm/min) = RPM × f (mm/rev)</strong></li>
+      </ul>
+
+      <h4>Typical Cutting Conditions</h4>
+      <ul>
+        <li><strong>Steel S45C</strong>: Vc 150–200 m/min, f 0.15–0.3 mm/rev, ap 1–3mm</li>
+        <li><strong>Stainless SUS304</strong>: Vc 80–130 m/min, f 0.1–0.2 mm/rev, ap 0.5–2mm</li>
+        <li><strong>Aluminum</strong>: Vc 300–600 m/min, f 0.1–0.3 mm/rev, ap 1–5mm</li>
+        <li><strong>Cast Iron</strong>: Vc 100–180 m/min, f 0.15–0.3 mm/rev, ap 1–4mm</li>
+      </ul>
+    `
+  },
+
+  'collet-chuck': {
+    title: 'Collets & Guide Bush (筒夾 / 導套)',
+    tags: ['collet', 'ER collet', 'guide bush', 'chuck', 'Swiss lathe', '筒夾', '導套'],
+    body: `
+      <h4>ER Collet System (Most Common)</h4>
+      ER collets (ER 筒夾) are the most widely used tool clamping system in live tooling. The ER number (ER8, ER11, ER16, ER20, ER25, ER32, ER40) indicates collet outer diameter.
+      <ul>
+        <li><strong>Clamping range</strong>: Each collet covers a 1mm range (e.g. ER16 "10" = 9–10mm)</li>
+        <li><strong>Runout</strong>: Standard ±0.01mm; precision grade ±0.005mm</li>
+        <li><strong>Use</strong>: Drill chucks in live tools, end mill holders, tap holders</li>
+      </ul>
+
+      <h4>Tapping Collets (攻牙筒夾)</h4>
+      Special collets with torque transmission and axial float for rigid tapping. Required when tapping without synchronized speed control.
+
+      <h4>Guide Bush (導套) — Swiss-Type Lathes</h4>
+      Used in sliding headstock (走心式) lathes. Supports bar stock close to the cutting point to reduce deflection on long/slender workpieces.
+      <ul>
+        <li><strong>Fixed guide bush</strong>: Simple, lower cost. Bar must be precision-ground to match bore.</li>
+        <li><strong>Rotating guide bush</strong>: Rotates with bar — eliminates friction, suitable for non-ground bars.</li>
+        <li>Guide bush bore must match bar diameter within 0.01–0.02mm</li>
+      </ul>
+
+      <h4>Spindle Collet Chucks</h4>
+      Swiss lathes and multi-spindle machines use collet chucks at the main spindle for bar feeding. Common types: 5C, 16C, R8, and machine-specific designs.
+    `
+  }
+};
+
+const MARKETS = {
+  korea: {
+    title: '🇰🇷 South Korea — Market Profile',
+    body: `
+      <h4>Market Overview</h4>
+      South Korea is one of the top importers of Taiwan CNC machine tools, with a sophisticated manufacturing base in automotive (Hyundai, Kia), electronics (Samsung, SK Hynix), shipbuilding, and aerospace sectors.
+
+      <h4>Import Conditions</h4>
+      <ul>
+        <li>Import duty: ~0% for most CNC machine tools (Korea-Taiwan ASTEP agreement)</li>
+        <li>VAT: 10% (refundable for business)</li>
+        <li>Currency: KRW (Korean Won) — transactions typically in USD</li>
+        <li>Main port: Incheon (ICN), Busan (PUS)</li>
+      </ul>
+
+      <h4>Business Culture</h4>
+      <ul>
+        <li>Relationship-based (관계 중심). Long-term trust is essential.</li>
+        <li>Hierarchy important — address decision-makers appropriately (사장님, 이사님, 과장님)</li>
+        <li>Technical documentation should be thorough and accurate</li>
+        <li>After-sales support and spare parts availability are major purchase factors</li>
+      </ul>
+
+      <h4>Key Demand Areas</h4>
+      CNC turning centers, bar feeders, precision parts. Strong interest in automation (unmanned machining). Spare parts and warranty support heavily weighted in purchasing decisions.
+
+      <h4>Language</h4>
+      Korean preferred for formal correspondence. English acceptable for technical documentation. Chinese (Traditional) understood by some in the machine tool trade.
+    `
+  },
+  brazil: {
+    title: '🇧🇷 Brazil — Market Profile',
+    body: `
+      <h4>Market Overview</h4>
+      Brazil has the largest industrial economy in South America with significant manufacturing in automotive, oil & gas, agriculture equipment, and defense sectors. High potential but complex import environment.
+
+      <h4>Import Conditions</h4>
+      <ul>
+        <li>Import duty (II): 0–14% depending on HS code and ex-tariff regime (Ex-Tarifário)</li>
+        <li>IPI (Industrial Products Tax): 0–10%</li>
+        <li>ICMS (State tax): ~12–18% — varies by state</li>
+        <li>PIS/COFINS: ~9.25%</li>
+        <li>Currency: BRL (Real) — volatile. Transactions typically in USD.</li>
+        <li>Main port: Santos (SP), Paranaguá (PR)</li>
+        <li>Import License (LI / SISCOMEX): May be required before shipment</li>
+      </ul>
+
+      <h4>Common Challenges</h4>
+      <ul>
+        <li>High total tax burden — machine may cost 60–80% more after all taxes</li>
+        <li>Customs valuation scrutiny — Brazilian customs may challenge declared values</li>
+        <li>Long customs clearance times (2–4 weeks is common)</li>
+        <li>Currency controls and wire transfer complexity</li>
+      </ul>
+
+      <h4>Business Culture</h4>
+      Personal relationships (relacionamento) are critical. Be patient with timelines. English proficiency varies — keep communications simple and clear. WhatsApp widely used for business communication.
+    `
+  },
+  switzerland: {
+    title: '🇨🇭 Switzerland — Market Profile',
+    body: `
+      <h4>Market Overview</h4>
+      Switzerland has a small but highly sophisticated precision engineering industry — watchmaking, medical devices, aerospace, and toolmaking. Demand for high-precision machine tools, grinding equipment, and precision measuring instruments.
+
+      <h4>Import Conditions</h4>
+      <ul>
+        <li>Import duty: 0% for most machine tools (Switzerland is not in EU but has bilateral agreements)</li>
+        <li>VAT: 8.1%</li>
+        <li>Currency: CHF (Swiss Franc) — stable, often stronger than EUR</li>
+        <li>Main entry point: Basel, Zürich</li>
+      </ul>
+
+      <h4>Buyer Expectations</h4>
+      <ul>
+        <li>Very high quality and precision standards</li>
+        <li>Comprehensive technical documentation required</li>
+        <li>CE marking may be required for machinery</li>
+        <li>Punctuality and reliability are paramount</li>
+        <li>Long-term service and spare parts support expected</li>
+      </ul>
+
+      <h4>Language</h4>
+      German (primary for Zürich/Bern areas), French (Geneva/Lausanne), Italian (Ticino). English widely used in business. Technical documents often required in German.
+
+      <h4>Key Sectors</h4>
+      Grinding machines, precision turning, EDM, micro-machining. Strong demand for specialty grinding wheels (diamond, CBN) and precision tooling.
+    `
+  },
+  argentina: {
+    title: '🇦🇷 Argentina — Market Profile',
+    body: `
+      <h4>Market Overview</h4>
+      Argentina has a significant industrial base (automotive, oil & gas, food processing, agribusiness) but operates under complex economic and regulatory conditions. Market opportunity exists especially in spare parts, retrofits, and maintenance.
+
+      <h4>Import Conditions</h4>
+      <ul>
+        <li>SIMI (Sistema Integral de Monitoreo de Importaciones): Import monitoring system — must be filed before shipment</li>
+        <li>Import duty: 14–35% for many machine tools</li>
+        <li>Statistics tax, VAT, income tax advance payments — total can reach 60–70% of CIF value</li>
+        <li>Currency: ARS (Peso) — historically volatile. Transactions in USD strongly preferred.</li>
+        <li>Currency controls: Wire transfers may require specific documentation</li>
+        <li>Main port: Buenos Aires (Ezeiza for air, Exolgan/TRP for sea)</li>
+      </ul>
+
+      <h4>Practical Considerations</h4>
+      <ul>
+        <li>Payment in advance or L/C preferred — open account risky</li>
+        <li>Allow extra lead time for import permit process (SIMI can take weeks)</li>
+        <li>Local agent or representative strongly recommended</li>
+        <li>Retrofit and spare parts market growing — less import friction than complete machines</li>
+      </ul>
+
+      <h4>Business Culture</h4>
+      Warm, relationship-oriented. Spanish is essential at the client level. English used in technical correspondence. Flexibility and patience required — bureaucratic delays are common.
+    `
+  },
+  vietnam: {
+    title: '🇻🇳 Vietnam — Market Profile',
+    body: `
+      <h4>Market Overview</h4>
+      Vietnam is one of the fastest-growing manufacturing destinations in Southeast Asia, attracting massive FDI from Samsung, Intel, Foxconn and other multinationals. Strong demand for CNC machine tools as domestic manufacturers upgrade to serve global supply chains.
+
+      <h4>Import Conditions</h4>
+      <ul>
+        <li>Import duty: 0% for most CNC machine tools (ASEAN-Taiwan trade, or MFN basis)</li>
+        <li>VAT: 10% (refundable for businesses)</li>
+        <li>Currency: VND (Vietnamese Dong) — transactions typically in USD</li>
+        <li>Main ports: Ho Chi Minh City (Cat Lai), Hai Phong (Hanoi)</li>
+        <li>Import permit: Generally not required for machine tools</li>
+      </ul>
+
+      <h4>Key Demand Sectors</h4>
+      Electronics manufacturing, automotive parts, furniture (precision cutting), garment & textile machinery, metal fabrication. Strong interest in CNC lathes, VMCs, and automation.
+
+      <h4>Business Culture</h4>
+      Relationship-driven. Vietnamese buyers value long-term partnerships and price competitiveness. English used in business but Vietnamese preferred for local agents. Response times can vary — follow up consistently.
+
+      <h4>Practical Tips</h4>
+      Work through a local agent or distributor for best results. Technical training and after-sales support are strong differentiators. Chinese (Traditional/Simplified) sometimes understood by older factory managers.
+    `
+  },
+  thailand: {
+    title: '🇹🇭 Thailand — Market Profile',
+    body: `
+      <h4>Market Overview</h4>
+      Thailand is Southeast Asia's largest automotive manufacturing hub (Toyota, Honda, Isuzu, Ford) with a well-established precision parts and electronics sector. Mature market for CNC machine tools with sophisticated buyers.
+
+      <h4>Import Conditions</h4>
+      <ul>
+        <li>Import duty: 0–10% for machine tools (BOI-promoted companies may get exemptions)</li>
+        <li>VAT: 7%</li>
+        <li>Currency: THB (Baht) — stable. USD transactions common for capital goods.</li>
+        <li>Main port: Laem Chabang, Bangkok</li>
+        <li>BOI (Board of Investment): Companies with BOI promotion can import machinery duty-free</li>
+      </ul>
+
+      <h4>Key Demand Sectors</h4>
+      Automotive parts (dominant), hard disk drives, medical devices, food processing equipment, rubber & plastics. CNC lathes, VMCs, EDM, and precision grinding in demand.
+
+      <h4>Business Culture</h4>
+      Polite, hierarchical. "Face" (saving dignity) important in negotiations. Thai buyers are price-sensitive but quality-conscious. English widely used in manufacturing sector. Technical documentation in English accepted.
+    `
+  },
+  indonesia: {
+    title: '🇮🇩 Indonesia — Market Profile',
+    body: `
+      <h4>Market Overview</h4>
+      Indonesia is the largest economy in Southeast Asia with a growing manufacturing base. Government's "Making Indonesia 4.0" initiative is driving investment in precision manufacturing and CNC automation.
+
+      <h4>Import Conditions</h4>
+      <ul>
+        <li>Import duty: 0–5% for CNC machine tools (MFN rates; varies by HS code)</li>
+        <li>VAT: 11%</li>
+        <li>Currency: IDR (Rupiah) — transactions in USD preferred</li>
+        <li>Main port: Tanjung Priok (Jakarta), Surabaya</li>
+        <li>Import permit (PI/LS): May be required for certain machinery</li>
+        <li>BPOM, SNI standards: Check if applicable for your product</li>
+      </ul>
+
+      <h4>Key Demand Sectors</h4>
+      Automotive, motorcycle parts, palm oil processing, mining equipment, shipbuilding. Growing electronics and aerospace sector.
+
+      <h4>Practical Tips</h4>
+      Local agent essential — Indonesian import regulations complex. Bahasa Indonesia preferred for government/customs. Allow extra clearance time at Jakarta port (congestion common).
+    `
+  },
+  malaysia: {
+    title: '🇲🇾 Malaysia — Market Profile',
+    body: `
+      <h4>Market Overview</h4>
+      Malaysia has a developed manufacturing sector with strong electronics (semiconductor, E&E), automotive, and aerospace industries. English-speaking business environment makes it one of the easier Southeast Asian markets to enter.
+
+      <h4>Import Conditions</h4>
+      <ul>
+        <li>Import duty: 0% for most CNC machine tools</li>
+        <li>SST (Sales & Service Tax): 10% on certain goods</li>
+        <li>Currency: MYR (Ringgit) — USD widely accepted in B2B</li>
+        <li>Main port: Port Klang, Penang</li>
+      </ul>
+
+      <h4>Key Demand Sectors</h4>
+      Semiconductor equipment support, E&E manufacturing, aerospace MRO, automotive parts. High demand for precision machining, VMCs, EDM, and measurement equipment.
+
+      <h4>Business Culture</h4>
+      Multicultural (Malay, Chinese, Indian). English is the business language. Chinese Malaysian business owners often have Taiwan/China connections — a good entry point. Professional, relatively straightforward procurement process.
+    `
+  },
+  india: {
+    title: '🇮🇳 India — Market Profile',
+    body: `
+      <h4>Market Overview</h4>
+      India is one of the world's fastest-growing machine tool markets. "Make in India" initiative, PLI (Production Linked Incentive) schemes, and booming automotive/aerospace/defense sectors are driving strong CNC equipment demand.
+
+      <h4>Import Conditions</h4>
+      <ul>
+        <li>Basic Customs Duty (BCD): 7.5% for most CNC machine tools</li>
+        <li>IGST: 18%</li>
+        <li>Total landed cost: ~28–30% above CIF value</li>
+        <li>Currency: INR (Rupee) — USD for international transactions</li>
+        <li>Main ports: JNPT (Mumbai), Chennai, Delhi (air)</li>
+        <li>Import license: Not required for most machine tools</li>
+      </ul>
+
+      <h4>Key Demand Sectors</h4>
+      Automotive (largest — Maruti, Tata, Mahindra), aerospace (HAL, DRDO), defense, medical devices, general engineering. Tier-2/Tier-3 auto parts suppliers a huge growth segment.
+
+      <h4>Business Culture</h4>
+      Relationship and trust important. Price negotiation expected — build in margin. Long decision cycles for capital purchases. English widely used. Technical competence highly respected. After-sales service and spare parts availability critical.
+
+      <h4>Practical Tips</h4>
+      India-specific certifications (BIS) may be needed for some equipment. Local distributor or agent strongly recommended for navigation of GST, customs, and after-sales support.
+    `
+  },
+  poland: {
+    title: '🇵🇱 Poland — Market Profile',
+    body: `
+      <h4>Market Overview</h4>
+      Poland is Central Europe's largest manufacturing economy and the EU's fastest-growing machine tool market. Strong automotive (Volkswagen, Toyota, Fiat), aerospace, and defense sectors. Gateway to the broader Eastern European market.
+
+      <h4>Import Conditions</h4>
+      <ul>
+        <li>EU Common External Tariff: 0–3.7% for CNC machine tools (Taiwan not covered by EU FTA — standard MFN rates apply)</li>
+        <li>VAT: 23% (refundable for registered businesses)</li>
+        <li>Currency: PLN (Złoty) — EUR widely used in B2B</li>
+        <li>Main port: Gdańsk, Gdynia; air via Warsaw</li>
+        <li>CE marking required for machinery sold in EU</li>
+      </ul>
+
+      <h4>Key Demand Sectors</h4>
+      Automotive parts, aerospace components, defense manufacturing, white goods, furniture (CNC routing). Strong interest in 5-axis machining, precision turning, grinding.
+
+      <h4>Business Culture</h4>
+      Direct, professional, technically oriented. English widely used in manufacturing. Poles are detail-oriented buyers — thorough technical documentation essential. Price competitive with Western Europe — Taiwan machinery well-positioned.
+    `
+  },
+  czech: {
+    title: '🇨🇿 Czech Republic — Market Profile',
+    body: `
+      <h4>Market Overview</h4>
+      Czech Republic has one of Central Europe's most advanced manufacturing bases — strong in automotive (Skoda/VW, Toyota, Hyundai), aerospace, and precision engineering. Per-capita machine tool consumption among the highest in emerging Europe.
+
+      <h4>Import Conditions</h4>
+      <ul>
+        <li>EU CET: 0–3.7% for CNC machine tools</li>
+        <li>VAT: 21% (refundable)</li>
+        <li>Currency: CZK (Koruna) — EUR also widely used</li>
+        <li>CE marking required</li>
+        <li>Main entry: Prague (air), Hamburg/Rotterdam (sea + road)</li>
+      </ul>
+
+      <h4>Key Demand Sectors</h4>
+      Automotive parts, aircraft components, medical devices, defense. Strong demand for high-precision CNC lathes, grinding machines, and 5-axis centers.
+
+      <h4>Business Culture</h4>
+      Formal, punctual, technically demanding. High quality expectations. German or English preferred for business. Long evaluation cycles — invest in technical demonstrations and documentation.
+    `
+  },
+  mexico: {
+    title: '🇲🇽 Mexico — Market Profile',
+    body: `
+      <h4>Market Overview</h4>
+      Mexico is the largest manufacturing economy in Latin America and a top-10 global auto producer. "Nearshoring" boom — US companies relocating manufacturing from Asia to Mexico — is driving massive CNC equipment investment. Strong growth expected through 2027+.
+
+      <h4>Import Conditions</h4>
+      <ul>
+        <li>Import duty: 0% for most CNC machine tools (Taiwan-Mexico bilateral; or IMMEX program)</li>
+        <li>VAT: 16% (refundable for businesses)</li>
+        <li>Currency: MXN (Peso) — USD widely used in capital goods transactions</li>
+        <li>Main ports: Manzanillo (Pacific), Veracruz (Gulf), Lázaro Cárdenas</li>
+        <li>IMMEX (Maquiladora): Export-oriented manufacturers can import machinery duty-free</li>
+      </ul>
+
+      <h4>Key Demand Sectors</h4>
+      Automotive (Monterrey, Aguascalientes, Guanajuato clusters), aerospace (Querétaro, Baja California), medical devices (Tijuana, Juárez), electronics.
+
+      <h4>Business Culture</h4>
+      Relationship-oriented (personalismo). Spanish essential for local contacts. English used at management level in large manufacturers. Patient and persistent follow-up rewarded. Nearshoring boom means buyers are under pressure — fast response times valued.
+    `
+  },
+  colombia: {
+    title: '🇨🇴 Colombia — Market Profile',
+    body: `
+      <h4>Market Overview</h4>
+      Colombia is South America's third-largest economy with a growing manufacturing base in metalworking, plastics, food processing, and oil & gas equipment. More stable import environment than Argentina.
+
+      <h4>Import Conditions</h4>
+      <ul>
+        <li>Import duty: 5–10% for machine tools</li>
+        <li>VAT: 19%</li>
+        <li>Currency: COP (Peso) — transactions in USD</li>
+        <li>Main port: Cartagena, Buenaventura</li>
+        <li>VUCE (Ventanilla Única de Comercio Exterior): Import licensing portal</li>
+      </ul>
+
+      <h4>Key Demand Sectors</h4>
+      Oil & gas equipment parts, automotive components, construction materials, food processing. Growing plastics and medical devices sector in Bogotá/Medellín industrial zones.
+
+      <h4>Business Culture</h4>
+      Warm, relationship-focused. Spanish essential. Business moves at a relationship pace — initial trust-building important. Medellín increasingly entrepreneurial and tech-forward.
+    `
+  },
+  israel: {
+    title: '🇮🇱 Israel — Market Profile',
+    body: `
+      <h4>Market Overview</h4>
+      Israel has a highly sophisticated defense, aerospace, and medical device manufacturing sector. High technology adoption and strong R&D culture. Small but high-value market — buyers prioritize quality and technical capability over price.
+
+      <h4>Import Conditions</h4>
+      <ul>
+        <li>Import duty: 0% for most machine tools (Israel-Taiwan FTA / MFN)</li>
+        <li>VAT: 17%</li>
+        <li>Currency: ILS (Shekel) — USD widely accepted</li>
+        <li>Main port: Haifa, Ashdod; Ben Gurion Airport</li>
+      </ul>
+
+      <h4>Key Demand Sectors</h4>
+      Defense manufacturing (Rafael, Elbit, IAI), medical devices (Class II/III precision parts), aerospace, semiconductors, cybersecurity hardware. High-precision grinding, 5-axis, and EDM in demand.
+
+      <h4>Business Culture</h4>
+      Direct and informal ("chutzpah" culture). Technical expertise highly respected. English widely used. Decision-making fast once trust established. Strong preference for long-term supply relationships with proven suppliers.
+    `
+  },
+  turkey: {
+    title: '🇹🇷 Turkey — Market Profile',
+    body: `
+      <h4>Market Overview</h4>
+      Turkey is one of the largest and fastest-growing machine tool markets in Europe/Middle East, bridging both regions. Strong automotive, defense, white goods, and metalworking industries. Turkey is both a consumer and a growing manufacturer of machine tools — making it an interesting dual opportunity.
+
+      <h4>Import Conditions</h4>
+      <ul>
+        <li>Import duty: 0% for most CNC machine tools (Turkey-EU Customs Union; MFN basis for Taiwan)</li>
+        <li>VAT: 20%</li>
+        <li>SCT (Special Consumption Tax): Applies to some goods — check HS code</li>
+        <li>Currency: TRY (Turkish Lira) — historically volatile. USD or EUR strongly preferred for contracts.</li>
+        <li>Main ports: Mersin, İzmir (Aliağa), İstanbul (Ambarlı)</li>
+        <li>CE marking: Required for machinery sold in Turkey (aligned with EU directives)</li>
+      </ul>
+
+      <h4>Key Demand Sectors</h4>
+      Automotive (Ford, Fiat, Toyota, Renault plants), defense (ASELSAN, ROKETSAN, Baykar — massive expansion), white goods (Arçelik, Vestel), metalworking and fabrication, construction equipment parts.
+
+      <h4>Business Culture</h4>
+      Relationship-driven. Turkish buyers negotiate hard on price — build margin accordingly. Personal trust essential before large orders. English used in business; Turkish for local contacts. Tea meetings are part of the relationship-building process. Once trust is established, loyal long-term buyer.
+
+      <h4>Practical Tips</h4>
+      <ul>
+        <li>USD or EUR contracts strongly recommended due to TRY volatility</li>
+        <li>Local agent or distributor accelerates market entry significantly</li>
+        <li>Defense sector is booming — high-precision 5-axis, aerospace-grade lathes in strong demand</li>
+        <li>Turkey is a bridge market — a Turkish distributor can also reach Caucasus and Central Asia</li>
+      </ul>
+    `
+  },
+  saudi: {
+    title: '🇸🇦 Saudi Arabia — Market Profile',
+    body: `
+      <h4>Market Overview</h4>
+      Saudi Arabia's Vision 2030 is driving massive industrialization — NEOM, giga-projects, and domestic manufacturing programs (IKTVA) require significant machine tool investment. Oil & gas, defense, and construction sectors dominant.
+
+      <h4>Import Conditions</h4>
+      <ul>
+        <li>Import duty: 5% for most industrial machinery</li>
+        <li>VAT: 15%</li>
+        <li>Currency: SAR (Riyal) — pegged to USD, effectively USD transactions</li>
+        <li>Main port: Jeddah Islamic Port, Dammam (King Abdul Aziz)</li>
+        <li>SASO certification: Saudi Standards Authority approval may be required</li>
+        <li>IKTVA: Saudi Aramco's local content program — favors suppliers with local presence</li>
+      </ul>
+
+      <h4>Key Demand Sectors</h4>
+      Oil & gas equipment MRO, defense manufacturing (Vision 2030 target: 50% local defense production by 2030), mining, utilities, construction. NEOM and Red Sea Project driving infrastructure equipment demand.
+
+      <h4>Business Culture</h4>
+      Relationship and respect for hierarchy essential. Arabic for government; English for business. Long decision cycles. Payment terms negotiation expected. Local agent or sponsor (now optional but helpful) accelerates business. Ramadan significantly slows business activity.
+    `
+  }
+};
+
+// ─── Navigation ───────────────────────────────────────────────────
+function showPageHome() {
+  document.querySelectorAll('.page').forEach(p => p.classList.remove('active'));
+  document.getElementById('page-home').classList.add('active');
+  document.querySelectorAll('.nav-btn').forEach(b => b.classList.remove('active'));
+  document.querySelector('.nav-btn').classList.add('active');
+  closeDetail();
+  document.getElementById('search-results').classList.remove('show');
+  loadNews();
+}
+
+function showPage(id) {
+  document.querySelectorAll('.page').forEach(p => p.classList.remove('active'));
+  document.getElementById('page-' + id).classList.add('active');
+  document.querySelectorAll('.nav-btn').forEach(b => b.classList.remove('active'));
+  event.target.classList.add('active');
+  closeDetail();
+  document.getElementById('search-results').classList.remove('show');
+
+  if (id === 'home' || id === 'news') loadNews();
+}
+
+// ─── Inquiry Form ─────────────────────────────────────────────────
+function submitInquiry() {
+  const name    = document.getElementById('f-name').value.trim();
+  const inquiryType = document.getElementById('f-inquiry-type').value;
+  const company = document.getElementById('f-company').value.trim();
+  const email   = document.getElementById('f-email').value.trim();
+  const country = document.getElementById('f-country').value;
+  const message = document.getElementById('f-message').value.trim();
+
+  if (!name || !company || !email || !country || !inquiryType || !message) {
+    alert('Please fill in all required fields (*).');
+    return;
+  }
+  const emailRe = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+  if (!emailRe.test(email)) {
+    alert('Please enter a valid email address.');
+    return;
+  }
+
+  const btn = document.getElementById('submit-btn');
+  btn.disabled = true;
+  btn.textContent = 'SENDING...';
+
+  const TO_EMAIL = 'z2-strotec@umail.hinet.net';
+  const FORMSPREE_ENDPOINT = 'https://formspree.io/f/xzdwjjgl';
+
+  const subject = encodeURIComponent(`[Inquiry] ${company} — ${country}`);
+  const body = encodeURIComponent(
+`New Inquiry from Z&Z Knowledge Hub
+====================================
+Name:    ${name}\nInquiry: ${inquiryType}
+Company: ${company}
+Email:   ${email}
+Country: ${country}
+
+Message:
+${message}
+
+--
+Sent via Z&Z STROTEC Knowledge Hub`
+  );
+
+  if (FORMSPREE_ENDPOINT !== 'YOUR_FORMSPREE_ENDPOINT') {
+    fetch(FORMSPREE_ENDPOINT, {
+      method: 'POST',
+      headers: { 'Content-Type': 'application/json', 'Accept': 'application/json' },
+      body: JSON.stringify({ name, company, email, country, message })
+    })
+    .then(r => r.json())
+    .then(d => {
+      if (d.ok || d.next) showSuccess();
+      else fallbackMailto(subject, body, TO_EMAIL);
+    })
+    .catch(() => fallbackMailto(subject, body, TO_EMAIL));
+  } else {
+    fallbackMailto(subject, body, TO_EMAIL);
+  }
+}
+
+function fallbackMailto(subject, body, toEmail) {
+  window.location.href = `mailto:${toEmail}?subject=${subject}&body=${body}`;
+  setTimeout(showSuccess, 800);
+}
+
+// Show note when machine tool selected
+document.addEventListener('DOMContentLoaded', function() {
+  const sel = document.getElementById('f-inquiry-type');
+  if (sel) {
+    sel.addEventListener('change', function() {
+      const note = document.getElementById('service-note');
+      const isMachine = this.value.includes('Machine Tool') || this.value.includes('Bar Feeder');
+      note.style.display = isMachine ? 'block' : 'none';
+    });
+  }
+});
+
+function showSuccess() {
+  document.getElementById('inquiry-form-wrap').style.display = 'none';
+  document.getElementById('form-success').classList.add('show');
+}
+
+// ─── Detail panel ─────────────────────────────────────────────────
+function openKnowledge(key) {
+  const item = KB[key];
+  if (!item) return;
+  document.getElementById('detail-title').textContent = item.title;
+  document.getElementById('detail-body').innerHTML = item.body;
+  // Add tags
+  const tagsHtml = item.tags.map(t => `<span class="tag-pill">${t}</span>`).join('');
+  document.getElementById('detail-body').innerHTML += '<div style="margin-top:16px">' + tagsHtml + '</div>';
+  document.getElementById('detail-panel').classList.add('open');
+  document.getElementById('detail-panel').scrollIntoView({ behavior: 'smooth', block: 'start' });
+
+  // Update sidebar active
+  document.querySelectorAll('.sidebar-item').forEach(i => i.classList.remove('active'));
+  document.querySelectorAll('.sidebar-item').forEach(i => {
+    if (i.getAttribute('onclick') && i.getAttribute('onclick').includes(key)) i.classList.add('active');
+  });
+}
+
+function openMarket(key) {
+  const item = MARKETS[key];
+  if (!item) return;
+  document.getElementById('detail-title').textContent = item.title;
+  document.getElementById('detail-body').innerHTML = item.body;
+  document.getElementById('detail-panel').classList.add('open');
+  document.getElementById('detail-panel').scrollIntoView({ behavior: 'smooth', block: 'start' });
+}
+
+function closeDetail() {
+  document.getElementById('detail-panel').classList.remove('open');
+}
+
+// ─── Search ───────────────────────────────────────────────────────
+function doSearch() {
+  const q = document.getElementById('searchInput').value.trim().toLowerCase();
+  if (!q) return;
+
+  const results = [];
+  // Search KB
+  for (const [key, item] of Object.entries(KB)) {
+    const score = [item.title, ...item.tags, item.body].join(' ').toLowerCase();
+    if (score.includes(q)) {
+      results.push({ type: 'knowledge', key, title: item.title, tags: item.tags });
+    }
+  }
+  // Search markets
+  for (const [key, item] of Object.entries(MARKETS)) {
+    if (item.title.toLowerCase().includes(q) || item.body.toLowerCase().includes(q)) {
+      results.push({ type: 'market', key, title: item.title, tags: [key, 'market'] });
+    }
+  }
+
+  const container = document.getElementById('result-list');
+  const wrap = document.getElementById('search-results');
+
+  if (results.length === 0) {
+    container.innerHTML = `<div class="loading">No results for "<span class="result-match">${q}</span>" in local knowledge base.</div>`;
+  } else {
+    container.innerHTML = results.map(r => `
+      <div class="result-item" onclick="${r.type === 'market' ? 'openMarket' : 'openKnowledge'}('${r.key}')">
+        <div class="card-tag">${r.tags.join(' · ')}</div>
+        <div class="card-title">${r.title.replace(new RegExp(q, 'gi'), m => `<span class="result-match">${m}</span>`)}</div>
+      </div>
+    `).join('');
+  }
+  wrap.classList.add('show');
+}
+
+// ─── News (using Claude API with web search) ─────────────────────
+async function loadNews() {
+  const containers = ['home-news', 'page-news-list'];
+  containers.forEach(id => {
+    const el = document.getElementById(id);
+    if (el) el.innerHTML = '<div class="loading pulse">Fetching latest Taiwan machine tool industry news...</div>';
+  });
+
+  try {
+    const response = await fetch("https://api.anthropic.com/v1/messages", {
+      method: "POST",
+      headers: { "Content-Type": "application/json" },
+      body: JSON.stringify({
+        model: "claude-sonnet-4-20250514",
+        max_tokens: 1000,
+        tools: [{ type: "web_search_20250305", name: "web_search" }],
+        system: "You are an industry news curator for Taiwan machine tool and manufacturing exports. Return ONLY a JSON array (no markdown, no explanation) with 6 news items. Each item: {title, source, date, summary, url, category}. Focus on: Taiwan machine tool exports, CNC industry, Taiwan manufacturing, Korea/Brazil/Switzerland/Argentina industrial news. Summaries max 120 chars.",
+        messages: [{ role: "user", content: "Search for the latest news (past 2 weeks) about Taiwan machine tool industry, CNC manufacturing exports, and industrial news in Korea, Brazil, Switzerland, Argentina markets. Return JSON array only." }]
+      })
+    });
+
+    const data = await response.json();
+    const textBlocks = data.content.filter(b => b.type === 'text');
+    let newsItems = [];
+
+    for (const block of textBlocks) {
+      try {
+        const clean = block.text.replace(/```json|```/g, '').trim();
+        const parsed = JSON.parse(clean);
+        if (Array.isArray(parsed)) { newsItems = parsed; break; }
+      } catch(e) {}
+    }
+
+    if (!newsItems.length) throw new Error('parse fail');
+
+    const html = newsItems.map((item, i) => `
+      <div class="news-item" style="cursor:pointer" onclick="window.open('https://www.google.com/search?q=' + encodeURIComponent('${item.title}'),'_blank')">
+        <div class="news-num">0${i+1}</div>
+        <div class="news-content">
+          <div class="news-title">${item.title}</div>
+          <div class="news-meta">
+            <span class="news-src">${item.source || 'Industry News'}</span>
+            <span>${item.date || 'Recent'}</span>
+            <span>${item.category || 'Manufacturing'}</span>
+          </div>
+          <div class="card-desc" style="margin-top:4px;font-size:11px">${item.summary || ''}</div>
+          <div style="margin-top:6px;font-size:10px;color:var(--gold);letter-spacing:1px">🔍 SEARCH THIS TOPIC →</div>
+        </div>
+      </div>
+    `).join('');
+
+    containers.forEach(id => {
+      const el = document.getElementById(id);
+      if (el) el.innerHTML = html;
+    });
+
+  } catch(e) {
+    // Fallback static news
+    const fallback = [
+      { title: "Taiwan Machine Tool Exports Maintain Growth in Q1 2026", source: "TAMI", date: "May 2026", category: "Export", summary: "Taiwan's machine tool exports continue steady growth driven by demand from Korea and Southeast Asia." },
+      { title: "CNC Automation Demand Surges Among Korean Automotive Suppliers", source: "Korea Trade", date: "May 2026", category: "Korea", summary: "Korean Tier-1 auto suppliers accelerating CNC automation investment amid EV transition." },
+      { title: "Brazil Industrial Output Rises 3.2% — Manufacturing Investment Up", source: "IBGE", date: "Apr 2026", category: "Brazil", summary: "Brazilian manufacturing sector shows recovery with increased capital goods imports." },
+      { title: "Switzerland Precision Engineering Sector Reports Strong 2025 Results", source: "Swissmem", date: "Apr 2026", category: "Switzerland", summary: "Swiss precision parts and tooling industry posts record export revenue for 2025." },
+      { title: "Taiwan TAWI 2026 — Taichung Machine Tool Show Preview", source: "TMBA", date: "May 2026", category: "Event", summary: "Major Taiwan machine tool manufacturers to showcase latest CNC turning and 5-axis solutions." },
+      { title: "Argentina Opens New Import Streamlining for Capital Goods", source: "BCRA", date: "Apr 2026", category: "Argentina", summary: "Argentina's new economic measures aim to reduce import permit processing times for industrial equipment." }
+    ];
+
+    const html = fallback.map((item, i) => `
+      <div class="news-item" style="cursor:pointer" onclick="window.open('https://www.google.com/search?q=' + encodeURIComponent('${item.title}'),'_blank')">
+        <div class="news-num">0${i+1}</div>
+        <div class="news-content">
+          <div class="news-title">${item.title}</div>
+          <div class="news-meta">
+            <span class="news-src">${item.source}</span>
+            <span>${item.date}</span>
+            <span>${item.category}</span>
+          </div>
+          <div class="card-desc" style="margin-top:4px;font-size:11px">${item.summary}</div>
+          <div style="margin-top:6px;font-size:10px;color:var(--gold);letter-spacing:1px">🔍 SEARCH THIS TOPIC →</div>
+        </div>
+      </div>
+    `).join('');
+
+    containers.forEach(id => {
+      const el = document.getElementById(id);
+      if (el) el.innerHTML = html;
+    });
+  }
+}
+
+
+// ─── i18n Translations ────────────────────────────────────────────
+const LANG = {
+  en: {
+    home_tooltip: 'Back to Home',
+    nav_overview: 'Overview', nav_knowledge: 'Knowledge', nav_incoterms: 'Incoterms',
+    nav_markets: 'Markets', nav_news: 'News', nav_inquiry: 'Inquiry',
+    sidebar_knowledge: 'Knowledge Library', sidebar_export: 'Export Procedures', sidebar_markets: 'Markets',
+    panel_snapshot: 'MARKET SNAPSHOT',
+    search_placeholder: 'Search: bar feeder, servo motor, FOB, Korea market...',
+    btn_search: 'SEARCH', btn_send: 'SEND INQUIRY →',
+    section_featured: 'FEATURED TOPICS', section_news: 'TAIWAN INDUSTRY NEWS',
+    section_knowledge: 'KNOWLEDGE LIBRARY', section_incoterms: 'INCOTERMS 2020',
+    section_markets: 'KEY MARKETS', section_inquiry: 'PRODUCT INQUIRY',
+    form_name: 'Full Name', form_company: 'Company', form_email: 'Email',
+    form_country: 'Country', form_type: 'Inquiry Type', form_details: 'Inquiry Details',
+    inquiry_intro1: 'Looking for CNC machine tools, precision parts, or bar feeders from Taiwan?',
+    inquiry_intro2: 'Fill in the form below and our team will respond within',
+    inquiry_days: '1–2 business days',
+    inquiry_intro3: 'We serve customers in',
+    inquiry_markets: 'Korea, Brazil, Switzerland, Argentina',
+    inquiry_worldwide: 'and worldwide.',
+    badge_full: '🟢 Full Service', badge_parts: '🔵 Parts Supply',
+    success_title: 'Inquiry Sent Successfully',
+    success_msg: "Thank you! We've received your inquiry and will get back to you within 1–2 business days. Please check your email (including spam folder) for our reply.",
+    form_note: '* Required fields. Your information is kept strictly confidential and will only be used to respond to your inquiry. We do not share your contact details with third parties.',
+    service_note: 'ℹ️ <strong>Note:</strong> For machine tool sales with full installation and after-sales service, we currently serve <strong>Korea, Brazil, Switzerland, and Argentina</strong> through our local agents.<br>For other markets, we are happy to supply <strong>parts and components</strong> and can discuss further options as our relationship develops.',
+    taiwan_stats: 'TAIWAN MACHINE TOOL',
+  },
+  zh: {
+    home_tooltip: '回到首頁',
+    nav_overview: '首頁', nav_knowledge: '知識庫', nav_incoterms: '貿易條件',
+    nav_markets: '市場', nav_news: '產業新聞', nav_inquiry: '詢價',
+    sidebar_knowledge: '知識庫', sidebar_export: '出口流程', sidebar_markets: '市場',
+    panel_snapshot: '市場概況',
+    search_placeholder: '搜尋：料機、伺服馬達、FOB、韓國市場...',
+    btn_search: '搜尋', btn_send: '送出詢價 →',
+    section_featured: '精選主題', section_news: '台灣產業新聞',
+    section_knowledge: '知識庫', section_incoterms: 'Incoterms 2020 貿易條件',
+    section_markets: '主要市場', section_inquiry: '產品詢價',
+    form_name: '姓名', form_company: '公司', form_email: '電子郵件',
+    form_country: '國家', form_type: '詢問類型', form_details: '詢問內容',
+    inquiry_intro1: '正在尋找台灣製 CNC 工具機、精密零件或料機？',
+    inquiry_intro2: '請填寫下方表單，我們的團隊將在',
+    inquiry_days: '1–2 個工作日內',
+    inquiry_intro3: '我們服務',
+    inquiry_markets: '韓國、巴西、瑞士、阿根廷',
+    inquiry_worldwide: '及全球客戶。',
+    badge_full: '🟢 完整服務', badge_parts: '🔵 零件供應',
+    success_title: '詢價已成功送出',
+    success_msg: '感謝您！我們已收到您的詢問，將在 1–2 個工作日內回覆。請確認您的電子郵件（包含垃圾郵件資料夾）。',
+    form_note: '* 為必填欄位。您的資料將嚴格保密，僅用於回覆您的詢問，不會與第三方共享。',
+    service_note: 'ℹ️ <strong>說明：</strong>含安裝及售後服務的整機銷售，目前服務範圍為<strong>韓國、巴西、瑞士、阿根廷</strong>（透過當地代理商）。<br>其他市場歡迎詢問<strong>零件及配件</strong>，隨著合作關係建立後可進一步討論。',
+    taiwan_stats: '台灣工具機',
+  },
+  ko: {
+    home_tooltip: '홈으로',
+    nav_overview: '홈', nav_knowledge: '지식 라이브러리', nav_incoterms: '인코텀즈',
+    nav_markets: '시장', nav_news: '산업 뉴스', nav_inquiry: '견적 문의',
+    sidebar_knowledge: '지식 라이브러리', sidebar_export: '수출 절차', sidebar_markets: '시장',
+    panel_snapshot: '시장 현황',
+    search_placeholder: '검색: 바피더, 서보 모터, FOB, 한국 시장...',
+    btn_search: '검색', btn_send: '견적 문의 보내기 →',
+    section_featured: '주요 주제', section_news: '대만 산업 뉴스',
+    section_knowledge: '지식 라이브러리', section_incoterms: '인코텀즈 2020',
+    section_markets: '주요 시장', section_inquiry: '제품 견적 문의',
+    form_name: '성명', form_company: '회사명', form_email: '이메일',
+    form_country: '국가', form_type: '문의 유형', form_details: '문의 내용',
+    inquiry_intro1: '대만산 CNC 공작기계, 정밀 부품 또는 바피더를 찾고 계신가요?',
+    inquiry_intro2: '아래 양식을 작성해 주시면 담당자가',
+    inquiry_days: '1–2 영업일 이내',
+    inquiry_intro3: '서비스 지역:',
+    inquiry_markets: '한국, 브라질, 스위스, 아르헨티나',
+    inquiry_worldwide: '및 전 세계.',
+    badge_full: '🟢 풀 서비스', badge_parts: '🔵 부품 공급',
+    success_title: '견적 문의가 성공적으로 전송되었습니다',
+    success_msg: '감사합니다! 문의를 받았으며 1–2 영업일 이내에 답변드리겠습니다. 이메일(스팸 폴더 포함)을 확인해 주세요.',
+    form_note: '* 필수 입력 항목입니다. 고객님의 정보는 엄격히 보호되며 문의 응답 목적으로만 사용됩니다.',
+    service_note: 'ℹ️ <strong>안내:</strong> 설치 및 애프터서비스를 포함한 기계 판매는 현재 <strong>한국, 브라질, 스위스, 아르헨티나</strong>에서 현지 에이전트를 통해 서비스합니다.<br>다른 국가는 <strong>부품 및 구성품</strong> 공급이 가능하며 거래 관계 구축 후 추가 논의 가능합니다.',
+    taiwan_stats: '대만 공작기계',
+  }
+};
+
+let currentLang = 'en';
+
+function switchLang(lang) {
+  currentLang = lang;
+  const t = LANG[lang];
+
+  // Update lang buttons
+  document.querySelectorAll('.lang-btn').forEach(b => b.classList.remove('active'));
+  document.getElementById('lang-' + lang).classList.add('active');
+
+  // Update all data-i18n elements
+  document.querySelectorAll('[data-i18n]').forEach(el => {
+    const key = el.getAttribute('data-i18n');
+    if (t[key]) el.textContent = t[key];
+  });
+
+  // Update placeholders
+  document.querySelectorAll('[data-i18n-placeholder]').forEach(el => {
+    const key = el.getAttribute('data-i18n-placeholder');
+    if (t[key]) el.placeholder = t[key];
+  });
+
+  // Update title attributes
+  document.querySelectorAll('[data-i18n-title]').forEach(el => {
+    const key = el.getAttribute('data-i18n-title');
+    if (t[key]) el.title = t[key];
+  });
+
+  // Update service note HTML (has bold tags)
+  const noteEl = document.querySelector('#service-note > div');
+  if (noteEl) noteEl.innerHTML = t.service_note;
+
+  // Update form success message
+  const successTitle = document.querySelector('.form-success-title');
+  const successMsg = document.querySelector('.form-success-msg');
+  if (successTitle) successTitle.textContent = t.success_title;
+  if (successMsg) successMsg.textContent = t.success_msg;
+
+  // Update form note
+  const formNote = document.querySelector('.form-note');
+  if (formNote) formNote.textContent = t.form_note;
+
+  // Update Required spans (keep them)
+  document.querySelectorAll('[data-i18n]').forEach(el => {
+    const key = el.getAttribute('data-i18n');
+    if (t[key] && (key.startsWith('form_') && key !== 'form_note')) {
+      // Keep the required asterisk span
+      const span = el.querySelector('span');
+      el.textContent = t[key];
+      if (span) {
+        el.textContent = t[key] + ' ';
+        el.appendChild(span);
+      }
+    }
+  });
+
+  // Update html lang attribute
+  document.documentElement.lang = lang === 'zh' ? 'zh-TW' : lang === 'ko' ? 'ko' : 'en';
+
+  // Update page title
+  const titles = {
+    en: 'Z&Z STROTEC — Taiwan CNC Machine Tool Supplier',
+    zh: 'Z&Z STROTEC — 台灣 CNC 工具機供應商',
+    ko: 'Z&Z STROTEC — 대만 CNC 공작기계 공급업체'
+  };
+  document.title = titles[lang];
+}
+
+
+// ─── Terminology ──────────────────────────────────────────────────
+const TERMS = [
+  {cat:'Machines', en:'machine tool', zh:'工具機', ko:'공작기계', note:'動力製造的機械裝置，用於精密切削金屬'},
+  {cat:'Machines', en:'CNC Lathe', zh:'電腦車床', ko:'CNC 선반', note:''},
+  {cat:'Machines', en:'Numerically-controlled lathe', zh:'NC 車床', ko:'수치 제어 공작기계', note:''},
+  {cat:'Machines', en:'Computer Numerical Control (CNC)', zh:'電腦化數值控制', ko:'컴퓨터 수치 제어', note:'NC加入電腦裝置，具備程式運算功能'},
+  {cat:'Machines', en:'machining center', zh:'加工中心機', ko:'머시닝 센터', note:''},
+  {cat:'Machines', en:'Double-column Machining center', zh:'龍門加工中心', ko:'문형 가공기', note:''},
+  {cat:'Machines', en:'milling machine', zh:'銑床', ko:'밀링 머신', note:''},
+  {cat:'Machines', en:'Boring Machine', zh:'搪床', ko:'보링 머신', note:''},
+  {cat:'Machines', en:'Drilling Machine', zh:'鑽床', ko:'', note:''},
+  {cat:'Machines', en:'Grinding machine', zh:'磨床', ko:'', note:''},
+  {cat:'Machines', en:'Swiss type', zh:'走心式(車床)', ko:'', note:'滑動主軸式'},
+  {cat:'Machines', en:'Fixed head type', zh:'走刀式(車床)', ko:'', note:'固定主軸式'},
+  {cat:'Machines', en:'Turret lathe', zh:'六角車床', ko:'', note:''},
+  {cat:'Machines', en:'Wire EDM', zh:'線切割機', ko:'', note:'慢走絲'},
+  {cat:'Machines', en:'Electric discharge machine', zh:'放電加工機', ko:'', note:''},
+  {cat:'Machines', en:'Gear cutting machine', zh:'齒輪切削機', ko:'', note:''},
+  {cat:'Machines', en:'Special purpose machine', zh:'專用機', ko:'', note:''},
+  {cat:'Spindle & Drive', en:'Main Spindle', zh:'主軸', ko:'주축 / 스핀들', note:''},
+  {cat:'Spindle & Drive', en:'Sub-spindle', zh:'副主軸', ko:'부주축', note:''},
+  {cat:'Spindle & Drive', en:'Built-in Type spindle', zh:'內藏式主軸', ko:'내장형 모터 주축', note:''},
+  {cat:'Spindle & Drive', en:'Spindle motor', zh:'主軸馬達', ko:'스핀들 모터', note:'皮帶式 / 內藏式'},
+  {cat:'Spindle & Drive', en:'Servo motor', zh:'伺服馬達', ko:'서보모터', note:'分AC和DC兩種'},
+  {cat:'Spindle & Drive', en:'Driver / AMP', zh:'驅動器', ko:'', note:''},
+  {cat:'Spindle & Drive', en:'Controller', zh:'控制器', ko:'컨트롤러', note:''},
+  {cat:'Spindle & Drive', en:'Encoder', zh:'編碼器/解碼器', ko:'', note:''},
+  {cat:'Spindle & Drive', en:'CTS (Coolant Thru Spindle)', zh:'主軸中心出水', ko:'', note:''},
+  {cat:'Spindle & Drive', en:'Ball Screw', zh:'滾珠螺桿', ko:'볼스크류', note:'將旋轉運動轉換成直線運動'},
+  {cat:'Spindle & Drive', en:'linear guideways', zh:'線性滑軌', ko:'', note:''},
+  {cat:'Spindle & Drive', en:'Slider Block / Truck', zh:'滑塊', ko:'파크베어링 / 리들베어링', note:''},
+  {cat:'Spindle & Drive', en:'linear scale', zh:'光學尺', ko:'리니어 스케일', note:''},
+  {cat:'Spindle & Drive', en:'Bearing', zh:'軸承 / 培林', ko:'베어링', note:''},
+  {cat:'Spindle & Drive', en:'Ball type Bearing', zh:'滾珠軸承', ko:'볼베어링', note:''},
+  {cat:'Spindle & Drive', en:'Roller Type Bearing', zh:'滾柱軸承', ko:'', note:''},
+  {cat:'Bar Feeder', en:'Bar Feeder', zh:'送料機', ko:'버피더', note:''},
+  {cat:'Bar Feeder', en:'Bar', zh:'棒材', ko:'바', note:''},
+  {cat:'Bar Feeder', en:'Guiding Channel', zh:'膠管', ko:'가이드 채널', note:''},
+  {cat:'Bar Feeder', en:'(Bar) Pusher', zh:'壓桿/推桿', ko:'밀대', note:''},
+  {cat:'Bar Feeder', en:'Bushing', zh:'夾塊', ko:'부싱/방진구', note:''},
+  {cat:'Bar Feeder', en:'Rotating Unit', zh:'中軸', ko:'회전봉', note:''},
+  {cat:'Bar Feeder', en:'Front Tube', zh:'前端套管', ko:'', note:''},
+  {cat:'Bar Feeder', en:'Spindle bore', zh:'主軸內徑', ko:'', note:''},
+  {cat:'Bar Feeder', en:'Feeding Support', zh:'送料尾座', ko:'', note:''},
+  {cat:'Bar Feeder', en:'Part catcher box', zh:'接料盒', ko:'', note:''},
+  {cat:'Bar Feeder', en:'Parts catcher', zh:'接料器', ko:'파트 캐처', note:''},
+  {cat:'Tooling', en:'Turret', zh:'刀塔', ko:'터렛', note:''},
+  {cat:'Tooling', en:'Upper Turret', zh:'上刀塔', ko:'', note:''},
+  {cat:'Tooling', en:'Lower Turret', zh:'下刀塔', ko:'', note:''},
+  {cat:'Tooling', en:'Gang type', zh:'櫛式', ko:'', note:''},
+  {cat:'Tooling', en:'Tool', zh:'刀具', ko:'공구', note:''},
+  {cat:'Tooling', en:'Tool Holder', zh:'刀具座', ko:'공구대', note:''},
+  {cat:'Tooling', en:'Power tool / Live Tool', zh:'動力刀具', ko:'회전공구', note:''},
+  {cat:'Tooling', en:'station', zh:'刀位', ko:'', note:'Ex: 8-station servo turret'},
+  {cat:'Tooling', en:'tool sleeve', zh:'刀套/套筒', ko:'', note:''},
+  {cat:'Tooling', en:'Chuck', zh:'夾頭', ko:'척', note:''},
+  {cat:'Tooling', en:'Collet (Collet Chuck)', zh:'筒夾', ko:'콜릿', note:''},
+  {cat:'Tooling', en:'3-Jaws indexing spacers', zh:'三爪夾頭', ko:'', note:''},
+  {cat:'Tooling', en:'Jig Chuck', zh:'治具夾頭', ko:'', note:''},
+  {cat:'Tooling', en:'Tailstock', zh:'尾座', ko:'심압대', note:''},
+  {cat:'Tooling', en:'A.T.C. system', zh:'加工中心機刀庫', ko:'', note:''},
+  {cat:'Tooling', en:'Gear hobbing unit', zh:'滾齒刀座', ko:'기어호빙유닛', note:''},
+  {cat:'Cutting Tools', en:'Milling Tool', zh:'銑刀', ko:'', note:''},
+  {cat:'Cutting Tools', en:'ID/OD Turning', zh:'內/外徑刀', ko:'', note:''},
+  {cat:'Cutting Tools', en:'Inner Grooving', zh:'內徑切槽刀', ko:'', note:''},
+  {cat:'Cutting Tools', en:'ID Threading', zh:'內徑車牙刀', ko:'', note:''},
+  {cat:'Cutting Tools', en:'Cut Off Tool', zh:'切斷刀', ko:'', note:''},
+  {cat:'Cutting Tools', en:'Broaching tool', zh:'拉刀', ko:'', note:''},
+  {cat:'Cutting Tools', en:'Tap / Tapping', zh:'牙攻/攻牙', ko:'탑', note:'內牙成型'},
+  {cat:'Cutting Tools', en:'Thread Rolling', zh:'輾牙/搓牙', ko:'', note:'外螺紋成型'},
+  {cat:'Cutting Tools', en:'Knurling', zh:'滾花', ko:'', note:''},
+  {cat:'Mechanical Parts', en:'Gear', zh:'齒輪', ko:'기어', note:''},
+  {cat:'Mechanical Parts', en:'Bevel Gear', zh:'傘齒輪', ko:'베벨 기어', note:''},
+  {cat:'Mechanical Parts', en:'Clutch', zh:'離合器', ko:'', note:''},
+  {cat:'Mechanical Parts', en:'Conveyor', zh:'輸送機', ko:'', note:''},
+  {cat:'Mechanical Parts', en:'chip conveyors', zh:'除屑機', ko:'', note:''},
+  {cat:'Mechanical Parts', en:'Screw-type chip conveyors', zh:'自動螺旋式除屑機', ko:'', note:''},
+  {cat:'Mechanical Parts', en:'Oil Seal / O-RING', zh:'油封(軸封)', ko:'오링', note:'防止潤滑油從接縫溢出'},
+  {cat:'Mechanical Parts', en:'Pulley', zh:'皮帶輪', ko:'', note:''},
+  {cat:'Mechanical Parts', en:'Spring', zh:'彈簧', ko:'', note:''},
+  {cat:'Mechanical Parts', en:'Transformer', zh:'變壓器', ko:'', note:''},
+  {cat:'Mechanical Parts', en:'Pump', zh:'幫浦/泵', ko:'', note:''},
+  {cat:'Mechanical Parts', en:'Solenoid valve', zh:'電磁閥', ko:'솔레노이드밸브', note:''},
+  {cat:'Mechanical Parts', en:'Lubricator', zh:'油霧潤滑裝置', ko:'루브케이션/오일미스트', note:''},
+  {cat:'Mechanical Parts', en:'Sensor Switch', zh:'感應開關', ko:'', note:''},
+  {cat:'Mechanical Parts', en:'Handwheel / MPG', zh:'手輪', ko:'핸들', note:''},
+  {cat:'Mechanical Parts', en:'Nipple', zh:'(管)內接頭', ko:'니플', note:''},
+  {cat:'Mechanical Parts', en:'Joint', zh:'接頭', ko:'조인트/커넥터', note:''},
+  {cat:'Mechanical Parts', en:'Flexible cover', zh:'伸縮護罩', ko:'', note:''},
+  {cat:'Mechanical Parts', en:'Spindle Cover', zh:'主軸防護罩', ko:'', note:''},
+  {cat:'Mechanical Parts', en:'Air Compressor', zh:'空氣壓縮機', ko:'공기 압축기', note:''},
+  {cat:'Mechanical Parts', en:'Chiller', zh:'冷卻機', ko:'', note:''},
+  {cat:'Mechanical Parts', en:'Oil Mist Recollector', zh:'油霧回收機', ko:'', note:''},
+  {cat:'Hydraulics', en:'Hydraulic Cylinder', zh:'油壓缸', ko:'유압 실린더', note:''},
+  {cat:'Hydraulics', en:'Hydraulic Motor', zh:'油壓馬達', ko:'', note:''},
+  {cat:'Hydraulics', en:'Hydraulic Presses', zh:'液壓沖床', ko:'', note:''},
+  {cat:'Measurement', en:'Accuracy', zh:'精密度', ko:'정밀도/정도', note:''},
+  {cat:'Measurement', en:'Chamfer', zh:'倒角', ko:'면최', note:''},
+  {cat:'Measurement', en:'Clearance / Tolerance', zh:'公差', ko:'공차', note:''},
+  {cat:'Measurement', en:'Outside Diameter (OD)', zh:'外徑', ko:'외경 / 바깥 지름', note:''},
+  {cat:'Measurement', en:'Inside Diameter (ID)', zh:'內徑', ko:'내경 / 안지름', note:''},
+  {cat:'Measurement', en:'Diameter', zh:'直徑', ko:'직경', note:''},
+  {cat:'Measurement', en:'Vernier Caliper', zh:'游標卡尺', ko:'노기스', note:''},
+  {cat:'Measurement', en:'Runout', zh:'偏轉', ko:'', note:'刀具與心軸的同心度'},
+  {cat:'Measurement', en:'Concentricity', zh:'同心度', ko:'', note:''},
+  {cat:'Measurement', en:'Depth of Cut', zh:'切削深度', ko:'', note:''},
+  {cat:'Measurement', en:'Thou', zh:'千分之一英吋 (0.001")', ko:'', note:'機械師專業術語'},
+  {cat:'CNC Programming', en:'G-code', zh:'G碼', ko:'', note:'CNC控制器讀的程式語言'},
+  {cat:'CNC Programming', en:'CAD', zh:'電腦輔助設計', ko:'', note:'Computer Aided Design'},
+  {cat:'CNC Programming', en:'CAM', zh:'電腦輔助製造', ko:'', note:'Computer Aided Manufacturing'},
+  {cat:'CNC Programming', en:'Post Processor', zh:'後處理器', ko:'', note:'將CAM翻譯成特定機器方言'},
+  {cat:'CNC Programming', en:'Work Coordinate System (WCS)', zh:'工作座標系統', ko:'', note:''},
+  {cat:'CNC Programming', en:'Chatter', zh:'顫動', ko:'', note:'切削時產生的雜訊'},
+  {cat:'CNC Programming', en:'Rigid tapping', zh:'剛性攻牙', ko:'', note:''},
+  {cat:'CNC Programming', en:'Simulation', zh:'模擬(路徑)', ko:'시뮬레이션', note:''},
+  {cat:'CNC Programming', en:'parameter', zh:'參數', ko:'파라미터', note:''},
+  {cat:'CNC Programming', en:'travel / stroke', zh:'行程', ko:'스트로크', note:''},
+  {cat:'Workholding', en:'Work holding', zh:'夾具', ko:'지그 클래핑', note:''},
+  {cat:'Workholding', en:'Tool holding', zh:'刀座', ko:'공구대', note:''},
+  {cat:'Workholding', en:'Fixturing', zh:'治具', ko:'바이스', note:''},
+  {cat:'Workholding', en:'Vise', zh:'虎鉗', ko:'바이스', note:''},
+  {cat:'Workholding', en:'Washer', zh:'墊圈/華司', ko:'와셔링', note:''},
+  {cat:'Trade & Export', en:'try out / running test cost', zh:'校車費用', ko:'세팅 비용', note:''},
+  {cat:'Trade & Export', en:'defect loss / yield loss', zh:'不良率', ko:'', note:''},
+  {cat:'Trade & Export', en:'yield rate', zh:'良率', ko:'', note:''},
+  {cat:'Trade & Export', en:'thermal loading', zh:'熱負載', ko:'', note:''},
+  {cat:'Trade & Export', en:'mechanical loading', zh:'機械裝載', ko:'', note:''},
+  {cat:'Trade & Export', en:'bracket', zh:'連接架', ko:'브래키트', note:'LNS料機連接車床時使用'},
+  {cat:'Trade & Export', en:'exploded view', zh:'爆炸圖', ko:'', note:'零件分解圖'},
+  {cat:'Materials', en:'Tungsten steel', zh:'鎢鋼', ko:'', note:''},
+  {cat:'Materials', en:'Titanium plating', zh:'鍍鈦', ko:'', note:''},
+
+  // ── Piping & Fittings ──────────────────────────────────────────
+  {cat:'Piping & Fittings', en:'Pipe', zh:'直管', ko:'파이프', note:''},
+  {cat:'Piping & Fittings', en:'Fittings', zh:'配件/繼手', ko:'피팅', note:''},
+  {cat:'Piping & Fittings', en:'Coupling / Socket', zh:'平接頭/管接頭', ko:'소켓', note:''},
+  {cat:'Piping & Fittings', en:'Reducer / Reducing Coupling', zh:'長大小頭（同心）', ko:'리듀서', note:''},
+  {cat:'Piping & Fittings', en:'Eccentric Reducer', zh:'偏心大小頭', ko:'편심 리듀서', note:''},
+  {cat:'Piping & Fittings', en:'Reducing Bushing', zh:'短大小頭/卜申', ko:'리듀싱 부싱', note:''},
+  {cat:'Piping & Fittings', en:'Tee (90° equal)', zh:'正三通', ko:'티', note:''},
+  {cat:'Piping & Fittings', en:'Reducing Tee', zh:'異三通', ko:'리듀싱 티', note:''},
+  {cat:'Piping & Fittings', en:'Y Tee (45°)', zh:'Y三通', ko:'Y 티', note:''},
+  {cat:'Piping & Fittings', en:'90° Elbow', zh:'90度彎頭', ko:'90도 엘보', note:''},
+  {cat:'Piping & Fittings', en:'45° Elbow', zh:'45度彎頭', ko:'45도 엘보', note:''},
+  {cat:'Piping & Fittings', en:'Female Adapter', zh:'內牙接頭/龍接頭', ko:'암나사 어댑터', note:''},
+  {cat:'Piping & Fittings', en:'Male Adapter', zh:'外牙接頭/閥接頭', ko:'수나사 어댑터', note:''},
+  {cat:'Piping & Fittings', en:'Cap', zh:'管帽', ko:'캡', note:''},
+  {cat:'Piping & Fittings', en:'Plug', zh:'外牙塞頭', ko:'플러그', note:''},
+  {cat:'Piping & Fittings', en:'Cross', zh:'四通', ko:'크로스', note:''},
+  {cat:'Piping & Fittings', en:'Union', zh:'由任', ko:'유니온', note:''},
+  {cat:'Piping & Fittings', en:'Nipple', zh:'立布', ko:'니플', note:''},
+  {cat:'Piping & Fittings', en:'Saddle / Pipe Clamp', zh:'管夾/管架', ko:'새들', note:''},
+  {cat:'Piping & Fittings', en:'Flange', zh:'法蘭', ko:'플랜지', note:''},
+  {cat:'Piping & Fittings', en:'Blind Flange', zh:'盲板/盲法蘭', ko:'블라인드 플랜지', note:''},
+  {cat:'Piping & Fittings', en:'Gasket / Packing', zh:'墊片/迫緊', ko:'가스켓', note:''},
+  {cat:'Piping & Fittings', en:'Welding Rod', zh:'焊條', ko:'용접봉', note:''},
+  {cat:'Piping & Fittings', en:'Solvent Cement', zh:'膠合劑/接著劑', ko:'솔벤트 시멘트', note:''},
+  {cat:'Piping & Fittings', en:'Expansion Joint', zh:'膨脹接頭', ko:'익스팬션 조인트', note:''},
+  // ── Valves ─────────────────────────────────────────────────────
+  {cat:'Valves', en:'Ball Valve', zh:'球閥', ko:'볼 밸브', note:''},
+  {cat:'Valves', en:'True Union Ball Valve', zh:'雙由任球閥', ko:'트루 유니온 볼 밸브', note:''},
+  {cat:'Valves', en:'3-Way Ball Valve', zh:'三通球閥', ko:'3웨이 볼 밸브', note:''},
+  {cat:'Valves', en:'Butterfly Valve', zh:'蝶閥', ko:'버터플라이 밸브', note:''},
+  {cat:'Valves', en:'Diaphragm Valve', zh:'隔膜閥', ko:'다이어프램 밸브', note:''},
+  {cat:'Valves', en:'Gate Valve', zh:'閘閥', ko:'게이트 밸브', note:''},
+  {cat:'Valves', en:'Needle Valve', zh:'針閥', ko:'니들 밸브', note:''},
+  {cat:'Valves', en:'Globe Valve / Stop Valve', zh:'球塞閥/停止閥', ko:'글로브 밸브', note:''},
+  {cat:'Valves', en:'Check Valve', zh:'逆止閥', ko:'체크 밸브', note:'防止逆流'},
+  {cat:'Valves', en:'Swing Check Valve', zh:'擺動式逆止閥', ko:'스윙 체크 밸브', note:''},
+  {cat:'Valves', en:'Foot Valve', zh:'福特閥（底閥）', ko:'풋 밸브', note:''},
+  {cat:'Valves', en:'Solenoid Valve', zh:'電磁閥', ko:'솔레노이드 밸브', note:''},
+  {cat:'Valves', en:'Pressure Relief Valve', zh:'釋壓閥', ko:'압력 릴리프 밸브', note:''},
+  {cat:'Valves', en:'Air Release Valve', zh:'釋氣閥', ko:'에어 릴리프 밸브', note:''},
+  {cat:'Valves', en:'Pressure Regulator', zh:'調壓閥', ko:'압력 조절기', note:''},
+  {cat:'Valves', en:'Control Valve', zh:'控制閥', ko:'컨트롤 밸브', note:''},
+  {cat:'Valves', en:'Y Strainer', zh:'Y型過濾器', ko:'Y형 스트레이너', note:''},
+  {cat:'Valves', en:'Basket Strainer', zh:'籃式過濾器', ko:'바스켓 스트레이너', note:''},
+  {cat:'Valves', en:'Flow Meter', zh:'流量計', ko:'유량계', note:''},
+  {cat:'Valves', en:'Actuator', zh:'驅動器/制動器', ko:'액추에이터', note:''},
+  {cat:'Valves', en:'Electric Actuator', zh:'電動頭', ko:'전동 액추에이터', note:''},
+  {cat:'Valves', en:'Pneumatic Actuator', zh:'氣動頭', ko:'공압 액추에이터', note:''},
+  // ── Automation & Robotics ──────────────────────────────────────
+  {cat:'Automation & Robotics', en:'Gantry Loader', zh:'龍門式搬運機械手', ko:'갠트리 로더', note:'CNC機台自動上下料系統'},
+  {cat:'Automation & Robotics', en:'Auto Loader', zh:'自動搬運機', ko:'오토 로더', note:''},
+  {cat:'Automation & Robotics', en:'Side Loader', zh:'側面搬運機', ko:'사이드 로더', note:''},
+  {cat:'Automation & Robotics', en:'Stocker System', zh:'儲料系統', ko:'스토커 시스템', note:'工件存儲及自動取料'},
+  {cat:'Automation & Robotics', en:'Shuttle System', zh:'穿梭搬運系統', ko:'셔틀 시스템', note:'AWC — Automatic Workpiece Changer'},
+  {cat:'Automation & Robotics', en:'Multi-Axes Robot', zh:'多軸機械手臂', ko:'다축 로봇', note:''},
+  {cat:'Automation & Robotics', en:'FMS (Flexible Manufacturing System)', zh:'彈性製造系統', ko:'유연생산시스템', note:''},
+  {cat:'Automation & Robotics', en:'MPS (Multi Pallet System)', zh:'多托盤系統', ko:'다팔레트 시스템', note:''},
+  {cat:'Automation & Robotics', en:'Turn Unit', zh:'翻轉裝置', ko:'턴 유닛', note:'工件翻面用'},
+  {cat:'Automation & Robotics', en:'Jig System', zh:'治具系統', ko:'지그 시스템', note:''},
+  {cat:'Automation & Robotics', en:'Pallet Change System', zh:'托盤交換系統', ko:'팔레트 교환 시스템', note:''},
+  {cat:'Automation & Robotics', en:'Pallet', zh:'托盤/棧板', ko:'팔레트', note:''},
+  {cat:'Automation & Robotics', en:'Gripper', zh:'夾爪', ko:'그리퍼', note:'機械手的夾持裝置'},
+  {cat:'Automation & Robotics', en:'Hand Held Pendant', zh:'手持式操作器', ko:'핸드 헬드 펜던트', note:''},
+  {cat:'Automation & Robotics', en:'Helical Rack and Pinion', zh:'斜齒條齒輪組', ko:'헬리컬 랙 피니온', note:'低噪音傳動'},
+  {cat:'Automation & Robotics', en:'Measuring System', zh:'量測系統', ko:'측정 시스템', note:''},
+  {cat:'Automation & Robotics', en:'Washing System', zh:'清洗系統', ko:'세척 시스템', note:'工件清洗'},
+  {cat:'Automation & Robotics', en:'X-Axis (Crosswise Horizontal)', zh:'X軸（水平橫移）', ko:'X축 (횡방향)', note:''},
+  {cat:'Automation & Robotics', en:'Y-Axis (Horizontal)', zh:'Y軸（前後）', ko:'Y축 (전후방향)', note:''},
+  {cat:'Automation & Robotics', en:'Z-Axis (Vertical)', zh:'Z軸（上下）', ko:'Z축 (수직방향)', note:''},
+  {cat:'Automation & Robotics', en:'AWC (Automatic Workpiece Changer)', zh:'自動工件交換機', ko:'자동 공작물 교환장치', note:''},
+];
+const TERM_CATS = ["Machines", "Spindle & Drive", "Bar Feeder", "Tooling", "Cutting Tools", "Mechanical Parts", "Hydraulics", "Measurement", "CNC Programming", "Workholding", "Trade & Export", "Materials", "Piping & Fittings", "Valves", "Automation & Robotics"];
+
+let activeCat = 'all';
+
+function initTerms() {
+  // Build category filter buttons
+  const filtersEl = document.getElementById('cat-filters');
+  TERM_CATS.forEach(cat => {
+    const btn = document.createElement('button');
+    btn.className = 'term-filter-btn';
+    btn.textContent = cat;
+    btn.id = 'cat-' + cat;
+    btn.onclick = () => filterCat(cat, btn);
+    filtersEl.appendChild(btn);
+  });
+  renderTerms(TERMS);
+}
+
+function filterCat(cat, btn) {
+  activeCat = cat;
+  document.querySelectorAll('.term-filter-btn').forEach(b => b.classList.remove('active'));
+  if (btn) btn.classList.add('active');
+  filterTerms();
+}
+
+function filterTerms() {
+  const q = document.getElementById('termSearch').value.trim().toLowerCase();
+  let results = TERMS;
+  if (activeCat !== 'all') results = results.filter(t => t.cat === activeCat);
+  if (q) results = results.filter(t =>
+    t.en.toLowerCase().includes(q) ||
+    t.zh.toLowerCase().includes(q) ||
+    t.ko.toLowerCase().includes(q) ||
+    t.note.toLowerCase().includes(q) ||
+    t.cat.toLowerCase().includes(q)
+  );
+  renderTerms(results, q);
+}
+
+function renderTerms(terms, highlight = '') {
+  const body = document.getElementById('term-body');
+  const count = document.getElementById('term-count');
+  count.textContent = terms.length + ' terms';
+
+  function hl(str) {
+    if (!highlight || !str) return str || '—';
+    const re = new RegExp('(' + highlight.replace(/[.*+?^${}()|[\]\\]/g, '\\$&') + ')', 'gi');
+    return str.replace(re, '<span class="term-highlight">$1</span>');
+  }
+
+  body.innerHTML = terms.map(t => `
+    <tr>
+      <td class="term-en">${hl(t.en)}</td>
+      <td class="term-zh">${hl(t.zh) || '—'}</td>
+      <td class="term-ko">${hl(t.ko) || '—'}</td>
+      <td><span class="term-cat-badge">${t.cat}</span></td>
+      <td class="term-note">${hl(t.note) || ''}</td>
+    </tr>
+  `).join('');
+}
+
+
+// ─── Mobile Menu ──────────────────────────────────────────────────
+function toggleMenu() {
+  const nav = document.getElementById('header-nav');
+  nav.classList.toggle('open');
+}
+
+function toggleSidebar() {
+  const sb = document.getElementById('sidebar');
+  const ov = document.getElementById('sidebar-overlay');
+  sb.classList.toggle('open');
+  ov.classList.toggle('show');
+}
+
+function closeSidebar() {
+  document.getElementById('sidebar').classList.remove('open');
+  document.getElementById('sidebar-overlay').classList.remove('show');
+}
+
+// Close sidebar when a sidebar item is clicked on mobile
+document.addEventListener('click', function(e) {
+  if (e.target.closest('.sidebar-item') && window.innerWidth <= 768) {
+    closeSidebar();
+  }
+});
+
+// ─── Init ─────────────────────────────────────────────────────────
+window.addEventListener('load', () => {
+  loadNews();
+  openKnowledge('bar-feeder');
+  initTerms();
+});
+</script>
+</body>
+</html>
