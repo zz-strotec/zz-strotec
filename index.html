@@ -989,64 +989,64 @@
     <div class="sidebar-section">
       <span class="sidebar-label" data-i18n="sidebar_knowledge">Knowledge Library</span>
       <div class="sidebar-item" onclick="openKnowledge('bar-feeder')">
-        <span class="icon">⚙️</span> Bar Feeder
+        <span class="icon">⚙️</span><span data-i18n="sb_bar_feeder"> Bar Feeder</span>
       </div>
       <div class="sidebar-item" onclick="openKnowledge('linear-guide')">
-        <span class="icon">📐</span> Linear Guide
+        <span class="icon">📐</span><span data-i18n="sb_linear_guide"> Linear Guide</span>
       </div>
       <div class="sidebar-item" onclick="openKnowledge('servo-motor')">
-        <span class="icon">🔌</span> Servo Motor
+        <span class="icon">🔌</span><span data-i18n="sb_servo_motor"> Servo Motor</span>
       </div>
       <div class="sidebar-item" onclick="openKnowledge('cnc-lathe')">
-        <span class="icon">🔩</span> CNC Lathe
+        <span class="icon">🔩</span><span data-i18n="sb_cnc_lathe"> CNC Lathe</span>
       </div>
       <div class="sidebar-item" onclick="openKnowledge('tool-holder')">
-        <span class="icon">🛠️</span> Tool Holder
+        <span class="icon">🛠️</span><span data-i18n="sb_tool_holder"> Tool Holder</span>
       </div>
       <div class="sidebar-item" onclick="openKnowledge('spindle')">
-        <span class="icon">🔄</span> Spindle
+        <span class="icon">🔄</span><span data-i18n="sb_spindle"> Spindle</span>
       </div>
       <div class="sidebar-item" onclick="openKnowledge('live-tool')">
-        <span class="icon">⚡</span> Live Tool Holders
+        <span class="icon">⚡</span><span data-i18n="sb_live_tool"> Live Tool Holders</span>
       </div>
       <div class="sidebar-item" onclick="openKnowledge('static-tool')">
-        <span class="icon">🔧</span> Static Tool Holders
+        <span class="icon">🔧</span><span data-i18n="sb_static_tool"> Static Tool Holders</span>
       </div>
       <div class="sidebar-item" onclick="openKnowledge('collet-chuck')">
-        <span class="icon">🎯</span> Collets & Chucks
+        <span class="icon">🎯</span><span data-i18n="sb_collet"> Collets &amp; Chucks</span>
       </div>
     </div>
 
     <div class="sidebar-section">
       <span class="sidebar-label" data-i18n="sidebar_export">Export Procedures</span>
       <div class="sidebar-item" onclick="openKnowledge('export-docs')">
-        <span class="icon">📄</span> Export Documents
+        <span class="icon">📄</span><span data-i18n="sb_export_docs"> Export Documents</span>
       </div>
       <div class="sidebar-item" onclick="openKnowledge('marine-insurance')">
-        <span class="icon">🛡️</span> Marine Insurance
+        <span class="icon">🛡️</span><span data-i18n="sb_marine"> Marine Insurance</span>
       </div>
       <div class="sidebar-item" onclick="openKnowledge('customs')">
-        <span class="icon">🏛️</span> Customs Clearance
+        <span class="icon">🏛️</span><span data-i18n="sb_customs"> Customs Clearance</span>
       </div>
       <div class="sidebar-item" onclick="openKnowledge('import-duty')">
-        <span class="icon">🏷️</span> Import Duty Reference
+        <span class="icon">🏷️</span><span data-i18n="sb_import_duty"> Import Duty Reference</span>
       </div>
     </div>
 
     <div class="sidebar-section">
-      <span class="sidebar-label">Industry</span>
-      <div class="sidebar-item" onclick="showPage('terms')"><span class="icon">🔤</span> Terminology 術語/용어</div>
+      <span class="sidebar-label" data-i18n="sidebar_industry">Industry</span>
+      <div class="sidebar-item" onclick="showPage('terms')"><span class="icon">🔤</span><span data-i18n="sb_terms"> Terminology 術語/용어</span></div>
       <div class="sidebar-item" onclick="openKnowledge('tw-brands')">
-        <span class="icon">🏭</span> Taiwan Manufacturers
+        <span class="icon">🏭</span><span data-i18n="sb_tw_brands"> Taiwan Manufacturers</span>
       </div>
       <div class="sidebar-item" onclick="openKnowledge('maintenance')">
-        <span class="icon">🔧</span> Maintenance Guide
+        <span class="icon">🔧</span><span data-i18n="sb_maintenance"> Maintenance Guide</span>
       </div>
       <div class="sidebar-item" onclick="openKnowledge('part-lifespan')">
-        <span class="icon">⏱️</span> Parts Lifespan
+        <span class="icon">⏱️</span><span data-i18n="sb_lifespan"> Parts Lifespan</span>
       </div>
       <div class="sidebar-item" onclick="openKnowledge('gcode')">
-        <span class="icon">💻</span> G-Code Reference
+        <span class="icon">💻</span><span data-i18n="sb_gcode"> G-Code Reference</span>
       </div>
     </div>
 
@@ -5133,7 +5133,14 @@ const LANG = {
     home_tooltip: 'Back to Home',
     nav_overview: 'Overview', nav_knowledge: 'Knowledge', nav_incoterms: 'Incoterms',
     nav_markets: 'Markets', nav_news: 'News', nav_inquiry: 'Inquiry',
-    sidebar_knowledge: 'Knowledge Library', sidebar_export: 'Export Procedures', sidebar_markets: 'Markets',
+    sidebar_knowledge: 'Knowledge Library', sidebar_export: 'Export Procedures', sidebar_markets: 'Markets', sidebar_industry: 'Industry',
+    sb_bar_feeder: ' Bar Feeder', sb_linear_guide: ' Linear Guide', sb_servo_motor: ' Servo Motor',
+    sb_cnc_lathe: ' CNC Lathe', sb_tool_holder: ' Tool Holder', sb_spindle: ' Spindle',
+    sb_live_tool: ' Live Tool Holders', sb_static_tool: ' Static Tool Holders', sb_collet: ' Collets & Chucks',
+    sb_export_docs: ' Export Documents', sb_marine: ' Marine Insurance', sb_customs: ' Customs Clearance',
+    sb_import_duty: ' Import Duty Reference', sb_terms: ' Terminology 術語/용어',
+    sb_tw_brands: ' Taiwan Manufacturers', sb_maintenance: ' Maintenance Guide',
+    sb_lifespan: ' Parts Lifespan', sb_gcode: ' G-Code Reference',
     panel_snapshot: 'MARKET SNAPSHOT',
     search_placeholder: 'Search: bar feeder, servo motor, FOB, Korea market...',
     btn_search: 'SEARCH', btn_send: 'SEND INQUIRY →',
@@ -5159,7 +5166,14 @@ const LANG = {
     home_tooltip: '回到首頁',
     nav_overview: '首頁', nav_knowledge: '知識庫', nav_incoterms: '貿易條件',
     nav_markets: '市場', nav_news: '產業新聞', nav_inquiry: '詢價',
-    sidebar_knowledge: '知識庫', sidebar_export: '出口流程', sidebar_markets: '市場',
+    sidebar_knowledge: '知識庫', sidebar_export: '出口流程', sidebar_markets: '市場', sidebar_industry: '產業',
+    sb_bar_feeder: ' 料機', sb_linear_guide: ' 線性滑軌', sb_servo_motor: ' 伺服馬達',
+    sb_cnc_lathe: ' CNC 車床', sb_tool_holder: ' 刀座', sb_spindle: ' 主軸',
+    sb_live_tool: ' 動力刀座', sb_static_tool: ' 非動力刀座', sb_collet: ' 筒夾/夾頭',
+    sb_export_docs: ' 出口文件', sb_marine: ' 海上保險', sb_customs: ' 清關',
+    sb_import_duty: ' 進口關稅參考', sb_terms: ' 術語對照',
+    sb_tw_brands: ' 台灣製造商', sb_maintenance: ' 保養指南',
+    sb_lifespan: ' 零件壽命', sb_gcode: ' G碼參考',
     panel_snapshot: '市場概況',
     search_placeholder: '搜尋：料機、伺服馬達、FOB、韓國市場...',
     btn_search: '搜尋', btn_send: '送出詢價 →',
@@ -5185,7 +5199,14 @@ const LANG = {
     home_tooltip: '홈으로',
     nav_overview: '홈', nav_knowledge: '지식 라이브러리', nav_incoterms: '인코텀즈',
     nav_markets: '시장', nav_news: '산업 뉴스', nav_inquiry: '견적 문의',
-    sidebar_knowledge: '지식 라이브러리', sidebar_export: '수출 절차', sidebar_markets: '시장',
+    sidebar_knowledge: '지식 라이브러리', sidebar_export: '수출 절차', sidebar_markets: '시장', sidebar_industry: '산업',
+    sb_bar_feeder: ' 바 피더', sb_linear_guide: ' 리니어 가이드', sb_servo_motor: ' 서보 모터',
+    sb_cnc_lathe: ' CNC 선반', sb_tool_holder: ' 툴 홀더', sb_spindle: ' 스핀들',
+    sb_live_tool: ' 동력 공구대', sb_static_tool: ' 비동력 공구대', sb_collet: ' 콜릿 & 척',
+    sb_export_docs: ' 수출 서류', sb_marine: ' 해상보험', sb_customs: ' 통관',
+    sb_import_duty: ' 수입 관세 참고', sb_terms: ' 용어 대조',
+    sb_tw_brands: ' 대만 제조업체', sb_maintenance: ' 유지보수 가이드',
+    sb_lifespan: ' 부품 수명', sb_gcode: ' G코드 참고',
     panel_snapshot: '시장 현황',
     search_placeholder: '검색: 바피더, 서보 모터, FOB, 한국 시장...',
     btn_search: '검색', btn_send: '견적 문의 보내기 →',
