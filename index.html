@@ -974,7 +974,6 @@
     <button class="nav-btn" onclick="showPage('markets')" data-i18n="nav_markets">Markets</button>
     <button class="nav-btn" onclick="showPage('news')" data-i18n="nav_news">News</button>
     <button class="nav-btn" onclick="showPage('inquiry')" style="color:var(--gold);border:1px solid var(--gold);margin-left:8px" data-i18n="nav_inquiry">Inquiry</button>
-    <button class="nav-btn" onclick="showPage('column')" style="color:#5b9bd5;border:1px solid #2a5a7a;margin-left:4px">✍ Expert Column</button>
     <button class="nav-btn" onclick="showPage('whatsnew')" style="color:#2aaa6a;border:1px solid #2aaa6a;margin-left:4px">What's New <span class="whats-new-badge">NEW</span></button>
     <button class="nav-btn" onclick="showPage('terms')" style="color:#8fb8d0;border:1px solid #2a5a7a;margin-left:4px">術語 / Terms / 용어</button>
     <button class="nav-btn" onclick="showPage('advertise')" style="color:#c9a84c;border:1px solid #6b4e1a;margin-left:4px">📢 刊登廣告</button>
@@ -1032,13 +1031,6 @@
       </div>
       <div class="sidebar-item" onclick="openKnowledge('import-duty')">
         <span class="icon">🏷️</span><span data-i18n="sb_import_duty"> Import Duty Reference</span>
-      </div>
-    </div>
-
-    <div class="sidebar-section">
-      <span class="sidebar-label">Expert Column</span>
-      <div class="sidebar-item" onclick="showPage('column')" style="color:#5b9bd5">
-        <span class="icon">✍</span><span> Swiss-Type Live Tooling</span>
       </div>
     </div>
 
@@ -1108,6 +1100,25 @@
       </div>
       <div class="sidebar-item" onclick="openMarket('saudi')">
         <span class="market-flag">🇸🇦</span> Saudi Arabia
+      </div>
+    </div>
+
+    <div class="sidebar-section">
+      <span class="sidebar-label">Quick Links</span>
+      <div class="sidebar-item" onclick="showPage('incoterms')" style="color:var(--gold)">
+        <span class="icon">📋</span><span> Incoterms 2020</span>
+      </div>
+      <div class="sidebar-item" onclick="showPage('inquiry')" style="color:var(--gold)">
+        <span class="icon">✉️</span><span> Product Inquiry / 詢價</span>
+      </div>
+      <div class="sidebar-item" onclick="showPage('column')" style="color:#5b9bd5">
+        <span class="icon">✍</span><span> Expert Column / 專家專欄</span>
+      </div>
+      <div class="sidebar-item" onclick="showPage('whatsnew')" style="color:#2aaa6a">
+        <span class="icon">🆕</span><span> What's New</span>
+      </div>
+      <div class="sidebar-item" onclick="showPage('advertise')">
+        <span class="icon">📢</span><span> 刊登廣告 / Advertise</span>
       </div>
     </div>
   </div>
@@ -1195,11 +1206,7 @@
           <div class="card-title" data-zh-title="料機系統" data-ko-title="바 피더 시스템">Bar Feeder Systems</div>
           <div class="card-desc" data-zh-desc="CNC 車床自動供料系統完整指南。" data-ko-desc="CNC 선반용 자동 봉재 공급 시스템 완벽 가이드.">Complete guide to automatic bar feeding systems for CNC lathes.</div>
         </div>
-        <div class="card" onclick="openKnowledge('bar-feeder-types')">
-          <div class="card-tag" data-zh-tag="自動化" data-ko-tag="자동화">Automation</div>
-          <div class="card-title" data-zh-title="料機類型比較" data-ko-title="바 피더 유형 비교">Bar Feeder Types Comparison</div>
-          <div class="card-desc" data-zh-desc="短料機 vs 長料機、液壓浮動式 vs 接觸式類型比較。" data-ko-desc="단형 vs 장형, 유체역학식 vs 접촉식 유형 비교.">Short bar vs long bar feeders, hydrodynamic vs contact types.</div>
-        </div>
+
         <div class="card" onclick="openKnowledge('linear-guide')">
           <div class="card-tag" data-zh-tag="精密零件" data-ko-tag="정밀 부품">Precision Parts</div>
           <div class="card-title" data-zh-title="線性滑軌" data-ko-title="리니어 가이드 & 레일">Linear Guide & Rails</div>
@@ -2049,6 +2056,14 @@ const KB = {
         <li><strong>접촉식</strong>: 봉재가 가이드 채널에 안착. 비용 절감. 일반 선반의 중·저속 사용에 적합.</li>
       </ul>
 
+      <h4>선정 가이드</h4>
+      <ul>
+        <li><strong>소직경 + 고RPM</strong> → 유압 부동식 장척 바 피더</li>
+        <li><strong>공간 제한 + 다품종 소량</strong> → 단척 바 피더</li>
+        <li><strong>대량 생산 + 장척 봉재</strong> → 장척 바 피더 + 매거진</li>
+        <li><strong>일반 선삭 + 예산 절감</strong> → 접촉식 단척/장척 피더</li>
+      </ul>
+
       <h4>잔재 처리</h4>
       봉재가 짧은 잔재로 줄어들면, 피더는 이를 밀어내거나 배출해야 합니다. 잔재 수집을 위한 부품 캐처 유무를 확인하세요.
     `,
@@ -2097,6 +2112,14 @@ const KB = {
         <li><strong>接觸式</strong>：棒料置於導槽，成本低，適合一般車床中低速使用。</li>
       </ul>
 
+      <h4>選型重點比較</h4>
+      <ul>
+        <li><strong>加工物直徑小 + 高轉速</strong> → 液壓浮動式長料機</li>
+        <li><strong>空間有限 + 多品項少量</strong> → 短料機</li>
+        <li><strong>大批量 + 長棒料</strong> → 長料機 + 料倉</li>
+        <li><strong>一般車削 + 預算有限</strong> → 接觸式短/長料機</li>
+      </ul>
+
       <h4>料頭處理</h4>
       棒料用盡剩下短料頭時，料機必須能將其推出或退出。請確認機台是否配有料頭收集裝置。
     `,
@@ -2143,6 +2166,14 @@ const KB = {
       <ul>
         <li><strong>Hydrodynamic</strong>: Bar floats in oil. Near-zero vibration. Supports very high RPM (up to 10,000+). Required for Swiss-type lathes. Higher cost.</li>
         <li><strong>Contact/channel</strong>: Bar rests in guide channel. Lower cost. Suitable for conventional lathes at moderate RPM.</li>
+      </ul>
+
+      <h4>Selection Guide</h4>
+      <ul>
+        <li><strong>Small diameter + high RPM</strong> → Hydrodynamic long bar feeder</li>
+        <li><strong>Limited space + high mix low volume</strong> → Short bar feeder</li>
+        <li><strong>High volume + long bars</strong> → Long bar feeder + magazine</li>
+        <li><strong>General turning + budget-conscious</strong> → Contact type short/long feeder</li>
       </ul>
 
       <h4>Remnant Handling</h4>
@@ -3680,94 +3711,6 @@ const KB = {
         <li><strong>Aluminum</strong>: Vc 300–600 m/min, f 0.1–0.3 mm/rev, ap 1–5mm</li>
         <li><strong>Cast Iron</strong>: Vc 100–180 m/min, f 0.15–0.3 mm/rev, ap 1–4mm</li>
       </ul>
-    `
-  },
-
-  'bar-feeder-types': {
-    title: 'Bar Feeder Types Comparison',
-    title_zh: '料機類型比較',
-    title_ko: '바 피더 유형 비교',
-    tags: ['bar feeder', 'short bar', 'long bar', 'hydrodynamic', 'contact', 'automation'],
-    body_ko: `
-      <h4>단척 vs 장척</h4>
-      <ul>
-        <li><strong>단척 (≤1.5m)</strong>: 비용 절감, 소형 풋프린트, 설치 용이. 봉재 교체 빈도 높음. 바닥 공간이 제한된 경우에 이상적.</li>
-        <li><strong>장척 (3~4m)</strong>: 교체 횟수 감소, 대량 생산성 향상. 바닥 공간 및 진동 관리 필요.</li>
-      </ul>
-
-      <h4>유압 부동식 vs 접촉식</h4>
-      <ul>
-        <li><strong>유압 부동식 (Hydrodynamic)</strong>: 봉재가 오일 위에 부유. 진동 거의 없음. 10,000 RPM 이상 지원. 스위스형 선반에 필수. 비용 높음.</li>
-        <li><strong>접촉식 (Contact/Channel)</strong>: 봉재가 가이드 채널에 안착. 비용 절감. 중·저속 및 대직경 봉재의 일반 선반에 적합.</li>
-      </ul>
-
-      <h4>매거진형</h4>
-      다수의 봉재를 저장 — 무인 가동 시간 최대화. 무등 가공에 이상적. 보통 장척 바 피더와 함께 사용.
-
-      <h4>선정 가이드</h4>
-      <ul>
-        <li><strong>소직경 + 고RPM</strong> → 유압 부동식 장척 바 피더</li>
-        <li><strong>공간 제한 + 다품종 소량</strong> → 단척 바 피더</li>
-        <li><strong>대량 생산 + 장척 봉재</strong> → 장척 바 피더 + 매거진</li>
-        <li><strong>일반 선삭 + 예산 절감</strong> → 접촉식 단척/장척 피더</li>
-      </ul>
-
-      <h4>잔재 처리</h4>
-      봉재가 짧은 잔재로 줄어들면, 피더는 이를 밀어내거나 배출해야 합니다. 잔재 수집을 위한 부품 캐처 유무를 확인하세요.
-    `,
-    body_zh: `
-      <h4>短料機 vs 長料機</h4>
-      <ul>
-        <li><strong>短料機（≤1.5m）</strong>：成本低、占地小、安裝容易，但換料較頻繁，適合空間有限的工廠。</li>
-        <li><strong>長料機（3–4m）</strong>：換料次數少、大批量產能高，需要較大地坪空間及振動管理，更換棒料時需注意安全。</li>
-      </ul>
-
-      <h4>液壓浮動式 vs 接觸式</h4>
-      <ul>
-        <li><strong>液壓浮動式（Hydrodynamic）</strong>：棒料浮於油槽中，幾乎無振動，可支援 10,000 RPM 以上高速主軸。走心式車床必備，成本較高。</li>
-        <li><strong>接觸式（Contact/Channel）</strong>：棒料置於 V 形或導槽中，成本較低，適合中低速及較大直徑棒料的一般車床。</li>
-      </ul>
-
-      <h4>料倉式（Magazine）</h4>
-      可存放多根棒料，最大化無人運轉時間。適合需要長時間熄燈加工的場合，通常與長料機搭配。
-
-      <h4>選型重點比較</h4>
-      <ul>
-        <li><strong>加工物直徑小 + 高轉速</strong> → 液壓浮動式長料機</li>
-        <li><strong>空間有限 + 多品項少量</strong> → 短料機</li>
-        <li><strong>大批量 + 長棒料</strong> → 長料機 + 料倉</li>
-        <li><strong>一般車削 + 預算有限</strong> → 接觸式短/長料機</li>
-      </ul>
-
-      <h4>料頭處理</h4>
-      棒料用盡剩下料頭時，料機須能推出或退出。請確認是否配有料頭收集裝置，避免殘料堵塞。
-    `,
-    body: `
-      <h4>Short Bar vs Long Bar</h4>
-      <ul>
-        <li><strong>Short bar (≤1.5m)</strong>: Lower cost, compact footprint, easier installation. Requires more frequent bar changes. Ideal for limited floor space.</li>
-        <li><strong>Long bar (3–4m)</strong>: Fewer changeovers, higher productivity for large batches. Requires floor space and vibration management.</li>
-      </ul>
-
-      <h4>Hydrodynamic vs Contact Type</h4>
-      <ul>
-        <li><strong>Hydrodynamic</strong>: Bar floats in oil. Near-zero vibration. Supports very high RPM (10,000+). Required for Swiss-type lathes. Higher cost.</li>
-        <li><strong>Contact/channel</strong>: Bar rests in guide channel. Lower cost. Suitable for conventional lathes at moderate RPM and larger diameters.</li>
-      </ul>
-
-      <h4>Magazine Type</h4>
-      Stores multiple bars — maximizes unmanned run time. Ideal for lights-out machining. Usually paired with long bar feeders.
-
-      <h4>Selection Guide</h4>
-      <ul>
-        <li><strong>Small diameter + high RPM</strong> → Hydrodynamic long bar feeder</li>
-        <li><strong>Limited space + high mix low volume</strong> → Short bar feeder</li>
-        <li><strong>High volume + long bars</strong> → Long bar feeder + magazine</li>
-        <li><strong>General turning + budget-conscious</strong> → Contact type short/long feeder</li>
-      </ul>
-
-      <h4>Remnant Handling</h4>
-      When the bar runs down to a short remnant, the feeder must either push it through or eject it. Confirm the machine has a parts catcher for remnant collection.
     `
   },
 
