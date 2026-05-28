@@ -458,12 +458,14 @@
 
   .news-src { color: var(--gold); }
 
-  /* Terms page: hide right panel for more table width */
-  .layout.terms-mode {
-    grid-template-columns: 240px 1fr;
-  }
-  .layout.terms-mode .right-panel {
-    display: none;
+  /* Terms page: desktop-only — hide right panel, expand main content */
+  @media (min-width: 1101px) {
+    .layout.terms-mode {
+      grid-template-columns: 240px 1fr;
+    }
+    .layout.terms-mode .right-panel {
+      display: none;
+    }
   }
 
   /* Right panel */
@@ -5422,16 +5424,12 @@ const MARKETS = {
 
 // ─── Navigation ───────────────────────────────────────────────────
 function _termsLayoutOn() {
-  var lg = document.getElementById('layout-grid');
-  var rp = document.getElementById('right-panel');
-  if (rp) rp.style.display = 'none';
-  if (lg) lg.style.gridTemplateColumns = '240px 1fr';
+  var lg = document.querySelector('.layout');
+  if (lg) lg.classList.add('terms-mode');
 }
 function _termsLayoutOff() {
-  var lg = document.getElementById('layout-grid');
-  var rp = document.getElementById('right-panel');
-  if (rp) rp.style.display = '';
-  if (lg) lg.style.gridTemplateColumns = '';
+  var lg = document.querySelector('.layout');
+  if (lg) lg.classList.remove('terms-mode');
 }
 
 function showPageHome() {
