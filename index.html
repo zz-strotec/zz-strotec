@@ -157,8 +157,16 @@
   /* Layout */
   .layout {
     display: grid;
-    grid-template-columns: 240px 1fr;
+    grid-template-columns: 240px 1fr 280px;
     height: calc(100vh - 58px);
+  }
+
+  /* Terms mode: hide right panel, expand to 2 columns */
+  .layout.terms-mode {
+    grid-template-columns: 240px 1fr !important;
+  }
+  .layout.terms-mode .right-panel {
+    display: none !important;
   }
 
   /* Sidebar */
@@ -458,22 +466,13 @@
 
   .news-src { color: var(--gold); }
 
-  /* Terms page: hide right panel, expand main content */
+  /* Terms page: expand main content (right panel already hidden via terms-mode class) */
   @media (min-width: 1101px) {
-    /* 1. Hide the right panel */
-    body:has(#page-terms.active) .right-panel,
-    .layout.terms-mode .right-panel {
+    body:has(#page-terms.active) .right-panel {
       display: none !important;
     }
-    /* 2. Change grid columns (remove the 280px track) */
-    body:has(#page-terms.active) .layout,
-    .layout.terms-mode {
+    body:has(#page-terms.active) .layout {
       grid-template-columns: 240px 1fr !important;
-    }
-    /* 3. Backup: span main-content into the empty 280px track */
-    body:has(#page-terms.active) #main-content,
-    .layout.terms-mode #main-content {
-      grid-column: 2 / -1 !important;
     }
   }
 
@@ -876,6 +875,7 @@
 
   .term-table {
     width: 100%;
+    min-width: 700px;
     border-collapse: collapse;
     font-size: 13px;
   }
@@ -889,8 +889,6 @@
     text-transform: uppercase;
     border: 1px solid var(--border);
     font-family: 'DM Mono', monospace;
-    position: sticky;
-    top: 0;
   }
   .term-table td {
     padding: 8px 14px;
