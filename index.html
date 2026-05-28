@@ -1155,7 +1155,7 @@
   </div>
 
   <!-- Main content -->
-  <div class="main">
+  <div class="main" id="main-content">
 
     <!-- Search -->
     <div class="search-wrap">
@@ -5430,7 +5430,8 @@ function showPageHome() {
   document.getElementById('search-results').classList.remove('show');
   const rp = document.getElementById('right-panel');
   if (rp) { rp.style.display = ''; }
-  document.querySelector('.layout').style.gridTemplateColumns = '';
+  const mainEl = document.getElementById('main-content');
+  if (mainEl) { mainEl.style.gridColumn = ''; }
   loadNews();
 }
 
@@ -5442,15 +5443,15 @@ function showPage(id) {
   closeDetail();
   document.getElementById('search-results').classList.remove('show');
 
-  // Terms page: hide right panel for full-width table
+  // Terms page: span main content across full width (cover right panel track)
   const rp = document.getElementById('right-panel');
-  const layout = document.querySelector('.layout');
+  const mainEl = document.getElementById('main-content');
   if (id === 'terms') {
     rp.style.display = 'none';
-    layout.style.gridTemplateColumns = '240px 1fr';
+    mainEl.style.gridColumn = '2 / -1';
   } else {
     rp.style.display = '';
-    layout.style.gridTemplateColumns = '';
+    mainEl.style.gridColumn = '';
   }
 
   if (id === 'home' || id === 'news') loadNews();
