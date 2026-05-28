@@ -459,22 +459,21 @@
   .news-src { color: var(--gold); }
 
   /* Terms page: hide right panel, expand main content */
-  /* CSS-only approach using :has() — no JS dependency */
   @media (min-width: 1101px) {
-    body:has(#page-terms.active) .layout {
-      grid-template-columns: 240px 1fr !important;
-    }
-    body:has(#page-terms.active) .right-panel {
+    /* 1. Hide the right panel */
+    body:has(#page-terms.active) .right-panel,
+    .layout.terms-mode .right-panel {
       display: none !important;
     }
-  }
-  /* Fallback: also support JS class toggle */
-  @media (min-width: 1101px) {
+    /* 2. Change grid columns (remove the 280px track) */
+    body:has(#page-terms.active) .layout,
     .layout.terms-mode {
       grid-template-columns: 240px 1fr !important;
     }
-    .layout.terms-mode .right-panel {
-      display: none !important;
+    /* 3. Backup: span main-content into the empty 280px track */
+    body:has(#page-terms.active) #main-content,
+    .layout.terms-mode #main-content {
+      grid-column: 2 / -1 !important;
     }
   }
 
