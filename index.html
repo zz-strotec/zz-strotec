@@ -2415,7 +2415,7 @@
 
   </div><!-- /main -->
 
-  <div class="right-panel">
+  <div class="right-panel" id="right-panel">
     <div class="panel-title" data-i18n="panel_snapshot">MARKET SNAPSHOT</div>
 
     <div class="market-card" onclick="openMarket('korea')"><div class="market-header"><span class="market-flag">🇰🇷</span><div><div class="market-name" data-zh-name="南韓" data-ko-name="대한민국">South Korea</div><div class="market-tag">Northeast Asia · KRW</div></div></div><div class="market-detail" data-zh-detail="台灣 CNC 最大進口國。汽車及航太。" data-ko-detail="대만 CNC 최대 수입국. 자동차·항공우주.">Top Taiwan CNC importer. Auto & aerospace.</div></div>
@@ -5428,7 +5428,9 @@ function showPageHome() {
   document.querySelector('.nav-btn').classList.add('active');
   closeDetail();
   document.getElementById('search-results').classList.remove('show');
-  document.querySelector('.layout').classList.remove('terms-mode');
+  const rp = document.getElementById('right-panel');
+  if (rp) { rp.style.display = ''; }
+  document.querySelector('.layout').style.gridTemplateColumns = '';
   loadNews();
 }
 
@@ -5440,12 +5442,15 @@ function showPage(id) {
   closeDetail();
   document.getElementById('search-results').classList.remove('show');
 
-  // Terms page: expand to full width (hide right panel)
+  // Terms page: hide right panel for full-width table
+  const rp = document.getElementById('right-panel');
   const layout = document.querySelector('.layout');
   if (id === 'terms') {
-    layout.classList.add('terms-mode');
+    rp.style.display = 'none';
+    layout.style.gridTemplateColumns = '240px 1fr';
   } else {
-    layout.classList.remove('terms-mode');
+    rp.style.display = '';
+    layout.style.gridTemplateColumns = '';
   }
 
   if (id === 'home' || id === 'news') loadNews();
