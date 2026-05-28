@@ -154,23 +154,18 @@
     color: var(--gold);
   }
 
-  /* Layout */
+  /* Layout — flexbox is more predictable than grid for this structure */
   .layout {
-    display: grid;
-    grid-template-columns: 240px 1fr 280px;
+    display: flex;
+    flex-direction: row;
     height: calc(100vh - 58px);
+    overflow: hidden;
   }
 
-  /* Terms mode: hide right panel, expand to 2 columns */
-  .layout.terms-mode {
-    grid-template-columns: 240px 1fr !important;
-  }
-  .layout.terms-mode .right-panel {
-    display: none !important;
-  }
-
-  /* Sidebar */
+  /* Sidebar fixed width */
   .sidebar {
+    flex: 0 0 240px;
+    width: 240px;
     border-right: 1px solid var(--border);
     padding: 20px 0;
     overflow-y: auto;
@@ -223,8 +218,10 @@
     font-size: 16px;
   }
 
-  /* Main content */
+  /* Main content — fills all remaining space */
   .main {
+    flex: 1 1 0;
+    min-width: 0;
     overflow-y: auto;
     padding: 28px 32px;
   }
@@ -466,18 +463,21 @@
 
   .news-src { color: var(--gold); }
 
-  /* Terms page: expand main content (right panel already hidden via terms-mode class) */
-  @media (min-width: 1101px) {
-    body:has(#page-terms.active) .right-panel {
-      display: none !important;
-    }
-    body:has(#page-terms.active) .layout {
-      grid-template-columns: 240px 1fr !important;
-    }
+  /* Terms mode: hide right panel so main expands to full width */
+  .layout.terms-mode .right-panel {
+    display: none !important;
   }
 
-  /* Right panel */
+  /* Collapse right panel at narrow screens */
+  @media (max-width: 1100px) {
+    .sidebar { flex: 0 0 200px; width: 200px; }
+    .right-panel { display: none !important; }
+  }
+
+  /* Right panel — fixed width flex item */
   .right-panel {
+    flex: 0 0 280px;
+    width: 280px;
     border-left: 1px solid var(--border);
     padding: 20px;
     overflow-y: auto;
@@ -944,10 +944,7 @@
   }
   .sidebar-overlay.show { display: block; }
 
-  @media (max-width: 1100px) {
-    .layout { grid-template-columns: 200px 1fr; }
-    .right-panel { display: none; }
-  }
+  /* right-panel already hidden via flexbox rules above at ≤1100px */
 
   @media (max-width: 768px) {
     header {
@@ -963,7 +960,7 @@
     .header-nav { display: none; width: 100%; flex-wrap: wrap; padding-bottom: 8px; }
     .header-nav.open { display: flex; }
     .nav-btn { font-size: 11px; padding: 5px 10px; }
-    .layout { grid-template-columns: 1fr; height: auto; }
+    .layout { display: flex; flex-direction: column; height: auto; }
     .sidebar {
       display: none;
       position: fixed;
