@@ -1012,7 +1012,7 @@
 </header>
 
 <div class="sidebar-overlay" id="sidebar-overlay" onclick="closeSidebar()"></div>
-<div class="layout">
+<div class="layout" id="layout-grid">
 
   <!-- Sidebar -->
   <div class="sidebar" id="sidebar">
@@ -5421,6 +5421,19 @@ const MARKETS = {
 };
 
 // ─── Navigation ───────────────────────────────────────────────────
+function _termsLayoutOn() {
+  var lg = document.getElementById('layout-grid');
+  var rp = document.getElementById('right-panel');
+  if (rp) rp.style.display = 'none';
+  if (lg) lg.style.gridTemplateColumns = '240px 1fr';
+}
+function _termsLayoutOff() {
+  var lg = document.getElementById('layout-grid');
+  var rp = document.getElementById('right-panel');
+  if (rp) rp.style.display = '';
+  if (lg) lg.style.gridTemplateColumns = '';
+}
+
 function showPageHome() {
   document.querySelectorAll('.page').forEach(p => p.classList.remove('active'));
   document.getElementById('page-home').classList.add('active');
@@ -5428,10 +5441,7 @@ function showPageHome() {
   document.querySelector('.nav-btn').classList.add('active');
   closeDetail();
   document.getElementById('search-results').classList.remove('show');
-  const rp = document.getElementById('right-panel');
-  if (rp) { rp.style.display = ''; }
-  const mainEl = document.getElementById('main-content');
-  if (mainEl) { mainEl.style.gridColumn = ''; }
+  _termsLayoutOff();
   loadNews();
 }
 
@@ -5439,19 +5449,14 @@ function showPage(id) {
   document.querySelectorAll('.page').forEach(p => p.classList.remove('active'));
   document.getElementById('page-' + id).classList.add('active');
   document.querySelectorAll('.nav-btn').forEach(b => b.classList.remove('active'));
-  event.target.classList.add('active');
+  try { event.target.classList.add('active'); } catch(e) {}
   closeDetail();
   document.getElementById('search-results').classList.remove('show');
 
-  // Terms page: span main content across full width (cover right panel track)
-  const rp = document.getElementById('right-panel');
-  const mainEl = document.getElementById('main-content');
   if (id === 'terms') {
-    rp.style.display = 'none';
-    mainEl.style.gridColumn = '2 / -1';
+    _termsLayoutOn();
   } else {
-    rp.style.display = '';
-    mainEl.style.gridColumn = '';
+    _termsLayoutOff();
   }
 
   if (id === 'home' || id === 'news') loadNews();
