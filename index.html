@@ -458,13 +458,23 @@
 
   .news-src { color: var(--gold); }
 
-  /* Terms page: desktop-only — hide right panel, expand main content */
+  /* Terms page: hide right panel, expand main content */
+  /* CSS-only approach using :has() — no JS dependency */
+  @media (min-width: 1101px) {
+    body:has(#page-terms.active) .layout {
+      grid-template-columns: 240px 1fr !important;
+    }
+    body:has(#page-terms.active) .right-panel {
+      display: none !important;
+    }
+  }
+  /* Fallback: also support JS class toggle */
   @media (min-width: 1101px) {
     .layout.terms-mode {
-      grid-template-columns: 240px 1fr;
+      grid-template-columns: 240px 1fr !important;
     }
     .layout.terms-mode .right-panel {
-      display: none;
+      display: none !important;
     }
   }
 
@@ -5424,11 +5434,11 @@ const MARKETS = {
 
 // ─── Navigation ───────────────────────────────────────────────────
 function _termsLayoutOn() {
-  var lg = document.querySelector('.layout');
+  var lg = document.getElementById('layout-grid');
   if (lg) lg.classList.add('terms-mode');
 }
 function _termsLayoutOff() {
-  var lg = document.querySelector('.layout');
+  var lg = document.getElementById('layout-grid');
   if (lg) lg.classList.remove('terms-mode');
 }
 
