@@ -218,8 +218,10 @@
   /* Main content */
   .main {
     overflow-y: auto;
+    overflow-x: hidden;
     padding: 28px 32px;
     margin-right: 280px;
+    min-width: 0;
   }
 
   .main::-webkit-scrollbar { width: 4px; }
@@ -986,6 +988,43 @@
     .terms-table { display: block; overflow-x: auto; }
     .inquiry-wrap { max-width: 100%; }
   }
+
+  .terms-tab-btn {
+    background: var(--surface2);
+    border: 1px solid var(--border);
+    color: var(--text-dim);
+    padding: 7px 14px;
+    border-radius: 5px;
+    cursor: pointer;
+    font-family: inherit;
+    font-size: 12px;
+    letter-spacing: 0.5px;
+    transition: all 0.15s;
+    white-space: nowrap;
+  }
+  .terms-tab-btn:hover { border-color: var(--gold); color: var(--gold-light); }
+  .terms-tab-btn.active { background: var(--gold); color: #080c10; border-color: var(--gold); font-weight: 600; }
+
+
+  .terms-cat-btn {
+    background: var(--surface);
+    border: 1px solid var(--border);
+    color: var(--text-dim);
+    padding: 4px 10px;
+    border-radius: 4px;
+    cursor: pointer;
+    font-family: inherit;
+    font-size: 11px;
+    letter-spacing: 0.3px;
+    transition: all 0.12s;
+    white-space: nowrap;
+  }
+  .terms-cat-btn:hover { border-color: var(--gold); color: var(--gold-light); }
+  .terms-cat-btn.active { background: rgba(201,168,76,0.15); border-color: var(--gold); color: var(--gold); }
+
+/* Terminology page: full-width layout */
+.terms-mode .main { margin-right: 0 !important; }
+.terms-mode #right-panel { display: none !important; }
 </style>
 </head>
 <body>
@@ -1011,6 +1050,7 @@
     <button class="nav-btn" onclick="showPage('incoterms')" data-i18n="nav_incoterms">Incoterms</button>
     <button class="nav-btn" onclick="showPage('markets')" data-i18n="nav_markets">Markets</button>
     <button class="nav-btn" onclick="showPage('news')" data-i18n="nav_news">News</button>
+    <button class="nav-btn" onclick="showPage('terminology')" data-i18n="nav_terminology">Terminology</button>
     <button class="nav-btn" onclick="showPage('inquiry')" style="color:var(--gold);border:1px solid var(--gold);margin-left:8px" data-i18n="nav_inquiry">Inquiry</button>
     <button class="nav-btn" onclick="showPage('whatsnew')" style="color:#2aaa6a;border:1px solid #2aaa6a;margin-left:4px">What's New <span class="whats-new-badge">NEW</span></button>
     <button class="nav-btn" onclick="showPage('advertise')" style="color:#c9a84c;border:1px solid #6b4e1a;margin-left:4px">📢 刊登廣告</button>
@@ -1068,6 +1108,13 @@
       </div>
       <div class="sidebar-item" onclick="openKnowledge('import-duty')">
         <span class="icon">🏷️</span><span data-i18n="sb_import_duty"> Import Duty Reference</span>
+      </div>
+    </div>
+
+    <div class="sidebar-section">
+      <span class="sidebar-label">Terminology 術語/용어</span>
+      <div class="sidebar-item" onclick="showPage('terminology');closeSidebar()">
+        <span class="icon">📖</span><span data-i18n="sb_terms"> Terminology</span>
       </div>
     </div>
 
@@ -1187,7 +1234,7 @@
       <div class="cards-grid">
         <div class="card" onclick="openKnowledge('bar-feeder')">
           <div class="card-tag" data-zh-tag="自動化" data-ko-tag="자동화">Automation</div>
-          <div class="card-title" data-zh-title="料機系統" data-ko-title="바 피더 시스템">Bar Feeder Systems</div>
+          <div class="card-title" data-zh-title="送料機系統" data-ko-title="바피더 시스템">Bar Feeder Systems</div>
           <div class="card-desc" data-zh-desc="CNC 車床自動供料系統。類型介紹、選型指南及與走心式車床和車削中心的相容性說明。" data-ko-desc="CNC 선반 자동 봉재 공급. 유형, 선정 기준, 스위스형 및 선삭 센터와의 호환성.">Automatic bar feeding for CNC lathes. Types, selection criteria, and compatibility with Swiss-type and turning centers.</div>
         </div>
         <div class="card" onclick="openKnowledge('servo-motor')">
@@ -1250,7 +1297,7 @@
       <div class="cards-grid">
         <div class="card" onclick="openKnowledge('bar-feeder')">
           <div class="card-tag" data-zh-tag="自動化" data-ko-tag="자동화">Automation</div>
-          <div class="card-title" data-zh-title="料機系統" data-ko-title="바 피더 시스템">Bar Feeder Systems</div>
+          <div class="card-title" data-zh-title="送料機系統" data-ko-title="바피더 시스템">Bar Feeder Systems</div>
           <div class="card-desc" data-zh-desc="CNC 車床自動供料系統完整指南。" data-ko-desc="CNC 선반용 자동 봉재 공급 시스템 완벽 가이드.">Complete guide to automatic bar feeding systems for CNC lathes.</div>
         </div>
 
@@ -1825,7 +1872,7 @@
         <div style="flex:1">
           <div style="font-size:10px;letter-spacing:2px;color:var(--gold);text-transform:uppercase;margin-bottom:6px">Automation &nbsp;·&nbsp; Bar Feeding</div>
           <div style="color:var(--text);font-weight:500;font-size:0.95rem;margin-bottom:4px;line-height:1.4">Eliminating Material Vibration: High-RPM Synchronization Between Bar Feeders and Guide Bushings</div>
-          <div style="color:var(--text-dim);font-size:0.82rem;margin-bottom:8px">消除材料震動：高轉速下棒材餵料機與導套的同步調校實務</div>
+          <div style="color:var(--text-dim);font-size:0.82rem;margin-bottom:8px">消除材料震動：高轉速下送料機與導套的同步調校實務</div>
           <div style="color:var(--text-dim);font-size:0.85rem">Hydrodynamic oil film support — preventing bar whipping and surface scarring below 10mm diameter.</div>
         </div>
         <div style="flex-shrink:0;color:var(--gold);font-size:1.3rem;opacity:0.7;align-self:center">→</div>
@@ -1910,13 +1957,13 @@
         <div style="border-left:4px solid var(--gold);padding-left:16px;margin-bottom:28px">
           <span style="font-size:10px;letter-spacing:2px;color:var(--gold);text-transform:uppercase">Automation &nbsp;·&nbsp; Bar Feeding</span>
           <h2 style="color:var(--text);margin:10px 0 6px;font-size:1.35rem;font-weight:600;line-height:1.4">Eliminating Material Vibration: High-RPM Synchronization Between Bar Feeders and Guide Bushings</h2>
-          <p style="color:var(--text-dim);font-size:0.95rem;margin:0">消除材料震動：高轉速下棒材餵料機與導套的同步調校實務</p>
+          <p style="color:var(--text-dim);font-size:0.95rem;margin:0">消除材料震動：高轉速下送料機與導套的同步調校實務</p>
         </div>
         <p style="margin-bottom:16px;line-height:1.85">
           In Swiss-type sliding headstock machining, micro-diameter bar feeding (&lt;10mm) is notorious for inducing <strong style="color:var(--gold)">material whipping</strong> and surface scarring. When the <strong>Bar Feeder</strong> and the lathe's <strong>Guide Bushing</strong> are out of sync at high RPMs, the resulting harmonic vibration ruins clamping stability and accelerates wear on the <strong>chucking collet</strong>.
         </p>
         <p style="color:var(--text-dim);font-size:0.92rem;line-height:1.8;margin-bottom:28px;padding-bottom:24px;border-bottom:1px solid var(--border)">
-          在走心式移動主軸台加工中，小直徑棒材（&lt;10mm）的送料過程極易引發<strong>材料甩動</strong>與表面刮傷。當<strong>棒材餵料機（Bar Feeder）</strong>與車床的<strong>導套（Guide Bushing）</strong>在高轉速下未能完美同步時，產生的諧振不僅會破壞加工穩定度，更會加速損壞<strong>夾頭（Chucking Collet）</strong>。
+          在走心式移動主軸台加工中，小直徑棒材（&lt;10mm）的送料過程極易引發<strong>材料甩動</strong>與表面刮傷。當<strong>送料機（Bar Feeder）</strong>與車床的<strong>導套（Guide Bushing）</strong>在高轉速下未能完美同步時，產生的諧振不僅會破壞加工穩定度，更會加速損壞<strong>夾頭（Chucking Collet）</strong>。
         </p>
         <div style="background:var(--surface2);border:1px solid var(--border);border-radius:6px;padding:22px;margin-bottom:28px">
           <h3 style="color:var(--text);font-size:1rem;margin:0 0 14px;display:flex;align-items:center;gap:8px"><span style="color:var(--gold)">🔍</span> The Hydrodynamic Oil Film Solution</h3>
@@ -2194,7 +2241,6 @@
               <span class="whats-new-tag">Expert Column</span>
               <button class="nav-btn" onclick="openColumn('col-5')" style="font-size:11px;padding:3px 12px;color:var(--gold);border:1px solid var(--gold)">READ ARTICLE / 閱讀專欄 / 아티클 읽기 →</button>
             </div>
-          </div>
         </div>
 
         <div class="whats-new-item">
@@ -2227,7 +2273,7 @@
           <div class="whats-new-date">2026.05</div>
           <div class="whats-new-content">
             <div class="whats-new-title">Expert Column — Eliminating Material Vibration: Bar Feeder &amp; Guide Bushing Synchronization at High RPM</div>
-            <div style="color:var(--text-dim);font-size:0.82rem;margin-bottom:4px">消除材料震動：高轉速下棒材餵料機與導套的同步調校 ／ 재료 진동 제거: 바 피더와 가이드 부싱의 고RPM 동기화</div>
+            <div style="color:var(--text-dim);font-size:0.82rem;margin-bottom:4px">消除材料震動：高轉速下送料機與導套的同步調校 ／ 재료 진동 제거: 바피더와 가이드 부싱의 고RPM 동기화</div>
             <div class="whats-new-desc">Micro-diameter bar feeding (&lt;10mm), hydrodynamic oil film support, and how to prevent bar whipping. Available in EN / 中文 / 한국어.</div>
             <div style="margin-top:10px;display:flex;align-items:center;gap:10px;flex-wrap:wrap">
               <span class="whats-new-tag">Expert Column</span>
@@ -2384,7 +2430,58 @@
     </div>
 
 
-    <!-- TERMINOLOGY PAGE -->
+    <!-- ─── Terminology Page ──────────────────────────────────────────── -->
+  <!-- ─── Terminology Page ──────────────────────────────────────────── -->
+  <div class="page" id="page-terminology">
+    <div class="section-title" data-i18n="terms_title">TERMINOLOGY&nbsp;&nbsp;術語對照&nbsp;&nbsp;/&nbsp;&nbsp;용어 대조</div>
+
+    <div style="margin-bottom:12px">
+      <input type="text" id="terms-search"
+             placeholder="Search / 搜尋 / 검색..."
+             oninput="filterTerms()"
+             style="width:100%;box-sizing:border-box;background:var(--surface2);border:1px solid var(--border);color:var(--text);padding:9px 14px;border-radius:6px;font-size:14px;font-family:inherit;outline:none;">
+    </div>
+
+    <!-- Category filter -->
+    <div id="terms-cat-row" style="display:flex;flex-wrap:nowrap;gap:5px;margin-bottom:14px;overflow-x:auto;padding-bottom:4px;">
+        <button class="terms-cat-btn active" onclick="filterTermsCat('All')" id="tcat-All" data-i18n="tcat_All">All</button>
+        <button class="terms-cat-btn" onclick="filterTermsCat('Machines')" id="tcat-Machines" data-i18n="tcat_Machines">Machines</button>
+        <button class="terms-cat-btn" onclick="filterTermsCat('Spindle &amp; Drive')" id="tcat-Spindle___Drive" data-i18n="tcat_SpindleDrive">Spindle &amp; Drive</button>
+        <button class="terms-cat-btn" onclick="filterTermsCat('Bar Feeder')" id="tcat-Bar_Feeder" data-i18n="tcat_BarFeeder">Bar Feeder</button>
+        <button class="terms-cat-btn" onclick="filterTermsCat('Tooling')" id="tcat-Tooling" data-i18n="tcat_Tooling">Tooling</button>
+        <button class="terms-cat-btn" onclick="filterTermsCat('Cutting Tools')" id="tcat-Cutting_Tools" data-i18n="tcat_CuttingTools">Cutting Tools</button>
+        <button class="terms-cat-btn" onclick="filterTermsCat('Mechanical Parts')" id="tcat-Mechanical_Parts" data-i18n="tcat_MechParts">Mechanical Parts</button>
+        <button class="terms-cat-btn" onclick="filterTermsCat('Hydraulics')" id="tcat-Hydraulics" data-i18n="tcat_Hydraulics">Hydraulics</button>
+        <button class="terms-cat-btn" onclick="filterTermsCat('Measurement')" id="tcat-Measurement" data-i18n="tcat_Measurement">Measurement</button>
+        <button class="terms-cat-btn" onclick="filterTermsCat('CNC Programming')" id="tcat-CNC_Programming" data-i18n="tcat_CNCProg">CNC Programming</button>
+        <button class="terms-cat-btn" onclick="filterTermsCat('Workholding')" id="tcat-Workholding" data-i18n="tcat_Workholding">Workholding</button>
+        <button class="terms-cat-btn" onclick="filterTermsCat('Trade &amp; Export')" id="tcat-Trade___Export" data-i18n="tcat_Trade">Trade &amp; Export</button>
+        <button class="terms-cat-btn" onclick="filterTermsCat('Materials')" id="tcat-Materials" data-i18n="tcat_Materials">Materials</button>
+        <button class="terms-cat-btn" onclick="filterTermsCat('Piping &amp; Fittings')" id="tcat-Piping___Fittings" data-i18n="tcat_Piping">Piping &amp; Fittings</button>
+        <button class="terms-cat-btn" onclick="filterTermsCat('Valves')" id="tcat-Valves" data-i18n="tcat_Valves">Valves</button>
+        <button class="terms-cat-btn" onclick="filterTermsCat('Automation &amp; Robotics')" id="tcat-Automation___Robotics" data-i18n="tcat_Automation">Automation &amp; Robotics</button>
+    </div>
+
+    <div id="terms-count" style="font-size:11px;color:var(--text-dim);letter-spacing:1px;margin-bottom:10px"></div>
+
+    <div style="overflow-x:auto">
+      <table class="terms-table" style="min-width:540px">
+        <thead>
+          <tr>
+            <th style="width:5%;font-size:10px;color:var(--text-muted)">#</th>
+            <th style="width:35%">English</th>
+            <th style="width:30%">中文</th>
+            <th style="width:30%">한국어</th>
+          </tr>
+        </thead>
+        <tbody id="terms-tbody"></tbody>
+      </table>
+    </div>
+    <div id="terms-empty" style="display:none;text-align:center;padding:40px;color:var(--text-dim);font-size:13px">
+      No results found / 無結果 / 결과 없음
+    </div>
+  </div>
+
   </div><!-- /main -->
 
   <div class="right-panel" id="right-panel">
@@ -2419,17 +2516,17 @@
 const KB = {
   'bar-feeder': {
     title: 'Bar Feeder Systems',
-    title_zh: '料機系統',
-    title_ko: '바 피더 시스템',
+    title_zh: '送料機系統',
+    title_ko: '바피더 시스템',
     tags: ['automation', 'CNC lathe', 'turning', 'bar stock'],
     body_ko: `
-      <h4>바 피더란?</h4>
-      바 피더(Bar Feeder)는 CNC 선반 후방에 부착하는 자동화 장치로, 봉재를 주축에 연속 공급하여 무인 또는 무등 가공을 실현합니다. 수동 소재 교체 작업을 없애줍니다.
+      <h4>바피더란?</h4>
+      바피더(Bar Feeder)는 CNC 선반 후방에 부착하는 자동화 장치로, 봉재를 주축에 연속 공급하여 무인 또는 무등 가공을 실현합니다. 수동 소재 교체 작업을 없애줍니다.
 
       <h4>주요 유형</h4>
       <ul>
-        <li><strong>단척 바 피더 (短料機)</strong>: 약 1.5m 이하의 봉재 처리. 소형 풋프린트. 협소한 공장이나 기계 후방 공간이 제한된 경우에 적합.</li>
-        <li><strong>장척 바 피더 (長料機)</strong>: 전장 봉재(3~4m) 처리. 높은 생산성. 더 넓은 바닥 면적 필요.</li>
+        <li><strong>단척 바피더 (短料機)</strong>: 약 1.5m 이하의 봉재 처리. 소형 풋프린트. 협소한 공장이나 기계 후방 공간이 제한된 경우에 적합.</li>
+        <li><strong>장척 바피더 (長料機)</strong>: 전장 봉재(3~4m) 처리. 높은 생산성. 더 넓은 바닥 면적 필요.</li>
         <li><strong>유압 부동식 (Hydrodynamic)</strong>: 봉재가 오일 채널 안에 부유 — 고회전에서 진동 거의 없음. 스위스형 선반 및 고속 가공에 최적.</li>
         <li><strong>접촉식 (Contact/Channel)</strong>: 봉재가 V자 채널에 안착. 비용 절감. 저·중속 및 대직경 봉재에 적합.</li>
         <li><strong>매거진형 (Magazine)</strong>: 다수의 봉재를 저장 — 무인 가동 시간 최대화.</li>
@@ -2448,12 +2545,12 @@ const KB = {
       <h4>대만 주요 브랜드</h4>
       <ul>
         <li><strong>LNS (冠通)</strong>: 스위스 브랜드, 대만 조립/판매. 최고급 품질.</li>
-        <li><strong>PRO / 鐠羅</strong>: 대만 제조. HP 시리즈 단척 바 피더의 우수한 가격 대비 성능.</li>
+        <li><strong>PRO / 鐠羅</strong>: 대만 제조. HP 시리즈 단척 바피더의 우수한 가격 대비 성능.</li>
         <li><strong>Iemca</strong>: 이탈리아 브랜드, 대만 대리점 통해 구입 가능.</li>
       </ul>
 
       <h4>중요 팁</h4>
-      바 피더 견적 전 선반 모델 번호와 주축 내경을 반드시 확인하세요. 규격 불일치가 가장 흔한 주문 오류입니다.
+      바피더 견적 전 선반 모델 번호와 주축 내경을 반드시 확인하세요. 규격 불일치가 가장 흔한 주문 오류입니다.
 
       <h4>단척 vs 장척</h4>
       <ul>
@@ -2469,9 +2566,9 @@ const KB = {
 
       <h4>선정 가이드</h4>
       <ul>
-        <li><strong>소직경 + 고RPM</strong> → 유압 부동식 장척 바 피더</li>
-        <li><strong>공간 제한 + 다품종 소량</strong> → 단척 바 피더</li>
-        <li><strong>대량 생산 + 장척 봉재</strong> → 장척 바 피더 + 매거진</li>
+        <li><strong>소직경 + 고RPM</strong> → 유압 부동식 장척 바피더</li>
+        <li><strong>공간 제한 + 다품종 소량</strong> → 단척 바피더</li>
+        <li><strong>대량 생산 + 장척 봉재</strong> → 장척 바피더 + 매거진</li>
         <li><strong>일반 선삭 + 예산 절감</strong> → 접촉식 단척/장척 피더</li>
       </ul>
 
@@ -2480,8 +2577,8 @@ const KB = {
 
       <div style="border-top:1px solid var(--border);margin-top:28px;padding-top:22px">
         <div style="font-size:10px;letter-spacing:2px;color:var(--gold);border:1px solid var(--gold);padding:2px 8px;border-radius:3px;display:inline-block;margin-bottom:16px">전문가 칼럼</div>
-        <h4 style="margin-bottom:8px">재료 진동 제거: 바 피더와 가이드 부싱의 고RPM 동기화</h4>
-        <p style="margin-bottom:16px">고RPM에서 10mm 미만의 소직경 봉재 공급 시 바 피더와 가이드 부싱이 동기화되지 않으면 재료 흔들림과 표면 스크래치가 발생합니다. 유압 오일 필름 지지 방식이 어떻게 이 문제를 해결하는지 알아보세요.</p>
+        <h4 style="margin-bottom:8px">재료 진동 제거: 바피더와 가이드 부싱의 고RPM 동기화</h4>
+        <p style="margin-bottom:16px">고RPM에서 10mm 미만의 소직경 봉재 공급 시 바피더와 가이드 부싱이 동기화되지 않으면 재료 흔들림과 표면 스크래치가 발생합니다. 유압 오일 필름 지지 방식이 어떻게 이 문제를 해결하는지 알아보세요.</p>
         <div style="text-align:center">
           <button class="nav-btn" onclick="openColumn('col-2')" style="color:var(--gold);border:1px solid var(--gold);padding:10px 28px;font-size:13px;letter-spacing:0.5px">전체 아티클 읽기 →</button>
         </div>
@@ -2545,7 +2642,7 @@ const KB = {
 
       <div style="border-top:1px solid var(--border);margin-top:28px;padding-top:22px">
         <div style="font-size:10px;letter-spacing:2px;color:var(--gold);border:1px solid var(--gold);padding:2px 8px;border-radius:3px;display:inline-block;margin-bottom:16px">專家專欄</div>
-        <h4 style="margin-bottom:8px">消除材料震動：高轉速下棒材餵料機與導套的同步調校實務</h4>
+        <h4 style="margin-bottom:8px">消除材料震動：高轉速下送料機與導套的同步調校實務</h4>
         <p style="margin-bottom:16px">在高轉速下送入小直徑棒材（&lt;10mm）時，料機與導套若未能完美同步，將引發材料甩動與表面刮傷。深入了解流體靜壓油膜支撐技術如何解決這個難題。</p>
         <div style="text-align:center">
           <button class="nav-btn" onclick="openColumn('col-2')" style="color:var(--gold);border:1px solid var(--gold);padding:10px 28px;font-size:13px;letter-spacing:0.5px">閱讀完整專欄 →</button>
@@ -2841,7 +2938,7 @@ const KB = {
       <ul>
         <li><strong>베드 위 스윙 (최대 선삭 직경)</strong>: 기계 베드 위에 들어가는 최대 공작물 직경</li>
         <li><strong>최대 선삭 길이</strong>: 두 센터 사이의 최대 공작물 길이</li>
-        <li><strong>봉재 용량 / 주축 내경</strong>: 주축을 통과할 수 있는 최대 봉재 직경 — 바 피더 호환성의 핵심</li>
+        <li><strong>봉재 용량 / 주축 내경</strong>: 주축을 통과할 수 있는 최대 봉재 직경 — 바피더 호환성의 핵심</li>
         <li><strong>주축 회전수 범위 (RPM)</strong>: 높을수록 소직경 고속 절삭에 유리</li>
         <li><strong>주축 모터 출력 (kW)</strong>: 출력이 클수록 중절삭 가능</li>
         <li><strong>터렛 스테이션 수</strong>: 통상 8, 10, 12스테이션</li>
@@ -3009,7 +3106,7 @@ const KB = {
       고RPM 주축은 토크를 희생합니다. 경/중절삭 재료 → 높은 토크(낮은 RPM 범위) 선택. 소직경, 알루미늄, 또는 정삭 → 고RPM 주축 선택.
 
       <h4>노즈 유형 (주축 인터페이스)</h4>
-      A2-5, A2-6, A2-8, A2-11은 일반적인 주축 노즈 크기입니다. 척 크기와 바 피더 콜릿 크기는 이 사양에 따라 결정됩니다.
+      A2-5, A2-6, A2-8, A2-11은 일반적인 주축 노즈 크기입니다. 척 크기와 바피더 콜릿 크기는 이 사양에 따라 결정됩니다.
     `,
     body_zh: `
       <h4>主軸類型</h4>
@@ -4291,7 +4388,7 @@ const MARKETS = {
       </ul>
 
       <h4>주요 수요 분야</h4>
-      CNC 선삭 센터, 바 피더, 정밀 부품. 자동화(무인 가공)에 강한 관심. 예비 부품 및 보증 지원이 구매 결정에 크게 작용합니다.
+      CNC 선삭 센터, 바피더, 정밀 부품. 자동화(무인 가공)에 강한 관심. 예비 부품 및 보증 지원이 구매 결정에 크게 작용합니다.
 
       <h4>언어</h4>
       공식 서신에는 한국어 선호. 기술 문서에는 영어 가능. 공작기계 업계 일부에서 중국어(번체) 이해 가능.
@@ -5394,12 +5491,16 @@ const MARKETS = {
 
 // ─── Navigation ───────────────────────────────────────────────────
 function _termsLayoutOn() {
-  var lg = document.getElementById('layout-grid');
-  if (lg) lg.classList.add('terms-mode');
+  var rp = document.getElementById('right-panel');
+  if (rp) rp.style.display = 'none';
+  var m = document.getElementById('main-content');
+  if (m) m.style.marginRight = '0';
 }
 function _termsLayoutOff() {
-  var lg = document.getElementById('layout-grid');
-  if (lg) lg.classList.remove('terms-mode');
+  var rp = document.getElementById('right-panel');
+  if (rp) rp.style.display = '';
+  var m = document.getElementById('main-content');
+  if (m) m.style.marginRight = '';
 }
 
 function showPageHome() {
@@ -5416,12 +5517,13 @@ function showPageHome() {
 function showPage(id) {
   document.querySelectorAll('.page').forEach(p => p.classList.remove('active'));
   document.getElementById('page-' + id).classList.add('active');
+  if (id === 'terminology') { _termsLayoutOn(); filterTerms(); requestAnimationFrame(function(){ var m=document.querySelector('.main'); if(m){ m.scrollTop=0; m.scrollLeft=0; } window.scrollTo(0,0); document.documentElement.scrollTop=0; }); }
   document.querySelectorAll('.nav-btn').forEach(b => b.classList.remove('active'));
   try { event.target.classList.add('active'); } catch(e) {}
   closeDetail();
   document.getElementById('search-results').classList.remove('show');
 
-  if (id === 'terms') {
+  if (id === 'terminology') {
     _termsLayoutOn();
   } else {
     _termsLayoutOff();
@@ -5692,7 +5794,24 @@ const LANG = {
   en: {
     home_tooltip: 'Back to Home',
     nav_overview: 'Overview', nav_knowledge: 'Knowledge', nav_incoterms: 'Incoterms',
-    nav_markets: 'Markets', nav_news: 'News', nav_inquiry: 'Inquiry',
+    nav_markets: 'Markets', nav_news: 'News', nav_inquiry: 'Inquiry', nav_terminology: 'Terminology',
+    terms_title: 'TERMINOLOGY',
+    tcat_All: 'All',
+    tcat_Machines: 'Machines',
+    tcat_SpindleDrive: 'Spindle & Drive',
+    tcat_BarFeeder: 'Bar Feeder',
+    tcat_Tooling: 'Tooling',
+    tcat_CuttingTools: 'Cutting Tools',
+    tcat_MechParts: 'Mechanical Parts',
+    tcat_Hydraulics: 'Hydraulics',
+    tcat_Measurement: 'Measurement',
+    tcat_CNCProg: 'CNC Programming',
+    tcat_Workholding: 'Workholding',
+    tcat_Trade: 'Trade & Export',
+    tcat_Materials: 'Materials',
+    tcat_Piping: 'Piping & Fittings',
+    tcat_Valves: 'Valves',
+    tcat_Automation: 'Automation & Robotics',
     sidebar_knowledge: 'Knowledge Library', sidebar_export: 'Export Procedures', sidebar_markets: 'Markets', sidebar_industry: 'Industry',
     sb_bar_feeder: ' Bar Feeder', sb_linear_guide: ' Linear Guide', sb_servo_motor: ' Servo Motor',
     sb_cnc_lathe: ' CNC Lathe', sb_tool_holder: ' Tool Holder', sb_spindle: ' Spindle',
@@ -5725,9 +5844,26 @@ const LANG = {
   zh: {
     home_tooltip: '回到首頁',
     nav_overview: '首頁', nav_knowledge: '知識庫', nav_incoterms: '貿易條件',
-    nav_markets: '市場', nav_news: '產業新聞', nav_inquiry: '詢價',
+    nav_markets: '市場', nav_news: '產業新聞', nav_inquiry: '詢價', nav_terminology: '術語對照',
+    terms_title: '術語對照',
+    tcat_All: '全部',
+    tcat_Machines: '機種',
+    tcat_SpindleDrive: '主軸·傳動',
+    tcat_BarFeeder: '送料機',
+    tcat_Tooling: '刀具·夾具',
+    tcat_CuttingTools: '切削刀具',
+    tcat_MechParts: '機械零件',
+    tcat_Hydraulics: '油壓',
+    tcat_Measurement: '量測',
+    tcat_CNCProg: 'CNC程式',
+    tcat_Workholding: '工件夾持',
+    tcat_Trade: '貿易出口',
+    tcat_Materials: '材質',
+    tcat_Piping: '管件',
+    tcat_Valves: '閥件',
+    tcat_Automation: '自動化·機器人',
     sidebar_knowledge: '知識庫', sidebar_export: '出口流程', sidebar_markets: '市場', sidebar_industry: '產業',
-    sb_bar_feeder: ' 料機', sb_linear_guide: ' 線性滑軌', sb_servo_motor: ' 伺服馬達',
+    sb_bar_feeder: ' 送料機', sb_linear_guide: ' 線性滑軌', sb_servo_motor: ' 伺服馬達',
     sb_cnc_lathe: ' CNC 車床', sb_tool_holder: ' 刀座', sb_spindle: ' 主軸',
     sb_live_tool: ' 動力刀座', sb_static_tool: ' 非動力刀座', sb_collet: ' 筒夾/夾頭',
     sb_export_docs: ' 出口文件', sb_marine: ' 海上保險', sb_customs: ' 清關',
@@ -5758,9 +5894,26 @@ const LANG = {
   ko: {
     home_tooltip: '홈으로',
     nav_overview: '홈', nav_knowledge: '지식 라이브러리', nav_incoterms: '인코텀즈',
-    nav_markets: '시장', nav_news: '산업 뉴스', nav_inquiry: '견적 문의',
+    nav_markets: '시장', nav_news: '산업 뉴스', nav_inquiry: '견적 문의', nav_terminology: '용어 대조',
+    terms_title: '용어 대조',
+    tcat_All: '전체',
+    tcat_Machines: '기계 종류',
+    tcat_SpindleDrive: '주축·구동',
+    tcat_BarFeeder: '바피더',
+    tcat_Tooling: '공구·지그',
+    tcat_CuttingTools: '절삭 공구',
+    tcat_MechParts: '기계 부품',
+    tcat_Hydraulics: '유압',
+    tcat_Measurement: '측정',
+    tcat_CNCProg: 'CNC 프로그래밍',
+    tcat_Workholding: '공작물 고정',
+    tcat_Trade: '무역·수출',
+    tcat_Materials: '재질',
+    tcat_Piping: '배관·피팅',
+    tcat_Valves: '밸브',
+    tcat_Automation: '자동화·로봇',
     sidebar_knowledge: '지식 라이브러리', sidebar_export: '수출 절차', sidebar_markets: '시장', sidebar_industry: '산업',
-    sb_bar_feeder: ' 바 피더', sb_linear_guide: ' 리니어 가이드', sb_servo_motor: ' 서보 모터',
+    sb_bar_feeder: ' 바피더', sb_linear_guide: ' 리니어 가이드', sb_servo_motor: ' 서보 모터',
     sb_cnc_lathe: ' CNC 선반', sb_tool_holder: ' 툴 홀더', sb_spindle: ' 스핀들',
     sb_live_tool: ' 동력 공구대', sb_static_tool: ' 비동력 공구대', sb_collet: ' 콜릿 & 척',
     sb_export_docs: ' 수출 서류', sb_marine: ' 해상보험', sb_customs: ' 통관',
@@ -6192,6 +6345,58 @@ window.addEventListener('load', () => {
     &copy; <span id="footer-year"></span> Z&amp;Z STROTEC CO., LTD. &nbsp;／&nbsp; 萬洋國際有限公司 &nbsp;·&nbsp; Taichung, Taiwan &nbsp;·&nbsp; All rights reserved.
   </p>
 </footer>
-<script>document.getElementById('footer-year').textContent = new Date().getFullYear();</script>
+<script>document.getElementById('footer-year').textContent = new Date().getFullYear();
+
+// ─── Terminology Page ──────────────────────────────────────────────────
+let _termsCat = 'All';
+
+function filterTermsCat(cat) {
+  _termsCat = cat;
+  document.querySelectorAll('.terms-cat-btn').forEach(b => b.classList.remove('active'));
+  const key = cat.replace(/ /g,'_').replace(/&/g,'_');
+  const btn = document.getElementById('tcat-' + key);
+  if (btn) btn.classList.add('active');
+  filterTerms();
+}
+
+function filterTerms() {
+  const searchEl = document.getElementById('terms-search');
+  const q = searchEl ? searchEl.value.toLowerCase().trim() : '';
+  let data = TERMS;
+  if (_termsCat !== 'All') {
+    data = data.filter(t => t.cat === _termsCat);
+  }
+  const filtered = q ? data.filter(t =>
+    (t.en || '').toLowerCase().includes(q) ||
+    (t.zh || '').toLowerCase().includes(q) ||
+    (t.ko || '').toLowerCase().includes(q)
+  ) : data;
+
+  const tbody = document.getElementById('terms-tbody');
+  const emptyEl = document.getElementById('terms-empty');
+  const countEl = document.getElementById('terms-count');
+  if (!tbody) return;
+
+  if (filtered.length === 0) {
+    tbody.innerHTML = '';
+    if (emptyEl) emptyEl.style.display = 'block';
+  } else {
+    if (emptyEl) emptyEl.style.display = 'none';
+    const esc = s => (s || '').replace(/&/g,'&amp;').replace(/</g,'&lt;').replace(/>/g,'&gt;');
+    const hl = q
+      ? s => esc(s).replace(new RegExp('(' + q.replace(/[.*+?^${}()|[\]\\]/g,'\\$&') + ')', 'gi'), '<mark style="background:#c9a84c33;color:var(--gold)">$1</mark>')
+      : s => esc(s);
+    tbody.innerHTML = filtered.map((t, i) =>
+      '<tr><td style="color:var(--text-muted);font-size:10px">' + (i+1) + '</td>' +
+      '<td>' + hl(t.en) + '</td>' +
+      '<td>' + hl(t.zh) + '</td>' +
+      '<td>' + (t.ko ? hl(t.ko) : '<span style="color:var(--text-muted)">—</span>') + '</td></tr>'
+    ).join('');
+  }
+  if (countEl) countEl.textContent = filtered.length === TERMS.length
+    ? TERMS.length + ' TERMS'
+    : filtered.length + ' / ' + TERMS.length + ' TERMS';
+}
+</script>
 </body>
 </html>
