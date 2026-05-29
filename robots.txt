@@ -1,0 +1,4 @@
+User-agent: *
+Allow: /
+
+Sitemap: https://zz-strotec.github.io/zz-strotec/sitemap.xml
