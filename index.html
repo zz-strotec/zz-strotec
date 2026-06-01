@@ -5795,6 +5795,12 @@ function openColumn(id) {
   document.querySelectorAll('.nav-btn').forEach(b => b.classList.remove('active'));
   closeDetail();
   window.scrollTo(0, 0);
+  // Update URL hash so the page can be bookmarked / shared
+  if (id === 'column') {
+    history.replaceState(null, '', window.location.pathname);
+  } else {
+    history.replaceState(null, '', '#' + id);
+  }
 }
 
 // ─── Inquiry Form ─────────────────────────────────────────────────
@@ -5860,6 +5866,14 @@ function fallbackMailto(subject, body, toEmail) {
   window.location.href = `mailto:${toEmail}?subject=${subject}&body=${body}`;
   setTimeout(showSuccess, 800);
 }
+
+// ─── Hash routing: restore column from URL on load ────────────────
+document.addEventListener('DOMContentLoaded', function() {
+  const hash = window.location.hash.replace('#', '');
+  if (hash && document.getElementById('page-' + hash)) {
+    openColumn(hash);
+  }
+});
 
 // Show note when machine tool selected
 document.addEventListener('DOMContentLoaded', function() {
