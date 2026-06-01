@@ -5786,8 +5786,12 @@ function showPage(id) {
   }
 
   if (id === 'home' || id === 'news') loadNews();
-  // Clear hash when navigating away from a column via showPage
-  if (window.location.hash) history.replaceState(null, '', window.location.pathname);
+  // Update URL hash for bookmarking / sharing
+  if (id === 'home') {
+    history.replaceState(null, '', window.location.pathname);
+  } else {
+    history.replaceState(null, '', '#' + id);
+  }
 }
 
 // ─── Expert Column Navigation ─────────────────────────────────────
@@ -5869,11 +5873,15 @@ function fallbackMailto(subject, body, toEmail) {
   setTimeout(showSuccess, 800);
 }
 
-// ─── Hash routing: restore column from URL on load ────────────────
+// ─── Hash routing: restore page from URL on load ──────────────────
 document.addEventListener('DOMContentLoaded', function() {
   const hash = window.location.hash.replace('#', '');
   if (hash && document.getElementById('page-' + hash)) {
-    openColumn(hash);
+    if (hash.startsWith('col-')) {
+      openColumn(hash);
+    } else {
+      showPage(hash);
+    }
   }
 });
 
