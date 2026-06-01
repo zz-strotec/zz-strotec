@@ -5786,6 +5786,8 @@ function showPage(id) {
   }
 
   if (id === 'home' || id === 'news') loadNews();
+  // Clear hash when navigating away from a column via showPage
+  if (window.location.hash) history.replaceState(null, '', window.location.pathname);
 }
 
 // ─── Expert Column Navigation ─────────────────────────────────────
