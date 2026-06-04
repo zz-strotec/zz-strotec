@@ -147,6 +147,8 @@
     border-radius: 4px;
     transition: all 0.2s;
     text-transform: uppercase;
+    white-space: nowrap;
+    flex-shrink: 0;
   }
 
   .nav-btn:hover, .nav-btn.active {
@@ -1049,7 +1051,7 @@
     <button class="lang-btn" onclick="switchLang('ko')" id="lang-ko">한국어</button>
   </div>
   <button class="hamburger" onclick="toggleSidebar()" id="hamburger-btn">☰</button>
-  <div class="header-nav" id="header-nav">
+  <div class="header-nav" id="header-nav" style="flex-wrap:wrap;justify-content:flex-end;row-gap:6px">
     <button class="nav-btn active" onclick="showPage('home')" data-i18n="nav_overview">Overview</button>
     <button class="nav-btn" onclick="showPage('knowledge')" data-i18n="nav_knowledge">Knowledge</button>
     <button class="nav-btn" onclick="showPage('incoterms')" data-i18n="nav_incoterms">Incoterms</button>
@@ -1058,8 +1060,8 @@
     <button class="nav-btn" onclick="showPage('terminology')" data-i18n="nav_terminology">Terminology</button>
     <button class="nav-btn" onclick="showPage('inquiry')" style="color:var(--gold);border:1px solid var(--gold);margin-left:8px" data-i18n="nav_inquiry">Inquiry</button>
     <button class="nav-btn" onclick="showPage('whatsnew')" style="color:#2aaa6a;border:1px solid #2aaa6a;margin-left:4px">What's New <span class="whats-new-badge">NEW</span></button>
-    <button class="nav-btn" onclick="showPage('advertise')" style="color:#c9a84c;border:1px solid #6b4e1a;margin-left:4px">📢 刊登廣告</button>
     <button class="nav-btn" onclick="showPage('subscribe')" style="color:#5bbcff;border:1px solid #2a5a7a;margin-left:4px">✉️ <span data-i18n="nav_subscribe">訂閱</span></button>
+    <button class="nav-btn" onclick="showPage('advertise')" style="color:#c9a84c;border:1px solid #6b4e1a;margin-left:4px">📢 刊登廣告</button>
   </div>
 </header>
 
