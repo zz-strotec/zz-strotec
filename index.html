@@ -947,6 +947,35 @@
   }
   .sidebar-overlay.show { display: block; }
 
+  .hero {
+    position: relative;
+    border-radius: 10px;
+    overflow: hidden;
+    margin-bottom: 28px;
+    border: 1px solid var(--border);
+  }
+  .hero-img { width: 100%; height: 340px; object-fit: cover; display: block; }
+  .hero-overlay {
+    position: absolute; inset: 0;
+    background: linear-gradient(90deg, rgba(8,12,16,0.94) 0%, rgba(8,12,16,0.70) 48%, rgba(8,12,16,0.20) 100%);
+  }
+  .hero-content {
+    position: absolute; inset: 0;
+    display: flex; flex-direction: column; justify-content: center;
+    padding: 0 44px; max-width: 640px;
+  }
+  .hero-eyebrow { font-size: 11px; letter-spacing: 3px; color: var(--gold); text-transform: uppercase; margin-bottom: 14px; }
+  .hero-title { color: #fff; font-size: 2rem; font-weight: 600; line-height: 1.25; margin: 0 0 14px; }
+  .hero-sub { color: var(--text); font-size: 1rem; line-height: 1.7; margin: 0 0 22px; }
+  .hero-cta {
+    align-self: flex-start;
+    background: var(--gold); color: var(--bg);
+    border: none; border-radius: 6px;
+    padding: 11px 22px; font-size: 0.9rem; font-weight: 600;
+    cursor: pointer; letter-spacing: 0.5px; transition: background 0.2s;
+  }
+  .hero-cta:hover { background: var(--gold-light); }
+
   @media (max-width: 1100px) {
     .layout { grid-template-columns: 200px 1fr; }
     .right-panel { display: none; }
@@ -954,6 +983,11 @@
   }
 
   @media (max-width: 768px) {
+    .hero-img { height: 240px; }
+    .hero-content { padding: 0 20px; }
+    .hero-overlay { background: linear-gradient(180deg, rgba(8,12,16,0.55) 0%, rgba(8,12,16,0.88) 100%); }
+    .hero-title { font-size: 1.4rem; }
+    .hero-sub { font-size: 0.88rem; margin-bottom: 16px; }
     header {
       padding: 8px 16px;
       height: auto;
@@ -1246,6 +1280,16 @@
 
     <!-- HOME PAGE -->
     <div class="page active" id="page-home">
+      <div class="hero">
+        <img class="hero-img" src="photo/cnc-lathe.jpg" alt="CNC Lathe machining in a Taiwan factory">
+        <div class="hero-overlay"></div>
+        <div class="hero-content">
+          <div class="hero-eyebrow">Z&amp;Z STROTEC &nbsp;·&nbsp; 萬洋國際</div>
+          <h1 class="hero-title" data-i18n="hero_title">Your Taiwan CNC Machine Tool Partner</h1>
+          <p class="hero-sub" data-i18n="hero_sub">Machines, spindles, bar feeders, tooling &amp; precision parts — sourced, exported, and supported worldwide.</p>
+          <button class="hero-cta" onclick="showPage('knowledge')" data-i18n="hero_cta">Explore Knowledge Library</button>
+        </div>
+      </div>
       <div class="section-title" data-i18n="section_featured">FEATURED TOPICS</div>
       <div class="cards-grid">
         <div class="card" onclick="openKnowledge('bar-feeder')">
@@ -6225,6 +6269,9 @@ const LANG = {
     panel_snapshot: 'MARKET SNAPSHOT',
     search_placeholder: 'Search: bar feeder, servo motor, FOB, Korea market...',
     btn_search: 'SEARCH', btn_send: 'SEND INQUIRY →',
+    hero_title: 'Your Taiwan CNC Machine Tool Partner',
+    hero_sub: 'Machines, spindles, bar feeders, tooling & precision parts — sourced, exported, and supported worldwide.',
+    hero_cta: 'Explore Knowledge Library',
     section_featured: 'FEATURED TOPICS', section_news: 'TAIWAN INDUSTRY NEWS',
     section_knowledge: 'KNOWLEDGE LIBRARY', section_incoterms: 'INCOTERMS 2020',
     section_markets: 'KEY MARKETS', section_inquiry: 'PRODUCT INQUIRY',
@@ -6276,6 +6323,9 @@ const LANG = {
     panel_snapshot: '市場概況',
     search_placeholder: '搜尋：料機、伺服馬達、FOB、韓國市場...',
     btn_search: '搜尋', btn_send: '送出詢價 →',
+    hero_title: '台灣 CNC 工具機一站式夥伴',
+    hero_sub: '工具機、主軸、送料機、刀具與精密零件 — 採購、出口、全球技術支援。',
+    hero_cta: '探索知識庫',
     section_featured: '精選主題', section_news: '台灣產業新聞',
     section_knowledge: '知識庫', section_incoterms: 'Incoterms 2020 貿易條件',
     section_markets: '主要市場', section_inquiry: '產品詢價',
@@ -6327,6 +6377,9 @@ const LANG = {
     panel_snapshot: '시장 현황',
     search_placeholder: '검색: 바피더, 서보 모터, FOB, 한국 시장...',
     btn_search: '검색', btn_send: '견적 문의 보내기 →',
+    hero_title: '대만 CNC 공작기계 파트너',
+    hero_sub: '공작기계, 스핀들, 바피더, 공구 및 정밀 부품 — 소싱, 수출, 글로벌 기술 지원.',
+    hero_cta: '지식 라이브러리 보기',
     section_featured: '주요 주제', section_news: '대만 산업 뉴스',
     section_knowledge: '지식 라이브러리', section_incoterms: '인코텀즈 2020',
     section_markets: '주요 시장', section_inquiry: '제품 견적 문의',
@@ -6457,91 +6510,91 @@ const TERMS = [
   {cat:'Machines', en:'Double-column Machining center', zh:'龍門加工中心', ko:'문형 가공기', note:''},
   {cat:'Machines', en:'milling machine', zh:'銑床', ko:'밀링 머신', note:''},
   {cat:'Machines', en:'Boring Machine', zh:'搪床', ko:'보링 머신', note:''},
-  {cat:'Machines', en:'Drilling Machine', zh:'鑽床', ko:'', note:''},
-  {cat:'Machines', en:'Grinding machine', zh:'磨床', ko:'', note:''},
-  {cat:'Machines', en:'Swiss type', zh:'走心式(車床)', ko:'', note:'滑動主軸式'},
-  {cat:'Machines', en:'Fixed head type', zh:'走刀式(車床)', ko:'', note:'固定主軸式'},
-  {cat:'Machines', en:'Turret lathe', zh:'六角車床', ko:'', note:''},
-  {cat:'Machines', en:'Wire EDM', zh:'線切割機', ko:'', note:'慢走絲'},
-  {cat:'Machines', en:'Electric discharge machine', zh:'放電加工機', ko:'', note:''},
-  {cat:'Machines', en:'Gear cutting machine', zh:'齒輪切削機', ko:'', note:''},
-  {cat:'Machines', en:'Special purpose machine', zh:'專用機', ko:'', note:''},
+  {cat:'Machines', en:'Drilling Machine', zh:'鑽床', ko:'드릴링 머신', note:''},
+  {cat:'Machines', en:'Grinding machine', zh:'磨床', ko:'연삭기', note:''},
+  {cat:'Machines', en:'Swiss type', zh:'走心式(車床)', ko:'스위스 타입 (주축이동형)', note:'滑動主軸式'},
+  {cat:'Machines', en:'Fixed head type', zh:'走刀式(車床)', ko:'고정주축형', note:'固定主軸式'},
+  {cat:'Machines', en:'Turret lathe', zh:'六角車床', ko:'터렛 선반', note:''},
+  {cat:'Machines', en:'Wire EDM', zh:'線切割機', ko:'와이어 방전가공기', note:'慢走絲'},
+  {cat:'Machines', en:'Electric discharge machine', zh:'放電加工機', ko:'방전가공기 (EDM)', note:''},
+  {cat:'Machines', en:'Gear cutting machine', zh:'齒輪切削機', ko:'기어 절삭기', note:''},
+  {cat:'Machines', en:'Special purpose machine', zh:'專用機', ko:'전용기', note:''},
   {cat:'Spindle & Drive', en:'Main Spindle', zh:'主軸', ko:'주축 / 스핀들', note:''},
   {cat:'Spindle & Drive', en:'Sub-spindle', zh:'副主軸', ko:'부주축', note:''},
   {cat:'Spindle & Drive', en:'Built-in Type spindle', zh:'內藏式主軸', ko:'내장형 모터 주축', note:''},
   {cat:'Spindle & Drive', en:'Spindle motor', zh:'主軸馬達', ko:'스핀들 모터', note:'皮帶式 / 內藏式'},
   {cat:'Spindle & Drive', en:'Servo motor', zh:'伺服馬達', ko:'서보모터', note:'分AC和DC兩種'},
-  {cat:'Spindle & Drive', en:'Driver / AMP', zh:'驅動器', ko:'', note:''},
+  {cat:'Spindle & Drive', en:'Driver / AMP', zh:'驅動器', ko:'드라이버 / 앰프', note:''},
   {cat:'Spindle & Drive', en:'Controller', zh:'控制器', ko:'컨트롤러', note:''},
   {cat:'Spindle & Drive', en:'Encoder', zh:'編碼器', ko:'엔코더', note:'位置/轉速回授'},
-  {cat:'Spindle & Drive', en:'CTS (Coolant Thru Spindle)', zh:'主軸中心出水', ko:'', note:''},
+  {cat:'Spindle & Drive', en:'CTS (Coolant Thru Spindle)', zh:'主軸中心出水', ko:'주축 중심 절삭유 공급', note:''},
   {cat:'Spindle & Drive', en:'Ball Screw', zh:'滾珠螺桿', ko:'볼스크류', note:'將旋轉運動轉換成直線運動'},
-  {cat:'Spindle & Drive', en:'linear guideways', zh:'線性滑軌', ko:'', note:''},
+  {cat:'Spindle & Drive', en:'linear guideways', zh:'線性滑軌', ko:'리니어 가이드', note:''},
   {cat:'Spindle & Drive', en:'Slider Block / Truck', zh:'滑塊', ko:'리니어 블록 / 슬라이드 블록', note:'線性滑軌上的移動座'},
   {cat:'Spindle & Drive', en:'linear scale', zh:'光學尺', ko:'리니어 스케일', note:''},
   {cat:'Spindle & Drive', en:'Bearing', zh:'軸承 / 培林', ko:'베어링', note:''},
   {cat:'Spindle & Drive', en:'Ball type Bearing', zh:'滾珠軸承', ko:'볼베어링', note:''},
-  {cat:'Spindle & Drive', en:'Roller Type Bearing', zh:'滾柱軸承', ko:'', note:''},
+  {cat:'Spindle & Drive', en:'Roller Type Bearing', zh:'滾柱軸承', ko:'롤러 베어링', note:''},
   {cat:'Bar Feeder', en:'Bar Feeder', zh:'送料機', ko:'바피더', note:''},
   {cat:'Bar Feeder', en:'Bar', zh:'棒材', ko:'바', note:''},
   {cat:'Bar Feeder', en:'Guiding Channel', zh:'膠管', ko:'가이드 채널', note:''},
   {cat:'Bar Feeder', en:'(Bar) Pusher', zh:'壓桿/推桿', ko:'밀대', note:''},
   {cat:'Bar Feeder', en:'Bushing', zh:'夾塊', ko:'부싱/방진구', note:''},
   {cat:'Bar Feeder', en:'Rotating Unit', zh:'中軸', ko:'회전봉', note:''},
-  {cat:'Bar Feeder', en:'Front Tube', zh:'前端套管', ko:'', note:''},
-  {cat:'Bar Feeder', en:'Spindle bore', zh:'主軸內徑', ko:'', note:''},
-  {cat:'Bar Feeder', en:'Feeding Support', zh:'送料尾座', ko:'', note:''},
-  {cat:'Bar Feeder', en:'Part catcher box', zh:'接料盒', ko:'', note:''},
+  {cat:'Bar Feeder', en:'Front Tube', zh:'前端套管', ko:'프론트 튜브', note:''},
+  {cat:'Bar Feeder', en:'Spindle bore', zh:'主軸內徑', ko:'주축 내경', note:''},
+  {cat:'Bar Feeder', en:'Feeding Support', zh:'送料尾座', ko:'피딩 서포트', note:''},
+  {cat:'Bar Feeder', en:'Part catcher box', zh:'接料盒', ko:'파트 캐처 박스', note:''},
   {cat:'Bar Feeder', en:'Parts catcher', zh:'接料器', ko:'파트 캐처', note:''},
   {cat:'Tooling', en:'Turret', zh:'刀塔', ko:'터렛', note:''},
-  {cat:'Tooling', en:'Upper Turret', zh:'上刀塔', ko:'', note:''},
-  {cat:'Tooling', en:'Lower Turret', zh:'下刀塔', ko:'', note:''},
-  {cat:'Tooling', en:'Gang type', zh:'櫛式', ko:'', note:''},
+  {cat:'Tooling', en:'Upper Turret', zh:'上刀塔', ko:'상부 터렛', note:''},
+  {cat:'Tooling', en:'Lower Turret', zh:'下刀塔', ko:'하부 터렛', note:''},
+  {cat:'Tooling', en:'Gang type', zh:'櫛式', ko:'갱 타입', note:''},
   {cat:'Tooling', en:'Tool', zh:'刀具', ko:'공구', note:''},
   {cat:'Tooling', en:'Tool Holder', zh:'刀具座', ko:'공구대', note:''},
   {cat:'Tooling', en:'Power tool / Live Tool', zh:'動力刀具', ko:'회전공구', note:''},
-  {cat:'Tooling', en:'station', zh:'刀位', ko:'', note:'Ex: 8-station servo turret'},
-  {cat:'Tooling', en:'tool sleeve', zh:'刀套/套筒', ko:'', note:''},
+  {cat:'Tooling', en:'station', zh:'刀位', ko:'스테이션', note:'Ex: 8-station servo turret'},
+  {cat:'Tooling', en:'tool sleeve', zh:'刀套/套筒', ko:'툴 슬리브', note:''},
   {cat:'Tooling', en:'Chuck', zh:'夾頭', ko:'척', note:''},
   {cat:'Tooling', en:'Collet (Collet Chuck)', zh:'筒夾', ko:'콜릿', note:''},
   {cat:'Tooling', en:'3-Jaw Chuck', zh:'三爪夾頭', ko:'3죠 척', note:''},
-  {cat:'Tooling', en:'Jig Chuck', zh:'治具夾頭', ko:'', note:''},
+  {cat:'Tooling', en:'Jig Chuck', zh:'治具夾頭', ko:'지그 척', note:''},
   {cat:'Tooling', en:'Tailstock', zh:'尾座', ko:'심압대', note:''},
-  {cat:'Tooling', en:'A.T.C. system', zh:'加工中心機刀庫', ko:'', note:''},
+  {cat:'Tooling', en:'A.T.C. system', zh:'加工中心機刀庫', ko:'자동공구교환장치 (ATC)', note:''},
   {cat:'Tooling', en:'Gear hobbing unit', zh:'滾齒刀座', ko:'기어호빙유닛', note:''},
-  {cat:'Cutting Tools', en:'Milling Tool', zh:'銑刀', ko:'', note:''},
-  {cat:'Cutting Tools', en:'ID/OD Turning', zh:'內/外徑刀', ko:'', note:''},
-  {cat:'Cutting Tools', en:'Inner Grooving', zh:'內徑切槽刀', ko:'', note:''},
-  {cat:'Cutting Tools', en:'ID Threading', zh:'內徑車牙刀', ko:'', note:''},
-  {cat:'Cutting Tools', en:'Cut Off Tool', zh:'切斷刀', ko:'', note:''},
-  {cat:'Cutting Tools', en:'Broaching tool', zh:'拉刀', ko:'', note:''},
+  {cat:'Cutting Tools', en:'Milling Tool', zh:'銑刀', ko:'밀링 커터', note:''},
+  {cat:'Cutting Tools', en:'ID/OD Turning', zh:'內/外徑刀', ko:'내경/외경 선삭공구', note:''},
+  {cat:'Cutting Tools', en:'Inner Grooving', zh:'內徑切槽刀', ko:'내경 홈가공 공구', note:''},
+  {cat:'Cutting Tools', en:'ID Threading', zh:'內徑車牙刀', ko:'내경 나사가공 공구', note:''},
+  {cat:'Cutting Tools', en:'Cut Off Tool', zh:'切斷刀', ko:'절단 공구', note:''},
+  {cat:'Cutting Tools', en:'Broaching tool', zh:'拉刀', ko:'브로치', note:''},
   {cat:'Cutting Tools', en:'Tap / Tapping', zh:'牙攻/攻牙', ko:'탭', note:'內牙成型'},
-  {cat:'Cutting Tools', en:'Thread Rolling', zh:'輾牙/搓牙', ko:'', note:'外螺紋成型'},
-  {cat:'Cutting Tools', en:'Knurling', zh:'滾花', ko:'', note:''},
+  {cat:'Cutting Tools', en:'Thread Rolling', zh:'輾牙/搓牙', ko:'나사 전조', note:'外螺紋成型'},
+  {cat:'Cutting Tools', en:'Knurling', zh:'滾花', ko:'널링', note:''},
   {cat:'Mechanical Parts', en:'Gear', zh:'齒輪', ko:'기어', note:''},
   {cat:'Mechanical Parts', en:'Bevel Gear', zh:'傘齒輪', ko:'베벨 기어', note:''},
-  {cat:'Mechanical Parts', en:'Clutch', zh:'離合器', ko:'', note:''},
-  {cat:'Mechanical Parts', en:'Conveyor', zh:'輸送機', ko:'', note:''},
-  {cat:'Mechanical Parts', en:'chip conveyors', zh:'除屑機', ko:'', note:''},
-  {cat:'Mechanical Parts', en:'Screw-type chip conveyors', zh:'自動螺旋式除屑機', ko:'', note:''},
+  {cat:'Mechanical Parts', en:'Clutch', zh:'離合器', ko:'클러치', note:''},
+  {cat:'Mechanical Parts', en:'Conveyor', zh:'輸送機', ko:'컨베이어', note:''},
+  {cat:'Mechanical Parts', en:'chip conveyors', zh:'除屑機', ko:'칩 컨베이어', note:''},
+  {cat:'Mechanical Parts', en:'Screw-type chip conveyors', zh:'自動螺旋式除屑機', ko:'스크류식 칩 컨베이어', note:''},
   {cat:'Mechanical Parts', en:'Oil Seal / O-RING', zh:'油封(軸封)', ko:'오링', note:'防止潤滑油從接縫溢出'},
-  {cat:'Mechanical Parts', en:'Pulley', zh:'皮帶輪', ko:'', note:''},
-  {cat:'Mechanical Parts', en:'Spring', zh:'彈簧', ko:'', note:''},
-  {cat:'Mechanical Parts', en:'Transformer', zh:'變壓器', ko:'', note:''},
-  {cat:'Mechanical Parts', en:'Pump', zh:'幫浦/泵', ko:'', note:''},
+  {cat:'Mechanical Parts', en:'Pulley', zh:'皮帶輪', ko:'풀리', note:''},
+  {cat:'Mechanical Parts', en:'Spring', zh:'彈簧', ko:'스프링', note:''},
+  {cat:'Mechanical Parts', en:'Transformer', zh:'變壓器', ko:'변압기', note:''},
+  {cat:'Mechanical Parts', en:'Pump', zh:'幫浦/泵', ko:'펌프', note:''},
   {cat:'Mechanical Parts', en:'Lubricator', zh:'油霧潤滑裝置', ko:'루브리케이터 / 오일미스트', note:''},
-  {cat:'Mechanical Parts', en:'Sensor Switch', zh:'感應開關', ko:'', note:''},
+  {cat:'Mechanical Parts', en:'Sensor Switch', zh:'感應開關', ko:'센서 스위치', note:''},
   {cat:'Mechanical Parts', en:'Handwheel / MPG', zh:'手輪', ko:'핸들', note:''},
   {cat:'Mechanical Parts', en:'Nipple', zh:'(管)內接頭', ko:'니플', note:''},
   {cat:'Mechanical Parts', en:'Joint', zh:'接頭', ko:'조인트/커넥터', note:''},
-  {cat:'Mechanical Parts', en:'Flexible cover', zh:'伸縮護罩', ko:'', note:''},
-  {cat:'Mechanical Parts', en:'Spindle Cover', zh:'主軸防護罩', ko:'', note:''},
+  {cat:'Mechanical Parts', en:'Flexible cover', zh:'伸縮護罩', ko:'텔레스코픽 커버', note:''},
+  {cat:'Mechanical Parts', en:'Spindle Cover', zh:'主軸防護罩', ko:'주축 커버', note:''},
   {cat:'Mechanical Parts', en:'Air Compressor', zh:'空氣壓縮機', ko:'공기 압축기', note:''},
-  {cat:'Mechanical Parts', en:'Chiller', zh:'冷卻機', ko:'', note:''},
-  {cat:'Mechanical Parts', en:'Oil Mist Recollector', zh:'油霧回收機', ko:'', note:''},
+  {cat:'Mechanical Parts', en:'Chiller', zh:'冷卻機', ko:'칠러', note:''},
+  {cat:'Mechanical Parts', en:'Oil Mist Recollector', zh:'油霧回收機', ko:'오일미스트 집진기', note:''},
   {cat:'Hydraulics', en:'Hydraulic Cylinder', zh:'油壓缸', ko:'유압 실린더', note:''},
-  {cat:'Hydraulics', en:'Hydraulic Motor', zh:'油壓馬達', ko:'', note:''},
-  {cat:'Hydraulics', en:'Hydraulic Presses', zh:'液壓沖床', ko:'', note:''},
+  {cat:'Hydraulics', en:'Hydraulic Motor', zh:'油壓馬達', ko:'유압 모터', note:''},
+  {cat:'Hydraulics', en:'Hydraulic Presses', zh:'液壓沖床', ko:'유압 프레스', note:''},
   {cat:'Measurement', en:'Accuracy', zh:'精密度', ko:'정밀도/정도', note:''},
   {cat:'Measurement', en:'Chamfer', zh:'倒角', ko:'면취', note:''},
   {cat:'Measurement', en:'Clearance / Tolerance', zh:'公差', ko:'공차', note:''},
@@ -6550,16 +6603,16 @@ const TERMS = [
   {cat:'Measurement', en:'Diameter', zh:'直徑', ko:'직경', note:''},
   {cat:'Measurement', en:'Vernier Caliper', zh:'游標卡尺', ko:'노기스', note:''},
   {cat:'Measurement', en:'Runout', zh:'偏擺/跳動', ko:'런아웃', note:'刀具與心軸的同心度'},
-  {cat:'Measurement', en:'Concentricity', zh:'同心度', ko:'', note:''},
-  {cat:'Measurement', en:'Depth of Cut', zh:'切削深度', ko:'', note:''},
-  {cat:'Measurement', en:'Thou', zh:'千分之一英吋 (0.001")', ko:'', note:'機械師專業術語'},
-  {cat:'CNC Programming', en:'G-code', zh:'G碼', ko:'', note:'CNC控制器讀的程式語言'},
-  {cat:'CNC Programming', en:'CAD', zh:'電腦輔助設計', ko:'', note:'Computer Aided Design'},
-  {cat:'CNC Programming', en:'CAM', zh:'電腦輔助製造', ko:'', note:'Computer Aided Manufacturing'},
-  {cat:'CNC Programming', en:'Post Processor', zh:'後處理器', ko:'', note:'將CAM翻譯成特定機器方言'},
-  {cat:'CNC Programming', en:'Work Coordinate System (WCS)', zh:'工作座標系統', ko:'', note:''},
-  {cat:'CNC Programming', en:'Chatter', zh:'顫動', ko:'', note:'切削時產生的雜訊'},
-  {cat:'CNC Programming', en:'Rigid tapping', zh:'剛性攻牙', ko:'', note:''},
+  {cat:'Measurement', en:'Concentricity', zh:'同心度', ko:'동심도', note:''},
+  {cat:'Measurement', en:'Depth of Cut', zh:'切削深度', ko:'절삭 깊이', note:''},
+  {cat:'Measurement', en:'Thou', zh:'千分之一英吋 (0.001")', ko:'사우 (1/1000인치)', note:'機械師專業術語'},
+  {cat:'CNC Programming', en:'G-code', zh:'G碼', ko:'G코드', note:'CNC控制器讀的程式語言'},
+  {cat:'CNC Programming', en:'CAD', zh:'電腦輔助設計', ko:'CAD (캐드)', note:'Computer Aided Design'},
+  {cat:'CNC Programming', en:'CAM', zh:'電腦輔助製造', ko:'CAM (캠)', note:'Computer Aided Manufacturing'},
+  {cat:'CNC Programming', en:'Post Processor', zh:'後處理器', ko:'포스트 프로세서', note:'將CAM翻譯成特定機器方言'},
+  {cat:'CNC Programming', en:'Work Coordinate System (WCS)', zh:'工作座標系統', ko:'공작물 좌표계', note:''},
+  {cat:'CNC Programming', en:'Chatter', zh:'顫動', ko:'채터 (떨림)', note:'切削時產生的雜訊'},
+  {cat:'CNC Programming', en:'Rigid tapping', zh:'剛性攻牙', ko:'리지드 태핑', note:''},
   {cat:'CNC Programming', en:'Simulation', zh:'模擬(路徑)', ko:'시뮬레이션', note:''},
   {cat:'CNC Programming', en:'parameter', zh:'參數', ko:'파라미터', note:''},
   {cat:'CNC Programming', en:'travel / stroke', zh:'行程', ko:'스트로크', note:''},
@@ -6575,8 +6628,8 @@ const TERMS = [
   {cat:'Mechanical Parts', en:'mechanical load', zh:'機械負載', ko:'기계 부하', note:''},
   {cat:'Mechanical Parts', en:'bracket', zh:'托架/支架', ko:'브래킷', note:'LNS料機連接車床時使用'},
   {cat:'Mechanical Parts', en:'exploded view', zh:'分解圖', ko:'분해도', note:'零件分解圖'},
-  {cat:'Materials', en:'Tungsten steel', zh:'鎢鋼', ko:'', note:''},
-  {cat:'Materials', en:'Titanium plating', zh:'鍍鈦', ko:'', note:''},
+  {cat:'Materials', en:'Tungsten steel', zh:'鎢鋼', ko:'텅스텐강', note:''},
+  {cat:'Materials', en:'Titanium plating', zh:'鍍鈦', ko:'티타늄 코팅', note:''},
 
   // ── Piping & Fittings ──────────────────────────────────────────
   {cat:'Piping & Fittings', en:'Pipe', zh:'直管', ko:'파이프', note:''},
