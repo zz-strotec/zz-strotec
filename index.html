@@ -1059,6 +1059,7 @@
     <button class="nav-btn" onclick="showPage('inquiry')" style="color:var(--gold);border:1px solid var(--gold);margin-left:8px" data-i18n="nav_inquiry">Inquiry</button>
     <button class="nav-btn" onclick="showPage('whatsnew')" style="color:#2aaa6a;border:1px solid #2aaa6a;margin-left:4px">What's New <span class="whats-new-badge">NEW</span></button>
     <button class="nav-btn" onclick="showPage('advertise')" style="color:#c9a84c;border:1px solid #6b4e1a;margin-left:4px">📢 刊登廣告</button>
+    <button class="nav-btn" onclick="showPage('subscribe')" style="color:#5bbcff;border:1px solid #2a5a7a;margin-left:4px">✉️ <span data-i18n="nav_subscribe">訂閱</span></button>
   </div>
 </header>
 
@@ -1210,6 +1211,9 @@
       </div>
       <div class="sidebar-item" onclick="showPage('advertise')">
         <span class="icon">📢</span><span> 刊登廣告 / Advertise</span>
+      </div>
+      <div class="sidebar-item" onclick="showPage('subscribe')" style="color:#5bbcff">
+        <span class="icon">✉️</span><span data-i18n="sb_subscribe"> 訂閱專欄更新</span>
       </div>
     </div>
   </div>
@@ -2541,6 +2545,120 @@
       </div>
     </div>
 
+
+    <!-- ─── Subscribe Page ─────────────────────────────────────────────── -->
+    <div class="page" id="page-subscribe">
+      <div class="section-title">✉️ SUBSCRIBE &nbsp;／&nbsp; 訂閱專欄更新 &nbsp;／&nbsp; 뉴스레터 구독</div>
+
+      <!-- EN -->
+      <div style="background:var(--surface);border:1px solid var(--border);border-radius:8px;padding:28px 28px 24px;margin-bottom:24px">
+        <div style="display:flex;align-items:center;gap:10px;margin-bottom:14px">
+          <span style="font-size:10px;letter-spacing:2px;color:var(--gold);border:1px solid var(--gold);padding:2px 8px;border-radius:3px">ENGLISH</span>
+        </div>
+        <h2 style="font-family:'Bebas Neue',sans-serif;font-size:22px;letter-spacing:2px;color:var(--text);margin-bottom:10px">STAY UPDATED — EXPERT COLUMNS &amp; INDUSTRY KNOWLEDGE</h2>
+        <p style="color:var(--text-dim);line-height:1.8;margin-bottom:20px">Subscribe to receive email notifications when we publish new Expert Column articles or add major Knowledge Library updates. We send only when there is real content — no spam, no marketing blasts.</p>
+        <!-- MAILCHIMP FORM — replace action URL with your Mailchimp embed action -->
+        <form id="subscribe-form-en" action="https://github.us20.list-manage.com/subscribe/post?u=e6d7474a58404ec4b2bee59f7&amp;id=64be150341&amp;f_id=007213eaf0" method="post" target="_blank" novalidate
+              style="display:flex;flex-wrap:wrap;gap:10px;align-items:flex-end">
+          <div style="flex:1;min-width:180px">
+            <label style="display:block;font-size:11px;color:var(--text-dim);letter-spacing:1px;margin-bottom:5px">NAME</label>
+            <input type="text" name="FNAME" placeholder="Your name" required
+                   style="width:100%;background:var(--surface2);border:1px solid var(--border);border-radius:5px;padding:9px 12px;color:var(--text);font-size:13px;outline:none;box-sizing:border-box">
+          </div>
+          <div style="flex:2;min-width:220px">
+            <label style="display:block;font-size:11px;color:var(--text-dim);letter-spacing:1px;margin-bottom:5px">EMAIL *</label>
+            <input type="email" name="EMAIL" placeholder="your@email.com" required
+                   style="width:100%;background:var(--surface2);border:1px solid var(--border);border-radius:5px;padding:9px 12px;color:var(--text);font-size:13px;outline:none;box-sizing:border-box">
+          </div>
+          <!-- Mailchimp bot-trap (do not remove) -->
+          <div style="position:absolute;left:-5000px" aria-hidden="true">
+            <input type="text" name="b_e6d7474a58404ec4b2bee59f7_64be150341" tabindex="-1" value="">
+          </div>
+          <button type="submit"
+                  style="background:transparent;border:1px solid #5bbcff;color:#5bbcff;padding:9px 22px;border-radius:5px;font-size:12px;letter-spacing:1.5px;cursor:pointer;white-space:nowrap">
+            SUBSCRIBE →
+          </button>
+        </form>
+        <p style="color:var(--text-dim);font-size:11px;margin-top:12px;line-height:1.7">Your email is used only to send article notifications. Unsubscribe anytime. We do not share your contact details with third parties.</p>
+      </div>
+
+      <!-- 中文 -->
+      <div style="background:var(--surface);border:1px solid var(--border);border-radius:8px;padding:28px 28px 24px;margin-bottom:24px">
+        <div style="display:flex;align-items:center;gap:10px;margin-bottom:14px">
+          <span style="font-size:10px;letter-spacing:2px;color:#8fb8d0;border:1px solid #2a5a7a;padding:2px 8px;border-radius:3px">繁體中文</span>
+        </div>
+        <h2 style="font-family:'Bebas Neue',sans-serif;font-size:22px;letter-spacing:2px;color:var(--text);margin-bottom:10px">訂閱專家專欄與知識庫更新通知</h2>
+        <p style="color:var(--text-dim);line-height:1.8;margin-bottom:20px">訂閱後，每當我們發布新的專家專欄文章或重要知識庫更新，您將第一時間收到 Email 通知。我們只在有真正內容時發送，不寄廣告信。</p>
+        <form id="subscribe-form-zh" action="https://github.us20.list-manage.com/subscribe/post?u=e6d7474a58404ec4b2bee59f7&amp;id=64be150341&amp;f_id=007213eaf0" method="post" target="_blank" novalidate
+              style="display:flex;flex-wrap:wrap;gap:10px;align-items:flex-end">
+          <div style="flex:1;min-width:180px">
+            <label style="display:block;font-size:11px;color:var(--text-dim);letter-spacing:1px;margin-bottom:5px">姓名</label>
+            <input type="text" name="FNAME" placeholder="您的姓名"
+                   style="width:100%;background:var(--surface2);border:1px solid var(--border);border-radius:5px;padding:9px 12px;color:var(--text);font-size:13px;outline:none;box-sizing:border-box">
+          </div>
+          <div style="flex:2;min-width:220px">
+            <label style="display:block;font-size:11px;color:var(--text-dim);letter-spacing:1px;margin-bottom:5px">電子郵件 *</label>
+            <input type="email" name="EMAIL" placeholder="your@email.com" required
+                   style="width:100%;background:var(--surface2);border:1px solid var(--border);border-radius:5px;padding:9px 12px;color:var(--text);font-size:13px;outline:none;box-sizing:border-box">
+          </div>
+          <div style="position:absolute;left:-5000px" aria-hidden="true">
+            <input type="text" name="b_e6d7474a58404ec4b2bee59f7_64be150341" tabindex="-1" value="">
+          </div>
+          <button type="submit"
+                  style="background:transparent;border:1px solid #5bbcff;color:#5bbcff;padding:9px 22px;border-radius:5px;font-size:12px;letter-spacing:1.5px;cursor:pointer;white-space:nowrap">
+            立即訂閱 →
+          </button>
+        </form>
+        <p style="color:var(--text-dim);font-size:11px;margin-top:12px;line-height:1.7">您的 Email 僅用於發送文章通知，可隨時取消訂閱。我們不會與第三方共享您的聯絡資訊。</p>
+      </div>
+
+      <!-- 한국어 -->
+      <div style="background:var(--surface);border:1px solid var(--border);border-radius:8px;padding:28px 28px 24px;margin-bottom:24px">
+        <div style="display:flex;align-items:center;gap:10px;margin-bottom:14px">
+          <span style="font-size:10px;letter-spacing:2px;color:#b8d0a0;border:1px solid #3a5a2a;padding:2px 8px;border-radius:3px">한국어</span>
+        </div>
+        <h2 style="font-family:'Bebas Neue',sans-serif;font-size:22px;letter-spacing:2px;color:var(--text);margin-bottom:10px">전문가 칼럼 &amp; 지식 라이브러리 업데이트 구독</h2>
+        <p style="color:var(--text-dim);line-height:1.8;margin-bottom:20px">새로운 전문가 칼럼 또는 지식 라이브러리 업데이트가 있을 때 이메일로 알림을 받아보세요. 실제 콘텐츠가 있을 때만 발송하며, 광고성 메일은 보내지 않습니다.</p>
+        <form id="subscribe-form-ko" action="https://github.us20.list-manage.com/subscribe/post?u=e6d7474a58404ec4b2bee59f7&amp;id=64be150341&amp;f_id=007213eaf0" method="post" target="_blank" novalidate
+              style="display:flex;flex-wrap:wrap;gap:10px;align-items:flex-end">
+          <div style="flex:1;min-width:180px">
+            <label style="display:block;font-size:11px;color:var(--text-dim);letter-spacing:1px;margin-bottom:5px">이름</label>
+            <input type="text" name="FNAME" placeholder="성함을 입력하세요"
+                   style="width:100%;background:var(--surface2);border:1px solid var(--border);border-radius:5px;padding:9px 12px;color:var(--text);font-size:13px;outline:none;box-sizing:border-box">
+          </div>
+          <div style="flex:2;min-width:220px">
+            <label style="display:block;font-size:11px;color:var(--text-dim);letter-spacing:1px;margin-bottom:5px">이메일 *</label>
+            <input type="email" name="EMAIL" placeholder="your@email.com" required
+                   style="width:100%;background:var(--surface2);border:1px solid var(--border);border-radius:5px;padding:9px 12px;color:var(--text);font-size:13px;outline:none;box-sizing:border-box">
+          </div>
+          <div style="position:absolute;left:-5000px" aria-hidden="true">
+            <input type="text" name="b_e6d7474a58404ec4b2bee59f7_64be150341" tabindex="-1" value="">
+          </div>
+          <button type="submit"
+                  style="background:transparent;border:1px solid #5bbcff;color:#5bbcff;padding:9px 22px;border-radius:5px;font-size:12px;letter-spacing:1.5px;cursor:pointer;white-space:nowrap">
+            구독하기 →
+          </button>
+        </form>
+        <p style="color:var(--text-dim);font-size:11px;margin-top:12px;line-height:1.7">이메일은 기사 알림 발송 목적으로만 사용됩니다. 언제든지 구독을 취소할 수 있습니다.</p>
+      </div>
+
+      <!--
+        ⚙️ SETUP — FOR SITE OWNER (this is an HTML comment; NOT visible to visitors)
+        ✅ ACTIVE — connected to Mailchimp audience (account "github", us20).
+        Form action URL: https://github.us20.list-manage.com/subscribe/post?u=e6d7474a58404ec4b2bee59f7&id=64be150341
+        Bot-trap field:  b_e6d7474a58404ec4b2bee59f7_64be150341
+        (All three forms above — EN / 中文 / 한국어 — share these values.)
+
+        TO SEND A NOTIFICATION when you publish a new article:
+        1. Log in to Mailchimp → Campaigns → Create → Email (Regular)
+        2. Pick your audience → design the email → Send.
+        NOTE: free plan = up to 500 contacts but only 100 email-sends per month
+        (sends = contacts × emails), so send sparingly / only for important updates.
+
+        IF YOU EVER REGENERATE THE FORM in Mailchimp, the u=, id=, and b_ values change —
+        replace them in all three forms above.
+      -->
+    </div>
 
     <!-- ─── Terminology Page ──────────────────────────────────────────── -->
   <!-- ─── Terminology Page ──────────────────────────────────────────── -->
@@ -6074,7 +6192,7 @@ const LANG = {
   en: {
     home_tooltip: 'Back to Home',
     nav_overview: 'Overview', nav_knowledge: 'Knowledge', nav_incoterms: 'Incoterms',
-    nav_markets: 'Markets', nav_news: 'News', nav_inquiry: 'Inquiry', nav_terminology: 'Terminology',
+    nav_markets: 'Markets', nav_news: 'News', nav_inquiry: 'Inquiry', nav_terminology: 'Terminology', nav_subscribe: 'Subscribe', sb_subscribe: ' Subscribe to Updates',
     terms_title: 'TERMINOLOGY',
     tcat_All: 'All',
     tcat_Machines: 'Machines',
@@ -6150,6 +6268,7 @@ const LANG = {
     sb_import_duty: ' 進口關稅參考', sb_container: ' 貨櫃與材積指南', sb_terms: ' 術語對照',
     sb_tw_brands: ' 台灣製造商', sb_maintenance: ' 保養指南',
     sb_lifespan: ' 零件壽命', sb_gcode: ' G碼參考',
+    nav_subscribe: '訂閱', sb_subscribe: ' 訂閱專欄更新',
     panel_snapshot: '市場概況',
     search_placeholder: '搜尋：料機、伺服馬達、FOB、韓國市場...',
     btn_search: '搜尋', btn_send: '送出詢價 →',
@@ -6200,6 +6319,7 @@ const LANG = {
     sb_import_duty: ' 수입 관세 참고', sb_container: ' 컨테이너 & CBM 가이드', sb_terms: ' 용어 대조',
     sb_tw_brands: ' 대만 제조업체', sb_maintenance: ' 유지보수 가이드',
     sb_lifespan: ' 부품 수명', sb_gcode: ' G코드 참고',
+    nav_subscribe: '구독', sb_subscribe: ' 뉴스레터 구독',
     panel_snapshot: '시장 현황',
     search_placeholder: '검색: 바피더, 서보 모터, FOB, 한국 시장...',
     btn_search: '검색', btn_send: '견적 문의 보내기 →',
