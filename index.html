@@ -1263,6 +1263,17 @@
     </div>
 
     <div class="sidebar-section">
+      <span class="sidebar-label" data-i18n="home_why_taiwan">WHY TAIWAN ／ 為什麼選台灣</span>
+      <div style="padding:0 20px">
+        <div class="stat-row"><span class="stat-label" data-zh="全球出口排名" data-ko="세계 수출 순위">Global Export Rank</span><span class="stat-val" data-zh="全球第 5" data-ko="세계 5위">#5 Worldwide</span></div>
+        <div class="stat-row"><span class="stat-label" data-zh="產業中心" data-ko="산업 중심지">Industry Hub</span><span class="stat-val" data-zh="台灣台中" data-ko="대만 타이중">Taichung, Taiwan</span></div>
+        <div class="stat-row"><span class="stat-label" data-zh="主力產品" data-ko="주요 제품">Key Products</span><span class="stat-val" data-zh="CNC 車床、加工中心" data-ko="CNC 선반·머시닝센터">CNC Lathes, MC</span></div>
+        <div class="stat-row"><span class="stat-label" data-zh="主要出口市場" data-ko="주요 수출 시장">Major Exports</span><span class="stat-val" data-zh="中國、美國、韓國" data-ko="중국·미국·한국">China·USA·Korea</span></div>
+        <div class="stat-row" style="border-bottom:none"><span class="stat-label" data-zh="產業公會" data-ko="업계 협회">Industry Assoc.</span><span class="stat-val">TAMI · TMBA</span></div>
+      </div>
+    </div>
+
+    <div class="sidebar-section">
       <span class="sidebar-label" data-i18n="sidebar_markets">Markets</span>
       <div class="sidebar-item" onclick="openMarket('korea')">
         <span class="market-flag">🇰🇷</span> Korea
@@ -1335,6 +1346,7 @@
         <span class="icon">✉️</span><span data-i18n="sb_subscribe"> Subscribe to Updates</span>
       </div>
     </div>
+
   </div>
 
   <!-- Main content -->
@@ -1418,29 +1430,10 @@
         </div>
       </div>
 
-      <div class="section-title" data-i18n="home_why_taiwan" style="margin-top:28px">WHY TAIWAN ／ 為什麼選台灣</div>
-      <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(210px,1fr));gap:14px;margin-bottom:12px">
-        <div style="background:var(--surface);border:1px solid var(--border);border-left:3px solid var(--gold);border-radius:8px;padding:16px 18px">
-          <div style="font-size:1.7rem;font-weight:700;color:var(--gold);line-height:1">#5</div>
-          <div style="font-size:0.86rem;color:var(--text-dim);margin-top:6px" data-i18n="twadv_1">World's 5th-largest machine tool exporter</div>
-        </div>
-        <div style="background:var(--surface);border:1px solid var(--border);border-left:3px solid var(--gold);border-radius:8px;padding:16px 18px">
-          <div style="font-size:1.5rem;line-height:1">🏭</div>
-          <div style="font-size:0.86rem;color:var(--text-dim);margin-top:6px" data-i18n="twadv_2">Taichung — the global machine-tool hub</div>
-        </div>
-        <div style="background:var(--surface);border:1px solid var(--border);border-left:3px solid var(--gold);border-radius:8px;padding:16px 18px">
-          <div style="font-size:1.5rem;line-height:1">🛠️</div>
-          <div style="font-size:0.86rem;color:var(--text-dim);margin-top:6px" data-i18n="twadv_3">Key products: CNC lathes & machining centers</div>
-        </div>
-        <div style="background:var(--surface);border:1px solid var(--border);border-left:3px solid var(--gold);border-radius:8px;padding:16px 18px">
-          <div style="font-size:1.5rem;line-height:1">🌏</div>
-          <div style="font-size:0.86rem;color:var(--text-dim);margin-top:6px" data-i18n="twadv_4">Top export markets: China · USA · Korea</div>
-        </div>
-      </div>
-      <div style="margin-bottom:28px">
-        <span style="color:var(--text-dim);font-size:0.82rem;margin-right:16px" data-i18n="twadv_assoc">Industry bodies: TAMI · TMBA</span>
-        <span onclick="openKnowledge('tw-brands')" style="color:var(--gold);cursor:pointer;font-size:0.88rem;font-weight:600" data-i18n="twadv_more">Taiwan machine-tool makers & export record →</span>
-      </div>
+      <div class="section-title" style="margin-top:28px">WHAT'S NEW ／ 最新消息 ／ 최신 소식</div>
+      <!-- Latest updates; populated on load by renderHomeWhatsNew() from #page-whatsnew -->
+      <div id="home-whatsnew"></div>
+      <div style="margin-bottom:28px"><span onclick="showPage('whatsnew')" style="color:var(--gold);cursor:pointer;font-size:0.88rem;font-weight:600" data-i18n="home_all_news">View all updates / 看全部消息 →</span></div>
 
       <div class="section-title" style="margin-top:28px">EXPERT COLUMN &nbsp;／&nbsp; 專家專欄</div>
       <!-- Top expert columns; populated on load by renderFeaturedColumn() from the newest cards in #page-column -->
@@ -10052,7 +10045,7 @@ const LANG = {
     svc_cta_quote: '→ Request a quote', svc_cta_incoterms: '→ Trade terms guide', svc_cta_visit: '→ Learn more', svc_cta_about: '→ About us', svc_cta_main: 'Get a Quote · 立即詢價 →',
     kbq_comp_q: "I'm looking for machine components", kbq_exp_q: 'I need export support', kbq_visit_q: 'I want to source from Taiwan',
     kbq_c_barfeeder: 'Bar Feeder', kbq_c_linear: 'Linear Guide', kbq_c_servo: 'Servo Motor', kbq_c_tool: 'Tool Holder', kbq_c_exportdocs: 'Export Docs', kbq_c_customs: 'Customs', kbq_c_marine: 'Marine Insurance', kbq_c_factory: 'Factory Visit',
-    hero_cta2: 'Get a Quote →', home_all_columns: 'View all expert columns →',
+    hero_cta2: 'Get a Quote →', home_all_columns: 'View all expert columns →', home_all_news: 'View all updates →',
     home_why_taiwan: 'WHY TAIWAN ／ 為什麼選台灣', twadv_1: "World's 5th-largest machine tool exporter", twadv_2: 'Taichung — the global machine-tool hub', twadv_3: 'Key products: CNC lathes & machining centers', twadv_4: 'Top export markets: China · USA · Korea', twadv_assoc: 'Industry bodies: TAMI · TMBA', twadv_more: 'Taiwan machine-tool makers & export record →',
     nav_subscribe: 'Subscribe', sb_subscribe: ' Subscribe to Updates',
     terms_title: 'TERMINOLOGY',
@@ -10112,7 +10105,7 @@ const LANG = {
     svc_cta_quote: '→ 前往詢價', svc_cta_incoterms: '→ 了解貿易條件', svc_cta_visit: '→ 了解更多', svc_cta_about: '→ 關於我們', svc_cta_main: '立即詢價 →',
     kbq_comp_q: '我在找機台零件', kbq_exp_q: '我需要出口協助', kbq_visit_q: '我想來台採購',
     kbq_c_barfeeder: '送料機', kbq_c_linear: '線性滑軌', kbq_c_servo: '伺服馬達', kbq_c_tool: '刀座', kbq_c_exportdocs: '出口文件', kbq_c_customs: '報關', kbq_c_marine: '海上保險', kbq_c_factory: '工廠參訪',
-    hero_cta2: '立即詢價 →', home_all_columns: '看全部專欄 →',
+    hero_cta2: '立即詢價 →', home_all_columns: '看全部專欄 →', home_all_news: '看全部消息 →',
     home_why_taiwan: '為什麼選台灣', twadv_1: '全球第五大工具機出口國', twadv_2: '台中——全球工具機重鎮', twadv_3: '主力產品：CNC 車床、加工中心', twadv_4: '主要出口市場：中國、美國、韓國', twadv_assoc: '產業公會：TAMI、TMBA', twadv_more: '台灣工具機製造商與出口實績 →',
     terms_title: '術語對照',
     tcat_All: '全部',
@@ -10172,7 +10165,7 @@ const LANG = {
     svc_cta_quote: '→ 견적 문의', svc_cta_incoterms: '→ 인코텀즈 안내', svc_cta_visit: '→ 자세히 보기', svc_cta_about: '→ 회사 소개', svc_cta_main: '견적 요청 →',
     kbq_comp_q: '기계 부품을 찾고 있어요', kbq_exp_q: '수출 지원이 필요해요', kbq_visit_q: '대만에서 구매하고 싶어요',
     kbq_c_barfeeder: '바피더', kbq_c_linear: '리니어 가이드', kbq_c_servo: '서보 모터', kbq_c_tool: '툴 홀더', kbq_c_exportdocs: '수출 서류', kbq_c_customs: '통관', kbq_c_marine: '해상 보험', kbq_c_factory: '공장 방문',
-    hero_cta2: '견적 요청 →', home_all_columns: '전체 칼럼 보기 →',
+    hero_cta2: '견적 요청 →', home_all_columns: '전체 칼럼 보기 →', home_all_news: '전체 소식 보기 →',
     home_why_taiwan: '왜 대만인가', twadv_1: '세계 5위 공작기계 수출국', twadv_2: '타이중 — 글로벌 공작기계 허브', twadv_3: '주요 제품: CNC 선반·머시닝센터', twadv_4: '주요 수출 시장: 중국·미국·한국', twadv_assoc: '업계 협회: TAMI, TMBA', twadv_more: '대만 공작기계 제조사 및 수출 실적 →',
     terms_title: '용어 대조',
     tcat_All: '전체',
@@ -10637,10 +10630,24 @@ function renderFeaturedColumn() {
   }
 }
 
+// Clone the latest What's New items onto the home page
+function renderHomeWhatsNew() {
+  const wrap = document.getElementById('home-whatsnew');
+  if (!wrap) return;
+  const items = document.querySelectorAll('#page-whatsnew .whats-new-item');
+  if (!items.length) return;
+  const N = Math.min(2, items.length);
+  wrap.innerHTML = '';
+  for (let i = 0; i < N; i++) {
+    wrap.appendChild(items[i].cloneNode(true));
+  }
+}
+
 // ─── Init ─────────────────────────────────────────────────────────
 window.addEventListener('load', () => {
   loadNews();
   renderFeaturedColumn();
+  renderHomeWhatsNew();
 });
 </script>
 
@@ -10690,16 +10697,30 @@ function filterTerms() {
     const hl = q
       ? s => esc(s).replace(new RegExp('(' + q.replace(/[.*+?^${}()|[\]\\]/g,'\\$&') + ')', 'gi'), '<mark style="background:#c9a84c33;color:var(--gold)">$1</mark>')
       : s => esc(s);
-    tbody.innerHTML = filtered.map((t, i) =>
-      '<tr><td style="color:var(--text-muted);font-size:10px">' + (i+1) + '</td>' +
-      '<td>' + hl(t.en) + '</td>' +
-      '<td>' + hl(t.zh) + '</td>' +
-      '<td>' + (t.ko ? hl(t.ko) : '<span style="color:var(--text-muted)">—</span>') + '</td></tr>'
-    ).join('');
+    tbody.innerHTML = filtered.map((t, i) => {
+      const hasNote = t.note && t.note.trim();
+      const nid = 'tnote-' + i;
+      const main = '<tr' + (hasNote ? ' onclick="toggleTermNote(\'' + nid + '\',this)" style="cursor:pointer"' : '') + '>' +
+        '<td style="color:var(--text-muted);font-size:10px">' + (i+1) + '</td>' +
+        '<td>' + hl(t.en) + (hasNote ? ' <span class="tnote-caret" style="color:var(--gold);font-size:11px;display:inline-block;transition:transform 0.15s">›</span>' : '') + '</td>' +
+        '<td>' + hl(t.zh) + '</td>' +
+        '<td>' + (t.ko ? hl(t.ko) : '<span style="color:var(--text-muted)">—</span>') + '</td></tr>';
+      const note = hasNote ? '<tr id="' + nid + '" style="display:none"><td></td><td colspan="3" style="color:var(--text-dim);font-size:12px;line-height:1.7;padding:4px 10px 12px 0">' + esc(t.note) + '</td></tr>' : '';
+      return main + note;
+    }).join('');
   }
   if (countEl) countEl.textContent = filtered.length === TERMS.length
     ? TERMS.length + ' TERMS'
     : filtered.length + ' / ' + TERMS.length + ' TERMS';
+}
+
+// Click a term row to expand/collapse its definition note
+function toggleTermNote(id, row) {
+  var r = document.getElementById(id);
+  if (!r) return;
+  var open = r.style.display !== 'none' && r.style.display !== '';
+  r.style.display = open ? 'none' : 'table-row';
+  if (row) { var c = row.querySelector('.tnote-caret'); if (c) c.style.transform = open ? '' : 'rotate(90deg)'; }
 }
 </script>
 </body>
