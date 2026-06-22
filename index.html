@@ -10626,20 +10626,41 @@ function renderFeaturedColumn() {
   const N = Math.min(3, cards.length);
   wrap.innerHTML = '';
   for (let i = 0; i < N; i++) {
-    wrap.appendChild(cards[i].cloneNode(true));
+    const clone = cards[i].cloneNode(true);
+    // Flash a NEW badge on the newest column (i===0, auto) plus any card tagged
+    // data-new (use this to also flag same-day releases). The badge moves to
+    // whatever is newest on its own — no manual upkeep for the latest article.
+    if (i === 0 || cards[i].hasAttribute('data-new')) {
+      const inner = clone.querySelector('div');
+      const cat = inner ? inner.firstElementChild : null;
+      if (cat && !cat.querySelector('.whats-new-badge')) {
+        const b = document.createElement('span');
+        b.className = 'whats-new-badge';
+        b.textContent = 'NEW';
+        cat.appendChild(b);
+      }
+    }
+    wrap.appendChild(clone);
   }
 }
 
-// Clone the latest What's New items onto the home page
+// Clone the latest What's New items onto the home page.
+// Skip Expert Column announcements — those already have their own section below,
+// so the two home sections never show the same article twice.
 function renderHomeWhatsNew() {
   const wrap = document.getElementById('home-whatsnew');
   if (!wrap) return;
-  const items = document.querySelectorAll('#page-whatsnew .whats-new-item');
-  if (!items.length) return;
-  const N = Math.min(2, items.length);
+  const all = [...document.querySelectorAll('#page-whatsnew .whats-new-item')];
+  if (!all.length) return;
+  const nonColumn = all.filter(it => {
+    const tag = it.querySelector('.whats-new-tag');
+    return !(tag && /expert column|專家專欄|칼럼/i.test(tag.textContent));
+  });
+  const list = nonColumn.length ? nonColumn : all;
+  const N = Math.min(2, list.length);
   wrap.innerHTML = '';
   for (let i = 0; i < N; i++) {
-    wrap.appendChild(items[i].cloneNode(true));
+    wrap.appendChild(list[i].cloneNode(true));
   }
 }
 
