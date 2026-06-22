@@ -10322,40 +10322,45 @@ function switchLang(lang) {
     if (_openDetail.type === 'kb') openKnowledge(_openDetail.key, true);
     else if (_openDetail.type === 'market') openMarket(_openDetail.key, true);
   }
+
+  // Re-render the terminology table so the expandable notes show in the new language
+  if (typeof TERMS !== 'undefined' && typeof filterTerms === 'function' && document.getElementById('terms-tbody')) {
+    filterTerms();
+  }
 }
 
 
 // ─── Terminology ──────────────────────────────────────────────────
 const TERMS = [
-  {cat:'Machines', en:'machine tool', zh:'工具機', ko:'공작기계', note:'動力驅動、用於切削或成形金屬工件的機械'},
+  {cat:'Machines', en:'machine tool', zh:'工具機', ko:'공작기계', note:'動力驅動、用於切削或成形金屬工件的機械', note_en:'A power-driven machine for cutting or forming metal workpieces', note_ko:'금속 공작물을 절삭·성형하는 동력 구동 기계'},
   {cat:'Machines', en:'CNC Lathe', zh:'電腦車床', ko:'CNC 선반', note:''},
   {cat:'Machines', en:'Numerically-controlled lathe', zh:'NC 車床', ko:'수치제어 선반 (NC 선반)', note:''},
-  {cat:'Machines', en:'Computer Numerical Control (CNC)', zh:'電腦化數值控制', ko:'컴퓨터 수치 제어', note:'NC加入電腦裝置，具備程式運算功能'},
+  {cat:'Machines', en:'Computer Numerical Control (CNC)', zh:'電腦化數值控制', ko:'컴퓨터 수치 제어', note:'NC加入電腦裝置，具備程式運算功能', note_en:'NC with an onboard computer, adding programmable computation', note_ko:'NC에 컴퓨터를 더해 프로그램 연산 기능을 갖춘 제어'},
   {cat:'Machines', en:'machining center', zh:'加工中心機', ko:'머시닝 센터', note:''},
   {cat:'Machines', en:'Double-column Machining center', zh:'龍門加工中心', ko:'문형 가공기', note:''},
   {cat:'Machines', en:'milling machine', zh:'銑床', ko:'밀링 머신', note:''},
   {cat:'Machines', en:'Boring Machine', zh:'搪床', ko:'보링 머신', note:''},
   {cat:'Machines', en:'Drilling Machine', zh:'鑽床', ko:'드릴링 머신', note:''},
   {cat:'Machines', en:'Grinding machine', zh:'磨床', ko:'연삭기', note:''},
-  {cat:'Machines', en:'Swiss type', zh:'走心式(車床)', ko:'스위스 타입 (주축이동형)', note:'主軸隨棒料移動、搭配導套加工，適合細長精密件'},
-  {cat:'Machines', en:'Fixed head type', zh:'走刀式(車床)', ko:'고정주축형', note:'主軸固定，由刀具移動進給（傳統車床型式）'},
+  {cat:'Machines', en:'Swiss type', zh:'走心式(車床)', ko:'스위스 타입 (주축이동형)', note:'主軸隨棒料移動、搭配導套加工，適合細長精密件', note_en:'Headstock slides with the bar through a guide bushing — ideal for long slender precision parts', note_ko:'주축이 봉재와 함께 이동하며 가이드 부시로 가공 — 가늘고 긴 정밀 부품에 적합'},
+  {cat:'Machines', en:'Fixed head type', zh:'走刀式(車床)', ko:'고정주축형', note:'主軸固定，由刀具移動進給（傳統車床型式）', note_en:'Fixed headstock; the tool moves to feed (conventional lathe type)', note_ko:'주축 고정, 공구가 이동하며 이송 (전통적 선반 형식)'},
   {cat:'Machines', en:'Turret lathe', zh:'六角車床', ko:'터렛 선반', note:''},
-  {cat:'Machines', en:'Wire EDM', zh:'線切割機', ko:'와이어 방전가공기', note:'線切割放電加工；分慢走絲（精密）與快走絲'},
+  {cat:'Machines', en:'Wire EDM', zh:'線切割機', ko:'와이어 방전가공기', note:'線切割放電加工；分慢走絲（精密）與快走絲', note_en:'Wire electrical discharge machining; slow-wire (precision) and fast-wire types', note_ko:'와이어 방전가공; 저속 와이어(정밀)와 고속 와이어로 구분'},
   {cat:'Machines', en:'Electric discharge machine', zh:'放電加工機', ko:'방전가공기 (EDM)', note:''},
   {cat:'Machines', en:'Gear cutting machine', zh:'齒輪切削機', ko:'기어 절삭기', note:''},
   {cat:'Machines', en:'Special purpose machine', zh:'專用機', ko:'전용기', note:''},
   {cat:'Spindle & Drive', en:'Main Spindle', zh:'主軸', ko:'주축 / 스핀들', note:''},
   {cat:'Spindle & Drive', en:'Sub-spindle', zh:'副主軸', ko:'부주축', note:''},
   {cat:'Spindle & Drive', en:'Built-in Type spindle', zh:'內藏式主軸', ko:'내장형 모터 주축', note:''},
-  {cat:'Spindle & Drive', en:'Spindle motor', zh:'主軸馬達', ko:'스핀들 모터', note:'皮帶式 / 內藏式'},
-  {cat:'Spindle & Drive', en:'Servo motor', zh:'伺服馬達', ko:'서보모터', note:'分AC和DC兩種'},
+  {cat:'Spindle & Drive', en:'Spindle motor', zh:'主軸馬達', ko:'스핀들 모터', note:'皮帶式 / 內藏式', note_en:'Belt-driven or built-in (integrated) type', note_ko:'벨트식 또는 빌트인(내장)식'},
+  {cat:'Spindle & Drive', en:'Servo motor', zh:'伺服馬達', ko:'서보모터', note:'分AC和DC兩種', note_en:'Comes in AC and DC types', note_ko:'AC와 DC 두 종류'},
   {cat:'Spindle & Drive', en:'Driver / AMP', zh:'驅動器', ko:'드라이버 / 앰프', note:''},
   {cat:'Spindle & Drive', en:'Controller', zh:'控制器', ko:'컨트롤러', note:''},
-  {cat:'Spindle & Drive', en:'Encoder', zh:'編碼器', ko:'엔코더', note:'位置/轉速回授'},
+  {cat:'Spindle & Drive', en:'Encoder', zh:'編碼器', ko:'엔코더', note:'位置/轉速回授', note_en:'Position / speed feedback device', note_ko:'위치·속도 피드백 장치'},
   {cat:'Spindle & Drive', en:'CTS (Coolant Thru Spindle)', zh:'主軸中心出水', ko:'주축 중심 절삭유 공급', note:''},
-  {cat:'Spindle & Drive', en:'Ball Screw', zh:'滾珠螺桿', ko:'볼스크류', note:'將旋轉運動轉換成直線運動'},
+  {cat:'Spindle & Drive', en:'Ball Screw', zh:'滾珠螺桿', ko:'볼스크류', note:'將旋轉運動轉換成直線運動', note_en:'Converts rotary motion into linear motion', note_ko:'회전 운동을 직선 운동으로 변환'},
   {cat:'Spindle & Drive', en:'linear guideways', zh:'線性滑軌', ko:'리니어 가이드', note:''},
-  {cat:'Spindle & Drive', en:'Slider Block / Truck', zh:'滑塊', ko:'리니어 블록 / 슬라이드 블록', note:'線性滑軌上的移動座'},
+  {cat:'Spindle & Drive', en:'Slider Block / Truck', zh:'滑塊', ko:'리니어 블록 / 슬라이드 블록', note:'線性滑軌上的移動座', note_en:'The moving carriage that rides on a linear guide rail', note_ko:'리니어 가이드 위를 움직이는 블록'},
   {cat:'Spindle & Drive', en:'linear scale', zh:'光學尺', ko:'리니어 스케일', note:''},
   {cat:'Spindle & Drive', en:'Bearing', zh:'軸承 / 培林', ko:'베어링', note:''},
   {cat:'Spindle & Drive', en:'Ball type Bearing', zh:'滾珠軸承', ko:'볼베어링', note:''},
@@ -10378,7 +10383,7 @@ const TERMS = [
   {cat:'Tooling', en:'Tool', zh:'刀具', ko:'공구', note:''},
   {cat:'Tooling', en:'Tool Holder', zh:'刀具座', ko:'공구대', note:''},
   {cat:'Tooling', en:'Power tool / Live Tool', zh:'動力刀具', ko:'회전공구', note:''},
-  {cat:'Tooling', en:'station', zh:'刀位', ko:'스테이션', note:'刀塔上的單一刀具安裝位置（例：8 刀位伺服刀塔）'},
+  {cat:'Tooling', en:'station', zh:'刀位', ko:'스테이션', note:'刀塔上的單一刀具安裝位置（例：8 刀位伺服刀塔）', note_en:'A single tool-mounting position on the turret (e.g. 8-station servo turret)', note_ko:'터렛의 단일 공구 장착 위치 (예: 8 스테이션 서보 터렛)'},
   {cat:'Tooling', en:'tool sleeve', zh:'刀套/套筒', ko:'툴 슬리브', note:''},
   {cat:'Tooling', en:'Chuck', zh:'夾頭', ko:'척', note:''},
   {cat:'Tooling', en:'Collet (Collet Chuck)', zh:'筒夾', ko:'콜릿', note:''},
@@ -10393,8 +10398,8 @@ const TERMS = [
   {cat:'Cutting Tools', en:'ID Threading', zh:'內徑車牙刀', ko:'내경 나사가공 공구', note:''},
   {cat:'Cutting Tools', en:'Cut Off Tool', zh:'切斷刀', ko:'절단 공구', note:''},
   {cat:'Cutting Tools', en:'Broaching tool', zh:'拉刀', ko:'브로치', note:''},
-  {cat:'Cutting Tools', en:'Tap / Tapping', zh:'牙攻/攻牙', ko:'탭', note:'內牙成型'},
-  {cat:'Cutting Tools', en:'Thread Rolling', zh:'輾牙/搓牙', ko:'나사 전조', note:'外螺紋成型'},
+  {cat:'Cutting Tools', en:'Tap / Tapping', zh:'牙攻/攻牙', ko:'탭', note:'內牙成型', note_en:'Forming internal threads', note_ko:'암나사(내부 나사) 가공'},
+  {cat:'Cutting Tools', en:'Thread Rolling', zh:'輾牙/搓牙', ko:'나사 전조', note:'外螺紋成型', note_en:'Forming external threads by rolling (chipless)', note_ko:'전조로 수나사(외부 나사) 성형'},
   {cat:'Cutting Tools', en:'Knurling', zh:'滾花', ko:'널링', note:''},
   {cat:'Mechanical Parts', en:'Gear', zh:'齒輪', ko:'기어', note:''},
   {cat:'Mechanical Parts', en:'Bevel Gear', zh:'傘齒輪', ko:'베벨 기어', note:''},
@@ -10402,7 +10407,7 @@ const TERMS = [
   {cat:'Mechanical Parts', en:'Conveyor', zh:'輸送機', ko:'컨베이어', note:''},
   {cat:'Mechanical Parts', en:'chip conveyors', zh:'除屑機', ko:'칩 컨베이어', note:''},
   {cat:'Mechanical Parts', en:'Screw-type chip conveyors', zh:'自動螺旋式除屑機', ko:'스크류식 칩 컨베이어', note:''},
-  {cat:'Mechanical Parts', en:'Oil Seal / O-RING', zh:'油封(軸封)', ko:'오링', note:'防止潤滑油從接縫溢出'},
+  {cat:'Mechanical Parts', en:'Oil Seal / O-RING', zh:'油封(軸封)', ko:'오링', note:'防止潤滑油從接縫溢出', note_en:'Prevents lubricant from leaking at joints', note_ko:'이음부에서 윤활유 누출 방지'},
   {cat:'Mechanical Parts', en:'Pulley', zh:'皮帶輪', ko:'풀리', note:''},
   {cat:'Mechanical Parts', en:'Spring', zh:'彈簧', ko:'스프링', note:''},
   {cat:'Mechanical Parts', en:'Transformer', zh:'變壓器', ko:'변압기', note:''},
@@ -10427,16 +10432,16 @@ const TERMS = [
   {cat:'Measurement', en:'Inside Diameter (ID)', zh:'內徑', ko:'내경 / 안지름', note:''},
   {cat:'Measurement', en:'Diameter', zh:'直徑', ko:'직경', note:''},
   {cat:'Measurement', en:'Vernier Caliper', zh:'游標卡尺', ko:'노기스', note:''},
-  {cat:'Measurement', en:'Runout', zh:'偏擺/跳動', ko:'런아웃', note:'迴轉時相對旋轉軸心的偏擺量（同心度誤差）'},
+  {cat:'Measurement', en:'Runout', zh:'偏擺/跳動', ko:'런아웃', note:'迴轉時相對旋轉軸心的偏擺量（同心度誤差）', note_en:'Deviation from the axis of rotation when spinning (concentricity error)', note_ko:'회전 시 축심에 대한 흔들림(편심)량 (동심도 오차)'},
   {cat:'Measurement', en:'Concentricity', zh:'同心度', ko:'동심도', note:''},
   {cat:'Measurement', en:'Depth of Cut', zh:'切削深度', ko:'절삭 깊이', note:''},
-  {cat:'Measurement', en:'Thou', zh:'千分之一英吋 (0.001")', ko:'사우 (1/1000인치)', note:'1 thou＝0.001 英吋（千分之一吋），加工常用單位'},
-  {cat:'CNC Programming', en:'G-code', zh:'G碼', ko:'G코드', note:'CNC控制器讀的程式語言'},
-  {cat:'CNC Programming', en:'CAD', zh:'電腦輔助設計', ko:'CAD (캐드)', note:'Computer Aided Design'},
-  {cat:'CNC Programming', en:'CAM', zh:'電腦輔助製造', ko:'CAM (캠)', note:'Computer Aided Manufacturing'},
-  {cat:'CNC Programming', en:'Post Processor', zh:'後處理器', ko:'포스트 프로세서', note:'將CAM翻譯成特定機器方言'},
+  {cat:'Measurement', en:'Thou', zh:'千分之一英吋 (0.001")', ko:'사우 (1/1000인치)', note:'1 thou＝0.001 英吋（千分之一吋），加工常用單位', note_en:'1 thou = 0.001 inch (a thousandth of an inch); common machining unit', note_ko:'1 thou = 0.001인치(천분의 1인치); 가공 상용 단위'},
+  {cat:'CNC Programming', en:'G-code', zh:'G碼', ko:'G코드', note:'CNC控制器讀的程式語言', note_en:'The programming language a CNC controller reads', note_ko:'CNC 컨트롤러가 읽는 프로그래밍 언어'},
+  {cat:'CNC Programming', en:'CAD', zh:'電腦輔助設計', ko:'CAD (캐드)', note:'Computer Aided Design', note_en:'Computer Aided Design', note_ko:'컴퓨터 지원 설계 (Computer Aided Design)'},
+  {cat:'CNC Programming', en:'CAM', zh:'電腦輔助製造', ko:'CAM (캠)', note:'Computer Aided Manufacturing', note_en:'Computer Aided Manufacturing', note_ko:'컴퓨터 지원 제조 (Computer Aided Manufacturing)'},
+  {cat:'CNC Programming', en:'Post Processor', zh:'後處理器', ko:'포스트 프로세서', note:'將CAM翻譯成特定機器方言', note_en:'Translates CAM output into a specific machine dialect', note_ko:'CAM 출력을 특정 기계 방언으로 변환'},
   {cat:'CNC Programming', en:'Work Coordinate System (WCS)', zh:'工作座標系統', ko:'공작물 좌표계', note:''},
-  {cat:'CNC Programming', en:'Chatter', zh:'顫動', ko:'채터 (떨림)', note:'切削時刀具與工件的自激振動，造成表面波紋、刀具磨耗'},
+  {cat:'CNC Programming', en:'Chatter', zh:'顫動', ko:'채터 (떨림)', note:'切削時刀具與工件的自激振動，造成表面波紋、刀具磨耗', note_en:'Self-excited vibration between tool and workpiece during cutting; causes surface waviness and tool wear', note_ko:'절삭 중 공구와 공작물 사이의 자려 진동; 표면 물결과 공구 마모 유발'},
   {cat:'CNC Programming', en:'Rigid tapping', zh:'剛性攻牙', ko:'리지드 태핑', note:''},
   {cat:'CNC Programming', en:'Simulation', zh:'模擬(路徑)', ko:'시뮬레이션', note:''},
   {cat:'CNC Programming', en:'parameter', zh:'參數', ko:'파라미터', note:''},
@@ -10446,13 +10451,13 @@ const TERMS = [
   {cat:'Workholding', en:'Fixturing', zh:'治具', ko:'픽스처/고정구', note:''},
   {cat:'Workholding', en:'Vise', zh:'虎鉗', ko:'바이스', note:''},
   {cat:'Workholding', en:'Washer', zh:'墊圈/華司', ko:'와셔', note:''},
-  {cat:'Trade & Export', en:'try-out / running-test cost', zh:'試車費用', ko:'시운전 비용', note:'機台出貨前試車/試跑的費用'},
+  {cat:'Trade & Export', en:'try-out / running-test cost', zh:'試車費用', ko:'시운전 비용', note:'機台出貨前試車/試跑的費用', note_en:'Cost of trial run / test cutting before the machine ships', note_ko:'출하 전 시운전·시삭 비용'},
   {cat:'Measurement', en:'defect loss / yield loss', zh:'不良損失', ko:'불량 손실', note:''},
   {cat:'Measurement', en:'yield rate', zh:'良率', ko:'양품률', note:''},
   {cat:'Mechanical Parts', en:'thermal load', zh:'熱負載', ko:'열부하', note:''},
   {cat:'Mechanical Parts', en:'mechanical load', zh:'機械負載', ko:'기계 부하', note:''},
-  {cat:'Mechanical Parts', en:'bracket', zh:'托架/支架', ko:'브래킷', note:'固定／支撐用托架（例：料機與車床連接座）'},
-  {cat:'Mechanical Parts', en:'exploded view', zh:'分解圖', ko:'분해도', note:'零件分解圖'},
+  {cat:'Mechanical Parts', en:'bracket', zh:'托架/支架', ko:'브래킷', note:'固定／支撐用托架（例：料機與車床連接座）', note_en:'A mounting/support bracket (e.g. the seat connecting a bar feeder to a lathe)', note_ko:'고정·지지용 브래킷 (예: 바피더와 선반 연결 시트)'},
+  {cat:'Mechanical Parts', en:'exploded view', zh:'分解圖', ko:'분해도', note:'零件分解圖', note_en:'An exploded parts diagram', note_ko:'부품 분해도'},
   {cat:'Materials', en:'Tungsten steel', zh:'鎢鋼', ko:'텅스텐강', note:''},
   {cat:'Materials', en:'Titanium plating', zh:'鍍鈦', ko:'티타늄 코팅', note:''},
 
@@ -10491,7 +10496,7 @@ const TERMS = [
   {cat:'Valves', en:'Gate Valve', zh:'閘閥', ko:'게이트 밸브', note:''},
   {cat:'Valves', en:'Needle Valve', zh:'針閥', ko:'니들 밸브', note:''},
   {cat:'Valves', en:'Globe Valve / Stop Valve', zh:'球塞閥/停止閥', ko:'글로브 밸브', note:''},
-  {cat:'Valves', en:'Check Valve', zh:'逆止閥', ko:'체크 밸브', note:'防止逆流'},
+  {cat:'Valves', en:'Check Valve', zh:'逆止閥', ko:'체크 밸브', note:'防止逆流', note_en:'Prevents reverse flow', note_ko:'역류 방지'},
   {cat:'Valves', en:'Swing Check Valve', zh:'擺動式逆止閥', ko:'스윙 체크 밸브', note:''},
   {cat:'Valves', en:'Foot Valve', zh:'福特閥（底閥）', ko:'풋 밸브', note:''},
   {cat:'Valves', en:'Solenoid Valve', zh:'電磁閥', ko:'솔레노이드 밸브', note:''},
@@ -10506,23 +10511,23 @@ const TERMS = [
   {cat:'Valves', en:'Electric Actuator', zh:'電動頭', ko:'전동 액추에이터', note:''},
   {cat:'Valves', en:'Pneumatic Actuator', zh:'氣動頭', ko:'공압 액추에이터', note:''},
   // ── Automation & Robotics ──────────────────────────────────────
-  {cat:'Automation & Robotics', en:'Gantry Loader', zh:'龍門式搬運機械手', ko:'갠트리 로더', note:'CNC機台自動上下料系統'},
+  {cat:'Automation & Robotics', en:'Gantry Loader', zh:'龍門式搬運機械手', ko:'갠트리 로더', note:'CNC機台自動上下料系統', note_en:'Automatic load/unload system for CNC machines', note_ko:'CNC 기계 자동 로딩·언로딩 시스템'},
   {cat:'Automation & Robotics', en:'Auto Loader', zh:'自動搬運機', ko:'오토 로더', note:''},
   {cat:'Automation & Robotics', en:'Side Loader', zh:'側面搬運機', ko:'사이드 로더', note:''},
-  {cat:'Automation & Robotics', en:'Stocker System', zh:'儲料系統', ko:'스토커 시스템', note:'工件存儲及自動取料'},
-  {cat:'Automation & Robotics', en:'Shuttle System', zh:'穿梭搬運系統', ko:'셔틀 시스템', note:'穿梭式搬運裝置，在加工區與裝卸區之間往復運送工件'},
+  {cat:'Automation & Robotics', en:'Stocker System', zh:'儲料系統', ko:'스토커 시스템', note:'工件存儲及自動取料', note_en:'Workpiece storage with automatic retrieval', note_ko:'공작물 보관 및 자동 반출'},
+  {cat:'Automation & Robotics', en:'Shuttle System', zh:'穿梭搬運系統', ko:'셔틀 시스템', note:'穿梭式搬運裝置，在加工區與裝卸區之間往復運送工件', note_en:'A shuttle transfer that moves workpieces back and forth between the machining and load/unload areas', note_ko:'가공 구역과 로딩 구역 사이를 왕복하며 공작물을 운반하는 셔틀 장치'},
   {cat:'Automation & Robotics', en:'Multi-Axes Robot', zh:'多軸機械手臂', ko:'다축 로봇', note:''},
   {cat:'Automation & Robotics', en:'FMS (Flexible Manufacturing System)', zh:'彈性製造系統', ko:'유연생산시스템', note:''},
   {cat:'Automation & Robotics', en:'MPS (Multi Pallet System)', zh:'多托盤系統', ko:'다팔레트 시스템', note:''},
-  {cat:'Automation & Robotics', en:'Turn Unit', zh:'翻轉裝置', ko:'턴 유닛', note:'工件翻面用'},
+  {cat:'Automation & Robotics', en:'Turn Unit', zh:'翻轉裝置', ko:'턴 유닛', note:'工件翻面用', note_en:'Used to flip the workpiece over', note_ko:'공작물 뒤집기용'},
   {cat:'Automation & Robotics', en:'Jig System', zh:'治具系統', ko:'지그 시스템', note:''},
   {cat:'Automation & Robotics', en:'Pallet Change System', zh:'托盤交換系統', ko:'팔레트 교환 시스템', note:''},
   {cat:'Automation & Robotics', en:'Pallet', zh:'托盤/棧板', ko:'팔레트', note:''},
-  {cat:'Automation & Robotics', en:'Gripper', zh:'夾爪', ko:'그리퍼', note:'機械手的夾持裝置'},
+  {cat:'Automation & Robotics', en:'Gripper', zh:'夾爪', ko:'그리퍼', note:'機械手的夾持裝置', note_en:'The gripping device on a robot arm', note_ko:'로봇 암의 파지 장치'},
   {cat:'Automation & Robotics', en:'Hand Held Pendant', zh:'手持式操作器', ko:'핸드 헬드 펜던트', note:''},
-  {cat:'Automation & Robotics', en:'Helical Rack and Pinion', zh:'斜齒條齒輪組', ko:'헬리컬 랙 피니온', note:'低噪音傳動'},
+  {cat:'Automation & Robotics', en:'Helical Rack and Pinion', zh:'斜齒條齒輪組', ko:'헬리컬 랙 피니온', note:'低噪音傳動', note_en:'Low-noise transmission (vs straight-cut)', note_ko:'저소음 전동'},
   {cat:'Automation & Robotics', en:'Measuring System', zh:'量測系統', ko:'측정 시스템', note:''},
-  {cat:'Automation & Robotics', en:'Washing System', zh:'清洗系統', ko:'세척 시스템', note:'工件清洗'},
+  {cat:'Automation & Robotics', en:'Washing System', zh:'清洗系統', ko:'세척 시스템', note:'工件清洗', note_en:'Workpiece washing / cleaning', note_ko:'공작물 세척'},
   {cat:'Automation & Robotics', en:'X-Axis (Crosswise Horizontal)', zh:'X軸（水平橫移）', ko:'X축 (횡방향)', note:''},
   {cat:'Automation & Robotics', en:'Y-Axis (Horizontal)', zh:'Y軸（前後）', ko:'Y축 (전후방향)', note:''},
   {cat:'Automation & Robotics', en:'Z-Axis (Vertical)', zh:'Z軸（上下）', ko:'Z축 (수직방향)', note:''},
@@ -10719,14 +10724,16 @@ function filterTerms() {
       ? s => esc(s).replace(new RegExp('(' + q.replace(/[.*+?^${}()|[\]\\]/g,'\\$&') + ')', 'gi'), '<mark style="background:#c9a84c33;color:var(--gold)">$1</mark>')
       : s => esc(s);
     tbody.innerHTML = filtered.map((t, i) => {
-      const hasNote = t.note && t.note.trim();
+      const noteText = currentLang === 'en' ? (t.note_en || t.note) : currentLang === 'ko' ? (t.note_ko || t.note) : t.note;
+      const hasNote = noteText && noteText.trim();
       const nid = 'tnote-' + i;
+      const caret = ' <span class="tnote-caret" style="margin-left:7px;display:inline-flex;align-items:center;justify-content:center;width:16px;height:16px;background:var(--gold);color:var(--bg);border-radius:2px;font-size:10px;font-weight:700;vertical-align:middle;transition:transform 0.18s">▾</span>';
       const main = '<tr' + (hasNote ? ' onclick="toggleTermNote(\'' + nid + '\',this)" style="cursor:pointer"' : '') + '>' +
         '<td style="color:var(--text-muted);font-size:10px">' + (i+1) + '</td>' +
-        '<td>' + hl(t.en) + (hasNote ? ' <span class="tnote-caret" style="color:var(--gold);font-size:11px;display:inline-block;transition:transform 0.15s">›</span>' : '') + '</td>' +
+        '<td>' + hl(t.en) + (hasNote ? caret : '') + '</td>' +
         '<td>' + hl(t.zh) + '</td>' +
         '<td>' + (t.ko ? hl(t.ko) : '<span style="color:var(--text-muted)">—</span>') + '</td></tr>';
-      const note = hasNote ? '<tr id="' + nid + '" style="display:none"><td></td><td colspan="3" style="color:var(--text-dim);font-size:12px;line-height:1.7;padding:4px 10px 12px 0">' + esc(t.note) + '</td></tr>' : '';
+      const note = hasNote ? '<tr id="' + nid + '" style="display:none"><td></td><td colspan="3" style="color:var(--text-dim);font-size:12px;line-height:1.7;padding:4px 10px 12px 0">' + esc(noteText) + '</td></tr>' : '';
       return main + note;
     }).join('');
   }
@@ -10741,7 +10748,7 @@ function toggleTermNote(id, row) {
   if (!r) return;
   var open = r.style.display !== 'none' && r.style.display !== '';
   r.style.display = open ? 'none' : 'table-row';
-  if (row) { var c = row.querySelector('.tnote-caret'); if (c) c.style.transform = open ? '' : 'rotate(90deg)'; }
+  if (row) { var c = row.querySelector('.tnote-caret'); if (c) c.style.transform = open ? '' : 'rotate(180deg)'; }
 }
 </script>
 </body>
