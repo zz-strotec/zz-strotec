@@ -2078,6 +2078,16 @@
       <div class="section-title">EXPERT COLUMN &nbsp;／&nbsp; 專家專欄</div>
       <p style="color:var(--text-dim);font-size:0.9rem;margin-bottom:24px">深度技術分析與實務案例，由 Z&amp;Z STROTEC 專業團隊撰寫。</p>
 
+      <div onclick="openColumn('col-11')" style="background:var(--surface);border:1px solid var(--border);border-radius:8px;padding:22px 24px;cursor:pointer;transition:border-color 0.2s;display:flex;align-items:flex-start;gap:20px;margin-bottom:28px" onmouseover="this.style.borderColor='var(--gold)'" onmouseout="this.style.borderColor='var(--border)'">
+        <div style="flex:1">
+          <div style="font-size:10px;letter-spacing:2px;color:var(--gold);text-transform:uppercase;margin-bottom:6px">Smart Automation &nbsp;·&nbsp; Vision-Guided Robotics</div>
+          <div style="color:var(--text);font-weight:500;font-size:0.95rem;margin-bottom:4px;line-height:1.4">Beyond Blind Picking: How 3D Vision Supports CNC Robotic Automation</div>
+          <div style="color:var(--text-dim);font-size:0.82rem;margin-bottom:8px">告別盲抓：3D 視覺辨識如何協助 CNC 機械手臂自動化 ／ 3D 비전 기반 CNC 로봇 자동화</div>
+          <div style="color:var(--text-dim);font-size:0.85rem">Why vision-guided arms suit high-mix, low-volume work — random bin picking, easier setup, and in-cell AOI — versus the fixture cost of traditional "blind" robots.</div>
+        </div>
+        <div style="flex-shrink:0;color:var(--gold);font-size:1.3rem;opacity:0.7;align-self:center">→</div>
+      </div>
+
       <div onclick="openColumn('col-10')" style="background:var(--surface);border:1px solid var(--border);border-radius:8px;padding:22px 24px;cursor:pointer;transition:border-color 0.2s;display:flex;align-items:flex-start;gap:20px;margin-bottom:28px" onmouseover="this.style.borderColor='var(--gold)'" onmouseout="this.style.borderColor='var(--border)'">
         <div style="flex:1">
           <div style="font-size:10px;letter-spacing:2px;color:var(--gold);text-transform:uppercase;margin-bottom:6px">Sourcing Strategy &nbsp;·&nbsp; CBAM Compliance</div>
@@ -2845,9 +2855,99 @@
       </div>
     </div>
 
+    <!-- EXPERT COLUMN — ARTICLE 11 -->
+    <div class="page" id="page-col-11">
+      <button onclick="openColumn('column')" style="background:none;border:none;color:var(--text-dim);cursor:pointer;font-size:12px;letter-spacing:1px;padding:0;margin-bottom:20px;display:flex;align-items:center;gap:6px">← EXPERT COLUMN</button>
+      <div style="background:var(--surface);border:1px solid var(--border);border-radius:8px;padding:32px;margin-bottom:28px">
+
+        <!-- Header -->
+        <div style="border-left:4px solid var(--gold);padding-left:16px;margin-bottom:28px">
+          <span style="font-size:10px;letter-spacing:2px;color:var(--gold);text-transform:uppercase">Smart Automation &nbsp;·&nbsp; Vision-Guided Robotics</span>
+          <h2 style="color:var(--text);margin:10px 0 6px;font-size:1.35rem;font-weight:600;line-height:1.4">Beyond Blind Picking: How 3D Vision Supports CNC Robotic Automation</h2>
+          <p style="color:var(--text-dim);font-size:0.95rem;margin:0 0 4px">告別盲抓：3D 視覺辨識如何協助 CNC 機械手臂自動化？</p>
+          <p style="color:var(--text-dim);font-size:0.88rem;margin:0">3D 비전이 CNC 로봇 자동화를 돕는 방법</p>
+        </div>
+
+        <!-- Intro -->
+        <p style="margin-bottom:12px;line-height:1.85">
+          Adding an articulated robot arm is often the first step toward unattended, lights-out machining. Traditional robot cells, however, rely on <strong>"blind picking"</strong> — the arm only moves to pre-taught coordinates, so every part must arrive in a fixed position, either neatly arranged in trays or held by custom fixtures. That works well for high-volume, repetitive runs, but it becomes costly and inflexible when your work is high-mix and low-volume.
+        </p>
+        <p style="margin-bottom:12px;line-height:1.85">
+          <strong>3D vision recognition</strong> gives the robot a way to "see" where a part actually is, instead of assuming it is always in the same place. This makes the same cell easier to re-task between products. Below are four practical ways vision-guided robots are used in CNC loading and unloading.
+        </p>
+        <p style="color:var(--text-dim);font-size:0.92rem;line-height:1.8;margin-bottom:10px">
+          導入多關節機械手臂，往往是邁向無人化、關燈生產的第一步。但傳統機械手臂多採「盲抓」——手臂只會移動到預先示教的座標，因此每個零件都必須固定到位，不是整齊排列在料盤上，就是靠專用治具夾持。這對大量重複生產很有效，但當生產屬於少量多樣時，就會變得昂貴且缺乏彈性。3D 視覺辨識讓手臂能「看見」零件的實際位置，而非假設它永遠在同一處，使同一套手臂在不同產品間更容易重新調度。
+        </p>
+        <p style="color:var(--text-dim);font-size:0.88rem;line-height:1.8;margin-bottom:28px;padding-bottom:24px;border-bottom:1px solid var(--border)">
+          다관절 로봇 암을 도입하는 것은 무인·소등(lights-out) 가공으로 가는 첫걸음인 경우가 많습니다. 그러나 전통적인 로봇 셀은 '블라인드 피킹'에 의존합니다—암은 미리 티칭된 좌표로만 이동하므로 모든 부품이 항상 같은 위치에 있어야 합니다. 대량 반복 생산에는 효과적이지만, 다품종 소량 생산에서는 비용이 크고 유연성이 떨어집니다. 3D 비전 인식은 로봇이 부품의 실제 위치를 '볼' 수 있게 하여 동일한 셀을 제품 간에 더 쉽게 전환하도록 돕습니다.
+        </p>
+
+        <!-- Section 1: Random Bin Picking -->
+        <div style="background:var(--surface2);border:1px solid var(--border);border-radius:6px;padding:22px;margin-bottom:16px">
+          <h3 style="color:var(--text);font-size:1rem;margin:0 0 14px;display:flex;align-items:center;gap:8px"><span style="color:var(--gold)">📦</span> 1. Random Bin Picking — Less Reliance on Custom Fixtures (散堆抓取，減少治具成本)</h3>
+          <p style="margin-bottom:14px;line-height:1.8">With a 3D camera and recognition software, the robot can determine the position and orientation of parts piled randomly in a bin and pick them one by one. This reduces the need to pre-sort parts by hand, or to build a dedicated fixture for every new product — often one of the larger hidden costs when introducing automation.</p>
+          <p style="color:var(--text-dim);font-size:0.9rem;line-height:1.75;margin-bottom:10px;padding-top:12px;border-top:1px dashed var(--border)"><strong>散堆抓取：</strong> 搭配 3D 相機與辨識軟體，手臂能判斷散亂堆放於料框中零件的位置與方向，逐一抓取。這可減少人工預先分料、或為每項新產品開發專用治具的需求——而治具往往是導入自動化時較大的隱性成本之一。</p>
+          <p style="color:var(--text-dim);font-size:0.86rem;line-height:1.75;margin:0"><strong>랜덤 빈 피킹:</strong> 3D 카메라와 인식 소프트웨어를 결합하면, 로봇은 빈 안에 무작위로 쌓인 부품의 위치와 방향을 파악해 하나씩 집어냅니다. 이는 사람이 부품을 미리 정렬하거나 신제품마다 전용 지그를 제작할 필요를 줄여 줍니다—지그는 자동화 도입 시 큰 숨은 비용 중 하나인 경우가 많습니다.</p>
+        </div>
+
+        <!-- Section 2: High-Mix, Low-Volume -->
+        <div style="background:var(--surface2);border:1px solid var(--border);border-radius:6px;padding:22px;margin-bottom:16px">
+          <h3 style="color:var(--text);font-size:1rem;margin:0 0 14px;display:flex;align-items:center;gap:8px"><span style="color:var(--gold)">🔄</span> 2. Suited to High-Mix, Low-Volume Work (適合少量多樣與複雜幾何)</h3>
+          <p style="margin-bottom:14px;line-height:1.8">Shops with frequent changeovers and varied part shapes gain the most. When the workpiece changes, the vision system is re-taught to recognise the new part instead of requiring new mechanical tooling, which keeps the cell flexible for customised production.</p>
+          <p style="color:var(--text-dim);font-size:0.9rem;line-height:1.75;margin-bottom:10px;padding-top:12px;border-top:1px dashed var(--border)"><strong>少量多樣：</strong> 換線頻繁、零件形狀多變的工廠最能受益。當工件改變時，只需重新示教視覺系統辨識新零件，而不必更換機械治具，讓產線維持彈性，適合客製化生產。</p>
+          <p style="color:var(--text-dim);font-size:0.86rem;line-height:1.75;margin:0"><strong>다품종 소량:</strong> 교체가 잦고 부품 형상이 다양한 공장이 가장 큰 이점을 얻습니다. 가공물이 바뀌면 기계식 공구를 교체하는 대신 비전 시스템이 새 부품을 인식하도록 다시 티칭하면 되므로, 셀이 유연하게 유지되어 맞춤 생산에 적합합니다.</p>
+        </div>
+
+        <!-- Section 3: Easier Setup -->
+        <div style="background:var(--surface2);border:1px solid var(--border);border-radius:6px;padding:22px;margin-bottom:16px">
+          <h3 style="color:var(--text);font-size:1rem;margin:0 0 14px;display:flex;align-items:center;gap:8px"><span style="color:var(--gold)">🎯</span> 3. Easier Setup and Programming (光學導引，簡化編程與換線)</h3>
+          <p style="margin-bottom:14px;line-height:1.8">Programming a six-axis robot point by point is slow. Optical guidance lets the system calculate spatial coordinates from what the camera sees, lowering the programming barrier and shortening setup time during product changeovers.</p>
+          <p style="color:var(--text-dim);font-size:0.9rem;line-height:1.75;margin-bottom:10px;padding-top:12px;border-top:1px dashed var(--border)"><strong>光學導引：</strong> 逐點示教六軸機械手臂相當耗時。光學導引可讓系統依相機所見計算空間座標，降低編程門檻，並縮短換產品時的設定時間。</p>
+          <p style="color:var(--text-dim);font-size:0.86rem;line-height:1.75;margin:0"><strong>광학 가이드:</strong> 6축 로봇을 점 단위로 프로그래밍하는 것은 시간이 많이 걸립니다. 광학 가이드를 사용하면 시스템이 카메라가 본 영상으로부터 공간 좌표를 계산하므로, 프로그래밍 진입장벽이 낮아지고 제품 교체 시 셋업 시간이 단축됩니다.</p>
+        </div>
+
+        <!-- Section 4: In-Cell Inspection -->
+        <div style="background:var(--surface2);border:1px solid var(--border);border-radius:6px;padding:22px;margin-bottom:28px">
+          <h3 style="color:var(--text);font-size:1rem;margin:0 0 14px;display:flex;align-items:center;gap:8px"><span style="color:var(--gold)">🔍</span> 4. In-Cell Inspection and Secondary Tasks (擴充自動光學檢測與多工)</h3>
+          <p style="margin-bottom:14px;line-height:1.8">A vision-equipped robot can do more than load parts. While the machine is cutting, the same cell can run Automated Optical Inspection (AOI) to check for visible defects, or handle secondary steps such as deburring or washing — making fuller use of the cell's cycle time.</p>
+          <p style="color:var(--text-dim);font-size:0.9rem;line-height:1.75;margin-bottom:10px;padding-top:12px;border-top:1px dashed var(--border)"><strong>多工與品檢：</strong> 配備視覺的手臂不只用於上下料。在機台切削的同時，同一套手臂可執行自動光學檢測（AOI）檢查外觀瑕疵，或處理去毛邊、清洗等二次加工，更充分利用稼動時間。</p>
+          <p style="color:var(--text-dim);font-size:0.86rem;line-height:1.75;margin:0"><strong>검사 및 다중 작업:</strong> 비전을 갖춘 로봇은 단순 로딩에만 그치지 않습니다. 기계가 절삭하는 동안 같은 셀이 자동 광학 검사(AOI)로 외관 결함을 확인하거나, 디버링·세척 같은 2차 공정을 처리하여 셀의 가동 시간을 더 충분히 활용할 수 있습니다.</p>
+        </div>
+
+        <!-- Advice -->
+        <div style="background:linear-gradient(135deg,#12180f 0%,var(--surface2) 100%);border:1px solid var(--gold);border-radius:8px;padding:22px;margin-bottom:28px">
+          <h3 style="color:var(--gold);font-size:1rem;margin:0 0 12px;display:flex;align-items:center;gap:8px"><span>💡</span> Z&amp;Z STROTEC's View</h3>
+          <p style="margin-bottom:12px;line-height:1.8">3D vision reduces a cell's dependence on absolute positioning, so the robot can adapt to part-to-part variation rather than requiring everything to be placed exactly. If high labour cost or complex part handling is your main obstacle to automation, a vision-guided cell is worth evaluating. For stable, high-volume parts, however, a simpler fixture-based setup can still be the more economical choice.</p>
+          <p style="color:var(--text-dim);font-size:0.9rem;line-height:1.75;margin-bottom:10px"><strong>萬洋國際的觀點：</strong> 3D 視覺降低了產線對「絕對定位」的依賴，讓手臂能因應零件之間的差異，而非要求每個零件都精準擺放。若高人力成本或複雜的零件搬運是您導入自動化的主要障礙，視覺導引機械手臂值得評估；但對於穩定的大量生產零件，較單純的治具式方案有時仍更為經濟。</p>
+          <p style="color:var(--text-dim);font-size:0.86rem;line-height:1.75;margin:0"><strong>Z&amp;Z STROTEC의 견해:</strong> 3D 비전은 셀이 절대 위치에 의존하는 정도를 줄여 모든 부품을 정확히 배치하도록 요구하는 대신 부품 간 편차에 대응하게 합니다. 높은 인건비나 복잡한 부품 취급이 자동화의 주된 걸림돌이라면 비전 가이드 셀을 검토할 만합니다. 다만 안정적인 대량 생산 부품에는 더 단순한 지그 기반 구성이 여전히 더 경제적일 수 있습니다.</p>
+        </div>
+
+        <!-- CTA -->
+        <div style="background:linear-gradient(135deg,#12180f 0%,var(--surface2) 100%);border:1px solid var(--gold);border-radius:8px;padding:24px;text-align:center;margin-bottom:16px">
+          <h3 style="color:var(--text);margin:0 0 8px;font-size:1.05rem">Considering CNC Automation? Let's Match It to Your Parts.</h3>
+          <p style="color:var(--text-dim);font-size:0.9rem;max-width:520px;margin:0 auto 20px">From gantry loaders to 3D vision robotic arms, Z&amp;Z STROTEC supplies CNC automation equipment and complete cell solutions for global buyers. Tell us about your parts and volumes, and we can advise on a suitable configuration.</p>
+          <button class="nav-btn" onclick="showPage('inquiry')" style="color:var(--gold);border:1px solid var(--gold);padding:10px 28px;font-size:13px">SEND INQUIRY / 立即洽詢 / 문의하기 →</button>
+        </div>
+
+      </div>
+    </div>
+
     <div class="page" id="page-whatsnew">
       <div class="section-title">WHAT'S NEW &nbsp;／&nbsp; 最新消息 &nbsp;／&nbsp; 최신 소식</div>
       <div style="margin-bottom:28px">
+
+        <div class="whats-new-item">
+          <div class="whats-new-date">2026.06</div>
+          <div class="whats-new-content">
+            <div class="whats-new-title">🤖 Expert Column — Beyond Blind Picking: 3D Vision for CNC Robotic Automation</div>
+            <div style="color:var(--text-dim);font-size:0.82rem;margin-bottom:4px">告別盲抓：3D 視覺辨識如何協助 CNC 機械手臂自動化 ／ 3D 비전 기반 CNC 로봇 자동화</div>
+            <div class="whats-new-desc">How vision-guided robots handle random bin picking, high-mix low-volume work, easier setup, and in-cell AOI — and when a simpler fixture-based cell is still the better buy. Available in EN / 中文 / 한국어.</div>
+            <div style="margin-top:10px;display:flex;align-items:center;gap:10px;flex-wrap:wrap">
+              <span class="whats-new-tag">Expert Column</span>
+              <button class="nav-btn" onclick="openColumn('col-11')" style="font-size:11px;padding:3px 12px;color:var(--gold);border:1px solid var(--gold)">READ ARTICLE / 閱讀專欄 / 아티클 읽기 →</button>
+            </div>
+          </div>
+        </div>
 
         <div class="whats-new-item">
           <div class="whats-new-date">2026.06</div>
