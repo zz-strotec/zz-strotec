@@ -1214,6 +1214,9 @@
       <div class="sidebar-item" onclick="openKnowledge('collet-chuck')">
         <span class="icon">🎯</span><span data-i18n="sb_collet"> Collets &amp; Chucks</span>
       </div>
+      <div class="sidebar-item" onclick="openKnowledge('automation')">
+        <span class="icon">🤖</span><span data-i18n="sb_automation"> Automation Loading</span>
+      </div>
     </div>
 
     <div class="sidebar-section">
@@ -3993,17 +3996,23 @@
   <article id="kbdoc-servo-motor">
     <h2>How do CNC servo motors and drive systems work?</h2>
     <h3>Servo Motor & Drive Systems</h3>
-<h4>Role in CNC Machines</h4>
+
+      <p style="color:var(--text-dim);font-size:0.78rem;text-align:center;margin:0 0 8px">Servo motor &amp; drive system selection guide · brands · key specs · direct-drive trends</p>
+      <div style="text-align:center;margin:2px 0 16px"><button class="nav-btn" onclick="showPage('inquiry')" style="color:var(--gold);border:1px solid var(--gold);padding:9px 26px;font-size:13px;letter-spacing:0.5px">Contact Z&amp;Z STROTEC for technical support →</button></div>
+
+      <h4>Role in CNC Machines</h4>
       Servo motors (伺服馬達) drive the linear and rotary axes of CNC machines. Unlike a plain AC/DC motor, a servo runs on closed-loop feedback (閉迴路控制) — an encoder reports actual position back to the drive, giving precise positioning, fast acceleration, and controlled torque. Each controlled axis (X, Y, Z, C, B, etc.) typically pairs one servo motor with one drive amplifier (驅動器), and the drive is usually matched to the machine's CNC controller.
 
-      <h4>Major Servo Brands &amp; Controller Ecosystems</h4>
+      <h4>Major Servo Brands & Controller Ecosystems</h4>
+      In CNC, the servo and drive are often tied to the controller brand:
       <ul>
-        <li><strong>FANUC (Japan)</strong>: The de facto global standard, holding the largest share of the CNC control market. The Alpha (αi) and Beta (βi) series are valued for reliability and tight integration with FANUC controllers.</li>
-        <li><strong>Siemens (Germany)</strong>: SINAMICS drives offer high dynamic response and multi-axis compensation, widely used in European 5-axis and heavy milling machines.</li>
-        <li><strong>Yaskawa (Japan)</strong>: The Sigma-7 series uses a 24-bit encoder (~16.7 million counts/rev); the newer Sigma-X / Sigma-10 generation moves to a 26-bit encoder and adds auto-tuning. The most common brand on machines sold in Taiwan.</li>
-        <li><strong>Mitsubishi (Japan)</strong>: Good value plus a fast optical-fiber motion network (SSCNET); common on Swiss-type lathes and high-speed tapping centers.</li>
-        <li><strong>HIWIN (Taiwan)</strong>: Cost-effective AC servo motors (E and FR series) with matching drives for customized automation. Other ecosystems, such as Panasonic (MINAS series), also appear on some imported equipment.</li>
+        <li><strong>FANUC (Japan)</strong>: The de facto global standard, holding the largest share of the CNC control market. The Alpha (αi) and Beta (βi) series are valued for reliability and tight integration with FANUC controllers — a common choice for production lathes and machining centers.</li>
+        <li><strong>Siemens (Germany)</strong>: Strong in high-end, complex machining. SINAMICS drives offer high dynamic response and multi-axis compensation, widely used in European 5-axis and heavy milling machines.</li>
+        <li><strong>Yaskawa (Japan)</strong>: A leader in general automation and robotics. The Sigma-7 series uses a 24-bit encoder (~16.7 million counts/rev) for smooth surface finish; the newer Sigma-X / Sigma-10 generation moves to a 26-bit encoder and adds auto-tuning to cut vibration and setup time. (The most common brand on machines sold in Taiwan — see below.)</li>
+        <li><strong>Mitsubishi (Japan)</strong>: Often paired with Mitsubishi controllers. Good value plus a fast optical-fiber motion network (SSCNET); common on Swiss-type lathes and high-speed tapping centers.</li>
+        <li><strong>HIWIN (Taiwan)</strong>: A cost-effective option for OEMs and automation integrators. HIWIN AC servo motors (E and FR series) with matching drives suit customized automation and material-handling builds.</li>
       </ul>
+      <p>Other ecosystems, such as Panasonic (MINAS series), also appear on some imported equipment.</p>
 
       <h4>Yaskawa Sigma Series — Most Common in Taiwan</h4>
       <ul>
@@ -4011,11 +4020,12 @@
         <li><strong>Sigma-7 (Σ-7)</strong>: Current mainstream generation. High performance, widely available. Preferred for spare parts consistency.</li>
         <li><strong>Sigma-X / Sigma-10</strong>: Latest generation, higher power density and a finer (26-bit) encoder. Not backward-compatible with Sigma-7 — requires different encoder cables and amplifiers.</li>
       </ul>
+      <p>Different Sigma generations are NOT interchangeable. Mixing them on the same machine fragments your spare-parts inventory, so always confirm the exact model and generation when sourcing a replacement.</p>
 
       <h4>Key Selection Criteria for CNC</h4>
       <ul>
-        <li><strong>Encoder resolution (編碼器解析度)</strong>: Higher bit count (20 → 24-bit) means finer position feedback and better surface roughness (Ra).</li>
-        <li><strong>Inertia matching (慣量匹配)</strong>: Low-inertia motors suit rapid accel/decel; medium/high-inertia motors give the stable torque needed to move heavy castings.</li>
+        <li><strong>Encoder resolution (編碼器解析度)</strong>: Measured in bits (e.g. 20-bit, 24-bit). Higher resolution means finer position feedback and better surface roughness (Ra) on the finished part.</li>
+        <li><strong>Inertia matching (慣量匹配)</strong>: Low-inertia motors suit rapid accel/decel (robot arms, tool changers); medium/high-inertia motors give the stable torque needed to move heavy castings (heavy Z-axis, gantry mills).</li>
         <li><strong>Frequency response / bandwidth (響應頻寬)</strong>: Higher loop bandwidth lets the motor follow commands more quickly, reducing following error during high-speed contouring.</li>
       </ul>
 
@@ -4030,23 +4040,30 @@
       </ul>
 
       <h4>Direct-Drive Trends</h4>
+      As precision demands rise, some axes replace the servo-plus-ballscrew/gearbox chain with direct drive:
       <ul>
         <li><strong>Torque / direct-drive (DD) motors (力矩馬達 / 直驅馬達)</strong>: Remove belts and gears for zero backlash (無背隙). Increasingly used on 4th/5th-axis rotary tables (B/C axis) and direct-drive live turrets (直驅式動力刀塔).</li>
         <li><strong>Linear motors (線性馬達)</strong>: "Unroll" the rotor and stator into a flat track for direct linear motion — frictionless and very high traverse speed. Used in semiconductor equipment and ultra-precision EDM and grinding machines.</li>
       </ul>
     <h3 lang="zh-Hant">CNC 伺服馬達與驅動系統如何運作？</h3>
     <h4 lang="zh-Hant">伺服馬達與驅動系統</h4>
-<h4>在 CNC 機台中的角色</h4>
+
+      <p style="color:var(--text-dim);font-size:0.78rem;text-align:center;margin:0 0 8px">伺服馬達與驅動系統選型指南 · 品牌 · 關鍵規格 · 直驅技術趨勢</p>
+      <div style="text-align:center;margin:2px 0 16px"><button class="nav-btn" onclick="showPage('inquiry')" style="color:var(--gold);border:1px solid var(--gold);padding:9px 26px;font-size:13px;letter-spacing:0.5px">歡迎洽詢 Z&amp;Z STROTEC 技術支援 →</button></div>
+
+      <h4>在 CNC 機台中的角色</h4>
       伺服馬達驅動 CNC 機台的直線及旋轉軸。與一般 AC/DC 馬達不同，伺服採用閉迴路控制——由編碼器將實際位置回授給驅動器，因此能達成精準定位、快速加速與可控扭矩。每個受控軸（X、Y、Z、C、B 等）通常搭配一顆伺服馬達與一個驅動器，且驅動器多半與機台的 CNC 控制器相互搭配。
 
       <h4>主流伺服品牌與控制器生態系</h4>
+      在 CNC 領域，伺服與驅動器往往與控制器品牌綁定：
       <ul>
-        <li><strong>FANUC（日本）</strong>：實質上的全球標準，在 CNC 控制器市場占有最大份額。Alpha（αi）與 Beta（βi）系列以可靠度及與 FANUC 控制器的緊密整合著稱。</li>
-        <li><strong>Siemens（德國）</strong>：SINAMICS 驅動系統具備高動態響應與多軸補償，廣泛用於歐系五軸機與重切削銑床。</li>
-        <li><strong>Yaskawa 安川（日本）</strong>：Sigma-7 系列採用 24-bit 編碼器（約 1,670 萬脈衝/轉）；較新的 Sigma-X／Sigma-10 世代升級為 26-bit 編碼器並加入自動調諧。台灣機台上最常見的品牌。</li>
-        <li><strong>Mitsubishi 三菱（日本）</strong>：性價比佳，並具備高速光纖運動網路（SSCNET），常見於走心式車床與高速攻牙中心機。</li>
-        <li><strong>HIWIN 上銀（台灣）</strong>：高性價比 AC 伺服馬達（E 與 FR 系列）搭配自家驅動器，適用於客製化自動化。其他生態系如 Panasonic（MINAS 系列）亦見於部分進口設備。</li>
+        <li><strong>FANUC（日本）</strong>：實質上的全球標準，在 CNC 控制器市場占有最大份額。Alpha（αi）與 Beta（βi）系列以可靠度及與 FANUC 控制器的緊密整合著稱，是量產車床與加工中心機的常見選擇。</li>
+        <li><strong>Siemens（德國）</strong>：擅長高階、複雜加工。SINAMICS 驅動系統具備高動態響應與多軸補償，廣泛用於歐系五軸機與重切削銑床。</li>
+        <li><strong>Yaskawa 安川（日本）</strong>：自動化與機器人領域的領導品牌。Sigma-7 系列採用 24-bit 編碼器（約 1,670 萬脈衝/轉），有助表面光潔度；較新的 Sigma-X／Sigma-10 世代升級為 26-bit 編碼器，並加入自動調諧以降低振動與調機時間。（台灣機台上最常見的品牌——詳見下文。）</li>
+        <li><strong>Mitsubishi 三菱（日本）</strong>：常與三菱控制器搭配。性價比佳，並具備高速光纖運動網路（SSCNET），常見於走心式車床與高速攻牙中心機。</li>
+        <li><strong>HIWIN 上銀（台灣）</strong>：適合 OEM 與自動化整合商的高性價比選項。HIWIN AC 伺服馬達（E 與 FR 系列）搭配自家驅動器，適用於客製化自動化與物料搬運設備。</li>
       </ul>
+      <p>其他生態系如 Panasonic（MINAS 系列）亦見於部分進口設備。</p>
 
       <h4>Yaskawa Sigma 系列 — 台灣最常見</h4>
       <ul>
@@ -4054,11 +4071,12 @@
         <li><strong>Sigma-7（Σ-7）</strong>：目前主流世代。高性能、庫存充足，是備料一致性的首選。</li>
         <li><strong>Sigma-X／Sigma-10</strong>：最新世代，功率密度更高、編碼器解析度更細（26-bit）。與 Sigma-7 不相容，需要不同的編碼器電纜及驅動器。</li>
       </ul>
+      <p>不同 Sigma 世代無法互換。在同一台機器上混用會造成備料零散化，因此購買替換馬達時務必確認確切型號與世代。</p>
 
       <h4>CNC 選型的關鍵指標</h4>
       <ul>
-        <li><strong>編碼器解析度</strong>：位元數越高（20 → 24-bit），位置回授越精細，加工件表面粗糙度（Ra）越佳。</li>
-        <li><strong>慣量匹配</strong>：低慣量馬達適合快速加減速；中／高慣量馬達提供穩定扭矩以驅動笨重鑄件。</li>
+        <li><strong>編碼器解析度</strong>：以位元數表示（如 20-bit、24-bit）。解析度越高，位置回授越精細，加工件表面粗糙度（Ra）越佳。</li>
+        <li><strong>慣量匹配</strong>：低慣量馬達適合快速加減速（機器手臂、刀庫換刀）；中／高慣量馬達提供穩定扭矩以驅動笨重鑄件（重型 Z 軸、龍門銑床）。</li>
         <li><strong>響應頻寬</strong>：迴路頻寬越高，馬達對指令的反應越快，可降低高速輪廓加工時的跟隨誤差。</li>
       </ul>
 
@@ -4073,23 +4091,30 @@
       </ul>
 
       <h4>直驅技術趨勢</h4>
+      隨著精度要求提高，部分軸會以直驅取代「伺服＋滾珠螺桿／齒輪箱」的傳動鏈：
       <ul>
-        <li><strong>力矩馬達／直驅（DD）馬達</strong>：省去皮帶與齒輪，達成無背隙；日益用於第四／五軸旋轉工作台（B/C 軸）與直驅式動力刀塔。</li>
+        <li><strong>力矩馬達／直驅（DD）馬達</strong>：省去皮帶與齒輪，達成無背隙。日益用於第四／五軸旋轉工作台（B/C 軸）與直驅式動力刀塔。</li>
         <li><strong>線性馬達</strong>：將轉子與定子「攤平」成直線軌道以產生直接的線性運動——無摩擦且移動速度極高。用於半導體設備與超精密放電加工（EDM）及磨床。</li>
       </ul>
     <h3 lang="ko">CNC 서보모터와 드라이브 시스템은 어떻게 작동하나요?</h3>
     <h4 lang="ko">서보 모터 & 드라이브 시스템</h4>
-<h4>CNC 기계에서의 역할</h4>
+
+      <p style="color:var(--text-dim);font-size:0.78rem;text-align:center;margin:0 0 8px">서보 모터 &amp; 드라이브 시스템 선정 가이드 · 브랜드 · 핵심 사양 · 다이렉트 드라이브 트렌드</p>
+      <div style="text-align:center;margin:2px 0 16px"><button class="nav-btn" onclick="showPage('inquiry')" style="color:var(--gold);border:1px solid var(--gold);padding:9px 26px;font-size:13px;letter-spacing:0.5px">Z&amp;Z STROTEC 기술 지원 문의 →</button></div>
+
+      <h4>CNC 기계에서의 역할</h4>
       서보 모터(伺服馬達)는 CNC 기계의 직선 및 회전 축을 구동합니다. 일반 AC/DC 모터와 달리 서보는 폐회로 제어(閉迴路控制)로 작동합니다 — 엔코더가 실제 위치를 드라이브로 피드백하여 정밀한 위치 결정, 빠른 가속, 제어된 토크를 제공합니다. 각 제어 축(X, Y, Z, C, B 등)에는 보통 서보 모터 하나와 드라이브 앰프 하나가 연결되며, 드라이브는 대개 기계의 CNC 컨트롤러와 매칭됩니다.
 
       <h4>주요 서보 브랜드 및 컨트롤러 생태계</h4>
+      CNC에서 서보와 드라이브는 컨트롤러 브랜드와 밀접하게 연동되는 경우가 많습니다:
       <ul>
-        <li><strong>FANUC (일본)</strong>: 사실상의 글로벌 표준으로, CNC 컨트롤러 시장에서 가장 큰 점유율을 차지합니다. Alpha(αi) 및 Beta(βi) 시리즈는 신뢰성과 FANUC 컨트롤러와의 긴밀한 통합으로 잘 알려져 있습니다.</li>
-        <li><strong>Siemens (독일)</strong>: SINAMICS 드라이브는 높은 동적 응답과 다축 보정을 제공하며, 유럽계 5축기와 중절삭 밀링 기계에 널리 사용됩니다.</li>
-        <li><strong>Yaskawa (일본)</strong>: Sigma-7 시리즈는 24비트 엔코더(약 1,670만 카운트/회전)를 사용하며, 신세대 Sigma-X / Sigma-10은 26비트 엔코더로 업그레이드하고 오토 튜닝을 추가합니다. 대만에서 판매되는 기계에 가장 흔한 브랜드입니다.</li>
-        <li><strong>Mitsubishi (일본)</strong>: 가성비가 좋고 고속 광섬유 모션 네트워크(SSCNET)를 갖추어 스위스형 선반과 고속 태핑 센터에 흔합니다.</li>
-        <li><strong>HIWIN (대만)</strong>: 가성비 좋은 AC 서보 모터(E 및 FR 시리즈)와 전용 드라이브로 맞춤형 자동화에 적합합니다. Panasonic(MINAS 시리즈) 등 다른 생태계도 일부 수입 설비에서 볼 수 있습니다.</li>
+        <li><strong>FANUC (일본)</strong>: 사실상의 글로벌 표준으로, CNC 컨트롤러 시장에서 가장 큰 점유율을 차지합니다. Alpha(αi) 및 Beta(βi) 시리즈는 신뢰성과 FANUC 컨트롤러와의 긴밀한 통합으로 잘 알려져 있으며, 양산용 선반과 머시닝 센터의 일반적인 선택입니다.</li>
+        <li><strong>Siemens (독일)</strong>: 고급·복합 가공에 강점. SINAMICS 드라이브는 높은 동적 응답과 다축 보정을 제공하며, 유럽계 5축기와 중절삭 밀링 기계에 널리 사용됩니다.</li>
+        <li><strong>Yaskawa (일본)</strong>: 자동화·로봇 분야의 선두 브랜드. Sigma-7 시리즈는 24비트 엔코더(약 1,670만 카운트/회전)로 매끄러운 표면 마감을 지원하며, 신세대 Sigma-X / Sigma-10은 26비트 엔코더로 업그레이드하고 오토 튜닝을 추가해 진동과 셋업 시간을 줄입니다. (대만에서 판매되는 기계에 가장 흔한 브랜드 — 아래 참조.)</li>
+        <li><strong>Mitsubishi (일본)</strong>: 미쓰비시 컨트롤러와 자주 조합됩니다. 가성비가 좋고 고속 광섬유 모션 네트워크(SSCNET)를 갖추어 스위스형 선반과 고속 태핑 센터에 흔합니다.</li>
+        <li><strong>HIWIN (대만)</strong>: OEM과 자동화 인티그레이터를 위한 가성비 옵션. HIWIN AC 서보 모터(E 및 FR 시리즈)와 전용 드라이브는 맞춤형 자동화 및 물류 이송 설비에 적합합니다.</li>
       </ul>
+      <p>Panasonic(MINAS 시리즈) 등 다른 생태계도 일부 수입 설비에서 볼 수 있습니다.</p>
 
       <h4>야스카와(Yaskawa) Sigma 시리즈 — 대만에서 가장 일반적</h4>
       <ul>
@@ -4097,12 +4122,13 @@
         <li><strong>Sigma-7 (Σ-7)</strong>: 현재 주류 세대. 고성능, 광범위한 재고. 예비 부품 일관성을 위해 권장.</li>
         <li><strong>Sigma-X / Sigma-10</strong>: 최신 세대. 더 높은 전력 밀도와 더 세밀한(26비트) 엔코더. Sigma-7과 하위 호환 불가 — 다른 엔코더 케이블 및 앰프 필요.</li>
       </ul>
+      <p>서로 다른 Sigma 세대는 교환 불가능합니다. 동일 기계에 혼용하면 예비 부품 관리가 복잡해지므로, 교체 모터 조달 시 반드시 정확한 모델과 세대를 확인하세요.</p>
 
       <h4>CNC 선정 핵심 지표</h4>
       <ul>
-        <li><strong>엔코더 해상도</strong>: 비트 수가 높을수록(20 → 24비트) 위치 피드백이 정밀해지고 가공면 거칠기(Ra)가 향상됩니다.</li>
-        <li><strong>관성 매칭</strong>: 저관성 모터는 빠른 가감속에 적합하고, 중·고관성 모터는 무거운 주물을 움직이는 안정적 토크를 제공합니다.</li>
-        <li><strong>응답 대역폭</strong>: 루프 대역폭이 높을수록 모터가 명령에 더 빠르게 반응하여 고속 윤곽 가공 시 추종 오차를 줄입니다.</li>
+        <li><strong>엔코더 해상도(編碼器解析度)</strong>: 비트로 표시(예: 20비트, 24비트). 해상도가 높을수록 위치 피드백이 정밀해지고 가공면 거칠기(Ra)가 향상됩니다.</li>
+        <li><strong>관성 매칭(慣量匹配)</strong>: 저관성 모터는 빠른 가감속(로봇 암, 공구 교환)에 적합하고, 중·고관성 모터는 무거운 주물(중량 Z축, 갠트리 밀)을 움직이는 안정적 토크를 제공합니다.</li>
+        <li><strong>응답 대역폭(響應頻寬)</strong>: 루프 대역폭이 높을수록 모터가 명령에 더 빠르게 반응하여 고속 윤곽 가공 시 추종 오차를 줄입니다.</li>
       </ul>
 
       <h4>주문 시 확인할 핵심 사양</h4>
@@ -4116,9 +4142,10 @@
       </ul>
 
       <h4>다이렉트 드라이브 트렌드</h4>
+      정밀도 요구가 높아지면서 일부 축은 '서보＋볼스크류/감속기' 전동 체인을 다이렉트 드라이브로 대체합니다:
       <ul>
-        <li><strong>토크 / 다이렉트 드라이브(DD) 모터</strong>: 벨트와 기어를 없애 백래시 제로(無背隙)를 구현하며, 4·5축 로터리 테이블(B/C축)과 다이렉트 드라이브 동력 터렛에 점점 더 많이 사용됩니다.</li>
-        <li><strong>리니어 모터</strong>: 회전자와 고정자를 평평한 트랙으로 '펼쳐' 직접적인 직선 운동을 만듭니다 — 무마찰이며 이송 속도가 매우 높습니다. 반도체 장비와 초정밀 방전가공(EDM)·연삭기에 사용됩니다.</li>
+        <li><strong>토크 / 다이렉트 드라이브(DD) 모터(力矩馬達 / 直驅馬達)</strong>: 벨트와 기어를 없애 백래시 제로(無背隙)를 구현. 4·5축 로터리 테이블(B/C축)과 다이렉트 드라이브 동력 터렛(直驅式動力刀塔)에 점점 더 많이 사용됩니다.</li>
+        <li><strong>리니어 모터(線性馬達)</strong>: 회전자와 고정자를 평평한 트랙으로 '펼쳐' 직접적인 직선 운동을 만듭니다 — 무마찰이며 이송 속도가 매우 높습니다. 반도체 장비와 초정밀 방전가공(EDM)·연삭기에 사용됩니다.</li>
       </ul>
   </article>
   <article id="kbdoc-cnc-lathe">
@@ -5994,6 +6021,299 @@
 
       <h4>주축 콜릿 척</h4>
       스위스형 선반 및 다축 기계는 봉재 이송을 위해 주축에 콜릿 척을 사용합니다. 일반적인 유형: 5C, 16C, R8 및 기계 전용 설계.
+  </article>
+  <article id="kbdoc-automation">
+    <h2>Gantry loader or robotic arm for CNC loading/unloading — which should I choose?</h2>
+    <h3>CNC Loading/Unloading: Gantry Loader vs. Robotic Arm</h3>
+<svg viewBox="0 0 1000 480" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="CNC loading and unloading comparison: gantry loader versus articulated robotic arm" style="width:100%;height:auto;display:block;border-radius:12px;margin:0 0 22px;font-family:'Segoe UI','Microsoft JhengHei','Malgun Gothic',system-ui,Arial,sans-serif">
+        <defs>
+          <linearGradient id="azbg" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#0b2538"/><stop offset="0.55" stop-color="#0a2c3b"/><stop offset="1" stop-color="#0b3a44"/></linearGradient>
+          <linearGradient id="azblue" x1="0" y1="0" x2="1" y2="0"><stop offset="0" stop-color="#2f7fb8"/><stop offset="1" stop-color="#4aa3df"/></linearGradient>
+          <linearGradient id="azteal" x1="0" y1="0" x2="1" y2="0"><stop offset="0" stop-color="#2a9d8f"/><stop offset="1" stop-color="#3bc2a0"/></linearGradient>
+        </defs>
+        <rect x="0" y="0" width="1000" height="480" rx="14" fill="url(#azbg)"/>
+        <g stroke="#2f6f86" stroke-width="1.4" fill="none" opacity="0.28">
+          <path d="M16 120 H70 V60 H120"/><circle cx="120" cy="60" r="3" fill="#2f6f86" stroke="none"/>
+          <path d="M984 360 H930 V432 H884"/><circle cx="884" cy="432" r="3" fill="#2f6f86" stroke="none"/>
+          <path d="M40 446 H104"/><circle cx="40" cy="446" r="3" fill="#2f6f86" stroke="none"/>
+        </g>
+        <text x="500" y="40" text-anchor="middle" font-size="23" font-weight="700" fill="#eaf4fb">CNC Loading / Unloading — Gantry vs. Robot</text>
+        <text x="500" y="64" text-anchor="middle" font-size="11.5" letter-spacing="3" fill="#6fa0b8">GANTRY LOADER  ·  ARTICULATED ROBOTIC ARM</text>
+
+        <rect x="22" y="86" width="464" height="322" rx="10" fill="#ffffff" fill-opacity="0.035" stroke="#3f8cc0" stroke-opacity="0.45"/>
+        <path d="M22 124 V96 a10 10 0 0 1 10 -10 H476 a10 10 0 0 1 10 10 V124 Z" fill="#16465f"/>
+        <text x="254" y="112" text-anchor="middle" font-size="15.5" font-weight="600" fill="#dceefb">1. Gantry Loader</text>
+        <g stroke="#7fc4e8" stroke-width="2" fill="#7fc4e8"><line x1="126" y1="146" x2="382" y2="146"/><path d="M126 146 l10 -5 v10 Z"/><path d="M382 146 l-10 -5 v10 Z"/></g>
+        <rect x="86" y="156" width="336" height="12" rx="4" fill="url(#azblue)"/>
+        <rect x="232" y="150" width="44" height="20" rx="3" fill="#2f7fb8"/>
+        <rect x="250" y="170" width="8" height="44" fill="url(#azblue)"/>
+        <rect x="242" y="212" width="24" height="6" rx="2" fill="#4aa3df"/>
+        <rect x="244" y="216" width="4" height="11" fill="#4aa3df"/><rect x="260" y="216" width="4" height="11" fill="#4aa3df"/>
+        <rect x="249" y="218" width="10" height="16" rx="3" fill="#cfe6f5"/>
+        <rect x="150" y="240" width="210" height="58" rx="6" fill="#123a50" stroke="#3f8cc0" stroke-width="1.2"/>
+        <rect x="164" y="251" width="104" height="36" rx="3" fill="#0c2735" stroke="#2f6f86"/>
+        <circle cx="200" cy="269" r="10" fill="none" stroke="#5aa6d6" stroke-width="2"/>
+        <rect x="300" y="251" width="46" height="36" rx="3" fill="#1b5575"/><rect x="306" y="256" width="34" height="12" rx="2" fill="#0c2735"/>
+        <path d="M42 316 l8 4 l-8 4 Z" fill="#4aa3df"/><text x="58" y="324" font-size="12.5" fill="#cfe2ee">Best for: high-volume standard parts</text>
+        <path d="M42 351 l8 4 l-8 4 Z" fill="#4aa3df"/><text x="58" y="359" font-size="12.5" fill="#cfe2ee">Overhead mount — minimal floor space</text>
+        <path d="M42 386 l8 4 l-8 4 Z" fill="#4aa3df"/><text x="58" y="394" font-size="12.5" fill="#cfe2ee">Fastest cycle for cylindrical parts</text>
+
+        <rect x="514" y="86" width="464" height="322" rx="10" fill="#ffffff" fill-opacity="0.035" stroke="#2f9f86" stroke-opacity="0.45"/>
+        <path d="M514 124 V96 a10 10 0 0 1 10 -10 H968 a10 10 0 0 1 10 10 V124 Z" fill="#15534b"/>
+        <text x="746" y="112" text-anchor="middle" font-size="15.5" font-weight="600" fill="#d6f2ea">2. Articulated Robotic Arm</text>
+        <rect x="560" y="236" width="120" height="62" rx="6" fill="#103f39" stroke="#2f9f86" stroke-width="1.2"/>
+        <rect x="572" y="247" width="70" height="40" rx="3" fill="#0a2a26" stroke="#2a8e7e"/>
+        <circle cx="600" cy="267" r="10" fill="none" stroke="#46c2a6" stroke-width="2"/>
+        <rect x="650" y="247" width="22" height="40" rx="3" fill="#1b6c5f"/>
+        <rect x="694" y="146" width="44" height="26" rx="5" fill="#14524a" stroke="#46c2a6"/>
+        <circle cx="706" cy="159" r="6" fill="#0a2a26" stroke="#46c2a6"/>
+        <text x="748" y="163" font-size="10" fill="#7fd8c4">AI · 3D vision</text>
+        <path d="M712 164 L812 214" stroke="#46c2a6" stroke-width="1" stroke-dasharray="4 5" opacity="0.45" fill="none"/>
+        <polygon points="726,290 786,290 778,266 734,266" fill="#2a9d8f"/>
+        <line x1="756" y1="266" x2="720" y2="222" stroke="url(#azteal)" stroke-width="12" stroke-linecap="round"/>
+        <line x1="720" y1="222" x2="786" y2="200" stroke="url(#azteal)" stroke-width="11" stroke-linecap="round"/>
+        <line x1="786" y1="200" x2="816" y2="214" stroke="url(#azteal)" stroke-width="9" stroke-linecap="round"/>
+        <circle cx="756" cy="266" r="9" fill="#3bc2a0"/><circle cx="720" cy="222" r="7" fill="#3bc2a0"/><circle cx="786" cy="200" r="6" fill="#3bc2a0"/>
+        <rect x="812" y="210" width="16" height="16" rx="2" fill="#cdeee4"/>
+        <path d="M756 252 A 66 66 0 0 1 818 214" fill="none" stroke="#46c2a6" stroke-dasharray="4 5" opacity="0.4"/>
+        <path d="M534 316 l8 4 l-8 4 Z" fill="#3bc2a0"/><text x="550" y="324" font-size="12.5" fill="#cfeae2">Best for: high-mix, complex parts</text>
+        <path d="M534 351 l8 4 l-8 4 Z" fill="#3bc2a0"/><text x="550" y="359" font-size="12.5" fill="#cfeae2">Deburring · washing · inspection in-cycle</text>
+        <path d="M534 386 l8 4 l-8 4 Z" fill="#3bc2a0"/><text x="550" y="394" font-size="12.5" fill="#cfeae2">3D-vision bin picking — no fixtures</text>
+
+        <text x="32" y="452" font-size="12" fill="#86a8bc">Tailored automation integration — combat labour shortages, achieve lights-out machining.</text>
+        <text x="970" y="452" text-anchor="end" font-size="12.5" font-weight="700" fill="#d4af5c">Z&amp;Z STROTEC</text>
+      </svg>
+      <h4>Two Mainstream CNC Automation Solutions</h4>
+      To address labour shortages and enable lights-out machining (無人化生產), automated loading/unloading is increasingly standard on CNC lathes and machining centers. The two mainstream options are the <strong>gantry loader</strong> and the <strong>articulated robotic arm</strong>. The right choice depends on production volume, part complexity, and available floor space.
+
+      <h4>1. Gantry Loader (龍門式搬運機械手)</h4>
+      A gantry loader runs on an overhead track built into or above the machine, using a linear gantry axis to move parts in and out of the work zone.
+      <ul>
+        <li><strong>Best for</strong>: High-volume, low-mix production of standard parts (大批量標準件)</li>
+        <li><strong>Space-saving</strong>: Mounted overhead, so it needs little to no extra floor space — useful in crowded layouts.</li>
+        <li><strong>High-speed loading</strong>: Excels at simple point-to-point transfer; fastest cycle for standard cylindrical parts (shafts, gears), especially when paired with twin-spindle lathes.</li>
+      </ul>
+
+      <h4>2. Articulated Robotic Arm (多軸機械手臂)</h4>
+      A 6-axis industrial robot (or a collaborative robot / 協作型機器人) stands beside the machine and handles parts with arm-like dexterity.
+      <ul>
+        <li><strong>Best for</strong>: High-mix, low-volume production and complex geometries (少量多樣、複雜工件)</li>
+        <li><strong>Flexibility</strong>: Can perform secondary tasks — deburring, part washing, inspection — while the machine is cutting.</li>
+        <li><strong>3D vision (3D 視覺辨識)</strong>: With a vision module, the robot can locate randomly placed parts and pick them from a bin, reducing the need for precise stacking or custom fixtures.</li>
+        <li><strong>Multi-machine tending</strong>: Mounted on an external linear rail (the "7th axis"), one robot can serve two or more machines at once.</li>
+      </ul>
+
+      <h4>3. Selection Guide (選型總結)</h4>
+      <table style="width:100%;border-collapse:collapse;font-size:0.86rem;margin-top:4px">
+        <thead>
+          <tr style="border-bottom:1px solid var(--border)">
+            <th style="text-align:left;padding:8px 10px;color:var(--gold);font-weight:600">Factor</th>
+            <th style="text-align:left;padding:8px 10px;color:var(--text);font-weight:600">Gantry Loader</th>
+            <th style="text-align:left;padding:8px 10px;color:var(--text);font-weight:600">Robotic Arm</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr style="border-bottom:1px solid var(--border)"><td style="padding:8px 10px;color:var(--text-dim)">Production type</td><td style="padding:8px 10px">Mass production, standard parts</td><td style="padding:8px 10px">High-mix, low-volume</td></tr>
+          <tr style="border-bottom:1px solid var(--border)"><td style="padding:8px 10px;color:var(--text-dim)">Floor space</td><td style="padding:8px 10px">Very compact (overhead)</td><td style="padding:8px 10px">Needs floor space &amp; safety fence</td></tr>
+          <tr style="border-bottom:1px solid var(--border)"><td style="padding:8px 10px;color:var(--text-dim)">Part complexity</td><td style="padding:8px 10px">Standard / symmetrical</td><td style="padding:8px 10px">Complex / irregular</td></tr>
+          <tr><td style="padding:8px 10px;color:var(--text-dim)">Vision / AI</td><td style="padding:8px 10px">Basic</td><td style="padding:8px 10px">Advanced 3D vision</td></tr>
+        </tbody>
+      </table>
+      <p style="margin-top:18px">Whether you need a gantry loader for mass production or a vision-guided robot for complex parts, Z&amp;Z STROTEC integrates CNC automation to match your process. <button class="nav-btn" onclick="showPage('inquiry')" style="color:var(--gold);border:1px solid var(--gold);padding:8px 22px;font-size:12px;margin-top:6px">SEND INQUIRY / 立即洽詢 →</button></p>
+    <h3 lang="zh-Hant">CNC 自動上下料要選龍門式機械手還是多軸機械手臂？</h3>
+    <h4 lang="zh-Hant">CNC 自動化上下料：龍門式搬運機械手 vs. 多軸機械手臂</h4>
+<svg viewBox="0 0 1000 480" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="CNC 自動上下料比較：龍門式搬運機械手與多軸機械手臂" style="width:100%;height:auto;display:block;border-radius:12px;margin:0 0 22px;font-family:'Segoe UI','Microsoft JhengHei','Malgun Gothic',system-ui,Arial,sans-serif">
+        <defs>
+          <linearGradient id="azbg" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#0b2538"/><stop offset="0.55" stop-color="#0a2c3b"/><stop offset="1" stop-color="#0b3a44"/></linearGradient>
+          <linearGradient id="azblue" x1="0" y1="0" x2="1" y2="0"><stop offset="0" stop-color="#2f7fb8"/><stop offset="1" stop-color="#4aa3df"/></linearGradient>
+          <linearGradient id="azteal" x1="0" y1="0" x2="1" y2="0"><stop offset="0" stop-color="#2a9d8f"/><stop offset="1" stop-color="#3bc2a0"/></linearGradient>
+        </defs>
+        <rect x="0" y="0" width="1000" height="480" rx="14" fill="url(#azbg)"/>
+        <g stroke="#2f6f86" stroke-width="1.4" fill="none" opacity="0.28">
+          <path d="M16 120 H70 V60 H120"/><circle cx="120" cy="60" r="3" fill="#2f6f86" stroke="none"/>
+          <path d="M984 360 H930 V432 H884"/><circle cx="884" cy="432" r="3" fill="#2f6f86" stroke="none"/>
+          <path d="M40 446 H104"/><circle cx="40" cy="446" r="3" fill="#2f6f86" stroke="none"/>
+        </g>
+        <text x="500" y="40" text-anchor="middle" font-size="23" font-weight="700" fill="#eaf4fb">CNC 自動化上下料系統比較</text>
+        <text x="500" y="64" text-anchor="middle" font-size="12" letter-spacing="2" fill="#6fa0b8">龍門式搬運機械手　·　多軸機械手臂</text>
+
+        <rect x="22" y="86" width="464" height="322" rx="10" fill="#ffffff" fill-opacity="0.035" stroke="#3f8cc0" stroke-opacity="0.45"/>
+        <path d="M22 124 V96 a10 10 0 0 1 10 -10 H476 a10 10 0 0 1 10 10 V124 Z" fill="#16465f"/>
+        <text x="254" y="112" text-anchor="middle" font-size="15.5" font-weight="600" fill="#dceefb">1. 龍門式搬運機械手</text>
+        <g stroke="#7fc4e8" stroke-width="2" fill="#7fc4e8"><line x1="126" y1="146" x2="382" y2="146"/><path d="M126 146 l10 -5 v10 Z"/><path d="M382 146 l-10 -5 v10 Z"/></g>
+        <rect x="86" y="156" width="336" height="12" rx="4" fill="url(#azblue)"/>
+        <rect x="232" y="150" width="44" height="20" rx="3" fill="#2f7fb8"/>
+        <rect x="250" y="170" width="8" height="44" fill="url(#azblue)"/>
+        <rect x="242" y="212" width="24" height="6" rx="2" fill="#4aa3df"/>
+        <rect x="244" y="216" width="4" height="11" fill="#4aa3df"/><rect x="260" y="216" width="4" height="11" fill="#4aa3df"/>
+        <rect x="249" y="218" width="10" height="16" rx="3" fill="#cfe6f5"/>
+        <rect x="150" y="240" width="210" height="58" rx="6" fill="#123a50" stroke="#3f8cc0" stroke-width="1.2"/>
+        <rect x="164" y="251" width="104" height="36" rx="3" fill="#0c2735" stroke="#2f6f86"/>
+        <circle cx="200" cy="269" r="10" fill="none" stroke="#5aa6d6" stroke-width="2"/>
+        <rect x="300" y="251" width="46" height="36" rx="3" fill="#1b5575"/><rect x="306" y="256" width="34" height="12" rx="2" fill="#0c2735"/>
+        <path d="M42 316 l8 4 l-8 4 Z" fill="#4aa3df"/><text x="58" y="324" font-size="12.5" fill="#cfe2ee">適用：大批量標準件生產</text>
+        <path d="M42 351 l8 4 l-8 4 Z" fill="#4aa3df"/><text x="58" y="359" font-size="12.5" fill="#cfe2ee">上方架設，幾乎不佔地面</text>
+        <path d="M42 386 l8 4 l-8 4 Z" fill="#4aa3df"/><text x="58" y="394" font-size="12.5" fill="#cfe2ee">圓柱件上下料速度最快</text>
+
+        <rect x="514" y="86" width="464" height="322" rx="10" fill="#ffffff" fill-opacity="0.035" stroke="#2f9f86" stroke-opacity="0.45"/>
+        <path d="M514 124 V96 a10 10 0 0 1 10 -10 H968 a10 10 0 0 1 10 10 V124 Z" fill="#15534b"/>
+        <text x="746" y="112" text-anchor="middle" font-size="15.5" font-weight="600" fill="#d6f2ea">2. 多軸機械手臂</text>
+        <rect x="560" y="236" width="120" height="62" rx="6" fill="#103f39" stroke="#2f9f86" stroke-width="1.2"/>
+        <rect x="572" y="247" width="70" height="40" rx="3" fill="#0a2a26" stroke="#2a8e7e"/>
+        <circle cx="600" cy="267" r="10" fill="none" stroke="#46c2a6" stroke-width="2"/>
+        <rect x="650" y="247" width="22" height="40" rx="3" fill="#1b6c5f"/>
+        <rect x="694" y="146" width="44" height="26" rx="5" fill="#14524a" stroke="#46c2a6"/>
+        <circle cx="706" cy="159" r="6" fill="#0a2a26" stroke="#46c2a6"/>
+        <text x="748" y="163" font-size="10" fill="#7fd8c4">AI · 3D 視覺</text>
+        <path d="M712 164 L812 214" stroke="#46c2a6" stroke-width="1" stroke-dasharray="4 5" opacity="0.45" fill="none"/>
+        <polygon points="726,290 786,290 778,266 734,266" fill="#2a9d8f"/>
+        <line x1="756" y1="266" x2="720" y2="222" stroke="url(#azteal)" stroke-width="12" stroke-linecap="round"/>
+        <line x1="720" y1="222" x2="786" y2="200" stroke="url(#azteal)" stroke-width="11" stroke-linecap="round"/>
+        <line x1="786" y1="200" x2="816" y2="214" stroke="url(#azteal)" stroke-width="9" stroke-linecap="round"/>
+        <circle cx="756" cy="266" r="9" fill="#3bc2a0"/><circle cx="720" cy="222" r="7" fill="#3bc2a0"/><circle cx="786" cy="200" r="6" fill="#3bc2a0"/>
+        <rect x="812" y="210" width="16" height="16" rx="2" fill="#cdeee4"/>
+        <path d="M756 252 A 66 66 0 0 1 818 214" fill="none" stroke="#46c2a6" stroke-dasharray="4 5" opacity="0.4"/>
+        <path d="M534 316 l8 4 l-8 4 Z" fill="#3bc2a0"/><text x="550" y="324" font-size="12.5" fill="#cfeae2">適用：少量多樣、複雜工件</text>
+        <path d="M534 351 l8 4 l-8 4 Z" fill="#3bc2a0"/><text x="550" y="359" font-size="12.5" fill="#cfeae2">去毛邊·清洗·檢測同步進行</text>
+        <path d="M534 386 l8 4 l-8 4 Z" fill="#3bc2a0"/><text x="550" y="394" font-size="12.5" fill="#cfeae2">3D 視覺隨機取件，免治具</text>
+
+        <text x="32" y="452" font-size="12" fill="#86a8bc">客製化自動化整合 — 解決缺工、邁向無人化生產。</text>
+        <text x="970" y="452" text-anchor="end" font-size="12.5" font-weight="700" fill="#d4af5c">Z&amp;Z STROTEC</text>
+      </svg>
+      <h4>兩種主流 CNC 自動化方式</h4>
+      為因應缺工並實現無人化生產（lights-out），在 CNC 車床與加工中心機導入自動上下料系統已日漸普及。兩種主流方案為<strong>龍門式搬運機械手</strong>與<strong>多軸機械手臂</strong>，正確選型取決於生產量、工件複雜度與廠房空間。
+
+      <h4>1. 龍門式搬運機械手（龍門式 Gantry Loader）</h4>
+      龍門式機械手沿著架設於機台上方的軌道，以直線搬運軸將工件移進、移出加工區。
+      <ul>
+        <li><strong>適用</strong>：標準件的大批量、少樣化生產（大批量標準件）</li>
+        <li><strong>節省空間</strong>：採上方架設，幾乎不需額外佔地，適合機台密集的廠房配置。</li>
+        <li><strong>高速上下料</strong>：擅長單純的點對點移動；搭配雙主軸車床加工標準圓柱件（軸類、齒輪）時可提供最快的上下料節拍。</li>
+      </ul>
+
+      <h4>2. 多軸機械手臂（Articulated Robotic Arm）</h4>
+      6 軸工業機器人（或協作型機器人 / 協作型機器人）立於機台旁，以類似人手的靈活度搬運工件。
+      <ul>
+        <li><strong>適用</strong>：少量多樣生產與複雜工件（少量多樣、複雜工件）</li>
+        <li><strong>高彈性與多工</strong>：可在機台切削的同時，執行去毛邊、工件清洗、檢測等次要工序。</li>
+        <li><strong>結合 3D 視覺辨識（3D 視覺）</strong>：搭配視覺模組後，可辨識隨機擺放工件的位置與方向並直接從料箱取件，降低對精準排料或客製治具的需求。</li>
+        <li><strong>一對多服務</strong>：將機器人架設於外部直線導軌（即所謂「第 7 軸」）上，一台機器人即可同時服務兩台以上機台。</li>
+      </ul>
+
+      <h4>3. 選型總結</h4>
+      <table style="width:100%;border-collapse:collapse;font-size:0.86rem;margin-top:4px">
+        <thead>
+          <tr style="border-bottom:1px solid var(--border)">
+            <th style="text-align:left;padding:8px 10px;color:var(--gold);font-weight:600">比較項目</th>
+            <th style="text-align:left;padding:8px 10px;color:var(--text);font-weight:600">龍門式機械手</th>
+            <th style="text-align:left;padding:8px 10px;color:var(--text);font-weight:600">多軸機械手臂</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr style="border-bottom:1px solid var(--border)"><td style="padding:8px 10px;color:var(--text-dim)">生產型態</td><td style="padding:8px 10px">大批量標準件</td><td style="padding:8px 10px">少量多樣化</td></tr>
+          <tr style="border-bottom:1px solid var(--border)"><td style="padding:8px 10px;color:var(--text-dim)">佔地空間</td><td style="padding:8px 10px">極小（與機台整合）</td><td style="padding:8px 10px">較大，需安全防護</td></tr>
+          <tr style="border-bottom:1px solid var(--border)"><td style="padding:8px 10px;color:var(--text-dim)">工件複雜度</td><td style="padding:8px 10px">標準／對稱件</td><td style="padding:8px 10px">複雜／不規則件</td></tr>
+          <tr><td style="padding:8px 10px;color:var(--text-dim)">視覺與 AI</td><td style="padding:8px 10px">基本</td><td style="padding:8px 10px">支援高階 3D 視覺</td></tr>
+        </tbody>
+      </table>
+      <p style="margin-top:18px">無論是大批量生產用的龍門式機械手，或複雜工件用的視覺導引機器人，Z&amp;Z STROTEC 都能依您的製程提供合適的 CNC 自動化整合。<button class="nav-btn" onclick="showPage('inquiry')" style="color:var(--gold);border:1px solid var(--gold);padding:8px 22px;font-size:12px;margin-top:6px">立即洽詢 →</button></p>
+    <h3 lang="ko">CNC 로딩/언로딩에는 갠트리 로더와 로봇 암 중 무엇을 선택해야 하나요?</h3>
+    <h4 lang="ko">CNC 로딩/언로딩: 갠트리 로더 vs. 다관절 로봇 암</h4>
+<svg viewBox="0 0 1000 480" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="CNC 로딩/언로딩 비교: 갠트리 로더와 다관절 로봇 암" style="width:100%;height:auto;display:block;border-radius:12px;margin:0 0 22px;font-family:'Segoe UI','Microsoft JhengHei','Malgun Gothic',system-ui,Arial,sans-serif">
+        <defs>
+          <linearGradient id="azbg" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#0b2538"/><stop offset="0.55" stop-color="#0a2c3b"/><stop offset="1" stop-color="#0b3a44"/></linearGradient>
+          <linearGradient id="azblue" x1="0" y1="0" x2="1" y2="0"><stop offset="0" stop-color="#2f7fb8"/><stop offset="1" stop-color="#4aa3df"/></linearGradient>
+          <linearGradient id="azteal" x1="0" y1="0" x2="1" y2="0"><stop offset="0" stop-color="#2a9d8f"/><stop offset="1" stop-color="#3bc2a0"/></linearGradient>
+        </defs>
+        <rect x="0" y="0" width="1000" height="480" rx="14" fill="url(#azbg)"/>
+        <g stroke="#2f6f86" stroke-width="1.4" fill="none" opacity="0.28">
+          <path d="M16 120 H70 V60 H120"/><circle cx="120" cy="60" r="3" fill="#2f6f86" stroke="none"/>
+          <path d="M984 360 H930 V432 H884"/><circle cx="884" cy="432" r="3" fill="#2f6f86" stroke="none"/>
+          <path d="M40 446 H104"/><circle cx="40" cy="446" r="3" fill="#2f6f86" stroke="none"/>
+        </g>
+        <text x="500" y="40" text-anchor="middle" font-size="23" font-weight="700" fill="#eaf4fb">CNC 자동 로딩/언로딩 비교</text>
+        <text x="500" y="64" text-anchor="middle" font-size="12" letter-spacing="1" fill="#6fa0b8">갠트리 로더　·　다관절 로봇 암</text>
+
+        <rect x="22" y="86" width="464" height="322" rx="10" fill="#ffffff" fill-opacity="0.035" stroke="#3f8cc0" stroke-opacity="0.45"/>
+        <path d="M22 124 V96 a10 10 0 0 1 10 -10 H476 a10 10 0 0 1 10 10 V124 Z" fill="#16465f"/>
+        <text x="254" y="112" text-anchor="middle" font-size="15.5" font-weight="600" fill="#dceefb">1. 갠트리 로더</text>
+        <g stroke="#7fc4e8" stroke-width="2" fill="#7fc4e8"><line x1="126" y1="146" x2="382" y2="146"/><path d="M126 146 l10 -5 v10 Z"/><path d="M382 146 l-10 -5 v10 Z"/></g>
+        <rect x="86" y="156" width="336" height="12" rx="4" fill="url(#azblue)"/>
+        <rect x="232" y="150" width="44" height="20" rx="3" fill="#2f7fb8"/>
+        <rect x="250" y="170" width="8" height="44" fill="url(#azblue)"/>
+        <rect x="242" y="212" width="24" height="6" rx="2" fill="#4aa3df"/>
+        <rect x="244" y="216" width="4" height="11" fill="#4aa3df"/><rect x="260" y="216" width="4" height="11" fill="#4aa3df"/>
+        <rect x="249" y="218" width="10" height="16" rx="3" fill="#cfe6f5"/>
+        <rect x="150" y="240" width="210" height="58" rx="6" fill="#123a50" stroke="#3f8cc0" stroke-width="1.2"/>
+        <rect x="164" y="251" width="104" height="36" rx="3" fill="#0c2735" stroke="#2f6f86"/>
+        <circle cx="200" cy="269" r="10" fill="none" stroke="#5aa6d6" stroke-width="2"/>
+        <rect x="300" y="251" width="46" height="36" rx="3" fill="#1b5575"/><rect x="306" y="256" width="34" height="12" rx="2" fill="#0c2735"/>
+        <path d="M42 316 l8 4 l-8 4 Z" fill="#4aa3df"/><text x="58" y="324" font-size="12.5" fill="#cfe2ee">적합: 대량 표준 부품 생산</text>
+        <path d="M42 351 l8 4 l-8 4 Z" fill="#4aa3df"/><text x="58" y="359" font-size="12.5" fill="#cfe2ee">상부 장착 — 바닥 공간 최소</text>
+        <path d="M42 386 l8 4 l-8 4 Z" fill="#4aa3df"/><text x="58" y="394" font-size="12.5" fill="#cfe2ee">원통형 부품에 가장 빠름</text>
+
+        <rect x="514" y="86" width="464" height="322" rx="10" fill="#ffffff" fill-opacity="0.035" stroke="#2f9f86" stroke-opacity="0.45"/>
+        <path d="M514 124 V96 a10 10 0 0 1 10 -10 H968 a10 10 0 0 1 10 10 V124 Z" fill="#15534b"/>
+        <text x="746" y="112" text-anchor="middle" font-size="15.5" font-weight="600" fill="#d6f2ea">2. 다관절 로봇 암</text>
+        <rect x="560" y="236" width="120" height="62" rx="6" fill="#103f39" stroke="#2f9f86" stroke-width="1.2"/>
+        <rect x="572" y="247" width="70" height="40" rx="3" fill="#0a2a26" stroke="#2a8e7e"/>
+        <circle cx="600" cy="267" r="10" fill="none" stroke="#46c2a6" stroke-width="2"/>
+        <rect x="650" y="247" width="22" height="40" rx="3" fill="#1b6c5f"/>
+        <rect x="694" y="146" width="44" height="26" rx="5" fill="#14524a" stroke="#46c2a6"/>
+        <circle cx="706" cy="159" r="6" fill="#0a2a26" stroke="#46c2a6"/>
+        <text x="748" y="163" font-size="10" fill="#7fd8c4">AI · 3D 비전</text>
+        <path d="M712 164 L812 214" stroke="#46c2a6" stroke-width="1" stroke-dasharray="4 5" opacity="0.45" fill="none"/>
+        <polygon points="726,290 786,290 778,266 734,266" fill="#2a9d8f"/>
+        <line x1="756" y1="266" x2="720" y2="222" stroke="url(#azteal)" stroke-width="12" stroke-linecap="round"/>
+        <line x1="720" y1="222" x2="786" y2="200" stroke="url(#azteal)" stroke-width="11" stroke-linecap="round"/>
+        <line x1="786" y1="200" x2="816" y2="214" stroke="url(#azteal)" stroke-width="9" stroke-linecap="round"/>
+        <circle cx="756" cy="266" r="9" fill="#3bc2a0"/><circle cx="720" cy="222" r="7" fill="#3bc2a0"/><circle cx="786" cy="200" r="6" fill="#3bc2a0"/>
+        <rect x="812" y="210" width="16" height="16" rx="2" fill="#cdeee4"/>
+        <path d="M756 252 A 66 66 0 0 1 818 214" fill="none" stroke="#46c2a6" stroke-dasharray="4 5" opacity="0.4"/>
+        <path d="M534 316 l8 4 l-8 4 Z" fill="#3bc2a0"/><text x="550" y="324" font-size="12.5" fill="#cfeae2">적합: 다품종·복잡 형상</text>
+        <path d="M534 351 l8 4 l-8 4 Z" fill="#3bc2a0"/><text x="550" y="359" font-size="12.5" fill="#cfeae2">디버링·세척·검사 동시 수행</text>
+        <path d="M534 386 l8 4 l-8 4 Z" fill="#3bc2a0"/><text x="550" y="394" font-size="12.5" fill="#cfeae2">3D 비전 빈피킹 — 지그 불필요</text>
+
+        <text x="32" y="452" font-size="12" fill="#86a8bc">맞춤형 자동화 통합 — 인력 부족 해소, 무인 가공 실현.</text>
+        <text x="970" y="452" text-anchor="end" font-size="12.5" font-weight="700" fill="#d4af5c">Z&amp;Z STROTEC</text>
+      </svg>
+      <h4>두 가지 주류 CNC 자동화 방식</h4>
+      인력 부족에 대응하고 무인 가공(lights-out)을 실현하기 위해, CNC 선반과 머시닝 센터에서 자동 상하료 시스템 도입이 점점 일반화되고 있습니다. 대표적인 두 가지 방식은 <strong>갠트리 로더</strong>와 <strong>다관절 로봇 암</strong>이며, 적합한 선택은 생산량, 공작물 복잡도, 설치 공간에 따라 달라집니다.
+
+      <h4>1. 갠트리 로더 (龍門式搬運機械手)</h4>
+      갠트리 로더는 기계 위쪽에 설치된 오버헤드 레일을 따라 직선 이송축으로 공작물을 가공 영역 안팎으로 옮깁니다.
+      <ul>
+        <li><strong>적합 용도</strong>: 표준 부품의 대량·소품종 생산 (大批量標準件)</li>
+        <li><strong>공간 절약</strong>: 상부 장착 방식이라 추가 바닥 면적이 거의 필요 없어 밀집된 라인에 유리합니다.</li>
+        <li><strong>고속 상하료</strong>: 단순 직선 이동에 강하며, 표준 원통형 부품(샤프트·기어)을 트윈 스핀들 선반과 조합할 때 가장 빠른 사이클을 제공합니다.</li>
+      </ul>
+
+      <h4>2. 다관절 로봇 암 (多軸機械手臂)</h4>
+      6축 산업용 로봇(또는 협동 로봇 / 協作型機器人)이 기계 옆에 서서 사람 팔처럼 유연하게 공작물을 다룹니다.
+      <ul>
+        <li><strong>적합 용도</strong>: 다품종·소량 생산 및 복잡한 형상 (少量多樣·複雜工件)</li>
+        <li><strong>높은 유연성</strong>: 기계가 절삭하는 동안 디버링, 부품 세척, 검사 등 2차 작업을 함께 수행할 수 있습니다.</li>
+        <li><strong>3D 비전 (3D 視覺辨識)</strong>: 비전 모듈을 장착하면 무작위로 놓인 부품의 위치·방향을 인식해 빈(bin)에서 직접 집을 수 있어, 정밀 정렬이나 전용 지그의 필요성을 줄입니다.</li>
+        <li><strong>1대 다 기계 대응</strong>: 외부 직선 레일(이른바 "7번째 축")에 로봇을 올리면 한 대가 두 대 이상의 기계를 동시에 서비스할 수 있습니다.</li>
+      </ul>
+
+      <h4>3. 선정 가이드 (選型總結)</h4>
+      <table style="width:100%;border-collapse:collapse;font-size:0.86rem;margin-top:4px">
+        <thead>
+          <tr style="border-bottom:1px solid var(--border)">
+            <th style="text-align:left;padding:8px 10px;color:var(--gold);font-weight:600">항목</th>
+            <th style="text-align:left;padding:8px 10px;color:var(--text);font-weight:600">갠트리 로더</th>
+            <th style="text-align:left;padding:8px 10px;color:var(--text);font-weight:600">로봇 암</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr style="border-bottom:1px solid var(--border)"><td style="padding:8px 10px;color:var(--text-dim)">생산 형태</td><td style="padding:8px 10px">대량 표준품</td><td style="padding:8px 10px">다품종 소량</td></tr>
+          <tr style="border-bottom:1px solid var(--border)"><td style="padding:8px 10px;color:var(--text-dim)">설치 공간</td><td style="padding:8px 10px">매우 작음(상부 장착)</td><td style="padding:8px 10px">바닥 공간·안전 펜스 필요</td></tr>
+          <tr style="border-bottom:1px solid var(--border)"><td style="padding:8px 10px;color:var(--text-dim)">공작물 복잡도</td><td style="padding:8px 10px">표준·대칭</td><td style="padding:8px 10px">복잡·비정형</td></tr>
+          <tr><td style="padding:8px 10px;color:var(--text-dim)">비전·AI</td><td style="padding:8px 10px">기본</td><td style="padding:8px 10px">고급 3D 비전 지원</td></tr>
+        </tbody>
+      </table>
+      <p style="margin-top:18px">Z&amp;Z STROTEC는 대량 생산용 갠트리 로더부터 복잡 부품용 비전 가이드 로봇까지, 공정에 맞는 CNC 자동화 통합을 지원합니다. <button class="nav-btn" onclick="showPage('inquiry')" style="color:var(--gold);border:1px solid var(--gold);padding:8px 22px;font-size:12px;margin-top:6px">문의하기 / 立即洽詢 →</button></p>
   </article>
 </div>
 <!-- KB-ARCHIVE:END -->
@@ -8704,6 +9024,304 @@ const KB = {
       <h4>Spindle Collet Chucks</h4>
       Swiss lathes and multi-spindle machines use collet chucks at the main spindle for bar feeding. Common types: 5C, 16C, R8, and machine-specific designs.
     `
+  },
+
+  'automation': {
+    title: 'CNC Loading/Unloading: Gantry Loader vs. Robotic Arm',
+    title_zh: 'CNC 自動化上下料：龍門式搬運機械手 vs. 多軸機械手臂',
+    title_ko: 'CNC 로딩/언로딩: 갠트리 로더 vs. 다관절 로봇 암',
+    tags: ['automation', 'gantry loader', 'robotic arm', 'lights-out', '自動化', '3D vision'],
+    body_ko: `
+      <svg viewBox="0 0 1000 480" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="CNC 로딩/언로딩 비교: 갠트리 로더와 다관절 로봇 암" style="width:100%;height:auto;display:block;border-radius:12px;margin:0 0 22px;font-family:'Segoe UI','Microsoft JhengHei','Malgun Gothic',system-ui,Arial,sans-serif">
+        <defs>
+          <linearGradient id="azbg" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#0b2538"/><stop offset="0.55" stop-color="#0a2c3b"/><stop offset="1" stop-color="#0b3a44"/></linearGradient>
+          <linearGradient id="azblue" x1="0" y1="0" x2="1" y2="0"><stop offset="0" stop-color="#2f7fb8"/><stop offset="1" stop-color="#4aa3df"/></linearGradient>
+          <linearGradient id="azteal" x1="0" y1="0" x2="1" y2="0"><stop offset="0" stop-color="#2a9d8f"/><stop offset="1" stop-color="#3bc2a0"/></linearGradient>
+        </defs>
+        <rect x="0" y="0" width="1000" height="480" rx="14" fill="url(#azbg)"/>
+        <g stroke="#2f6f86" stroke-width="1.4" fill="none" opacity="0.28">
+          <path d="M16 120 H70 V60 H120"/><circle cx="120" cy="60" r="3" fill="#2f6f86" stroke="none"/>
+          <path d="M984 360 H930 V432 H884"/><circle cx="884" cy="432" r="3" fill="#2f6f86" stroke="none"/>
+          <path d="M40 446 H104"/><circle cx="40" cy="446" r="3" fill="#2f6f86" stroke="none"/>
+        </g>
+        <text x="500" y="40" text-anchor="middle" font-size="23" font-weight="700" fill="#eaf4fb">CNC 자동 로딩/언로딩 비교</text>
+        <text x="500" y="64" text-anchor="middle" font-size="12" letter-spacing="1" fill="#6fa0b8">갠트리 로더　·　다관절 로봇 암</text>
+
+        <rect x="22" y="86" width="464" height="322" rx="10" fill="#ffffff" fill-opacity="0.035" stroke="#3f8cc0" stroke-opacity="0.45"/>
+        <path d="M22 124 V96 a10 10 0 0 1 10 -10 H476 a10 10 0 0 1 10 10 V124 Z" fill="#16465f"/>
+        <text x="254" y="112" text-anchor="middle" font-size="15.5" font-weight="600" fill="#dceefb">1. 갠트리 로더</text>
+        <g stroke="#7fc4e8" stroke-width="2" fill="#7fc4e8"><line x1="126" y1="146" x2="382" y2="146"/><path d="M126 146 l10 -5 v10 Z"/><path d="M382 146 l-10 -5 v10 Z"/></g>
+        <rect x="86" y="156" width="336" height="12" rx="4" fill="url(#azblue)"/>
+        <rect x="232" y="150" width="44" height="20" rx="3" fill="#2f7fb8"/>
+        <rect x="250" y="170" width="8" height="44" fill="url(#azblue)"/>
+        <rect x="242" y="212" width="24" height="6" rx="2" fill="#4aa3df"/>
+        <rect x="244" y="216" width="4" height="11" fill="#4aa3df"/><rect x="260" y="216" width="4" height="11" fill="#4aa3df"/>
+        <rect x="249" y="218" width="10" height="16" rx="3" fill="#cfe6f5"/>
+        <rect x="150" y="240" width="210" height="58" rx="6" fill="#123a50" stroke="#3f8cc0" stroke-width="1.2"/>
+        <rect x="164" y="251" width="104" height="36" rx="3" fill="#0c2735" stroke="#2f6f86"/>
+        <circle cx="200" cy="269" r="10" fill="none" stroke="#5aa6d6" stroke-width="2"/>
+        <rect x="300" y="251" width="46" height="36" rx="3" fill="#1b5575"/><rect x="306" y="256" width="34" height="12" rx="2" fill="#0c2735"/>
+        <path d="M42 316 l8 4 l-8 4 Z" fill="#4aa3df"/><text x="58" y="324" font-size="12.5" fill="#cfe2ee">적합: 대량 표준 부품 생산</text>
+        <path d="M42 351 l8 4 l-8 4 Z" fill="#4aa3df"/><text x="58" y="359" font-size="12.5" fill="#cfe2ee">상부 장착 — 바닥 공간 최소</text>
+        <path d="M42 386 l8 4 l-8 4 Z" fill="#4aa3df"/><text x="58" y="394" font-size="12.5" fill="#cfe2ee">원통형 부품에 가장 빠름</text>
+
+        <rect x="514" y="86" width="464" height="322" rx="10" fill="#ffffff" fill-opacity="0.035" stroke="#2f9f86" stroke-opacity="0.45"/>
+        <path d="M514 124 V96 a10 10 0 0 1 10 -10 H968 a10 10 0 0 1 10 10 V124 Z" fill="#15534b"/>
+        <text x="746" y="112" text-anchor="middle" font-size="15.5" font-weight="600" fill="#d6f2ea">2. 다관절 로봇 암</text>
+        <rect x="560" y="236" width="120" height="62" rx="6" fill="#103f39" stroke="#2f9f86" stroke-width="1.2"/>
+        <rect x="572" y="247" width="70" height="40" rx="3" fill="#0a2a26" stroke="#2a8e7e"/>
+        <circle cx="600" cy="267" r="10" fill="none" stroke="#46c2a6" stroke-width="2"/>
+        <rect x="650" y="247" width="22" height="40" rx="3" fill="#1b6c5f"/>
+        <rect x="694" y="146" width="44" height="26" rx="5" fill="#14524a" stroke="#46c2a6"/>
+        <circle cx="706" cy="159" r="6" fill="#0a2a26" stroke="#46c2a6"/>
+        <text x="748" y="163" font-size="10" fill="#7fd8c4">AI · 3D 비전</text>
+        <path d="M712 164 L812 214" stroke="#46c2a6" stroke-width="1" stroke-dasharray="4 5" opacity="0.45" fill="none"/>
+        <polygon points="726,290 786,290 778,266 734,266" fill="#2a9d8f"/>
+        <line x1="756" y1="266" x2="720" y2="222" stroke="url(#azteal)" stroke-width="12" stroke-linecap="round"/>
+        <line x1="720" y1="222" x2="786" y2="200" stroke="url(#azteal)" stroke-width="11" stroke-linecap="round"/>
+        <line x1="786" y1="200" x2="816" y2="214" stroke="url(#azteal)" stroke-width="9" stroke-linecap="round"/>
+        <circle cx="756" cy="266" r="9" fill="#3bc2a0"/><circle cx="720" cy="222" r="7" fill="#3bc2a0"/><circle cx="786" cy="200" r="6" fill="#3bc2a0"/>
+        <rect x="812" y="210" width="16" height="16" rx="2" fill="#cdeee4"/>
+        <path d="M756 252 A 66 66 0 0 1 818 214" fill="none" stroke="#46c2a6" stroke-dasharray="4 5" opacity="0.4"/>
+        <path d="M534 316 l8 4 l-8 4 Z" fill="#3bc2a0"/><text x="550" y="324" font-size="12.5" fill="#cfeae2">적합: 다품종·복잡 형상</text>
+        <path d="M534 351 l8 4 l-8 4 Z" fill="#3bc2a0"/><text x="550" y="359" font-size="12.5" fill="#cfeae2">디버링·세척·검사 동시 수행</text>
+        <path d="M534 386 l8 4 l-8 4 Z" fill="#3bc2a0"/><text x="550" y="394" font-size="12.5" fill="#cfeae2">3D 비전 빈피킹 — 지그 불필요</text>
+
+        <text x="32" y="452" font-size="12" fill="#86a8bc">맞춤형 자동화 통합 — 인력 부족 해소, 무인 가공 실현.</text>
+        <text x="970" y="452" text-anchor="end" font-size="12.5" font-weight="700" fill="#d4af5c">Z&amp;Z STROTEC</text>
+      </svg>
+      <h4>두 가지 주류 CNC 자동화 방식</h4>
+      인력 부족에 대응하고 무인 가공(lights-out)을 실현하기 위해, CNC 선반과 머시닝 센터에서 자동 상하료 시스템 도입이 점점 일반화되고 있습니다. 대표적인 두 가지 방식은 <strong>갠트리 로더</strong>와 <strong>다관절 로봇 암</strong>이며, 적합한 선택은 생산량, 공작물 복잡도, 설치 공간에 따라 달라집니다.
+
+      <h4>1. 갠트리 로더 (龍門式搬運機械手)</h4>
+      갠트리 로더는 기계 위쪽에 설치된 오버헤드 레일을 따라 직선 이송축으로 공작물을 가공 영역 안팎으로 옮깁니다.
+      <ul>
+        <li><strong>적합 용도</strong>: 표준 부품의 대량·소품종 생산 (大批量標準件)</li>
+        <li><strong>공간 절약</strong>: 상부 장착 방식이라 추가 바닥 면적이 거의 필요 없어 밀집된 라인에 유리합니다.</li>
+        <li><strong>고속 상하료</strong>: 단순 직선 이동에 강하며, 표준 원통형 부품(샤프트·기어)을 트윈 스핀들 선반과 조합할 때 가장 빠른 사이클을 제공합니다.</li>
+      </ul>
+
+      <h4>2. 다관절 로봇 암 (多軸機械手臂)</h4>
+      6축 산업용 로봇(또는 협동 로봇 / 協作型機器人)이 기계 옆에 서서 사람 팔처럼 유연하게 공작물을 다룹니다.
+      <ul>
+        <li><strong>적합 용도</strong>: 다품종·소량 생산 및 복잡한 형상 (少量多樣·複雜工件)</li>
+        <li><strong>높은 유연성</strong>: 기계가 절삭하는 동안 디버링, 부품 세척, 검사 등 2차 작업을 함께 수행할 수 있습니다.</li>
+        <li><strong>3D 비전 (3D 視覺辨識)</strong>: 비전 모듈을 장착하면 무작위로 놓인 부품의 위치·방향을 인식해 빈(bin)에서 직접 집을 수 있어, 정밀 정렬이나 전용 지그의 필요성을 줄입니다.</li>
+        <li><strong>1대 다 기계 대응</strong>: 외부 직선 레일(이른바 "7번째 축")에 로봇을 올리면 한 대가 두 대 이상의 기계를 동시에 서비스할 수 있습니다.</li>
+      </ul>
+
+      <h4>3. 선정 가이드 (選型總結)</h4>
+      <table style="width:100%;border-collapse:collapse;font-size:0.86rem;margin-top:4px">
+        <thead>
+          <tr style="border-bottom:1px solid var(--border)">
+            <th style="text-align:left;padding:8px 10px;color:var(--gold);font-weight:600">항목</th>
+            <th style="text-align:left;padding:8px 10px;color:var(--text);font-weight:600">갠트리 로더</th>
+            <th style="text-align:left;padding:8px 10px;color:var(--text);font-weight:600">로봇 암</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr style="border-bottom:1px solid var(--border)"><td style="padding:8px 10px;color:var(--text-dim)">생산 형태</td><td style="padding:8px 10px">대량 표준품</td><td style="padding:8px 10px">다품종 소량</td></tr>
+          <tr style="border-bottom:1px solid var(--border)"><td style="padding:8px 10px;color:var(--text-dim)">설치 공간</td><td style="padding:8px 10px">매우 작음(상부 장착)</td><td style="padding:8px 10px">바닥 공간·안전 펜스 필요</td></tr>
+          <tr style="border-bottom:1px solid var(--border)"><td style="padding:8px 10px;color:var(--text-dim)">공작물 복잡도</td><td style="padding:8px 10px">표준·대칭</td><td style="padding:8px 10px">복잡·비정형</td></tr>
+          <tr><td style="padding:8px 10px;color:var(--text-dim)">비전·AI</td><td style="padding:8px 10px">기본</td><td style="padding:8px 10px">고급 3D 비전 지원</td></tr>
+        </tbody>
+      </table>
+      <p style="margin-top:18px">Z&amp;Z STROTEC는 대량 생산용 갠트리 로더부터 복잡 부품용 비전 가이드 로봇까지, 공정에 맞는 CNC 자동화 통합을 지원합니다. <button class="nav-btn" onclick="showPage('inquiry')" style="color:var(--gold);border:1px solid var(--gold);padding:8px 22px;font-size:12px;margin-top:6px">문의하기 / 立即洽詢 →</button></p>
+    `,
+    body_zh: `
+      <svg viewBox="0 0 1000 480" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="CNC 自動上下料比較：龍門式搬運機械手與多軸機械手臂" style="width:100%;height:auto;display:block;border-radius:12px;margin:0 0 22px;font-family:'Segoe UI','Microsoft JhengHei','Malgun Gothic',system-ui,Arial,sans-serif">
+        <defs>
+          <linearGradient id="azbg" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#0b2538"/><stop offset="0.55" stop-color="#0a2c3b"/><stop offset="1" stop-color="#0b3a44"/></linearGradient>
+          <linearGradient id="azblue" x1="0" y1="0" x2="1" y2="0"><stop offset="0" stop-color="#2f7fb8"/><stop offset="1" stop-color="#4aa3df"/></linearGradient>
+          <linearGradient id="azteal" x1="0" y1="0" x2="1" y2="0"><stop offset="0" stop-color="#2a9d8f"/><stop offset="1" stop-color="#3bc2a0"/></linearGradient>
+        </defs>
+        <rect x="0" y="0" width="1000" height="480" rx="14" fill="url(#azbg)"/>
+        <g stroke="#2f6f86" stroke-width="1.4" fill="none" opacity="0.28">
+          <path d="M16 120 H70 V60 H120"/><circle cx="120" cy="60" r="3" fill="#2f6f86" stroke="none"/>
+          <path d="M984 360 H930 V432 H884"/><circle cx="884" cy="432" r="3" fill="#2f6f86" stroke="none"/>
+          <path d="M40 446 H104"/><circle cx="40" cy="446" r="3" fill="#2f6f86" stroke="none"/>
+        </g>
+        <text x="500" y="40" text-anchor="middle" font-size="23" font-weight="700" fill="#eaf4fb">CNC 自動化上下料系統比較</text>
+        <text x="500" y="64" text-anchor="middle" font-size="12" letter-spacing="2" fill="#6fa0b8">龍門式搬運機械手　·　多軸機械手臂</text>
+
+        <rect x="22" y="86" width="464" height="322" rx="10" fill="#ffffff" fill-opacity="0.035" stroke="#3f8cc0" stroke-opacity="0.45"/>
+        <path d="M22 124 V96 a10 10 0 0 1 10 -10 H476 a10 10 0 0 1 10 10 V124 Z" fill="#16465f"/>
+        <text x="254" y="112" text-anchor="middle" font-size="15.5" font-weight="600" fill="#dceefb">1. 龍門式搬運機械手</text>
+        <g stroke="#7fc4e8" stroke-width="2" fill="#7fc4e8"><line x1="126" y1="146" x2="382" y2="146"/><path d="M126 146 l10 -5 v10 Z"/><path d="M382 146 l-10 -5 v10 Z"/></g>
+        <rect x="86" y="156" width="336" height="12" rx="4" fill="url(#azblue)"/>
+        <rect x="232" y="150" width="44" height="20" rx="3" fill="#2f7fb8"/>
+        <rect x="250" y="170" width="8" height="44" fill="url(#azblue)"/>
+        <rect x="242" y="212" width="24" height="6" rx="2" fill="#4aa3df"/>
+        <rect x="244" y="216" width="4" height="11" fill="#4aa3df"/><rect x="260" y="216" width="4" height="11" fill="#4aa3df"/>
+        <rect x="249" y="218" width="10" height="16" rx="3" fill="#cfe6f5"/>
+        <rect x="150" y="240" width="210" height="58" rx="6" fill="#123a50" stroke="#3f8cc0" stroke-width="1.2"/>
+        <rect x="164" y="251" width="104" height="36" rx="3" fill="#0c2735" stroke="#2f6f86"/>
+        <circle cx="200" cy="269" r="10" fill="none" stroke="#5aa6d6" stroke-width="2"/>
+        <rect x="300" y="251" width="46" height="36" rx="3" fill="#1b5575"/><rect x="306" y="256" width="34" height="12" rx="2" fill="#0c2735"/>
+        <path d="M42 316 l8 4 l-8 4 Z" fill="#4aa3df"/><text x="58" y="324" font-size="12.5" fill="#cfe2ee">適用：大批量標準件生產</text>
+        <path d="M42 351 l8 4 l-8 4 Z" fill="#4aa3df"/><text x="58" y="359" font-size="12.5" fill="#cfe2ee">上方架設，幾乎不佔地面</text>
+        <path d="M42 386 l8 4 l-8 4 Z" fill="#4aa3df"/><text x="58" y="394" font-size="12.5" fill="#cfe2ee">圓柱件上下料速度最快</text>
+
+        <rect x="514" y="86" width="464" height="322" rx="10" fill="#ffffff" fill-opacity="0.035" stroke="#2f9f86" stroke-opacity="0.45"/>
+        <path d="M514 124 V96 a10 10 0 0 1 10 -10 H968 a10 10 0 0 1 10 10 V124 Z" fill="#15534b"/>
+        <text x="746" y="112" text-anchor="middle" font-size="15.5" font-weight="600" fill="#d6f2ea">2. 多軸機械手臂</text>
+        <rect x="560" y="236" width="120" height="62" rx="6" fill="#103f39" stroke="#2f9f86" stroke-width="1.2"/>
+        <rect x="572" y="247" width="70" height="40" rx="3" fill="#0a2a26" stroke="#2a8e7e"/>
+        <circle cx="600" cy="267" r="10" fill="none" stroke="#46c2a6" stroke-width="2"/>
+        <rect x="650" y="247" width="22" height="40" rx="3" fill="#1b6c5f"/>
+        <rect x="694" y="146" width="44" height="26" rx="5" fill="#14524a" stroke="#46c2a6"/>
+        <circle cx="706" cy="159" r="6" fill="#0a2a26" stroke="#46c2a6"/>
+        <text x="748" y="163" font-size="10" fill="#7fd8c4">AI · 3D 視覺</text>
+        <path d="M712 164 L812 214" stroke="#46c2a6" stroke-width="1" stroke-dasharray="4 5" opacity="0.45" fill="none"/>
+        <polygon points="726,290 786,290 778,266 734,266" fill="#2a9d8f"/>
+        <line x1="756" y1="266" x2="720" y2="222" stroke="url(#azteal)" stroke-width="12" stroke-linecap="round"/>
+        <line x1="720" y1="222" x2="786" y2="200" stroke="url(#azteal)" stroke-width="11" stroke-linecap="round"/>
+        <line x1="786" y1="200" x2="816" y2="214" stroke="url(#azteal)" stroke-width="9" stroke-linecap="round"/>
+        <circle cx="756" cy="266" r="9" fill="#3bc2a0"/><circle cx="720" cy="222" r="7" fill="#3bc2a0"/><circle cx="786" cy="200" r="6" fill="#3bc2a0"/>
+        <rect x="812" y="210" width="16" height="16" rx="2" fill="#cdeee4"/>
+        <path d="M756 252 A 66 66 0 0 1 818 214" fill="none" stroke="#46c2a6" stroke-dasharray="4 5" opacity="0.4"/>
+        <path d="M534 316 l8 4 l-8 4 Z" fill="#3bc2a0"/><text x="550" y="324" font-size="12.5" fill="#cfeae2">適用：少量多樣、複雜工件</text>
+        <path d="M534 351 l8 4 l-8 4 Z" fill="#3bc2a0"/><text x="550" y="359" font-size="12.5" fill="#cfeae2">去毛邊·清洗·檢測同步進行</text>
+        <path d="M534 386 l8 4 l-8 4 Z" fill="#3bc2a0"/><text x="550" y="394" font-size="12.5" fill="#cfeae2">3D 視覺隨機取件，免治具</text>
+
+        <text x="32" y="452" font-size="12" fill="#86a8bc">客製化自動化整合 — 解決缺工、邁向無人化生產。</text>
+        <text x="970" y="452" text-anchor="end" font-size="12.5" font-weight="700" fill="#d4af5c">Z&amp;Z STROTEC</text>
+      </svg>
+      <h4>兩種主流 CNC 自動化方式</h4>
+      為因應缺工並實現無人化生產（lights-out），在 CNC 車床與加工中心機導入自動上下料系統已日漸普及。兩種主流方案為<strong>龍門式搬運機械手</strong>與<strong>多軸機械手臂</strong>，正確選型取決於生產量、工件複雜度與廠房空間。
+
+      <h4>1. 龍門式搬運機械手（龍門式 Gantry Loader）</h4>
+      龍門式機械手沿著架設於機台上方的軌道，以直線搬運軸將工件移進、移出加工區。
+      <ul>
+        <li><strong>適用</strong>：標準件的大批量、少樣化生產（大批量標準件）</li>
+        <li><strong>節省空間</strong>：採上方架設，幾乎不需額外佔地，適合機台密集的廠房配置。</li>
+        <li><strong>高速上下料</strong>：擅長單純的點對點移動；搭配雙主軸車床加工標準圓柱件（軸類、齒輪）時可提供最快的上下料節拍。</li>
+      </ul>
+
+      <h4>2. 多軸機械手臂（Articulated Robotic Arm）</h4>
+      6 軸工業機器人（或協作型機器人 / 協作型機器人）立於機台旁，以類似人手的靈活度搬運工件。
+      <ul>
+        <li><strong>適用</strong>：少量多樣生產與複雜工件（少量多樣、複雜工件）</li>
+        <li><strong>高彈性與多工</strong>：可在機台切削的同時，執行去毛邊、工件清洗、檢測等次要工序。</li>
+        <li><strong>結合 3D 視覺辨識（3D 視覺）</strong>：搭配視覺模組後，可辨識隨機擺放工件的位置與方向並直接從料箱取件，降低對精準排料或客製治具的需求。</li>
+        <li><strong>一對多服務</strong>：將機器人架設於外部直線導軌（即所謂「第 7 軸」）上，一台機器人即可同時服務兩台以上機台。</li>
+      </ul>
+
+      <h4>3. 選型總結</h4>
+      <table style="width:100%;border-collapse:collapse;font-size:0.86rem;margin-top:4px">
+        <thead>
+          <tr style="border-bottom:1px solid var(--border)">
+            <th style="text-align:left;padding:8px 10px;color:var(--gold);font-weight:600">比較項目</th>
+            <th style="text-align:left;padding:8px 10px;color:var(--text);font-weight:600">龍門式機械手</th>
+            <th style="text-align:left;padding:8px 10px;color:var(--text);font-weight:600">多軸機械手臂</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr style="border-bottom:1px solid var(--border)"><td style="padding:8px 10px;color:var(--text-dim)">生產型態</td><td style="padding:8px 10px">大批量標準件</td><td style="padding:8px 10px">少量多樣化</td></tr>
+          <tr style="border-bottom:1px solid var(--border)"><td style="padding:8px 10px;color:var(--text-dim)">佔地空間</td><td style="padding:8px 10px">極小（與機台整合）</td><td style="padding:8px 10px">較大，需安全防護</td></tr>
+          <tr style="border-bottom:1px solid var(--border)"><td style="padding:8px 10px;color:var(--text-dim)">工件複雜度</td><td style="padding:8px 10px">標準／對稱件</td><td style="padding:8px 10px">複雜／不規則件</td></tr>
+          <tr><td style="padding:8px 10px;color:var(--text-dim)">視覺與 AI</td><td style="padding:8px 10px">基本</td><td style="padding:8px 10px">支援高階 3D 視覺</td></tr>
+        </tbody>
+      </table>
+      <p style="margin-top:18px">無論是大批量生產用的龍門式機械手，或複雜工件用的視覺導引機器人，Z&amp;Z STROTEC 都能依您的製程提供合適的 CNC 自動化整合。<button class="nav-btn" onclick="showPage('inquiry')" style="color:var(--gold);border:1px solid var(--gold);padding:8px 22px;font-size:12px;margin-top:6px">立即洽詢 →</button></p>
+    `,
+    body: `
+      <svg viewBox="0 0 1000 480" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="CNC loading and unloading comparison: gantry loader versus articulated robotic arm" style="width:100%;height:auto;display:block;border-radius:12px;margin:0 0 22px;font-family:'Segoe UI','Microsoft JhengHei','Malgun Gothic',system-ui,Arial,sans-serif">
+        <defs>
+          <linearGradient id="azbg" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#0b2538"/><stop offset="0.55" stop-color="#0a2c3b"/><stop offset="1" stop-color="#0b3a44"/></linearGradient>
+          <linearGradient id="azblue" x1="0" y1="0" x2="1" y2="0"><stop offset="0" stop-color="#2f7fb8"/><stop offset="1" stop-color="#4aa3df"/></linearGradient>
+          <linearGradient id="azteal" x1="0" y1="0" x2="1" y2="0"><stop offset="0" stop-color="#2a9d8f"/><stop offset="1" stop-color="#3bc2a0"/></linearGradient>
+        </defs>
+        <rect x="0" y="0" width="1000" height="480" rx="14" fill="url(#azbg)"/>
+        <g stroke="#2f6f86" stroke-width="1.4" fill="none" opacity="0.28">
+          <path d="M16 120 H70 V60 H120"/><circle cx="120" cy="60" r="3" fill="#2f6f86" stroke="none"/>
+          <path d="M984 360 H930 V432 H884"/><circle cx="884" cy="432" r="3" fill="#2f6f86" stroke="none"/>
+          <path d="M40 446 H104"/><circle cx="40" cy="446" r="3" fill="#2f6f86" stroke="none"/>
+        </g>
+        <text x="500" y="40" text-anchor="middle" font-size="23" font-weight="700" fill="#eaf4fb">CNC Loading / Unloading — Gantry vs. Robot</text>
+        <text x="500" y="64" text-anchor="middle" font-size="11.5" letter-spacing="3" fill="#6fa0b8">GANTRY LOADER  ·  ARTICULATED ROBOTIC ARM</text>
+
+        <rect x="22" y="86" width="464" height="322" rx="10" fill="#ffffff" fill-opacity="0.035" stroke="#3f8cc0" stroke-opacity="0.45"/>
+        <path d="M22 124 V96 a10 10 0 0 1 10 -10 H476 a10 10 0 0 1 10 10 V124 Z" fill="#16465f"/>
+        <text x="254" y="112" text-anchor="middle" font-size="15.5" font-weight="600" fill="#dceefb">1. Gantry Loader</text>
+        <g stroke="#7fc4e8" stroke-width="2" fill="#7fc4e8"><line x1="126" y1="146" x2="382" y2="146"/><path d="M126 146 l10 -5 v10 Z"/><path d="M382 146 l-10 -5 v10 Z"/></g>
+        <rect x="86" y="156" width="336" height="12" rx="4" fill="url(#azblue)"/>
+        <rect x="232" y="150" width="44" height="20" rx="3" fill="#2f7fb8"/>
+        <rect x="250" y="170" width="8" height="44" fill="url(#azblue)"/>
+        <rect x="242" y="212" width="24" height="6" rx="2" fill="#4aa3df"/>
+        <rect x="244" y="216" width="4" height="11" fill="#4aa3df"/><rect x="260" y="216" width="4" height="11" fill="#4aa3df"/>
+        <rect x="249" y="218" width="10" height="16" rx="3" fill="#cfe6f5"/>
+        <rect x="150" y="240" width="210" height="58" rx="6" fill="#123a50" stroke="#3f8cc0" stroke-width="1.2"/>
+        <rect x="164" y="251" width="104" height="36" rx="3" fill="#0c2735" stroke="#2f6f86"/>
+        <circle cx="200" cy="269" r="10" fill="none" stroke="#5aa6d6" stroke-width="2"/>
+        <rect x="300" y="251" width="46" height="36" rx="3" fill="#1b5575"/><rect x="306" y="256" width="34" height="12" rx="2" fill="#0c2735"/>
+        <path d="M42 316 l8 4 l-8 4 Z" fill="#4aa3df"/><text x="58" y="324" font-size="12.5" fill="#cfe2ee">Best for: high-volume standard parts</text>
+        <path d="M42 351 l8 4 l-8 4 Z" fill="#4aa3df"/><text x="58" y="359" font-size="12.5" fill="#cfe2ee">Overhead mount — minimal floor space</text>
+        <path d="M42 386 l8 4 l-8 4 Z" fill="#4aa3df"/><text x="58" y="394" font-size="12.5" fill="#cfe2ee">Fastest cycle for cylindrical parts</text>
+
+        <rect x="514" y="86" width="464" height="322" rx="10" fill="#ffffff" fill-opacity="0.035" stroke="#2f9f86" stroke-opacity="0.45"/>
+        <path d="M514 124 V96 a10 10 0 0 1 10 -10 H968 a10 10 0 0 1 10 10 V124 Z" fill="#15534b"/>
+        <text x="746" y="112" text-anchor="middle" font-size="15.5" font-weight="600" fill="#d6f2ea">2. Articulated Robotic Arm</text>
+        <rect x="560" y="236" width="120" height="62" rx="6" fill="#103f39" stroke="#2f9f86" stroke-width="1.2"/>
+        <rect x="572" y="247" width="70" height="40" rx="3" fill="#0a2a26" stroke="#2a8e7e"/>
+        <circle cx="600" cy="267" r="10" fill="none" stroke="#46c2a6" stroke-width="2"/>
+        <rect x="650" y="247" width="22" height="40" rx="3" fill="#1b6c5f"/>
+        <rect x="694" y="146" width="44" height="26" rx="5" fill="#14524a" stroke="#46c2a6"/>
+        <circle cx="706" cy="159" r="6" fill="#0a2a26" stroke="#46c2a6"/>
+        <text x="748" y="163" font-size="10" fill="#7fd8c4">AI · 3D vision</text>
+        <path d="M712 164 L812 214" stroke="#46c2a6" stroke-width="1" stroke-dasharray="4 5" opacity="0.45" fill="none"/>
+        <polygon points="726,290 786,290 778,266 734,266" fill="#2a9d8f"/>
+        <line x1="756" y1="266" x2="720" y2="222" stroke="url(#azteal)" stroke-width="12" stroke-linecap="round"/>
+        <line x1="720" y1="222" x2="786" y2="200" stroke="url(#azteal)" stroke-width="11" stroke-linecap="round"/>
+        <line x1="786" y1="200" x2="816" y2="214" stroke="url(#azteal)" stroke-width="9" stroke-linecap="round"/>
+        <circle cx="756" cy="266" r="9" fill="#3bc2a0"/><circle cx="720" cy="222" r="7" fill="#3bc2a0"/><circle cx="786" cy="200" r="6" fill="#3bc2a0"/>
+        <rect x="812" y="210" width="16" height="16" rx="2" fill="#cdeee4"/>
+        <path d="M756 252 A 66 66 0 0 1 818 214" fill="none" stroke="#46c2a6" stroke-dasharray="4 5" opacity="0.4"/>
+        <path d="M534 316 l8 4 l-8 4 Z" fill="#3bc2a0"/><text x="550" y="324" font-size="12.5" fill="#cfeae2">Best for: high-mix, complex parts</text>
+        <path d="M534 351 l8 4 l-8 4 Z" fill="#3bc2a0"/><text x="550" y="359" font-size="12.5" fill="#cfeae2">Deburring · washing · inspection in-cycle</text>
+        <path d="M534 386 l8 4 l-8 4 Z" fill="#3bc2a0"/><text x="550" y="394" font-size="12.5" fill="#cfeae2">3D-vision bin picking — no fixtures</text>
+
+        <text x="32" y="452" font-size="12" fill="#86a8bc">Tailored automation integration — combat labour shortages, achieve lights-out machining.</text>
+        <text x="970" y="452" text-anchor="end" font-size="12.5" font-weight="700" fill="#d4af5c">Z&amp;Z STROTEC</text>
+      </svg>
+      <h4>Two Mainstream CNC Automation Solutions</h4>
+      To address labour shortages and enable lights-out machining (無人化生產), automated loading/unloading is increasingly standard on CNC lathes and machining centers. The two mainstream options are the <strong>gantry loader</strong> and the <strong>articulated robotic arm</strong>. The right choice depends on production volume, part complexity, and available floor space.
+
+      <h4>1. Gantry Loader (龍門式搬運機械手)</h4>
+      A gantry loader runs on an overhead track built into or above the machine, using a linear gantry axis to move parts in and out of the work zone.
+      <ul>
+        <li><strong>Best for</strong>: High-volume, low-mix production of standard parts (大批量標準件)</li>
+        <li><strong>Space-saving</strong>: Mounted overhead, so it needs little to no extra floor space — useful in crowded layouts.</li>
+        <li><strong>High-speed loading</strong>: Excels at simple point-to-point transfer; fastest cycle for standard cylindrical parts (shafts, gears), especially when paired with twin-spindle lathes.</li>
+      </ul>
+
+      <h4>2. Articulated Robotic Arm (多軸機械手臂)</h4>
+      A 6-axis industrial robot (or a collaborative robot / 協作型機器人) stands beside the machine and handles parts with arm-like dexterity.
+      <ul>
+        <li><strong>Best for</strong>: High-mix, low-volume production and complex geometries (少量多樣、複雜工件)</li>
+        <li><strong>Flexibility</strong>: Can perform secondary tasks — deburring, part washing, inspection — while the machine is cutting.</li>
+        <li><strong>3D vision (3D 視覺辨識)</strong>: With a vision module, the robot can locate randomly placed parts and pick them from a bin, reducing the need for precise stacking or custom fixtures.</li>
+        <li><strong>Multi-machine tending</strong>: Mounted on an external linear rail (the "7th axis"), one robot can serve two or more machines at once.</li>
+      </ul>
+
+      <h4>3. Selection Guide (選型總結)</h4>
+      <table style="width:100%;border-collapse:collapse;font-size:0.86rem;margin-top:4px">
+        <thead>
+          <tr style="border-bottom:1px solid var(--border)">
+            <th style="text-align:left;padding:8px 10px;color:var(--gold);font-weight:600">Factor</th>
+            <th style="text-align:left;padding:8px 10px;color:var(--text);font-weight:600">Gantry Loader</th>
+            <th style="text-align:left;padding:8px 10px;color:var(--text);font-weight:600">Robotic Arm</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr style="border-bottom:1px solid var(--border)"><td style="padding:8px 10px;color:var(--text-dim)">Production type</td><td style="padding:8px 10px">Mass production, standard parts</td><td style="padding:8px 10px">High-mix, low-volume</td></tr>
+          <tr style="border-bottom:1px solid var(--border)"><td style="padding:8px 10px;color:var(--text-dim)">Floor space</td><td style="padding:8px 10px">Very compact (overhead)</td><td style="padding:8px 10px">Needs floor space &amp; safety fence</td></tr>
+          <tr style="border-bottom:1px solid var(--border)"><td style="padding:8px 10px;color:var(--text-dim)">Part complexity</td><td style="padding:8px 10px">Standard / symmetrical</td><td style="padding:8px 10px">Complex / irregular</td></tr>
+          <tr><td style="padding:8px 10px;color:var(--text-dim)">Vision / AI</td><td style="padding:8px 10px">Basic</td><td style="padding:8px 10px">Advanced 3D vision</td></tr>
+        </tbody>
+      </table>
+      <p style="margin-top:18px">Whether you need a gantry loader for mass production or a vision-guided robot for complex parts, Z&amp;Z STROTEC integrates CNC automation to match your process. <button class="nav-btn" onclick="showPage('inquiry')" style="color:var(--gold);border:1px solid var(--gold);padding:8px 22px;font-size:12px;margin-top:6px">SEND INQUIRY / 立即洽詢 →</button></p>
+    `
   }
 };
 
@@ -10229,7 +10847,7 @@ const LANG = {
     sidebar_knowledge: 'Knowledge Library', sidebar_export: 'Export Procedures', sidebar_markets: 'Markets', sidebar_industry: 'Industry',
     sb_bar_feeder: ' Bar Feeder', sb_linear_guide: ' Linear Guide', sb_servo_motor: ' Servo Motor',
     sb_cnc_lathe: ' CNC Lathe', sb_tool_holder: ' Tool Holder', sb_spindle: ' Spindle',
-    sb_live_tool: ' Live Tool Holders', sb_static_tool: ' Static Tool Holders', sb_collet: ' Collets & Chucks',
+    sb_live_tool: ' Live Tool Holders', sb_static_tool: ' Static Tool Holders', sb_collet: ' Collets & Chucks', sb_automation: ' Automation Loading',
     sb_export_docs: ' Export Documents', sb_marine: ' Marine Insurance', sb_customs: ' Customs Clearance',
     sb_import_duty: ' Import Duty Reference', sb_container: ' Container & CBM Guide', sb_terms: ' Terminology 術語/용어', sb_services: ' Our Services', sb_factory_visit: ' Factory Visit',
     sb_tw_brands: ' Taiwan Manufacturers', sb_maintenance: ' Maintenance Guide',
@@ -10288,7 +10906,7 @@ const LANG = {
     sidebar_knowledge: '知識庫', sidebar_export: '出口流程', sidebar_markets: '市場', sidebar_industry: '產業',
     sb_bar_feeder: ' 送料機', sb_linear_guide: ' 線性滑軌', sb_servo_motor: ' 伺服馬達',
     sb_cnc_lathe: ' CNC 車床', sb_tool_holder: ' 刀座', sb_spindle: ' 主軸',
-    sb_live_tool: ' 動力刀座', sb_static_tool: ' 非動力刀座', sb_collet: ' 筒夾/夾頭',
+    sb_live_tool: ' 動力刀座', sb_static_tool: ' 非動力刀座', sb_collet: ' 筒夾/夾頭', sb_automation: ' 自動化上下料',
     sb_export_docs: ' 出口文件', sb_marine: ' 海上保險', sb_customs: ' 清關',
     sb_import_duty: ' 進口關稅參考', sb_container: ' 貨櫃與材積指南', sb_terms: ' 術語對照', sb_services: ' 服務項目', sb_factory_visit: ' 來台採購',
     sb_tw_brands: ' 台灣製造商', sb_maintenance: ' 保養指南',
@@ -10348,7 +10966,7 @@ const LANG = {
     sidebar_knowledge: '지식 라이브러리', sidebar_export: '수출 절차', sidebar_markets: '시장', sidebar_industry: '산업',
     sb_bar_feeder: ' 바피더', sb_linear_guide: ' 리니어 가이드', sb_servo_motor: ' 서보 모터',
     sb_cnc_lathe: ' CNC 선반', sb_tool_holder: ' 툴 홀더', sb_spindle: ' 스핀들',
-    sb_live_tool: ' 동력 공구대', sb_static_tool: ' 비동력 공구대', sb_collet: ' 콜릿 & 척',
+    sb_live_tool: ' 동력 공구대', sb_static_tool: ' 비동력 공구대', sb_collet: ' 콜릿 & 척', sb_automation: ' 자동 로딩',
     sb_export_docs: ' 수출 서류', sb_marine: ' 해상보험', sb_customs: ' 통관',
     sb_import_duty: ' 수입 관세 참고', sb_container: ' 컨테이너 & CBM 가이드', sb_terms: ' 용어 대조', sb_services: ' 서비스 안내', sb_factory_visit: ' 대만 방문 구매',
     sb_tw_brands: ' 대만 제조업체', sb_maintenance: ' 유지보수 가이드',
