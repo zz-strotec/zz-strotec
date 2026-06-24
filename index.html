@@ -10698,10 +10698,24 @@ function showPageHome() {
   loadNews();
 }
 
+// Reset scroll to the very top of the content area. On desktop the scroller is
+// `.main` (the layout grid is a fixed-height viewport grid, so the window doesn't
+// scroll); on narrow/mobile the window scrolls instead. Reset every candidate so
+// each navigation starts at the top of the new page/article, not mid-scroll.
+function _scrollContentTop() {
+  var m = document.querySelector('.main');
+  if (m) { m.scrollTop = 0; m.scrollLeft = 0; }
+  window.scrollTo(0, 0);
+  if (document.documentElement) document.documentElement.scrollTop = 0;
+  if (document.body) document.body.scrollTop = 0;
+}
+
 function showPage(id) {
   document.querySelectorAll('.page').forEach(p => p.classList.remove('active'));
   document.getElementById('page-' + id).classList.add('active');
-  if (id === 'terminology') { _termsLayoutOn(); filterTerms(); requestAnimationFrame(function(){ var m=document.querySelector('.main'); if(m){ m.scrollTop=0; m.scrollLeft=0; } window.scrollTo(0,0); document.documentElement.scrollTop=0; }); }
+  if (id === 'terminology') { _termsLayoutOn(); filterTerms(); }
+  _scrollContentTop();
+  requestAnimationFrame(_scrollContentTop);
   document.querySelectorAll('.nav-btn').forEach(b => b.classList.remove('active'));
   try { event.target.classList.add('active'); } catch(e) {}
   closeDetail();
@@ -10745,7 +10759,8 @@ function openColumn(id) {
   document.getElementById('page-' + id).classList.add('active');
   document.querySelectorAll('.nav-btn').forEach(b => b.classList.remove('active'));
   closeDetail();
-  window.scrollTo(0, 0);
+  _scrollContentTop();
+  requestAnimationFrame(_scrollContentTop);
   // Update URL hash so the page can be bookmarked / shared
   if (id === 'column') {
     history.replaceState(null, '', window.location.pathname);
@@ -10877,7 +10892,7 @@ function openKnowledge(key, noScroll) {
   const tagsHtml = item.tags.map(t => `<span class="tag-pill">${t}</span>`).join('');
   document.getElementById('detail-body').innerHTML += '<div style="margin-top:16px">' + tagsHtml + '</div>';
   document.getElementById('detail-panel').classList.add('open');
-  if (!noScroll) document.getElementById('detail-panel').scrollIntoView({ behavior: 'smooth', block: 'start' });
+  if (!noScroll) { const _p=document.getElementById('detail-panel'); _p.scrollIntoView({ behavior: 'auto', block: 'start' }); requestAnimationFrame(function(){ _p.scrollIntoView({ behavior: 'auto', block: 'start' }); }); }
 
   // Update sidebar active
   document.querySelectorAll('.sidebar-item').forEach(i => i.classList.remove('active'));
@@ -10897,7 +10912,7 @@ function openMarket(key, noScroll) {
   document.getElementById('detail-title').textContent = title;
   document.getElementById('detail-body').innerHTML = body;
   document.getElementById('detail-panel').classList.add('open');
-  if (!noScroll) document.getElementById('detail-panel').scrollIntoView({ behavior: 'smooth', block: 'start' });
+  if (!noScroll) { const _p=document.getElementById('detail-panel'); _p.scrollIntoView({ behavior: 'auto', block: 'start' }); requestAnimationFrame(function(){ _p.scrollIntoView({ behavior: 'auto', block: 'start' }); }); }
 }
 
 function closeDetail() {
