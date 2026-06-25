@@ -1221,8 +1221,14 @@
 
     <div class="sidebar-section">
       <span class="sidebar-label" data-i18n="sidebar_export">Export Procedures</span>
+      <div class="sidebar-item" onclick="openKnowledge('export-process-flow')">
+        <span class="icon">🔄</span><span data-i18n="sb_export_flow"> Export Process Overview</span>
+      </div>
       <div class="sidebar-item" onclick="openKnowledge('export-docs')">
         <span class="icon">📄</span><span data-i18n="sb_export_docs"> Export Documents</span>
+      </div>
+      <div class="sidebar-item" onclick="openKnowledge('payment-terms')">
+        <span class="icon">💳</span><span data-i18n="sb_payment_terms"> Payment Terms</span>
       </div>
 
       <div class="sidebar-item" onclick="openKnowledge('marine-insurance')">
@@ -7726,6 +7732,120 @@ const KB = {
       </div>
     `
   },
+  'export-process-flow': {
+    title: 'International Trade Export Process Overview',
+    title_zh: '國際貿易出口流程總覽',
+    title_ko: '국제 무역 수출 프로세스 개요',
+    tags: ['export process', 'trade process', 'PI', 'PO', 'international trade', 'incoterms'],
+    body_ko: `
+      <h4>국제 무역 수출의 일반적인 흐름</h4>
+      <p>국가, 인코텀즈, 결제 조건, 운송 방식에 따라 세부 절차는 달라지지만, 대부분의 수출 거래는 아래와 같은 단계를 따릅니다.</p>
+      <div style="display:flex;gap:16px;flex-wrap:wrap;font-size:0.78rem;color:var(--text-dim);margin:6px 0 14px">
+        <span><span style="display:inline-block;width:10px;height:10px;border-radius:2px;background:var(--blue);margin-right:5px"></span>구매자 &amp; 주문</span>
+        <span><span style="display:inline-block;width:10px;height:10px;border-radius:2px;background:#8a63d2;margin-right:5px"></span>판매자 &amp; 생산</span>
+        <span><span style="display:inline-block;width:10px;height:10px;border-radius:2px;background:#d97b29;margin-right:5px"></span>운송 &amp; 물류</span>
+      </div>
+      <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(180px,1fr));gap:12px;margin-bottom:14px">
+        <div style="background:var(--surface2);border:1px solid var(--border);border-left:3px solid var(--blue);border-radius:6px;padding:10px 12px"><div style="display:flex;align-items:center;gap:7px;margin-bottom:5px"><span style="background:var(--blue);color:#fff;font-size:10.5px;font-weight:700;border-radius:4px;padding:2px 6px;flex-shrink:0">01</span><strong style="color:var(--text);font-size:0.84rem">문의</strong></div><div style="color:var(--text-dim);font-size:0.76rem;line-height:1.4">구매자가 사양·가격 문의</div></div>
+        <div style="background:var(--surface2);border:1px solid var(--border);border-left:3px solid var(--blue);border-radius:6px;padding:10px 12px"><div style="display:flex;align-items:center;gap:7px;margin-bottom:5px"><span style="background:var(--blue);color:#fff;font-size:10.5px;font-weight:700;border-radius:4px;padding:2px 6px;flex-shrink:0">02</span><strong style="color:var(--text);font-size:0.84rem">견적 &amp; 예상 리드타임</strong></div><div style="color:var(--text-dim);font-size:0.76rem;line-height:1.4">가격·예상 일정 제공</div></div>
+        <div style="background:var(--surface2);border:1px solid var(--border);border-left:3px solid var(--blue);border-radius:6px;padding:10px 12px"><div style="display:flex;align-items:center;gap:7px;margin-bottom:5px"><span style="background:var(--blue);color:#fff;font-size:10.5px;font-weight:700;border-radius:4px;padding:2px 6px;flex-shrink:0">03</span><strong style="color:var(--text);font-size:0.84rem">주문서(PO) 접수</strong></div><div style="color:var(--text-dim);font-size:0.76rem;line-height:1.4">구매자가 정식 PO 발행</div></div>
+        <div style="background:var(--surface2);border:1px solid var(--border);border-left:3px solid var(--blue);border-radius:6px;padding:10px 12px"><div style="display:flex;align-items:center;gap:7px;margin-bottom:5px"><span style="background:var(--blue);color:#fff;font-size:10.5px;font-weight:700;border-radius:4px;padding:2px 6px;flex-shrink:0">04</span><strong style="color:var(--text);font-size:0.84rem">PI(견적 인보이스) 발행</strong></div><div style="color:var(--text-dim);font-size:0.76rem;line-height:1.4">결제/L·C 용 PI 발행</div></div>
+        <div style="background:var(--surface2);border:1px solid var(--border);border-left:3px solid #8a63d2;border-radius:6px;padding:10px 12px"><div style="display:flex;align-items:center;gap:7px;margin-bottom:5px"><span style="background:#8a63d2;color:#fff;font-size:10.5px;font-weight:700;border-radius:4px;padding:2px 6px;flex-shrink:0">05</span><strong style="color:var(--text);font-size:0.84rem">대금 수령</strong></div><div style="color:var(--text-dim);font-size:0.76rem;line-height:1.4">계약금 또는 전액 수령</div></div>
+        <div style="background:var(--surface2);border:1px solid var(--border);border-left:3px solid #8a63d2;border-radius:6px;padding:10px 12px"><div style="display:flex;align-items:center;gap:7px;margin-bottom:5px"><span style="background:#8a63d2;color:#fff;font-size:10.5px;font-weight:700;border-radius:4px;padding:2px 6px;flex-shrink:0">06</span><strong style="color:var(--text);font-size:0.84rem">생산 발주 &amp; 리드타임 확정</strong></div><div style="color:var(--text-dim);font-size:0.76rem;line-height:1.4">공장 발주, 일정 확정</div></div>
+        <div style="background:var(--surface2);border:1px solid var(--border);border-left:3px solid #8a63d2;border-radius:6px;padding:10px 12px"><div style="display:flex;align-items:center;gap:7px;margin-bottom:5px"><span style="background:#8a63d2;color:#fff;font-size:10.5px;font-weight:700;border-radius:4px;padding:2px 6px;flex-shrink:0">07</span><strong style="color:var(--text);font-size:0.84rem">제품 완성</strong></div><div style="color:var(--text-dim);font-size:0.76rem;line-height:1.4">생산 완료, 품질 검사</div></div>
+        <div style="background:var(--surface2);border:1px solid var(--border);border-left:3px solid #8a63d2;border-radius:6px;padding:10px 12px"><div style="display:flex;align-items:center;gap:7px;margin-bottom:5px"><span style="background:#8a63d2;color:#fff;font-size:10.5px;font-weight:700;border-radius:4px;padding:2px 6px;flex-shrink:0">08</span><strong style="color:var(--text);font-size:0.84rem">운송 방법 확정</strong></div><div style="color:var(--text-dim);font-size:0.76rem;line-height:1.4">해상/항공/특송 결정</div></div>
+        <div style="background:var(--surface2);border:1px solid var(--border);border-left:3px solid #d97b29;border-radius:6px;padding:10px 12px"><div style="display:flex;align-items:center;gap:7px;margin-bottom:5px"><span style="background:#d97b29;color:#fff;font-size:10.5px;font-weight:700;border-radius:4px;padding:2px 6px;flex-shrink:0">09</span><strong style="color:var(--text);font-size:0.84rem">수출 서류 완료</strong></div><div style="color:var(--text-dim);font-size:0.76rem;line-height:1.4">인보이스·B/L·원산지증명 등</div></div>
+        <div style="background:var(--surface2);border:1px solid var(--border);border-left:3px solid #d97b29;border-radius:6px;padding:10px 12px"><div style="display:flex;align-items:center;gap:7px;margin-bottom:5px"><span style="background:#d97b29;color:#fff;font-size:10.5px;font-weight:700;border-radius:4px;padding:2px 6px;flex-shrink:0">10</span><strong style="color:var(--text);font-size:0.84rem">화물 픽업</strong></div><div style="color:var(--text-dim);font-size:0.76rem;line-height:1.4">포워더가 화물 수거</div></div>
+        <div style="background:var(--surface2);border:1px solid var(--gold);border-left:3px solid #d97b29;border-radius:6px;padding:10px 12px"><div style="display:flex;align-items:center;gap:7px;margin-bottom:5px"><span style="background:#d97b29;color:#fff;font-size:10.5px;font-weight:700;border-radius:4px;padding:2px 6px;flex-shrink:0">11</span><strong style="color:var(--gold);font-size:0.84rem">수출 완료</strong></div><div style="color:var(--text-dim);font-size:0.76rem;line-height:1.4">출항, 추적정보 전달</div></div>
+      </div>
+      <ol>
+        <li><strong>문의 (Inquiry)</strong>: 구매자가 판매자에게 사양과 가격을 문의합니다.</li>
+        <li><strong>견적서 및 예상 리드타임 제공</strong>: 판매자가 가격, 사양, 예상 생산/배송 기간을 포함한 견적서를 제공합니다.</li>
+        <li><strong>주문서(PO) 접수</strong>: 구매자가 정식 주문서(Purchase Order)를 발행하여 주문을 확정합니다.</li>
+        <li><strong>견적 인보이스(PI) 발행</strong>: 판매자가 가격·결제조건·은행정보 등을 명시한 PI(Proforma Invoice)를 발행하며, 구매자는 이를 근거로 결제(또는 L/C 개설)를 진행합니다.</li>
+        <li><strong>대금 수령</strong>: 합의된 조건(전신송금 T/T, 신용장 L/C 등)에 따라 계약금 또는 전액 대금이 지급됩니다.</li>
+        <li><strong>생산 발주 및 리드타임 확정</strong>: 판매자가 공장/생산 라인에 발주하고 정확한 출고 일정을 확정합니다.</li>
+        <li><strong>제품 완성</strong>: 생산이 완료되고 품질 검사가 진행됩니다.</li>
+        <li><strong>운송 방법 결정</strong>: 비용, 긴급도, 화물 크기를 고려해 해상(Sea), 항공(Air), 특송(Courier) 중 운송 방식을 결정합니다.</li>
+        <li><strong>수출 서류 준비</strong>: 상업송장, 포장명세서, 선하증권(B/L)/항공화물운송장(AWB), 원산지증명서, 수출신고서 등을 준비합니다.</li>
+        <li><strong>화물 픽업/선적</strong>: 포워더 또는 운송사가 공장/창고에서 화물을 수거하여 선적합니다.</li>
+        <li><strong>수출 완료</strong>: 화물이 출항/출발하며, 추적 정보와 선적 서류가 구매자에게 전달됩니다.</li>
+      </ol>
+      <p style="margin-top:12px;color:var(--text-dim);font-size:0.88rem">참고: 실제 단계와 순서는 인코텀즈, 결제 조건, 운송 수단에 따라 달라질 수 있습니다. 자세한 서류 목록은 <a href="#" onclick="event.preventDefault();openKnowledge('export-docs')" style="color:var(--gold)">출구 서류 체크리스트</a>를 참고하세요.</p>
+    `,
+    body_zh: `
+      <h4>國際貿易出口的一般流程</h4>
+      <p>實際細節會因國家、Incoterms、付款條件及運輸方式而略有不同，但大多數出口交易大致依循以下步驟進行：</p>
+      <div style="display:flex;gap:16px;flex-wrap:wrap;font-size:0.78rem;color:var(--text-dim);margin:6px 0 14px">
+        <span><span style="display:inline-block;width:10px;height:10px;border-radius:2px;background:var(--blue);margin-right:5px"></span>買方下單</span>
+        <span><span style="display:inline-block;width:10px;height:10px;border-radius:2px;background:#8a63d2;margin-right:5px"></span>賣方生產</span>
+        <span><span style="display:inline-block;width:10px;height:10px;border-radius:2px;background:#d97b29;margin-right:5px"></span>出貨物流</span>
+      </div>
+      <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(180px,1fr));gap:12px;margin-bottom:14px">
+        <div style="background:var(--surface2);border:1px solid var(--border);border-left:3px solid var(--blue);border-radius:6px;padding:10px 12px"><div style="display:flex;align-items:center;gap:7px;margin-bottom:5px"><span style="background:var(--blue);color:#fff;font-size:10.5px;font-weight:700;border-radius:4px;padding:2px 6px;flex-shrink:0">01</span><strong style="color:var(--text);font-size:0.84rem">客戶詢價</strong></div><div style="color:var(--text-dim);font-size:0.76rem;line-height:1.4">買方詢問規格與價格</div></div>
+        <div style="background:var(--surface2);border:1px solid var(--border);border-left:3px solid var(--blue);border-radius:6px;padding:10px 12px"><div style="display:flex;align-items:center;gap:7px;margin-bottom:5px"><span style="background:var(--blue);color:#fff;font-size:10.5px;font-weight:700;border-radius:4px;padding:2px 6px;flex-shrink:0">02</span><strong style="color:var(--text);font-size:0.84rem">報價單與預估交期</strong></div><div style="color:var(--text-dim);font-size:0.76rem;line-height:1.4">提供價格與預估時程</div></div>
+        <div style="background:var(--surface2);border:1px solid var(--border);border-left:3px solid var(--blue);border-radius:6px;padding:10px 12px"><div style="display:flex;align-items:center;gap:7px;margin-bottom:5px"><span style="background:var(--blue);color:#fff;font-size:10.5px;font-weight:700;border-radius:4px;padding:2px 6px;flex-shrink:0">03</span><strong style="color:var(--text);font-size:0.84rem">收到客戶訂單(PO)</strong></div><div style="color:var(--text-dim);font-size:0.76rem;line-height:1.4">買方發出正式 PO</div></div>
+        <div style="background:var(--surface2);border:1px solid var(--border);border-left:3px solid var(--blue);border-radius:6px;padding:10px 12px"><div style="display:flex;align-items:center;gap:7px;margin-bottom:5px"><span style="background:var(--blue);color:#fff;font-size:10.5px;font-weight:700;border-radius:4px;padding:2px 6px;flex-shrink:0">04</span><strong style="color:var(--text);font-size:0.84rem">提供 PI（預估發票）</strong></div><div style="color:var(--text-dim);font-size:0.76rem;line-height:1.4">供付款／開立信用狀用</div></div>
+        <div style="background:var(--surface2);border:1px solid var(--border);border-left:3px solid #8a63d2;border-radius:6px;padding:10px 12px"><div style="display:flex;align-items:center;gap:7px;margin-bottom:5px"><span style="background:#8a63d2;color:#fff;font-size:10.5px;font-weight:700;border-radius:4px;padding:2px 6px;flex-shrink:0">05</span><strong style="color:var(--text);font-size:0.84rem">收到客戶款項</strong></div><div style="color:var(--text-dim);font-size:0.76rem;line-height:1.4">收取訂金或全額款項</div></div>
+        <div style="background:var(--surface2);border:1px solid var(--border);border-left:3px solid #8a63d2;border-radius:6px;padding:10px 12px"><div style="display:flex;align-items:center;gap:7px;margin-bottom:5px"><span style="background:#8a63d2;color:#fff;font-size:10.5px;font-weight:700;border-radius:4px;padding:2px 6px;flex-shrink:0">06</span><strong style="color:var(--text);font-size:0.84rem">工廠下單並確認交期</strong></div><div style="color:var(--text-dim);font-size:0.76rem;line-height:1.4">向工廠下單,確認出貨日</div></div>
+        <div style="background:var(--surface2);border:1px solid var(--border);border-left:3px solid #8a63d2;border-radius:6px;padding:10px 12px"><div style="display:flex;align-items:center;gap:7px;margin-bottom:5px"><span style="background:#8a63d2;color:#fff;font-size:10.5px;font-weight:700;border-radius:4px;padding:2px 6px;flex-shrink:0">07</span><strong style="color:var(--text);font-size:0.84rem">貨品完成</strong></div><div style="color:var(--text-dim);font-size:0.76rem;line-height:1.4">生產完成並完成品檢</div></div>
+        <div style="background:var(--surface2);border:1px solid var(--border);border-left:3px solid #8a63d2;border-radius:6px;padding:10px 12px"><div style="display:flex;align-items:center;gap:7px;margin-bottom:5px"><span style="background:#8a63d2;color:#fff;font-size:10.5px;font-weight:700;border-radius:4px;padding:2px 6px;flex-shrink:0">08</span><strong style="color:var(--text);font-size:0.84rem">確認出貨方式</strong></div><div style="color:var(--text-dim);font-size:0.76rem;line-height:1.4">海運／空運／快遞</div></div>
+        <div style="background:var(--surface2);border:1px solid var(--border);border-left:3px solid #d97b29;border-radius:6px;padding:10px 12px"><div style="display:flex;align-items:center;gap:7px;margin-bottom:5px"><span style="background:#d97b29;color:#fff;font-size:10.5px;font-weight:700;border-radius:4px;padding:2px 6px;flex-shrink:0">09</span><strong style="color:var(--text);font-size:0.84rem">完成出貨文件</strong></div><div style="color:var(--text-dim);font-size:0.76rem;line-height:1.4">發票、裝箱單、B/L、產證等</div></div>
+        <div style="background:var(--surface2);border:1px solid var(--border);border-left:3px solid #d97b29;border-radius:6px;padding:10px 12px"><div style="display:flex;align-items:center;gap:7px;margin-bottom:5px"><span style="background:#d97b29;color:#fff;font-size:10.5px;font-weight:700;border-radius:4px;padding:2px 6px;flex-shrink:0">10</span><strong style="color:var(--text);font-size:0.84rem">取貨</strong></div><div style="color:var(--text-dim);font-size:0.76rem;line-height:1.4">貨運代理至工廠取貨</div></div>
+        <div style="background:var(--surface2);border:1px solid var(--gold);border-left:3px solid #d97b29;border-radius:6px;padding:10px 12px"><div style="display:flex;align-items:center;gap:7px;margin-bottom:5px"><span style="background:#d97b29;color:#fff;font-size:10.5px;font-weight:700;border-radius:4px;padding:2px 6px;flex-shrink:0">11</span><strong style="color:var(--gold);font-size:0.84rem">出貨完成</strong></div><div style="color:var(--text-dim);font-size:0.76rem;line-height:1.4">啟運,追蹤資訊交付買方</div></div>
+      </div>
+      <ol>
+        <li><strong>客戶詢價</strong>：買方向賣方詢問規格與價格。</li>
+        <li><strong>提供報價單與預估交期</strong>：賣方提供包含價格、規格與預估生產/出貨時間的報價單。</li>
+        <li><strong>收到客戶訂單</strong>：買方發出正式採購訂單（PO）確認下單。</li>
+        <li><strong>提供 PI（預估發票）</strong>：賣方開立 Proforma Invoice，載明價格、付款條件及銀行資訊，買方依此安排付款（或開立信用狀）。</li>
+        <li><strong>收到客戶款項</strong>：依雙方約定的付款方式（電匯 T/T、信用狀 L/C 等）收取訂金或全額款項。</li>
+        <li><strong>工廠下單並確認交期</strong>：賣方向工廠/生產線下單，並確認正確的出貨日期。</li>
+        <li><strong>貨品完成</strong>：生產完成並進行品質檢驗。</li>
+        <li><strong>確認出貨方式</strong>：依成本、急迫性與貨物大小，決定採用海運、空運或快遞。</li>
+        <li><strong>完成出貨文件</strong>：準備商業發票、裝箱單、提單（B/L）/空運提單（AWB）、產地證明、出口報單等文件。</li>
+        <li><strong>取貨</strong>：貨運代理或承運商至工廠/倉庫取貨並安排裝運。</li>
+        <li><strong>出貨完成</strong>：貨物啟運，追蹤資訊與出貨文件交付給買方。</li>
+      </ol>
+      <p style="margin-top:12px;color:var(--text-dim);font-size:0.88rem">提醒：實際步驟與順序會依 Incoterms、付款條件及運輸方式有所調整。完整出口文件清單請參考 <a href="#" onclick="event.preventDefault();openKnowledge('export-docs')" style="color:var(--gold)">出口文件清單</a>。</p>
+    `,
+    body: `
+      <h4>General Flow of an International Trade Export</h4>
+      <p>The exact details vary by country, Incoterm, payment terms, and shipping mode, but most export transactions follow roughly these steps:</p>
+      <div style="display:flex;gap:16px;flex-wrap:wrap;font-size:0.78rem;color:var(--text-dim);margin:6px 0 14px">
+        <span><span style="display:inline-block;width:10px;height:10px;border-radius:2px;background:var(--blue);margin-right:5px"></span>Buyer &amp; Order</span>
+        <span><span style="display:inline-block;width:10px;height:10px;border-radius:2px;background:#8a63d2;margin-right:5px"></span>Seller &amp; Production</span>
+        <span><span style="display:inline-block;width:10px;height:10px;border-radius:2px;background:#d97b29;margin-right:5px"></span>Shipping &amp; Logistics</span>
+      </div>
+      <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(180px,1fr));gap:12px;margin-bottom:14px">
+        <div style="background:var(--surface2);border:1px solid var(--border);border-left:3px solid var(--blue);border-radius:6px;padding:10px 12px"><div style="display:flex;align-items:center;gap:7px;margin-bottom:5px"><span style="background:var(--blue);color:#fff;font-size:10.5px;font-weight:700;border-radius:4px;padding:2px 6px;flex-shrink:0">01</span><strong style="color:var(--text);font-size:0.84rem">Inquiry</strong></div><div style="color:var(--text-dim);font-size:0.76rem;line-height:1.4">Buyer asks for specs &amp; pricing</div></div>
+        <div style="background:var(--surface2);border:1px solid var(--border);border-left:3px solid var(--blue);border-radius:6px;padding:10px 12px"><div style="display:flex;align-items:center;gap:7px;margin-bottom:5px"><span style="background:var(--blue);color:#fff;font-size:10.5px;font-weight:700;border-radius:4px;padding:2px 6px;flex-shrink:0">02</span><strong style="color:var(--text);font-size:0.84rem">Quotation &amp; Lead Time</strong></div><div style="color:var(--text-dim);font-size:0.76rem;line-height:1.4">Price + estimated schedule sent</div></div>
+        <div style="background:var(--surface2);border:1px solid var(--border);border-left:3px solid var(--blue);border-radius:6px;padding:10px 12px"><div style="display:flex;align-items:center;gap:7px;margin-bottom:5px"><span style="background:var(--blue);color:#fff;font-size:10.5px;font-weight:700;border-radius:4px;padding:2px 6px;flex-shrink:0">03</span><strong style="color:var(--text);font-size:0.84rem">Receive Purchase Order</strong></div><div style="color:var(--text-dim);font-size:0.76rem;line-height:1.4">Buyer issues formal PO</div></div>
+        <div style="background:var(--surface2);border:1px solid var(--border);border-left:3px solid var(--blue);border-radius:6px;padding:10px 12px"><div style="display:flex;align-items:center;gap:7px;margin-bottom:5px"><span style="background:var(--blue);color:#fff;font-size:10.5px;font-weight:700;border-radius:4px;padding:2px 6px;flex-shrink:0">04</span><strong style="color:var(--text);font-size:0.84rem">Issue Proforma Invoice (PI)</strong></div><div style="color:var(--text-dim);font-size:0.76rem;line-height:1.4">For payment / L·C purposes</div></div>
+        <div style="background:var(--surface2);border:1px solid var(--border);border-left:3px solid #8a63d2;border-radius:6px;padding:10px 12px"><div style="display:flex;align-items:center;gap:7px;margin-bottom:5px"><span style="background:#8a63d2;color:#fff;font-size:10.5px;font-weight:700;border-radius:4px;padding:2px 6px;flex-shrink:0">05</span><strong style="color:var(--text);font-size:0.84rem">Receive Payment</strong></div><div style="color:var(--text-dim);font-size:0.76rem;line-height:1.4">Deposit or full payment in</div></div>
+        <div style="background:var(--surface2);border:1px solid var(--border);border-left:3px solid #8a63d2;border-radius:6px;padding:10px 12px"><div style="display:flex;align-items:center;gap:7px;margin-bottom:5px"><span style="background:#8a63d2;color:#fff;font-size:10.5px;font-weight:700;border-radius:4px;padding:2px 6px;flex-shrink:0">06</span><strong style="color:var(--text);font-size:0.84rem">Production Order &amp; Lead Time</strong></div><div style="color:var(--text-dim);font-size:0.76rem;line-height:1.4">Factory order placed, schedule locked</div></div>
+        <div style="background:var(--surface2);border:1px solid var(--border);border-left:3px solid #8a63d2;border-radius:6px;padding:10px 12px"><div style="display:flex;align-items:center;gap:7px;margin-bottom:5px"><span style="background:#8a63d2;color:#fff;font-size:10.5px;font-weight:700;border-radius:4px;padding:2px 6px;flex-shrink:0">07</span><strong style="color:var(--text);font-size:0.84rem">Goods Completed</strong></div><div style="color:var(--text-dim);font-size:0.76rem;line-height:1.4">Production &amp; QC finished</div></div>
+        <div style="background:var(--surface2);border:1px solid var(--border);border-left:3px solid #8a63d2;border-radius:6px;padding:10px 12px"><div style="display:flex;align-items:center;gap:7px;margin-bottom:5px"><span style="background:#8a63d2;color:#fff;font-size:10.5px;font-weight:700;border-radius:4px;padding:2px 6px;flex-shrink:0">08</span><strong style="color:var(--text);font-size:0.84rem">Confirm Shipping Method</strong></div><div style="color:var(--text-dim);font-size:0.76rem;line-height:1.4">Sea / Air / Courier decided</div></div>
+        <div style="background:var(--surface2);border:1px solid var(--border);border-left:3px solid #d97b29;border-radius:6px;padding:10px 12px"><div style="display:flex;align-items:center;gap:7px;margin-bottom:5px"><span style="background:#d97b29;color:#fff;font-size:10.5px;font-weight:700;border-radius:4px;padding:2px 6px;flex-shrink:0">09</span><strong style="color:var(--text);font-size:0.84rem">Complete Export Documents</strong></div><div style="color:var(--text-dim);font-size:0.76rem;line-height:1.4">Invoice, packing list, B/L, C/O</div></div>
+        <div style="background:var(--surface2);border:1px solid var(--border);border-left:3px solid #d97b29;border-radius:6px;padding:10px 12px"><div style="display:flex;align-items:center;gap:7px;margin-bottom:5px"><span style="background:#d97b29;color:#fff;font-size:10.5px;font-weight:700;border-radius:4px;padding:2px 6px;flex-shrink:0">10</span><strong style="color:var(--text);font-size:0.84rem">Cargo Pickup</strong></div><div style="color:var(--text-dim);font-size:0.76rem;line-height:1.4">Forwarder collects the goods</div></div>
+        <div style="background:var(--surface2);border:1px solid var(--gold);border-left:3px solid #d97b29;border-radius:6px;padding:10px 12px"><div style="display:flex;align-items:center;gap:7px;margin-bottom:5px"><span style="background:#d97b29;color:#fff;font-size:10.5px;font-weight:700;border-radius:4px;padding:2px 6px;flex-shrink:0">11</span><strong style="color:var(--gold);font-size:0.84rem">Shipment Completed</strong></div><div style="color:var(--text-dim);font-size:0.76rem;line-height:1.4">Departed; tracking sent to buyer</div></div>
+      </div>
+      <ol>
+        <li><strong>Inquiry</strong>: The buyer asks the seller about specifications and pricing.</li>
+        <li><strong>Quotation &amp; Estimated Lead Time</strong>: The seller provides a quotation covering price, specs, and estimated production/shipping time.</li>
+        <li><strong>Receive Purchase Order (PO)</strong>: The buyer issues a formal PO to confirm the order.</li>
+        <li><strong>Issue Proforma Invoice (PI)</strong>: The seller issues a PI stating price, payment terms, and banking details; the buyer arranges payment (or opens an L/C) based on it.</li>
+        <li><strong>Receive Payment</strong>: A deposit or full payment is received per the agreed terms (T/T wire transfer, Letter of Credit, etc.).</li>
+        <li><strong>Place Production Order &amp; Confirm Lead Time</strong>: The seller places the order with the factory/production line and confirms the exact delivery schedule.</li>
+        <li><strong>Goods Completed</strong>: Production finishes and quality inspection is carried out.</li>
+        <li><strong>Confirm Shipping Method</strong>: Sea freight, air freight, or courier/express is chosen based on cost, urgency, and cargo size.</li>
+        <li><strong>Complete Export Documents</strong>: Commercial invoice, packing list, Bill of Lading (B/L) / Air Waybill (AWB), certificate of origin, export declaration, etc. are prepared.</li>
+        <li><strong>Cargo Pickup</strong>: The forwarder or carrier collects the goods from the factory/warehouse for loading.</li>
+        <li><strong>Shipment Completed</strong>: The cargo departs; tracking information and shipping documents are passed to the buyer.</li>
+      </ol>
+      <p style="margin-top:12px;color:var(--text-dim);font-size:0.88rem">Note: Actual steps and order may shift depending on Incoterms, payment terms, and mode of transport. For the full document list, see the <a href="#" onclick="event.preventDefault();openKnowledge('export-docs')" style="color:var(--gold)">Export Document Checklist</a>.</p>
+    `
+  },
   'export-docs': {
     title: 'Taiwan Export Document Checklist',
     title_zh: '台灣出口文件清單',
@@ -7802,6 +7922,84 @@ const KB = {
         <li>Cargo must be in container yard by 14:00–15:00 on closing date</li>
         <li>Customs release by 17:00</li>
       </ul>
+    `
+  },
+  'payment-terms': {
+    title: 'International Trade Payment Terms: A Guide for CNC Machinery Buyers',
+    title_zh: '國際貿易付款條件：CNC 設備採購指南',
+    title_ko: '국제 무역 결제 조건: CNC 장비 구매자를 위한 가이드',
+    tags: ['payment', 'T/T', 'L/C', 'D/P', 'D/A', 'O/A'],
+    body_ko: `
+      <p>CNC 선반·머시닝센터 같은 고가의 설비든, 척·콜릿·바피더 부품 같은 예비 부품·소모품이든, 적절한 결제 조건에 합의하는 것은 사양이나 가격을 협상하는 것만큼 중요합니다. 결제 방식은 매수인과 매도인 간의 현금흐름과 리스크 분배를 결정합니다.</p>
+
+      <h4>1. 전신 송금 및 외상거래</h4>
+      <ul>
+        <li><strong>T/T (Telegraphic Transfer, 전신송금)</strong>: 가장 직접적이고 일반적인 방식. 기계의 경우 보통 생산 착수를 위한 선수금(CWO, Cash With Order)과 선적 전 잔금으로 나뉨. 신속하고 비용이 저렴하나 상호 신뢰가 필요함.</li>
+        <li><strong>O/A (Open Account, 외상거래)</strong>: 결제 만기 전에 화물이 선적/인도됨(예: 선적 후 30/60/90일). 매수인에게는 리스크와 현금흐름 면에서 가장 유리하나 매도인에게는 가장 위험함. 보통 장기간 신뢰가 구축된 거래처나 계열사 간 거래에 한정됨.</li>
+      </ul>
+
+      <h4>2. 추심 (Documentary Collection, 은행을 통한 대금 추심)</h4>
+      <ul>
+        <li><strong>D/P (Document against Payment, 지급인도조건)</strong>: 매수인은 선적서류(B/L 등)를 수취하기 위해 추심은행에 먼저 대금을 지급해야 함.</li>
+        <li><strong>D/A (Document against Acceptance, 인수인도조건)</strong>: 매수인이 기한부 환어음을 인수(미래 시점에 지급 약속)하는 조건으로 선적서류를 수취. 실제 대금 지급 전에 통관 및 기계 사용/판매가 가능함.</li>
+      </ul>
+
+      <h4>3. 신용장 (L/C, 은행 신용 보증)</h4>
+      <p>L/C는 매수인의 거래은행이 발행하는 조건부 지급보증입니다. 매도인이 L/C 요구 조건에 맞는 서류를 제시하면 은행이 지급을 보증합니다.</p>
+      <ul>
+        <li><strong>Sight L/C (일람불 신용장)</strong>: 조건에 맞는 서류 제시 즉시 지급.</li>
+        <li><strong>Usance L/C (기한부 신용장)</strong>: 지급이 향후 특정 시점(예: 일람 후 60일)으로 유예됨.</li>
+      </ul>
+
+      <p style="margin-top:12px;color:var(--text-dim)"><strong>실무 조언:</strong> 신규 거래처나 고가의 맞춤 CNC 설비의 경우, <strong>불가취소 일람불 신용장(Irrevocable Sight L/C)</strong>이 균형 잡힌 표준 방식입니다 — 매수인은 대금 지급 전 선적이 완료됨을 보장받고, 매도인은 은행 신용 보증으로 보호받습니다. 반면 금액이 작은 예비 부품·소모품 주문에서는 신용장 개설 비용이 부담이 되므로 보통 T/T 결제가 더 실용적입니다.</p>
+    `,
+    body_zh: `
+      <p>無論是採購高單價設備（如 CNC 車床或加工中心），或是夾頭、筒夾、送料機零件等備品與消耗性零配件，談妥合適的付款條件，都與議定規格或價格同樣重要。付款方式決定了買賣雙方之間的現金流與風險分配。</p>
+
+      <h4>1. 匯付與記帳方式</h4>
+      <ul>
+        <li><strong>T/T（電匯）</strong>：最直接、最常見的方式。針對機台採購，通常分為訂貨付現（CWO，用於啟動生產）與出貨前付清尾款；零配件等金額較小的訂單則常以單筆全額電匯處理。速度快、成本低，但需要買賣雙方互信。</li>
+        <li><strong>O/A（記帳/月結）</strong>：貨物先出貨交付，於約定天數後付款（如出貨後 30、60 或 90 天）。對買方而言風險最低、現金流最佳，但對賣方風險最高。通常僅用於長期信任的合作夥伴或集團內部交易。</li>
+      </ul>
+
+      <h4>2. 託收（透過銀行代收）</h4>
+      <ul>
+        <li><strong>D/P（付款交單）</strong>：買方須先向代收銀行付款，才能取得提單等裝船文件，憑以向海關提貨。</li>
+        <li><strong>D/A（承兌交單）</strong>：買方僅須「承兌」遠期匯票（承諾於未來日期付款）即可取得裝船文件，可在實際付款前先完成通關並使用或轉售機台。</li>
+      </ul>
+
+      <h4>3. 信用狀（L/C，銀行信用擔保）</h4>
+      <p>信用狀是由買方往來銀行開立的一種附條件付款保證。只要賣方提交的裝船文件符合信用狀規定，銀行即保證付款。</p>
+      <ul>
+        <li><strong>即期信用狀（Sight L/C）</strong>：文件符合條件並提交銀行後即刻付款。</li>
+        <li><strong>遠期信用狀（Usance L/C）</strong>：付款延至約定的未來日期（例如見票後 60 天）。</li>
+      </ul>
+
+      <p style="margin-top:12px;color:var(--text-dim)"><strong>實務建議：</strong>對於新合作夥伴或客製化高單價 CNC 設備，<strong>不可撤銷即期信用狀</strong>是兼顧雙方風險的均衡做法——買方能確認貨物已出貨才需付款，賣方則受銀行信用保證的保障。至於金額較小的零配件、消耗品訂單，開立信用狀的成本相對偏高，通常以 T/T 電匯處理更為實際。</p>
+    `,
+    body: `
+      <p>Whether you are sourcing high-value equipment like CNC lathes and machining centers, or spare and consumable parts such as chucks, collets, and bar-feeder components, agreeing on the right payment terms is as important as negotiating specifications or price. The payment method determines the cash flow and risk distribution between the buyer and the seller.</p>
+
+      <h4>1. Remittance &amp; Open Account</h4>
+      <ul>
+        <li><strong>T/T (Telegraphic Transfer / 電匯)</strong>: The most direct and common method. For machinery, it is usually split into an advance payment (CWO – Cash With Order / 訂貨付現) to start production, with the balance paid before shipment. Fast and cost-effective, but requires mutual trust.</li>
+        <li><strong>O/A (Open Account / 記帳/月結)</strong>: Goods are shipped and delivered before payment is due (e.g. 30, 60, or 90 days after shipment). Lowest risk and best cash flow for the buyer, but highest risk for the seller. Typically reserved for long-term, highly trusted partners or intra-company transfers.</li>
+      </ul>
+
+      <h4>2. Documentary Collection (託收 — via banks)</h4>
+      <ul>
+        <li><strong>D/P (Document against Payment / 付款交單)</strong>: The buyer must pay the presenting bank before receiving the shipping documents (such as the Bill of Lading) needed to claim the goods from customs.</li>
+        <li><strong>D/A (Document against Acceptance / 承兌交單)</strong>: The buyer "accepts" a time draft (promising to pay at a future date) in exchange for the shipping documents — allowing customs clearance, and possibly use or resale of the machine, before payment is actually made.</li>
+      </ul>
+
+      <h4>3. Letter of Credit (L/C / 信用狀)</h4>
+      <p>An L/C is a conditional guarantee of payment issued by the buyer's bank. As long as the seller presents shipping documents that exactly match the L/C's requirements, the bank guarantees payment.</p>
+      <ul>
+        <li><strong>Sight L/C (即期信用狀)</strong>: Payment is made immediately upon presentation of compliant documents to the bank.</li>
+        <li><strong>Usance L/C (遠期信用狀)</strong>: Payment is deferred to a specified future date (e.g. 60 days after sight).</li>
+      </ul>
+
+      <p style="margin-top:12px;color:var(--text-dim)"><strong>Pro tip:</strong> For new international partnerships or customized high-end equipment, an <strong>Irrevocable Sight L/C (不可撤銷即期信用狀)</strong> balances risk well — the buyer is assured the goods are shipped before payment is released, while the seller is protected by the bank's credit guarantee. For smaller spare-part or consumable orders, however, the cost of opening an L/C is relatively high, so a straight T/T is usually more practical.</p>
     `
   },
   'marine-insurance': {
@@ -11090,7 +11288,7 @@ const LANG = {
     sb_bar_feeder: ' Bar Feeder', sb_linear_guide: ' Linear Guide', sb_servo_motor: ' Servo Motor',
     sb_cnc_lathe: ' CNC Lathe', sb_tool_holder: ' Tool Holder', sb_spindle: ' Spindle',
     sb_live_tool: ' Live Tool Holders', sb_static_tool: ' Static Tool Holders', sb_collet: ' Collets & Chucks', sb_automation: ' Automation Loading',
-    sb_export_docs: ' Export Documents', sb_marine: ' Marine Insurance', sb_customs: ' Customs Clearance',
+    sb_export_flow: ' Export Process Overview', sb_export_docs: ' Export Documents', sb_payment_terms: ' Payment Terms', sb_marine: ' Marine Insurance', sb_customs: ' Customs Clearance',
     sb_import_duty: ' Import Duty Reference', sb_container: ' Container & CBM Guide', sb_terms: ' Terminology 術語/용어', sb_services: ' Our Services', sb_factory_visit: ' Factory Visit',
     sb_tw_brands: ' Taiwan Manufacturers', sb_maintenance: ' Maintenance Guide',
     sb_lifespan: ' Parts Lifespan', sb_gcode: ' G-Code Reference', sb_green: ' Green Manufacturing',
@@ -11150,7 +11348,7 @@ const LANG = {
     sb_bar_feeder: ' 送料機', sb_linear_guide: ' 線性滑軌', sb_servo_motor: ' 伺服馬達',
     sb_cnc_lathe: ' CNC 車床', sb_tool_holder: ' 刀座', sb_spindle: ' 主軸',
     sb_live_tool: ' 動力刀座', sb_static_tool: ' 非動力刀座', sb_collet: ' 筒夾/夾頭', sb_automation: ' 自動化上下料',
-    sb_export_docs: ' 出口文件', sb_marine: ' 海上保險', sb_customs: ' 清關',
+    sb_export_flow: ' 出口流程總覽', sb_export_docs: ' 出口文件', sb_payment_terms: ' 付款條件', sb_marine: ' 海上保險', sb_customs: ' 清關',
     sb_import_duty: ' 進口關稅參考', sb_container: ' 貨櫃與材積指南', sb_terms: ' 術語對照', sb_services: ' 服務項目', sb_factory_visit: ' 來台採購',
     sb_tw_brands: ' 台灣製造商', sb_maintenance: ' 保養指南',
     sb_lifespan: ' 零件壽命', sb_gcode: ' G碼參考', sb_green: ' 綠色製造',
@@ -11211,7 +11409,7 @@ const LANG = {
     sb_bar_feeder: ' 바피더', sb_linear_guide: ' 리니어 가이드', sb_servo_motor: ' 서보 모터',
     sb_cnc_lathe: ' CNC 선반', sb_tool_holder: ' 툴 홀더', sb_spindle: ' 스핀들',
     sb_live_tool: ' 동력 공구대', sb_static_tool: ' 비동력 공구대', sb_collet: ' 콜릿 & 척', sb_automation: ' 자동 로딩',
-    sb_export_docs: ' 수출 서류', sb_marine: ' 해상보험', sb_customs: ' 통관',
+    sb_export_flow: ' 수출 프로세스 개요', sb_export_docs: ' 수출 서류', sb_payment_terms: ' 결제 조건', sb_marine: ' 해상보험', sb_customs: ' 통관',
     sb_import_duty: ' 수입 관세 참고', sb_container: ' 컨테이너 & CBM 가이드', sb_terms: ' 용어 대조', sb_services: ' 서비스 안내', sb_factory_visit: ' 대만 방문 구매',
     sb_tw_brands: ' 대만 제조업체', sb_maintenance: ' 유지보수 가이드',
     sb_lifespan: ' 부품 수명', sb_gcode: ' G코드 참고', sb_green: ' 친환경 제조',
