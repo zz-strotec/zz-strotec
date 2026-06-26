@@ -11352,12 +11352,12 @@ async function loadNews() {
   } catch(e) {
     // Fallback static news
     const fallback = [
-      { title: "Taiwan Machine Tool Exports Maintain Growth in Q1 2026", source: "TAMI", date: "May 2026", category: "Export", summary: "Taiwan's machine tool exports continue steady growth driven by demand from Korea and Southeast Asia." },
-      { title: "CNC Automation Demand Surges Among Korean Automotive Suppliers", source: "Korea Trade", date: "May 2026", category: "Korea", summary: "Korean Tier-1 auto suppliers accelerating CNC automation investment amid EV transition." },
-      { title: "Brazil Industrial Output Rises 3.2% — Manufacturing Investment Up", source: "IBGE", date: "Apr 2026", category: "Brazil", summary: "Brazilian manufacturing sector shows recovery with increased capital goods imports." },
-      { title: "Switzerland Precision Engineering Sector Reports Strong 2025 Results", source: "Swissmem", date: "Apr 2026", category: "Switzerland", summary: "Swiss precision parts and tooling industry posts record export revenue for 2025." },
-      { title: "Taiwan TAWI 2026 — Taichung Machine Tool Show Preview", source: "TMBA", date: "May 2026", category: "Event", summary: "Major Taiwan machine tool manufacturers to showcase latest CNC turning and 5-axis solutions." },
-      { title: "Argentina Opens New Import Streamlining for Capital Goods", source: "BCRA", date: "Apr 2026", category: "Argentina", summary: "Argentina's new economic measures aim to reduce import permit processing times for industrial equipment." }
+      { title: "Taiwan Machine Tool Industry Forecasts Full Recovery in 2026", source: "經濟日報 / TMBA", date: "Jun 2026", category: "Taiwan", summary: "約六成廠商預估今年營收挑戰兩位數成長，整體工具機出口看增 5%~10%，景氣全面復甦。" },
+      { title: "Taiwan-US Reciprocal Tariff Deal Finalized — Exports to US Set to Rise", source: "經濟日報", date: "Jun 2026", category: "Trade", summary: "台美對等關稅拍板，公會樂觀預估今年台灣工具機出口美國至少成長 6%~8%。" },
+      { title: "Taiwan Machinery Exports Jump 30.3% YoY in January 2026", source: "TAMI", date: "Feb 2026", category: "Export", summary: "1 月機械出口 29.76 億美元，年增 30.3%；半導體與 AI 設備領軍帶動高精密設備需求。" },
+      { title: "TMTS 2026 — Taiwan Int'l Machine Tool Show, Taichung Mar 25–28", source: "TMTS", date: "Mar 2026", category: "Event", summary: "主題「AI-Powered Sustainable Manufacturing」，於台中國際展覽中心展出最新 CNC 與五軸方案。" },
+      { title: "Korean CNC Demand Driven by Doosan & Hyundai WIA Automation", source: "Korea Industry", date: "2026", category: "Korea", summary: "韓國車輛與造船業持續投資 CNC 自動化，Doosan、Hyundai WIA 主導加工中心與自動化系統需求。" },
+      { title: "Latin America CNC Market to Reach US$2.35B in 2026", source: "Market Research", date: "2026", category: "Brazil", summary: "拉美 CNC 市場 2026 年估達 23.5 億美元，巴西汽車、航太與工業製造自動化需求穩定成長。" }
     ];
 
     const html = fallback.map((item, i) => `
