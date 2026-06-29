@@ -1205,6 +1205,9 @@
       <div class="sidebar-item" onclick="openKnowledge('spindle')">
         <span class="icon">🔄</span><span data-i18n="sb_spindle"> Spindle</span>
       </div>
+      <div class="sidebar-item" onclick="openKnowledge('spindle-cooling')">
+        <span class="icon">❄️</span><span data-i18n="sb_spindle_cooling"> Spindle Cooling</span>
+      </div>
       <div class="sidebar-item" onclick="openKnowledge('live-tool')">
         <span class="icon">⚡</span><span data-i18n="sb_live_tool"> Live Tool Holders</span>
       </div>
@@ -3022,6 +3025,19 @@
     <div class="page" id="page-whatsnew">
       <div class="section-title">WHAT'S NEW &nbsp;／&nbsp; 最新消息 &nbsp;／&nbsp; 최신 소식</div>
       <div style="margin-bottom:28px">
+
+        <div class="whats-new-item">
+          <div class="whats-new-date">2026.06</div>
+          <div class="whats-new-content">
+            <div class="whats-new-title">❄️ Knowledge Library — Spindle Cooling &amp; Thermal Compensation</div>
+            <div style="color:var(--text-dim);font-size:0.82rem;margin-bottom:4px">主軸冷卻與熱補償 ／ 주축 냉각 및 열보정</div>
+            <div class="whats-new-desc">How built-in spindles tackle thermal deformation in high-speed machining — air-oil lubrication, coolant-through-spindle (CTS), and whole-machine thermal compensation that holds micron-level accuracy in long continuous runs. Available in EN / 中文 / 한국어.</div>
+            <div style="margin-top:10px;display:flex;align-items:center;gap:10px;flex-wrap:wrap">
+              <span class="whats-new-tag">Knowledge Library</span>
+              <button class="nav-btn" onclick="openKnowledge('spindle-cooling')" style="font-size:11px;padding:3px 12px;color:var(--gold);border:1px solid var(--gold)">READ ARTICLE / 開啟知識庫 / 지식 라이브러리 →</button>
+            </div>
+          </div>
+        </div>
 
         <div class="whats-new-item">
           <div class="whats-new-date">2026.06</div>
@@ -7664,6 +7680,72 @@ const KB = {
       A2-5, A2-6, A2-8, A2-11 are common spindle nose sizes. Chuck size and bar feeder collet size depend on this specification.
     `
   },
+  'spindle-cooling': {
+    title: 'Spindle Cooling & Thermal Compensation',
+    title_zh: '主軸冷卻與熱補償',
+    title_ko: '주축 냉각 및 열보정',
+    tags: ['spindle cooling', 'thermal compensation', 'air-oil lubrication', 'CTS', 'thermal deformation'],
+    body_ko: `
+      <h4>고속 가공의 과제: 열변형</h4>
+      내장형 모터 주축이 15,000 RPM을 넘어서면 통합된 모터가 상당한 열을 발생시킵니다. 이 열은 주축 베어링과 기계 구조 주물의 열팽창을 일으켜 X·Y·Z 축에 마이크론 단위의 치수 편차를 초래합니다. 연속 고속 가공에서 엄격한 공차를 유지하려면 냉각 하드웨어와 소프트웨어 보정을 함께 사용해야 합니다.
+
+      <h4>1. 주축 윤활 및 냉각</h4>
+      <ul>
+        <li><strong>오일-에어 윤활 (Air-Oil Lubrication)</strong>: 15,000 RPM 이상에서는 일반 그리스가 마찰과 열을 견디기 어렵습니다. 오일-에어 윤활은 정밀하게 계량된 오일 미스트를 베어링에 연속 공급하며, 지속적인 압축 공기 흐름이 여분의 열도 함께 배출해 베어링 손상 방지에 도움이 됩니다.</li>
+        <li><strong>주축 중심 절삭유 공급 (CTS / 主軸中心出水)</strong>: 고압 절삭유(최대 약 70 BAR)를 주축 샤프트 중심으로 보내 공구 끝에서 분사합니다. 깊은 구멍의 칩을 배출하는 동시에 주축 코어와 절삭 영역의 열을 끌어냅니다.</li>
+      </ul>
+
+      <h4>2. 전체 기계 열변형 보정 (整機溫升熱補償)</h4>
+      물리적 냉각이 잘 되어도 일부 열은 기계 구조로 전달됩니다. 고급 CNC 컨트롤러는 전체 기계 열보정으로 이를 상쇄합니다:
+      <ul>
+        <li><strong>작동 원리</strong>: 주축 헤드, 기계 베드, 리니어 가이드웨이 등에 온도 센서를 배치해 실시간 온도 데이터를 컨트롤러로 전송합니다.</li>
+        <li><strong>실시간 미세 보정</strong>: 컨트롤러는 열변형 모델(일부 시스템은 AI 활용)로 구조의 팽창량을 추정하고 서보 모터에 미세 보정 명령을 보냅니다. 이를 통해 공구 위치 정확도를 유지하고 장시간 연속(무인) 가공에서도 마이크론급 정밀도를 유지하는 데 도움이 됩니다.</li>
+      </ul>
+
+      <h4>Z&Z STROTEC의 조언</h4>
+      항공우주, 반도체, 의료 부품과 같은 고정밀 용도의 기계를 선정할 때는 최고 RPM만으로는 충분하지 않습니다. 오일-에어 윤활, CTS, 열보정을 모두 갖추는 것이 장기 정밀도를 유지하는 핵심입니다.
+    `,
+    body_zh: `
+      <h4>高速加工的挑戰：熱變形</h4>
+      當內藏式主軸（built-in spindle）轉速超過 15,000 RPM，整合於主軸內的馬達會產生可觀的熱量，使主軸軸承與機台鑄件結構發生熱膨脹，導致 X、Y、Z 三軸出現微米級的尺寸偏移。要在連續高速加工中維持嚴格公差，需同時仰賴冷卻硬體與軟體補償。
+
+      <h4>1. 主軸潤滑與冷卻</h4>
+      <ul>
+        <li><strong>油氣潤滑（Air-Oil Lubrication）</strong>：在 15,000 RPM 以上，傳統潤滑脂難以承受摩擦與高溫。油氣潤滑將精確計量的油霧連續送入軸承，持續的壓縮空氣同時帶走多餘熱量，有助避免軸承損壞。</li>
+        <li><strong>主軸中心出水（CTS / Coolant Through Spindle）</strong>：高壓切削液（最高約 70 BAR）經主軸軸心打入、自刀尖噴出，既能將深穴內的鐵屑沖出，也能將熱量從主軸核心與切削區帶走。</li>
+      </ul>
+
+      <h4>2. 整機溫升熱補償</h4>
+      即使物理冷卻良好，仍有部分熱量會傳入機台結構。高階 CNC 控制器以整機溫升熱補償加以修正：
+      <ul>
+        <li><strong>運作原理</strong>：在主軸頭、機台床身與線性導軌等處佈設溫度感測器，即時將溫度資料回傳控制器。</li>
+        <li><strong>即時微幅修正</strong>：控制器透過熱變形模型（部分系統導入 AI 輔助）推估結構膨脹量，並對伺服馬達下達微量補償指令，有助維持刀具位置準確，在長時間連續（無人化）生產中維持微米級精度。</li>
+      </ul>
+
+      <h4>Z&Z STROTEC 建議</h4>
+      採購航太、半導體或醫療等高精度應用的機台時，只看最高轉速並不足夠。油氣潤滑、CTS 與熱補償三者兼備，才是維持長期精度的關鍵。
+    `,
+    body: `
+      <h4>The Challenge: Thermal Deformation in High-Speed Machining</h4>
+      When built-in spindles (內藏式主軸) run beyond 15,000 RPM, the integrated motor generates significant heat. This causes thermal expansion in the spindle bearings and the machine's structural casting, leading to micron-level dimensional deviation across the X, Y, and Z axes. Holding tight tolerances during continuous high-speed machining relies on a combination of cooling hardware and software compensation.
+
+      <h4>1. Spindle Lubrication & Cooling</h4>
+      <ul>
+        <li><strong>Air-Oil Lubrication (油氣潤滑)</strong>: At 15,000+ RPM, conventional grease cannot cope with the friction and heat. Air-oil lubrication delivers a continuous, precisely metered oil mist into the bearings; the constant compressed-air flow also carries excess heat away, helping prevent bearing failure.</li>
+        <li><strong>Coolant Through Spindle (CTS / 主軸中心出水)</strong>: High-pressure coolant (up to ~70 BAR) is pumped through the center of the spindle shaft and out of the tool tip. It flushes chips from deep cavities and also draws heat away from the spindle core and the cutting zone.</li>
+      </ul>
+
+      <h4>2. Whole-Machine Thermal Compensation (整機溫升熱補償)</h4>
+      Even with good physical cooling, some heat still reaches the machine structure. Advanced CNC controllers offset this with whole-machine thermal compensation:
+      <ul>
+        <li><strong>How it works</strong>: Temperature sensors are placed across the spindle head, machine bed, and linear guideways, feeding real-time data to the CNC.</li>
+        <li><strong>Real-time micro-adjustment (即時微幅修正)</strong>: Using a thermal-deformation model (some systems AI-assisted), the controller estimates how much the structure has expanded and sends small offset commands to the servo motors. This helps keep the tool position accurate and maintain micron-level accuracy during long continuous (lights-out) runs.</li>
+      </ul>
+
+      <h4>Z&Z STROTEC's Advice</h4>
+      For high-precision work such as aerospace, semiconductor, or medical parts, maximum RPM alone is not enough. Air-oil lubrication, CTS, and thermal compensation together are what sustain long-term accuracy.
+    `
+  },
   'container-cbm': {
     title: 'Sea Freight Container Specifications & CBM Guide',
     title_zh: '海運貨櫃規格與 CBM 材積計算指南',
@@ -11416,7 +11498,7 @@ const LANG = {
     tcat_Automation: 'Automation & Robotics',
     sidebar_knowledge: 'Knowledge Library', sidebar_export: 'Export Procedures', sidebar_markets: 'Markets', sidebar_industry: 'Industry',
     sb_bar_feeder: ' Bar Feeder', sb_linear_guide: ' Linear Guide', sb_servo_motor: ' Servo Motor',
-    sb_cnc_lathe: ' CNC Lathe', sb_tool_holder: ' Tool Holder', sb_spindle: ' Spindle',
+    sb_cnc_lathe: ' CNC Lathe', sb_tool_holder: ' Tool Holder', sb_spindle: ' Spindle', sb_spindle_cooling: ' Spindle Cooling',
     sb_live_tool: ' Live Tool Holders', sb_static_tool: ' Static Tool Holders', sb_collet: ' Collets & Chucks', sb_automation: ' Automation Loading',
     sb_export_flow: ' Export Process Overview', sb_export_docs: ' Export Documents', sb_payment_terms: ' Payment Terms', sb_marine: ' Marine Insurance', sb_customs: ' Customs Clearance',
     sb_import_duty: ' Import Duty Reference', sb_container: ' Container & CBM Guide', sb_terms: ' Terminology 術語/용어', sb_services: ' Our Services', sb_factory_visit: ' Factory Visit',
@@ -11476,7 +11558,7 @@ const LANG = {
     tcat_Automation: '自動化·機械手',
     sidebar_knowledge: '知識庫', sidebar_export: '出口流程', sidebar_markets: '市場', sidebar_industry: '產業',
     sb_bar_feeder: ' 送料機', sb_linear_guide: ' 線性滑軌', sb_servo_motor: ' 伺服馬達',
-    sb_cnc_lathe: ' CNC 車床', sb_tool_holder: ' 刀座', sb_spindle: ' 主軸',
+    sb_cnc_lathe: ' CNC 車床', sb_tool_holder: ' 刀座', sb_spindle: ' 主軸', sb_spindle_cooling: ' 主軸冷卻',
     sb_live_tool: ' 動力刀座', sb_static_tool: ' 非動力刀座', sb_collet: ' 筒夾/夾頭', sb_automation: ' 自動化上下料',
     sb_export_flow: ' 出口流程總覽', sb_export_docs: ' 出口文件', sb_payment_terms: ' 付款條件', sb_marine: ' 海上保險', sb_customs: ' 清關',
     sb_import_duty: ' 進口關稅參考', sb_container: ' 貨櫃與材積指南', sb_terms: ' 術語對照', sb_services: ' 服務項目', sb_factory_visit: ' 來台採購',
@@ -11537,7 +11619,7 @@ const LANG = {
     tcat_Automation: '자동화·로봇',
     sidebar_knowledge: '지식 라이브러리', sidebar_export: '수출 절차', sidebar_markets: '시장', sidebar_industry: '산업',
     sb_bar_feeder: ' 바피더', sb_linear_guide: ' 리니어 가이드', sb_servo_motor: ' 서보 모터',
-    sb_cnc_lathe: ' CNC 선반', sb_tool_holder: ' 툴 홀더', sb_spindle: ' 스핀들',
+    sb_cnc_lathe: ' CNC 선반', sb_tool_holder: ' 툴 홀더', sb_spindle: ' 스핀들', sb_spindle_cooling: ' 스핀들 냉각',
     sb_live_tool: ' 동력 공구대', sb_static_tool: ' 비동력 공구대', sb_collet: ' 콜릿 & 척', sb_automation: ' 자동 로딩',
     sb_export_flow: ' 수출 프로세스 개요', sb_export_docs: ' 수출 서류', sb_payment_terms: ' 결제 조건', sb_marine: ' 해상보험', sb_customs: ' 통관',
     sb_import_duty: ' 수입 관세 참고', sb_container: ' 컨테이너 & CBM 가이드', sb_terms: ' 용어 대조', sb_services: ' 서비스 안내', sb_factory_visit: ' 대만 방문 구매',
