@@ -1,0 +1,38 @@
+# 本地圖片原始備份，不需上傳 GitHub Pages
+photo/_original/
+
+# macOS
+.DS_Store
+
+# ── 內部商業文件，請勿公開到 GitHub Pages ──
+*.pdf
+*.xls
+*.xlsx
+*.docx
+*.DOCX
+_proposal_text.txt
+
+# ── 開發暫存 / 工作檔，不屬於網站 ──
+*.bak
+*.bak3
+*.bak4
+tmp_*.json
+tmp_*.txt
+fix*.py
+fix*_output.txt
+fix*_out.txt
+fix*.txt
+_servo_drive.svg
+header_section.txt
+nav_section.txt
+main_content_css.txt
+show_page_fn.txt
+switch_lang_fn.txt
+lang_switch.txt
+detail_panel.txt
+
+# Claude Code 本地設定
+.claude/
+
+# 打包的 skill 備份，非網站檔案
+*.skill

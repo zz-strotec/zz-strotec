@@ -1,0 +1,137 @@
+<!--
+  ════════════════════════════════════════════════════════════════════════
+  Z&Z STROTEC — 訂閱通知信範本 (Subscriber Notification Email Template)
+  ════════════════════════════════════════════════════════════════════════
+  使用方法 / How to use:
+  1. 登入 Mailchimp → Campaigns → Create → Email (Regular)
+  2. 選你的 Audience → 進入內容編輯 → 切換到 "Code your own" / "<> Code"
+     (或 Content → 選 "Paste in code") → 把下面整段 HTML 貼進去
+  3. 每次發信前，替換這 4 個地方 (用 Ctrl+H 全部取代):
+       {{CATEGORY}}      → 分類，例: Expert Column / Knowledge / 專欄文章
+       {{TITLE}}         → 文章標題
+       {{SUMMARY}}       → 1-3 句摘要
+       {{ARTICLE_URL}}   → 文章連結
+                           例: https://zz-strotec.github.io/zz-strotec/
+       (若連到特定專欄，附上錨點或頁面說明即可)
+  4. 主旨(Subject)建議: 【Z&Z STROTEC】新文章: {{TITLE}}
+  ════════════════════════════════════════════════════════════════════════
+-->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Z&amp;Z STROTEC Update</title>
+</head>
+<body style="margin:0;padding:0;background:#f4f5f6;font-family:Helvetica,Arial,'Microsoft JhengHei','Malgun Gothic',sans-serif;">
+  <table role="presentation" width="100%" cellpadding="0" cellspacing="0" style="background:#f4f5f6;">
+    <tr>
+      <td align="center" style="padding:24px 12px;">
+
+        <!-- Card -->
+        <table role="presentation" width="600" cellpadding="0" cellspacing="0" style="max-width:600px;width:100%;background:#ffffff;border-radius:8px;overflow:hidden;border:1px solid #e3e5e8;">
+
+          <!-- Header (dark + gold, brand) -->
+          <tr>
+            <td style="background:#0b0f14;padding:22px 28px;">
+              <div style="font-family:'Bebas Neue',Helvetica,Arial,sans-serif;font-size:22px;letter-spacing:2px;color:#c9a84c;font-weight:700;">
+                Z&amp;Z STROTEC
+              </div>
+              <div style="font-size:11px;letter-spacing:1px;color:#8a9099;margin-top:2px;">
+                TAIWAN MACHINE TOOL INTELLIGENCE&nbsp;&nbsp;｜&nbsp;&nbsp;萬洋國際有限公司
+              </div>
+            </td>
+          </tr>
+
+          <!-- Category badge -->
+          <tr>
+            <td style="padding:26px 28px 0 28px;">
+              <span style="display:inline-block;font-size:11px;letter-spacing:2px;color:#1b6fb5;border:1px solid #1b6fb5;border-radius:3px;padding:3px 10px;text-transform:uppercase;">
+                {{CATEGORY}}
+              </span>
+            </td>
+          </tr>
+
+          <!-- Title -->
+          <tr>
+            <td style="padding:14px 28px 0 28px;">
+              <h1 style="margin:0;font-size:22px;line-height:1.35;color:#1a1d21;font-weight:700;">
+                {{TITLE}}
+              </h1>
+            </td>
+          </tr>
+
+          <!-- Summary -->
+          <tr>
+            <td style="padding:14px 28px 0 28px;">
+              <p style="margin:0;font-size:15px;line-height:1.75;color:#444a52;">
+                {{SUMMARY}}
+              </p>
+            </td>
+          </tr>
+
+          <!-- CTA button -->
+          <tr>
+            <td style="padding:26px 28px 6px 28px;">
+              <table role="presentation" cellpadding="0" cellspacing="0">
+                <tr>
+                  <td style="background:#c9a84c;border-radius:5px;">
+                    <a href="{{ARTICLE_URL}}" target="_blank"
+                       style="display:inline-block;padding:12px 28px;font-size:14px;letter-spacing:1px;color:#0b0f14;text-decoration:none;font-weight:700;">
+                      Read the Article&nbsp;&nbsp;閱讀全文&nbsp;&nbsp;기사 읽기 →
+                    </a>
+                  </td>
+                </tr>
+              </table>
+            </td>
+          </tr>
+
+          <!-- Divider -->
+          <tr>
+            <td style="padding:24px 28px 0 28px;">
+              <div style="border-top:1px solid #e3e5e8;"></div>
+            </td>
+          </tr>
+
+          <!-- Trilingual note (EN / 中文 / 한국어) -->
+          <tr>
+            <td style="padding:18px 28px 4px 28px;">
+              <p style="margin:0 0 10px 0;font-size:13px;line-height:1.7;color:#6a7178;">
+                <strong style="color:#444a52;">EN&nbsp;</strong>
+                You're receiving this because you subscribed to Z&amp;Z STROTEC article updates.
+                We notify you only when we publish new Expert Columns or major Knowledge Library updates.
+              </p>
+              <p style="margin:0 0 10px 0;font-size:13px;line-height:1.8;color:#6a7178;">
+                <strong style="color:#444a52;">中文&nbsp;</strong>
+                您收到這封信，是因為您訂閱了 Z&amp;Z STROTEC 的文章更新通知。我們只在發布新的專家專欄或重要知識庫更新時通知您。
+              </p>
+              <p style="margin:0;font-size:13px;line-height:1.8;color:#6a7178;">
+                <strong style="color:#444a52;">한국어&nbsp;</strong>
+                Z&amp;Z STROTEC 기사 업데이트를 구독하셨기에 이 메일을 받으셨습니다. 새로운 전문가 칼럼 또는 주요 지식 라이브러리 업데이트가 있을 때만 알려드립니다.
+              </p>
+            </td>
+          </tr>
+
+          <!-- Footer -->
+          <tr>
+            <td style="padding:22px 28px 26px 28px;">
+              <div style="border-top:1px solid #e3e5e8;padding-top:16px;font-size:12px;line-height:1.7;color:#9097a0;">
+                Z&amp;Z STROTEC CO., LTD.　萬洋國際有限公司<br>
+                Tanzi District, Taichung, Taiwan<br>
+                <a href="mailto:z2-strotec@umail.hinet.net" style="color:#1b6fb5;text-decoration:none;">z2-strotec@umail.hinet.net</a>
+                <br><br>
+                <!-- Mailchimp 退訂連結 (必須保留，否則無法寄送) -->
+                <a href="*|UNSUB|*" style="color:#9097a0;text-decoration:underline;">Unsubscribe / 取消訂閱 / 구독 취소</a>
+                &nbsp;·&nbsp; *|LIST:ADDRESS|*
+              </div>
+            </td>
+          </tr>
+
+        </table>
+        <!-- /Card -->
+
+      </td>
+    </tr>
+  </table>
+</body>
+</html>
