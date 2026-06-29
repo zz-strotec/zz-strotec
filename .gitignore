@@ -36,3 +36,11 @@ detail_panel.txt
 
 # 打包的 skill 備份，非網站檔案
 *.skill
+
+# ── 非網站用的本地資產（不上 GitHub Pages）──
+logo.png
+ZZ_website_QRcode.png
+newsletter-template.html
+QR CODE/
+social/
+scripts/
