@@ -1230,6 +1230,9 @@
       <div class="sidebar-item" onclick="openKnowledge('export-docs')">
         <span class="icon">📄</span><span data-i18n="sb_export_docs"> Export Documents</span>
       </div>
+      <div class="sidebar-item" onclick="openKnowledge('shtc-export-control')">
+        <span class="icon">🛂</span><span data-i18n="sb_shtc"> SHTC Export Control</span>
+      </div>
       <div class="sidebar-item" onclick="openKnowledge('payment-terms')">
         <span class="icon">💳</span><span data-i18n="sb_payment_terms"> Payment Terms</span>
       </div>
@@ -8086,6 +8089,90 @@ const KB = {
       </ul>
     `
   },
+  'shtc-export-control': {
+    title: 'SHTC Export Controls: Compliance Guide for Multi-Axis CNC Machines',
+    title_zh: '戰略性高科技貨品（SHTC）管制：多軸 CNC 設備出口許可與合規指南',
+    title_ko: 'SHTC 수출 통제: 다축 CNC 장비 소싱 컴플라이언스 가이드',
+    tags: ['SHTC', 'export control', '5-axis', 'EUC', 'dual-use', 'Wassenaar'],
+    body_ko: `
+      <img src="photo/shtc-export.jpg" alt="다축 CNC 장비 SHTC 수출 통제" style="width:100%;border-radius:8px;margin:0 0 16px;display:block;">
+      <p>대만에서 고급 가공 장비, 특히 5축 머시닝센터나 고정밀 복합 선반(turn-mill)을 소싱할 때 매수인은 국제 수출 통제를 거쳐야 합니다. 군·민 양용 물품(dual-use, 민간과 군사 양쪽에 쓰일 수 있는 품목)이 부적절한 곳으로 흘러가는 것을 막기 위해 대만은 <strong>전략적 고기술 물자(SHTC, 戰略性高科技貨品)</strong> 수출 통제를 엄격히 시행합니다.</p>
+
+      <h4>1. 무엇이 SHTC 통제를 유발하는가</h4>
+      <p>대만의 SHTC 규정은 <strong>바세나르 협약(Wassenaar Arrangement)</strong> 등 국제 비확산 체제의 통제 목록에 맞춰 정렬되어 있습니다(대만은 회원국은 아니나 목록을 준용함).</p>
+      <ul>
+        <li><strong>통제 사양</strong>: 일반적인 2축·3축 CNC 선반은 통상 SHTC 허가가 필요하지 않습니다. 그러나 <strong>동시 5축 머시닝센터</strong>나 극히 높은 위치 정밀도를 가진 기계는 통제 대상 고기술 물자로 분류될 수 있습니다.</li>
+        <li><strong>제한 목적지</strong>: 이러한 기계를 특정 지역이나 금수(embargo) 국가로 수출하려면 엄격한 배경 심사와 정부 발급 특별 수출 허가가 필요합니다.</li>
+      </ul>
+
+      <h4>2. 매수인이 준비해야 할 컴플라이언스 서류</h4>
+      <ul>
+        <li><strong>최종 용도/최종 사용자 확인서 (EUC, 最終用途證明書)</strong>: 가장 중요한 서류. 매수인은 기계로 무엇을 제조할지(예: 의료용 임플란트, 자동차 기어)를 명시하고, 군사 목적이나 대량살상무기(WMD) 개발에 사용하지 않을 것을 명확히 보증해야 합니다.</li>
+        <li><strong>회사 개요 및 사업자 등록증</strong>: 당국은 매수인이 실체 있는 정상 제조업체이며 제재 대상의 위장 회사가 아님을 확인합니다.</li>
+      </ul>
+
+      <h4>3. SHTC 수출 허가 절차</h4>
+      <ul>
+        <li><strong>신청</strong>: 대만 공급자가 EUC와 기계 사양을 국제무역서(International Trade Administration, ITA / 國際貿易署, 옛 무역국 BOFT)에 제출하여 심사를 받습니다.</li>
+        <li><strong>심사</strong>: 정부가 최종 사용자의 배경을 감사합니다. 통상 2~4주가 소요되나 개별 사안에 따라 달라질 수 있습니다.</li>
+        <li><strong>통관</strong>: 승인되면 공급자가 <strong>SHTC 수출 허가증(戰略性高科技貨品輸出許可證)</strong>을 받고, 통관 대리인이 이를 대만 세관에 제시하여 해상·항공 화물을 합법적으로 통관합니다.</li>
+      </ul>
+
+      <p style="margin-top:14px;"><strong>Z&Z STROTEC의 조언</strong>: SHTC 규정에 위축될 필요는 없습니다. 고급 기계류에 대한 표준적인 글로벌 절차입니다. 구매 초기에 명확하고 정확한 최종 사용자 서류를 공급자와 함께 준비하면 예기치 못한 선적 지연을 방지하고 완전한 법적 컴플라이언스를 확보할 수 있습니다. Z&Z STROTEC의 수출 컴플라이언스팀은 유럽·미주 및 그 외 지역 고객을 위한 SHTC 허가와 국제 통관을 폭넓게 처리해 왔습니다.</p>
+    `,
+    body_zh: `
+      <img src="photo/shtc-export.jpg" alt="多軸 CNC 設備 SHTC 出口管制" style="width:100%;border-radius:8px;margin:0 0 16px;display:block;">
+      <p>在台灣採購高階加工設備時，尤其是同動 5 軸加工中心與高精度車銑複合機，買家必須通過國際出口管制。為防止軍商兩用貨品（dual-use，可同時用於民用與軍事用途的品項）流入不當對象，台灣嚴格執行<strong>戰略性高科技貨品（SHTC，戰略性高科技貨品）</strong>出口管制。</p>
+
+      <h4>1. 什麼會觸發 SHTC 管制？</h4>
+      <p>台灣的 SHTC 規範與<strong>瓦聖納協定（Wassenaar Arrangement）</strong>等國際防擴散機制的管制清單對接（台灣非會員國，但比照其清單管理）。</p>
+      <ul>
+        <li><strong>受管制規格</strong>：一般 2 軸或 3 軸 CNC 車床通常不需 SHTC 許可。但若進口高階設備——例如<strong>同動 5 軸加工中心</strong>，或具備極高定位精度的機台——則可能被歸類為受管制的高科技貨品。</li>
+        <li><strong>受限目的地</strong>：將這類機台出口至特定地區或禁運國家，需經嚴格背景查核，並取得政府核發的特別輸出許可。</li>
+      </ul>
+
+      <h4>2. 海外買家需準備的合規文件</h4>
+      <ul>
+        <li><strong>最終用途／最終使用者證明書（EUC，最終用途證明書）</strong>：最關鍵的文件。買家須具名聲明機台確切將生產什麼（如：醫療植入物、汽車齒輪），並明確保證該設備不會用於軍事用途或大規模毀滅性武器（WMD）之研發。</li>
+        <li><strong>公司簡介與營業執照</strong>：主管機關會查核買家的公司身分，確認其為合法製造商，而非受管制實體的空殼公司。</li>
+      </ul>
+
+      <h4>3. SHTC 輸出許可申請與通關流程</h4>
+      <ul>
+        <li><strong>申請</strong>：台灣供應商將 EUC 與機台規格送交國際貿易署（International Trade Administration, ITA／國際貿易署，前身為貿易局 BOFT）審查。</li>
+        <li><strong>審核</strong>：政府查核最終使用者背景，通常需 2 至 4 週，惟實際時程依個案而定。</li>
+        <li><strong>海關放行</strong>：核准後，供應商取得<strong>戰略性高科技貨品輸出許可證</strong>，由報關行向台灣海關出示，合法清關放行海運或空運貨物。</li>
+      </ul>
+
+      <p style="margin-top:14px;"><strong>Z&Z STROTEC 的建議</strong>：不必被 SHTC 規範嚇到，這是高階機械的標準全球程序。許多海外買家第一次被要求簽署 EUC 時會感到疑慮，但這是為符合瓦聖納協定的國際標準，並非針對特定買家。只要在採購初期就與供應商配合提供清楚、正確的最終使用者文件，即可避免意外的出貨延誤並確保完全合法合規。Z&Z STROTEC 出口合規團隊在處理高階設備合法出口與 SHTC 許可、國際通關方面（涵蓋歐洲、美洲及其他地區客戶）擁有豐富經驗。</p>
+    `,
+    body: `
+      <img src="photo/shtc-export.jpg" alt="Multi-axis CNC machine SHTC export control" style="width:100%;border-radius:8px;margin:0 0 16px;display:block;">
+      <p>When sourcing advanced manufacturing equipment from Taiwan — particularly simultaneous 5-axis machining centers and high-precision turn-mill machines — buyers must navigate international export controls. To prevent dual-use goods (items usable for both civil and military purposes) from falling into the wrong hands, Taiwan strictly enforces <strong>Strategic High-Tech Commodities (SHTC, 戰略性高科技貨品)</strong> export controls.</p>
+
+      <h4>1. What triggers SHTC controls?</h4>
+      <p>Taiwan's SHTC regulations are aligned with the control lists of international non-proliferation regimes such as the <strong>Wassenaar Arrangement</strong> (Taiwan is not a member but mirrors its lists).</p>
+      <ul>
+        <li><strong>Controlled specifications</strong>: Standard 2-axis or 3-axis CNC lathes typically do not require an SHTC license. However, high-end equipment — such as <strong>simultaneous 5-axis machining centers</strong> or machines with extremely high positioning accuracy — may be classified as controlled high-tech commodities.</li>
+        <li><strong>Restricted destinations</strong>: Exporting these machines to certain regions or embargoed countries requires rigorous background checks and a special government-issued export license.</li>
+      </ul>
+
+      <h4>2. Compliance documents from the buyer</h4>
+      <ul>
+        <li><strong>End-Use / End-User Certificate (EUC, 最終用途證明書)</strong>: The most critical document. The buyer signs an official declaration stating exactly what the machine will manufacture (e.g. medical implants, automotive gears) and explicitly guarantees the equipment will not be used for military purposes or the development of Weapons of Mass Destruction (WMD).</li>
+        <li><strong>Company profile & business license</strong>: Authorities verify the buyer's corporate identity to ensure it is a legitimate manufacturer and not a shell company for a restricted entity.</li>
+      </ul>
+
+      <h4>3. The SHTC export license process</h4>
+      <ul>
+        <li><strong>Application</strong>: The Taiwanese supplier submits the EUC and machine specifications to the International Trade Administration (ITA / 國際貿易署, formerly the Bureau of Foreign Trade, BOFT) for review.</li>
+        <li><strong>Verification</strong>: The government audits the end-user's background. This usually takes 2 to 4 weeks, though the actual timeline depends on the case.</li>
+        <li><strong>Customs clearance</strong>: Upon approval, the supplier receives the <strong>SHTC Export License (戰略性高科技貨品輸出許可證)</strong>. The customs broker presents it to Taiwan Customs to legally clear the cargo for ocean or air freight.</li>
+      </ul>
+
+      <p style="margin-top:14px;"><strong>Z&Z STROTEC's advice</strong>: Don't be intimidated by SHTC regulations — it is a standard global procedure for high-end machinery. Many overseas buyers feel uneasy the first time they are asked to sign an EUC, but this is required to comply with the Wassenaar Arrangement, not a measure aimed at any single buyer. By cooperating with your supplier to provide clear, accurate end-user documentation early in the purchasing process, you can prevent unexpected shipping delays and ensure full legal compliance. Z&Z STROTEC's export-compliance team has extensive experience handling SHTC licenses and international customs clearance for clients in Europe, the Americas, and beyond.</p>
+    `
+  },
   'payment-terms': {
     title: 'International Trade Payment Terms: A Guide for CNC Machinery Buyers',
     title_zh: '國際貿易付款條件：CNC 設備採購指南',
@@ -11504,7 +11591,7 @@ const LANG = {
     sb_bar_feeder: ' Bar Feeder', sb_linear_guide: ' Linear Guide', sb_servo_motor: ' Servo Motor',
     sb_cnc_lathe: ' CNC Lathe', sb_tool_holder: ' Tool Holder', sb_spindle: ' Spindle', sb_spindle_cooling: ' Spindle Cooling',
     sb_live_tool: ' Live Tool Holders', sb_static_tool: ' Static Tool Holders', sb_collet: ' Collets & Chucks', sb_automation: ' Automation Loading',
-    sb_export_flow: ' Export Process Overview', sb_export_docs: ' Export Documents', sb_payment_terms: ' Payment Terms', sb_marine: ' Marine Insurance', sb_customs: ' Customs Clearance',
+    sb_export_flow: ' Export Process Overview', sb_export_docs: ' Export Documents', sb_shtc: ' SHTC Export Control', sb_payment_terms: ' Payment Terms', sb_marine: ' Marine Insurance', sb_customs: ' Customs Clearance',
     sb_import_duty: ' Import Duty Reference', sb_container: ' Container & CBM Guide', sb_terms: ' Terminology 術語/용어', sb_services: ' Our Services', sb_factory_visit: ' Factory Visit',
     sb_tw_brands: ' Taiwan Manufacturers', sb_maintenance: ' Maintenance Guide',
     sb_lifespan: ' Parts Lifespan', sb_gcode: ' G-Code Reference', sb_green: ' Green Manufacturing',
@@ -11564,7 +11651,7 @@ const LANG = {
     sb_bar_feeder: ' 送料機', sb_linear_guide: ' 線性滑軌', sb_servo_motor: ' 伺服馬達',
     sb_cnc_lathe: ' CNC 車床', sb_tool_holder: ' 刀座', sb_spindle: ' 主軸', sb_spindle_cooling: ' 主軸冷卻',
     sb_live_tool: ' 動力刀座', sb_static_tool: ' 非動力刀座', sb_collet: ' 筒夾/夾頭', sb_automation: ' 自動化上下料',
-    sb_export_flow: ' 出口流程總覽', sb_export_docs: ' 出口文件', sb_payment_terms: ' 付款條件', sb_marine: ' 海上保險', sb_customs: ' 清關',
+    sb_export_flow: ' 出口流程總覽', sb_export_docs: ' 出口文件', sb_shtc: ' 戰略物資出口管制', sb_payment_terms: ' 付款條件', sb_marine: ' 海上保險', sb_customs: ' 清關',
     sb_import_duty: ' 進口關稅參考', sb_container: ' 貨櫃與材積指南', sb_terms: ' 術語對照', sb_services: ' 服務項目', sb_factory_visit: ' 來台採購',
     sb_tw_brands: ' 台灣製造商', sb_maintenance: ' 保養指南',
     sb_lifespan: ' 零件壽命', sb_gcode: ' G碼參考', sb_green: ' 綠色製造',
@@ -11625,7 +11712,7 @@ const LANG = {
     sb_bar_feeder: ' 바피더', sb_linear_guide: ' 리니어 가이드', sb_servo_motor: ' 서보 모터',
     sb_cnc_lathe: ' CNC 선반', sb_tool_holder: ' 툴 홀더', sb_spindle: ' 스핀들', sb_spindle_cooling: ' 스핀들 냉각',
     sb_live_tool: ' 동력 공구대', sb_static_tool: ' 비동력 공구대', sb_collet: ' 콜릿 & 척', sb_automation: ' 자동 로딩',
-    sb_export_flow: ' 수출 프로세스 개요', sb_export_docs: ' 수출 서류', sb_payment_terms: ' 결제 조건', sb_marine: ' 해상보험', sb_customs: ' 통관',
+    sb_export_flow: ' 수출 프로세스 개요', sb_export_docs: ' 수출 서류', sb_shtc: ' SHTC 수출 통제', sb_payment_terms: ' 결제 조건', sb_marine: ' 해상보험', sb_customs: ' 통관',
     sb_import_duty: ' 수입 관세 참고', sb_container: ' 컨테이너 & CBM 가이드', sb_terms: ' 용어 대조', sb_services: ' 서비스 안내', sb_factory_visit: ' 대만 방문 구매',
     sb_tw_brands: ' 대만 제조업체', sb_maintenance: ' 유지보수 가이드',
     sb_lifespan: ' 부품 수명', sb_gcode: ' G코드 참고', sb_green: ' 친환경 제조',
