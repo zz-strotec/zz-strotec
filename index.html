@@ -1235,6 +1235,15 @@
       <div class="sidebar-item" onclick="openKnowledge('cutting-fluids')">
         <span class="icon">🛢️</span><span data-i18n="sb_cutting_fluids"> Cutting Fluids</span>
       </div>
+      <div class="sidebar-item" onclick="openKnowledge('cnc-materials')">
+        <span class="icon">🧱</span><span data-i18n="sb_cnc_materials"> Machining Materials</span>
+      </div>
+      <div class="sidebar-item" onclick="openKnowledge('machine-accuracy')">
+        <span class="icon">🎯</span><span data-i18n="sb_machine_accuracy"> Machine Accuracy</span>
+      </div>
+      <div class="sidebar-item" onclick="openKnowledge('cnc-metrology')">
+        <span class="icon">📏</span><span data-i18n="sb_metrology"> Metrology &amp; QC</span>
+      </div>
     </div>
 
     <div class="sidebar-section">
@@ -1495,6 +1504,18 @@
           </div>
         </div>
         <div class="kb-quick-card">
+          <div class="kbq-eyebrow">⚙️ MACHINING & PROCESS</div>
+          <div class="kbq-q" data-i18n="kbq_proc_q">I want to improve my machining process</div>
+          <div>
+            <span class="kb-chip" onclick="openKnowledge('cnc-troubleshooting')" data-i18n="kbq_c_troubleshoot">Troubleshooting</span>
+            <span class="kb-chip" onclick="openKnowledge('cutting-tools')" data-i18n="kbq_c_cuttingtools">Cutting Tools</span>
+            <span class="kb-chip" onclick="openKnowledge('cutting-fluids')" data-i18n="kbq_c_fluids">Cutting Fluids</span>
+            <span class="kb-chip" onclick="openKnowledge('cnc-materials')" data-i18n="kbq_c_materials">Materials</span>
+            <span class="kb-chip" onclick="openKnowledge('machine-accuracy')" data-i18n="kbq_c_accuracy">Machine Accuracy</span>
+            <span class="kb-chip" onclick="openKnowledge('cnc-metrology')" data-i18n="kbq_c_metrology">Metrology / QC</span>
+          </div>
+        </div>
+        <div class="kb-quick-card">
           <div class="kbq-eyebrow">📦 EXPORT SUPPORT</div>
           <div class="kbq-q" data-i18n="kbq_exp_q">I need export support</div>
           <div>
@@ -1516,6 +1537,36 @@
       </div>
 
       <div class="cards-grid">
+        <div class="card" onclick="openKnowledge('cnc-troubleshooting')">
+          <div class="card-tag" data-zh-tag="製程優化" data-ko-tag="공정 최적화">Process</div>
+          <div class="card-title" data-zh-title="加工異常排除" data-ko-title="CNC 트러블슈팅">CNC Troubleshooting</div>
+          <div class="card-desc" data-zh-desc="震刀、表面粗糙、斷刀與定位誤差的成因與解方。" data-ko-desc="채터, 거친 표면, 공구 파손, 위치 오차의 원인과 해결.">Chatter, poor finish, tool breakage and positioning error — causes and fixes.</div>
+        </div>
+        <div class="card" onclick="openKnowledge('cutting-tools')">
+          <div class="card-tag" data-zh-tag="刀具" data-ko-tag="공구">Tooling</div>
+          <div class="card-title" data-zh-title="刀具與塗層" data-ko-title="절삭공구 & 코팅">Cutting Tools & Coatings</div>
+          <div class="card-desc" data-zh-desc="TiN／TiAlN／AlCrN／DLC 塗層比較與切削參數。" data-ko-desc="TiN·TiAlN·AlCrN·DLC 코팅 비교와 절삭 조건.">TiN, TiAlN, AlCrN, DLC coating comparison and cutting parameters.</div>
+        </div>
+        <div class="card" onclick="openKnowledge('cutting-fluids')">
+          <div class="card-tag" data-zh-tag="冷卻" data-ko-tag="냉각">Coolant</div>
+          <div class="card-title" data-zh-title="切削液／冷卻液" data-ko-title="절삭유">Cutting Fluids</div>
+          <div class="card-desc" data-zh-desc="四大種類、五大維護指標與壽命管理。" data-ko-desc="4대 종류, 5대 유지관리 지표, 수명 관리.">Four types, five maintenance pillars, and fluid life.</div>
+        </div>
+        <div class="card" onclick="openKnowledge('cnc-materials')">
+          <div class="card-tag" data-zh-tag="材質" data-ko-tag="소재">Materials</div>
+          <div class="card-title" data-zh-title="加工材質指南" data-ko-title="가공 소재 가이드">Machining Materials</div>
+          <div class="card-desc" data-zh-desc="7 種常見金屬的切削速度、冷卻與刀具塗層對應。" data-ko-desc="7대 금속의 절삭 속도·절삭유·코팅 대응.">Speeds, coolant and coatings for 7 common metals.</div>
+        </div>
+        <div class="card" onclick="openKnowledge('machine-accuracy')">
+          <div class="card-tag" data-zh-tag="精度" data-ko-tag="정밀도">Accuracy</div>
+          <div class="card-title" data-zh-title="機械精度指南" data-ko-title="기계 정밀도 가이드">Machine Accuracy</div>
+          <div class="card-desc" data-zh-desc="定位精度、重複精度、背隙、熱誤差與機台水平。" data-ko-desc="정위치·반복 정밀도, 백래시, 열 오차, 수평.">Positioning, repeatability, backlash, thermal error and leveling.</div>
+        </div>
+        <div class="card" onclick="openKnowledge('cnc-metrology')">
+          <div class="card-tag" data-zh-tag="品管" data-ko-tag="품질검사">Metrology</div>
+          <div class="card-title" data-zh-title="量測與品管" data-ko-title="계측 & 품질검사">CNC Metrology &amp; QC</div>
+          <div class="card-desc" data-zh-desc="卡尺、分厘卡、量錶、表面粗度儀與三次元（CMM）。" data-ko-desc="캘리퍼스, 마이크로미터, 인디케이터, 표면 거칠기, CMM.">Calipers, micrometers, indicators, surface roughness and CMM.</div>
+        </div>
         <div class="card" onclick="openKnowledge('bar-feeder')">
           <div class="card-tag" data-zh-tag="自動化" data-ko-tag="자동화">Automation</div>
           <div class="card-title" data-zh-title="送料機系統" data-ko-title="바피더 시스템">Bar Feeder Systems</div>
@@ -11359,6 +11410,606 @@ const KB = {
 
       <p style="margin-top:18px">A healthy cutting fluid keeps a CNC machine in good shape. Pairing the right synthetic or semi-synthetic coolant with a <button class="nav-btn" onclick="openKnowledge('coolant-cts')" style="color:var(--gold);border:none;background:none;padding:0;font-size:inherit;text-decoration:underline;cursor:pointer">smart coolant tank</button> and high-pressure CTS helps control odors, extend tool life, and keep an eco-friendly shop floor. Z&amp;Z STROTEC can plan coolant and peripherals together. <button class="nav-btn" onclick="showPage('inquiry')" style="color:var(--gold);border:1px solid var(--gold);padding:8px 22px;font-size:12px;margin-top:6px">Ask us about coolant &amp; peripherals →</button></p>
     `
+  },
+
+  'cnc-materials': {
+    title: 'CNC Machining Material Guide: Speeds, Coolant & Tooling for 7 Common Metals',
+    title_zh: 'CNC 加工材質指南：7 種常見金屬的切削速度、冷卻策略與刀具選型',
+    title_ko: 'CNC 가공 소재 가이드: 7대 금속의 절삭 속도·절삭유·공구',
+    tags: ['material', 'stainless steel', 'titanium', 'aluminium', 'brass', 'copper', 'Inconel', 'tool steel', 'cutting speed', 'SFM', '不鏽鋼', '鈦合金', '鋁合金', '英高鎳', '工具鋼'],
+    body_ko: `
+      <svg viewBox="0 0 1000 560" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="7대 금속 절삭 조건 표" style="width:100%;height:auto;display:block;border-radius:12px;margin:0 0 22px;font-family:'Segoe UI','Microsoft JhengHei','Malgun Gothic',system-ui,Arial,sans-serif">
+        <defs><linearGradient id="mtbgk" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#151b22"/><stop offset="1" stop-color="#1b232b"/></linearGradient></defs>
+        <rect x="0" y="0" width="1000" height="560" rx="14" fill="url(#mtbgk)"/>
+        <text x="500" y="42" text-anchor="middle" font-size="22" font-weight="700" fill="#eef2f5">7대 금속 절삭 조건 요약</text>
+        <text x="500" y="65" text-anchor="middle" font-size="11" letter-spacing="2" fill="#8a99a6">소재 · Vc(m/min) · 절삭유 · 코팅</text>
+        <rect x="24" y="80" width="952" height="34" rx="8" fill="#33404c"/>
+        <text x="40" y="102" font-size="11.5" font-weight="600" fill="#cdd7df">소재</text><text x="280" y="102" font-size="11.5" font-weight="600" fill="#cdd7df">Vc (m/min)</text><text x="480" y="102" font-size="11.5" font-weight="600" fill="#cdd7df">절삭유</text><text x="780" y="102" font-size="11.5" font-weight="600" fill="#d4af5c">코팅/인서트</text>
+        <line x1="264" y1="114" x2="264" y2="520" stroke="#3a4650" stroke-opacity="0.5"/><line x1="464" y1="114" x2="464" y2="520" stroke="#3a4650" stroke-opacity="0.5"/><line x1="764" y1="114" x2="764" y2="520" stroke="#3a4650" stroke-opacity="0.5"/>
+        <g font-size="12" fill="#dce3e9">
+          <g transform="translate(0,114)"><text x="40" y="26" font-size="13" font-weight="600" fill="#eef2f5">스테인리스</text><text x="40" y="44" font-size="10.5" fill="#8a99a6">304 / 316</text><text x="280" y="34">60–120</text><text x="480" y="34">수용성 10–12%</text><text x="780" y="34" fill="#e6c988">TiAlN / AlCrN</text></g>
+          <g transform="translate(0,172)"><text x="40" y="26" font-size="13" font-weight="600" fill="#eef2f5">티타늄</text><text x="40" y="44" font-size="10.5" fill="#8a99a6">Ti-6Al-4V</text><text x="280" y="34">30–75</text><text x="480" y="34" fill="#7fc4e8">고압 CTS 70bar+</text><text x="780" y="34" fill="#e6c988">연마 초경 / TiAlN</text></g>
+          <g transform="translate(0,230)"><text x="40" y="26" font-size="13" font-weight="600" fill="#eef2f5">알루미늄</text><text x="40" y="44" font-size="10.5" fill="#8a99a6">6061 / 7075</text><text x="280" y="34">300–900+</text><text x="480" y="34">에멀전 / MQL</text><text x="780" y="34" fill="#e6c988">DLC / 연마 무코팅</text></g>
+          <g transform="translate(0,288)"><text x="40" y="26" font-size="13" font-weight="600" fill="#eef2f5">황동</text><text x="40" y="44" font-size="10.5" fill="#8a99a6">Brass</text><text x="280" y="34">150–300</text><text x="480" y="34">건식 / 경수용성</text><text x="780" y="34" fill="#e6c988">무코팅 / TiN</text></g>
+          <g transform="translate(0,346)"><text x="40" y="26" font-size="13" font-weight="600" fill="#eef2f5">순동</text><text x="40" y="44" font-size="10.5" fill="#8a99a6">Pure copper</text><text x="280" y="34">90–240</text><text x="480" y="34">진한 에멀전 / 오일</text><text x="780" y="34" fill="#e6c988">연마 무코팅 / DLC</text></g>
+          <g transform="translate(0,404)"><text x="40" y="26" font-size="13" font-weight="600" fill="#eef2f5">인코넬</text><text x="40" y="44" font-size="10.5" fill="#8a99a6">Ni 초합금</text><text x="280" y="34">15–45</text><text x="480" y="34" fill="#7fc4e8">고압 CTS</text><text x="780" y="34" fill="#e6c988">세라믹 / CBN / AlCrN</text></g>
+          <g transform="translate(0,462)"><text x="40" y="26" font-size="13" font-weight="600" fill="#eef2f5">공구강</text><text x="40" y="44" font-size="10.5" fill="#8a99a6">D2 / H13</text><text x="280" y="34">45–90</text><text x="480" y="34">건식+에어 / 절삭유</text><text x="780" y="34" fill="#e6c988">AlCrN / 다층막</text></g>
+        </g>
+        <line x1="24" y1="172" x2="976" y2="172" stroke="#3a4650" stroke-opacity="0.35"/><line x1="24" y1="230" x2="976" y2="230" stroke="#3a4650" stroke-opacity="0.35"/><line x1="24" y1="288" x2="976" y2="288" stroke="#3a4650" stroke-opacity="0.35"/><line x1="24" y1="346" x2="976" y2="346" stroke="#3a4650" stroke-opacity="0.35"/><line x1="24" y1="404" x2="976" y2="404" stroke="#3a4650" stroke-opacity="0.35"/><line x1="24" y1="462" x2="976" y2="462" stroke="#3a4650" stroke-opacity="0.35"/>
+        <text x="40" y="544" font-size="10.5" fill="#7a8894">수치는 초경공구 기준 개략 범위이며 등급·기계 강성에 따라 다릅니다.</text>
+        <text x="970" y="544" text-anchor="end" font-size="12.5" font-weight="700" fill="#d4af5c">Z&amp;Z STROTEC</text>
+      </svg>
+      <h4>올바른 기계 선택은 절반일 뿐</h4>
+      수익성 있는 가공의 핵심은 공작물의 금속학적 특성을 이해하는 데 있습니다. 무른 알루미늄부터 내열 인코넬까지, 소재마다 전략이 완전히 다릅니다. 잘못된 코팅이나 절삭유 농도는 급속한 공구 손상과 불량으로 이어집니다. 아래는 자주 가공되는 7대 소재의 요약입니다.
+
+      <h4>1. 스테인리스 (304 / 316)</h4>
+      <strong>가공 경화(加工硬化)</strong>와 낮은 열전도로 절삭날에 열이 갇힙니다.
+      <ul>
+        <li>절삭 속도: 중간 (60–120 m/min)</li>
+        <li>절삭유: 재료 찢김을 막기 위해 윤활성이 높은 고농도 <button class="nav-btn" onclick="openKnowledge('cutting-fluids')" style="color:var(--gold);border:none;background:none;padding:0;font-size:inherit;text-decoration:underline;cursor:pointer">수용성 절삭유(10–12% 농도)</button> 권장</li>
+        <li>인서트: 고온을 견디는 TiAlN 또는 AlCrN 코팅</li>
+        <li>공구: 포지티브 레이크의 예리한 절삭날, 채터 감소용 부등분할 엔드밀(不等分割銑刀)</li>
+      </ul>
+
+      <h4>2. 티타늄 (Ti-6Al-4V)</h4>
+      항공·의료용으로 널리 쓰이며 매우 강하지만 열에 반응성이 커서 공구에 쉽게 용착됩니다.
+      <ul>
+        <li>절삭 속도: 낮음 (30–75 m/min). 너무 빠르면 공구가 빠르게 과열·손상됩니다.</li>
+        <li>절삭유: <button class="nav-btn" onclick="openKnowledge('coolant-cts')" style="color:var(--gold);border:none;background:none;padding:0;font-size:inherit;text-decoration:underline;cursor:pointer">고압 CTS(70bar+)</button>가 사실상 필수. 열과 칩을 즉시 배출해 칩 발화·재절삭을 막습니다.</li>
+        <li>인서트: 무코팅 초정밀 연마 초경 또는 전용 TiAlN</li>
+        <li>공구: 매우 강성 높은 셋업, 큰 포지티브 레이크, 큰 코어 직경으로 휨 방지</li>
+      </ul>
+
+      <h4>3. 알루미늄 (6061 / 7075)</h4>
+      가공성은 좋지만 점착성이 있어 <button class="nav-btn" onclick="openKnowledge('cutting-tools')" style="color:var(--gold);border:none;background:none;padding:0;font-size:inherit;text-decoration:underline;cursor:pointer">구성인선(BUE / 積屑瘤)</button>이 잘 생깁니다.
+      <ul>
+        <li>절삭 속도: 매우 높음 (300–900+ m/min)</li>
+        <li>절삭유: 일반 에멀전 또는 MQL(미량 윤활)</li>
+        <li>인서트: DLC 코팅 또는 초정밀 연마 무코팅 초경. (TiN·TiAlN은 권장하지 않음 — 알루미늄이 코팅의 티타늄에 달라붙기 쉬움)</li>
+        <li>공구: 칩 배출을 위한 고나선각(45°+)의 2·3날 엔드밀</li>
+      </ul>
+
+      <h4>4. 황동 (Brass)</h4>
+      가장 가공하기 쉬운 소재 중 하나. 칩이 잘 부서지고 열이 거의 없습니다.
+      <ul>
+        <li>절삭 속도: 높음 (150–300 m/min)</li>
+        <li>절삭유: 건식 가공도 가능, 또는 표면용 경(輕)수용성</li>
+        <li>인서트: 무코팅 초경 또는 기본 TiN</li>
+        <li>공구: 중립~네거티브 레이크. 무른 황동은 예리한 포지티브 레이크가 재료를 물어 부품을 척에서 뽑아낼 수 있음</li>
+      </ul>
+
+      <h4>5. 순동 (Pure copper)</h4>
+      황동과 달리 순동은 매우 무르고 끈적이며 연성이 커서 길게 엉키는 칩이 나옵니다.
+      <ul>
+        <li>절삭 속도: 중~높음 (90–240 m/min)</li>
+        <li>절삭유: 진한 수용성 에멀전 또는 스트레이트 오일로 윤활성 확보</li>
+        <li>인서트: 점착 방지를 위한 초정밀 연마 무코팅 또는 DLC</li>
+        <li>공구: 가능한 한 예리한 절삭날 + 큰 포지티브 레이크로 재료를 밀지 않고 깔끔히 전단</li>
+      </ul>
+
+      <h4>6. 인코넬 (Ni 초합금)</h4>
+      제트 엔진 등에 쓰이며 극한 온도에서도 강도를 유지하고 초경 공구를 매우 심하게 마모시킵니다.
+      <ul>
+        <li>절삭 속도: 매우 낮음 (15–45 m/min)</li>
+        <li>절삭유: 질긴 칩을 끊고 공구를 냉각하려면 <button class="nav-btn" onclick="openKnowledge('coolant-cts')" style="color:var(--gold);border:none;background:none;padding:0;font-size:inherit;text-decoration:underline;cursor:pointer">고압 CTS</button>가 매우 중요</li>
+        <li>인서트: 세라믹(고속 선삭용), CBN, 또는 두껍게 코팅한 AlCrN 초경</li>
+        <li>공구: 강인한 미립자 초경. 항상 연속 이송을 유지 — 공구가 머물거나 문지르면 인코넬이 즉시 가공 경화되어 다음 패스에서 공구가 파손됩니다.</li>
+      </ul>
+
+      <h4>7. 공구강 (D2 / H13)</h4>
+      극도의 경도와 내마모성으로 금형 가공에 많이 쓰입니다.
+      <ul>
+        <li>절삭 속도: 낮음~중간 (45–90 m/min), 로크웰 경도(HRC)에 따라</li>
+        <li>절삭유: 황삭이나 세라믹 공구 사용 시 열충격(熱裂紋) 방지를 위해 건식+고압 에어 블로가 선호됨. 정삭에는 일반 절삭유.</li>
+        <li>인서트: 하드 밀링용 AlCrN 또는 고급 다층막 코팅</li>
+        <li>공구: 충격을 견디도록 에지 처리를 강화한 다날(4–6날) 강성 엔드밀</li>
+      </ul>
+
+      <p style="margin-top:18px">소재에 맞는 공구도, 기계의 강성과 주변장치 지원이 뒷받침될 때 효과가 있습니다. 인코넬·티타늄 같은 난삭재에는 <button class="nav-btn" onclick="openKnowledge('coolant-cts')" style="color:var(--gold);border:none;background:none;padding:0;font-size:inherit;text-decoration:underline;cursor:pointer">고압 CTS</button>와 강력한 <button class="nav-btn" onclick="openKnowledge('live-tool')" style="color:var(--gold);border:none;background:none;padding:0;font-size:inherit;text-decoration:underline;cursor:pointer">BMT 동력 공구대</button> 업그레이드가 안정적인 무인 가공에 특히 도움이 됩니다. <button class="nav-btn" onclick="showPage('inquiry')" style="color:var(--gold);border:1px solid var(--gold);padding:8px 22px;font-size:12px;margin-top:6px">공구·절삭유 솔루션 문의 →</button></p>
+    `,
+    body_zh: `
+      <svg viewBox="0 0 1000 560" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="七種金屬切削條件表" style="width:100%;height:auto;display:block;border-radius:12px;margin:0 0 22px;font-family:'Segoe UI','Microsoft JhengHei','Malgun Gothic',system-ui,Arial,sans-serif">
+        <defs><linearGradient id="mtbgz" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#151b22"/><stop offset="1" stop-color="#1b232b"/></linearGradient></defs>
+        <rect x="0" y="0" width="1000" height="560" rx="14" fill="url(#mtbgz)"/>
+        <text x="500" y="42" text-anchor="middle" font-size="22" font-weight="700" fill="#eef2f5">七種金屬切削條件速查</text>
+        <text x="500" y="65" text-anchor="middle" font-size="11.5" letter-spacing="2" fill="#8a99a6">材質 · Vc(m/min) · 冷卻液 · 塗層</text>
+        <rect x="24" y="80" width="952" height="34" rx="8" fill="#33404c"/>
+        <text x="40" y="102" font-size="12" font-weight="600" fill="#cdd7df">材質</text><text x="280" y="102" font-size="12" font-weight="600" fill="#cdd7df">Vc (m/min)</text><text x="480" y="102" font-size="12" font-weight="600" fill="#cdd7df">冷卻液</text><text x="780" y="102" font-size="12" font-weight="600" fill="#d4af5c">塗層／刀片</text>
+        <line x1="264" y1="114" x2="264" y2="520" stroke="#3a4650" stroke-opacity="0.5"/><line x1="464" y1="114" x2="464" y2="520" stroke="#3a4650" stroke-opacity="0.5"/><line x1="764" y1="114" x2="764" y2="520" stroke="#3a4650" stroke-opacity="0.5"/>
+        <g font-size="12.5" fill="#dce3e9">
+          <g transform="translate(0,114)"><text x="40" y="26" font-size="13.5" font-weight="600" fill="#eef2f5">不鏽鋼</text><text x="40" y="44" font-size="10.5" fill="#8a99a6">304 / 316</text><text x="280" y="34">60–120</text><text x="480" y="34">水溶性 10–12%</text><text x="780" y="34" fill="#e6c988">TiAlN / AlCrN</text></g>
+          <g transform="translate(0,172)"><text x="40" y="26" font-size="13.5" font-weight="600" fill="#eef2f5">鈦合金</text><text x="40" y="44" font-size="10.5" fill="#8a99a6">Ti-6Al-4V</text><text x="280" y="34">30–75</text><text x="480" y="34" fill="#7fc4e8">高壓 CTS 70bar+</text><text x="780" y="34" fill="#e6c988">拋光無塗層 / TiAlN</text></g>
+          <g transform="translate(0,230)"><text x="40" y="26" font-size="13.5" font-weight="600" fill="#eef2f5">鋁合金</text><text x="40" y="44" font-size="10.5" fill="#8a99a6">6061 / 7075</text><text x="280" y="34">300–900+</text><text x="480" y="34">乳化 / MQL</text><text x="780" y="34" fill="#e6c988">DLC / 拋光無塗層</text></g>
+          <g transform="translate(0,288)"><text x="40" y="26" font-size="13.5" font-weight="600" fill="#eef2f5">黃銅</text><text x="40" y="44" font-size="10.5" fill="#8a99a6">Brass</text><text x="280" y="34">150–300</text><text x="480" y="34">乾切 / 輕水溶性</text><text x="780" y="34" fill="#e6c988">無塗層 / TiN</text></g>
+          <g transform="translate(0,346)"><text x="40" y="26" font-size="13.5" font-weight="600" fill="#eef2f5">紅銅（純銅）</text><text x="40" y="44" font-size="10.5" fill="#8a99a6">Pure copper</text><text x="280" y="34">90–240</text><text x="480" y="34">濃乳化 / 純油</text><text x="780" y="34" fill="#e6c988">拋光無塗層 / DLC</text></g>
+          <g transform="translate(0,404)"><text x="40" y="26" font-size="13.5" font-weight="600" fill="#eef2f5">英高鎳</text><text x="40" y="44" font-size="10.5" fill="#8a99a6">鎳基高溫合金</text><text x="280" y="34">15–45</text><text x="480" y="34" fill="#7fc4e8">高壓 CTS</text><text x="780" y="34" fill="#e6c988">陶瓷 / CBN / AlCrN</text></g>
+          <g transform="translate(0,462)"><text x="40" y="26" font-size="13.5" font-weight="600" fill="#eef2f5">工具鋼</text><text x="40" y="44" font-size="10.5" fill="#8a99a6">D2 / H13</text><text x="280" y="34">45–90</text><text x="480" y="34">乾切+氣吹 / 冷卻液</text><text x="780" y="34" fill="#e6c988">AlCrN / 多層膜</text></g>
+        </g>
+        <line x1="24" y1="172" x2="976" y2="172" stroke="#3a4650" stroke-opacity="0.35"/><line x1="24" y1="230" x2="976" y2="230" stroke="#3a4650" stroke-opacity="0.35"/><line x1="24" y1="288" x2="976" y2="288" stroke="#3a4650" stroke-opacity="0.35"/><line x1="24" y1="346" x2="976" y2="346" stroke="#3a4650" stroke-opacity="0.35"/><line x1="24" y1="404" x2="976" y2="404" stroke="#3a4650" stroke-opacity="0.35"/><line x1="24" y1="462" x2="976" y2="462" stroke="#3a4650" stroke-opacity="0.35"/>
+        <text x="40" y="544" font-size="11" fill="#7a8894">數值為初步碳化鎢刀具的概略範圍，依刀片等級與機台剛性而異。</text>
+        <text x="970" y="544" text-anchor="end" font-size="12.5" font-weight="700" fill="#d4af5c">Z&amp;Z STROTEC</text>
+      </svg>
+      <h4>選對機台只是成功的一半</h4>
+      獲利加工的關鍵，在於理解工件的金屬冶金特性。從黏軟的鋁合金到耐熱的英高鎳，不同材質需要截然不同的加工策略。用錯刀片塗層或冷卻液濃度，會導致刀具快速失效與報廢。以下彙整最常見也最具挑戰的 7 種材質速查。
+
+      <h4>1. 不鏽鋼（304 / 316）</h4>
+      以<strong>加工硬化</strong>與低導熱著稱，熱量會集中在切削刃。
+      <ul>
+        <li>切削速度：中等（60–120 m/min）</li>
+        <li>冷卻液：需高潤滑性的高濃度<button class="nav-btn" onclick="openKnowledge('cutting-fluids')" style="color:var(--gold);border:none;background:none;padding:0;font-size:inherit;text-decoration:underline;cursor:pointer">水溶性切削液（濃度 10–12%）</button>以防材料撕裂</li>
+        <li>刀片：TiAlN 或 AlCrN 塗層，須耐高溫</li>
+        <li>刀具：正前角的鋒利刃口；使用不等分割銑刀降低震刀</li>
+      </ul>
+
+      <h4>2. 鈦合金（Ti-6Al-4V）</h4>
+      廣泛用於航太與醫療植入物，強度極高但對熱高度活性，易熔焊沾黏於刀具。
+      <ul>
+        <li>切削速度：低（30–75 m/min）。過快會使刀具迅速過熱受損。</li>
+        <li>冷卻液：<button class="nav-btn" onclick="openKnowledge('coolant-cts')" style="color:var(--gold);border:none;background:none;padding:0;font-size:inherit;text-decoration:underline;cursor:pointer">高壓中心出水 CTS（70bar+）</button>幾乎是必要條件，即時帶走熱與鐵屑，防止鐵屑燃燒或二次切削。</li>
+        <li>刀片：無塗層高拋光碳化鎢，或專用 TiAlN</li>
+        <li>刀具：極高剛性設定、大正前角、大芯徑以防刀具偏擺</li>
+      </ul>
+
+      <h4>3. 鋁合金（6061 / 7075）</h4>
+      軟且易加工，但偏黏，容易產生<button class="nav-btn" onclick="openKnowledge('cutting-tools')" style="color:var(--gold);border:none;background:none;padding:0;font-size:inherit;text-decoration:underline;cursor:pointer">積屑瘤（BUE）</button>，鋁會熔黏在刀具上。
+      <ul>
+        <li>切削速度：極高（300–900+ m/min）</li>
+        <li>冷卻液：一般乳化液或 MQL（微量潤滑）</li>
+        <li>刀片：DLC（類鑽碳膜）塗層或極拋光無塗層碳化鎢。（不建議用 TiN／TiAlN，因鋁會與塗層中的鈦產生化學親和沾黏）</li>
+        <li>刀具：2 或 3 刃、高螺旋角（45°+）以利排屑</li>
+      </ul>
+
+      <h4>4. 黃銅（Brass）</h4>
+      最易加工的材質之一，切屑易斷、幾乎不生熱。
+      <ul>
+        <li>切削速度：高（150–300 m/min）</li>
+        <li>冷卻液：常可乾切，或用輕質水溶性以顧表面</li>
+        <li>刀片：無塗層碳化鎢或基本 TiN</li>
+        <li>刀具：中性至負前角。黃銅偏軟，鋒利的正前角可能「咬入」材料，把工件從夾頭拉出</li>
+      </ul>
+
+      <h4>5. 紅銅（純銅）</h4>
+      與黃銅不同，純銅極軟、黏且延展性高，會產生長而纏繞的鐵屑。
+      <ul>
+        <li>切削速度：中至高（90–240 m/min）</li>
+        <li>冷卻液：濃的水溶性乳化液或純油以獲得極佳潤滑</li>
+        <li>刀片：高拋光無塗層碳化鎢或 DLC，以防紅銅沾黏</li>
+        <li>刀具：盡可能鋒利的刃口配大正前角，以剪切而非推擠方式切削</li>
+      </ul>
+
+      <h4>6. 英高鎳（鎳基高溫合金）</h4>
+      對任何 CNC 機台都是嚴苛考驗。用於噴射引擎，在極高溫下仍維持強度，對碳化鎢刀具磨耗極為劇烈。
+      <ul>
+        <li>切削速度：極低（15–45 m/min）</li>
+        <li>冷卻液：<button class="nav-btn" onclick="openKnowledge('coolant-cts')" style="color:var(--gold);border:none;background:none;padding:0;font-size:inherit;text-decoration:underline;cursor:pointer">高壓 CTS</button>對打斷強韌鐵屑與冷卻刀具極為關鍵</li>
+        <li>刀片：陶瓷刀片（高速車削用）、CBN，或厚塗層 AlCrN 碳化鎢</li>
+        <li>刀具：強韌的微粒碳化鎢。務必維持連續進給；若刀具停滯或摩擦，英高鎳會瞬間加工硬化，下一刀就斷刀。</li>
+      </ul>
+
+      <h4>7. 工具鋼（D2 / H13）</h4>
+      以極高硬度與研磨性著稱，大量用於模具加工。
+      <ul>
+        <li>切削速度：低至中（45–90 m/min），視洛氏硬度（HRC）而定</li>
+        <li>冷卻液：粗加工或使用陶瓷刀具時，偏好乾切＋高壓氣吹以防熱裂紋；精加工則用一般冷卻液。</li>
+        <li>刀片：專為硬銑設計的 AlCrN 或先進多層膜塗層</li>
+        <li>刀具：多刃（4 至 6 刃）剛性銑刀，並強化刃口處理以承受衝擊</li>
+      </ul>
+
+      <p style="margin-top:18px">選對材質對應的刀具，仍需機台具備足夠剛性與周邊支援才能發揮。面對英高鎳、鈦合金等難切削材，升級<button class="nav-btn" onclick="openKnowledge('coolant-cts')" style="color:var(--gold);border:none;background:none;padding:0;font-size:inherit;text-decoration:underline;cursor:pointer">高壓 CTS</button>與重負荷<button class="nav-btn" onclick="openKnowledge('live-tool')" style="color:var(--gold);border:none;background:none;padding:0;font-size:inherit;text-decoration:underline;cursor:pointer">BMT 動力刀座</button>，對達成穩定的無人化加工特別有幫助。<button class="nav-btn" onclick="showPage('inquiry')" style="color:var(--gold);border:1px solid var(--gold);padding:8px 22px;font-size:12px;margin-top:6px">洽詢刀具與冷卻方案 →</button></p>
+    `,
+    body: `
+      <svg viewBox="0 0 1000 560" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Cutting conditions for seven metals" style="width:100%;height:auto;display:block;border-radius:12px;margin:0 0 22px;font-family:'Segoe UI','Microsoft JhengHei','Malgun Gothic',system-ui,Arial,sans-serif">
+        <defs><linearGradient id="mtbge" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#151b22"/><stop offset="1" stop-color="#1b232b"/></linearGradient></defs>
+        <rect x="0" y="0" width="1000" height="560" rx="14" fill="url(#mtbge)"/>
+        <text x="500" y="42" text-anchor="middle" font-size="22" font-weight="700" fill="#eef2f5">Cutting Conditions — 7 Common Metals</text>
+        <text x="500" y="65" text-anchor="middle" font-size="11" letter-spacing="2" fill="#8a99a6">MATERIAL · Vc (m/min) · COOLANT · COATING</text>
+        <rect x="24" y="80" width="952" height="34" rx="8" fill="#33404c"/>
+        <text x="40" y="102" font-size="11.5" font-weight="600" fill="#cdd7df">MATERIAL</text><text x="280" y="102" font-size="11.5" font-weight="600" fill="#cdd7df">Vc (m/min)</text><text x="480" y="102" font-size="11.5" font-weight="600" fill="#cdd7df">COOLANT</text><text x="780" y="102" font-size="11.5" font-weight="600" fill="#d4af5c">COATING / INSERT</text>
+        <line x1="264" y1="114" x2="264" y2="520" stroke="#3a4650" stroke-opacity="0.5"/><line x1="464" y1="114" x2="464" y2="520" stroke="#3a4650" stroke-opacity="0.5"/><line x1="764" y1="114" x2="764" y2="520" stroke="#3a4650" stroke-opacity="0.5"/>
+        <g font-size="12" fill="#dce3e9">
+          <g transform="translate(0,114)"><text x="40" y="26" font-size="13" font-weight="600" fill="#eef2f5">Stainless</text><text x="40" y="44" font-size="10.5" fill="#8a99a6">304 / 316</text><text x="280" y="34">60–120</text><text x="480" y="34">Soluble 10–12%</text><text x="780" y="34" fill="#e6c988">TiAlN / AlCrN</text></g>
+          <g transform="translate(0,172)"><text x="40" y="26" font-size="13" font-weight="600" fill="#eef2f5">Titanium</text><text x="40" y="44" font-size="10.5" fill="#8a99a6">Ti-6Al-4V</text><text x="280" y="34">30–75</text><text x="480" y="34" fill="#7fc4e8">HP CTS 70bar+</text><text x="780" y="34" fill="#e6c988">Polished carbide / TiAlN</text></g>
+          <g transform="translate(0,230)"><text x="40" y="26" font-size="13" font-weight="600" fill="#eef2f5">Aluminium</text><text x="40" y="44" font-size="10.5" fill="#8a99a6">6061 / 7075</text><text x="280" y="34">300–900+</text><text x="480" y="34">Emulsion / MQL</text><text x="780" y="34" fill="#e6c988">DLC / polished bare</text></g>
+          <g transform="translate(0,288)"><text x="40" y="26" font-size="13" font-weight="600" fill="#eef2f5">Brass</text><text x="40" y="44" font-size="10.5" fill="#8a99a6">黃銅</text><text x="280" y="34">150–300</text><text x="480" y="34">Dry / light soluble</text><text x="780" y="34" fill="#e6c988">Uncoated / TiN</text></g>
+          <g transform="translate(0,346)"><text x="40" y="26" font-size="13" font-weight="600" fill="#eef2f5">Copper (pure)</text><text x="40" y="44" font-size="10.5" fill="#8a99a6">紅銅</text><text x="280" y="34">90–240</text><text x="480" y="34">Rich emulsion / oil</text><text x="780" y="34" fill="#e6c988">Polished bare / DLC</text></g>
+          <g transform="translate(0,404)"><text x="40" y="26" font-size="13" font-weight="600" fill="#eef2f5">Inconel</text><text x="40" y="44" font-size="10.5" fill="#8a99a6">Ni superalloy</text><text x="280" y="34">15–45</text><text x="480" y="34" fill="#7fc4e8">HP CTS</text><text x="780" y="34" fill="#e6c988">Ceramic / CBN / AlCrN</text></g>
+          <g transform="translate(0,462)"><text x="40" y="26" font-size="13" font-weight="600" fill="#eef2f5">Tool Steel</text><text x="40" y="44" font-size="10.5" fill="#8a99a6">D2 / H13</text><text x="280" y="34">45–90</text><text x="480" y="34">Dry+air / coolant</text><text x="780" y="34" fill="#e6c988">AlCrN / multi-layer</text></g>
+        </g>
+        <line x1="24" y1="172" x2="976" y2="172" stroke="#3a4650" stroke-opacity="0.35"/><line x1="24" y1="230" x2="976" y2="230" stroke="#3a4650" stroke-opacity="0.35"/><line x1="24" y1="288" x2="976" y2="288" stroke="#3a4650" stroke-opacity="0.35"/><line x1="24" y1="346" x2="976" y2="346" stroke="#3a4650" stroke-opacity="0.35"/><line x1="24" y1="404" x2="976" y2="404" stroke="#3a4650" stroke-opacity="0.35"/><line x1="24" y1="462" x2="976" y2="462" stroke="#3a4650" stroke-opacity="0.35"/>
+        <text x="40" y="544" font-size="10.5" fill="#7a8894">Ranges are approximate for carbide tooling; actual values vary with grade and machine rigidity.</text>
+        <text x="970" y="544" text-anchor="end" font-size="12.5" font-weight="700" fill="#d4af5c">Z&amp;Z STROTEC</text>
+      </svg>
+      <h4>Picking the Machine Is Only Half the Job</h4>
+      Profitable machining depends on understanding the metallurgy of your workpiece. From gummy aluminium to heat-resistant Inconel, different materials demand very different strategies. The wrong insert coating or coolant concentration leads to rapid tool failure and scrapped parts. Below is a quick reference for the 7 most common — and most challenging — CNC materials.
+
+      <h4>1. Stainless Steel (304 / 316)</h4>
+      Notorious for <strong>work-hardening (加工硬化)</strong> and poor thermal conductivity, so stainless traps heat at the cutting edge.
+      <ul>
+        <li>Cutting speed: medium (60–120 m/min)</li>
+        <li>Coolant: high-concentration <button class="nav-btn" onclick="openKnowledge('cutting-fluids')" style="color:var(--gold);border:none;background:none;padding:0;font-size:inherit;text-decoration:underline;cursor:pointer">water-soluble coolant (10–12%)</button> for maximum lubricity to prevent material tearing</li>
+        <li>Insert: TiAlN or AlCrN coatings that withstand high temperatures</li>
+        <li>Tool: sharp edges with a positive rake; use variable-pitch end mills (不等分割銑刀) to reduce chatter</li>
+      </ul>
+
+      <h4>2. Titanium (Ti-6Al-4V)</h4>
+      Widely used in aerospace and medical implants — very strong but highly reactive to heat, easily welding itself to the tool.
+      <ul>
+        <li>Cutting speed: low (30–75 m/min). Going too fast can quickly overheat and damage the tool.</li>
+        <li>Coolant: <button class="nav-btn" onclick="openKnowledge('coolant-cts')" style="color:var(--gold);border:none;background:none;padding:0;font-size:inherit;text-decoration:underline;cursor:pointer">high-pressure CTS (70 bar+)</button> is essentially mandatory — blast heat and chips away instantly to stop chips igniting or recutting.</li>
+        <li>Insert: uncoated, highly polished carbide, or a specialized TiAlN</li>
+        <li>Tool: very rigid setup, high positive rake, and a large core diameter to resist deflection</li>
+      </ul>
+
+      <h4>3. Aluminium (6061 / 7075)</h4>
+      Soft and highly machinable, but gummy and prone to <button class="nav-btn" onclick="openKnowledge('cutting-tools')" style="color:var(--gold);border:none;background:none;padding:0;font-size:inherit;text-decoration:underline;cursor:pointer">Built-Up Edge (BUE / 積屑瘤)</button>, where aluminium melts and sticks to the tool.
+      <ul>
+        <li>Cutting speed: very high (300–900+ m/min)</li>
+        <li>Coolant: standard emulsion or MQL (minimum quantity lubrication)</li>
+        <li>Insert: DLC coating or highly polished uncoated carbide. (Avoid TiN/TiAlN — aluminium has a chemical affinity for the titanium in the coating and tends to stick.)</li>
+        <li>Tool: 2- or 3-flute end mills with high helix angles (45°+) for chip evacuation</li>
+      </ul>
+
+      <h4>4. Brass</h4>
+      One of the easiest materials to machine — chips break easily and it generates little heat.
+      <ul>
+        <li>Cutting speed: high (150–300 m/min)</li>
+        <li>Coolant: dry machining is often possible, or light soluble oil for finish</li>
+        <li>Insert: uncoated carbide or basic TiN</li>
+        <li>Tool: neutral to negative rake. Brass is soft, so a sharp positive rake can "grab" the material and pull the part from the chuck.</li>
+      </ul>
+
+      <h4>5. Copper (pure)</h4>
+      Unlike brass, pure copper is very soft, sticky, and ductile, producing long stringy chips that tangle around the tool.
+      <ul>
+        <li>Cutting speed: medium to high (90–240 m/min)</li>
+        <li>Coolant: rich water-soluble emulsion or straight oil for extreme lubricity</li>
+        <li>Insert: highly polished uncoated carbide or DLC to stop copper sticking</li>
+        <li>Tool: the sharpest possible edge with high positive rake to shear cleanly rather than push</li>
+      </ul>
+
+      <h4>6. Inconel (Ni superalloy)</h4>
+      One of the toughest materials to machine. Used in jet engines, it keeps its strength at extreme temperatures and is very abrasive to carbide tools.
+      <ul>
+        <li>Cutting speed: very low (15–45 m/min)</li>
+        <li>Coolant: <button class="nav-btn" onclick="openKnowledge('coolant-cts')" style="color:var(--gold);border:none;background:none;padding:0;font-size:inherit;text-decoration:underline;cursor:pointer">high-pressure CTS</button> is critical to shatter the tough chips and cool the tool</li>
+        <li>Insert: ceramic inserts (for high-speed turning), CBN, or heavily coated AlCrN carbide</li>
+        <li>Tool: tough micro-grain carbide. Keep a continuous feed — if the tool dwells or rubs, Inconel work-hardens instantly and breaks the tool on the next pass.</li>
+      </ul>
+
+      <h4>7. Tool Steel (D2 / H13)</h4>
+      Known for extreme hardness and abrasive wear resistance; heavily used in mold-making (模具加工).
+      <ul>
+        <li>Cutting speed: low to medium (45–90 m/min), depending on Rockwell hardness (HRC)</li>
+        <li>Coolant: when roughing or using ceramic tools, dry machining with high-pressure air blast is preferred to avoid thermal shock (熱裂紋); use standard coolant for finishing.</li>
+        <li>Insert: AlCrN or advanced multi-layer coatings designed for hard milling</li>
+        <li>Tool: rigid multi-flute end mills (4–6 flutes) with strong edge preparation to withstand impact</li>
+      </ul>
+
+      <p style="margin-top:18px">Matching the tool to the material only works if the machine has the rigidity and peripheral support to back it up. For exotic materials like Inconel and titanium, upgrading to <button class="nav-btn" onclick="openKnowledge('coolant-cts')" style="color:var(--gold);border:none;background:none;padding:0;font-size:inherit;text-decoration:underline;cursor:pointer">high-pressure CTS</button> and heavy-duty <button class="nav-btn" onclick="openKnowledge('live-tool')" style="color:var(--gold);border:none;background:none;padding:0;font-size:inherit;text-decoration:underline;cursor:pointer">BMT live tool holders</button> is particularly helpful for a stable, lights-out process. <button class="nav-btn" onclick="showPage('inquiry')" style="color:var(--gold);border:1px solid var(--gold);padding:8px 22px;font-size:12px;margin-top:6px">Ask us about tooling &amp; coolant solutions →</button></p>
+    `
+  },
+
+  'machine-accuracy': {
+    title: 'CNC Machine Accuracy Guide: Backlash, Repeatability & Thermal Control',
+    title_zh: 'CNC 機械精度指南：背隙、重複精度與熱誤差全面解析',
+    title_ko: 'CNC 기계 정밀도 가이드: 백래시·반복 정밀도·열 오차',
+    tags: ['accuracy', 'positioning accuracy', 'repeatability', 'backlash', 'ball screw', 'thermal error', 'machine leveling', 'ISO 230-2', '定位精度', '重複精度', '背隙', '熱誤差', '滾珠螺桿', '機台水平'],
+    body_ko: `
+      <svg viewBox="0 0 1000 470" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="정밀도 vs 반복성 개념과 정밀도 요소" style="width:100%;height:auto;display:block;border-radius:12px;margin:0 0 22px;font-family:'Segoe UI','Microsoft JhengHei','Malgun Gothic',system-ui,Arial,sans-serif">
+        <defs><linearGradient id="acbgk" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#131a20"/><stop offset="1" stop-color="#182028"/></linearGradient></defs>
+        <rect x="0" y="0" width="1000" height="470" rx="14" fill="url(#acbgk)"/>
+        <text x="500" y="42" text-anchor="middle" font-size="22" font-weight="700" fill="#eef2f5">정밀도 vs 반복성</text>
+        <g fill="none" stroke="#3a4650"><circle cx="200" cy="160" r="80" stroke-width="1.5"/><circle cx="200" cy="160" r="54" stroke-width="1.5"/><circle cx="200" cy="160" r="28" stroke-width="1.5"/><circle cx="500" cy="160" r="80" stroke-width="1.5"/><circle cx="500" cy="160" r="54" stroke-width="1.5"/><circle cx="500" cy="160" r="28" stroke-width="1.5"/><circle cx="800" cy="160" r="80" stroke-width="1.5"/><circle cx="800" cy="160" r="54" stroke-width="1.5"/><circle cx="800" cy="160" r="28" stroke-width="1.5"/></g>
+        <g fill="#6b7681"><circle cx="200" cy="160" r="4"/><circle cx="500" cy="160" r="4"/><circle cx="800" cy="160" r="4"/></g>
+        <g fill="#d4af5c"><circle cx="170" cy="150" r="4.5"/><circle cx="228" cy="178" r="4.5"/><circle cx="192" cy="194" r="4.5"/><circle cx="162" cy="182" r="4.5"/><circle cx="234" cy="136" r="4.5"/><circle cx="206" cy="122" r="4.5"/></g>
+        <g fill="#e0a44a"><circle cx="474" cy="136" r="4.5"/><circle cx="484" cy="130" r="4.5"/><circle cx="470" cy="146" r="4.5"/><circle cx="482" cy="142" r="4.5"/></g>
+        <g fill="#5fc2ac"><circle cx="796" cy="158" r="4.5"/><circle cx="806" cy="164" r="4.5"/><circle cx="794" cy="166" r="4.5"/><circle cx="804" cy="154" r="4.5"/><circle cx="800" cy="170" r="4.5"/></g>
+        <text x="200" y="270" text-anchor="middle" font-size="12.5" font-weight="600" fill="#dce3e9">정밀도·반복성 모두 낮음</text>
+        <text x="500" y="270" text-anchor="middle" font-size="12.5" font-weight="600" fill="#dce3e9">반복성 좋음·오프셋</text><text x="500" y="288" text-anchor="middle" font-size="11" fill="#8a99a6">(컨트롤러로 보정 가능)</text>
+        <text x="800" y="270" text-anchor="middle" font-size="12.5" font-weight="600" fill="#dce3e9">정밀도·반복성 우수</text>
+        <text x="500" y="322" text-anchor="middle" font-size="12" font-weight="600" letter-spacing="1" fill="#7f9aad">정밀도 5대 요소</text>
+        <g font-size="11" fill="#dce3e9">
+          <g transform="translate(40,338)"><rect width="172" height="104" rx="8" fill="#ffffff" fill-opacity="0.035" stroke="#3a4650" stroke-opacity="0.6"/><text x="16" y="30" font-weight="600" fill="#e6c988">백래시 보정</text><text x="16" y="58">예압 볼스크루</text><text x="16" y="76">· DD 모터</text></g>
+          <g transform="translate(230,338)"><rect width="172" height="104" rx="8" fill="#ffffff" fill-opacity="0.035" stroke="#3a4650" stroke-opacity="0.6"/><text x="16" y="30" font-weight="600" fill="#e6c988">연삭 볼스크루</text><text x="16" y="58">C3–C5 등급</text><text x="16" y="76">고정밀용</text></g>
+          <g transform="translate(420,338)"><rect width="172" height="104" rx="8" fill="#ffffff" fill-opacity="0.035" stroke="#3a4650" stroke-opacity="0.6"/><text x="16" y="30" font-weight="600" fill="#e6c988">열 보정</text><text x="16" y="58">온도제어 스크루</text><text x="16" y="76">· 센서</text></g>
+          <g transform="translate(610,338)"><rect width="172" height="104" rx="8" fill="#ffffff" fill-opacity="0.035" stroke="#3a4650" stroke-opacity="0.6"/><text x="16" y="30" font-weight="600" fill="#e6c988">기계 수평</text><text x="16" y="58">평행도</text><text x="16" y="76">≤ 0.02 mm/m</text></g>
+          <g transform="translate(800,338)"><rect width="172" height="104" rx="8" fill="#ffffff" fill-opacity="0.035" stroke="#3a4650" stroke-opacity="0.6"/><text x="16" y="30" font-weight="600" fill="#e6c988">고해상 엔코더</text><text x="16" y="58">24–26 bit</text><text x="16" y="76">앱솔루트 피드백</text></g>
+        </g>
+        <text x="970" y="458" text-anchor="end" font-size="12.5" font-weight="700" fill="#d4af5c">Z&amp;Z STROTEC</text>
+      </svg>
+      <h4>정밀도는 프로그램이 아니라 기계의 기초에서 나옵니다</h4>
+      기계가 공차를 지키지 못하면 흔히 공구나 프로그램을 탓하지만, 실제 절삭 정밀도는 기계의 <strong>기계적 기초와 열적 안정성</strong>이 좌우합니다. 항공·의료용 정밀 부품을 만들려면 정밀도의 핵심 지표와 그 제어 방법을 이해해야 합니다.
+
+      <h4>1. 정위치 정밀도 vs 반복 정밀도</h4>
+      두 지표는 모든 공작기계 성능 평가의 국제 기준(ISO 230-2)입니다.
+      <ul>
+        <li><strong>정위치 정밀도(定位精度)</strong> — <button class="nav-btn" onclick="openKnowledge('gcode')" style="color:var(--gold);border:none;background:none;padding:0;font-size:inherit;text-decoration:underline;cursor:pointer">G코드</button>로 지령한 좌표에 공구를 얼마나 정확히 이동시키는가. 100.000mm 지령에 100.005mm 이동이면 정위치 오차는 5µm.</li>
+        <li><strong>반복 정밀도(重複精度)</strong> — 양산에서 더 중요할 수 있습니다. 여러 사이클에 걸쳐 같은 위치로 얼마나 일관되게 돌아오는가. 정위치 오차가 조금 있어도 반복성이 우수하면 컨트롤러에서 쉽게 보정할 수 있습니다.</li>
+      </ul>
+      해결: 가능한 한 미세한(서브 마이크론급) 정위치·반복성을 얻으려면 고해상 <button class="nav-btn" onclick="openKnowledge('servo-motor')" style="color:var(--gold);border:none;background:none;padding:0;font-size:inherit;text-decoration:underline;cursor:pointer">서보 모터</button>(24–26비트 엔코더)로 지연 없는 앱솔루트 피드백을 컨트롤러에 제공해야 합니다.
+
+      <h4>2. 백래시(背隙 / 기계적 유격)</h4>
+      백래시는 축이 방향을 바꿀 때 생기는 "잃어버린 운동"입니다.
+      <ul>
+        <li>원인: 볼스크루 나사·너트·기어 사이의 미세 간극. 마모가 진행되면 백래시가 커져 원호 보간(원 밀링) 시 평탄부(flat spot)가 생깁니다.</li>
+        <li>해결: 컨트롤러의 <strong>자동 백래시 보정</strong> 소프트웨어로 완화할 수 있으나, 물리적으로는 예압(더블너트) 볼스크루와 예압 <button class="nav-btn" onclick="openKnowledge('linear-guide')" style="color:var(--gold);border:none;background:none;padding:0;font-size:inherit;text-decoration:underline;cursor:pointer">리니어 가이드</button>로 강성을 높이고, 기어박스를 다이렉트 드라이브(DD) 토크 모터로 대체해 전달 간극을 없앱니다.</li>
+      </ul>
+
+      <h4>3. 볼스크루 정밀도(滾珠螺桿精度)</h4>
+      볼스크루는 서보의 회전을 직선 운동으로 변환하며, 그 제조 품질이 축 정밀도를 직접 좌우합니다.
+      <ul>
+        <li><strong>전조(rolled) vs 연삭(ground)</strong> — 정밀 연삭 볼스크루는 열처리 후 정밀 연삭을 거쳐 표준 전조품보다 훨씬 높은 정밀 등급(예: C3·C5)을 달성합니다. 고정밀 가공에는 일반적으로 연삭품이 필요합니다.</li>
+      </ul>
+
+      <h4>4. 열 오차(熱誤差 / 열 변위)</h4>
+      가동 중 주축·볼스크루·리니어 가이드의 마찰이 상당한 열을 발생시키고, 이 열이 주철 베드와 금속 부품을 동적으로 팽창시킵니다.
+      <ul>
+        <li>영향: 볼스크루가 가열되며 미터당 수 µm 늘어나 좌표계 전체가 이동합니다 — 이것이 열 변위(thermal drift)입니다.</li>
+        <li>해결: 상위 기종은 스크루 중심으로 냉각액을 순환시키는 <button class="nav-btn" onclick="openKnowledge('spindle-cooling')" style="color:var(--gold);border:none;background:none;padding:0;font-size:inherit;text-decoration:underline;cursor:pointer">온도제어(냉각형) 볼스크루</button>를 씁니다. 또한 고급 컨트롤러는 매립 센서와 보정 알고리즘으로 열팽창을 실시간 상쇄하는 <strong>전기(全機) 열 보정</strong>을 적용합니다. (대만에서는 HIWIN의 냉각형 스크루, PMC의 열 보정 기술이 알려져 있습니다.)</li>
+      </ul>
+
+      <h4>5. 기계 수평·기하 정렬(機台水平)</h4>
+      아무리 비싼 기계도 바닥에 제대로 수평이 잡히지 않으면 부정확하게 가공합니다.
+      <ul>
+        <li>개념: 고르지 않은 기초 위에 놓이면 무거운 주철 베드가 자중으로 서서히 뒤틀리고, X·Y·Z 축의 직각도가 무너집니다.</li>
+        <li>기준: 정밀 CNC에서는 가이드 평행도(導軌平行度)를 <strong>미터당 0.02mm(0.0008인치)</strong> 이내로 유지해야 합니다. 이를 벗어나면 베어링이 물려 진동·마모·표면 불량을 유발합니다.</li>
+      </ul>
+
+      <p style="margin-top:18px">소프트웨어 보정에는 한계가 있습니다. 진정한 정밀도는 강성 높은 기구부와 열 안정성에서 시작됩니다. 신규 제작이든 리트로핏이든, 고급 <button class="nav-btn" onclick="openKnowledge('linear-guide')" style="color:var(--gold);border:none;background:none;padding:0;font-size:inherit;text-decoration:underline;cursor:pointer">리니어 가이드</button>·정밀 볼스크루·견고한 <button class="nav-btn" onclick="openKnowledge('coolant-cts')" style="color:var(--gold);border:none;background:none;padding:0;font-size:inherit;text-decoration:underline;cursor:pointer">스핀들 냉각/CTS</button>를 갖추는 것이 장기 마이크론급 정밀도를 위한 가장 확실한 길입니다. 관련 증상은 <button class="nav-btn" onclick="openKnowledge('cnc-troubleshooting')" style="color:var(--gold);border:none;background:none;padding:0;font-size:inherit;text-decoration:underline;cursor:pointer">CNC 트러블슈팅</button>도 참고하세요. <button class="nav-btn" onclick="showPage('inquiry')" style="color:var(--gold);border:1px solid var(--gold);padding:8px 22px;font-size:12px;margin-top:6px">정밀 전동·공구 솔루션 문의 →</button></p>
+    `,
+    body_zh: `
+      <svg viewBox="0 0 1000 470" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="定位精度 vs 重複精度概念與精度要素" style="width:100%;height:auto;display:block;border-radius:12px;margin:0 0 22px;font-family:'Segoe UI','Microsoft JhengHei','Malgun Gothic',system-ui,Arial,sans-serif">
+        <defs><linearGradient id="acbgz" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#131a20"/><stop offset="1" stop-color="#182028"/></linearGradient></defs>
+        <rect x="0" y="0" width="1000" height="470" rx="14" fill="url(#acbgz)"/>
+        <text x="500" y="42" text-anchor="middle" font-size="22" font-weight="700" fill="#eef2f5">定位精度 vs 重複精度</text>
+        <g fill="none" stroke="#3a4650"><circle cx="200" cy="160" r="80" stroke-width="1.5"/><circle cx="200" cy="160" r="54" stroke-width="1.5"/><circle cx="200" cy="160" r="28" stroke-width="1.5"/><circle cx="500" cy="160" r="80" stroke-width="1.5"/><circle cx="500" cy="160" r="54" stroke-width="1.5"/><circle cx="500" cy="160" r="28" stroke-width="1.5"/><circle cx="800" cy="160" r="80" stroke-width="1.5"/><circle cx="800" cy="160" r="54" stroke-width="1.5"/><circle cx="800" cy="160" r="28" stroke-width="1.5"/></g>
+        <g fill="#6b7681"><circle cx="200" cy="160" r="4"/><circle cx="500" cy="160" r="4"/><circle cx="800" cy="160" r="4"/></g>
+        <g fill="#d4af5c"><circle cx="170" cy="150" r="4.5"/><circle cx="228" cy="178" r="4.5"/><circle cx="192" cy="194" r="4.5"/><circle cx="162" cy="182" r="4.5"/><circle cx="234" cy="136" r="4.5"/><circle cx="206" cy="122" r="4.5"/></g>
+        <g fill="#e0a44a"><circle cx="474" cy="136" r="4.5"/><circle cx="484" cy="130" r="4.5"/><circle cx="470" cy="146" r="4.5"/><circle cx="482" cy="142" r="4.5"/></g>
+        <g fill="#5fc2ac"><circle cx="796" cy="158" r="4.5"/><circle cx="806" cy="164" r="4.5"/><circle cx="794" cy="166" r="4.5"/><circle cx="804" cy="154" r="4.5"/><circle cx="800" cy="170" r="4.5"/></g>
+        <text x="200" y="270" text-anchor="middle" font-size="13" font-weight="600" fill="#dce3e9">定位與重複皆差</text>
+        <text x="500" y="270" text-anchor="middle" font-size="13" font-weight="600" fill="#dce3e9">重複性佳·偏移</text><text x="500" y="288" text-anchor="middle" font-size="11" fill="#8a99a6">（可由控制器補償）</text>
+        <text x="800" y="270" text-anchor="middle" font-size="13" font-weight="600" fill="#dce3e9">定位與重複俱佳</text>
+        <text x="500" y="322" text-anchor="middle" font-size="12.5" font-weight="600" letter-spacing="1" fill="#7f9aad">精度五大要素</text>
+        <g font-size="11.5" fill="#dce3e9">
+          <g transform="translate(40,338)"><rect width="172" height="104" rx="8" fill="#ffffff" fill-opacity="0.035" stroke="#3a4650" stroke-opacity="0.6"/><text x="16" y="30" font-weight="600" fill="#e6c988">背隙補償</text><text x="16" y="58">預壓螺桿</text><text x="16" y="76">· DD 馬達</text></g>
+          <g transform="translate(230,338)"><rect width="172" height="104" rx="8" fill="#ffffff" fill-opacity="0.035" stroke="#3a4650" stroke-opacity="0.6"/><text x="16" y="30" font-weight="600" fill="#e6c988">研磨滾珠螺桿</text><text x="16" y="58">C3–C5 等級</text><text x="16" y="76">高精度用</text></g>
+          <g transform="translate(420,338)"><rect width="172" height="104" rx="8" fill="#ffffff" fill-opacity="0.035" stroke="#3a4650" stroke-opacity="0.6"/><text x="16" y="30" font-weight="600" fill="#e6c988">熱補償</text><text x="16" y="58">溫控螺桿</text><text x="16" y="76">· 感測器</text></g>
+          <g transform="translate(610,338)"><rect width="172" height="104" rx="8" fill="#ffffff" fill-opacity="0.035" stroke="#3a4650" stroke-opacity="0.6"/><text x="16" y="30" font-weight="600" fill="#e6c988">機台水平</text><text x="16" y="58">導軌平行度</text><text x="16" y="76">≤ 0.02 mm/m</text></g>
+          <g transform="translate(800,338)"><rect width="172" height="104" rx="8" fill="#ffffff" fill-opacity="0.035" stroke="#3a4650" stroke-opacity="0.6"/><text x="16" y="30" font-weight="600" fill="#e6c988">高解析編碼器</text><text x="16" y="58">24–26 bit</text><text x="16" y="76">絕對式回授</text></g>
+        </g>
+        <text x="970" y="458" text-anchor="end" font-size="12.5" font-weight="700" fill="#d4af5c">Z&amp;Z STROTEC</text>
+      </svg>
+      <h4>精度來自機械基礎，不只是程式</h4>
+      當機台守不住公差，操作者常責怪刀具或程式；但真正的切削精度，取決於機台的<strong>機械基礎與熱力學穩定性</strong>。要生產高階航太或醫療零件，就必須理解機械精度的核心指標與控制方法。
+
+      <h4>1. 定位精度 vs 重複精度</h4>
+      這兩項指標是評估任何工具機能力的國際標準（ISO 230-2）。
+      <ul>
+        <li><strong>定位精度（定位精度）</strong> — 機台能將刀具移動到<button class="nav-btn" onclick="openKnowledge('gcode')" style="color:var(--gold);border:none;background:none;padding:0;font-size:inherit;text-decoration:underline;cursor:pointer">G 碼</button>所指定座標的精確程度。指令移動 100.000 mm，實走 100.005 mm，則定位誤差為 5 微米。</li>
+        <li><strong>重複精度（重複精度）</strong> — 對量產而言可說更重要。指機台在多次循環中回到同一位置的一致程度。即使有些許定位誤差，只要重複性優異，就能在控制器中輕鬆補償。</li>
+      </ul>
+      解方：要獲得盡可能精細（次微米級）的定位與重複性，需升級高解析<button class="nav-btn" onclick="openKnowledge('servo-motor')" style="color:var(--gold);border:none;background:none;padding:0;font-size:inherit;text-decoration:underline;cursor:pointer">伺服馬達</button>（24–26 bit 編碼器），提供無延遲的絕對位置回授給控制器。
+
+      <h4>2. 背隙（背隙 / 機械間隙）</h4>
+      背隙是機械軸換向時產生的「失動量」或空程。
+      <ul>
+        <li>成因：滾珠螺桿螺紋、螺帽與齒輪間的微小間隙。隨零件磨損，背隙變大，在圓弧插補（銑圓）時造成平點（flat spot）。</li>
+        <li>解方：控制器可用軟體做<strong>自動背隙補償</strong>來緩解；物理上則升級為預壓（雙螺帽）滾珠螺桿與預壓<button class="nav-btn" onclick="openKnowledge('linear-guide')" style="color:var(--gold);border:none;background:none;padding:0;font-size:inherit;text-decoration:underline;cursor:pointer">線性滑軌</button>提高剛性，並以直驅（DD）力矩馬達取代齒輪箱，消除傳動間隙。</li>
+      </ul>
+
+      <h4>3. 滾珠螺桿精度（滾珠螺桿精度）</h4>
+      滾珠螺桿將伺服馬達的旋轉運動轉為直線運動，其製造品質直接決定軸向精度。
+      <ul>
+        <li><strong>輾製 vs 研磨</strong> — 精密研磨滾珠螺桿在熱處理後經精密研磨，可達到遠高於一般輾製螺桿的精度等級（如 C3、C5）。高精度加工通常需採用研磨螺桿。</li>
+      </ul>
+
+      <h4>4. 熱誤差（熱誤差 / 熱變位）</h4>
+      機台運轉時，主軸、滾珠螺桿與線軌的摩擦會產生相當的熱，使鑄鐵床台與金屬部件動態膨脹。
+      <ul>
+        <li>影響：滾珠螺桿受熱後每公尺可能伸長數微米，使整個座標系偏移——即熱變位（thermal drift）。</li>
+        <li>解方：高階機種採用讓冷卻液流經螺桿中心的<button class="nav-btn" onclick="openKnowledge('spindle-cooling')" style="color:var(--gold);border:none;background:none;padding:0;font-size:inherit;text-decoration:underline;cursor:pointer">溫控（節能）螺桿</button>。此外，先進控制器以埋入式感測器與補償演算法即時抵銷熱膨脹，實現<strong>整機溫升熱補償</strong>。（台灣有 HIWIN 的溫控螺桿、精機中心 PMC 的熱補償技術。）</li>
+      </ul>
+
+      <h4>5. 機台水平與幾何校正（機台水平）</h4>
+      再昂貴的 CNC，若在廠房地面未妥善調平，仍會切得不準。
+      <ul>
+        <li>概念：機台若坐落於不平的地基，笨重的鑄鐵床台會在自重下緩慢扭曲，使 X、Y、Z 軸失去方正度。</li>
+        <li>標準：精密 CNC 應將導軌平行度嚴格維持在<strong>每公尺 0.02 mm（0.0008 吋）</strong>以內。偏差過大會使軸承卡滯，引發振動、加速磨損並破壞表面。</li>
+      </ul>
+
+      <p style="margin-top:18px">軟體補償能修正的有限。真正的機械精度，始於剛性的機構與熱穩定性。無論是新造機台或舊機翻修，採用優質<button class="nav-btn" onclick="openKnowledge('linear-guide')" style="color:var(--gold);border:none;background:none;padding:0;font-size:inherit;text-decoration:underline;cursor:pointer">線性滑軌</button>、精密滾珠螺桿與穩固的<button class="nav-btn" onclick="openKnowledge('coolant-cts')" style="color:var(--gold);border:none;background:none;padding:0;font-size:inherit;text-decoration:underline;cursor:pointer">主軸冷卻/CTS</button>，是維持長期微米級精度最可靠的途徑。相關異常可一併參考<button class="nav-btn" onclick="openKnowledge('cnc-troubleshooting')" style="color:var(--gold);border:none;background:none;padding:0;font-size:inherit;text-decoration:underline;cursor:pointer">CNC 加工異常排除</button>。<button class="nav-btn" onclick="showPage('inquiry')" style="color:var(--gold);border:1px solid var(--gold);padding:8px 22px;font-size:12px;margin-top:6px">洽詢精密傳動與刀具方案 →</button></p>
+    `,
+    body: `
+      <svg viewBox="0 0 1000 470" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Positioning accuracy vs repeatability and accuracy factors" style="width:100%;height:auto;display:block;border-radius:12px;margin:0 0 22px;font-family:'Segoe UI','Microsoft JhengHei','Malgun Gothic',system-ui,Arial,sans-serif">
+        <defs><linearGradient id="acbge" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#131a20"/><stop offset="1" stop-color="#182028"/></linearGradient></defs>
+        <rect x="0" y="0" width="1000" height="470" rx="14" fill="url(#acbge)"/>
+        <text x="500" y="42" text-anchor="middle" font-size="22" font-weight="700" fill="#eef2f5">Positioning Accuracy vs Repeatability</text>
+        <g fill="none" stroke="#3a4650"><circle cx="200" cy="160" r="80" stroke-width="1.5"/><circle cx="200" cy="160" r="54" stroke-width="1.5"/><circle cx="200" cy="160" r="28" stroke-width="1.5"/><circle cx="500" cy="160" r="80" stroke-width="1.5"/><circle cx="500" cy="160" r="54" stroke-width="1.5"/><circle cx="500" cy="160" r="28" stroke-width="1.5"/><circle cx="800" cy="160" r="80" stroke-width="1.5"/><circle cx="800" cy="160" r="54" stroke-width="1.5"/><circle cx="800" cy="160" r="28" stroke-width="1.5"/></g>
+        <g fill="#6b7681"><circle cx="200" cy="160" r="4"/><circle cx="500" cy="160" r="4"/><circle cx="800" cy="160" r="4"/></g>
+        <g fill="#d4af5c"><circle cx="170" cy="150" r="4.5"/><circle cx="228" cy="178" r="4.5"/><circle cx="192" cy="194" r="4.5"/><circle cx="162" cy="182" r="4.5"/><circle cx="234" cy="136" r="4.5"/><circle cx="206" cy="122" r="4.5"/></g>
+        <g fill="#e0a44a"><circle cx="474" cy="136" r="4.5"/><circle cx="484" cy="130" r="4.5"/><circle cx="470" cy="146" r="4.5"/><circle cx="482" cy="142" r="4.5"/></g>
+        <g fill="#5fc2ac"><circle cx="796" cy="158" r="4.5"/><circle cx="806" cy="164" r="4.5"/><circle cx="794" cy="166" r="4.5"/><circle cx="804" cy="154" r="4.5"/><circle cx="800" cy="170" r="4.5"/></g>
+        <text x="200" y="270" text-anchor="middle" font-size="12.5" font-weight="600" fill="#dce3e9">Poor accuracy &amp; repeatability</text>
+        <text x="500" y="270" text-anchor="middle" font-size="12.5" font-weight="600" fill="#dce3e9">Repeatable but offset</text><text x="500" y="288" text-anchor="middle" font-size="11" fill="#8a99a6">(correctable in the controller)</text>
+        <text x="800" y="270" text-anchor="middle" font-size="12.5" font-weight="600" fill="#dce3e9">Accurate &amp; repeatable</text>
+        <text x="500" y="322" text-anchor="middle" font-size="12" font-weight="600" letter-spacing="1" fill="#7f9aad">FIVE ACCURACY FACTORS</text>
+        <g font-size="11" fill="#dce3e9">
+          <g transform="translate(40,338)"><rect width="172" height="104" rx="8" fill="#ffffff" fill-opacity="0.035" stroke="#3a4650" stroke-opacity="0.6"/><text x="16" y="30" font-weight="600" fill="#e6c988">Backlash comp.</text><text x="16" y="58">Preloaded screw</text><text x="16" y="76">· DD motor</text></g>
+          <g transform="translate(230,338)"><rect width="172" height="104" rx="8" fill="#ffffff" fill-opacity="0.035" stroke="#3a4650" stroke-opacity="0.6"/><text x="16" y="30" font-weight="600" fill="#e6c988">Ground ballscrew</text><text x="16" y="58">Class C3–C5</text><text x="16" y="76">for high precision</text></g>
+          <g transform="translate(420,338)"><rect width="172" height="104" rx="8" fill="#ffffff" fill-opacity="0.035" stroke="#3a4650" stroke-opacity="0.6"/><text x="16" y="30" font-weight="600" fill="#e6c988">Thermal comp.</text><text x="16" y="58">Cooled screw</text><text x="16" y="76">· sensors</text></g>
+          <g transform="translate(610,338)"><rect width="172" height="104" rx="8" fill="#ffffff" fill-opacity="0.035" stroke="#3a4650" stroke-opacity="0.6"/><text x="16" y="30" font-weight="600" fill="#e6c988">Leveling</text><text x="16" y="58">Guide parallelism</text><text x="16" y="76">≤ 0.02 mm/m</text></g>
+          <g transform="translate(800,338)"><rect width="172" height="104" rx="8" fill="#ffffff" fill-opacity="0.035" stroke="#3a4650" stroke-opacity="0.6"/><text x="16" y="30" font-weight="600" fill="#e6c988">Hi-res encoder</text><text x="16" y="58">24–26 bit</text><text x="16" y="76">absolute feedback</text></g>
+        </g>
+        <text x="970" y="458" text-anchor="end" font-size="12.5" font-weight="700" fill="#d4af5c">Z&amp;Z STROTEC</text>
+      </svg>
+      <h4>Accuracy Starts With the Machine, Not the Program</h4>
+      When a machine fails to hold tolerance, operators often blame the tool or the program. In reality, true cutting precision is set by the machine's <strong>mechanical foundation and thermal stability</strong>. To produce high-end aerospace or medical parts, you need to understand the core accuracy metrics and how to control them.
+
+      <h4>1. Positioning Accuracy vs Repeatability</h4>
+      These two metrics are the international standard (ISO 230-2) for judging any machine tool.
+      <ul>
+        <li><strong>Positioning accuracy (定位精度)</strong> — how closely the machine moves the tool to the coordinate programmed in <button class="nav-btn" onclick="openKnowledge('gcode')" style="color:var(--gold);border:none;background:none;padding:0;font-size:inherit;text-decoration:underline;cursor:pointer">G-code</button>. Command 100.000 mm, get 100.005 mm, and your positioning error is 5 microns.</li>
+        <li><strong>Repeatability (重複精度)</strong> — arguably more important for mass production: how consistently the machine returns to the same position over many cycles. A small positioning error can be offset in the controller if repeatability is excellent.</li>
+      </ul>
+      The fix: to reach the finest possible (sub-micron-class) positioning and repeatability, upgrade to high-resolution <button class="nav-btn" onclick="openKnowledge('servo-motor')" style="color:var(--gold);border:none;background:none;padding:0;font-size:inherit;text-decoration:underline;cursor:pointer">servo motors</button> (24–26-bit encoders) that give the controller absolute position feedback without lag.
+
+      <h4>2. Backlash (背隙 / mechanical play)</h4>
+      Backlash is the "lost motion" that occurs when an axis reverses direction.
+      <ul>
+        <li>Cause: microscopic gaps between the ball-screw threads, the nut, and mechanical gears. As parts wear, backlash grows, causing flat spots during circular interpolation (milling a circle).</li>
+        <li>Fix: controllers can soften it with <strong>automatic backlash compensation</strong> in software, but the physical fix is preloaded (double-nut) ball screws plus preloaded <button class="nav-btn" onclick="openKnowledge('linear-guide')" style="color:var(--gold);border:none;background:none;padding:0;font-size:inherit;text-decoration:underline;cursor:pointer">linear guides</button> for rigidity, and replacing gearboxes with Direct-Drive (DD) torque motors to remove transmission gaps.</li>
+      </ul>
+
+      <h4>3. Ball-Screw Accuracy (滾珠螺桿精度)</h4>
+      The ball screw turns the servo's rotation into linear motion; its build quality directly sets axis accuracy.
+      <ul>
+        <li><strong>Rolled vs ground</strong> — precision ground ball screws are ground after heat treatment, reaching much higher accuracy classes (e.g. C3, C5) than standard rolled screws. Ground screws are typically required for high-precision machining.</li>
+      </ul>
+
+      <h4>4. Thermal Error (熱誤差 / thermal drift)</h4>
+      As the machine runs, friction at the spindle, ball screws, and guides generates significant heat, expanding the cast-iron bed and metal parts dynamically.
+      <ul>
+        <li>Impact: a ball screw can grow several microns per metre as it heats, shifting the whole coordinate system — this is thermal drift.</li>
+        <li>Fix: top-tier machines use temperature-controlled ("cool type") ball screws that circulate coolant through the screw core (see <button class="nav-btn" onclick="openKnowledge('spindle-cooling')" style="color:var(--gold);border:none;background:none;padding:0;font-size:inherit;text-decoration:underline;cursor:pointer">spindle cooling</button>). Advanced controllers also apply <strong>whole-machine thermal compensation</strong>, using embedded sensors and compensation algorithms to offset expansion in real time. (In Taiwan, HIWIN offers cooled ball screws and PMC provides thermal-compensation technology.)</li>
+      </ul>
+
+      <h4>5. Machine Leveling &amp; Geometry (機台水平)</h4>
+      Even the most expensive CNC will cut inaccurately if it is not properly leveled on the floor.
+      <ul>
+        <li>Concept: on an uneven foundation, the heavy cast-iron bed slowly twists under its own weight, throwing the X, Y, and Z axes out of square.</li>
+        <li>Standard: for precision work, keep the guides' parallelism within <strong>0.02 mm per metre (0.0008 in)</strong>. Beyond that, bearings bind — creating vibration, accelerating wear, and ruining surface finish.</li>
+      </ul>
+
+      <p style="margin-top:18px">Software compensation can only do so much. True machine accuracy starts with rigid mechanics and thermal stability. Whether building a new machine or retrofitting an old one, premium <button class="nav-btn" onclick="openKnowledge('linear-guide')" style="color:var(--gold);border:none;background:none;padding:0;font-size:inherit;text-decoration:underline;cursor:pointer">linear guides</button>, precision ball screws, and robust <button class="nav-btn" onclick="openKnowledge('coolant-cts')" style="color:var(--gold);border:none;background:none;padding:0;font-size:inherit;text-decoration:underline;cursor:pointer">spindle cooling / CTS</button> are the most reliable path to long-term, micron-level precision. For related symptoms, see <button class="nav-btn" onclick="openKnowledge('cnc-troubleshooting')" style="color:var(--gold);border:none;background:none;padding:0;font-size:inherit;text-decoration:underline;cursor:pointer">CNC Troubleshooting</button>. <button class="nav-btn" onclick="showPage('inquiry')" style="color:var(--gold);border:1px solid var(--gold);padding:8px 22px;font-size:12px;margin-top:6px">Ask us about precision transmission &amp; tooling →</button></p>
+    `
+  },
+
+  'cnc-metrology': {
+    title: 'CNC Metrology Guide: CMM, Micrometers & Surface Roughness',
+    title_zh: 'CNC 量測技術指南：從三次元量測儀（CMM）到表面粗糙度',
+    title_ko: 'CNC 계측 가이드: CMM·마이크로미터·표면 거칠기',
+    tags: ['metrology', 'CMM', 'micrometer', 'vernier caliper', 'bore gauge', 'dial indicator', 'height gauge', 'surface roughness', 'Ra', 'runout', '量測', '三次元', '表面粗糙度', '跳動'],
+    body_ko: `
+      <svg viewBox="0 0 1000 430" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="계측 3단계: 현장·셋업·정밀 품질검사" style="width:100%;height:auto;display:block;border-radius:12px;margin:0 0 22px;font-family:'Segoe UI','Microsoft JhengHei','Malgun Gothic',system-ui,Arial,sans-serif">
+        <defs><linearGradient id="qcbgk" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#101820"/><stop offset="1" stop-color="#15202a"/></linearGradient></defs>
+        <rect x="0" y="0" width="1000" height="430" rx="14" fill="url(#qcbgk)"/>
+        <text x="500" y="42" text-anchor="middle" font-size="22" font-weight="700" fill="#e9f0f5">계측 3단계</text>
+        <text x="500" y="65" text-anchor="middle" font-size="11.5" letter-spacing="2" fill="#6f93a8">현장 · 셋업 · 정밀 품질검사</text>
+        <g transform="translate(24,90)"><rect width="306" height="304" rx="10" fill="#ffffff" fill-opacity="0.04" stroke="#4aa3df" stroke-opacity="0.5"/><path d="M0 40 V10 a10 10 0 0 1 10 -10 H296 a10 10 0 0 1 10 10 V40 Z" fill="#173f5a"/><text x="18" y="26" font-size="14" font-weight="700" fill="#cfe6f5">1 · 현장 가공</text><text x="18" y="80" font-size="13" font-weight="600" fill="#e9f0f5">버니어 캘리퍼스</text><text x="18" y="98" font-size="11" fill="#93a9b6">ID·OD·깊이 · ±0.01 mm</text><text x="18" y="140" font-size="13" font-weight="600" fill="#e9f0f5">마이크로미터</text><text x="18" y="158" font-size="11" fill="#93a9b6">OD · 약 0.001 mm(1µm)</text><text x="18" y="200" font-size="13" font-weight="600" fill="#e9f0f5">보어 게이지</text><text x="18" y="218" font-size="11" fill="#93a9b6">깊은 구멍 ID → 다이얼</text><text x="18" y="264" font-size="10.5" fill="#7f97a5">기계 옆에서 1차 확인</text></g>
+        <g transform="translate(346,90)"><rect width="306" height="304" rx="10" fill="#ffffff" fill-opacity="0.04" stroke="#d4af5c" stroke-opacity="0.5"/><path d="M0 40 V10 a10 10 0 0 1 10 -10 H296 a10 10 0 0 1 10 10 V40 Z" fill="#5a4318"/><text x="18" y="26" font-size="14" font-weight="700" fill="#f2e2c2">2 · 셋업·정렬</text><text x="18" y="80" font-size="13" font-weight="600" fill="#e9f0f5">다이얼/테스트 인디케이터</text><text x="18" y="98" font-size="11" fill="#c9b48c">치수가 아닌 변동 측정</text><text x="18" y="116" font-size="11" fill="#c9b48c">바이스 정렬·주축 직각·런아웃</text><text x="18" y="164" font-size="13" font-weight="600" fill="#e9f0f5">하이트 게이지</text><text x="18" y="182" font-size="11" fill="#c9b48c">화강암 정반 위에서</text><text x="18" y="200" font-size="11" fill="#c9b48c">기준면→형상까지 높이</text><text x="18" y="264" font-size="10.5" fill="#a58c5f">스핀들이 돌기 전에 정밀도 결정</text></g>
+        <g transform="translate(668,90)"><rect width="306" height="304" rx="10" fill="#ffffff" fill-opacity="0.04" stroke="#2f9f86" stroke-opacity="0.5"/><path d="M0 40 V10 a10 10 0 0 1 10 -10 H296 a10 10 0 0 1 10 10 V40 Z" fill="#15534b"/><text x="18" y="26" font-size="14" font-weight="700" fill="#d6f2ea">3 · 정밀 품질검사</text><text x="18" y="80" font-size="13" font-weight="600" fill="#e9f0f5">표면 거칠기 측정기</text><text x="18" y="98" font-size="11" fill="#9ccabd">다이아몬드 촉침 → Ra / Rz</text><text x="18" y="140" font-size="13" font-weight="600" fill="#e9f0f5">CMM (삼차원 측정기)</text><text x="18" y="158" font-size="11" fill="#9ccabd">루비 프로브로 3D 좌표 측정</text><text x="18" y="176" font-size="11" fill="#9ccabd">실물 형상 ↔ CAD 모델 대조</text><text x="18" y="264" font-size="10.5" fill="#78a99b">복잡한 5축 형상 검증</text></g>
+        <text x="970" y="418" text-anchor="end" font-size="12.5" font-weight="700" fill="#d4af5c">Z&amp;Z STROTEC</text>
+      </svg>
+      <h4>"측정할 수 없으면 만들 수 없다"</h4>
+      정밀 CNC 가공에는 황금률이 있습니다 — 측정할 수 없으면 만들 수 없습니다. 항공 부품이나 의료용 임플란트는 모든 치수가 CAD 모델과 일치한다는 확신이 필요합니다. 마이크로미터급 정밀도는 계측의 기본을 이해하는 데서 시작됩니다.
+
+      <h4>1. 현장 가공 필수 게이지</h4>
+      작업자가 기계 옆에서 바로 쓰는, 가공 오차에 대한 1차 방어선입니다.
+      <ul>
+        <li><strong>버니어 캘리퍼스(游標卡尺)</strong> — 가장 다재다능한 공구. 내경(ID)·외경(OD)·깊이를 측정합니다. 디지털형은 읽기 쉽지만 일반적으로 ±0.01 mm(약 0.0005in) 수준까지 신뢰할 수 있습니다.</li>
+        <li><strong>마이크로미터(測微器)</strong> — 캘리퍼스로 부족할 때 사용. 정밀 가공된 내부 나사를 이용해 정확한 외경을 측정하며, 약 0.001 mm(1µm)까지 읽습니다(인치 모델은 0.0001in).</li>
+        <li><strong>보어 게이지(內徑量表)</strong> — 깊은 원통의 내경을 정확히 재기는 어렵습니다. 스프링 앤빌이 구멍 안에서 벌어져 정확한 지름을 다이얼 인디케이터로 전달합니다. 베어링 끼워맞춤과 유압 실린더에 중요합니다.</li>
+      </ul>
+
+      <h4>2. 셋업·정렬 게이지</h4>
+      정밀 가공은 스핀들이 돌기 전에 시작됩니다. 공작물이나 공구가 정확히 정렬되지 않으면 부품은 불합격입니다.
+      <ul>
+        <li><strong>다이얼/테스트 인디케이터(量錶／千分錶)</strong> — 절대 치수가 아니라 <strong>변동</strong>을 측정합니다. 바이스 정렬, 주축 직각 맞추기, <strong>런아웃(跳動)</strong> 확인에 씁니다.
+          <br><span style="color:var(--text-dim)">팁: 공구에서 과도한 런아웃이 보이면 <button class="nav-btn" onclick="openKnowledge('live-tool')" style="color:var(--gold);border:none;background:none;padding:0;font-size:inherit;text-decoration:underline;cursor:pointer">동력 공구대</button> 터릿 내부 베어링 마모가 원인일 수 있습니다. 동적 밸런싱된 공구대로 교체하면 해결될 수 있습니다.</span></li>
+        <li><strong>하이트 게이지(高度規)</strong> — 초평탄 <strong>화강암 정반</strong> 위에 놓고, 기준면에서 특정 형상까지의 수직 거리를 측정합니다.</li>
+      </ul>
+
+      <h4>3. 고급 계측·표면 분석</h4>
+      최종 품질검사(QC) 승인을 위해 부품은 고감도 계측 장비를 통과해야 합니다.
+      <ul>
+        <li><strong>표면 거칠기 측정기(表面粗度測定儀)</strong> — 가공면은 육안으로 매끄러워 보여도 미세한 봉우리와 골이 있습니다. 작은 다이아몬드 촉침을 표면에 긁어 Ra(평균 거칠기)나 Rz 값을 산출합니다.
+          <br><span style="color:var(--text-dim)">팁: 표면 거칠기 시험(채터 마크)에 계속 불합격한다면 기계 강성이 부족할 수 있습니다. 절삭 진동을 흡수하도록 <button class="nav-btn" onclick="openKnowledge('linear-guide')" style="color:var(--gold);border:none;background:none;padding:0;font-size:inherit;text-decoration:underline;cursor:pointer">롤러형 리니어 가이드</button>로 전동부를 업그레이드하는 것을 검토하세요.</span></li>
+        <li><strong>CMM(삼차원 측정기 / 三次元)</strong> — 치수 검증의 기준 장비. 루비 팁 전자 프로브로 3D 공간의 여러 점을 접촉해, 실물 형상을 원본 3D CAD 모델과 비교합니다. 복잡한 5축 형상 검증에 필수입니다.</li>
+      </ul>
+
+      <p style="margin-top:18px">CMM과 계측실에 큰 투자를 해도, 기계가 공차를 못 지키면 불량률은 높은 채로 남습니다. 진정한 정밀도는 절삭날에서 시작됩니다. 강성 높은 <button class="nav-btn" onclick="openKnowledge('linear-guide')" style="color:var(--gold);border:none;background:none;padding:0;font-size:inherit;text-decoration:underline;cursor:pointer">리니어 가이드</button>, 정밀 <button class="nav-btn" onclick="openKnowledge('servo-motor')" style="color:var(--gold);border:none;background:none;padding:0;font-size:inherit;text-decoration:underline;cursor:pointer">서보 모터</button>, 런아웃이 낮은 <button class="nav-btn" onclick="openKnowledge('tool-holder')" style="color:var(--gold);border:none;background:none;padding:0;font-size:inherit;text-decoration:underline;cursor:pointer">공구대</button>를 갖추면 부품이 CMM 검사를 처음에 통과할 가능성이 높아집니다. 기계 정밀도 자체는 <button class="nav-btn" onclick="openKnowledge('machine-accuracy')" style="color:var(--gold);border:none;background:none;padding:0;font-size:inherit;text-decoration:underline;cursor:pointer">기계 정밀도 가이드</button>를 참고하세요. <button class="nav-btn" onclick="showPage('inquiry')" style="color:var(--gold);border:1px solid var(--gold);padding:8px 22px;font-size:12px;margin-top:6px">정밀 CNC 부품 문의 →</button></p>
+    `,
+    body_zh: `
+      <svg viewBox="0 0 1000 430" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="量測三階段：現場、校正、高階品管" style="width:100%;height:auto;display:block;border-radius:12px;margin:0 0 22px;font-family:'Segoe UI','Microsoft JhengHei','Malgun Gothic',system-ui,Arial,sans-serif">
+        <defs><linearGradient id="qcbgz" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#101820"/><stop offset="1" stop-color="#15202a"/></linearGradient></defs>
+        <rect x="0" y="0" width="1000" height="430" rx="14" fill="url(#qcbgz)"/>
+        <text x="500" y="42" text-anchor="middle" font-size="22" font-weight="700" fill="#e9f0f5">量測技術三階段</text>
+        <text x="500" y="65" text-anchor="middle" font-size="12" letter-spacing="2" fill="#6f93a8">現場 · 校正 · 高階品管</text>
+        <g transform="translate(24,90)"><rect width="306" height="304" rx="10" fill="#ffffff" fill-opacity="0.04" stroke="#4aa3df" stroke-opacity="0.5"/><path d="M0 40 V10 a10 10 0 0 1 10 -10 H296 a10 10 0 0 1 10 10 V40 Z" fill="#173f5a"/><text x="18" y="26" font-size="14" font-weight="700" fill="#cfe6f5">1 · 現場加工</text><text x="18" y="80" font-size="13" font-weight="600" fill="#e9f0f5">游標卡尺</text><text x="18" y="98" font-size="11" fill="#93a9b6">內外徑·深度 · ±0.01 mm</text><text x="18" y="140" font-size="13" font-weight="600" fill="#e9f0f5">分厘卡（測微器）</text><text x="18" y="158" font-size="11" fill="#93a9b6">外徑 · 約 0.001 mm(1µm)</text><text x="18" y="200" font-size="13" font-weight="600" fill="#e9f0f5">內徑量表（缸徑規）</text><text x="18" y="218" font-size="11" fill="#93a9b6">深孔內徑 → 量錶</text><text x="18" y="264" font-size="10.5" fill="#7f97a5">機台旁第一線把關</text></g>
+        <g transform="translate(346,90)"><rect width="306" height="304" rx="10" fill="#ffffff" fill-opacity="0.04" stroke="#d4af5c" stroke-opacity="0.5"/><path d="M0 40 V10 a10 10 0 0 1 10 -10 H296 a10 10 0 0 1 10 10 V40 Z" fill="#5a4318"/><text x="18" y="26" font-size="14" font-weight="700" fill="#f2e2c2">2 · 校正與架設</text><text x="18" y="80" font-size="13" font-weight="600" fill="#e9f0f5">量錶／千分錶</text><text x="18" y="98" font-size="11" fill="#c9b48c">量的是變動，不是絕對尺寸</text><text x="18" y="116" font-size="11" fill="#c9b48c">校正虎鉗·主軸垂直·跳動</text><text x="18" y="164" font-size="13" font-weight="600" fill="#e9f0f5">高度規</text><text x="18" y="182" font-size="11" fill="#c9b48c">置於花崗岩量測平台上</text><text x="18" y="200" font-size="11" fill="#c9b48c">量基準面到特徵的高度</text><text x="18" y="264" font-size="10.5" fill="#a58c5f">主軸轉動前就決定精度</text></g>
+        <g transform="translate(668,90)"><rect width="306" height="304" rx="10" fill="#ffffff" fill-opacity="0.04" stroke="#2f9f86" stroke-opacity="0.5"/><path d="M0 40 V10 a10 10 0 0 1 10 -10 H296 a10 10 0 0 1 10 10 V40 Z" fill="#15534b"/><text x="18" y="26" font-size="14" font-weight="700" fill="#d6f2ea">3 · 高階品管</text><text x="18" y="80" font-size="13" font-weight="600" fill="#e9f0f5">表面粗度測定儀</text><text x="18" y="98" font-size="11" fill="#9ccabd">鑽石觸針 → Ra / Rz 值</text><text x="18" y="140" font-size="13" font-weight="600" fill="#e9f0f5">CMM 三次元量測儀</text><text x="18" y="158" font-size="11" fill="#9ccabd">紅寶石探針量測 3D 座標</text><text x="18" y="176" font-size="11" fill="#9ccabd">實物幾何 ↔ CAD 模型比對</text><text x="18" y="264" font-size="10.5" fill="#78a99b">驗證複雜五軸幾何</text></g>
+        <text x="970" y="418" text-anchor="end" font-size="12.5" font-weight="700" fill="#d4af5c">Z&amp;Z STROTEC</text>
+      </svg>
+      <h4>「量不出來，就做不出來」</h4>
+      在精密 CNC 加工的世界裡有一條黃金法則：量不出來，就做不出來。生產航太零件或醫療植入物，必須確信每個尺寸都與 CAD 模型相符。要達到微米級精度，得先扎實理解量測（Metrology）的基本功。
+
+      <h4>1. 現場加工必備量具</h4>
+      這些手持量具是操作者直接在機台旁使用、對抗加工誤差的第一道防線。
+      <ul>
+        <li><strong>游標卡尺</strong> — 廠內最萬用的工具，可量內徑（ID）、外徑（OD）與深度。數位型雖易讀，但一般只在 ±0.01 mm（約 0.0005"）的公差內可靠。</li>
+        <li><strong>分厘卡（測微器）</strong> — 當卡尺不夠準時就靠它。利用精密加工的內螺桿提供高準確的外徑量測，可讀到約 0.001 mm（1µm）；英制型則到 0.0001"。</li>
+        <li><strong>內徑量表（缸徑規）</strong> — 精準量測深孔內徑向來困難。缸徑規以彈簧式測爪在孔內張開，將確切直徑傳遞到量錶顯示。對軸承配合與液壓缸至關重要。</li>
+      </ul>
+
+      <h4>2. 機台校正與架設量具</h4>
+      精密加工在主軸轉動前就開始。若工件或刀具沒有精準對正，零件就會失敗。
+      <ul>
+        <li><strong>量錶／千分錶（Dial / Test Indicator）</strong> — 它量的不是絕對尺寸，而是<strong>變動量</strong>。用於校正虎鉗、找正主軸垂直度，以及檢查<strong>跳動（Runout）</strong>。
+          <br><span style="color:var(--text-dim)">小提示：若量錶顯示刀具跳動過大，問題很可能是刀塔內部軸承磨損。升級為動平衡良好的<button class="nav-btn" onclick="openKnowledge('live-tool')" style="color:var(--gold);border:none;background:none;padding:0;font-size:inherit;text-decoration:underline;cursor:pointer">動力刀座</button>通常可解決。</span></li>
+        <li><strong>高度規</strong> — 通常置於超平坦的<strong>花崗岩量測平台</strong>上，量測從基準面到零件特定特徵的垂直距離。</li>
+      </ul>
+
+      <h4>3. 高階量測與表面分析</h4>
+      要通過最終品管（QC）簽核，零件必須經過高靈敏度的量測設備。
+      <ul>
+        <li><strong>表面粗度測定儀</strong> — 加工面肉眼看似光滑，微觀卻有起伏的峰谷。此儀器以微小鑽石觸針劃過工件，計算 Ra（平均粗糙度）或 Rz 值。
+          <br><span style="color:var(--text-dim)">小提示：若表面粗糙度測試持續不過（伴隨震刀痕），機台可能剛性不足。可考慮將傳動升級為重負荷<button class="nav-btn" onclick="openKnowledge('linear-guide')" style="color:var(--gold);border:none;background:none;padding:0;font-size:inherit;text-decoration:underline;cursor:pointer">滾柱線性滑軌</button>以吸收切削振動。</span></li>
+        <li><strong>CMM（三座標／三次元量測儀）</strong> — 尺寸驗證的基準設備。以紅寶石探針在 3D 空間觸測工件多個點，將實物幾何與原始 3D CAD 模型比對，是驗證複雜五軸幾何的必要工具。</li>
+      </ul>
+
+      <p style="margin-top:18px">你可以投資大筆金額買 CMM 與量測實驗室，但若 CNC 機台守不住公差，報廢率仍會居高不下。真正的精度始於切削刃。為機台配上剛性<button class="nav-btn" onclick="openKnowledge('linear-guide')" style="color:var(--gold);border:none;background:none;padding:0;font-size:inherit;text-decoration:underline;cursor:pointer">線性滑軌</button>、高精度<button class="nav-btn" onclick="openKnowledge('servo-motor')" style="color:var(--gold);border:none;background:none;padding:0;font-size:inherit;text-decoration:underline;cursor:pointer">伺服馬達</button>與低跳動<button class="nav-btn" onclick="openKnowledge('tool-holder')" style="color:var(--gold);border:none;background:none;padding:0;font-size:inherit;text-decoration:underline;cursor:pointer">刀座</button>，能讓零件更有機會一次通過 CMM 檢驗。機台精度本身可參考<button class="nav-btn" onclick="openKnowledge('machine-accuracy')" style="color:var(--gold);border:none;background:none;padding:0;font-size:inherit;text-decoration:underline;cursor:pointer">機械精度指南</button>。<button class="nav-btn" onclick="showPage('inquiry')" style="color:var(--gold);border:1px solid var(--gold);padding:8px 22px;font-size:12px;margin-top:6px">洽詢精密 CNC 零組件 →</button></p>
+    `,
+    body: `
+      <svg viewBox="0 0 1000 430" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Metrology in three tiers: shop floor, setup, advanced QC" style="width:100%;height:auto;display:block;border-radius:12px;margin:0 0 22px;font-family:'Segoe UI','Microsoft JhengHei','Malgun Gothic',system-ui,Arial,sans-serif">
+        <defs><linearGradient id="qcbge" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#101820"/><stop offset="1" stop-color="#15202a"/></linearGradient></defs>
+        <rect x="0" y="0" width="1000" height="430" rx="14" fill="url(#qcbge)"/>
+        <text x="500" y="42" text-anchor="middle" font-size="22" font-weight="700" fill="#e9f0f5">Metrology in Three Tiers</text>
+        <text x="500" y="65" text-anchor="middle" font-size="11.5" letter-spacing="2" fill="#6f93a8">SHOP FLOOR · SETUP · ADVANCED QC</text>
+        <g transform="translate(24,90)"><rect width="306" height="304" rx="10" fill="#ffffff" fill-opacity="0.04" stroke="#4aa3df" stroke-opacity="0.5"/><path d="M0 40 V10 a10 10 0 0 1 10 -10 H296 a10 10 0 0 1 10 10 V40 Z" fill="#173f5a"/><text x="18" y="26" font-size="14" font-weight="700" fill="#cfe6f5">1 · Shop Floor</text><text x="18" y="80" font-size="13" font-weight="600" fill="#e9f0f5">Vernier Caliper</text><text x="18" y="98" font-size="11" fill="#93a9b6">ID·OD·depth · ±0.01 mm</text><text x="18" y="140" font-size="13" font-weight="600" fill="#e9f0f5">Micrometer</text><text x="18" y="158" font-size="11" fill="#93a9b6">OD · to ~0.001 mm (1µm)</text><text x="18" y="200" font-size="13" font-weight="600" fill="#e9f0f5">Bore Gauge</text><text x="18" y="218" font-size="11" fill="#93a9b6">deep-hole ID → dial</text><text x="18" y="264" font-size="10.5" fill="#7f97a5">First check, right at the machine</text></g>
+        <g transform="translate(346,90)"><rect width="306" height="304" rx="10" fill="#ffffff" fill-opacity="0.04" stroke="#d4af5c" stroke-opacity="0.5"/><path d="M0 40 V10 a10 10 0 0 1 10 -10 H296 a10 10 0 0 1 10 10 V40 Z" fill="#5a4318"/><text x="18" y="26" font-size="14" font-weight="700" fill="#f2e2c2">2 · Setup &amp; Alignment</text><text x="18" y="80" font-size="13" font-weight="600" fill="#e9f0f5">Dial / Test Indicator</text><text x="18" y="98" font-size="11" fill="#c9b48c">measures variation, not size</text><text x="18" y="116" font-size="11" fill="#c9b48c">tram vise · square spindle · runout</text><text x="18" y="164" font-size="13" font-weight="600" fill="#e9f0f5">Height Gauge</text><text x="18" y="182" font-size="11" fill="#c9b48c">on a granite surface plate</text><text x="18" y="200" font-size="11" fill="#c9b48c">datum → feature height</text><text x="18" y="264" font-size="10.5" fill="#a58c5f">Accuracy is set before the spindle turns</text></g>
+        <g transform="translate(668,90)"><rect width="306" height="304" rx="10" fill="#ffffff" fill-opacity="0.04" stroke="#2f9f86" stroke-opacity="0.5"/><path d="M0 40 V10 a10 10 0 0 1 10 -10 H296 a10 10 0 0 1 10 10 V40 Z" fill="#15534b"/><text x="18" y="26" font-size="14" font-weight="700" fill="#d6f2ea">3 · Advanced QC</text><text x="18" y="80" font-size="13" font-weight="600" fill="#e9f0f5">Surface Roughness</text><text x="18" y="98" font-size="11" fill="#9ccabd">diamond stylus → Ra / Rz</text><text x="18" y="140" font-size="13" font-weight="600" fill="#e9f0f5">CMM (coordinate m/c)</text><text x="18" y="158" font-size="11" fill="#9ccabd">ruby probe reads 3D points</text><text x="18" y="176" font-size="11" fill="#9ccabd">real geometry ↔ CAD model</text><text x="18" y="264" font-size="10.5" fill="#78a99b">Verifies complex 5-axis geometry</text></g>
+        <text x="970" y="418" text-anchor="end" font-size="12.5" font-weight="700" fill="#d4af5c">Z&amp;Z STROTEC</text>
+      </svg>
+      <h4>"If You Cannot Measure It, You Cannot Make It"</h4>
+      Precision CNC machining has a golden rule: if you cannot measure it, you cannot make it. Aerospace components and medical implants need confidence that every dimension matches the CAD model. Reaching micron-level precision starts with a solid grasp of metrology.
+
+      <h4>1. Shop-Floor Essentials</h4>
+      These handheld tools are the first line of defense against machining errors, used by operators right at the machine.
+      <ul>
+        <li><strong>Vernier caliper (游標卡尺)</strong> — the most versatile tool in the shop; it measures inside diameter (ID), outside diameter (OD), and depth. Digital calipers are easy to read but are generally reliable only to about ±0.01 mm (≈0.0005 in).</li>
+        <li><strong>Micrometer (測微器)</strong> — when a caliper is not accurate enough. Using a precisely machined internal screw it gives accurate OD readings down to about 0.001 mm (1 µm); imperial models read to 0.0001 in.</li>
+        <li><strong>Bore gauge (內徑量表)</strong> — measuring the ID of a deep cylinder is notoriously hard. Spring-loaded anvils expand inside the hole and transfer the exact diameter to a dial indicator. Critical for bearing fits and hydraulic cylinders.</li>
+      </ul>
+
+      <h4>2. Setup &amp; Alignment Tools</h4>
+      Precision machining starts before the spindle turns. If the workpiece or tool is not properly aligned, the part will fail.
+      <ul>
+        <li><strong>Dial / test indicator (量錶／千分錶)</strong> — it does not measure absolute size; it measures <strong>variation</strong>. Operators use it to tram vises, square the spindle, and check <strong>runout (跳動)</strong>.
+          <br><span style="color:var(--text-dim)">Tip: if a tool shows excessive runout, the cause is often worn bearings inside the turret. Upgrading to a dynamically balanced <button class="nav-btn" onclick="openKnowledge('live-tool')" style="color:var(--gold);border:none;background:none;padding:0;font-size:inherit;text-decoration:underline;cursor:pointer">live tool holder</button> can resolve this.</span></li>
+        <li><strong>Height gauge (高度規)</strong> — usually placed on an ultra-flat <strong>granite surface plate</strong>, it measures the vertical distance from the reference base to a specific feature on the part.</li>
+      </ul>
+
+      <h4>3. Advanced Metrology &amp; Surface Analysis</h4>
+      For final quality-control (QC) sign-off, parts must pass through sensitive metrology equipment.
+      <ul>
+        <li><strong>Surface roughness tester (表面粗度測定儀)</strong> — machined surfaces look smooth to the eye but have microscopic peaks and valleys. A tiny diamond stylus is dragged across the part to calculate Ra (average roughness) or Rz.
+          <br><span style="color:var(--text-dim)">Tip: if you keep failing surface-roughness tests (with chatter marks), the machine may lack rigidity. Consider upgrading the transmission to heavy-duty <button class="nav-btn" onclick="openKnowledge('linear-guide')" style="color:var(--gold);border:none;background:none;padding:0;font-size:inherit;text-decoration:underline;cursor:pointer">roller linear guides</button> to absorb cutting vibration.</span></li>
+        <li><strong>CMM (Coordinate Measuring Machine / 三次元)</strong> — the reference standard for dimensional verification. A ruby-tipped probe touches the workpiece at many points in 3D and compares the real geometry against the original 3D CAD model. Essential for verifying complex 5-axis geometry.</li>
+      </ul>
+
+      <p style="margin-top:18px">You can invest heavily in CMMs and a metrology lab, but if the machine cannot hold tolerance, scrap rates stay high. True precision starts at the cutting edge. Fitting your machines with rigid <button class="nav-btn" onclick="openKnowledge('linear-guide')" style="color:var(--gold);border:none;background:none;padding:0;font-size:inherit;text-decoration:underline;cursor:pointer">linear guides</button>, precise <button class="nav-btn" onclick="openKnowledge('servo-motor')" style="color:var(--gold);border:none;background:none;padding:0;font-size:inherit;text-decoration:underline;cursor:pointer">servo motors</button>, and low-runout <button class="nav-btn" onclick="openKnowledge('tool-holder')" style="color:var(--gold);border:none;background:none;padding:0;font-size:inherit;text-decoration:underline;cursor:pointer">tool holders</button> gives parts a better chance of passing CMM inspection first time. For machine accuracy itself, see the <button class="nav-btn" onclick="openKnowledge('machine-accuracy')" style="color:var(--gold);border:none;background:none;padding:0;font-size:inherit;text-decoration:underline;cursor:pointer">Machine Accuracy guide</button>. <button class="nav-btn" onclick="showPage('inquiry')" style="color:var(--gold);border:1px solid var(--gold);padding:8px 22px;font-size:12px;margin-top:6px">Ask us about precision CNC components →</button></p>
+    `
   }
 };
 
@@ -12918,8 +13569,9 @@ const LANG = {
     nav_markets: 'Markets', nav_news: 'News', nav_inquiry: 'Inquiry', nav_terminology: 'Terminology', nav_services: 'Services', nav_about: 'About Us', sidebar_main: 'Main Pages · 主頁面',
     section_services: 'SERVICES ／ 貿易服務', section_about: 'ABOUT US ／ 關於我們',
     svc_cta_quote: '→ Request a quote', svc_cta_incoterms: '→ Trade terms guide', svc_cta_visit: '→ Learn more', svc_cta_about: '→ About us', svc_cta_main: 'Get a Quote · 立即詢價 →',
-    kbq_comp_q: "I'm looking for machine components", kbq_exp_q: 'I need export support', kbq_visit_q: 'I want to source from Taiwan',
+    kbq_comp_q: "I'm looking for machine components", kbq_exp_q: 'I need export support', kbq_visit_q: 'I want to source from Taiwan', kbq_proc_q: 'I want to improve my machining process',
     kbq_c_barfeeder: 'Bar Feeder', kbq_c_linear: 'Linear Guide', kbq_c_servo: 'Servo Motor', kbq_c_tool: 'Tool Holder', kbq_c_exportdocs: 'Export Docs', kbq_c_customs: 'Customs', kbq_c_marine: 'Marine Insurance', kbq_c_factory: 'Factory Visit',
+    kbq_c_troubleshoot: 'Troubleshooting', kbq_c_cuttingtools: 'Cutting Tools', kbq_c_fluids: 'Cutting Fluids', kbq_c_materials: 'Materials', kbq_c_accuracy: 'Machine Accuracy', kbq_c_metrology: 'Metrology / QC',
     hero_cta2: 'Get a Quote →', home_all_columns: 'View all expert columns →', home_all_news: 'View all updates →',
     home_why_taiwan: 'WHY TAIWAN ／ 為什麼選台灣', twadv_1: "World's 5th-largest machine tool exporter", twadv_2: 'Taichung — the global machine-tool hub', twadv_3: 'Key products: CNC lathes & machining centers', twadv_4: 'Top export markets: China · USA · Korea', twadv_assoc: 'Industry bodies: TAMI · TMBA', twadv_more: 'Taiwan machine-tool makers & export record →',
     nav_subscribe: 'Subscribe', sb_subscribe: ' Subscribe to Updates',
@@ -12943,7 +13595,7 @@ const LANG = {
     sidebar_knowledge: 'Knowledge Library', sidebar_export: 'Export Procedures', sidebar_markets: 'Markets', sidebar_industry: 'Industry',
     sb_bar_feeder: ' Bar Feeder', sb_linear_guide: ' Linear Guide', sb_servo_motor: ' Servo Motor',
     sb_cnc_lathe: ' CNC Lathe', sb_tool_holder: ' Tool Holder', sb_spindle: ' Spindle', sb_spindle_cooling: ' Spindle Cooling',
-    sb_live_tool: ' Live Tool Holders', sb_static_tool: ' Static Tool Holders', sb_collet: ' Collets & Chucks', sb_automation: ' Automation Loading', sb_chip_conveyor: ' Chip Conveyors', sb_coolant_cts: ' Coolant & CTS', sb_cutting_tools: ' Cutting Tools & Coatings', sb_troubleshooting: ' CNC Troubleshooting', sb_cutting_fluids: ' Cutting Fluids',
+    sb_live_tool: ' Live Tool Holders', sb_static_tool: ' Static Tool Holders', sb_collet: ' Collets & Chucks', sb_automation: ' Automation Loading', sb_chip_conveyor: ' Chip Conveyors', sb_coolant_cts: ' Coolant & CTS', sb_cutting_tools: ' Cutting Tools & Coatings', sb_troubleshooting: ' CNC Troubleshooting', sb_cutting_fluids: ' Cutting Fluids', sb_cnc_materials: ' Machining Materials', sb_machine_accuracy: ' Machine Accuracy', sb_metrology: ' Metrology & QC',
     sb_export_flow: ' Export Process Overview', sb_export_docs: ' Export Documents', sb_air_freight: ' Air Freight Guide', sb_shtc: ' SHTC Export Control', sb_payment_terms: ' Payment Terms', sb_marine: ' Marine Insurance', sb_customs: ' Customs Clearance',
     sb_import_duty: ' Import Duty Reference', sb_container: ' Container & CBM Guide', sb_terms: ' Terminology 術語/용어', sb_services: ' Our Services', sb_factory_visit: ' Factory Visit',
     sb_tw_brands: ' Taiwan Manufacturers', sb_maintenance: ' Maintenance Guide',
@@ -12979,8 +13631,9 @@ const LANG = {
     nav_markets: '市場', nav_news: '產業新聞', nav_inquiry: '詢價', nav_terminology: '術語對照', nav_services: '服務', nav_about: '關於我們', sidebar_main: '主頁面',
     section_services: '貿易服務', section_about: '關於我們',
     svc_cta_quote: '→ 前往詢價', svc_cta_incoterms: '→ 了解貿易條件', svc_cta_visit: '→ 了解更多', svc_cta_about: '→ 關於我們', svc_cta_main: '立即詢價 →',
-    kbq_comp_q: '我在找機台零件', kbq_exp_q: '我需要出口協助', kbq_visit_q: '我想來台採購',
+    kbq_comp_q: '我在找機台零件', kbq_exp_q: '我需要出口協助', kbq_visit_q: '我想來台採購', kbq_proc_q: '我想優化加工製程',
     kbq_c_barfeeder: '送料機', kbq_c_linear: '線性滑軌', kbq_c_servo: '伺服馬達', kbq_c_tool: '刀座', kbq_c_exportdocs: '出口文件', kbq_c_customs: '報關', kbq_c_marine: '海上保險', kbq_c_factory: '工廠參訪',
+    kbq_c_troubleshoot: '異常排除', kbq_c_cuttingtools: '刀具塗層', kbq_c_fluids: '切削液', kbq_c_materials: '加工材質', kbq_c_accuracy: '機械精度', kbq_c_metrology: '量測／品管',
     hero_cta2: '立即詢價 →', home_all_columns: '看全部專欄 →', home_all_news: '看全部消息 →',
     home_why_taiwan: '為什麼選台灣', twadv_1: '全球第五大工具機出口國', twadv_2: '台中——全球工具機重鎮', twadv_3: '主力產品：CNC 車床、加工中心', twadv_4: '主要出口市場：中國、美國、韓國', twadv_assoc: '產業公會：TAMI、TMBA', twadv_more: '台灣工具機製造商與出口實績 →',
     terms_title: '術語對照',
@@ -13003,7 +13656,7 @@ const LANG = {
     sidebar_knowledge: '知識庫', sidebar_export: '出口流程', sidebar_markets: '市場', sidebar_industry: '產業',
     sb_bar_feeder: ' 送料機', sb_linear_guide: ' 線性滑軌', sb_servo_motor: ' 伺服馬達',
     sb_cnc_lathe: ' CNC 車床', sb_tool_holder: ' 刀座', sb_spindle: ' 主軸', sb_spindle_cooling: ' 主軸冷卻',
-    sb_live_tool: ' 動力刀座', sb_static_tool: ' 非動力刀座', sb_collet: ' 筒夾/夾頭', sb_automation: ' 自動化上下料', sb_chip_conveyor: ' 鐵屑輸送機', sb_coolant_cts: ' 冷卻液與中心出水', sb_cutting_tools: ' 刀具與塗層', sb_troubleshooting: ' 加工異常排除', sb_cutting_fluids: ' 切削液／冷卻液',
+    sb_live_tool: ' 動力刀座', sb_static_tool: ' 非動力刀座', sb_collet: ' 筒夾/夾頭', sb_automation: ' 自動化上下料', sb_chip_conveyor: ' 鐵屑輸送機', sb_coolant_cts: ' 冷卻液與中心出水', sb_cutting_tools: ' 刀具與塗層', sb_troubleshooting: ' 加工異常排除', sb_cutting_fluids: ' 切削液／冷卻液', sb_cnc_materials: ' 加工材質指南', sb_machine_accuracy: ' 機械精度指南', sb_metrology: ' 量測與品管',
     sb_export_flow: ' 出口流程總覽', sb_export_docs: ' 出口文件', sb_air_freight: ' 國際空運指南', sb_shtc: ' 戰略物資出口管制', sb_payment_terms: ' 付款條件', sb_marine: ' 海上保險', sb_customs: ' 清關',
     sb_import_duty: ' 進口關稅參考', sb_container: ' 貨櫃與材積指南', sb_terms: ' 術語對照', sb_services: ' 服務項目', sb_factory_visit: ' 來台採購',
     sb_tw_brands: ' 台灣製造商', sb_maintenance: ' 保養指南',
@@ -13040,8 +13693,9 @@ const LANG = {
     nav_markets: '시장', nav_news: '산업 뉴스', nav_inquiry: '견적 문의', nav_terminology: '용어 대조', nav_services: '서비스', nav_about: '회사 소개', sidebar_main: '메인 페이지',
     section_services: '서비스', section_about: '회사 소개',
     svc_cta_quote: '→ 견적 문의', svc_cta_incoterms: '→ 인코텀즈 안내', svc_cta_visit: '→ 자세히 보기', svc_cta_about: '→ 회사 소개', svc_cta_main: '견적 요청 →',
-    kbq_comp_q: '기계 부품을 찾고 있어요', kbq_exp_q: '수출 지원이 필요해요', kbq_visit_q: '대만에서 구매하고 싶어요',
+    kbq_comp_q: '기계 부품을 찾고 있어요', kbq_exp_q: '수출 지원이 필요해요', kbq_visit_q: '대만에서 구매하고 싶어요', kbq_proc_q: '가공 공정을 개선하고 싶어요',
     kbq_c_barfeeder: '바피더', kbq_c_linear: '리니어 가이드', kbq_c_servo: '서보 모터', kbq_c_tool: '툴 홀더', kbq_c_exportdocs: '수출 서류', kbq_c_customs: '통관', kbq_c_marine: '해상 보험', kbq_c_factory: '공장 방문',
+    kbq_c_troubleshoot: '트러블슈팅', kbq_c_cuttingtools: '절삭공구', kbq_c_fluids: '절삭유', kbq_c_materials: '가공 소재', kbq_c_accuracy: '기계 정밀도', kbq_c_metrology: '계측 / 품질검사',
     hero_cta2: '견적 요청 →', home_all_columns: '전체 칼럼 보기 →', home_all_news: '전체 소식 보기 →',
     home_why_taiwan: '왜 대만인가', twadv_1: '세계 5위 공작기계 수출국', twadv_2: '타이중 — 글로벌 공작기계 허브', twadv_3: '주요 제품: CNC 선반·머시닝센터', twadv_4: '주요 수출 시장: 중국·미국·한국', twadv_assoc: '업계 협회: TAMI, TMBA', twadv_more: '대만 공작기계 제조사 및 수출 실적 →',
     terms_title: '용어 대조',
@@ -13064,7 +13718,7 @@ const LANG = {
     sidebar_knowledge: '지식 라이브러리', sidebar_export: '수출 절차', sidebar_markets: '시장', sidebar_industry: '산업',
     sb_bar_feeder: ' 바피더', sb_linear_guide: ' 리니어 가이드', sb_servo_motor: ' 서보 모터',
     sb_cnc_lathe: ' CNC 선반', sb_tool_holder: ' 툴 홀더', sb_spindle: ' 스핀들', sb_spindle_cooling: ' 스핀들 냉각',
-    sb_live_tool: ' 동력 공구대', sb_static_tool: ' 비동력 공구대', sb_collet: ' 콜릿 & 척', sb_automation: ' 자동 로딩', sb_chip_conveyor: ' 칩 컨베이어', sb_coolant_cts: ' 절삭유 & CTS', sb_cutting_tools: ' 절삭공구 & 코팅', sb_troubleshooting: ' CNC 트러블슈팅', sb_cutting_fluids: ' 절삭유',
+    sb_live_tool: ' 동력 공구대', sb_static_tool: ' 비동력 공구대', sb_collet: ' 콜릿 & 척', sb_automation: ' 자동 로딩', sb_chip_conveyor: ' 칩 컨베이어', sb_coolant_cts: ' 절삭유 & CTS', sb_cutting_tools: ' 절삭공구 & 코팅', sb_troubleshooting: ' CNC 트러블슈팅', sb_cutting_fluids: ' 절삭유', sb_cnc_materials: ' 가공 소재 가이드', sb_machine_accuracy: ' 기계 정밀도 가이드', sb_metrology: ' 계측 & 품질검사',
     sb_export_flow: ' 수출 프로세스 개요', sb_export_docs: ' 수출 서류', sb_air_freight: ' 항공 화물 가이드', sb_shtc: ' SHTC 수출 통제', sb_payment_terms: ' 결제 조건', sb_marine: ' 해상보험', sb_customs: ' 통관',
     sb_import_duty: ' 수입 관세 참고', sb_container: ' 컨테이너 & CBM 가이드', sb_terms: ' 용어 대조', sb_services: ' 서비스 안내', sb_factory_visit: ' 대만 방문 구매',
     sb_tw_brands: ' 대만 제조업체', sb_maintenance: ' 유지보수 가이드',
