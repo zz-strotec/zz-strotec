@@ -1229,6 +1229,12 @@
       <div class="sidebar-item" onclick="openKnowledge('cutting-tools')">
         <span class="icon">🔪</span><span data-i18n="sb_cutting_tools"> Cutting Tools &amp; Coatings</span>
       </div>
+      <div class="sidebar-item" onclick="openKnowledge('cnc-troubleshooting')">
+        <span class="icon">🩺</span><span data-i18n="sb_troubleshooting"> CNC Troubleshooting</span>
+      </div>
+      <div class="sidebar-item" onclick="openKnowledge('cutting-fluids')">
+        <span class="icon">🛢️</span><span data-i18n="sb_cutting_fluids"> Cutting Fluids</span>
+      </div>
     </div>
 
     <div class="sidebar-section">
@@ -1423,7 +1429,7 @@
         <div class="card" onclick="openKnowledge('servo-motor')">
           <div class="card-tag" data-zh-tag="驅動系統" data-ko-tag="구동 시스템">Drive System</div>
           <div class="card-title" data-zh-title="伺服馬達指南" data-ko-title="서보 모터 가이드">Servo Motor Guide</div>
-          <div class="card-desc" data-zh-desc="Sigma-7 與 Sigma-10 系列比較、備料策略，以及 CNC 軸控選型建議。" data-ko-desc="Sigma 7 vs Sigma 10 시리즈 비교, 예비 부품 전략, CNC 축 제어 선정.">Sigma 7 vs Sigma 10 series comparison, spare parts strategy, and selection for CNC axis control.</div>
+          <div class="card-desc" data-zh-desc="Sigma-7 停產與 Sigma-X 世代比較、備料策略，以及 CNC 軸控選型建議。" data-ko-desc="Sigma-7 단종과 Sigma-X 세대 비교, 예비 부품 전략, CNC 축 제어 선정.">Sigma-7 EOL vs Sigma-X generation, spare parts strategy, and selection for CNC axis control.</div>
         </div>
         <div class="card" onclick="openKnowledge('linear-guide')">
           <div class="card-tag" data-zh-tag="精密零件" data-ko-tag="정밀 부품">Precision Parts</div>
@@ -4398,7 +4404,7 @@
       <ul>
         <li><strong>FANUC (Japan)</strong>: The de facto global standard, holding the largest share of the CNC control market. The Alpha (αi) and Beta (βi) series are valued for reliability and tight integration with FANUC controllers — a common choice for production lathes and machining centers.</li>
         <li><strong>Siemens (Germany)</strong>: Strong in high-end, complex machining. SINAMICS drives offer high dynamic response and multi-axis compensation, widely used in European 5-axis and heavy milling machines.</li>
-        <li><strong>Yaskawa (Japan)</strong>: A leader in general automation and robotics. The Sigma-7 series uses a 24-bit encoder (~16.7 million counts/rev) for smooth surface finish; the newer Sigma-X / Sigma-10 generation moves to a 26-bit encoder and adds auto-tuning to cut vibration and setup time. (The most common brand on machines sold in Taiwan — see below.)</li>
+        <li><strong>Yaskawa (Japan)</strong>: A leader in general automation and robotics. The Sigma-7 series (24-bit encoder, ~16.7 million counts/rev) is now being phased out; its successor, the Sigma-X generation, moves to a 26-bit encoder and adds auto-tuning to cut vibration and setup time. (The most common brand on machines sold in Taiwan — see below.)</li>
         <li><strong>Mitsubishi (Japan)</strong>: Often paired with Mitsubishi controllers. Good value plus a fast optical-fiber motion network (SSCNET); common on Swiss-type lathes and high-speed tapping centers.</li>
         <li><strong>HIWIN (Taiwan)</strong>: A cost-effective option for OEMs and automation integrators. HIWIN AC servo motors (E and FR series) with matching drives suit customized automation and material-handling builds.</li>
       </ul>
@@ -4407,8 +4413,8 @@
       <h4>Yaskawa Sigma Series — Most Common in Taiwan</h4>
       <ul>
         <li><strong>Sigma-5 (Σ-5)</strong>: Older generation. Still common in machines built before ~2018. Parts becoming harder to source.</li>
-        <li><strong>Sigma-7 (Σ-7)</strong>: Current mainstream generation. High performance, widely available. Preferred for spare parts consistency.</li>
-        <li><strong>Sigma-X / Sigma-10</strong>: Latest generation, higher power density and a finer (26-bit) encoder. Not backward-compatible with Sigma-7 — requires different encoder cables and amplifiers.</li>
+        <li><strong>Sigma-7 (Σ-7)</strong>: Prior mainstream generation, now discontinued (EOL) by Yaskawa. Still common on installed machines — relevant mainly for spare parts and servicing existing equipment.</li>
+        <li><strong>Sigma-X (Σ-X)</strong>: Current generation replacing Sigma-7 — higher power density and a finer (26-bit) encoder. Not backward-compatible with Sigma-7 (different encoder cables and amplifiers), so new machines are now specced with Sigma-X.</li>
       </ul>
       <p>Different Sigma generations are NOT interchangeable. Mixing them on the same machine fragments your spare-parts inventory, so always confirm the exact model and generation when sourcing a replacement.</p>
 
@@ -4449,7 +4455,7 @@
       <ul>
         <li><strong>FANUC（日本）</strong>：實質上的全球標準，在 CNC 控制器市場占有最大份額。Alpha（αi）與 Beta（βi）系列以可靠度及與 FANUC 控制器的緊密整合著稱，是量產車床與加工中心機的常見選擇。</li>
         <li><strong>Siemens（德國）</strong>：擅長高階、複雜加工。SINAMICS 驅動系統具備高動態響應與多軸補償，廣泛用於歐系五軸機與重切削銑床。</li>
-        <li><strong>Yaskawa 安川（日本）</strong>：自動化與機器人領域的領導品牌。Sigma-7 系列採用 24-bit 編碼器（約 1,670 萬脈衝/轉），有助表面光潔度；較新的 Sigma-X／Sigma-10 世代升級為 26-bit 編碼器，並加入自動調諧以降低振動與調機時間。（台灣機台上最常見的品牌——詳見下文。）</li>
+        <li><strong>Yaskawa 安川（日本）</strong>：自動化與機器人領域的領導品牌。Sigma-7 系列採用 24-bit 編碼器（約 1,670 萬脈衝/轉），目前已逐步停產；後繼的 Sigma-X 世代升級為 26-bit 編碼器，並加入自動調諧以降低振動與調機時間。（台灣機台上最常見的品牌——詳見下文。）</li>
         <li><strong>Mitsubishi 三菱（日本）</strong>：常與三菱控制器搭配。性價比佳，並具備高速光纖運動網路（SSCNET），常見於走心式車床與高速攻牙中心機。</li>
         <li><strong>HIWIN 上銀（台灣）</strong>：適合 OEM 與自動化整合商的高性價比選項。HIWIN AC 伺服馬達（E 與 FR 系列）搭配自家驅動器，適用於客製化自動化與物料搬運設備。</li>
       </ul>
@@ -4458,8 +4464,8 @@
       <h4>Yaskawa Sigma 系列 — 台灣最常見</h4>
       <ul>
         <li><strong>Sigma-5（Σ-5）</strong>：舊世代，約 2018 年前製造的機台仍常見。零件日益難以取得。</li>
-        <li><strong>Sigma-7（Σ-7）</strong>：目前主流世代。高性能、庫存充足，是備料一致性的首選。</li>
-        <li><strong>Sigma-X／Sigma-10</strong>：最新世代，功率密度更高、編碼器解析度更細（26-bit）。與 Sigma-7 不相容，需要不同的編碼器電纜及驅動器。</li>
+        <li><strong>Sigma-7（Σ-7）</strong>：前一代主流，安川已停產（EOL）。現役機台上仍很常見——主要用於現有設備的維修與零件備料。</li>
+        <li><strong>Sigma-X（Σ-X）</strong>：接替 Sigma-7 的現行世代，功率密度更高、編碼器解析度更細（26-bit）。與 Sigma-7 不相容（編碼器電纜與驅動器不同），新機現多改配 Sigma-X。</li>
       </ul>
       <p>不同 Sigma 世代無法互換。在同一台機器上混用會造成備料零散化，因此購買替換馬達時務必確認確切型號與世代。</p>
 
@@ -4500,7 +4506,7 @@
       <ul>
         <li><strong>FANUC (일본)</strong>: 사실상의 글로벌 표준으로, CNC 컨트롤러 시장에서 가장 큰 점유율을 차지합니다. Alpha(αi) 및 Beta(βi) 시리즈는 신뢰성과 FANUC 컨트롤러와의 긴밀한 통합으로 잘 알려져 있으며, 양산용 선반과 머시닝 센터의 일반적인 선택입니다.</li>
         <li><strong>Siemens (독일)</strong>: 고급·복합 가공에 강점. SINAMICS 드라이브는 높은 동적 응답과 다축 보정을 제공하며, 유럽계 5축기와 중절삭 밀링 기계에 널리 사용됩니다.</li>
-        <li><strong>Yaskawa (일본)</strong>: 자동화·로봇 분야의 선두 브랜드. Sigma-7 시리즈는 24비트 엔코더(약 1,670만 카운트/회전)로 매끄러운 표면 마감을 지원하며, 신세대 Sigma-X / Sigma-10은 26비트 엔코더로 업그레이드하고 오토 튜닝을 추가해 진동과 셋업 시간을 줄입니다. (대만에서 판매되는 기계에 가장 흔한 브랜드 — 아래 참조.)</li>
+        <li><strong>Yaskawa (일본)</strong>: 자동화·로봇 분야의 선두 브랜드. Sigma-7 시리즈(24비트 엔코더, 약 1,670만 카운트/회전)는 현재 단계적으로 단종되고 있으며, 후속 세대인 Sigma-X는 26비트 엔코더로 업그레이드하고 오토 튜닝을 추가해 진동과 셋업 시간을 줄입니다. (대만에서 판매되는 기계에 가장 흔한 브랜드 — 아래 참조.)</li>
         <li><strong>Mitsubishi (일본)</strong>: 미쓰비시 컨트롤러와 자주 조합됩니다. 가성비가 좋고 고속 광섬유 모션 네트워크(SSCNET)를 갖추어 스위스형 선반과 고속 태핑 센터에 흔합니다.</li>
         <li><strong>HIWIN (대만)</strong>: OEM과 자동화 인티그레이터를 위한 가성비 옵션. HIWIN AC 서보 모터(E 및 FR 시리즈)와 전용 드라이브는 맞춤형 자동화 및 물류 이송 설비에 적합합니다.</li>
       </ul>
@@ -4509,8 +4515,8 @@
       <h4>야스카와(Yaskawa) Sigma 시리즈 — 대만에서 가장 일반적</h4>
       <ul>
         <li><strong>Sigma-5 (Σ-5)</strong>: 구형 세대. 2018년 이전 제조 기계에 여전히 많음. 부품 조달이 점점 어려워지고 있음.</li>
-        <li><strong>Sigma-7 (Σ-7)</strong>: 현재 주류 세대. 고성능, 광범위한 재고. 예비 부품 일관성을 위해 권장.</li>
-        <li><strong>Sigma-X / Sigma-10</strong>: 최신 세대. 더 높은 전력 밀도와 더 세밀한(26비트) 엔코더. Sigma-7과 하위 호환 불가 — 다른 엔코더 케이블 및 앰프 필요.</li>
+        <li><strong>Sigma-7 (Σ-7)</strong>: 이전 주류 세대로, 야스카와가 단종(EOL)했습니다. 설치된 기계에는 여전히 많으며, 주로 기존 설비의 유지보수·예비 부품 조달에 해당합니다.</li>
+        <li><strong>Sigma-X (Σ-X)</strong>: Sigma-7을 대체하는 현행 세대. 더 높은 전력 밀도와 더 세밀한(26비트) 엔코더. Sigma-7과 하위 호환 불가(엔코더 케이블·앰프 상이)이므로 신규 기계는 Sigma-X로 사양이 바뀌고 있습니다.</li>
       </ul>
       <p>서로 다른 Sigma 세대는 교환 불가능합니다. 동일 기계에 혼용하면 예비 부품 관리가 복잡해지므로, 교체 모터 조달 시 반드시 정확한 모델과 세대를 확인하세요.</p>
 
@@ -7428,7 +7434,7 @@ const KB = {
       <ul>
         <li><strong>FANUC (일본)</strong>: 사실상의 글로벌 표준으로, CNC 컨트롤러 시장에서 가장 큰 점유율을 차지합니다. Alpha(αi) 및 Beta(βi) 시리즈는 신뢰성과 FANUC 컨트롤러와의 긴밀한 통합으로 잘 알려져 있으며, 양산용 선반과 머시닝 센터의 일반적인 선택입니다.</li>
         <li><strong>Siemens (독일)</strong>: 고급·복합 가공에 강점. SINAMICS 드라이브는 높은 동적 응답과 다축 보정을 제공하며, 유럽계 5축기와 중절삭 밀링 기계에 널리 사용됩니다.</li>
-        <li><strong>Yaskawa (일본)</strong>: 자동화·로봇 분야의 선두 브랜드. Sigma-7 시리즈는 24비트 엔코더(약 1,670만 카운트/회전)로 매끄러운 표면 마감을 지원하며, 신세대 Sigma-X / Sigma-10은 26비트 엔코더로 업그레이드하고 오토 튜닝을 추가해 진동과 셋업 시간을 줄입니다. (대만에서 판매되는 기계에 가장 흔한 브랜드 — 아래 참조.)</li>
+        <li><strong>Yaskawa (일본)</strong>: 자동화·로봇 분야의 선두 브랜드. Sigma-7 시리즈(24비트 엔코더, 약 1,670만 카운트/회전)는 현재 단계적으로 단종되고 있으며, 후속 세대인 Sigma-X는 26비트 엔코더로 업그레이드하고 오토 튜닝을 추가해 진동과 셋업 시간을 줄입니다. (대만에서 판매되는 기계에 가장 흔한 브랜드 — 아래 참조.)</li>
         <li><strong>Mitsubishi (일본)</strong>: 미쓰비시 컨트롤러와 자주 조합됩니다. 가성비가 좋고 고속 광섬유 모션 네트워크(SSCNET)를 갖추어 스위스형 선반과 고속 태핑 센터에 흔합니다.</li>
         <li><strong>HIWIN (대만)</strong>: OEM과 자동화 인티그레이터를 위한 가성비 옵션. HIWIN AC 서보 모터(E 및 FR 시리즈)와 전용 드라이브는 맞춤형 자동화 및 물류 이송 설비에 적합합니다.</li>
       </ul>
@@ -7437,8 +7443,8 @@ const KB = {
       <h4>야스카와(Yaskawa) Sigma 시리즈 — 대만에서 가장 일반적</h4>
       <ul>
         <li><strong>Sigma-5 (Σ-5)</strong>: 구형 세대. 2018년 이전 제조 기계에 여전히 많음. 부품 조달이 점점 어려워지고 있음.</li>
-        <li><strong>Sigma-7 (Σ-7)</strong>: 현재 주류 세대. 고성능, 광범위한 재고. 예비 부품 일관성을 위해 권장.</li>
-        <li><strong>Sigma-X / Sigma-10</strong>: 최신 세대. 더 높은 전력 밀도와 더 세밀한(26비트) 엔코더. Sigma-7과 하위 호환 불가 — 다른 엔코더 케이블 및 앰프 필요.</li>
+        <li><strong>Sigma-7 (Σ-7)</strong>: 이전 주류 세대로, 야스카와가 단종(EOL)했습니다. 설치된 기계에는 여전히 많으며, 주로 기존 설비의 유지보수·예비 부품 조달에 해당합니다.</li>
+        <li><strong>Sigma-X (Σ-X)</strong>: Sigma-7을 대체하는 현행 세대. 더 높은 전력 밀도와 더 세밀한(26비트) 엔코더. Sigma-7과 하위 호환 불가(엔코더 케이블·앰프 상이)이므로 신규 기계는 Sigma-X로 사양이 바뀌고 있습니다.</li>
       </ul>
       <p>서로 다른 Sigma 세대는 교환 불가능합니다. 동일 기계에 혼용하면 예비 부품 관리가 복잡해지므로, 교체 모터 조달 시 반드시 정확한 모델과 세대를 확인하세요.</p>
 
@@ -7479,7 +7485,7 @@ const KB = {
       <ul>
         <li><strong>FANUC（日本）</strong>：實質上的全球標準，在 CNC 控制器市場占有最大份額。Alpha（αi）與 Beta（βi）系列以可靠度及與 FANUC 控制器的緊密整合著稱，是量產車床與加工中心機的常見選擇。</li>
         <li><strong>Siemens（德國）</strong>：擅長高階、複雜加工。SINAMICS 驅動系統具備高動態響應與多軸補償，廣泛用於歐系五軸機與重切削銑床。</li>
-        <li><strong>Yaskawa 安川（日本）</strong>：自動化與機器人領域的領導品牌。Sigma-7 系列採用 24-bit 編碼器（約 1,670 萬脈衝/轉），有助表面光潔度；較新的 Sigma-X／Sigma-10 世代升級為 26-bit 編碼器，並加入自動調諧以降低振動與調機時間。（台灣機台上最常見的品牌——詳見下文。）</li>
+        <li><strong>Yaskawa 安川（日本）</strong>：自動化與機器人領域的領導品牌。Sigma-7 系列採用 24-bit 編碼器（約 1,670 萬脈衝/轉），目前已逐步停產；後繼的 Sigma-X 世代升級為 26-bit 編碼器，並加入自動調諧以降低振動與調機時間。（台灣機台上最常見的品牌——詳見下文。）</li>
         <li><strong>Mitsubishi 三菱（日本）</strong>：常與三菱控制器搭配。性價比佳，並具備高速光纖運動網路（SSCNET），常見於走心式車床與高速攻牙中心機。</li>
         <li><strong>HIWIN 上銀（台灣）</strong>：適合 OEM 與自動化整合商的高性價比選項。HIWIN AC 伺服馬達（E 與 FR 系列）搭配自家驅動器，適用於客製化自動化與物料搬運設備。</li>
       </ul>
@@ -7488,8 +7494,8 @@ const KB = {
       <h4>Yaskawa Sigma 系列 — 台灣最常見</h4>
       <ul>
         <li><strong>Sigma-5（Σ-5）</strong>：舊世代，約 2018 年前製造的機台仍常見。零件日益難以取得。</li>
-        <li><strong>Sigma-7（Σ-7）</strong>：目前主流世代。高性能、庫存充足，是備料一致性的首選。</li>
-        <li><strong>Sigma-X／Sigma-10</strong>：最新世代，功率密度更高、編碼器解析度更細（26-bit）。與 Sigma-7 不相容，需要不同的編碼器電纜及驅動器。</li>
+        <li><strong>Sigma-7（Σ-7）</strong>：前一代主流，安川已停產（EOL）。現役機台上仍很常見——主要用於現有設備的維修與零件備料。</li>
+        <li><strong>Sigma-X（Σ-X）</strong>：接替 Sigma-7 的現行世代，功率密度更高、編碼器解析度更細（26-bit）。與 Sigma-7 不相容（編碼器電纜與驅動器不同），新機現多改配 Sigma-X。</li>
       </ul>
       <p>不同 Sigma 世代無法互換。在同一台機器上混用會造成備料零散化，因此購買替換馬達時務必確認確切型號與世代。</p>
 
@@ -7530,7 +7536,7 @@ const KB = {
       <ul>
         <li><strong>FANUC (Japan)</strong>: The de facto global standard, holding the largest share of the CNC control market. The Alpha (αi) and Beta (βi) series are valued for reliability and tight integration with FANUC controllers — a common choice for production lathes and machining centers.</li>
         <li><strong>Siemens (Germany)</strong>: Strong in high-end, complex machining. SINAMICS drives offer high dynamic response and multi-axis compensation, widely used in European 5-axis and heavy milling machines.</li>
-        <li><strong>Yaskawa (Japan)</strong>: A leader in general automation and robotics. The Sigma-7 series uses a 24-bit encoder (~16.7 million counts/rev) for smooth surface finish; the newer Sigma-X / Sigma-10 generation moves to a 26-bit encoder and adds auto-tuning to cut vibration and setup time. (The most common brand on machines sold in Taiwan — see below.)</li>
+        <li><strong>Yaskawa (Japan)</strong>: A leader in general automation and robotics. The Sigma-7 series (24-bit encoder, ~16.7 million counts/rev) is now being phased out; its successor, the Sigma-X generation, moves to a 26-bit encoder and adds auto-tuning to cut vibration and setup time. (The most common brand on machines sold in Taiwan — see below.)</li>
         <li><strong>Mitsubishi (Japan)</strong>: Often paired with Mitsubishi controllers. Good value plus a fast optical-fiber motion network (SSCNET); common on Swiss-type lathes and high-speed tapping centers.</li>
         <li><strong>HIWIN (Taiwan)</strong>: A cost-effective option for OEMs and automation integrators. HIWIN AC servo motors (E and FR series) with matching drives suit customized automation and material-handling builds.</li>
       </ul>
@@ -7539,8 +7545,8 @@ const KB = {
       <h4>Yaskawa Sigma Series — Most Common in Taiwan</h4>
       <ul>
         <li><strong>Sigma-5 (Σ-5)</strong>: Older generation. Still common in machines built before ~2018. Parts becoming harder to source.</li>
-        <li><strong>Sigma-7 (Σ-7)</strong>: Current mainstream generation. High performance, widely available. Preferred for spare parts consistency.</li>
-        <li><strong>Sigma-X / Sigma-10</strong>: Latest generation, higher power density and a finer (26-bit) encoder. Not backward-compatible with Sigma-7 — requires different encoder cables and amplifiers.</li>
+        <li><strong>Sigma-7 (Σ-7)</strong>: Prior mainstream generation, now discontinued (EOL) by Yaskawa. Still common on installed machines — relevant mainly for spare parts and servicing existing equipment.</li>
+        <li><strong>Sigma-X (Σ-X)</strong>: Current generation replacing Sigma-7 — higher power density and a finer (26-bit) encoder. Not backward-compatible with Sigma-7 (different encoder cables and amplifiers), so new machines are now specced with Sigma-X.</li>
       </ul>
       <p>Different Sigma generations are NOT interchangeable. Mixing them on the same machine fragments your spare-parts inventory, so always confirm the exact model and generation when sourcing a replacement.</p>
 
@@ -10734,7 +10740,8 @@ const KB = {
 
       <h4>3. 오일 미스트 컬렉터 (油霧回收機)</h4>
       고속 주축과 고압 CTS 시스템은 필연적으로 절삭유를 기화시켜 기계 커버 내부에 짙은 유증기(오일 미스트)를 형성합니다. <strong>오일 미스트 컬렉터(油霧回收機)</strong> 설치는 작업자의 호흡기 건강을 보호하고, 끈적한 미스트가 CNC 컨트롤러의 정밀 전자부품을 손상시키는 것을 막기 위해 필수입니다.
-      <p style="margin-top:18px">CNC 성능을 높일 신뢰성 있는 주변장치를 찾고 계신가요? 고압 CTS 시스템부터 자동 <button class="nav-btn" onclick="openKnowledge('bar-feeder')" style="color:var(--gold);border:none;background:none;padding:0;font-size:inherit;text-decoration:underline;cursor:pointer">바피더</button>, <button class="nav-btn" onclick="openKnowledge('chip-conveyor')" style="color:var(--gold);border:none;background:none;padding:0;font-size:inherit;text-decoration:underline;cursor:pointer">칩 컨베이어</button>까지, Z&amp;Z STROTEC는 주축을 24/7 돌아가게 하는 세계적 수준의 주변장치를 공급합니다. <button class="nav-btn" onclick="showPage('inquiry')" style="color:var(--gold);border:1px solid var(--gold);padding:8px 22px;font-size:12px;margin-top:6px">주변장치 솔루션 문의 →</button></p>
+      <p style="margin-top:18px">CTS 시스템의 성능은 그 안을 흐르는 절삭유만큼만 발휘됩니다. 올바른 절삭유 선택과 유지관리는 <button class="nav-btn" onclick="openKnowledge('cutting-fluids')" style="color:var(--gold);border:none;background:none;padding:0;font-size:inherit;text-decoration:underline;cursor:pointer">절삭유 가이드</button>를 참고하세요.</p>
+      <p style="margin-top:14px">CNC 성능을 높일 신뢰성 있는 주변장치를 찾고 계신가요? 고압 CTS 시스템부터 자동 <button class="nav-btn" onclick="openKnowledge('bar-feeder')" style="color:var(--gold);border:none;background:none;padding:0;font-size:inherit;text-decoration:underline;cursor:pointer">바피더</button>, <button class="nav-btn" onclick="openKnowledge('chip-conveyor')" style="color:var(--gold);border:none;background:none;padding:0;font-size:inherit;text-decoration:underline;cursor:pointer">칩 컨베이어</button>까지, Z&amp;Z STROTEC는 주축을 24/7 돌아가게 하는 세계적 수준의 주변장치를 공급합니다. <button class="nav-btn" onclick="showPage('inquiry')" style="color:var(--gold);border:1px solid var(--gold);padding:8px 22px;font-size:12px;margin-top:6px">주변장치 솔루션 문의 →</button></p>
       <div style="border-top:1px solid var(--border);margin-top:28px;padding-top:22px">
         <div style="font-size:10px;letter-spacing:2px;color:var(--gold);border:1px solid var(--gold);padding:2px 8px;border-radius:3px;display:inline-block;margin-bottom:16px">전문가 칼럼</div>
         <h4 style="margin-bottom:12px">증기막을 뚫다: 심공 가공에서 고압 CTS의 실제 ROI</h4>
@@ -10816,7 +10823,8 @@ const KB = {
 
       <h4>3. 油霧回收機（Oil Mist Collector）</h4>
       高速主軸與高壓 CTS 系統無可避免地會將冷卻液汽化，在機台護罩內部形成濃厚油霧。安裝<strong>油霧回收機（油霧回收機）</strong>是必要措施，用以保護操作員的呼吸道健康，並防止黏性油霧損害 CNC 控制器精密的電子元件。
-      <p style="margin-top:18px">正在尋找可靠的周邊設備來升級您的 CNC 產能嗎？從高壓 CTS 系統、自動<button class="nav-btn" onclick="openKnowledge('bar-feeder')" style="color:var(--gold);border:none;background:none;padding:0;font-size:inherit;text-decoration:underline;cursor:pointer">送料機</button>到<button class="nav-btn" onclick="openKnowledge('chip-conveyor')" style="color:var(--gold);border:none;background:none;padding:0;font-size:inherit;text-decoration:underline;cursor:pointer">鐵屑輸送機</button>，Z&amp;Z STROTEC 提供世界級配件，讓您的主軸 24/7 不停轉。<button class="nav-btn" onclick="showPage('inquiry')" style="color:var(--gold);border:1px solid var(--gold);padding:8px 22px;font-size:12px;margin-top:6px">洽詢周邊解決方案 →</button></p>
+      <p style="margin-top:18px">CTS 系統的表現，只會跟流經其中的切削液一樣好。切削液的選擇與日常維護，請參考<button class="nav-btn" onclick="openKnowledge('cutting-fluids')" style="color:var(--gold);border:none;background:none;padding:0;font-size:inherit;text-decoration:underline;cursor:pointer">切削液指南</button>。</p>
+      <p style="margin-top:14px">正在尋找可靠的周邊設備來升級您的 CNC 產能嗎？從高壓 CTS 系統、自動<button class="nav-btn" onclick="openKnowledge('bar-feeder')" style="color:var(--gold);border:none;background:none;padding:0;font-size:inherit;text-decoration:underline;cursor:pointer">送料機</button>到<button class="nav-btn" onclick="openKnowledge('chip-conveyor')" style="color:var(--gold);border:none;background:none;padding:0;font-size:inherit;text-decoration:underline;cursor:pointer">鐵屑輸送機</button>，Z&amp;Z STROTEC 提供世界級配件，讓您的主軸 24/7 不停轉。<button class="nav-btn" onclick="showPage('inquiry')" style="color:var(--gold);border:1px solid var(--gold);padding:8px 22px;font-size:12px;margin-top:6px">洽詢周邊解決方案 →</button></p>
       <div style="border-top:1px solid var(--border);margin-top:28px;padding-top:22px">
         <div style="font-size:10px;letter-spacing:2px;color:var(--gold);border:1px solid var(--gold);padding:2px 8px;border-radius:3px;display:inline-block;margin-bottom:16px">專家專欄</div>
         <h4 style="margin-bottom:12px">突破蒸氣屏障：高壓中心出水系統 (CTS) 在深孔加工的真實投資回報</h4>
@@ -10898,7 +10906,8 @@ const KB = {
 
       <h4>3. Oil Mist Collectors (油霧回收機)</h4>
       High-speed spindles and high-pressure CTS systems inevitably vaporize the coolant, creating a thick oil mist inside the machine enclosure. Installing an <strong>Oil Mist Collector (油霧回收機)</strong> is mandatory for protecting the operator's respiratory health and preventing the sticky mist from damaging the CNC controller's delicate electronics.
-      <p style="margin-top:18px">Looking for reliable peripherals to upgrade your CNC capabilities? From high-pressure CTS systems to automated <button class="nav-btn" onclick="openKnowledge('bar-feeder')" style="color:var(--gold);border:none;background:none;padding:0;font-size:inherit;text-decoration:underline;cursor:pointer">bar feeders</button> and <button class="nav-btn" onclick="openKnowledge('chip-conveyor')" style="color:var(--gold);border:none;background:none;padding:0;font-size:inherit;text-decoration:underline;cursor:pointer">chip conveyors</button>, Z&amp;Z STROTEC supplies world-class accessories that keep your spindles turning 24/7. <button class="nav-btn" onclick="showPage('inquiry')" style="color:var(--gold);border:1px solid var(--gold);padding:8px 22px;font-size:12px;margin-top:6px">Contact us for peripheral solutions →</button></p>
+      <p style="margin-top:18px">A CTS system is only as good as the fluid running through it — see our <button class="nav-btn" onclick="openKnowledge('cutting-fluids')" style="color:var(--gold);border:none;background:none;padding:0;font-size:inherit;text-decoration:underline;cursor:pointer">cutting fluid guide</button> for choosing and maintaining the right coolant.</p>
+      <p style="margin-top:14px">Looking for reliable peripherals to upgrade your CNC capabilities? From high-pressure CTS systems to automated <button class="nav-btn" onclick="openKnowledge('bar-feeder')" style="color:var(--gold);border:none;background:none;padding:0;font-size:inherit;text-decoration:underline;cursor:pointer">bar feeders</button> and <button class="nav-btn" onclick="openKnowledge('chip-conveyor')" style="color:var(--gold);border:none;background:none;padding:0;font-size:inherit;text-decoration:underline;cursor:pointer">chip conveyors</button>, Z&amp;Z STROTEC supplies world-class accessories that keep your spindles turning 24/7. <button class="nav-btn" onclick="showPage('inquiry')" style="color:var(--gold);border:1px solid var(--gold);padding:8px 22px;font-size:12px;margin-top:6px">Contact us for peripheral solutions →</button></p>
       <div style="border-top:1px solid var(--border);margin-top:28px;padding-top:22px">
         <div style="font-size:10px;letter-spacing:2px;color:var(--gold);border:1px solid var(--gold);padding:2px 8px;border-radius:3px;display:inline-block;margin-bottom:16px">EXPERT COLUMN</div>
         <h4 style="margin-bottom:12px">Breaking the Vapor Barrier: The Real ROI of High-Pressure CTS in Deep-Hole Machining</h4>
@@ -11056,6 +11065,299 @@ const KB = {
         <p style="margin-bottom:16px">A closer look at how heat and the vapor barrier accelerate tool wear, and how high-pressure CTS clears them to extend tool life.</p>
         <div style="text-align:center"><button class="nav-btn" onclick="openColumn('col-13')" style="color:var(--gold);border:1px solid var(--gold);padding:10px 28px;font-size:13px;letter-spacing:0.5px">READ FULL ARTICLE / 閱讀全文 →</button></div>
       </div>
+    `
+  },
+
+  'cnc-troubleshooting': {
+    title: 'CNC Troubleshooting Guide: Chatter, Poor Finish, Tool Breakage & Positioning Errors',
+    title_zh: 'CNC 加工異常排除指南：震刀、表面粗糙、刀具斷裂與定位誤差',
+    title_ko: 'CNC 트러블슈팅 가이드: 채터·거친 표면·공구 파손·위치 오차',
+    tags: ['troubleshooting', 'chatter', 'surface finish', 'chip nesting', 'tool breakage', 'thermal drift', 'taper', 'positioning error', 'burr', '震刀', '熱變位', '定位誤差', '毛邊'],
+    body_ko: `
+      <svg viewBox="0 0 1000 440" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="CNC 트러블슈팅: 증상, 근본 원인, 해결" style="width:100%;height:auto;display:block;border-radius:12px;margin:0 0 22px;font-family:'Segoe UI','Microsoft JhengHei','Malgun Gothic',system-ui,Arial,sans-serif">
+        <defs><linearGradient id="tsbgk" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#0e1b24"/><stop offset="1" stop-color="#122430"/></linearGradient></defs>
+        <rect x="0" y="0" width="1000" height="440" rx="14" fill="url(#tsbgk)"/>
+        <text x="500" y="42" text-anchor="middle" font-size="23" font-weight="700" fill="#e8f0f6">CNC 트러블슈팅 매트릭스</text>
+        <text x="500" y="66" text-anchor="middle" font-size="11.5" letter-spacing="2" fill="#5f93b0">증상 → 근본 원인 → 해결</text>
+        <rect x="24" y="80" width="952" height="336" rx="10" fill="#ffffff" fill-opacity="0.03" stroke="#2f5d75" stroke-opacity="0.5"/>
+        <rect x="24" y="80" width="952" height="34" rx="10" fill="#16394c"/>
+        <text x="40" y="102" font-size="11" letter-spacing="1.5" font-weight="600" fill="#9ec4da">증상</text>
+        <text x="356" y="102" font-size="11" letter-spacing="1.5" font-weight="600" fill="#9ec4da">근본 원인</text>
+        <text x="732" y="102" font-size="11" letter-spacing="1.5" font-weight="600" fill="#d4af5c">해결</text>
+        <line x1="332" y1="114" x2="332" y2="416" stroke="#2f5d75" stroke-opacity="0.4"/><line x1="708" y1="114" x2="708" y2="416" stroke="#2f5d75" stroke-opacity="0.4"/>
+        <g><line x1="24" y1="189" x2="976" y2="189" stroke="#2f5d75" stroke-opacity="0.35"/><line x1="24" y1="264" x2="976" y2="264" stroke="#2f5d75" stroke-opacity="0.35"/><line x1="24" y1="339" x2="976" y2="339" stroke="#2f5d75" stroke-opacity="0.35"/></g>
+        <text x="40" y="150" font-size="13.5" font-weight="600" fill="#f0a878">채터 / 거친 표면</text><text x="356" y="150" font-size="12" fill="#cfe0ea">미세 진동 · 공구/베드 강성 부족</text><text x="732" y="150" font-size="12" font-weight="600" fill="#e6c988">공구대 · 리니어 가이드</text>
+        <text x="40" y="226" font-size="13.5" font-weight="600" fill="#6fb8e0">칩 엉킴 / 공구 파손</text><text x="356" y="220" font-size="12" fill="#cfe0ea">긴 칩이 열 축적 · 절삭유가</text><text x="356" y="238" font-size="12" fill="#cfe0ea">절삭날에 도달 못함</text><text x="732" y="226" font-size="12" font-weight="600" fill="#e6c988">고압 CTS</text>
+        <text x="40" y="301" font-size="13.5" font-weight="600" fill="#5fc2ac">테이퍼 / 열 변위</text><text x="356" y="295" font-size="12" fill="#cfe0ea">주축·볼스크루 열팽창으로</text><text x="356" y="313" font-size="12" fill="#cfe0ea">Z축이 동적으로 이동</text><text x="732" y="301" font-size="12" font-weight="600" fill="#e6c988">열보정 · CTS</text>
+        <text x="40" y="376" font-size="13.5" font-weight="600" fill="#b79ce0">위치 오차 / 버</text><text x="356" y="370" font-size="12" fill="#cfe0ea">드라이브 지연 · 엔코더 분해능</text><text x="356" y="388" font-size="12" fill="#cfe0ea">· 공구 문지름</text><text x="732" y="376" font-size="12" font-weight="600" fill="#e6c988">서보 + 엔코더</text>
+        <text x="970" y="432" text-anchor="end" font-size="12.5" font-weight="700" fill="#d4af5c">Z&amp;Z STROTEC</text>
+      </svg>
+      <h4>불량은 공구만의 문제가 아닙니다</h4>
+      가공 불량이 나오면 원인은 절삭 공구 하나가 아닌 경우가 많습니다. 대개 <strong>미세 진동, 열팽창, 칩 배출 불량</strong>의 증상입니다. 아래는 자주 검색되는 CNC 가공 문제의 진단과 해결 정리입니다.
+
+      <h4>1. 표면이 거칠거나 채터 마크가 보일 때</h4>
+      거친 표면 조도(Ra)나 눈에 보이는 <strong>채터 마크(震刀痕)</strong>는 절삭 중 미세 진동의 신호입니다. 원인은 공구 세팅의 강성 부족이나 축의 기계적 마모입니다.
+      <ul>
+        <li><button class="nav-btn" onclick="openKnowledge('live-tool')" style="color:var(--gold);border:none;background:none;padding:0;font-size:inherit;text-decoration:underline;cursor:pointer">공구대(툴 홀더)</button> 점검: 동력 터릿의 기어 백래시나 베어링 마모는 채터를 유발합니다. 동적 밸런싱과 세라믹 베어링을 갖춘 BMT 인터페이스로 업그레이드하면 진동을 크게 줄일 수 있습니다.</li>
+        <li><button class="nav-btn" onclick="openKnowledge('linear-guide')" style="color:var(--gold);border:none;background:none;padding:0;font-size:inherit;text-decoration:underline;cursor:pointer">리니어 가이드(線性滑軌)</button> 점검: 베드 강성이 부족하면 진동이 부품으로 전달됩니다. 볼 타입에서 롤러 타입 가이드로 바꾸면 중절삭과 정밀 가공에 필요한 강성을 확보할 수 있습니다.</li>
+      </ul>
+
+      <h4>2. 칩 엉킴과 공구 파손</h4>
+      심공 드릴링이나 알루미늄·저탄소강 같은 점착성 재료 가공에서 특히 흔합니다. <strong>칩 엉킴(鐵屑纏繞)</strong>은 길고 질긴 칩이 공구를 감으면서 열을 가두고, 일반 플러드 절삭유가 뚫지 못하는 <strong>증기막(vapor barrier)</strong>을 형성해 결국 <strong>공구 파손(刀具斷裂)</strong>으로 이어집니다.
+      <ul>
+        <li>해결: <button class="nav-btn" onclick="openKnowledge('coolant-cts')" style="color:var(--gold);border:none;background:none;padding:0;font-size:inherit;text-decoration:underline;cursor:pointer">고압 주축 중심 출수(CTS)</button>로 업그레이드. 최대 70 BAR로 주축을 통해 절삭유를 분사하면 칩을 잘게 끊어 배출하고 증기막을 뚫어 절삭날을 냉각합니다. 그 결과 공구 수명을 의미 있게 늘릴 수 있습니다.</li>
+      </ul>
+
+      <h4>3. 선삭 테이퍼와 열 변위</h4>
+      긴 원통 부품을 선삭할 때 끝단 지름이 척 쪽과 달라지는 경우입니다. <strong>테이퍼(車削錐度)</strong>는 심압대 지지 부족이 원인일 수도 있지만, 고속 가공에서는 숨은 원인이 <strong>열 변위(熱變位)</strong>인 경우가 많습니다. 주축이 10,000+ RPM으로 돌면 발열로 주물과 볼스크루가 팽창해 Z축이 동적으로 이동합니다.
+      <ul>
+        <li>해결: CNC 컨트롤러의 전기(全機) 열보정 기능을 활용하고, 주축에 에어-오일 윤활과 <button class="nav-btn" onclick="openKnowledge('coolant-cts')" style="color:var(--gold);border:none;background:none;padding:0;font-size:inherit;text-decoration:underline;cursor:pointer">CTS</button>를 적용해 코어에서 열을 물리적으로 제거합니다.</li>
+      </ul>
+
+      <h4>4. 위치 오차와 버(burr)</h4>
+      10.000mm를 지령했는데 10.005mm를 이동하거나, 수작업 디버링이 필요한 심한 버가 생기는 경우입니다. <strong>위치 오차(定位誤差)</strong>는 대개 구동계가 지령을 정확히 따르지 못해 발생하고, <strong>버(毛邊)</strong>는 이 미세 지연이나 공구 마모로 공구가 절삭 대신 문지를 때 생깁니다.
+      <ul>
+        <li>해결: <button class="nav-btn" onclick="openKnowledge('servo-motor')" style="color:var(--gold);border:none;background:none;padding:0;font-size:inherit;text-decoration:underline;cursor:pointer">서보(伺服) 시스템</button> 최적화. 고분해능 앱솔루트 엔코더를 갖춘 서보(예: Yaskawa 현행 Sigma-X 시리즈, Siemens SINAMICS)는 매우 정밀한 피드백을 제공해 추종 오차를 줄이고 버를 유발하는 마찰을 낮춥니다.</li>
+      </ul>
+
+      <p style="margin-top:18px">대부분의 가공 병목은 알맞은 주변장치 업그레이드로 해결됩니다. 고압 CTS, 강성 높은 공구대, 정밀 리니어 가이드, 서보 드라이브까지 Z&amp;Z STROTEC가 대응 솔루션을 제안하여, 안정적인 고정밀 가공과 무인 운전(야간 무인 가동, 라이트아웃 공장)을 실현하도록 돕습니다. <button class="nav-btn" onclick="showPage('inquiry')" style="color:var(--gold);border:1px solid var(--gold);padding:8px 22px;font-size:12px;margin-top:6px">트러블슈팅·업그레이드 상담 →</button></p>
+    `,
+    body_zh: `
+      <svg viewBox="0 0 1000 440" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="CNC 異常排除：現象、原因、解方" style="width:100%;height:auto;display:block;border-radius:12px;margin:0 0 22px;font-family:'Segoe UI','Microsoft JhengHei','Malgun Gothic',system-ui,Arial,sans-serif">
+        <defs><linearGradient id="tsbgz" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#0e1b24"/><stop offset="1" stop-color="#122430"/></linearGradient></defs>
+        <rect x="0" y="0" width="1000" height="440" rx="14" fill="url(#tsbgz)"/>
+        <text x="500" y="42" text-anchor="middle" font-size="23" font-weight="700" fill="#e8f0f6">CNC 異常排除對照表</text>
+        <text x="500" y="66" text-anchor="middle" font-size="12" letter-spacing="2" fill="#5f93b0">現象 → 根本原因 → 解方</text>
+        <rect x="24" y="80" width="952" height="336" rx="10" fill="#ffffff" fill-opacity="0.03" stroke="#2f5d75" stroke-opacity="0.5"/>
+        <rect x="24" y="80" width="952" height="34" rx="10" fill="#16394c"/>
+        <text x="40" y="102" font-size="12" letter-spacing="1" font-weight="600" fill="#9ec4da">異常現象</text>
+        <text x="356" y="102" font-size="12" letter-spacing="1" font-weight="600" fill="#9ec4da">根本原因</text>
+        <text x="732" y="102" font-size="12" letter-spacing="1" font-weight="600" fill="#d4af5c">解方</text>
+        <line x1="332" y1="114" x2="332" y2="416" stroke="#2f5d75" stroke-opacity="0.4"/><line x1="708" y1="114" x2="708" y2="416" stroke="#2f5d75" stroke-opacity="0.4"/>
+        <line x1="24" y1="189" x2="976" y2="189" stroke="#2f5d75" stroke-opacity="0.35"/><line x1="24" y1="264" x2="976" y2="264" stroke="#2f5d75" stroke-opacity="0.35"/><line x1="24" y1="339" x2="976" y2="339" stroke="#2f5d75" stroke-opacity="0.35"/>
+        <text x="40" y="150" font-size="14" font-weight="600" fill="#f0a878">震刀 / 表面粗糙</text><text x="356" y="150" font-size="12.5" fill="#cfe0ea">微震動 · 刀具或床台剛性不足</text><text x="732" y="150" font-size="12.5" font-weight="600" fill="#e6c988">刀座 · 線性滑軌</text>
+        <text x="40" y="226" font-size="14" font-weight="600" fill="#6fb8e0">鐵屑纏繞 / 斷刀</text><text x="356" y="220" font-size="12.5" fill="#cfe0ea">長屑纏繞蓄熱 ·</text><text x="356" y="238" font-size="12.5" fill="#cfe0ea">冷卻液到不了刃口</text><text x="732" y="226" font-size="12.5" font-weight="600" fill="#e6c988">高壓 CTS</text>
+        <text x="40" y="301" font-size="14" font-weight="600" fill="#5fc2ac">車削錐度 / 熱變位</text><text x="356" y="295" font-size="12.5" fill="#cfe0ea">主軸與滾珠螺桿受熱膨脹 ·</text><text x="356" y="313" font-size="12.5" fill="#cfe0ea">Z 軸動態偏移</text><text x="732" y="301" font-size="12.5" font-weight="600" fill="#e6c988">熱補償 · CTS</text>
+        <text x="40" y="376" font-size="14" font-weight="600" fill="#b79ce0">定位誤差 / 毛邊</text><text x="356" y="370" font-size="12.5" fill="#cfe0ea">驅動落後 · 編碼器解析度 ·</text><text x="356" y="388" font-size="12.5" fill="#cfe0ea">刀具摩擦</text><text x="732" y="376" font-size="12.5" font-weight="600" fill="#e6c988">伺服 + 編碼器</text>
+        <text x="970" y="432" text-anchor="end" font-size="12.5" font-weight="700" fill="#d4af5c">Z&amp;Z STROTEC</text>
+      </svg>
+      <h4>加工不良，往往不只是刀具的問題</h4>
+      當工件檢驗不合格，問題很少只出在切削刀具，而多半是<strong>微震動、熱膨脹或排屑不良</strong>的症狀。以下彙整幾個最常被搜尋的 CNC 加工問題，說明如何診斷與解決。
+
+      <h4>1. 表面粗糙度不佳與震刀痕</h4>
+      表面粗糙度（Ra）不良或可見的<strong>震刀痕（chatter marks）</strong>，是切削過程中發生微震動的明確訊號。成因：刀具設定剛性不足，或機台軸向機械磨損。
+      <ul>
+        <li>檢查<button class="nav-btn" onclick="openKnowledge('live-tool')" style="color:var(--gold);border:none;background:none;padding:0;font-size:inherit;text-decoration:underline;cursor:pointer">刀座（動力刀座）</button>：動力刀塔的齒輪背隙或軸承磨損會直接引起震刀。升級為具動平衡與陶瓷軸承的 BMT 介面，可大幅降低此類震動。</li>
+        <li>檢查<button class="nav-btn" onclick="openKnowledge('linear-guide')" style="color:var(--gold);border:none;background:none;padding:0;font-size:inherit;text-decoration:underline;cursor:pointer">線性滑軌（Linear Guide）</button>：床台剛性不足時，震動會傳遞到工件。由滾珠式改為滾柱式線軌，可提供重銑削與精密加工所需的剛性。</li>
+      </ul>
+
+      <h4>2. 鐵屑纏繞與刀具異常斷裂</h4>
+      在深孔鑽削，或加工鋁、低碳鋼等黏性材料時特別常見。<strong>鐵屑纏繞（chip nesting）</strong>是指細長的鐵屑纏繞刀具、蓄積熱量，形成一般冷卻液無法穿透的<strong>蒸氣屏障（vapor barrier）</strong>，最終導致<strong>刀具斷裂（tool breakage）</strong>。
+      <ul>
+        <li>解方：升級<button class="nav-btn" onclick="openKnowledge('coolant-cts')" style="color:var(--gold);border:none;background:none;padding:0;font-size:inherit;text-decoration:underline;cursor:pointer">高壓中心出水（CTS）</button>。以最高 70 BAR 直接透過主軸噴出冷卻液，將鐵屑打斷成小段並沖出孔穴，同時穿透蒸氣屏障、冷卻刃口，有助於明顯延長刀具壽命。</li>
+      </ul>
+
+      <h4>3. 車削產生錐度與熱變位</h4>
+      車削細長圓柱件時，可能發現末端直徑與夾頭端不同。<strong>車削錐度（taper）</strong>可能源自尾座支撐不足；但在高速加工中，隱藏的元凶常是<strong>熱變位（thermal drift）</strong>。當主軸以 10,000+ RPM 運轉，發熱使鑄件與滾珠螺桿膨脹，使 Z 軸動態偏移。
+      <ul>
+        <li>解方：透過 CNC 控制器實施全機熱補償，並讓主軸配備氣油潤滑與 <button class="nav-btn" onclick="openKnowledge('coolant-cts')" style="color:var(--gold);border:none;background:none;padding:0;font-size:inherit;text-decoration:underline;cursor:pointer">CTS</button>，從核心實際帶走熱量。</li>
+      </ul>
+
+      <h4>4. 定位誤差與毛邊過多</h4>
+      你指令機台移動 10.000 mm，實際卻走了 10.005 mm；或工件出現需人工去除的重毛邊。<strong>定位誤差（positioning error）</strong>通常來自驅動系統未能精確跟隨控制器指令；<strong>毛邊（burr）</strong>則常因這種微定位落後或刀具磨損，使刀具摩擦而非切削所致。
+      <ul>
+        <li>解方：優化<button class="nav-btn" onclick="openKnowledge('servo-motor')" style="color:var(--gold);border:none;background:none;padding:0;font-size:inherit;text-decoration:underline;cursor:pointer">伺服系統（伺服馬達與驅動）</button>。升級為搭載高解析絕對式編碼器的伺服（如 Yaskawa 現行 Sigma-X 系列、Siemens SINAMICS），可提供極精細的回授，降低跟隨誤差與造成毛邊的摩擦。</li>
+      </ul>
+
+      <p style="margin-top:18px">多數加工瓶頸，都能靠升級正確的周邊設備來化解。從高壓 CTS、剛性刀座，到精密線性滑軌與伺服驅動，Z&amp;Z STROTEC 提供對應的周邊解決方案，協助您穩定達成高精度加工，並邁向無人化生產（夜間無人看管也能持續運轉的「熄燈工廠」）。<button class="nav-btn" onclick="showPage('inquiry')" style="color:var(--gold);border:1px solid var(--gold);padding:8px 22px;font-size:12px;margin-top:6px">洽詢異常排除與升級諮詢 →</button></p>
+    `,
+    body: `
+      <svg viewBox="0 0 1000 440" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="CNC troubleshooting: symptom, root cause, fix" style="width:100%;height:auto;display:block;border-radius:12px;margin:0 0 22px;font-family:'Segoe UI','Microsoft JhengHei','Malgun Gothic',system-ui,Arial,sans-serif">
+        <defs><linearGradient id="tsbge" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#0e1b24"/><stop offset="1" stop-color="#122430"/></linearGradient></defs>
+        <rect x="0" y="0" width="1000" height="440" rx="14" fill="url(#tsbge)"/>
+        <text x="500" y="42" text-anchor="middle" font-size="23" font-weight="700" fill="#e8f0f6">CNC Troubleshooting Matrix</text>
+        <text x="500" y="66" text-anchor="middle" font-size="11.5" letter-spacing="2" fill="#5f93b0">SYMPTOM → ROOT CAUSE → FIX</text>
+        <rect x="24" y="80" width="952" height="336" rx="10" fill="#ffffff" fill-opacity="0.03" stroke="#2f5d75" stroke-opacity="0.5"/>
+        <rect x="24" y="80" width="952" height="34" rx="10" fill="#16394c"/>
+        <text x="40" y="102" font-size="11" letter-spacing="1.5" font-weight="600" fill="#9ec4da">SYMPTOM</text>
+        <text x="356" y="102" font-size="11" letter-spacing="1.5" font-weight="600" fill="#9ec4da">ROOT CAUSE</text>
+        <text x="732" y="102" font-size="11" letter-spacing="1.5" font-weight="600" fill="#d4af5c">FIX</text>
+        <line x1="332" y1="114" x2="332" y2="416" stroke="#2f5d75" stroke-opacity="0.4"/><line x1="708" y1="114" x2="708" y2="416" stroke="#2f5d75" stroke-opacity="0.4"/>
+        <line x1="24" y1="189" x2="976" y2="189" stroke="#2f5d75" stroke-opacity="0.35"/><line x1="24" y1="264" x2="976" y2="264" stroke="#2f5d75" stroke-opacity="0.35"/><line x1="24" y1="339" x2="976" y2="339" stroke="#2f5d75" stroke-opacity="0.35"/>
+        <text x="40" y="150" font-size="13.5" font-weight="600" fill="#f0a878">Chatter / Poor Finish</text><text x="356" y="150" font-size="12" fill="#cfe0ea">Micro-vibration; low tool or bed rigidity</text><text x="732" y="150" font-size="12" font-weight="600" fill="#e6c988">Tool Holder · Linear Guide</text>
+        <text x="40" y="226" font-size="13.5" font-weight="600" fill="#6fb8e0">Chip Nesting / Tool Break</text><text x="356" y="220" font-size="12" fill="#cfe0ea">Stringy chips trap heat; flood coolant</text><text x="356" y="238" font-size="12" fill="#cfe0ea">can't reach the edge</text><text x="732" y="226" font-size="12" font-weight="600" fill="#e6c988">High-pressure CTS</text>
+        <text x="40" y="301" font-size="13.5" font-weight="600" fill="#5fc2ac">Taper / Thermal Drift</text><text x="356" y="295" font-size="12" fill="#cfe0ea">Spindle &amp; ball screws expand with</text><text x="356" y="313" font-size="12" fill="#cfe0ea">heat; Z-axis shifts dynamically</text><text x="732" y="301" font-size="12" font-weight="600" fill="#e6c988">Thermal comp · CTS</text>
+        <text x="40" y="376" font-size="13.5" font-weight="600" fill="#b79ce0">Positioning Error / Burrs</text><text x="356" y="370" font-size="12" fill="#cfe0ea">Drive lag; encoder resolution;</text><text x="356" y="388" font-size="12" fill="#cfe0ea">tool rubbing</text><text x="732" y="376" font-size="12" font-weight="600" fill="#e6c988">Servo + encoder</text>
+        <text x="970" y="432" text-anchor="end" font-size="12.5" font-weight="700" fill="#d4af5c">Z&amp;Z STROTEC</text>
+      </svg>
+      <h4>A Failed Part Is Rarely Just the Tool</h4>
+      When a workpiece fails inspection, the problem is seldom the cutting tool alone — it is usually a symptom of <strong>micro-vibration, thermal expansion, or poor chip evacuation</strong>. Below is a practical guide to diagnosing and solving the most commonly searched CNC machining issues with the right peripheral upgrades.
+
+      <h4>1. Poor Surface Finish &amp; Chatter Marks</h4>
+      A poor surface finish (Ra) or visible <strong>chatter marks (震刀痕)</strong> is a clear sign of micro-vibration during cutting. Cause: lack of rigidity in the tool setup, or mechanical wear in the machine's axes.
+      <ul>
+        <li>Check your <button class="nav-btn" onclick="openKnowledge('live-tool')" style="color:var(--gold);border:none;background:none;padding:0;font-size:inherit;text-decoration:underline;cursor:pointer">tool holder</button>: on a live turret, gear backlash or worn bearings cause chatter. A BMT interface with dynamic balancing and ceramic bearings greatly reduces this vibration.</li>
+        <li>Inspect the <button class="nav-btn" onclick="openKnowledge('linear-guide')" style="color:var(--gold);border:none;background:none;padding:0;font-size:inherit;text-decoration:underline;cursor:pointer">linear guide</button>: if the bed lacks rigidity, vibration transfers to the part. Moving from ball-type to roller-type guides provides the rigidity needed for heavy milling and cleaner finishes.</li>
+      </ul>
+
+      <h4>2. Chip Nesting &amp; Tool Breakage</h4>
+      Especially common in deep-hole drilling or when machining gummy materials like aluminium and low-carbon steel. <strong>Chip nesting (鐵屑纏繞)</strong> occurs when long, stringy chips wrap around the tool, trapping heat and creating a <strong>vapor barrier</strong> that standard flood coolant cannot penetrate — ultimately leading to <strong>tool breakage (刀具斷裂)</strong>.
+      <ul>
+        <li>Fix: upgrade to <button class="nav-btn" onclick="openKnowledge('coolant-cts')" style="color:var(--gold);border:none;background:none;padding:0;font-size:inherit;text-decoration:underline;cursor:pointer">high-pressure Coolant Through Spindle (CTS)</button>. Pumping coolant through the spindle at up to 70 BAR breaks chips into small pieces, flushes them from the cavity, and pierces the vapor barrier to keep the edge cool — meaningfully extending tool life.</li>
+      </ul>
+
+      <h4>3. Taper After Turning &amp; Thermal Drift</h4>
+      When turning a long cylindrical part, the diameter at the end may differ from the chuck end. <strong>Taper (車削錐度)</strong> can come from a lack of tailstock support, but in high-speed machining the hidden culprit is often <strong>thermal drift (熱變位)</strong>: as the spindle runs at 10,000+ RPM, heat expands the casting and ball screws, shifting the Z-axis dynamically.
+      <ul>
+        <li>Fix: apply whole-machine thermal compensation via the CNC controller, and equip the spindle with air-oil lubrication and <button class="nav-btn" onclick="openKnowledge('coolant-cts')" style="color:var(--gold);border:none;background:none;padding:0;font-size:inherit;text-decoration:underline;cursor:pointer">CTS</button> to physically remove heat from the core.</li>
+      </ul>
+
+      <h4>4. Positioning Error &amp; Burr Formation</h4>
+      You program a 10.000 mm move but the machine travels 10.005 mm; or the part comes out with heavy burrs needing manual deburring. <strong>Positioning error (定位誤差)</strong> usually stems from the drive system failing to follow the controller exactly. <strong>Burr formation (毛邊)</strong> happens when the tool rubs instead of cuts — often from this micro-positioning lag or tool wear.
+      <ul>
+        <li>Fix: optimize the <button class="nav-btn" onclick="openKnowledge('servo-motor')" style="color:var(--gold);border:none;background:none;padding:0;font-size:inherit;text-decoration:underline;cursor:pointer">servo system</button>. A servo with a high-resolution absolute encoder (e.g. Yaskawa's current Sigma-X series or Siemens SINAMICS) gives very fine feedback, reducing following errors and the friction that produces burrs.</li>
+      </ul>
+
+      <p style="margin-top:18px">Most machining bottlenecks can be resolved by upgrading the right peripherals. From high-pressure CTS units and rigid tool holders to precision linear guides and servo drives, Z&amp;Z STROTEC provides the solutions for lights-out, high-precision manufacturing. <button class="nav-btn" onclick="showPage('inquiry')" style="color:var(--gold);border:1px solid var(--gold);padding:8px 22px;font-size:12px;margin-top:6px">Book a troubleshooting &amp; upgrade consultation →</button></p>
+    `
+  },
+
+  'cutting-fluids': {
+    title: 'CNC Cutting Fluid Guide: Types, Maintenance & Lifespan',
+    title_zh: 'CNC 切削液／冷卻液指南：種類解析、日常維護與壽命管理',
+    title_ko: 'CNC 절삭유 가이드: 종류·유지관리·수명',
+    tags: ['cutting fluid', 'coolant', 'straight oil', 'soluble oil', 'semi-synthetic', 'synthetic', 'concentration', 'refractometer', 'pH', 'foam', 'rust', '切削液', '濃度', '折射計', '防鏽'],
+    body_ko: `
+      <svg viewBox="0 0 1000 430" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="절삭유 4종과 유지관리 5대 지표" style="width:100%;height:auto;display:block;border-radius:12px;margin:0 0 22px;font-family:'Segoe UI','Microsoft JhengHei','Malgun Gothic',system-ui,Arial,sans-serif">
+        <defs><linearGradient id="cfbgk" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#0b2233"/><stop offset="1" stop-color="#0c2d38"/></linearGradient></defs>
+        <rect x="0" y="0" width="1000" height="430" rx="14" fill="url(#cfbgk)"/>
+        <text x="500" y="40" text-anchor="middle" font-size="22" font-weight="700" fill="#e6f1f7">절삭유 4종 · 유지관리 5대 지표</text>
+        <text x="40" y="76" font-size="11.5" fill="#e0b566">← 윤활 우수 (오일↑)</text><text x="960" y="76" text-anchor="end" font-size="11.5" fill="#7fc4e8">냉각 우수 (수분↑) →</text>
+        <g transform="translate(40,88)"><rect width="222" height="150" rx="9" fill="#ffffff" fill-opacity="0.04" stroke="#d4af5c" stroke-opacity="0.5"/><rect width="222" height="30" rx="9" fill="#5a4318"/><text x="111" y="20" text-anchor="middle" font-size="13" font-weight="700" fill="#f2e2c2">순수 오일 純油</text><text x="16" y="56" font-size="11.5" fill="#dfe8ee">수분 없음 · 윤활 최대</text><text x="16" y="76" font-size="11.5" fill="#dfe8ee">냉각은 약함</text><text x="16" y="102" font-size="10.5" fill="#9fb3c0">저속 중절삭 · 스위스</text><rect x="16" y="118" width="190" height="8" rx="4" fill="#26323a"/><rect x="16" y="118" width="190" height="8" rx="4" fill="#d4af5c"/></g>
+        <g transform="translate(272,88)"><rect width="222" height="150" rx="9" fill="#ffffff" fill-opacity="0.04" stroke="#b9a24a" stroke-opacity="0.55"/><rect width="222" height="30" rx="9" fill="#4c451f"/><text x="111" y="20" text-anchor="middle" font-size="13" font-weight="700" fill="#eadfb0">에멀전 乳化</text><text x="16" y="56" font-size="11.5" fill="#dfe8ee">미네랄 오일 + 물(유백색)</text><text x="16" y="76" font-size="11.5" fill="#dfe8ee">냉각·윤활 균형</text><text x="16" y="102" font-size="10.5" fill="#9fb3c0">일반 선삭·밀링</text><rect x="16" y="118" width="190" height="8" rx="4" fill="#26323a"/><rect x="16" y="118" width="120" height="8" rx="4" fill="#b9a24a"/></g>
+        <g transform="translate(504,88)"><rect width="222" height="150" rx="9" fill="#ffffff" fill-opacity="0.04" stroke="#5f9aa6" stroke-opacity="0.55"/><rect width="222" height="30" rx="9" fill="#1f4149"/><text x="111" y="20" text-anchor="middle" font-size="13" font-weight="700" fill="#c8e6ea">반합성 半合成</text><text x="16" y="56" font-size="11.5" fill="#dfe8ee">오일 소량 + 합성 첨가제</text><text x="16" y="76" font-size="11.5" fill="#dfe8ee">냉각 빠름 · 깨끗함</text><text x="16" y="102" font-size="10.5" fill="#9fb3c0">현대 CNC 범용</text><rect x="16" y="118" width="190" height="8" rx="4" fill="#26323a"/><rect x="16" y="118" width="66" height="8" rx="4" fill="#5f9aa6"/></g>
+        <g transform="translate(736,88)"><rect width="222" height="150" rx="9" fill="#ffffff" fill-opacity="0.04" stroke="#4aa3df" stroke-opacity="0.55"/><rect width="222" height="30" rx="9" fill="#173f5a"/><text x="111" y="20" text-anchor="middle" font-size="13" font-weight="700" fill="#cfe6f5">완전 합성 全合成</text><text x="16" y="56" font-size="11.5" fill="#dfe8ee">오일 0 · 화학 베이스</text><text x="16" y="76" font-size="11.5" fill="#dfe8ee">냉각 최고 · 잔류 없음</text><text x="16" y="102" font-size="10.5" fill="#9fb3c0">친환경 · 폐기 용이</text><rect x="16" y="118" width="190" height="8" rx="4" fill="#26323a"/><rect x="16" y="118" width="8" height="8" rx="4" fill="#4aa3df"/></g>
+        <text x="40" y="270" font-size="12.5" font-weight="600" letter-spacing="1" fill="#7fb0c8">유지관리 5대 지표</text>
+        <g font-size="11" fill="#dfe8ee">
+          <g transform="translate(40,286)"><rect width="174" height="96" rx="8" fill="#ffffff" fill-opacity="0.035" stroke="#2f5d75" stroke-opacity="0.5"/><circle cx="22" cy="26" r="12" fill="#16394c"/><text x="22" y="30" text-anchor="middle" font-weight="700" fill="#9ec4da">1</text><text x="42" y="30" font-weight="600" fill="#cfe0ea">농도</text><text x="16" y="58" >매일 굴절계로</text><text x="16" y="76" >권장 오일-물 비율 유지</text></g>
+          <g transform="translate(226,286)"><rect width="174" height="96" rx="8" fill="#ffffff" fill-opacity="0.035" stroke="#2f5d75" stroke-opacity="0.5"/><circle cx="22" cy="26" r="12" fill="#16394c"/><text x="22" y="30" text-anchor="middle" font-weight="700" fill="#9ec4da">2</text><text x="42" y="30" font-weight="600" fill="#cfe0ea">세균·악취</text><text x="16" y="58" >UVC 265nm 살균</text><text x="16" y="76" >정체 구간 없는 설계</text></g>
+          <g transform="translate(412,286)"><rect width="174" height="96" rx="8" fill="#ffffff" fill-opacity="0.035" stroke="#2f5d75" stroke-opacity="0.5"/><circle cx="22" cy="26" r="12" fill="#16394c"/><text x="22" y="30" text-anchor="middle" font-weight="700" fill="#9ec4da">3</text><text x="42" y="30" font-weight="600" fill="#cfe0ea">거품</text><text x="16" y="58" >소포제 · 적정 농도</text><text x="16" y="76" >펌프 캐비테이션 방지</text></g>
+          <g transform="translate(598,286)"><rect width="174" height="96" rx="8" fill="#ffffff" fill-opacity="0.035" stroke="#2f5d75" stroke-opacity="0.5"/><circle cx="22" cy="26" r="12" fill="#16394c"/><text x="22" y="30" text-anchor="middle" font-weight="700" fill="#9ec4da">4</text><text x="42" y="30" font-weight="600" fill="#cfe0ea">방청</text><text x="16" y="58" >알칼리 pH 8.5–9.5</text><text x="16" y="76" >유지로 플래시 녹 방지</text></g>
+          <g transform="translate(784,286)"><rect width="174" height="96" rx="8" fill="#ffffff" fill-opacity="0.035" stroke="#2f5d75" stroke-opacity="0.5"/><circle cx="22" cy="26" r="12" fill="#16394c"/><text x="22" y="30" text-anchor="middle" font-weight="700" fill="#9ec4da">5</text><text x="42" y="30" font-weight="600" fill="#cfe0ea">수명·재활용</text><text x="16" y="58" >플로팅 오일 제거</text><text x="16" y="76" >여과 · 스키머</text></g>
+        </g>
+        <text x="970" y="414" text-anchor="end" font-size="12.5" font-weight="700" fill="#d4af5c">Z&amp;Z STROTEC</text>
+      </svg>
+      <h4>좋은 절삭유가 있어야 CTS도 제 역할을 합니다</h4>
+      <button class="nav-btn" onclick="openKnowledge('coolant-cts')" style="color:var(--gold);border:none;background:none;padding:0;font-size:inherit;text-decoration:underline;cursor:pointer">고압 주축 중심 출수(CTS)</button>에 투자하더라도, 시스템의 성능은 그 안을 흐르는 절삭유만큼만 발휘됩니다. 잘못된 절삭유 선택이나 관리 소홀은 조기 공구 마모, 심한 녹, 악취로 이어집니다.
+
+      <h4>1. 절삭유 4대 종류</h4>
+      절삭유의 핵심 기능은 <strong>냉각(散熱)</strong>과 <strong>윤활(潤滑)</strong>입니다. 공작물 재질과 가공 방식에 따라 네 가지 중에서 선택합니다.
+      <ul>
+        <li><strong>순수 오일(純油)</strong> — 물이 없어 윤활성이 최대지만 냉각은 약합니다. 저속 중절삭이나 난삭 합금을 다루는 스위스형 선반에 적합.</li>
+        <li><strong>수용성 에멀전(乳化)</strong> — 미네랄 오일과 물의 혼합(대개 유백색). 냉각과 윤활의 균형이 좋아 일반 CNC 선삭·밀링의 전통적 선택.</li>
+        <li><strong>반합성(半合成)</strong> — 소량의 미네랄 오일 + 합성 첨가제. 에멀전보다 냉각이 빠르고 깨끗하여 현대 CNC 가공에 범용적으로 쓰입니다.</li>
+        <li><strong>완전 합성(全合成)</strong> — 미네랄 오일 0, 화학 베이스. 냉각 성능이 가장 좋고 끈적한 잔류물이 없습니다. 고품질 수용성 합성·생분해 대체품으로 전환하면 배출을 줄이고 폐기가 간편해져 지속가능한 가공에 유리합니다.</li>
+      </ul>
+
+      <h4>2. 절삭유 유지관리 5대 지표</h4>
+      절삭유는 그냥 부어 놓는다고 끝이 아닙니다. 방치하면 공구와 리니어 가이드가 손상됩니다. 매일 다섯 가지를 점검하세요.
+      <ul>
+        <li><strong>농도(濃度)</strong> — 가장 중요한 지표. 너무 낮으면 녹이 슬고 공구가 빨리 마모되며, 너무 높으면 낭비·피부 자극·잔류물이 생깁니다. 매일 <strong>굴절계(refractometer)</strong>로 제조사 권장 오일-물 비율을 유지하세요.</li>
+        <li><strong>세균·악취</strong> — 정체된 탱크는 <strong>혐기성 세균(厭氧菌)</strong>의 온상이 되어 절삭유를 분해하고 계란 썩는 냄새를 냅니다. 스마트 탱크는 침전 방지 바닥 유동 설계로 사각(死角)을 없애고, <strong>UVC(265nm)</strong>로 유휴 시간에 살균합니다.</li>
+        <li><strong>거품(起泡)</strong> — 과도한 거품은 열 흡수를 막고 고압 펌프의 캐비테이션을 유발합니다. 소포제가 부족한 절삭유를 고압 CTS에 쓰거나 농도가 너무 높을 때 자주 발생합니다.</li>
+        <li><strong>방청(防鏽)</strong> — 절삭유는 알칼리 pH(<strong>보통 8.5~9.5</strong>)를 유지해야 합니다. 세균 증식이나 저농도로 pH가 떨어지면 척·지그·가공 직후 부품에 플래시 녹이 발생합니다.</li>
+        <li><strong>수명·재활용</strong> — 슬라이드웨이 기름(트램프 오일)이 탱크로 새어 들어가면 절삭유를 질식시켜 수명을 단축합니다. 여과 시스템, <strong>유수 분리기(油水分離機)</strong>, 스마트 재활용을 도입하면 수명을 늘리고 유해 폐기물과 처리 비용을 줄일 수 있습니다.</li>
+      </ul>
+
+      <p style="margin-top:18px">건강한 절삭유는 CNC의 기본 체력입니다. 알맞은 합성·반합성 절삭유를 <button class="nav-btn" onclick="openKnowledge('coolant-cts')" style="color:var(--gold);border:none;background:none;padding:0;font-size:inherit;text-decoration:underline;cursor:pointer">스마트 절삭유 탱크</button>·고압 CTS와 함께 쓰면 악취를 억제하고 공구 수명을 늘리며 친환경 작업장을 유지할 수 있습니다. Z&amp;Z STROTEC가 절삭유·주변장치 솔루션을 함께 제안합니다. <button class="nav-btn" onclick="showPage('inquiry')" style="color:var(--gold);border:1px solid var(--gold);padding:8px 22px;font-size:12px;margin-top:6px">절삭유·주변장치 문의 →</button></p>
+    `,
+    body_zh: `
+      <svg viewBox="0 0 1000 430" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="四大切削液種類與五大維護指標" style="width:100%;height:auto;display:block;border-radius:12px;margin:0 0 22px;font-family:'Segoe UI','Microsoft JhengHei','Malgun Gothic',system-ui,Arial,sans-serif">
+        <defs><linearGradient id="cfbgz" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#0b2233"/><stop offset="1" stop-color="#0c2d38"/></linearGradient></defs>
+        <rect x="0" y="0" width="1000" height="430" rx="14" fill="url(#cfbgz)"/>
+        <text x="500" y="40" text-anchor="middle" font-size="22" font-weight="700" fill="#e6f1f7">四大切削液種類 · 五大維護指標</text>
+        <text x="40" y="76" font-size="12" fill="#e0b566">← 潤滑佳（含油量↑）</text><text x="960" y="76" text-anchor="end" font-size="12" fill="#7fc4e8">散熱佳（含水量↑）→</text>
+        <g transform="translate(40,88)"><rect width="222" height="150" rx="9" fill="#ffffff" fill-opacity="0.04" stroke="#d4af5c" stroke-opacity="0.5"/><rect width="222" height="30" rx="9" fill="#5a4318"/><text x="111" y="20" text-anchor="middle" font-size="13" font-weight="700" fill="#f2e2c2">純油</text><text x="16" y="56" font-size="11.5" fill="#dfe8ee">不含水 · 潤滑性最強</text><text x="16" y="76" font-size="11.5" fill="#dfe8ee">散熱較差</text><text x="16" y="102" font-size="10.5" fill="#9fb3c0">低速重切削 · 走心機</text><rect x="16" y="118" width="190" height="8" rx="4" fill="#26323a"/><rect x="16" y="118" width="190" height="8" rx="4" fill="#d4af5c"/></g>
+        <g transform="translate(272,88)"><rect width="222" height="150" rx="9" fill="#ffffff" fill-opacity="0.04" stroke="#b9a24a" stroke-opacity="0.55"/><rect width="222" height="30" rx="9" fill="#4c451f"/><text x="111" y="20" text-anchor="middle" font-size="13" font-weight="700" fill="#eadfb0">水溶性乳化</text><text x="16" y="56" font-size="11.5" fill="#dfe8ee">礦物油＋水（乳白色）</text><text x="16" y="76" font-size="11.5" fill="#dfe8ee">散熱潤滑均衡</text><text x="16" y="102" font-size="10.5" fill="#9fb3c0">一般車銑加工</text><rect x="16" y="118" width="190" height="8" rx="4" fill="#26323a"/><rect x="16" y="118" width="120" height="8" rx="4" fill="#b9a24a"/></g>
+        <g transform="translate(504,88)"><rect width="222" height="150" rx="9" fill="#ffffff" fill-opacity="0.04" stroke="#5f9aa6" stroke-opacity="0.55"/><rect width="222" height="30" rx="9" fill="#1f4149"/><text x="111" y="20" text-anchor="middle" font-size="13" font-weight="700" fill="#c8e6ea">半合成</text><text x="16" y="56" font-size="11.5" fill="#dfe8ee">少量礦物油＋合成添加</text><text x="16" y="76" font-size="11.5" fill="#dfe8ee">散熱快 · 較潔淨</text><text x="16" y="102" font-size="10.5" fill="#9fb3c0">現代 CNC 泛用</text><rect x="16" y="118" width="190" height="8" rx="4" fill="#26323a"/><rect x="16" y="118" width="66" height="8" rx="4" fill="#5f9aa6"/></g>
+        <g transform="translate(736,88)"><rect width="222" height="150" rx="9" fill="#ffffff" fill-opacity="0.04" stroke="#4aa3df" stroke-opacity="0.55"/><rect width="222" height="30" rx="9" fill="#173f5a"/><text x="111" y="20" text-anchor="middle" font-size="13" font-weight="700" fill="#cfe6f5">全合成</text><text x="16" y="56" font-size="11.5" fill="#dfe8ee">零礦物油 · 化學基底</text><text x="16" y="76" font-size="11.5" fill="#dfe8ee">散熱最佳 · 無殘膜</text><text x="16" y="102" font-size="10.5" fill="#9fb3c0">環保 · 廢液易處理</text><rect x="16" y="118" width="190" height="8" rx="4" fill="#26323a"/><rect x="16" y="118" width="8" height="8" rx="4" fill="#4aa3df"/></g>
+        <text x="40" y="270" font-size="13" font-weight="600" letter-spacing="1" fill="#7fb0c8">五大維護指標</text>
+        <g font-size="11.5" fill="#dfe8ee">
+          <g transform="translate(40,286)"><rect width="174" height="96" rx="8" fill="#ffffff" fill-opacity="0.035" stroke="#2f5d75" stroke-opacity="0.5"/><circle cx="22" cy="26" r="12" fill="#16394c"/><text x="22" y="30" text-anchor="middle" font-weight="700" fill="#9ec4da">1</text><text x="42" y="30" font-weight="600" fill="#cfe0ea">濃度</text><text x="16" y="58" >每日折射計量測</text><text x="16" y="76" >維持建議油水比</text></g>
+          <g transform="translate(226,286)"><rect width="174" height="96" rx="8" fill="#ffffff" fill-opacity="0.035" stroke="#2f5d75" stroke-opacity="0.5"/><circle cx="22" cy="26" r="12" fill="#16394c"/><text x="22" y="30" text-anchor="middle" font-weight="700" fill="#9ec4da">2</text><text x="42" y="30" font-weight="600" fill="#cfe0ea">細菌·惡臭</text><text x="16" y="58" >UVC 265nm 殺菌</text><text x="16" y="76" >無死角流動設計</text></g>
+          <g transform="translate(412,286)"><rect width="174" height="96" rx="8" fill="#ffffff" fill-opacity="0.035" stroke="#2f5d75" stroke-opacity="0.5"/><circle cx="22" cy="26" r="12" fill="#16394c"/><text x="22" y="30" text-anchor="middle" font-weight="700" fill="#9ec4da">3</text><text x="42" y="30" font-weight="600" fill="#cfe0ea">起泡</text><text x="16" y="58" >消泡劑 · 濃度適中</text><text x="16" y="76" >防止泵浦空蝕</text></g>
+          <g transform="translate(598,286)"><rect width="174" height="96" rx="8" fill="#ffffff" fill-opacity="0.035" stroke="#2f5d75" stroke-opacity="0.5"/><circle cx="22" cy="26" r="12" fill="#16394c"/><text x="22" y="30" text-anchor="middle" font-weight="700" fill="#9ec4da">4</text><text x="42" y="30" font-weight="600" fill="#cfe0ea">防鏽</text><text x="16" y="58" >維持鹼性 pH 8.5–9.5</text><text x="16" y="76" >避免瞬間生鏽</text></g>
+          <g transform="translate(784,286)"><rect width="174" height="96" rx="8" fill="#ffffff" fill-opacity="0.035" stroke="#2f5d75" stroke-opacity="0.5"/><circle cx="22" cy="26" r="12" fill="#16394c"/><text x="22" y="30" text-anchor="middle" font-weight="700" fill="#9ec4da">5</text><text x="42" y="30" font-weight="600" fill="#cfe0ea">壽命·回收</text><text x="16" y="58" >撇除滑道機油</text><text x="16" y="76" >過濾 · 油水分離</text></g>
+        </g>
+        <text x="970" y="414" text-anchor="end" font-size="12.5" font-weight="700" fill="#d4af5c">Z&amp;Z STROTEC</text>
+      </svg>
+      <h4>切削液顧好，CTS 才能發揮實力</h4>
+      即使投資<button class="nav-btn" onclick="openKnowledge('coolant-cts')" style="color:var(--gold);border:none;background:none;padding:0;font-size:inherit;text-decoration:underline;cursor:pointer">高壓主軸中心出水（CTS）</button>，系統的表現也只會跟流經其中的切削液一樣好。選錯切削液或疏於維護，會導致刀具提前磨耗、嚴重生鏽，以及現場的惡臭。
+
+      <h4>1. 四大主流切削液種類</h4>
+      切削液主要有兩大功能：<strong>散熱</strong>與<strong>潤滑</strong>。依工件材質與加工型態，從以下四類擇一：
+      <ul>
+        <li><strong>純油切削油</strong> — 不含水，潤滑性最強但散熱較差。適合低速重切削，或走心式車床加工難切削合金。</li>
+        <li><strong>水溶性乳化切削液</strong> — 礦物油與水的混合（通常呈乳白色）。散熱與潤滑均衡，是一般 CNC 車銑的傳統選擇。</li>
+        <li><strong>半合成切削液</strong> — 含較少礦物油並混入合成化學添加劑。散熱比乳化液更快、更潔淨，對現代 CNC 加工泛用性高。</li>
+        <li><strong>全合成切削液</strong> — 零礦物油、完全以化學配方為基底。散熱表現最佳且不留黏膜。轉用高品質水基合成或可生物分解的替代品，也是永續加工的關鍵策略——可減少有害排放、簡化廢液處理。</li>
+      </ul>
+
+      <h4>2. 切削液的五大日常維護指標</h4>
+      把切削液倒進機台並不代表完成。疏於維護會毀掉刀具與機台線軌。每日留意以下五項：
+      <ul>
+        <li><strong>濃度</strong> — 最關鍵的指標。濃度太低會生鏽、刀具快速磨耗；太高則浪費、刺激皮膚並產生黏膜。操作者應每日以<strong>折射計（refractometer）</strong>維持製造商建議的油水比例。</li>
+        <li><strong>細菌與惡臭</strong> — 停滯的水箱是<strong>厭氧菌（anaerobic bacteria）</strong>的溫床，會分解切削液並產生「臭雞蛋」味。智慧水箱以防淤積底部流動設計消除死角，並以內建 <strong>UVC 紫外光（265nm）</strong>在閒置時殺菌。</li>
+        <li><strong>起泡</strong> — 過多泡沫會妨礙切削液吸熱，並使高壓泵浦產生空蝕。通常是高壓 CTS 搭配缺乏消泡劑的切削液，或濃度過高所致。</li>
+        <li><strong>防鏽</strong> — 切削液須維持鹼性 pH（<strong>通常 8.5～9.5</strong>）。若因細菌孳生或濃度過低使 pH 下降，昂貴的夾頭、治具與剛加工完成的工件就會瞬間生鏽。</li>
+        <li><strong>壽命與環保</strong> — 滑道機油（tramp oil）滲入水箱會悶死切削液、加速劣化。導入過濾系統、<strong>油水分離機</strong>與智慧回收，不僅延長壽命，也能減少有害廢棄物量，明顯降低處理成本。</li>
+      </ul>
+
+      <p style="margin-top:18px">健康的切削液是 CNC 機台的基本體質。選對合成或半合成切削液，搭配<button class="nav-btn" onclick="openKnowledge('coolant-cts')" style="color:var(--gold);border:none;background:none;padding:0;font-size:inherit;text-decoration:underline;cursor:pointer">智慧切削液水箱</button>與高壓 CTS，即可抑制惡臭、延長刀具壽命並維持環保的加工現場。Z&amp;Z STROTEC 可一併規劃切削液與周邊解決方案。<button class="nav-btn" onclick="showPage('inquiry')" style="color:var(--gold);border:1px solid var(--gold);padding:8px 22px;font-size:12px;margin-top:6px">洽詢切削液與周邊方案 →</button></p>
+    `,
+    body: `
+      <svg viewBox="0 0 1000 430" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Four cutting fluid types and five maintenance pillars" style="width:100%;height:auto;display:block;border-radius:12px;margin:0 0 22px;font-family:'Segoe UI','Microsoft JhengHei','Malgun Gothic',system-ui,Arial,sans-serif">
+        <defs><linearGradient id="cfbge" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#0b2233"/><stop offset="1" stop-color="#0c2d38"/></linearGradient></defs>
+        <rect x="0" y="0" width="1000" height="430" rx="14" fill="url(#cfbge)"/>
+        <text x="500" y="40" text-anchor="middle" font-size="22" font-weight="700" fill="#e6f1f7">4 Fluid Types · 5 Maintenance Pillars</text>
+        <text x="40" y="76" font-size="11.5" fill="#e0b566">← More lubrication (oil↑)</text><text x="960" y="76" text-anchor="end" font-size="11.5" fill="#7fc4e8">More cooling (water↑) →</text>
+        <g transform="translate(40,88)"><rect width="222" height="150" rx="9" fill="#ffffff" fill-opacity="0.04" stroke="#d4af5c" stroke-opacity="0.5"/><rect width="222" height="30" rx="9" fill="#5a4318"/><text x="111" y="20" text-anchor="middle" font-size="13" font-weight="700" fill="#f2e2c2">Straight Oil</text><text x="16" y="56" font-size="11.5" fill="#dfe8ee">No water · max lubricity</text><text x="16" y="76" font-size="11.5" fill="#dfe8ee">Weak cooling</text><text x="16" y="102" font-size="10.5" fill="#9fb3c0">Low-speed heavy cut · Swiss</text><rect x="16" y="118" width="190" height="8" rx="4" fill="#26323a"/><rect x="16" y="118" width="190" height="8" rx="4" fill="#d4af5c"/></g>
+        <g transform="translate(272,88)"><rect width="222" height="150" rx="9" fill="#ffffff" fill-opacity="0.04" stroke="#b9a24a" stroke-opacity="0.55"/><rect width="222" height="30" rx="9" fill="#4c451f"/><text x="111" y="20" text-anchor="middle" font-size="13" font-weight="700" fill="#eadfb0">Soluble / Emulsion</text><text x="16" y="56" font-size="11.5" fill="#dfe8ee">Mineral oil + water (milky)</text><text x="16" y="76" font-size="11.5" fill="#dfe8ee">Balanced cool &amp; lube</text><text x="16" y="102" font-size="10.5" fill="#9fb3c0">General turning &amp; milling</text><rect x="16" y="118" width="190" height="8" rx="4" fill="#26323a"/><rect x="16" y="118" width="120" height="8" rx="4" fill="#b9a24a"/></g>
+        <g transform="translate(504,88)"><rect width="222" height="150" rx="9" fill="#ffffff" fill-opacity="0.04" stroke="#5f9aa6" stroke-opacity="0.55"/><rect width="222" height="30" rx="9" fill="#1f4149"/><text x="111" y="20" text-anchor="middle" font-size="13" font-weight="700" fill="#c8e6ea">Semi-synthetic</text><text x="16" y="56" font-size="11.5" fill="#dfe8ee">Less oil + synthetic adds</text><text x="16" y="76" font-size="11.5" fill="#dfe8ee">Faster cooling · cleaner</text><text x="16" y="102" font-size="10.5" fill="#9fb3c0">Versatile modern CNC</text><rect x="16" y="118" width="190" height="8" rx="4" fill="#26323a"/><rect x="16" y="118" width="66" height="8" rx="4" fill="#5f9aa6"/></g>
+        <g transform="translate(736,88)"><rect width="222" height="150" rx="9" fill="#ffffff" fill-opacity="0.04" stroke="#4aa3df" stroke-opacity="0.55"/><rect width="222" height="30" rx="9" fill="#173f5a"/><text x="111" y="20" text-anchor="middle" font-size="13" font-weight="700" fill="#cfe6f5">Synthetic</text><text x="16" y="56" font-size="11.5" fill="#dfe8ee">Zero oil · chemical-based</text><text x="16" y="76" font-size="11.5" fill="#dfe8ee">Best cooling · no residue</text><text x="16" y="102" font-size="10.5" fill="#9fb3c0">Eco · easy waste disposal</text><rect x="16" y="118" width="190" height="8" rx="4" fill="#26323a"/><rect x="16" y="118" width="8" height="8" rx="4" fill="#4aa3df"/></g>
+        <text x="40" y="270" font-size="12.5" font-weight="600" letter-spacing="1" fill="#7fb0c8">FIVE MAINTENANCE PILLARS</text>
+        <g font-size="11" fill="#dfe8ee">
+          <g transform="translate(40,286)"><rect width="174" height="96" rx="8" fill="#ffffff" fill-opacity="0.035" stroke="#2f5d75" stroke-opacity="0.5"/><circle cx="22" cy="26" r="12" fill="#16394c"/><text x="22" y="30" text-anchor="middle" font-weight="700" fill="#9ec4da">1</text><text x="42" y="30" font-weight="600" fill="#cfe0ea">Concentration</text><text x="16" y="58" >Daily refractometer</text><text x="16" y="76" >check; hold oil:water</text></g>
+          <g transform="translate(226,286)"><rect width="174" height="96" rx="8" fill="#ffffff" fill-opacity="0.035" stroke="#2f5d75" stroke-opacity="0.5"/><circle cx="22" cy="26" r="12" fill="#16394c"/><text x="22" y="30" text-anchor="middle" font-weight="700" fill="#9ec4da">2</text><text x="42" y="30" font-weight="600" fill="#cfe0ea">Bacteria · Odor</text><text x="16" y="58" >UVC 265nm sterilize</text><text x="16" y="76" >no dead-zone flow</text></g>
+          <g transform="translate(412,286)"><rect width="174" height="96" rx="8" fill="#ffffff" fill-opacity="0.035" stroke="#2f5d75" stroke-opacity="0.5"/><circle cx="22" cy="26" r="12" fill="#16394c"/><text x="22" y="30" text-anchor="middle" font-weight="700" fill="#9ec4da">3</text><text x="42" y="30" font-weight="600" fill="#cfe0ea">Foam</text><text x="16" y="58" >Anti-foam additive;</text><text x="16" y="76" >avoid pump cavitation</text></g>
+          <g transform="translate(598,286)"><rect width="174" height="96" rx="8" fill="#ffffff" fill-opacity="0.035" stroke="#2f5d75" stroke-opacity="0.5"/><circle cx="22" cy="26" r="12" fill="#16394c"/><text x="22" y="30" text-anchor="middle" font-weight="700" fill="#9ec4da">4</text><text x="42" y="30" font-weight="600" fill="#cfe0ea">Rust</text><text x="16" y="58" >Keep alkaline</text><text x="16" y="76" >pH 8.5–9.5</text></g>
+          <g transform="translate(784,286)"><rect width="174" height="96" rx="8" fill="#ffffff" fill-opacity="0.035" stroke="#2f5d75" stroke-opacity="0.5"/><circle cx="22" cy="26" r="12" fill="#16394c"/><text x="22" y="30" text-anchor="middle" font-weight="700" fill="#9ec4da">5</text><text x="42" y="30" font-weight="600" fill="#cfe0ea">Life · Recycle</text><text x="16" y="58" >Skim tramp oil;</text><text x="16" y="76" >filter &amp; separate</text></g>
+        </g>
+        <text x="970" y="414" text-anchor="end" font-size="12.5" font-weight="700" fill="#d4af5c">Z&amp;Z STROTEC</text>
+      </svg>
+      <h4>A Good Fluid Is What Makes CTS Work</h4>
+      Investing in a <button class="nav-btn" onclick="openKnowledge('coolant-cts')" style="color:var(--gold);border:none;background:none;padding:0;font-size:inherit;text-decoration:underline;cursor:pointer">high-pressure Coolant Through Spindle (CTS)</button> system matters for deep-hole machining, but the system is only as good as the fluid flowing through it. The wrong cutting fluid, or poor maintenance, leads to premature tool wear, severe rust, and foul odors on the shop floor.
+
+      <h4>1. The Four Main Types of Cutting Fluid</h4>
+      Cutting fluids serve two functions: <strong>cooling</strong> and <strong>lubrication</strong>. Depending on your workpiece material and machining type, you choose from four categories:
+      <ul>
+        <li><strong>Straight oil</strong> — contains no water; maximum lubricity but weak heat dissipation. Best for low-speed heavy cutting, or Swiss-type lathes machining difficult alloys.</li>
+        <li><strong>Water-soluble / soluble oil (emulsion)</strong> — a mix of mineral oil and water (typically milky white). A good balance of cooling and lubrication — the traditional choice for general CNC turning and milling.</li>
+        <li><strong>Semi-synthetic</strong> — less mineral oil blended with synthetic additives. Dissipates heat faster than soluble oils, stays cleaner, and is highly versatile for modern CNC machining.</li>
+        <li><strong>Synthetic</strong> — zero mineral oil, fully chemical-based. Best cooling performance and no sticky residue. Moving to high-quality water-based synthetic or biodegradable alternatives is also a key strategy for sustainable machining — it reduces harmful emissions and simplifies waste disposal.</li>
+      </ul>
+
+      <h4>2. The Five Pillars of Coolant Maintenance</h4>
+      Pouring coolant into the machine is not enough. Neglecting the fluid destroys your tools and the machine's linear guides. Monitor these five factors daily:
+      <ul>
+        <li><strong>Concentration</strong> — the most critical metric. Too low and the machine rusts and tools wear fast; too high and it wastes money, irritates skin, and leaves sticky residue. Use a <strong>refractometer</strong> daily to hold the oil-to-water ratio the maker recommends.</li>
+        <li><strong>Bacteria &amp; odor</strong> — a stagnant tank breeds <strong>anaerobic bacteria</strong> that break down the coolant and create a "rotten egg" smell. Smart tanks use anti-sludge bottom-flow designs to remove dead zones, plus built-in <strong>UVC light (265 nm)</strong> to sterilize the fluid overnight.</li>
+        <li><strong>Foam</strong> — excess foam stops the coolant absorbing heat and can make the high-pressure pump cavitate. Usually caused by running a high-pressure CTS with a coolant lacking anti-foam agents, or by too-high concentration.</li>
+        <li><strong>Rust prevention</strong> — the coolant must stay alkaline (<strong>usually pH 8.5–9.5</strong>). If pH drops from bacterial growth or low concentration, flash rust forms on your chucks, fixtures, and freshly machined parts.</li>
+        <li><strong>Fluid life &amp; recycling</strong> — tramp oil (slideway oil) leaking into the tank suffocates the fluid and speeds its death. Filtration, <strong>oil skimmers / separators</strong>, and smart recycling extend fluid life and cut the volume of hazardous waste — lowering disposal costs.</li>
+      </ul>
+
+      <p style="margin-top:18px">A healthy cutting fluid keeps a CNC machine in good shape. Pairing the right synthetic or semi-synthetic coolant with a <button class="nav-btn" onclick="openKnowledge('coolant-cts')" style="color:var(--gold);border:none;background:none;padding:0;font-size:inherit;text-decoration:underline;cursor:pointer">smart coolant tank</button> and high-pressure CTS helps control odors, extend tool life, and keep an eco-friendly shop floor. Z&amp;Z STROTEC can plan coolant and peripherals together. <button class="nav-btn" onclick="showPage('inquiry')" style="color:var(--gold);border:1px solid var(--gold);padding:8px 22px;font-size:12px;margin-top:6px">Ask us about coolant &amp; peripherals →</button></p>
     `
   }
 };
@@ -12641,7 +12943,7 @@ const LANG = {
     sidebar_knowledge: 'Knowledge Library', sidebar_export: 'Export Procedures', sidebar_markets: 'Markets', sidebar_industry: 'Industry',
     sb_bar_feeder: ' Bar Feeder', sb_linear_guide: ' Linear Guide', sb_servo_motor: ' Servo Motor',
     sb_cnc_lathe: ' CNC Lathe', sb_tool_holder: ' Tool Holder', sb_spindle: ' Spindle', sb_spindle_cooling: ' Spindle Cooling',
-    sb_live_tool: ' Live Tool Holders', sb_static_tool: ' Static Tool Holders', sb_collet: ' Collets & Chucks', sb_automation: ' Automation Loading', sb_chip_conveyor: ' Chip Conveyors', sb_coolant_cts: ' Coolant & CTS', sb_cutting_tools: ' Cutting Tools & Coatings',
+    sb_live_tool: ' Live Tool Holders', sb_static_tool: ' Static Tool Holders', sb_collet: ' Collets & Chucks', sb_automation: ' Automation Loading', sb_chip_conveyor: ' Chip Conveyors', sb_coolant_cts: ' Coolant & CTS', sb_cutting_tools: ' Cutting Tools & Coatings', sb_troubleshooting: ' CNC Troubleshooting', sb_cutting_fluids: ' Cutting Fluids',
     sb_export_flow: ' Export Process Overview', sb_export_docs: ' Export Documents', sb_air_freight: ' Air Freight Guide', sb_shtc: ' SHTC Export Control', sb_payment_terms: ' Payment Terms', sb_marine: ' Marine Insurance', sb_customs: ' Customs Clearance',
     sb_import_duty: ' Import Duty Reference', sb_container: ' Container & CBM Guide', sb_terms: ' Terminology 術語/용어', sb_services: ' Our Services', sb_factory_visit: ' Factory Visit',
     sb_tw_brands: ' Taiwan Manufacturers', sb_maintenance: ' Maintenance Guide',
@@ -12701,7 +13003,7 @@ const LANG = {
     sidebar_knowledge: '知識庫', sidebar_export: '出口流程', sidebar_markets: '市場', sidebar_industry: '產業',
     sb_bar_feeder: ' 送料機', sb_linear_guide: ' 線性滑軌', sb_servo_motor: ' 伺服馬達',
     sb_cnc_lathe: ' CNC 車床', sb_tool_holder: ' 刀座', sb_spindle: ' 主軸', sb_spindle_cooling: ' 主軸冷卻',
-    sb_live_tool: ' 動力刀座', sb_static_tool: ' 非動力刀座', sb_collet: ' 筒夾/夾頭', sb_automation: ' 自動化上下料', sb_chip_conveyor: ' 鐵屑輸送機', sb_coolant_cts: ' 冷卻液與中心出水', sb_cutting_tools: ' 刀具與塗層',
+    sb_live_tool: ' 動力刀座', sb_static_tool: ' 非動力刀座', sb_collet: ' 筒夾/夾頭', sb_automation: ' 自動化上下料', sb_chip_conveyor: ' 鐵屑輸送機', sb_coolant_cts: ' 冷卻液與中心出水', sb_cutting_tools: ' 刀具與塗層', sb_troubleshooting: ' 加工異常排除', sb_cutting_fluids: ' 切削液／冷卻液',
     sb_export_flow: ' 出口流程總覽', sb_export_docs: ' 出口文件', sb_air_freight: ' 國際空運指南', sb_shtc: ' 戰略物資出口管制', sb_payment_terms: ' 付款條件', sb_marine: ' 海上保險', sb_customs: ' 清關',
     sb_import_duty: ' 進口關稅參考', sb_container: ' 貨櫃與材積指南', sb_terms: ' 術語對照', sb_services: ' 服務項目', sb_factory_visit: ' 來台採購',
     sb_tw_brands: ' 台灣製造商', sb_maintenance: ' 保養指南',
@@ -12762,7 +13064,7 @@ const LANG = {
     sidebar_knowledge: '지식 라이브러리', sidebar_export: '수출 절차', sidebar_markets: '시장', sidebar_industry: '산업',
     sb_bar_feeder: ' 바피더', sb_linear_guide: ' 리니어 가이드', sb_servo_motor: ' 서보 모터',
     sb_cnc_lathe: ' CNC 선반', sb_tool_holder: ' 툴 홀더', sb_spindle: ' 스핀들', sb_spindle_cooling: ' 스핀들 냉각',
-    sb_live_tool: ' 동력 공구대', sb_static_tool: ' 비동력 공구대', sb_collet: ' 콜릿 & 척', sb_automation: ' 자동 로딩', sb_chip_conveyor: ' 칩 컨베이어', sb_coolant_cts: ' 절삭유 & CTS', sb_cutting_tools: ' 절삭공구 & 코팅',
+    sb_live_tool: ' 동력 공구대', sb_static_tool: ' 비동력 공구대', sb_collet: ' 콜릿 & 척', sb_automation: ' 자동 로딩', sb_chip_conveyor: ' 칩 컨베이어', sb_coolant_cts: ' 절삭유 & CTS', sb_cutting_tools: ' 절삭공구 & 코팅', sb_troubleshooting: ' CNC 트러블슈팅', sb_cutting_fluids: ' 절삭유',
     sb_export_flow: ' 수출 프로세스 개요', sb_export_docs: ' 수출 서류', sb_air_freight: ' 항공 화물 가이드', sb_shtc: ' SHTC 수출 통제', sb_payment_terms: ' 결제 조건', sb_marine: ' 해상보험', sb_customs: ' 통관',
     sb_import_duty: ' 수입 관세 참고', sb_container: ' 컨테이너 & CBM 가이드', sb_terms: ' 용어 대조', sb_services: ' 서비스 안내', sb_factory_visit: ' 대만 방문 구매',
     sb_tw_brands: ' 대만 제조업체', sb_maintenance: ' 유지보수 가이드',
