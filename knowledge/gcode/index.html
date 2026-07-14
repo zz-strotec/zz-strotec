@@ -1,0 +1,231 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>G-Code Quick Reference | Z&amp;Z STROTEC</title>
+<meta name="description" content="What is G-Code? G-code (RS-274) is the standard CNC programming language. G-codes control machine movement; M-codes control machine functions (spindle,…">
+<link rel="canonical" href="https://zz-strotec.github.io/zz-strotec/knowledge/gcode/">
+<meta name="robots" content="index,follow,max-image-preview:large">
+<meta property="og:type" content="article">
+<meta property="og:title" content="G-Code Quick Reference">
+<meta property="og:description" content="What is G-Code? G-code (RS-274) is the standard CNC programming language. G-codes control machine movement; M-codes control machine functions (spindle,…">
+<meta property="og:url" content="https://zz-strotec.github.io/zz-strotec/knowledge/gcode/">
+<meta property="og:site_name" content="Z&amp;Z STROTEC">
+<meta property="og:image" content="https://zz-strotec.github.io/zz-strotec/assets/brand-logo.png">
+<meta name="twitter:card" content="summary_large_image">
+<link rel="alternate" hreflang="en" href="https://zz-strotec.github.io/zz-strotec/knowledge/gcode/">
+<link rel="alternate" hreflang="zh-Hant" href="https://zz-strotec.github.io/zz-strotec/knowledge/gcode/">
+<link rel="alternate" hreflang="ko" href="https://zz-strotec.github.io/zz-strotec/knowledge/gcode/">
+<link rel="alternate" hreflang="x-default" href="https://zz-strotec.github.io/zz-strotec/knowledge/gcode/">
+<script type="application/ld+json">{"@context":"https://schema.org","@type":"Article","headline":"G-Code Quick Reference","description":"What is G-Code? G-code (RS-274) is the standard CNC programming language. G-codes control machine movement; M-codes control machine functions (spindle,…","inLanguage":["en","zh-Hant","ko"],"datePublished":"2026-06-29","dateModified":"2026-06-29","author":{"@type":"Organization","name":"Z&Z STROTEC"},"publisher":{"@type":"Organization","name":"Z&Z STROTEC","logo":{"@type":"ImageObject","url":"https://zz-strotec.github.io/zz-strotec/assets/brand-logo.png"}},"mainEntityOfPage":"https://zz-strotec.github.io/zz-strotec/knowledge/gcode/"}</script>
+<link rel="stylesheet" href="../../assets/kb-pages.css">
+<style>
+/* --- standalone SEO page chrome --- */
+body{margin:0}
+.kbp-header{display:flex;align-items:center;justify-content:space-between;gap:16px;
+  padding:14px 20px;border-bottom:1px solid var(--border);background:var(--surface)}
+.kbp-header a{color:var(--text);text-decoration:none}
+.kbp-brand{display:flex;align-items:center;gap:10px;font-weight:600;letter-spacing:1px}
+.kbp-brand img{height:28px;width:auto}
+.kbp-nav a{color:var(--text-dim);font-size:12px;letter-spacing:1px;margin-left:18px;text-decoration:none}
+.kbp-nav a:hover{color:var(--gold)}
+.kbp-wrap{max-width:860px;margin:0 auto;padding:28px 20px 60px}
+.kbp-crumb{font-size:12px;color:var(--text-dim);margin-bottom:18px}
+.kbp-crumb a{color:var(--text-dim);text-decoration:none}
+.kbp-crumb a:hover{color:var(--gold)}
+.kbp-h1{color:var(--text);font-size:1.7rem;line-height:1.35;margin:0 0 6px}
+.kbp-byline{color:var(--text-dim);font-size:.8rem;margin:0 0 22px}
+.kbp-cta{display:inline-block;margin:0 0 26px;padding:9px 20px;border:1px solid var(--gold);
+  border-radius:6px;color:var(--gold);font-size:13px;text-decoration:none}
+.kbp-cta:hover{background:var(--gold);color:#0d0d0d}
+.kbp-tags{margin-top:26px;display:flex;flex-wrap:wrap;gap:8px}
+.kbp-body img{max-width:100%;height:auto}
+.kbp-footer{border-top:1px solid var(--border);padding:26px 20px;text-align:center;
+  color:var(--text-dim);font-size:12px;line-height:1.9}
+.kbp-footer a{color:var(--text-dim);text-decoration:none;margin:0 8px}
+.kbp-footer a:hover{color:var(--gold)}
+.kbp-hublist{list-style:none;padding:0;margin:18px 0 0;display:grid;
+  grid-template-columns:repeat(auto-fill,minmax(260px,1fr));gap:12px}
+.kbp-hublist a{display:block;padding:16px;border:1px solid var(--border);border-radius:8px;
+  background:var(--surface);color:var(--text);text-decoration:none;transition:border-color .15s}
+.kbp-hublist a:hover{border-color:var(--gold)}
+.kbp-hublist .t{font-weight:600;font-size:.98rem;margin-bottom:4px}
+.kbp-hublist .s{color:var(--text-dim);font-size:.82rem;line-height:1.5}
+</style>
+</head>
+<body>
+<header class="kbp-header">
+  <a class="kbp-brand" href="/zz-strotec/"><img src="../../assets/brand-logo.png" alt="Z&amp;Z STROTEC">Z&amp;Z STROTEC</a>
+  <nav class="kbp-nav">
+    <a href="/zz-strotec/knowledge/">Knowledge</a>
+    <a href="/zz-strotec/column/">Columns</a>
+    <a href="/zz-strotec/markets/">Markets</a>
+    <a href="/zz-strotec/">Full site →</a>
+  </nav>
+</header>
+<main class="kbp-wrap">
+  <div class="kbp-crumb"><a href="/zz-strotec/">Home</a> › <a href="/zz-strotec/knowledge/">Knowledge</a> › G-Code Quick Reference</div>
+  
+  <h1 class="kbp-h1">G-Code Quick Reference</h1>
+  <p style="margin:0 0 12px"><span style="color:var(--text-dim);font-size:1rem;font-weight:400">G-Code 快速參考</span><span style="color:var(--border)"> · </span><span style="color:var(--text-dim);font-size:1rem;font-weight:400">G-Code 빠른 참조</span></p>
+  <p class="kbp-byline">Published: 2026-06-29 · Written by Z&amp;Z STROTEC</p>
+  <a class="kbp-cta" href="/zz-strotec/#kb-gcode">View interactive version · 完整互動版 · 인터랙티브 버전 →</a>
+  <div class="kbp-body"><section lang="en">
+      <h4>What is G-Code?</h4>
+      G-code (RS-274) is the standard CNC programming language. G-codes control machine movement; M-codes control machine functions (spindle, coolant, etc.).
+
+      <h4>Essential G-Codes — CNC Lathe (Turning)</h4>
+      <ul>
+        <li><strong>G00</strong>: Rapid positioning (no cutting)</li>
+        <li><strong>G01</strong>: Linear interpolation (cutting feed)</li>
+        <li><strong>G02 / G03</strong>: Circular interpolation CW / CCW</li>
+        <li><strong>G04</strong>: Dwell (P = milliseconds)</li>
+        <li><strong>G20 / G21</strong>: Inch / Metric units</li>
+        <li><strong>G32</strong>: Thread cutting</li>
+        <li><strong>G40 / G41 / G42</strong>: Tool nose radius compensation cancel / left / right</li>
+        <li><strong>G70</strong>: Finishing cycle</li>
+        <li><strong>G71</strong>: Rough turning cycle (OD)</li>
+        <li><strong>G72</strong>: Rough facing cycle</li>
+        <li><strong>G74</strong>: Peck drilling / grooving cycle</li>
+        <li><strong>G76</strong>: Thread cutting cycle</li>
+        <li><strong>G90 / G91</strong>: Absolute / Incremental mode</li>
+        <li><strong>G96</strong>: Constant surface speed (CSS)</li>
+        <li><strong>G97</strong>: Constant spindle speed (RPM)</li>
+        <li><strong>G98 / G99</strong>: Feed per minute / Feed per revolution</li>
+      </ul>
+
+      <h4>Essential M-Codes — CNC Lathe</h4>
+      <ul>
+        <li><strong>M00</strong>: Program stop</li>
+        <li><strong>M02 / M30</strong>: End of program</li>
+        <li><strong>M03 / M04</strong>: Spindle CW / CCW</li>
+        <li><strong>M05</strong>: Spindle stop</li>
+        <li><strong>M08 / M09</strong>: Coolant ON / OFF</li>
+        <li><strong>M10 / M11</strong>: Chuck clamp / unclamp</li>
+      </ul>
+
+      <h4>Cutting Speed Formula</h4>
+      <ul>
+        <li><strong>RPM = (Vc × 1000) ÷ (π × D)</strong></li>
+        <li>Example: Vc 200 m/min on ∅50mm → RPM = (200 × 1000) ÷ (3.14 × 50) = <strong>1,274 RPM</strong></li>
+        <li><strong>Feed rate (mm/min) = RPM × f (mm/rev)</strong></li>
+      </ul>
+
+      <h4>Typical Cutting Conditions</h4>
+      <ul>
+        <li><strong>Steel S45C</strong>: Vc 150–200 m/min, f 0.15–0.3 mm/rev, ap 1–3mm</li>
+        <li><strong>Stainless SUS304</strong>: Vc 80–130 m/min, f 0.1–0.2 mm/rev, ap 0.5–2mm</li>
+        <li><strong>Aluminum</strong>: Vc 300–600 m/min, f 0.1–0.3 mm/rev, ap 1–5mm</li>
+        <li><strong>Cast Iron</strong>: Vc 100–180 m/min, f 0.15–0.3 mm/rev, ap 1–4mm</li>
+      </ul>
+    </section><section lang="zh-Hant" style="margin-top:34px;padding-top:24px;border-top:1px solid var(--border)"><div style="font-size:11px;letter-spacing:2px;color:var(--gold);margin-bottom:14px">繁體中文</div>
+      <h4>什麼是 G-Code？</h4>
+      G-code（RS-274）是標準的 CNC 程式語言。G 碼控制機台移動；M 碼控制機台功能（主軸、切削液等）。
+
+      <h4>CNC 車床基本 G 碼</h4>
+      <ul>
+        <li><strong>G00</strong>：快速定位（非切削）</li>
+        <li><strong>G01</strong>：直線插補（切削進給）</li>
+        <li><strong>G02 / G03</strong>：圓弧插補 順時針 / 逆時針</li>
+        <li><strong>G04</strong>：暫停（P = 毫秒）</li>
+        <li><strong>G20 / G21</strong>：英制 / 公制單位</li>
+        <li><strong>G32</strong>：車牙</li>
+        <li><strong>G40 / G41 / G42</strong>：刀尖補正取消 / 左 / 右</li>
+        <li><strong>G70</strong>：精車循環</li>
+        <li><strong>G71</strong>：外徑粗車循環</li>
+        <li><strong>G72</strong>：端面粗車循環</li>
+        <li><strong>G74</strong>：啄鑽 / 切槽循環</li>
+        <li><strong>G76</strong>：複合車牙循環</li>
+        <li><strong>G90 / G91</strong>：絕對 / 增量模式</li>
+        <li><strong>G96</strong>：恆表面速度（CSS）</li>
+        <li><strong>G97</strong>：固定主軸轉速（RPM）</li>
+        <li><strong>G98 / G99</strong>：每分鐘進給 / 每轉進給</li>
+      </ul>
+
+      <h4>CNC 車床基本 M 碼</h4>
+      <ul>
+        <li><strong>M00</strong>：程式暫停</li>
+        <li><strong>M02 / M30</strong>：程式結束</li>
+        <li><strong>M03 / M04</strong>：主軸正轉 / 反轉</li>
+        <li><strong>M05</strong>：主軸停止</li>
+        <li><strong>M08 / M09</strong>：切削液開 / 關</li>
+        <li><strong>M10 / M11</strong>：夾頭夾緊 / 鬆開</li>
+      </ul>
+
+      <h4>切削速度公式</h4>
+      <ul>
+        <li><strong>RPM = (Vc × 1000) ÷ (π × D)</strong></li>
+        <li>範例：Vc 200 m/min、∅50mm → RPM = (200 × 1000) ÷ (3.14 × 50) = <strong>1,274 RPM</strong></li>
+        <li><strong>進給率（mm/min）= RPM × f（mm/rev）</strong></li>
+      </ul>
+
+      <h4>典型切削條件</h4>
+      <ul>
+        <li><strong>S45C 鋼</strong>：Vc 150–200 m/min，f 0.15–0.3 mm/rev，ap 1–3mm</li>
+        <li><strong>SUS304 不鏽鋼</strong>：Vc 80–130 m/min，f 0.1–0.2 mm/rev，ap 0.5–2mm</li>
+        <li><strong>鋁合金</strong>：Vc 300–600 m/min，f 0.1–0.3 mm/rev，ap 1–5mm</li>
+        <li><strong>鑄鐵</strong>：Vc 100–180 m/min，f 0.15–0.3 mm/rev，ap 1–4mm</li>
+      </ul>
+    </section><section lang="ko" style="margin-top:34px;padding-top:24px;border-top:1px solid var(--border)"><div style="font-size:11px;letter-spacing:2px;color:var(--gold);margin-bottom:14px">한국어</div>
+      <h4>G-Code란?</h4>
+      G-Code(RS-274)는 표준 CNC 프로그래밍 언어입니다. G코드는 기계 이동을 제어하고, M코드는 기계 기능(주축, 절삭유 등)을 제어합니다.
+
+      <h4>필수 G코드 — CNC 선반 (선삭)</h4>
+      <ul>
+        <li><strong>G00</strong>: 급속 위치결정 (절삭 없음)</li>
+        <li><strong>G01</strong>: 직선 보간 (절삭 이송)</li>
+        <li><strong>G02 / G03</strong>: 원호 보간 시계 방향 / 반시계 방향</li>
+        <li><strong>G04</strong>: 드웰 (P = 밀리초)</li>
+        <li><strong>G20 / G21</strong>: 인치 / 미터 단위</li>
+        <li><strong>G32</strong>: 나사 절삭</li>
+        <li><strong>G40 / G41 / G42</strong>: 공구 노즈 반경 보정 취소 / 왼쪽 / 오른쪽</li>
+        <li><strong>G70</strong>: 정삭 사이클</li>
+        <li><strong>G71</strong>: 외경 황삭 사이클</li>
+        <li><strong>G72</strong>: 단면 황삭 사이클</li>
+        <li><strong>G74</strong>: 팩 드릴링 / 홈 파기 사이클</li>
+        <li><strong>G76</strong>: 나사 절삭 사이클</li>
+        <li><strong>G90 / G91</strong>: 절대 / 증분 모드</li>
+        <li><strong>G96</strong>: 일정 절삭 속도 (CSS)</li>
+        <li><strong>G97</strong>: 일정 주축 회전수 (RPM)</li>
+        <li><strong>G98 / G99</strong>: 분당 이송 / 회전당 이송</li>
+      </ul>
+
+      <h4>필수 M코드 — CNC 선반</h4>
+      <ul>
+        <li><strong>M00</strong>: 프로그램 정지</li>
+        <li><strong>M02 / M30</strong>: 프로그램 종료</li>
+        <li><strong>M03 / M04</strong>: 주축 정회전 / 역회전</li>
+        <li><strong>M05</strong>: 주축 정지</li>
+        <li><strong>M08 / M09</strong>: 절삭유 ON / OFF</li>
+        <li><strong>M10 / M11</strong>: 척 클램프 / 언클램프</li>
+      </ul>
+
+      <h4>절삭 속도 공식</h4>
+      <ul>
+        <li><strong>RPM = (Vc × 1000) ÷ (π × D)</strong></li>
+        <li>예시: Vc 200 m/min, ∅50mm → RPM = (200 × 1000) ÷ (3.14 × 50) = <strong>1,274 RPM</strong></li>
+        <li><strong>이송 속도 (mm/min) = RPM × f (mm/rev)</strong></li>
+      </ul>
+
+      <h4>일반 절삭 조건</h4>
+      <ul>
+        <li><strong>S45C 강</strong>: Vc 150~200 m/min, f 0.15~0.3 mm/rev, ap 1~3mm</li>
+        <li><strong>SUS304 스테인리스</strong>: Vc 80~130 m/min, f 0.1~0.2 mm/rev, ap 0.5~2mm</li>
+        <li><strong>알루미늄</strong>: Vc 300~600 m/min, f 0.1~0.3 mm/rev, ap 1~5mm</li>
+        <li><strong>주철</strong>: Vc 100~180 m/min, f 0.15~0.3 mm/rev, ap 1~4mm</li>
+      </ul>
+    </section></div>
+  <div class="kbp-tags"><span class="tag-pill">G-code</span><span class="tag-pill">M-code</span><span class="tag-pill">CNC programming</span><span class="tag-pill">turning</span><span class="tag-pill">milling</span><span class="tag-pill">cutting speed</span></div>
+</main>
+<footer class="kbp-footer">
+  <div>Z&amp;Z STROTEC · 萬洋國際有限公司 — CNC machine-tool export &amp; knowledge hub</div>
+  <div style="margin-top:8px">
+    <a href="/zz-strotec/">Full interactive site</a>·
+    <a href="/zz-strotec/knowledge/">Knowledge Library</a>·
+    <a href="/zz-strotec/column/">Expert Columns</a>·
+    <a href="/zz-strotec/markets/">Markets</a>
+  </div>
+</footer>
+</body>
+</html>

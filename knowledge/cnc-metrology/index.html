@@ -1,0 +1,204 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>CNC Metrology Guide: CMM, Micrometers &amp; Surface Roughness | Z&amp;Z STROTEC</title>
+<meta name="description" content="Metrology in Three Tiers SHOP FLOOR · SETUP · ADVANCED QC 1 · Shop Floor Vernier Caliper ID·OD·depth · ±0.01 mm Micrometer OD · to ~0.001 mm (1µm) Bore…">
+<link rel="canonical" href="https://zz-strotec.github.io/zz-strotec/knowledge/cnc-metrology/">
+<meta name="robots" content="index,follow,max-image-preview:large">
+<meta property="og:type" content="article">
+<meta property="og:title" content="CNC Metrology Guide: CMM, Micrometers &amp; Surface Roughness">
+<meta property="og:description" content="Metrology in Three Tiers SHOP FLOOR · SETUP · ADVANCED QC 1 · Shop Floor Vernier Caliper ID·OD·depth · ±0.01 mm Micrometer OD · to ~0.001 mm (1µm) Bore…">
+<meta property="og:url" content="https://zz-strotec.github.io/zz-strotec/knowledge/cnc-metrology/">
+<meta property="og:site_name" content="Z&amp;Z STROTEC">
+<meta property="og:image" content="https://zz-strotec.github.io/zz-strotec/assets/brand-logo.png">
+<meta name="twitter:card" content="summary_large_image">
+<link rel="alternate" hreflang="en" href="https://zz-strotec.github.io/zz-strotec/knowledge/cnc-metrology/">
+<link rel="alternate" hreflang="zh-Hant" href="https://zz-strotec.github.io/zz-strotec/knowledge/cnc-metrology/">
+<link rel="alternate" hreflang="ko" href="https://zz-strotec.github.io/zz-strotec/knowledge/cnc-metrology/">
+<link rel="alternate" hreflang="x-default" href="https://zz-strotec.github.io/zz-strotec/knowledge/cnc-metrology/">
+<script type="application/ld+json">{"@context":"https://schema.org","@type":"Article","headline":"CNC Metrology Guide: CMM, Micrometers & Surface Roughness","description":"Metrology in Three Tiers SHOP FLOOR · SETUP · ADVANCED QC 1 · Shop Floor Vernier Caliper ID·OD·depth · ±0.01 mm Micrometer OD · to ~0.001 mm (1µm) Bore…","inLanguage":["en","zh-Hant","ko"],"datePublished":"2026-07-07","dateModified":"2026-07-07","author":{"@type":"Organization","name":"Z&Z STROTEC"},"publisher":{"@type":"Organization","name":"Z&Z STROTEC","logo":{"@type":"ImageObject","url":"https://zz-strotec.github.io/zz-strotec/assets/brand-logo.png"}},"mainEntityOfPage":"https://zz-strotec.github.io/zz-strotec/knowledge/cnc-metrology/"}</script>
+<link rel="stylesheet" href="../../assets/kb-pages.css">
+<style>
+/* --- standalone SEO page chrome --- */
+body{margin:0}
+.kbp-header{display:flex;align-items:center;justify-content:space-between;gap:16px;
+  padding:14px 20px;border-bottom:1px solid var(--border);background:var(--surface)}
+.kbp-header a{color:var(--text);text-decoration:none}
+.kbp-brand{display:flex;align-items:center;gap:10px;font-weight:600;letter-spacing:1px}
+.kbp-brand img{height:28px;width:auto}
+.kbp-nav a{color:var(--text-dim);font-size:12px;letter-spacing:1px;margin-left:18px;text-decoration:none}
+.kbp-nav a:hover{color:var(--gold)}
+.kbp-wrap{max-width:860px;margin:0 auto;padding:28px 20px 60px}
+.kbp-crumb{font-size:12px;color:var(--text-dim);margin-bottom:18px}
+.kbp-crumb a{color:var(--text-dim);text-decoration:none}
+.kbp-crumb a:hover{color:var(--gold)}
+.kbp-h1{color:var(--text);font-size:1.7rem;line-height:1.35;margin:0 0 6px}
+.kbp-byline{color:var(--text-dim);font-size:.8rem;margin:0 0 22px}
+.kbp-cta{display:inline-block;margin:0 0 26px;padding:9px 20px;border:1px solid var(--gold);
+  border-radius:6px;color:var(--gold);font-size:13px;text-decoration:none}
+.kbp-cta:hover{background:var(--gold);color:#0d0d0d}
+.kbp-tags{margin-top:26px;display:flex;flex-wrap:wrap;gap:8px}
+.kbp-body img{max-width:100%;height:auto}
+.kbp-footer{border-top:1px solid var(--border);padding:26px 20px;text-align:center;
+  color:var(--text-dim);font-size:12px;line-height:1.9}
+.kbp-footer a{color:var(--text-dim);text-decoration:none;margin:0 8px}
+.kbp-footer a:hover{color:var(--gold)}
+.kbp-hublist{list-style:none;padding:0;margin:18px 0 0;display:grid;
+  grid-template-columns:repeat(auto-fill,minmax(260px,1fr));gap:12px}
+.kbp-hublist a{display:block;padding:16px;border:1px solid var(--border);border-radius:8px;
+  background:var(--surface);color:var(--text);text-decoration:none;transition:border-color .15s}
+.kbp-hublist a:hover{border-color:var(--gold)}
+.kbp-hublist .t{font-weight:600;font-size:.98rem;margin-bottom:4px}
+.kbp-hublist .s{color:var(--text-dim);font-size:.82rem;line-height:1.5}
+</style>
+</head>
+<body>
+<header class="kbp-header">
+  <a class="kbp-brand" href="/zz-strotec/"><img src="../../assets/brand-logo.png" alt="Z&amp;Z STROTEC">Z&amp;Z STROTEC</a>
+  <nav class="kbp-nav">
+    <a href="/zz-strotec/knowledge/">Knowledge</a>
+    <a href="/zz-strotec/column/">Columns</a>
+    <a href="/zz-strotec/markets/">Markets</a>
+    <a href="/zz-strotec/">Full site →</a>
+  </nav>
+</header>
+<main class="kbp-wrap">
+  <div class="kbp-crumb"><a href="/zz-strotec/">Home</a> › <a href="/zz-strotec/knowledge/">Knowledge</a> › CNC Metrology Guide: CMM, Micrometers &amp; Surface Roughness</div>
+  
+  <h1 class="kbp-h1">CNC Metrology Guide: CMM, Micrometers & Surface Roughness</h1>
+  <p style="margin:0 0 12px"><span style="color:var(--text-dim);font-size:1rem;font-weight:400">CNC 量測技術指南：從三次元量測儀（CMM）到表面粗糙度</span><span style="color:var(--border)"> · </span><span style="color:var(--text-dim);font-size:1rem;font-weight:400">CNC 계측 가이드: CMM·마이크로미터·표면 거칠기</span></p>
+  <p class="kbp-byline">Published: 2026-07-07 · Written by Z&amp;Z STROTEC</p>
+  <a class="kbp-cta" href="/zz-strotec/#kb-cnc-metrology">View interactive version · 完整互動版 · 인터랙티브 버전 →</a>
+  <div class="kbp-body"><section lang="en">
+      <svg viewBox="0 0 1000 430" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Metrology in three tiers: shop floor, setup, advanced QC" style="width:100%;height:auto;display:block;border-radius:12px;margin:0 0 22px;font-family:'Segoe UI','Microsoft JhengHei','Malgun Gothic',system-ui,Arial,sans-serif">
+        <defs><linearGradient id="qcbge" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#101820"/><stop offset="1" stop-color="#15202a"/></linearGradient></defs>
+        <rect x="0" y="0" width="1000" height="430" rx="14" fill="url(#qcbge)"/>
+        <text x="500" y="42" text-anchor="middle" font-size="22" font-weight="700" fill="#e9f0f5">Metrology in Three Tiers</text>
+        <text x="500" y="65" text-anchor="middle" font-size="11.5" letter-spacing="2" fill="#6f93a8">SHOP FLOOR · SETUP · ADVANCED QC</text>
+        <g transform="translate(24,90)"><rect width="306" height="304" rx="10" fill="#ffffff" fill-opacity="0.04" stroke="#4aa3df" stroke-opacity="0.5"/><path d="M0 40 V10 a10 10 0 0 1 10 -10 H296 a10 10 0 0 1 10 10 V40 Z" fill="#173f5a"/><text x="18" y="26" font-size="14" font-weight="700" fill="#cfe6f5">1 · Shop Floor</text><text x="18" y="80" font-size="13" font-weight="600" fill="#e9f0f5">Vernier Caliper</text><text x="18" y="98" font-size="11" fill="#93a9b6">ID·OD·depth · ±0.01 mm</text><text x="18" y="140" font-size="13" font-weight="600" fill="#e9f0f5">Micrometer</text><text x="18" y="158" font-size="11" fill="#93a9b6">OD · to ~0.001 mm (1µm)</text><text x="18" y="200" font-size="13" font-weight="600" fill="#e9f0f5">Bore Gauge</text><text x="18" y="218" font-size="11" fill="#93a9b6">deep-hole ID → dial</text><text x="18" y="264" font-size="10.5" fill="#7f97a5">First check, right at the machine</text></g>
+        <g transform="translate(346,90)"><rect width="306" height="304" rx="10" fill="#ffffff" fill-opacity="0.04" stroke="#d4af5c" stroke-opacity="0.5"/><path d="M0 40 V10 a10 10 0 0 1 10 -10 H296 a10 10 0 0 1 10 10 V40 Z" fill="#5a4318"/><text x="18" y="26" font-size="14" font-weight="700" fill="#f2e2c2">2 · Setup &amp; Alignment</text><text x="18" y="80" font-size="13" font-weight="600" fill="#e9f0f5">Dial / Test Indicator</text><text x="18" y="98" font-size="11" fill="#c9b48c">measures variation, not size</text><text x="18" y="116" font-size="11" fill="#c9b48c">tram vise · square spindle · runout</text><text x="18" y="164" font-size="13" font-weight="600" fill="#e9f0f5">Height Gauge</text><text x="18" y="182" font-size="11" fill="#c9b48c">on a granite surface plate</text><text x="18" y="200" font-size="11" fill="#c9b48c">datum → feature height</text><text x="18" y="264" font-size="10.5" fill="#a58c5f">Accuracy is set before the spindle turns</text></g>
+        <g transform="translate(668,90)"><rect width="306" height="304" rx="10" fill="#ffffff" fill-opacity="0.04" stroke="#2f9f86" stroke-opacity="0.5"/><path d="M0 40 V10 a10 10 0 0 1 10 -10 H296 a10 10 0 0 1 10 10 V40 Z" fill="#15534b"/><text x="18" y="26" font-size="14" font-weight="700" fill="#d6f2ea">3 · Advanced QC</text><text x="18" y="80" font-size="13" font-weight="600" fill="#e9f0f5">Surface Roughness</text><text x="18" y="98" font-size="11" fill="#9ccabd">diamond stylus → Ra / Rz</text><text x="18" y="140" font-size="13" font-weight="600" fill="#e9f0f5">CMM (coordinate m/c)</text><text x="18" y="158" font-size="11" fill="#9ccabd">ruby probe reads 3D points</text><text x="18" y="176" font-size="11" fill="#9ccabd">real geometry ↔ CAD model</text><text x="18" y="264" font-size="10.5" fill="#78a99b">Verifies complex 5-axis geometry</text></g>
+        <text x="970" y="418" text-anchor="end" font-size="12.5" font-weight="700" fill="#d4af5c">Z&amp;Z STROTEC</text>
+      </svg>
+      <h4>"If You Cannot Measure It, You Cannot Make It"</h4>
+      Precision CNC machining has a golden rule: if you cannot measure it, you cannot make it. Aerospace components and medical implants need confidence that every dimension matches the CAD model. Reaching micron-level precision starts with a solid grasp of metrology.
+
+      <h4>1. Shop-Floor Essentials</h4>
+      These handheld tools are the first line of defense against machining errors, used by operators right at the machine.
+      <ul>
+        <li><strong>Vernier caliper (游標卡尺)</strong> — the most versatile tool in the shop; it measures inside diameter (ID), outside diameter (OD), and depth. Digital calipers are easy to read but are generally reliable only to about ±0.01 mm (≈0.0005 in).</li>
+        <li><strong>Micrometer (測微器)</strong> — when a caliper is not accurate enough. Using a precisely machined internal screw it gives accurate OD readings down to about 0.001 mm (1 µm); imperial models read to 0.0001 in.</li>
+        <li><strong>Bore gauge (內徑量表)</strong> — measuring the ID of a deep cylinder is notoriously hard. Spring-loaded anvils expand inside the hole and transfer the exact diameter to a dial indicator. Critical for bearing fits and hydraulic cylinders.</li>
+      </ul>
+
+      <h4>2. Setup &amp; Alignment Tools</h4>
+      Precision machining starts before the spindle turns. If the workpiece or tool is not properly aligned, the part will fail.
+      <ul>
+        <li><strong>Dial / test indicator (量錶／千分錶)</strong> — it does not measure absolute size; it measures <strong>variation</strong>. Operators use it to tram vises, square the spindle, and check <strong>runout (跳動)</strong>.
+          <br><span style="color:var(--text-dim)">Tip: if a tool shows excessive runout, the cause is often worn bearings inside the turret. Upgrading to a dynamically balanced <button class="nav-btn" onclick="location.href='/zz-strotec/knowledge/live-tool/'" style="color:var(--gold);border:none;background:none;padding:0;font-size:inherit;text-decoration:underline;cursor:pointer">live tool holder</button> can resolve this.</span></li>
+        <li><strong>Height gauge (高度規)</strong> — usually placed on an ultra-flat <strong>granite surface plate</strong>, it measures the vertical distance from the reference base to a specific feature on the part.</li>
+      </ul>
+
+      <h4>3. Advanced Metrology &amp; Surface Analysis</h4>
+      For final quality-control (QC) sign-off, parts must pass through sensitive metrology equipment.
+      <ul>
+        <li><strong>Surface roughness tester (表面粗度測定儀)</strong> — machined surfaces look smooth to the eye but have microscopic peaks and valleys. A tiny diamond stylus is dragged across the part to calculate Ra (average roughness) or Rz.
+          <br><span style="color:var(--text-dim)">Tip: if you keep failing surface-roughness tests (with chatter marks), the machine may lack rigidity. Consider upgrading the transmission to heavy-duty <button class="nav-btn" onclick="location.href='/zz-strotec/knowledge/linear-guide/'" style="color:var(--gold);border:none;background:none;padding:0;font-size:inherit;text-decoration:underline;cursor:pointer">roller linear guides</button> to absorb cutting vibration.</span></li>
+        <li><strong>CMM (Coordinate Measuring Machine / 三次元)</strong> — the reference standard for dimensional verification. A ruby-tipped probe touches the workpiece at many points in 3D and compares the real geometry against the original 3D CAD model. Essential for verifying complex 5-axis geometry.</li>
+      </ul>
+
+      <p style="margin-top:18px">You can invest heavily in CMMs and a metrology lab, but if the machine cannot hold tolerance, scrap rates stay high. True precision starts at the cutting edge. Fitting your machines with rigid <button class="nav-btn" onclick="location.href='/zz-strotec/knowledge/linear-guide/'" style="color:var(--gold);border:none;background:none;padding:0;font-size:inherit;text-decoration:underline;cursor:pointer">linear guides</button>, precise <button class="nav-btn" onclick="location.href='/zz-strotec/knowledge/servo-motor/'" style="color:var(--gold);border:none;background:none;padding:0;font-size:inherit;text-decoration:underline;cursor:pointer">servo motors</button>, and low-runout <button class="nav-btn" onclick="location.href='/zz-strotec/knowledge/tool-holder/'" style="color:var(--gold);border:none;background:none;padding:0;font-size:inherit;text-decoration:underline;cursor:pointer">tool holders</button> gives parts a better chance of passing CMM inspection first time. For machine accuracy itself, see the <button class="nav-btn" onclick="location.href='/zz-strotec/knowledge/machine-accuracy/'" style="color:var(--gold);border:none;background:none;padding:0;font-size:inherit;text-decoration:underline;cursor:pointer">Machine Accuracy guide</button>. <button class="nav-btn" onclick="location.href='/zz-strotec/#inquiry'" style="color:var(--gold);border:1px solid var(--gold);padding:8px 22px;font-size:12px;margin-top:6px">Ask us about precision CNC components →</button></p>
+    </section><section lang="zh-Hant" style="margin-top:34px;padding-top:24px;border-top:1px solid var(--border)"><div style="font-size:11px;letter-spacing:2px;color:var(--gold);margin-bottom:14px">繁體中文</div>
+      <svg viewBox="0 0 1000 430" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="量測三階段：現場、校正、高階品管" style="width:100%;height:auto;display:block;border-radius:12px;margin:0 0 22px;font-family:'Segoe UI','Microsoft JhengHei','Malgun Gothic',system-ui,Arial,sans-serif">
+        <defs><linearGradient id="qcbgz" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#101820"/><stop offset="1" stop-color="#15202a"/></linearGradient></defs>
+        <rect x="0" y="0" width="1000" height="430" rx="14" fill="url(#qcbgz)"/>
+        <text x="500" y="42" text-anchor="middle" font-size="22" font-weight="700" fill="#e9f0f5">量測技術三階段</text>
+        <text x="500" y="65" text-anchor="middle" font-size="12" letter-spacing="2" fill="#6f93a8">現場 · 校正 · 高階品管</text>
+        <g transform="translate(24,90)"><rect width="306" height="304" rx="10" fill="#ffffff" fill-opacity="0.04" stroke="#4aa3df" stroke-opacity="0.5"/><path d="M0 40 V10 a10 10 0 0 1 10 -10 H296 a10 10 0 0 1 10 10 V40 Z" fill="#173f5a"/><text x="18" y="26" font-size="14" font-weight="700" fill="#cfe6f5">1 · 現場加工</text><text x="18" y="80" font-size="13" font-weight="600" fill="#e9f0f5">游標卡尺</text><text x="18" y="98" font-size="11" fill="#93a9b6">內外徑·深度 · ±0.01 mm</text><text x="18" y="140" font-size="13" font-weight="600" fill="#e9f0f5">分厘卡（測微器）</text><text x="18" y="158" font-size="11" fill="#93a9b6">外徑 · 約 0.001 mm(1µm)</text><text x="18" y="200" font-size="13" font-weight="600" fill="#e9f0f5">內徑量表（缸徑規）</text><text x="18" y="218" font-size="11" fill="#93a9b6">深孔內徑 → 量錶</text><text x="18" y="264" font-size="10.5" fill="#7f97a5">機台旁第一線把關</text></g>
+        <g transform="translate(346,90)"><rect width="306" height="304" rx="10" fill="#ffffff" fill-opacity="0.04" stroke="#d4af5c" stroke-opacity="0.5"/><path d="M0 40 V10 a10 10 0 0 1 10 -10 H296 a10 10 0 0 1 10 10 V40 Z" fill="#5a4318"/><text x="18" y="26" font-size="14" font-weight="700" fill="#f2e2c2">2 · 校正與架設</text><text x="18" y="80" font-size="13" font-weight="600" fill="#e9f0f5">量錶／千分錶</text><text x="18" y="98" font-size="11" fill="#c9b48c">量的是變動，不是絕對尺寸</text><text x="18" y="116" font-size="11" fill="#c9b48c">校正虎鉗·主軸垂直·跳動</text><text x="18" y="164" font-size="13" font-weight="600" fill="#e9f0f5">高度規</text><text x="18" y="182" font-size="11" fill="#c9b48c">置於花崗岩量測平台上</text><text x="18" y="200" font-size="11" fill="#c9b48c">量基準面到特徵的高度</text><text x="18" y="264" font-size="10.5" fill="#a58c5f">主軸轉動前就決定精度</text></g>
+        <g transform="translate(668,90)"><rect width="306" height="304" rx="10" fill="#ffffff" fill-opacity="0.04" stroke="#2f9f86" stroke-opacity="0.5"/><path d="M0 40 V10 a10 10 0 0 1 10 -10 H296 a10 10 0 0 1 10 10 V40 Z" fill="#15534b"/><text x="18" y="26" font-size="14" font-weight="700" fill="#d6f2ea">3 · 高階品管</text><text x="18" y="80" font-size="13" font-weight="600" fill="#e9f0f5">表面粗度測定儀</text><text x="18" y="98" font-size="11" fill="#9ccabd">鑽石觸針 → Ra / Rz 值</text><text x="18" y="140" font-size="13" font-weight="600" fill="#e9f0f5">CMM 三次元量測儀</text><text x="18" y="158" font-size="11" fill="#9ccabd">紅寶石探針量測 3D 座標</text><text x="18" y="176" font-size="11" fill="#9ccabd">實物幾何 ↔ CAD 模型比對</text><text x="18" y="264" font-size="10.5" fill="#78a99b">驗證複雜五軸幾何</text></g>
+        <text x="970" y="418" text-anchor="end" font-size="12.5" font-weight="700" fill="#d4af5c">Z&amp;Z STROTEC</text>
+      </svg>
+      <h4>「量不出來，就做不出來」</h4>
+      在精密 CNC 加工的世界裡有一條黃金法則：量不出來，就做不出來。生產航太零件或醫療植入物，必須確信每個尺寸都與 CAD 模型相符。要達到微米級精度，得先扎實理解量測（Metrology）的基本功。
+
+      <h4>1. 現場加工必備量具</h4>
+      這些手持量具是操作者直接在機台旁使用、對抗加工誤差的第一道防線。
+      <ul>
+        <li><strong>游標卡尺</strong> — 廠內最萬用的工具，可量內徑（ID）、外徑（OD）與深度。數位型雖易讀，但一般只在 ±0.01 mm（約 0.0005"）的公差內可靠。</li>
+        <li><strong>分厘卡（測微器）</strong> — 當卡尺不夠準時就靠它。利用精密加工的內螺桿提供高準確的外徑量測，可讀到約 0.001 mm（1µm）；英制型則到 0.0001"。</li>
+        <li><strong>內徑量表（缸徑規）</strong> — 精準量測深孔內徑向來困難。缸徑規以彈簧式測爪在孔內張開，將確切直徑傳遞到量錶顯示。對軸承配合與液壓缸至關重要。</li>
+      </ul>
+
+      <h4>2. 機台校正與架設量具</h4>
+      精密加工在主軸轉動前就開始。若工件或刀具沒有精準對正，零件就會失敗。
+      <ul>
+        <li><strong>量錶／千分錶（Dial / Test Indicator）</strong> — 它量的不是絕對尺寸，而是<strong>變動量</strong>。用於校正虎鉗、找正主軸垂直度，以及檢查<strong>跳動（Runout）</strong>。
+          <br><span style="color:var(--text-dim)">小提示：若量錶顯示刀具跳動過大，問題很可能是刀塔內部軸承磨損。升級為動平衡良好的<button class="nav-btn" onclick="location.href='/zz-strotec/knowledge/live-tool/'" style="color:var(--gold);border:none;background:none;padding:0;font-size:inherit;text-decoration:underline;cursor:pointer">動力刀座</button>通常可解決。</span></li>
+        <li><strong>高度規</strong> — 通常置於超平坦的<strong>花崗岩量測平台</strong>上，量測從基準面到零件特定特徵的垂直距離。</li>
+      </ul>
+
+      <h4>3. 高階量測與表面分析</h4>
+      要通過最終品管（QC）簽核，零件必須經過高靈敏度的量測設備。
+      <ul>
+        <li><strong>表面粗度測定儀</strong> — 加工面肉眼看似光滑，微觀卻有起伏的峰谷。此儀器以微小鑽石觸針劃過工件，計算 Ra（平均粗糙度）或 Rz 值。
+          <br><span style="color:var(--text-dim)">小提示：若表面粗糙度測試持續不過（伴隨震刀痕），機台可能剛性不足。可考慮將傳動升級為重負荷<button class="nav-btn" onclick="location.href='/zz-strotec/knowledge/linear-guide/'" style="color:var(--gold);border:none;background:none;padding:0;font-size:inherit;text-decoration:underline;cursor:pointer">滾柱線性滑軌</button>以吸收切削振動。</span></li>
+        <li><strong>CMM（三座標／三次元量測儀）</strong> — 尺寸驗證的基準設備。以紅寶石探針在 3D 空間觸測工件多個點，將實物幾何與原始 3D CAD 模型比對，是驗證複雜五軸幾何的必要工具。</li>
+      </ul>
+
+      <p style="margin-top:18px">你可以投資大筆金額買 CMM 與量測實驗室，但若 CNC 機台守不住公差，報廢率仍會居高不下。真正的精度始於切削刃。為機台配上剛性<button class="nav-btn" onclick="location.href='/zz-strotec/knowledge/linear-guide/'" style="color:var(--gold);border:none;background:none;padding:0;font-size:inherit;text-decoration:underline;cursor:pointer">線性滑軌</button>、高精度<button class="nav-btn" onclick="location.href='/zz-strotec/knowledge/servo-motor/'" style="color:var(--gold);border:none;background:none;padding:0;font-size:inherit;text-decoration:underline;cursor:pointer">伺服馬達</button>與低跳動<button class="nav-btn" onclick="location.href='/zz-strotec/knowledge/tool-holder/'" style="color:var(--gold);border:none;background:none;padding:0;font-size:inherit;text-decoration:underline;cursor:pointer">刀座</button>，能讓零件更有機會一次通過 CMM 檢驗。機台精度本身可參考<button class="nav-btn" onclick="location.href='/zz-strotec/knowledge/machine-accuracy/'" style="color:var(--gold);border:none;background:none;padding:0;font-size:inherit;text-decoration:underline;cursor:pointer">機械精度指南</button>。<button class="nav-btn" onclick="location.href='/zz-strotec/#inquiry'" style="color:var(--gold);border:1px solid var(--gold);padding:8px 22px;font-size:12px;margin-top:6px">洽詢精密 CNC 零組件 →</button></p>
+    </section><section lang="ko" style="margin-top:34px;padding-top:24px;border-top:1px solid var(--border)"><div style="font-size:11px;letter-spacing:2px;color:var(--gold);margin-bottom:14px">한국어</div>
+      <svg viewBox="0 0 1000 430" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="계측 3단계: 현장·셋업·정밀 품질검사" style="width:100%;height:auto;display:block;border-radius:12px;margin:0 0 22px;font-family:'Segoe UI','Microsoft JhengHei','Malgun Gothic',system-ui,Arial,sans-serif">
+        <defs><linearGradient id="qcbgk" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#101820"/><stop offset="1" stop-color="#15202a"/></linearGradient></defs>
+        <rect x="0" y="0" width="1000" height="430" rx="14" fill="url(#qcbgk)"/>
+        <text x="500" y="42" text-anchor="middle" font-size="22" font-weight="700" fill="#e9f0f5">계측 3단계</text>
+        <text x="500" y="65" text-anchor="middle" font-size="11.5" letter-spacing="2" fill="#6f93a8">현장 · 셋업 · 정밀 품질검사</text>
+        <g transform="translate(24,90)"><rect width="306" height="304" rx="10" fill="#ffffff" fill-opacity="0.04" stroke="#4aa3df" stroke-opacity="0.5"/><path d="M0 40 V10 a10 10 0 0 1 10 -10 H296 a10 10 0 0 1 10 10 V40 Z" fill="#173f5a"/><text x="18" y="26" font-size="14" font-weight="700" fill="#cfe6f5">1 · 현장 가공</text><text x="18" y="80" font-size="13" font-weight="600" fill="#e9f0f5">버니어 캘리퍼스</text><text x="18" y="98" font-size="11" fill="#93a9b6">ID·OD·깊이 · ±0.01 mm</text><text x="18" y="140" font-size="13" font-weight="600" fill="#e9f0f5">마이크로미터</text><text x="18" y="158" font-size="11" fill="#93a9b6">OD · 약 0.001 mm(1µm)</text><text x="18" y="200" font-size="13" font-weight="600" fill="#e9f0f5">보어 게이지</text><text x="18" y="218" font-size="11" fill="#93a9b6">깊은 구멍 ID → 다이얼</text><text x="18" y="264" font-size="10.5" fill="#7f97a5">기계 옆에서 1차 확인</text></g>
+        <g transform="translate(346,90)"><rect width="306" height="304" rx="10" fill="#ffffff" fill-opacity="0.04" stroke="#d4af5c" stroke-opacity="0.5"/><path d="M0 40 V10 a10 10 0 0 1 10 -10 H296 a10 10 0 0 1 10 10 V40 Z" fill="#5a4318"/><text x="18" y="26" font-size="14" font-weight="700" fill="#f2e2c2">2 · 셋업·정렬</text><text x="18" y="80" font-size="13" font-weight="600" fill="#e9f0f5">다이얼/테스트 인디케이터</text><text x="18" y="98" font-size="11" fill="#c9b48c">치수가 아닌 변동 측정</text><text x="18" y="116" font-size="11" fill="#c9b48c">바이스 정렬·주축 직각·런아웃</text><text x="18" y="164" font-size="13" font-weight="600" fill="#e9f0f5">하이트 게이지</text><text x="18" y="182" font-size="11" fill="#c9b48c">화강암 정반 위에서</text><text x="18" y="200" font-size="11" fill="#c9b48c">기준면→형상까지 높이</text><text x="18" y="264" font-size="10.5" fill="#a58c5f">스핀들이 돌기 전에 정밀도 결정</text></g>
+        <g transform="translate(668,90)"><rect width="306" height="304" rx="10" fill="#ffffff" fill-opacity="0.04" stroke="#2f9f86" stroke-opacity="0.5"/><path d="M0 40 V10 a10 10 0 0 1 10 -10 H296 a10 10 0 0 1 10 10 V40 Z" fill="#15534b"/><text x="18" y="26" font-size="14" font-weight="700" fill="#d6f2ea">3 · 정밀 품질검사</text><text x="18" y="80" font-size="13" font-weight="600" fill="#e9f0f5">표면 거칠기 측정기</text><text x="18" y="98" font-size="11" fill="#9ccabd">다이아몬드 촉침 → Ra / Rz</text><text x="18" y="140" font-size="13" font-weight="600" fill="#e9f0f5">CMM (삼차원 측정기)</text><text x="18" y="158" font-size="11" fill="#9ccabd">루비 프로브로 3D 좌표 측정</text><text x="18" y="176" font-size="11" fill="#9ccabd">실물 형상 ↔ CAD 모델 대조</text><text x="18" y="264" font-size="10.5" fill="#78a99b">복잡한 5축 형상 검증</text></g>
+        <text x="970" y="418" text-anchor="end" font-size="12.5" font-weight="700" fill="#d4af5c">Z&amp;Z STROTEC</text>
+      </svg>
+      <h4>"측정할 수 없으면 만들 수 없다"</h4>
+      정밀 CNC 가공에는 황금률이 있습니다 — 측정할 수 없으면 만들 수 없습니다. 항공 부품이나 의료용 임플란트는 모든 치수가 CAD 모델과 일치한다는 확신이 필요합니다. 마이크로미터급 정밀도는 계측의 기본을 이해하는 데서 시작됩니다.
+
+      <h4>1. 현장 가공 필수 게이지</h4>
+      작업자가 기계 옆에서 바로 쓰는, 가공 오차에 대한 1차 방어선입니다.
+      <ul>
+        <li><strong>버니어 캘리퍼스(游標卡尺)</strong> — 가장 다재다능한 공구. 내경(ID)·외경(OD)·깊이를 측정합니다. 디지털형은 읽기 쉽지만 일반적으로 ±0.01 mm(약 0.0005in) 수준까지 신뢰할 수 있습니다.</li>
+        <li><strong>마이크로미터(測微器)</strong> — 캘리퍼스로 부족할 때 사용. 정밀 가공된 내부 나사를 이용해 정확한 외경을 측정하며, 약 0.001 mm(1µm)까지 읽습니다(인치 모델은 0.0001in).</li>
+        <li><strong>보어 게이지(內徑量表)</strong> — 깊은 원통의 내경을 정확히 재기는 어렵습니다. 스프링 앤빌이 구멍 안에서 벌어져 정확한 지름을 다이얼 인디케이터로 전달합니다. 베어링 끼워맞춤과 유압 실린더에 중요합니다.</li>
+      </ul>
+
+      <h4>2. 셋업·정렬 게이지</h4>
+      정밀 가공은 스핀들이 돌기 전에 시작됩니다. 공작물이나 공구가 정확히 정렬되지 않으면 부품은 불합격입니다.
+      <ul>
+        <li><strong>다이얼/테스트 인디케이터(量錶／千分錶)</strong> — 절대 치수가 아니라 <strong>변동</strong>을 측정합니다. 바이스 정렬, 주축 직각 맞추기, <strong>런아웃(跳動)</strong> 확인에 씁니다.
+          <br><span style="color:var(--text-dim)">팁: 공구에서 과도한 런아웃이 보이면 <button class="nav-btn" onclick="location.href='/zz-strotec/knowledge/live-tool/'" style="color:var(--gold);border:none;background:none;padding:0;font-size:inherit;text-decoration:underline;cursor:pointer">동력 공구대</button> 터릿 내부 베어링 마모가 원인일 수 있습니다. 동적 밸런싱된 공구대로 교체하면 해결될 수 있습니다.</span></li>
+        <li><strong>하이트 게이지(高度規)</strong> — 초평탄 <strong>화강암 정반</strong> 위에 놓고, 기준면에서 특정 형상까지의 수직 거리를 측정합니다.</li>
+      </ul>
+
+      <h4>3. 고급 계측·표면 분석</h4>
+      최종 품질검사(QC) 승인을 위해 부품은 고감도 계측 장비를 통과해야 합니다.
+      <ul>
+        <li><strong>표면 거칠기 측정기(表面粗度測定儀)</strong> — 가공면은 육안으로 매끄러워 보여도 미세한 봉우리와 골이 있습니다. 작은 다이아몬드 촉침을 표면에 긁어 Ra(평균 거칠기)나 Rz 값을 산출합니다.
+          <br><span style="color:var(--text-dim)">팁: 표면 거칠기 시험(채터 마크)에 계속 불합격한다면 기계 강성이 부족할 수 있습니다. 절삭 진동을 흡수하도록 <button class="nav-btn" onclick="location.href='/zz-strotec/knowledge/linear-guide/'" style="color:var(--gold);border:none;background:none;padding:0;font-size:inherit;text-decoration:underline;cursor:pointer">롤러형 리니어 가이드</button>로 전동부를 업그레이드하는 것을 검토하세요.</span></li>
+        <li><strong>CMM(삼차원 측정기 / 三次元)</strong> — 치수 검증의 기준 장비. 루비 팁 전자 프로브로 3D 공간의 여러 점을 접촉해, 실물 형상을 원본 3D CAD 모델과 비교합니다. 복잡한 5축 형상 검증에 필수입니다.</li>
+      </ul>
+
+      <p style="margin-top:18px">CMM과 계측실에 큰 투자를 해도, 기계가 공차를 못 지키면 불량률은 높은 채로 남습니다. 진정한 정밀도는 절삭날에서 시작됩니다. 강성 높은 <button class="nav-btn" onclick="location.href='/zz-strotec/knowledge/linear-guide/'" style="color:var(--gold);border:none;background:none;padding:0;font-size:inherit;text-decoration:underline;cursor:pointer">리니어 가이드</button>, 정밀 <button class="nav-btn" onclick="location.href='/zz-strotec/knowledge/servo-motor/'" style="color:var(--gold);border:none;background:none;padding:0;font-size:inherit;text-decoration:underline;cursor:pointer">서보 모터</button>, 런아웃이 낮은 <button class="nav-btn" onclick="location.href='/zz-strotec/knowledge/tool-holder/'" style="color:var(--gold);border:none;background:none;padding:0;font-size:inherit;text-decoration:underline;cursor:pointer">공구대</button>를 갖추면 부품이 CMM 검사를 처음에 통과할 가능성이 높아집니다. 기계 정밀도 자체는 <button class="nav-btn" onclick="location.href='/zz-strotec/knowledge/machine-accuracy/'" style="color:var(--gold);border:none;background:none;padding:0;font-size:inherit;text-decoration:underline;cursor:pointer">기계 정밀도 가이드</button>를 참고하세요. <button class="nav-btn" onclick="location.href='/zz-strotec/#inquiry'" style="color:var(--gold);border:1px solid var(--gold);padding:8px 22px;font-size:12px;margin-top:6px">정밀 CNC 부품 문의 →</button></p>
+    </section></div>
+  <div class="kbp-tags"><span class="tag-pill">metrology</span><span class="tag-pill">CMM</span><span class="tag-pill">micrometer</span><span class="tag-pill">vernier caliper</span><span class="tag-pill">bore gauge</span><span class="tag-pill">dial indicator</span><span class="tag-pill">height gauge</span><span class="tag-pill">surface roughness</span><span class="tag-pill">Ra</span><span class="tag-pill">runout</span><span class="tag-pill">量測</span><span class="tag-pill">三次元</span><span class="tag-pill">表面粗糙度</span><span class="tag-pill">跳動</span></div>
+</main>
+<footer class="kbp-footer">
+  <div>Z&amp;Z STROTEC · 萬洋國際有限公司 — CNC machine-tool export &amp; knowledge hub</div>
+  <div style="margin-top:8px">
+    <a href="/zz-strotec/">Full interactive site</a>·
+    <a href="/zz-strotec/knowledge/">Knowledge Library</a>·
+    <a href="/zz-strotec/column/">Expert Columns</a>·
+    <a href="/zz-strotec/markets/">Markets</a>
+  </div>
+</footer>
+</body>
+</html>
