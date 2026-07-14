@@ -4,17 +4,17 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>Live Tool Holders (動力刀座) | Z&amp;Z STROTEC</title>
-<meta name="description" content="What is a Live Tool Holder? A live tool holder (動力刀座) is a motorized tool holder mounted on the CNC lathe turret that allows rotating cutting tools…">
+<meta name="description" content="A practical guide to Live Tool Holders (動力刀座), covering selection, applications, maintenance and CNC sourcing considerations.">
 <link rel="canonical" href="https://zz-strotec.github.io/zz-strotec/knowledge/live-tool/">
 <meta name="robots" content="index,follow,max-image-preview:large">
 <meta property="og:type" content="article">
 <meta property="og:title" content="Live Tool Holders (動力刀座)">
-<meta property="og:description" content="What is a Live Tool Holder? A live tool holder (動力刀座) is a motorized tool holder mounted on the CNC lathe turret that allows rotating cutting tools…">
+<meta property="og:description" content="A practical guide to Live Tool Holders (動力刀座), covering selection, applications, maintenance and CNC sourcing considerations.">
 <meta property="og:url" content="https://zz-strotec.github.io/zz-strotec/knowledge/live-tool/">
 <meta property="og:site_name" content="Z&amp;Z STROTEC">
 <meta property="og:image" content="https://zz-strotec.github.io/zz-strotec/photo/living-tools.jpg">
 <meta name="twitter:card" content="summary_large_image">
-<script type="application/ld+json">{"@context":"https://schema.org","@type":"TechArticle","headline":"Live Tool Holders (動力刀座)","description":"What is a Live Tool Holder? A live tool holder (動力刀座) is a motorized tool holder mounted on the CNC lathe turret that allows rotating cutting tools…","inLanguage":["en","zh-Hant","ko"],"image":"https://zz-strotec.github.io/zz-strotec/photo/living-tools.jpg","articleSection":"live tool","datePublished":"2026-06-29","dateModified":"2026-06-29","author":{"@type":"Organization","name":"Z&Z STROTEC","url":"https://zz-strotec.github.io/zz-strotec/"},"publisher":{"@type":"Organization","name":"Z&Z STROTEC","url":"https://zz-strotec.github.io/zz-strotec/","logo":{"@type":"ImageObject","url":"https://zz-strotec.github.io/zz-strotec/assets/brand-logo.png"}},"mainEntityOfPage":"https://zz-strotec.github.io/zz-strotec/knowledge/live-tool/"}</script>
+<script type="application/ld+json">{"@context":"https://schema.org","@type":"TechArticle","headline":"Live Tool Holders (動力刀座)","description":"A practical guide to Live Tool Holders (動力刀座), covering selection, applications, maintenance and CNC sourcing considerations.","inLanguage":["en","zh-Hant","ko"],"image":"https://zz-strotec.github.io/zz-strotec/photo/living-tools.jpg","articleSection":"live tool","datePublished":"2026-06-29","dateModified":"2026-06-29","author":{"@type":"Organization","name":"Z&Z STROTEC","url":"https://zz-strotec.github.io/zz-strotec/"},"publisher":{"@type":"Organization","name":"Z&Z STROTEC","url":"https://zz-strotec.github.io/zz-strotec/","logo":{"@type":"ImageObject","url":"https://zz-strotec.github.io/zz-strotec/assets/brand-logo.png"}},"mainEntityOfPage":"https://zz-strotec.github.io/zz-strotec/knowledge/live-tool/"}</script>
 <link rel="stylesheet" href="../../assets/kb-pages.css">
 <style>
 /* --- standalone SEO page chrome --- */
@@ -104,7 +104,7 @@ body{margin:0}
       Beyond about 6,000 RPM — especially on Swiss-type lathes machining medical or electronic parts — <strong>micro-vibration</strong> becomes the main bottleneck, degrading surface roughness (Ra) and shortening tool life. Two common mitigations:
       <ul>
         <li><strong>Ground gears &amp; ceramic bearings</strong>: Standard gear-multiplier speeders can suffer from gear backlash; live tools built with precision ground gears and ceramic bearings suppress micro-vibration and extend tool life.</li>
-        <li><strong>Dynamic balancing</strong>: At maximum RPM even slight imbalance causes chatter — rigorous dynamic balancing keeps eccentric runout near zero.</li>
+        <li><strong>Dynamic balancing</strong>: At maximum RPM even slight imbalance causes chatter — rigorous dynamic balancing significantly reduces eccentric runout.</li>
       </ul>
       Traditional live turrets with external motors and gear transmission are often limited to below ~6,000 RPM by vibration and temperature rise. Newer <strong>high-speed direct-drive live turrets</strong> use built-in motors and CFD-optimized cooling paths to hold steady-state temperatures around 70°C or lower at top speed — well suited to biomedical tubing, semiconductor gas fittings, and aerospace parts.
 
@@ -118,7 +118,7 @@ body{margin:0}
         </div>
         <div style="background:var(--surface2);border:1px solid var(--border);border-radius:6px;padding:18px;margin-bottom:20px">
           <strong style="color:var(--gold)">🔧 Interface Match ≠ Machining Stability</strong>
-          <p style="margin-top:10px;margin-bottom:0">A BMT or VDI interface that fits your turret spec is only the first requirement. For high-precision operations, the precision of the <strong>drive coupling (polygon, square, or round)</strong> determines real-world stability. Every Z&amp;Z STROTEC live tool undergoes <strong>dynamic balancing tests</strong> before export to guarantee zero eccentric runout at maximum RPM.</p>
+          <p style="margin-top:10px;margin-bottom:0">A BMT or VDI interface that fits your turret spec is only the first requirement. For high-precision operations, the precision of the <strong>drive coupling (polygon, square, or round)</strong> determines real-world stability. Every Z&amp;Z STROTEC live tool undergoes <strong>dynamic balancing and runout inspection</strong> before export, with results evaluated against the applicable drawing or agreed acceptance criteria.</p>
         </div>
         <div style="text-align:center;display:flex;gap:12px;justify-content:center;flex-wrap:wrap">
           <button class="nav-btn" onclick="location.href='/zz-strotec/column/optimizing-live-tool-holders-for-swiss-type-lathes/'" style="color:var(--gold);border:1px solid var(--gold);padding:10px 28px;font-size:13px;letter-spacing:0.5px">READ FULL ARTICLE / 閱讀全文 →</button>
@@ -162,7 +162,7 @@ body{margin:0}
       當主軸轉速超過約 6,000 RPM（尤其走心式車床加工醫療或電子零件時），<strong>微震動</strong>會成為主要瓶頸，使工件表面粗糙度（Ra）劣化並縮短刀具壽命。常見的兩種改善方式：
       <ul>
         <li><strong>研磨齒輪與陶瓷軸承</strong>：一般增速刀座易受齒輪背隙影響；採用精密研磨齒輪與陶瓷軸承的動力刀座可抑制微震動、延長刀具壽命。</li>
-        <li><strong>動平衡校正</strong>：在極速運轉下，即使微小不平衡也會引發顫振——嚴謹的動平衡校正可使偏心跳動趨近於零。</li>
+        <li><strong>動平衡校正</strong>：在極速運轉下，即使微小不平衡也會引發顫振——嚴謹的動平衡校正可顯著降低偏心跳動。</li>
       </ul>
       傳統採用外部馬達與齒輪傳動的動力刀塔，常因震動與溫升而受限於約 6,000 RPM 以下。較新的<strong>高速直驅式動力刀塔</strong>採用內建馬達與 CFD 最佳化冷卻流道，可在最高轉速下將穩態溫度維持在約 70°C 或更低，特別適合生醫導管、半導體氣體接頭與航太零件等高階應用。
 
@@ -176,7 +176,7 @@ body{margin:0}
         </div>
         <div style="background:var(--surface2);border:1px solid var(--border);border-radius:6px;padding:18px">
           <strong style="color:var(--gold)">🔧 介面相容性不等於加工穩定性</strong>
-          <p style="margin-top:10px;margin-bottom:0">很多採購以為只要 BMT 或 VDI 介面尺寸對了就萬事大吉。但在精密加工中，<strong>驅動聯軸器（polygon、square 或 round）的貼合精度</strong>才是決定加工穩定性的真正關鍵。萬洋國際出貨給瑞士與歐洲高階客戶時，每一把刀座都會額外進行<strong>動平衡（Dynamic Balancing）測試</strong>，確保在極速運轉下絕無偏心跳動。</p>
+          <p style="margin-top:10px;margin-bottom:0">很多採購以為只要 BMT 或 VDI 介面尺寸對了就萬事大吉。但在精密加工中，<strong>驅動聯軸器（polygon、square 或 round）的貼合精度</strong>才是決定加工穩定性的真正關鍵。萬洋國際出貨前每一把刀座均進行<strong>動平衡與偏擺檢測</strong>，並依適用圖面或雙方約定的允收標準確認結果。</p>
         </div>
         <div style="text-align:center;margin-top:16px;display:flex;gap:12px;justify-content:center;flex-wrap:wrap">
           <button class="nav-btn" onclick="location.href='/zz-strotec/column/optimizing-live-tool-holders-for-swiss-type-lathes/'" style="color:var(--gold);border:1px solid var(--gold);padding:10px 28px;font-size:13px;letter-spacing:0.5px">閱讀完整專欄 →</button>
@@ -220,7 +220,7 @@ body{margin:0}
       약 6,000 RPM을 초과하면 — 특히 의료·전자 부품을 가공하는 스위스형 선반에서 — <strong>미세 진동</strong>이 주요 병목이 되어 표면 거칠기(Ra)를 저하시키고 공구 수명을 단축합니다. 일반적인 두 가지 개선책:
       <ul>
         <li><strong>연삭 기어와 세라믹 베어링</strong>: 일반 증속기는 기어 백래시의 영향을 받기 쉽습니다. 정밀 연삭 기어와 세라믹 베어링을 적용한 라이브 툴은 미세 진동을 억제하고 공구 수명을 연장합니다.</li>
-        <li><strong>동적 밸런싱</strong>: 최고 RPM에서는 미세한 불균형도 채터를 유발합니다 — 엄격한 동적 밸런싱으로 편심 런아웃을 거의 0에 가깝게 유지합니다.</li>
+        <li><strong>동적 밸런싱</strong>: 최고 RPM에서는 미세한 불균형도 채터를 유발합니다 — 엄격한 동적 밸런싱으로 편심 런아웃을 크게 줄입니다.</li>
       </ul>
       외부 모터와 기어 전동을 사용하는 전통적 라이브 터렛은 진동과 온도 상승으로 인해 흔히 약 6,000 RPM 이하로 제한됩니다. 최신 <strong>고속 직결 구동 라이브 터렛</strong>은 내장 모터와 CFD 최적화 냉각 유로를 사용해 최고 속도에서도 정상 상태 온도를 약 70°C 이하로 유지하여, 생체의료용 튜브, 반도체 가스 피팅, 항공우주 부품 등 고급 응용에 적합합니다.
 
@@ -234,7 +234,7 @@ body{margin:0}
         </div>
         <div style="background:var(--surface2);border:1px solid var(--border);border-radius:6px;padding:18px">
           <strong style="color:var(--gold)">🔧 인터페이스 호환성 ≠ 가공 안정성</strong>
-          <p style="margin-top:10px;margin-bottom:0">BMT 또는 VDI 인터페이스 규격이 맞는다고 모든 것이 해결되지 않습니다. 정밀 가공에서는 <strong>구동 커플링(다각형·사각형·원형)의 정밀도</strong>가 실제 가공 안정성을 결정합니다. Z&amp;Z STROTEC의 모든 라이브 툴은 수출 전 <strong>동적 밸런싱(Dynamic Balancing) 테스트</strong>를 거쳐 최고 RPM에서도 편심 없이 안정적으로 작동함을 보증합니다.</p>
+          <p style="margin-top:10px;margin-bottom:0">BMT 또는 VDI 인터페이스 규격이 맞는다고 모든 것이 해결되지 않습니다. 정밀 가공에서는 <strong>구동 커플링(다각형·사각형·원형)의 정밀도</strong>가 실제 가공 안정성을 결정합니다. Z&amp;Z STROTEC의 모든 라이브 툴은 수출 전 <strong>동적 밸런싱 및 런아웃 검사</strong>를 거치며, 그 결과는 해당 도면 또는 양측이 합의한 허용 기준에 따라 확인됩니다.</p>
         </div>
         <div style="text-align:center;margin-top:16px;display:flex;gap:12px;justify-content:center;flex-wrap:wrap">
           <button class="nav-btn" onclick="location.href='/zz-strotec/column/optimizing-live-tool-holders-for-swiss-type-lathes/'" style="color:var(--gold);border:1px solid var(--gold);padding:10px 28px;font-size:13px;letter-spacing:0.5px">전체 아티클 읽기 →</button>
