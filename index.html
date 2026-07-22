@@ -466,7 +466,6 @@
     gap: 14px;
     padding: 14px 0;
     border-bottom: 1px solid var(--border);
-    cursor: pointer;
     transition: all 0.15s;
   }
 
@@ -498,6 +497,10 @@
   }
 
   .news-src { color: var(--gold); }
+
+  /* Headline links straight to the source article */
+  .news-link { color: inherit; text-decoration: none; }
+  .news-link:hover { color: var(--gold); text-decoration: underline; }
 
   @media (max-width: 1100px) {
     .layout { grid-template-columns: 200px 1fr; }
@@ -10379,94 +10382,142 @@ function doSearch() {
   wrap.classList.add('show');
 }
 
-// ─── News (using Claude API with web search) ─────────────────────
-async function loadNews() {
-  const containers = ['home-news', 'page-news-list'];
-  containers.forEach(id => {
+// ─── Taiwan Industry News ───────────────────────────────────────
+// Data comes from the static, hand-curated ./news.json (same origin, updated
+// at build/publish time). No third-party API is called at page load, so there
+// is no request latency and no runtime dependency that can silently fail.
+// Every item must carry a real publisher, a real publication date and a direct
+// link to the source article — see the _readme block inside news.json.
+const NEWS_URL = 'news.json';
+
+// Last-resort copy, used only if news.json cannot be loaded (e.g. the page is
+// opened straight from the filesystem). Keep in sync with the top of news.json.
+const NEWS_FALLBACK = [
+  { title: 'June machinery exports keep growing; industry targets a record year',
+    title_zh: '6月機械出口續正成長 全年拚創高',
+    title_ko: '6월 기계 수출 성장 지속, 연간 최고치 도전',
+    source: '工商時報 China Times', date: '2026-07-11', category: 'Taiwan',
+    url: 'https://www.chinatimes.com/newspapers/20260711000213-260202',
+    summary: 'June machinery exports hit US$3.188bn (+16.6% YoY); machine tools fell to US$177m (-8.3%).',
+    summary_zh: '6月機械出口 31.88 億美元、年增 16.6%；工具機 1.77 億美元、年減 8.3%。',
+    summary_ko: '6월 기계 수출 31.88억 달러(+16.6%), 공작기계는 1.77억 달러(-8.3%).' },
+  { title: 'AI demand lifts machinery exports to a record monthly high',
+    title_zh: 'AI 需求推升機械出口 創單月歷史新高',
+    title_ko: 'AI 수요가 견인한 기계 수출, 월간 사상 최고치',
+    source: 'Taipei Times', date: '2026-06-15', category: 'Export',
+    url: 'https://www.taipeitimes.com/News/biz/archives/2026/06/15/2003859095',
+    summary: 'Machinery exports reached US$3.501bn, a 16th straight monthly rise and an all-time record.',
+    summary_zh: '機械出口 35.01 億美元，連 16 個月成長，創單月歷史新高。',
+    summary_ko: '기계 수출 35.01억 달러, 16개월 연속 증가로 월간 최고치.' },
+  { title: 'Taiwan machine tool & key component import/export statistics (monthly)',
+    title_zh: '台灣工具機及關鍵零組件進出口速報（每月）',
+    title_ko: '대만 공작기계·핵심부품 수출입 통계 (월간)',
+    source: 'TMBA 台灣工具機暨零組件工業同業公會', date: '2026-07-01', category: 'Statistics',
+    url: 'https://www.tmba.org.tw/zh-TW/news/traditionandbusiness',
+    summary: "The association's monthly trade data — the primary source behind most press coverage.",
+    summary_zh: '工具機公會每月進出口速報，多數媒體報導所引用的原始數據來源。',
+    summary_ko: '공작기계 협회의 월간 수출입 통계, 대부분 보도의 원출처.' }
+];
+
+let _newsItems = null;   // cached parsed items
+let _newsUpdated = '';   // date the list was last curated
+
+function _esc(s) {
+  return String(s == null ? '' : s).replace(/[&<>"']/g, c =>
+    ({ '&': '&amp;', '<': '&lt;', '>': '&gt;', '"': '&quot;', "'": '&#39;' }[c]));
+}
+
+// Pick the field for the active language, falling back to the base (English)
+// value so an item that has not been translated yet still renders.
+function _newsField(item, field) {
+  return item[field + '_' + currentLang] || item[field] || '';
+}
+
+// Only ever emit http(s) links.
+function _newsSafeUrl(url) {
+  return /^https?:\/\//i.test(url || '') ? url : '';
+}
+
+function _newsHost(url) {
+  const m = /^https?:\/\/([^/?#]+)/i.exec(url || '');
+  return m ? m[1].replace(/^www\./i, '') : '';
+}
+
+const NEWS_UI = {
+  en: { loading: 'Loading industry news...', read: 'READ SOURCE', curated: 'Curated from named sources · last updated' },
+  zh: { loading: '載入產業新聞中...', read: '前往原文', curated: '人工整理自具名來源 · 最後更新' },
+  ko: { loading: '산업 뉴스 불러오는 중...', read: '원문 보기', curated: '실명 출처 기반 큐레이션 · 최종 업데이트' }
+};
+
+function renderNews(items) {
+  const ui = NEWS_UI[currentLang] || NEWS_UI.en;
+
+  const rows = items.map((item, i) => {
+    const url = _newsSafeUrl(item.url);
+    const host = _newsHost(url);
+    const num = String(i + 1).padStart(2, '0');
+    const title = _esc(_newsField(item, 'title'));
+    const summary = _esc(_newsField(item, 'summary'));
+
+    // A real anchor, so the headline opens the source article directly and can
+    // be middle-clicked / copied like any normal link.
+    const head = url
+      ? `<a class="news-link" href="${_esc(url)}" target="_blank" rel="noopener noreferrer">${title}</a>`
+      : title;
+
+    const cta = url
+      ? `<div style="margin-top:6px;font-size:10px;color:var(--gold);letter-spacing:1px">↗ ${_esc(ui.read)}${host ? ' · ' + _esc(host) : ''}</div>`
+      : '';
+
+    return `
+      <div class="news-item">
+        <div class="news-num">${num}</div>
+        <div class="news-content">
+          <div class="news-title">${head}</div>
+          <div class="news-meta">
+            <span class="news-src">${_esc(item.source || '')}</span>
+            <span>${_esc(item.date || '')}</span>
+            <span>${_esc(item.category || '')}</span>
+          </div>
+          <div class="card-desc" style="margin-top:4px;font-size:11px">${summary}</div>
+          ${cta}
+        </div>
+      </div>`;
+  }).join('');
+
+  const foot = _newsUpdated
+    ? `<div style="margin-top:12px;font-size:10px;color:var(--text-muted);font-family:'DM Mono',monospace;letter-spacing:0.5px">${_esc(ui.curated)} ${_esc(_newsUpdated)}</div>`
+    : '';
+
+  ['home-news', 'page-news-list'].forEach(id => {
     const el = document.getElementById(id);
-    if (el) el.innerHTML = '<div class="loading pulse">Fetching latest Taiwan machine tool industry news...</div>';
+    if (el) el.innerHTML = rows + foot;
+  });
+}
+
+async function loadNews() {
+  if (_newsItems) { renderNews(_newsItems); return; }   // already loaded
+
+  const ui = NEWS_UI[currentLang] || NEWS_UI.en;
+  ['home-news', 'page-news-list'].forEach(id => {
+    const el = document.getElementById(id);
+    if (el) el.innerHTML = `<div class="loading pulse">${_esc(ui.loading)}</div>`;
   });
 
   try {
-    const response = await fetch("https://api.anthropic.com/v1/messages", {
-      method: "POST",
-      headers: { "Content-Type": "application/json" },
-      body: JSON.stringify({
-        model: "claude-sonnet-4-20250514",
-        max_tokens: 1000,
-        tools: [{ type: "web_search_20250305", name: "web_search" }],
-        system: "You are an industry news curator for Taiwan machine tool and manufacturing exports. Return ONLY a JSON array (no markdown, no explanation) with 6 news items. Each item: {title, source, date, summary, url, category}. Focus on: Taiwan machine tool exports, CNC industry, Taiwan manufacturing, Korea/Brazil/Switzerland/Argentina industrial news. Summaries max 120 chars.",
-        messages: [{ role: "user", content: "Search for the latest news (past 2 weeks) about Taiwan machine tool industry, CNC manufacturing exports, and industrial news in Korea, Brazil, Switzerland, Argentina markets. Return JSON array only." }]
-      })
-    });
-
-    const data = await response.json();
-    const textBlocks = data.content.filter(b => b.type === 'text');
-    let newsItems = [];
-
-    for (const block of textBlocks) {
-      try {
-        const clean = block.text.replace(/```json|```/g, '').trim();
-        const parsed = JSON.parse(clean);
-        if (Array.isArray(parsed)) { newsItems = parsed; break; }
-      } catch(e) {}
-    }
-
-    if (!newsItems.length) throw new Error('parse fail');
-
-    const html = newsItems.map((item, i) => `
-      <div class="news-item" style="cursor:pointer" onclick="window.open('https://www.google.com/search?q=' + encodeURIComponent('${item.title}'),'_blank')">
-        <div class="news-num">0${i+1}</div>
-        <div class="news-content">
-          <div class="news-title">${item.title}</div>
-          <div class="news-meta">
-            <span class="news-src">${item.source || 'Industry News'}</span>
-            <span>${item.date || 'Recent'}</span>
-            <span>${item.category || 'Manufacturing'}</span>
-          </div>
-          <div class="card-desc" style="margin-top:4px;font-size:11px">${item.summary || ''}</div>
-          <div style="margin-top:6px;font-size:10px;color:var(--gold);letter-spacing:1px">🔍 SEARCH THIS TOPIC →</div>
-        </div>
-      </div>
-    `).join('');
-
-    containers.forEach(id => {
-      const el = document.getElementById(id);
-      if (el) el.innerHTML = html;
-    });
-
-  } catch(e) {
-    // Fallback static news
-    const fallback = [
-      { title: "Taiwan Machine Tool Industry Forecasts Full Recovery in 2026", source: "經濟日報 / TMBA", date: "Jun 2026", category: "Taiwan", summary: "約六成廠商預估今年營收挑戰兩位數成長，整體工具機出口看增 5%~10%，景氣全面復甦。" },
-      { title: "Taiwan-US Reciprocal Tariff Deal Finalized — Exports to US Set to Rise", source: "經濟日報", date: "Jun 2026", category: "Trade", summary: "台美對等關稅拍板，公會樂觀預估今年台灣工具機出口美國至少成長 6%~8%。" },
-      { title: "Taiwan Machinery Exports Jump 30.3% YoY in January 2026", source: "TAMI", date: "Feb 2026", category: "Export", summary: "1 月機械出口 29.76 億美元，年增 30.3%；半導體與 AI 設備領軍帶動高精密設備需求。" },
-      { title: "TMTS 2026 — Taiwan Int'l Machine Tool Show, Taichung Mar 25–28", source: "TMTS", date: "Mar 2026", category: "Event", summary: "主題「AI-Powered Sustainable Manufacturing」，於台中國際展覽中心展出最新 CNC 與五軸方案。" },
-      { title: "Korean CNC Demand Driven by Doosan & Hyundai WIA Automation", source: "Korea Industry", date: "2026", category: "Korea", summary: "韓國車輛與造船業持續投資 CNC 自動化，Doosan、Hyundai WIA 主導加工中心與自動化系統需求。" },
-      { title: "Latin America CNC Market to Reach US$2.35B in 2026", source: "Market Research", date: "2026", category: "Brazil", summary: "拉美 CNC 市場 2026 年估達 23.5 億美元，巴西汽車、航太與工業製造自動化需求穩定成長。" }
-    ];
-
-    const html = fallback.map((item, i) => `
-      <div class="news-item" style="cursor:pointer" onclick="window.open('https://www.google.com/search?q=' + encodeURIComponent('${item.title}'),'_blank')">
-        <div class="news-num">0${i+1}</div>
-        <div class="news-content">
-          <div class="news-title">${item.title}</div>
-          <div class="news-meta">
-            <span class="news-src">${item.source}</span>
-            <span>${item.date}</span>
-            <span>${item.category}</span>
-          </div>
-          <div class="card-desc" style="margin-top:4px;font-size:11px">${item.summary}</div>
-          <div style="margin-top:6px;font-size:10px;color:var(--gold);letter-spacing:1px">🔍 SEARCH THIS TOPIC →</div>
-        </div>
-      </div>
-    `).join('');
-
-    containers.forEach(id => {
-      const el = document.getElementById(id);
-      if (el) el.innerHTML = html;
-    });
+    const res = await fetch(NEWS_URL, { cache: 'no-cache' });
+    if (!res.ok) throw new Error('HTTP ' + res.status);
+    const data = await res.json();
+    const items = Array.isArray(data) ? data : (data.items || []);
+    if (!items.length) throw new Error('no items');
+    _newsItems = items;
+    _newsUpdated = (Array.isArray(data) ? '' : data.updated) || '';
+  } catch (e) {
+    _newsItems = NEWS_FALLBACK;
+    _newsUpdated = '';
   }
+
+  renderNews(_newsItems);
 }
 
 
@@ -10768,6 +10819,9 @@ function switchLang(lang) {
   if (typeof TERMS !== 'undefined' && typeof filterTerms === 'function' && document.getElementById('terms-tbody')) {
     filterTerms();
   }
+
+  // Re-render the news list so headlines/summaries switch language too
+  if (typeof _newsItems !== 'undefined' && _newsItems) renderNews(_newsItems);
 }
 
 

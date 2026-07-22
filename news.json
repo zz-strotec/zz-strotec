@@ -1,0 +1,85 @@
+{
+  "_readme": [
+    "Z&Z STROTEC — Taiwan Industry News (static, hand-curated).",
+    "維護方式：直接編輯本檔案的 items 陣列，然後 commit + push。網站首頁與 News 頁會自動讀取，不需改 index.html。",
+    "規則：每則新聞都必須有真實的原始媒體 (source)、真實發布日期 (date, YYYY-MM-DD)、可直接開啟的原文網址 (url)。",
+    "不要使用 Google 搜尋連結，也不要用 'Market Research' 這類籠統來源 — 來源必須是可查證的媒體或機構。",
+    "title_zh / title_ko / summary_zh / summary_ko 可省略；省略時會自動退回英文版本。",
+    "建議每月更新一次，並同步更新上方的 updated 欄位。"
+  ],
+  "updated": "2026-07-22",
+  "items": [
+    {
+      "title": "June machinery exports keep growing; industry targets a record year",
+      "title_zh": "6月機械出口續正成長 全年拚創高",
+      "title_ko": "6월 기계 수출 성장 지속, 연간 최고치 도전",
+      "source": "工商時報 China Times",
+      "date": "2026-07-11",
+      "url": "https://www.chinatimes.com/newspapers/20260711000213-260202",
+      "category": "Taiwan",
+      "summary": "June machinery exports hit US$3.188bn (+16.6% YoY); H1 reached US$17.796bn (+19.3%). Machine tools bucked the trend at US$177m in June (-8.3%) and US$978m for H1 (-3.1%).",
+      "summary_zh": "6月機械出口 31.88 億美元、年增 16.6%；上半年 177.96 億美元、年增 19.3%。工具機則逆勢走弱，6月 1.77 億美元、年減 8.3%，上半年 9.78 億美元、年減 3.1%。",
+      "summary_ko": "6월 기계 수출 31.88억 달러(+16.6%), 상반기 177.96억 달러(+19.3%). 반면 공작기계는 6월 1.77억 달러(-8.3%), 상반기 9.78억 달러(-3.1%)로 부진."
+    },
+    {
+      "title": "AI demand lifts machinery exports to a record monthly high",
+      "title_zh": "AI 需求推升機械出口 創單月歷史新高",
+      "title_ko": "AI 수요가 견인한 기계 수출, 월간 사상 최고치",
+      "source": "Taipei Times",
+      "date": "2026-06-15",
+      "url": "https://www.taipeitimes.com/News/biz/archives/2026/06/15/2003859095",
+      "category": "Export",
+      "summary": "Machinery exports reached US$3.501bn — a 16th straight monthly rise, +26.2% YoY and an all-time monthly record. Top buyers: US (US$3.86bn), China (US$2.99bn), Singapore (US$1.127bn).",
+      "summary_zh": "機械出口達 35.01 億美元，連續第 16 個月成長、年增 26.2%，創單月歷史新高。前三大買主為美國 38.6 億、中國 29.9 億、新加坡 11.27 億美元。",
+      "summary_ko": "기계 수출 35.01억 달러로 16개월 연속 증가, 전년 대비 26.2% 성장하며 월간 최고치 경신. 주요 수입국은 미국·중국·싱가포르 순."
+    },
+    {
+      "title": "Taiwan machine tools emerge as key in US-Taiwan economic 'Golden Era,' says AIT",
+      "title_zh": "AIT：台灣工具機是台美經濟「黃金時代」的關鍵",
+      "title_ko": "AIT, 대만 공작기계는 미·대만 경제 '황금기'의 핵심",
+      "source": "DIGITIMES",
+      "date": "2026-03-27",
+      "url": "https://www.digitimes.com/news/a20260325PD239/taiwan-usa-machine-tool-robotics-manufacturing-2026.html",
+      "category": "Trade",
+      "summary": "As TMTS returned to Taichung, the American Institute in Taiwan framed Taiwan's machine tool sector as a strategic pillar of deepening US-Taiwan economic ties.",
+      "summary_zh": "TMTS 重返台中舉辦，美國在台協會 (AIT) 將台灣工具機產業定位為深化台美經濟關係的戰略支柱。",
+      "summary_ko": "TMTS의 타이중 복귀에 맞춰, AIT는 대만 공작기계 산업을 미·대만 경제 관계 심화의 전략적 축으로 평가."
+    },
+    {
+      "title": "Fact Sheet on U.S.-Taiwan Agreement on Reciprocal Trade",
+      "title_zh": "美台對等貿易協定 — USTR 官方說明",
+      "title_ko": "미국-대만 상호무역협정 팩트시트 (USTR)",
+      "source": "USTR (Office of the U.S. Trade Representative)",
+      "date": "2026-02-12",
+      "url": "https://ustr.gov/about/policy-offices/press-office/fact-sheets/2026/february/fact-sheet-us-taiwan-agreement-reciprocal-trade",
+      "category": "Trade",
+      "summary": "Official US text of the reciprocal trade agreement: the US applies the higher of its MFN rate or 15% to Taiwanese goods. Buyers should confirm the actual duty against their own HS code.",
+      "summary_zh": "美方官方文本：對台灣輸美貨品採「MFN 稅率與 15% 取其高」。實際稅率仍須依各自 HS Code 查核，切勿直接假設一律 15%。",
+      "summary_ko": "미국 공식 문서: 대만산 제품에 MFN 세율과 15% 중 높은 쪽을 적용. 실제 관세율은 HS 코드별로 반드시 확인 필요."
+    },
+    {
+      "title": "Machine tool firms eye export growth",
+      "title_zh": "工具機業者看好今年出口成長",
+      "title_ko": "공작기계 업계, 올해 수출 성장 기대",
+      "source": "Taipei Times",
+      "date": "2026-01-21",
+      "url": "https://www.taipeitimes.com/News/biz/archives/2026/01/21/2003850928",
+      "category": "Outlook",
+      "summary": "Taiwanese builders target 5-10% export growth for 2026 and 5-8% to the US. The tariff cut from 20% to 15% gives roughly 8.5-13% more pricing room; about 60% of surveyed makers expect revenue growth.",
+      "summary_zh": "台灣工具機廠商目標 2026 年出口成長 5~10%，對美出口成長 5~8%。關稅由 20% 降至 15%，約帶來 8.5~13% 的議價空間；約六成受訪廠商看好營收成長。",
+      "summary_ko": "대만 제조사들은 2026년 수출 5~10%, 대미 수출 5~8% 성장을 목표. 관세 20%→15% 인하로 약 8.5~13%의 가격 협상 여력 확보."
+    },
+    {
+      "title": "Taiwan machine tool & key component import/export statistics (monthly)",
+      "title_zh": "台灣工具機及關鍵零組件進出口速報（每月）",
+      "title_ko": "대만 공작기계·핵심부품 수출입 통계 (월간)",
+      "source": "TMBA 台灣工具機暨零組件工業同業公會",
+      "date": "2026-07-01",
+      "url": "https://www.tmba.org.tw/zh-TW/news/traditionandbusiness",
+      "category": "Statistics",
+      "summary": "The industry association's primary source for monthly machine tool and component trade data — the underlying figures behind most press coverage. Updated monthly.",
+      "summary_zh": "工具機公會官方統計專區，每月發布工具機與關鍵零組件進出口速報，是多數媒體報導所引用的原始數據來源。",
+      "summary_ko": "공작기계 협회 공식 통계 페이지. 월간 수출입 속보를 발표하며, 대부분 언론 보도의 원출처."
+    }
+  ]
+}
