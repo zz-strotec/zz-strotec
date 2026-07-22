@@ -502,6 +502,42 @@
   .news-link { color: inherit; text-decoration: none; }
   .news-link:hover { color: var(--gold); text-decoration: underline; }
 
+  /* Items older than NEWS_ARCHIVE_DAYS: kept on the News page, dimmed, badged,
+     and never shown on the homepage. */
+  .news-archived { opacity: 0.62; }
+  .news-archived:hover { opacity: 1; }
+
+  .news-archive-badge {
+    display: inline-block;
+    margin-left: 8px;
+    padding: 1px 6px;
+    border: 1px solid var(--border);
+    border-radius: 9px;
+    font-family: 'DM Mono', monospace;
+    font-size: 9px;
+    letter-spacing: 1px;
+    color: var(--text-muted);
+    vertical-align: middle;
+  }
+
+  .news-archive-head {
+    margin: 26px 0 4px;
+    padding-top: 14px;
+    border-top: 1px solid var(--border);
+    font-family: 'DM Mono', monospace;
+    font-size: 10px;
+    letter-spacing: 2px;
+    color: var(--text-muted);
+  }
+
+  .news-updated {
+    margin-top: 12px;
+    font-family: 'DM Mono', monospace;
+    font-size: 10px;
+    letter-spacing: 0.5px;
+    color: var(--text-muted);
+  }
+
   @media (max-width: 1100px) {
     .layout { grid-template-columns: 200px 1fr; }
     .right-panel { display: none; }
@@ -10521,11 +10557,20 @@ function doSearch() {
 
 // ─── Taiwan Industry News ───────────────────────────────────────
 // Data comes from the static, hand-curated ./news.json (same origin, updated
-// at build/publish time). No third-party API is called at page load, so there
-// is no request latency and no runtime dependency that can silently fail.
-// Every item must carry a real publisher, a real publication date and a direct
-// link to the source article — see the _readme block inside news.json.
+// at publish time). No third-party API is called at page load, so there is no
+// request latency, no runtime dependency that can silently fail, and no API
+// key is ever exposed in a public page.
+//
+// Item schema (see the _readme block inside news.json):
+//   title, source, published (YYYY-MM-DD), summary, url, market
+//   optional: title_zh/ko, summary_zh/ko, evergreen
+//
+// Every item must carry a named publisher, a real publication date and a
+// direct link to the source article. Fewer credible items beat more vague
+// ones — if only two or three are verifiable, publish two or three.
 const NEWS_URL = 'news.json';
+const NEWS_ARCHIVE_DAYS = 90;   // older than this → Archive, hidden from home
+const NEWS_HOME_MAX = 4;        // home shows at most this many current items
 
 // Last-resort copy, used only if news.json cannot be loaded (e.g. the page is
 // opened straight from the filesystem). Keep in sync with the top of news.json.
@@ -10533,24 +10578,16 @@ const NEWS_FALLBACK = [
   { title: 'June machinery exports keep growing; industry targets a record year',
     title_zh: '6月機械出口續正成長 全年拚創高',
     title_ko: '6월 기계 수출 성장 지속, 연간 최고치 도전',
-    source: '工商時報 China Times', date: '2026-07-11', category: 'Taiwan',
+    source: '工商時報 China Times', published: '2026-07-11', market: 'Taiwan',
     url: 'https://www.chinatimes.com/newspapers/20260711000213-260202',
     summary: 'June machinery exports hit US$3.188bn (+16.6% YoY); machine tools fell to US$177m (-8.3%).',
     summary_zh: '6月機械出口 31.88 億美元、年增 16.6%；工具機 1.77 億美元、年減 8.3%。',
     summary_ko: '6월 기계 수출 31.88억 달러(+16.6%), 공작기계는 1.77억 달러(-8.3%).' },
-  { title: 'AI demand lifts machinery exports to a record monthly high',
-    title_zh: 'AI 需求推升機械出口 創單月歷史新高',
-    title_ko: 'AI 수요가 견인한 기계 수출, 월간 사상 최고치',
-    source: 'Taipei Times', date: '2026-06-15', category: 'Export',
-    url: 'https://www.taipeitimes.com/News/biz/archives/2026/06/15/2003859095',
-    summary: 'Machinery exports reached US$3.501bn, a 16th straight monthly rise and an all-time record.',
-    summary_zh: '機械出口 35.01 億美元，連 16 個月成長，創單月歷史新高。',
-    summary_ko: '기계 수출 35.01억 달러, 16개월 연속 증가로 월간 최고치.' },
   { title: 'Taiwan machine tool & key component import/export statistics (monthly)',
     title_zh: '台灣工具機及關鍵零組件進出口速報（每月）',
     title_ko: '대만 공작기계·핵심부품 수출입 통계 (월간)',
-    source: 'TMBA 台灣工具機暨零組件工業同業公會', date: '2026-07-01', category: 'Statistics',
-    url: 'https://www.tmba.org.tw/zh-TW/news/traditionandbusiness',
+    source: 'TMBA 台灣工具機暨零組件工業同業公會', published: '2026-07-01', market: 'Taiwan',
+    url: 'https://www.tmba.org.tw/zh-TW/news/traditionandbusiness', evergreen: true,
     summary: "The association's monthly trade data — the primary source behind most press coverage.",
     summary_zh: '工具機公會每月進出口速報，多數媒體報導所引用的原始數據來源。',
     summary_ko: '공작기계 협회의 월간 수출입 통계, 대부분 보도의 원출처.' }
@@ -10580,56 +10617,115 @@ function _newsHost(url) {
   return m ? m[1].replace(/^www\./i, '') : '';
 }
 
+// Whole days between the publication date and today. Returns null for a
+// missing or unparseable date, which is then treated as current.
+function _newsAgeDays(item) {
+  const d = /^(\d{4})-(\d{2})-(\d{2})$/.exec(item.published || '');
+  if (!d) return null;
+  const then = Date.UTC(+d[1], +d[2] - 1, +d[3]);
+  const now = new Date();
+  const today = Date.UTC(now.getFullYear(), now.getMonth(), now.getDate());
+  return Math.floor((today - then) / 86400000);
+}
+
+// Evergreen entries (association statistics hubs and similar standing
+// references) stay current no matter how old the listed date is.
+function _newsIsArchived(item) {
+  if (item.evergreen) return false;
+  const age = _newsAgeDays(item);
+  return age !== null && age > NEWS_ARCHIVE_DAYS;
+}
+
+function _newsSorted(items) {
+  return items.slice().sort((a, b) => String(b.published || '').localeCompare(String(a.published || '')));
+}
+
 const NEWS_UI = {
-  en: { loading: 'Loading industry news...', read: 'READ SOURCE', curated: 'Curated from named sources · last updated' },
-  zh: { loading: '載入產業新聞中...', read: '前往原文', curated: '人工整理自具名來源 · 最後更新' },
-  ko: { loading: '산업 뉴스 불러오는 중...', read: '원문 보기', curated: '실명 출처 기반 큐레이션 · 최종 업데이트' }
+  en: { loading: 'Loading industry news...', read: 'READ SOURCE',
+        updated: 'Data updated', archive: 'ARCHIVE',
+        archiveHead: 'ARCHIVE · older than ' + NEWS_ARCHIVE_DAYS + ' days',
+        all: 'View all industry news →', none: 'No current items. See the archive on the News page.' },
+  zh: { loading: '載入產業新聞中...', read: '前往原文',
+        updated: '資料更新日期', archive: '存檔',
+        archiveHead: '存檔 · 超過 ' + NEWS_ARCHIVE_DAYS + ' 天',
+        all: '看全部產業新聞 →', none: '目前沒有近期項目，請至新聞頁查看存檔。' },
+  ko: { loading: '산업 뉴스 불러오는 중...', read: '원문 보기',
+        updated: '자료 업데이트', archive: '아카이브',
+        archiveHead: '아카이브 · ' + NEWS_ARCHIVE_DAYS + '일 경과',
+        all: '전체 산업 뉴스 보기 →', none: '최근 항목이 없습니다. 뉴스 페이지의 아카이브를 확인하세요.' }
 };
+
+function _newsRow(item, i, ui, archived) {
+  const url = _newsSafeUrl(item.url);
+  const host = _newsHost(url);
+  const num = String(i + 1).padStart(2, '0');
+  const title = _esc(_newsField(item, 'title'));
+  const summary = _esc(_newsField(item, 'summary'));
+
+  // A real anchor, so the headline opens the source article directly and can
+  // be middle-clicked / copied like any normal link.
+  const head = url
+    ? `<a class="news-link" href="${_esc(url)}" target="_blank" rel="noopener noreferrer">${title}</a>`
+    : title;
+
+  const badge = archived
+    ? `<span class="news-archive-badge">${_esc(ui.archive)}</span>`
+    : '';
+
+  const cta = url
+    ? `<div style="margin-top:6px;font-size:10px;color:var(--gold);letter-spacing:1px">↗ ${_esc(ui.read)}${host ? ' · ' + _esc(host) : ''}</div>`
+    : '';
+
+  return `
+    <div class="news-item${archived ? ' news-archived' : ''}">
+      <div class="news-num">${num}</div>
+      <div class="news-content">
+        <div class="news-title">${head}${badge}</div>
+        <div class="news-meta">
+          <span class="news-src">${_esc(item.source || '')}</span>
+          <span>${_esc(item.published || '')}</span>
+          <span>${_esc(item.market || '')}</span>
+        </div>
+        <div class="card-desc" style="margin-top:4px;font-size:11px">${summary}</div>
+        ${cta}
+      </div>
+    </div>`;
+}
+
+function _newsUpdatedLine(ui) {
+  return _newsUpdated
+    ? `<div class="news-updated">${_esc(ui.updated)}: ${_esc(_newsUpdated)}</div>`
+    : '';
+}
 
 function renderNews(items) {
   const ui = NEWS_UI[currentLang] || NEWS_UI.en;
+  const sorted = _newsSorted(items);
+  const current = sorted.filter(it => !_newsIsArchived(it));
+  const archived = sorted.filter(_newsIsArchived);
 
-  const rows = items.map((item, i) => {
-    const url = _newsSafeUrl(item.url);
-    const host = _newsHost(url);
-    const num = String(i + 1).padStart(2, '0');
-    const title = _esc(_newsField(item, 'title'));
-    const summary = _esc(_newsField(item, 'summary'));
+  // Home: only the newest few current items, then a link through to the full
+  // list. Archived items never appear here.
+  const home = document.getElementById('home-news');
+  if (home) {
+    const top = current.slice(0, NEWS_HOME_MAX);
+    home.innerHTML = (top.length
+        ? top.map((it, i) => _newsRow(it, i, ui, false)).join('')
+        : `<div class="card-desc" style="padding:14px 0">${_esc(ui.none)}</div>`)
+      + _newsUpdatedLine(ui)
+      + `<div style="margin-top:10px"><span onclick="showPage('news')" style="color:var(--gold);cursor:pointer;font-size:0.88rem;font-weight:600">${_esc(ui.all)}</span></div>`;
+  }
 
-    // A real anchor, so the headline opens the source article directly and can
-    // be middle-clicked / copied like any normal link.
-    const head = url
-      ? `<a class="news-link" href="${_esc(url)}" target="_blank" rel="noopener noreferrer">${title}</a>`
-      : title;
-
-    const cta = url
-      ? `<div style="margin-top:6px;font-size:10px;color:var(--gold);letter-spacing:1px">↗ ${_esc(ui.read)}${host ? ' · ' + _esc(host) : ''}</div>`
-      : '';
-
-    return `
-      <div class="news-item">
-        <div class="news-num">${num}</div>
-        <div class="news-content">
-          <div class="news-title">${head}</div>
-          <div class="news-meta">
-            <span class="news-src">${_esc(item.source || '')}</span>
-            <span>${_esc(item.date || '')}</span>
-            <span>${_esc(item.category || '')}</span>
-          </div>
-          <div class="card-desc" style="margin-top:4px;font-size:11px">${summary}</div>
-          ${cta}
-        </div>
-      </div>`;
-  }).join('');
-
-  const foot = _newsUpdated
-    ? `<div style="margin-top:12px;font-size:10px;color:var(--text-muted);font-family:'DM Mono',monospace;letter-spacing:0.5px">${_esc(ui.curated)} ${_esc(_newsUpdated)}</div>`
-    : '';
-
-  ['home-news', 'page-news-list'].forEach(id => {
-    const el = document.getElementById(id);
-    if (el) el.innerHTML = rows + foot;
-  });
+  // News page: everything, current first, archive below a divider.
+  const page = document.getElementById('page-news-list');
+  if (page) {
+    let html = current.map((it, i) => _newsRow(it, i, ui, false)).join('');
+    if (archived.length) {
+      html += `<div class="news-archive-head">${_esc(ui.archiveHead)}</div>`
+           + archived.map((it, i) => _newsRow(it, i, ui, true)).join('');
+    }
+    page.innerHTML = html + _newsUpdatedLine(ui);
+  }
 }
 
 async function loadNews() {
