@@ -1246,6 +1246,9 @@
       <div class="sidebar-item" onclick="openKnowledge('servo-motor')">
         <span class="icon">🔌</span><span data-i18n="sb_servo_motor"> Servo Motor</span>
       </div>
+      <div class="sidebar-item" onclick="openKnowledge('power-supply')">
+        <span class="icon">⚡</span><span data-i18n="sb_power_supply"> Power &amp; Transformers</span>
+      </div>
       <div class="sidebar-item" onclick="openKnowledge('cnc-lathe')">
         <span class="icon">🔩</span><span data-i18n="sb_cnc_lathe"> CNC Lathe</span>
       </div>
@@ -1571,6 +1574,7 @@
             <span class="kb-chip" onclick="openKnowledge('bar-feeder')" data-i18n="kbq_c_barfeeder">Bar Feeder</span>
             <span class="kb-chip" onclick="openKnowledge('linear-guide')" data-i18n="kbq_c_linear">Linear Guide</span>
             <span class="kb-chip" onclick="openKnowledge('servo-motor')" data-i18n="kbq_c_servo">Servo Motor</span>
+            <span class="kb-chip" onclick="openKnowledge('power-supply')" data-i18n="kbq_c_power">Power &amp; Transformers</span>
             <span class="kb-chip" onclick="openKnowledge('tool-holder')" data-i18n="kbq_c_tool">Tool Holder</span>
           </div>
         </div>
@@ -1653,6 +1657,11 @@
           <div class="card-tag" data-zh-tag="驅動系統" data-ko-tag="구동 시스템">Drive System</div>
           <div class="card-title" data-zh-title="伺服馬達與驅動器" data-ko-title="서보 모터 & 드라이브">Servo Motor & Drives</div>
           <div class="card-desc" data-zh-desc="Yaskawa Sigma 系列、Mitsubishi、Fanuc 伺服馬達比較。" data-ko-desc="Yaskawa Sigma 시리즈, Mitsubishi, Fanuc 서보 모터 비교.">Yaskawa Sigma series, Mitsubishi, Fanuc servo comparison.</div>
+        </div>
+        <div class="card" onclick="openKnowledge('power-supply')">
+          <div class="card-tag" data-zh-tag="裝機準備" data-ko-tag="설치 준비">Installation</div>
+          <div class="card-title" data-zh-title="海外電源規格與變壓" data-ko-title="해외 전원 사양 & 트랜스">Power Supply &amp; Transformers</div>
+          <div class="card-desc" data-zh-desc="50/60 Hz 差異、變壓器選型、kVA 容量與海外裝機檢查清單。" data-ko-desc="50/60 Hz 차이, 트랜스 선정, kVA 용량, 해외 설치 체크리스트.">50/60 Hz differences, transformer selection, kVA sizing and the overseas commissioning checklist.</div>
         </div>
         <div class="card" onclick="openKnowledge('cnc-lathe')">
           <div class="card-tag" data-zh-tag="工具機" data-ko-tag="공작기계">Machine Tool</div>
@@ -2461,6 +2470,19 @@
         <div class="whats-new-item">
           <div class="whats-new-date">2026.07</div>
           <div class="whats-new-content">
+            <div class="whats-new-title">⚡ Knowledge Library — Overseas CNC Power Supply &amp; Transformer Selection Guide</div>
+            <div style="color:var(--text-dim);font-size:0.82rem;margin-bottom:4px">海外 CNC 機台電源規格與變壓指南 ／ 해외 CNC 전원 사양 및 트랜스 선정 가이드</div>
+            <div class="whats-new-desc">A transformer changes voltage, but it does not change frequency — which is why so many machines clear customs and then stall at commissioning. The guide covers the four specifications to confirm before quoting (voltage, frequency, phase, capacity), industrial supply conditions across ten markets, what running 60 Hz equipment at 50 Hz actually does to coolant and hydraulic pumps, auto-transformer versus isolation transformer, kVA sizing, and pre-shipment and FAT checklists for both the builder and the buyer. Available in EN / 中文 / 한국어.</div>
+            <div style="margin-top:10px;display:flex;align-items:center;gap:10px;flex-wrap:wrap">
+              <span class="whats-new-tag">Knowledge Library</span>
+              <a class="nav-btn" href="/zz-strotec/knowledge/power-supply/" style="font-size:11px;padding:3px 12px;color:var(--gold);border:1px solid var(--gold);text-decoration:none;display:inline-block">⚡ READ GUIDE / 閱讀指南 / 가이드 읽기 →</a>
+            </div>
+          </div>
+        </div>
+
+        <div class="whats-new-item">
+          <div class="whats-new-date">2026.07</div>
+          <div class="whats-new-content">
             <div class="whats-new-title">🇺🇸 Market Insight — United States Added: Tariffs, NFPA 79 &amp; 480V Shipping Checklist</div>
             <div style="color:var(--text-dim);font-size:0.82rem;margin-bottom:4px">新增美國市場頁：關稅、NFPA 79 電氣安規與 480V 出貨注意事項 ／ 미국 시장 프로필 신설: 관세, NFPA 79, 480V 출하 체크리스트</div>
             <div class="whats-new-desc">The world's largest machine tool import market and Taiwan's #2 destination now has its own profile: MFN duty basis for HTS 8457/8458, how the 2026 reciprocal trade agreement applies the higher of MFN or 15%, NRTL/NFPA 79 electrical certification, 480V 60Hz shop power, ISF (10+2) filing, and why quoting FOB/FCA usually beats DDP. Our Taiwan Industry News feed has also been rebuilt around named sources with direct links to the original articles. Available in EN / 中文 / 한국어.</div>
@@ -3229,6 +3251,7 @@ const IMG_LTREPL = 'photo/live-tool-holder-replacement.jpg';
 const IMG_BARFEEDER = 'photo/bar-feeder.jpg';
 const IMG_CNCLATHE = 'photo/cnc-lathe-know.jpg';
 const IMG_SPINDLECOOLING = 'photo/spindle-cooling.jpg';
+const IMG_POWERSUPPLY = 'photo/cnc-power-transformer-guide.jpg';
 const IMG_SERVODRIVE = 'data:image/svg+xml;base64,PHN2ZyB2aWV3Qm94PSIwIDAgMTAwMCA2NjAiIHhtbG5zPSJodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2ZyIgcm9sZT0iaW1nIiBmb250LWZhbWlseT0iJ1NlZ29lIFVJJywnTWljcm9zb2Z0IEpoZW5nSGVpJyxzYW5zLXNlcmlmIj4KPHRpdGxlPkRyaXZlIFN5c3RlbTogU2Vydm8gTW90b3JzIGFuZCBEcml2ZSBTeXN0ZW1zIHNlbGVjdGlvbiBndWlkZTwvdGl0bGU+CjxkZXNjPkxpZ2h0IHRocmVlLWNvbHVtbiBiaWxpbmd1YWwgaW5mb2dyYXBoaWM6IGdsb2JhbCBzZXJ2byBicmFuZHMsIENOQyBrZXkgc3BlY2lmaWNhdGlvbnMsIGFuZCBuZXh0LWdlbmVyYXRpb24gZHJpdmUgdGVjaG5vbG9naWVzLjwvZGVzYz4KPHJlY3QgeD0iMSIgeT0iMSIgd2lkdGg9Ijk5OCIgaGVpZ2h0PSI2NTgiIHJ4PSIxMCIgZmlsbD0iI2Y0ZWZlMiIgc3Ryb2tlPSIjY2RiZjllIiBzdHJva2Utd2lkdGg9IjEuNSIvPgoKPHJlY3QgeD0iMiIgeT0iMiIgd2lkdGg9Ijk5NiIgaGVpZ2h0PSI2NiIgcng9IjkiIGZpbGw9IiMwZTE0MTkiLz4KPHJlY3QgeD0iMjQiIHk9IjIwIiB3aWR0aD0iNSIgaGVpZ2h0PSIzMCIgZmlsbD0iI2Q5YjI0YyIvPgo8dGV4dCB4PSI0MCIgeT0iMzQiIGZpbGw9IiNkOWIyNGMiIGZvbnQtc2l6ZT0iMjIiIGZvbnQtd2VpZ2h0PSI3MDAiPkRyaXZlIFN5c3RlbTogU2Vydm8gTW90b3JzICZhbXA7IERyaXZlIFN5c3RlbXM8L3RleHQ+Cjx0ZXh0IHg9IjQwIiB5PSI1NiIgZmlsbD0iI2I3YzRkMCIgZm9udC1zaXplPSIxNCI+5Ly65pyN6aas6YGU6IiH6amF5YuV57O757WxICDigJQgQ05DIOioreWCmeeahOmBuOWei+iIh+imj+agvOaMh+WNlzwvdGV4dD4KCjxyZWN0IHg9IjIiIHk9IjY4IiB3aWR0aD0iOTk2IiBoZWlnaHQ9IjQ2IiBmaWxsPSIjZWZlOGQ2Ii8+Cjx0ZXh0IHg9IjI0IiB5PSI4OCIgZmlsbD0iIzNhNGE1NyIgZm9udC1zaXplPSIxMi41Ij5TZXJ2byBtb3RvcnMgYXJlIHRoZSDigJxtdXNjbGVz4oCdIG9mIENOQyDigJQgYSBjbG9zZWQtbG9vcCBmZWVkYmFjayBzeXN0ZW0gZm9yIG1pY3JvbWV0ZXIgcHJlY2lzaW9uLCByYXBpZCBhY2NlbGVyYXRpb24gYW5kIHRvcnF1ZSBjb250cm9sLjwvdGV4dD4KPHRleHQgeD0iMjQiIHk9IjEwNiIgZmlsbD0iIzZhNWY0OCIgZm9udC1zaXplPSIxMiI+5Ly65pyN6aas6YGU5pivIENOQyDnmoTjgIzogozogonjgI3vvIzku6Xplonov7Tot6/mjqfliLbpgZTmiJDlvq7nsbPntJrlrprkvY3jgIHlv6vpgJ/liqDpgJ/oiIfnsr7mupbmia3nn6nmjqfliLbjgII8L3RleHQ+Cgo8bGluZSB4MT0iMzM3IiB5MT0iMTI2IiB4Mj0iMzM3IiB5Mj0iNTc2IiBzdHJva2U9IiNkZGQzYmQiIHN0cm9rZS13aWR0aD0iMSIvPgo8bGluZSB4MT0iNjYzIiB5MT0iMTI2IiB4Mj0iNjYzIiB5Mj0iNTc2IiBzdHJva2U9IiNkZGQzYmQiIHN0cm9rZS13aWR0aD0iMSIvPgoKPHJlY3QgeD0iMjQiIHk9IjEyOCIgd2lkdGg9IjIyIiBoZWlnaHQ9IjIyIiByeD0iMyIgZmlsbD0iIzBlMTQxOSIvPgo8dGV4dCB4PSIzNSIgeT0iMTQ0IiBmaWxsPSIjZDliMjRjIiBmb250LXNpemU9IjEzIiBmb250LXdlaWdodD0iNzAwIiB0ZXh0LWFuY2hvcj0ibWlkZGxlIj4xPC90ZXh0Pgo8dGV4dCB4PSI1NiIgeT0iMTM5IiBmaWxsPSIjMWMyYTM2IiBmb250LXNpemU9IjE1IiBmb250LXdlaWdodD0iNzAwIj5HbG9iYWwgU2Vydm8gQnJhbmRzPC90ZXh0Pgo8dGV4dCB4PSI1NiIgeT0iMTU1IiBmaWxsPSIjN2E1ZjE0IiBmb250LXNpemU9IjExLjUiPuWFqOeQg+S4u+a1geS8uuacjeWTgeeJjOiIh+eUn+aFi+WciDwvdGV4dD4KCjxyZWN0IHg9IjM1MCIgeT0iMTI4IiB3aWR0aD0iMjIiIGhlaWdodD0iMjIiIHJ4PSIzIiBmaWxsPSIjMGUxNDE5Ii8+Cjx0ZXh0IHg9IjM2MSIgeT0iMTQ0IiBmaWxsPSIjZDliMjRjIiBmb250LXNpemU9IjEzIiBmb250LXdlaWdodD0iNzAwIiB0ZXh0LWFuY2hvcj0ibWlkZGxlIj4yPC90ZXh0Pgo8dGV4dCB4PSIzODIiIHk9IjEzOSIgZmlsbD0iIzFjMmEzNiIgZm9udC1zaXplPSIxNSIgZm9udC13ZWlnaHQ9IjcwMCI+S2V5IFNwZWNzIGZvciBDTkM8L3RleHQ+Cjx0ZXh0IHg9IjM4MiIgeT0iMTU1IiBmaWxsPSIjN2E1ZjE0IiBmb250LXNpemU9IjExLjUiPkNOQyDmh4nnlKjnmoTpl5zpjbXoqZXkvLDmjIfmqJk8L3RleHQ+Cgo8cmVjdCB4PSI2NzYiIHk9IjEyOCIgd2lkdGg9IjIyIiBoZWlnaHQ9IjIyIiByeD0iMyIgZmlsbD0iIzBlMTQxOSIvPgo8dGV4dCB4PSI2ODciIHk9IjE0NCIgZmlsbD0iI2Q5YjI0YyIgZm9udC1zaXplPSIxMyIgZm9udC13ZWlnaHQ9IjcwMCIgdGV4dC1hbmNob3I9Im1pZGRsZSI+MzwvdGV4dD4KPHRleHQgeD0iNzA4IiB5PSIxMzkiIGZpbGw9IiMxYzJhMzYiIGZvbnQtc2l6ZT0iMTUiIGZvbnQtd2VpZ2h0PSI3MDAiPk5leHQtR2VuIERyaXZlczwvdGV4dD4KPHRleHQgeD0iNzA4IiB5PSIxNTUiIGZpbGw9IiM3YTVmMTQiIGZvbnQtc2l6ZT0iMTEuNSI+5qyh5LiW5Luj6amF5YuV5oqA6KGT6Lao5YuiPC90ZXh0PgoKPGc+CjxyZWN0IHg9IjI0IiB5PSIxNzQiIHdpZHRoPSI1IiBoZWlnaHQ9IjEzIiBmaWxsPSIjYjA4ODI4Ii8+Cjx0ZXh0IHg9IjM4IiB5PSIxODUiIGZpbGw9IiMxYzJhMzYiIGZvbnQtc2l6ZT0iMTQiIGZvbnQtd2VpZ2h0PSI3MDAiPkZBTlVDPHRzcGFuIGZpbGw9IiM4YTkzOWMiIGZvbnQtc2l6ZT0iMTEiIGZvbnQtd2VpZ2h0PSI0MDAiPiAgKEphcGFuKTwvdHNwYW4+PC90ZXh0Pgo8dGV4dCB4PSIyNCIgeT0iMjAzIiBmaWxsPSIjNDQ1MzVmIiBmb250LXNpemU9IjExLjUiPs6xaSAvIM6yaSBzZXJpZXMuIFJlbGlhYmxlLCBkZSBmYWN0byBzdGFuZGFyZC48L3RleHQ+Cjx0ZXh0IHg9IjI0IiB5PSIyMjAiIGZpbGw9IiM2YTVmNDgiIGZvbnQtc2l6ZT0iMTEiPs6xaSAvIM6yaSDns7vliJfvvIzlj6/pnaDjgIHmlbTlkIjkvbPvvIzmpa3nlYzmqJnmupbjgII8L3RleHQ+CjxsaW5lIHgxPSIyNCIgeTE9IjIzOCIgeDI9IjMyNCIgeTI9IjIzOCIgc3Ryb2tlPSIjZGRkM2JkIiBzdHJva2Utd2lkdGg9IjEiLz4KCjxyZWN0IHg9IjI0IiB5PSIyNTIiIHdpZHRoPSI1IiBoZWlnaHQ9IjEzIiBmaWxsPSIjYjA4ODI4Ii8+Cjx0ZXh0IHg9IjM4IiB5PSIyNjMiIGZpbGw9IiMxYzJhMzYiIGZvbnQtc2l6ZT0iMTQiIGZvbnQtd2VpZ2h0PSI3MDAiPlNJRU1FTlM8dHNwYW4gZmlsbD0iIzhhOTM5YyIgZm9udC1zaXplPSIxMSIgZm9udC13ZWlnaHQ9IjQwMCI+ICAoR2VybWFueSk8L3RzcGFuPjwvdGV4dD4KPHRleHQgeD0iMjQiIHk9IjI4MSIgZmlsbD0iIzQ0NTM1ZiIgZm9udC1zaXplPSIxMS41Ij5TSU5BTUlDUyBkcml2ZXMuIER5bmFtaWMsIDUtYXhpcyAmYW1wOyBtaWxsaW5nLjwvdGV4dD4KPHRleHQgeD0iMjQiIHk9IjI5OCIgZmlsbD0iIzZhNWY0OCIgZm9udC1zaXplPSIxMSI+U0lOQU1JQ1Mg6amF5YuV77yM6auY5YuV5oWL77yM5q2Q57O75LqU6Lu46IiH6YeN5YiH5YmK44CCPC90ZXh0Pgo8bGluZSB4MT0iMjQiIHkxPSIzMTYiIHgyPSIzMjQiIHkyPSIzMTYiIHN0cm9rZT0iI2RkZDNiZCIgc3Ryb2tlLXdpZHRoPSIxIi8+Cgo8cmVjdCB4PSIyNCIgeT0iMzMwIiB3aWR0aD0iNSIgaGVpZ2h0PSIxMyIgZmlsbD0iI2IwODgyOCIvPgo8dGV4dCB4PSIzOCIgeT0iMzQxIiBmaWxsPSIjMWMyYTM2IiBmb250LXNpemU9IjE0IiBmb250LXdlaWdodD0iNzAwIj5ZQVNLQVdBPHRzcGFuIGZpbGw9IiM4YTkzOWMiIGZvbnQtc2l6ZT0iMTEiIGZvbnQtd2VpZ2h0PSI0MDAiPiAgKEphcGFuKTwvdHNwYW4+PC90ZXh0Pgo8dGV4dCB4PSIyNCIgeT0iMzU5IiBmaWxsPSIjNDQ1MzVmIiBmb250LXNpemU9IjExLjUiPlNpZ21hLTcgKDI0LWJpdCkg4oaSIFNpZ21hLVggLyAxMCAoMjYtYml0KS48L3RleHQ+Cjx0ZXh0IHg9IjI0IiB5PSIzNzYiIGZpbGw9IiM2YTVmNDgiIGZvbnQtc2l6ZT0iMTEiPuiHquWLleWMlum+jemgre+8jOWPsOeBo+apn+WPsOacgOW4uOimi+WTgeeJjOOAgjwvdGV4dD4KPGxpbmUgeDE9IjI0IiB5MT0iMzk0IiB4Mj0iMzI0IiB5Mj0iMzk0IiBzdHJva2U9IiNkZGQzYmQiIHN0cm9rZS13aWR0aD0iMSIvPgoKPHJlY3QgeD0iMjQiIHk9IjQwOCIgd2lkdGg9IjUiIGhlaWdodD0iMTMiIGZpbGw9IiNiMDg4MjgiLz4KPHRleHQgeD0iMzgiIHk9IjQxOSIgZmlsbD0iIzFjMmEzNiIgZm9udC1zaXplPSIxNCIgZm9udC13ZWlnaHQ9IjcwMCI+TUlUU1VCSVNISTx0c3BhbiBmaWxsPSIjOGE5MzljIiBmb250LXNpemU9IjExIiBmb250LXdlaWdodD0iNDAwIj4gIChKYXBhbik8L3RzcGFuPjwvdGV4dD4KPHRleHQgeD0iMjQiIHk9IjQzNyIgZmlsbD0iIzQ0NTM1ZiIgZm9udC1zaXplPSIxMS41Ij5Hb29kIHZhbHVlLCBmYXN0IFNTQ05FVCBmaWJlciBuZXR3b3JrLjwvdGV4dD4KPHRleHQgeD0iMjQiIHk9IjQ1NCIgZmlsbD0iIzZhNWY0OCIgZm9udC1zaXplPSIxMSI+5oCn5YO55q+U5L2z44CB6auY6YCf5YWJ57qW77yM6LWw5b+D5byP6IiH5pS754mZ5qmf5bi46KaL44CCPC90ZXh0Pgo8bGluZSB4MT0iMjQiIHkxPSI0NzIiIHgyPSIzMjQiIHkyPSI0NzIiIHN0cm9rZT0iI2RkZDNiZCIgc3Ryb2tlLXdpZHRoPSIxIi8+Cgo8cmVjdCB4PSIyNCIgeT0iNDg2IiB3aWR0aD0iNSIgaGVpZ2h0PSIxMyIgZmlsbD0iI2IwODgyOCIvPgo8dGV4dCB4PSIzOCIgeT0iNDk3IiBmaWxsPSIjMWMyYTM2IiBmb250LXNpemU9IjE0IiBmb250LXdlaWdodD0iNzAwIj5ISVdJTjx0c3BhbiBmaWxsPSIjOGE5MzljIiBmb250LXNpemU9IjExIiBmb250LXdlaWdodD0iNDAwIj4gIChUYWl3YW4pPC90c3Bhbj48L3RleHQ+Cjx0ZXh0IHg9IjI0IiB5PSI1MTUiIGZpbGw9IiM0NDUzNWYiIGZvbnQtc2l6ZT0iMTEuNSI+QUMgc2Vydm9zIChFIC8gRlIgc2VyaWVzKSB3aXRoIG93biBkcml2ZXMuPC90ZXh0Pgo8dGV4dCB4PSIyNCIgeT0iNTMyIiBmaWxsPSIjNmE1ZjQ4IiBmb250LXNpemU9IjExIj5BQyDkvLrmnI3vvIhFL0ZSIOezu+WIl++8ie+8jOmrmOaAp+WDueavlOWuouijveiHquWLleWMluOAgjwvdGV4dD4KPC9nPgoKPGc+CjxyZWN0IHg9IjM1MCIgeT0iMTc0IiB3aWR0aD0iNSIgaGVpZ2h0PSIxMyIgZmlsbD0iI2IwODgyOCIvPgo8dGV4dCB4PSIzNjQiIHk9IjE4NSIgZmlsbD0iIzFjMmEzNiIgZm9udC1zaXplPSIxMy41IiBmb250LXdlaWdodD0iNzAwIj5FbmNvZGVyIFJlc29sdXRpb248dHNwYW4gZmlsbD0iIzdhNWYxNCIgZm9udC1zaXplPSIxMSIgZm9udC13ZWlnaHQ9IjQwMCI+ICDnt6jnorzlmajop6PmnpDluqY8L3RzcGFuPjwvdGV4dD4KPHRleHQgeD0iMzUwIiB5PSIyMDMiIGZpbGw9IiM0NDUzNWYiIGZvbnQtc2l6ZT0iMTEuNSI+SGlnaGVyIGJpdCBjb3VudCAoMjAg4oaSIDI0LWJpdCkgPSBmaW5lcjwvdGV4dD4KPHRleHQgeD0iMzUwIiB5PSIyMTkiIGZpbGw9IiM0NDUzNWYiIGZvbnQtc2l6ZT0iMTEuNSI+ZmVlZGJhY2sgJmFtcDsgYmV0dGVyIHN1cmZhY2Ugcm91Z2huZXNzIChSYSkuPC90ZXh0Pgo8dGV4dCB4PSIzNTAiIHk9IjIzNyIgZmlsbD0iIzZhNWY0OCIgZm9udC1zaXplPSIxMSI+5L2N5YWD5pW46LaK6auY77yM5L2N572u5Zue5o6I6LaK57K+57Sw77yM6KGo6Z2i57KX57OZ5bqm6LaK5L2z44CCPC90ZXh0Pgo8bGluZSB4MT0iMzUwIiB5MT0iMjU2IiB4Mj0iNjUwIiB5Mj0iMjU2IiBzdHJva2U9IiNkZGQzYmQiIHN0cm9rZS13aWR0aD0iMSIvPgoKPHJlY3QgeD0iMzUwIiB5PSIyOTYiIHdpZHRoPSI1IiBoZWlnaHQ9IjEzIiBmaWxsPSIjYjA4ODI4Ii8+Cjx0ZXh0IHg9IjM2NCIgeT0iMzA3IiBmaWxsPSIjMWMyYTM2IiBmb250LXNpemU9IjEzLjUiIGZvbnQtd2VpZ2h0PSI3MDAiPkluZXJ0aWEgTWF0Y2hpbmc8dHNwYW4gZmlsbD0iIzdhNWYxNCIgZm9udC1zaXplPSIxMSIgZm9udC13ZWlnaHQ9IjQwMCI+ICDmhaPph4/ljLnphY08L3RzcGFuPjwvdGV4dD4KPHRleHQgeD0iMzUwIiB5PSIzMjUiIGZpbGw9IiM0NDUzNWYiIGZvbnQtc2l6ZT0iMTEuNSI+TG93IGluZXJ0aWEg4oaSIGZhc3QgYWNjZWwvZGVjZWw7IG1lZC9oaWdoPC90ZXh0Pgo8dGV4dCB4PSIzNTAiIHk9IjM0MSIgZmlsbD0iIzQ0NTM1ZiIgZm9udC1zaXplPSIxMS41Ij5pbmVydGlhIOKGkiBzdGFibGUgdG9ycXVlIGZvciBoZWF2eSBjYXN0aW5ncy48L3RleHQ+Cjx0ZXh0IHg9IjM1MCIgeT0iMzU5IiBmaWxsPSIjNmE1ZjQ4IiBmb250LXNpemU9IjExIj7kvY7mhaPph4/ihpLlv6vpgJ/liqDmuJvpgJ/vvJvkuK0v6auY5oWj6YeP4oaS6amF5YuV56yo6YeN6ZGE5Lu244CCPC90ZXh0Pgo8bGluZSB4MT0iMzUwIiB5MT0iMzc4IiB4Mj0iNjUwIiB5Mj0iMzc4IiBzdHJva2U9IiNkZGQzYmQiIHN0cm9rZS13aWR0aD0iMSIvPgoKPHJlY3QgeD0iMzUwIiB5PSI0MTgiIHdpZHRoPSI1IiBoZWlnaHQ9IjEzIiBmaWxsPSIjYjA4ODI4Ii8+Cjx0ZXh0IHg9IjM2NCIgeT0iNDI5IiBmaWxsPSIjMWMyYTM2IiBmb250LXNpemU9IjEzLjUiIGZvbnQtd2VpZ2h0PSI3MDAiPkZyZXF1ZW5jeSBSZXNwb25zZTx0c3BhbiBmaWxsPSIjN2E1ZjE0IiBmb250LXNpemU9IjExIiBmb250LXdlaWdodD0iNDAwIj4gIOmfv+aHiemgu+WvrDwvdHNwYW4+PC90ZXh0Pgo8dGV4dCB4PSIzNTAiIHk9IjQ0NyIgZmlsbD0iIzQ0NTM1ZiIgZm9udC1zaXplPSIxMS41Ij5IaWdoZXIgbG9vcCBiYW5kd2lkdGgg4oaSIGZhc3RlciBjb21tYW5kPC90ZXh0Pgo8dGV4dCB4PSIzNTAiIHk9IjQ2MyIgZmlsbD0iIzQ0NTM1ZiIgZm9udC1zaXplPSIxMS41Ij50cmFja2luZywgZmV3ZXIgZm9sbG93aW5nIGVycm9ycyBhdCBzcGVlZC48L3RleHQ+Cjx0ZXh0IHg9IjM1MCIgeT0iNDgxIiBmaWxsPSIjNmE1ZjQ4IiBmb250LXNpemU9IjExIj7ov7Tot6/poLvlr6zotorpq5jvvIzlj43mh4notorlv6vvvIzot5/pmqjoqqTlt67otorlsI/jgII8L3RleHQ+CjwvZz4KCjxnPgo8cmVjdCB4PSI2NzYiIHk9IjE3NCIgd2lkdGg9IjUiIGhlaWdodD0iMTMiIGZpbGw9IiNiMDg4MjgiLz4KPHRleHQgeD0iNjkwIiB5PSIxODUiIGZpbGw9IiMxYzJhMzYiIGZvbnQtc2l6ZT0iMTMuNSIgZm9udC13ZWlnaHQ9IjcwMCI+VG9ycXVlIC8gRGlyZWN0LURyaXZlPC90ZXh0Pgo8dGV4dCB4PSI2OTAiIHk9IjIwMSIgZmlsbD0iIzdhNWYxNCIgZm9udC1zaXplPSIxMSI+5Yqb55+p6aas6YGUIC8g55u06amF6aas6YGUIChERCk8L3RleHQ+Cjx0ZXh0IHg9IjY3NiIgeT0iMjI1IiBmaWxsPSIjNDQ1MzVmIiBmb250LXNpemU9IjExLjUiPlJlbW92ZSBiZWx0cyAmYW1wOyBnZWFycyBmb3IgemVybyBiYWNrbGFzaC48L3RleHQ+Cjx0ZXh0IHg9IjY3NiIgeT0iMjQxIiBmaWxsPSIjNDQ1MzVmIiBmb250LXNpemU9IjExLjUiPkZvciA0dGgvNXRoLWF4aXMgcm90YXJ5IHRhYmxlcyAmYW1wOyBsaXZlIHR1cnJldHMuPC90ZXh0Pgo8dGV4dCB4PSI2NzYiIHk9IjI2MSIgZmlsbD0iIzZhNWY0OCIgZm9udC1zaXplPSIxMSI+55yB5Y6755qu5bi2L+m9kui8qu+8jOmBlOaIkOeEoeiDjOmame+8m+eUqOaWvOesrOWbmy/kupTou7g8L3RleHQ+Cjx0ZXh0IHg9IjY3NiIgeT0iMjc3IiBmaWxsPSIjNmE1ZjQ4IiBmb250LXNpemU9IjExIj7ml4vovYnlt6XkvZzlj7DvvIhCL0Mg6Lu477yJ6IiH55u06amF5byP5YuV5Yqb5YiA5aGU44CCPC90ZXh0Pgo8bGluZSB4MT0iNjc2IiB5MT0iMzA2IiB4Mj0iOTc2IiB5Mj0iMzA2IiBzdHJva2U9IiNkZGQzYmQiIHN0cm9rZS13aWR0aD0iMSIvPgoKPHJlY3QgeD0iNjc2IiB5PSIzNjgiIHdpZHRoPSI1IiBoZWlnaHQ9IjEzIiBmaWxsPSIjYjA4ODI4Ii8+Cjx0ZXh0IHg9IjY5MCIgeT0iMzc5IiBmaWxsPSIjMWMyYTM2IiBmb250LXNpemU9IjEzLjUiIGZvbnQtd2VpZ2h0PSI3MDAiPkxpbmVhciBNb3RvcnM8L3RleHQ+Cjx0ZXh0IHg9IjY5MCIgeT0iMzk1IiBmaWxsPSIjN2E1ZjE0IiBmb250LXNpemU9IjExIj7nt5rmgKfppqzpgZQ8L3RleHQ+Cjx0ZXh0IHg9IjY3NiIgeT0iNDE5IiBmaWxsPSIjNDQ1MzVmIiBmb250LXNpemU9IjExLjUiPuKAnFVucm9sbOKAnSByb3RvciArIHN0YXRvciBpbnRvIGEgZmxhdCB0cmFjayBmb3I8L3RleHQ+Cjx0ZXh0IHg9IjY3NiIgeT0iNDM1IiBmaWxsPSIjNDQ1MzVmIiBmb250LXNpemU9IjExLjUiPmRpcmVjdCBsaW5lYXIgbW90aW9uIOKAlCBmcmljdGlvbmxlc3MsIGhpZ2ggc3BlZWQuPC90ZXh0Pgo8dGV4dCB4PSI2NzYiIHk9IjQ1NSIgZmlsbD0iIzZhNWY0OCIgZm9udC1zaXplPSIxMSI+5bCH6L2J5a2Q6IiH5a6a5a2Q44CM5pSk5bmz44CN5oiQ55u057ea6LuM6YGT77yM55u05o6l55Si55SfPC90ZXh0Pgo8dGV4dCB4PSI2NzYiIHk9IjQ3MSIgZmlsbD0iIzZhNWY0OCIgZm9udC1zaXplPSIxMSI+57ea5oCn6YGL5YuV77yM54Sh5pGp5pOm44CB6auY6YCf77yb55So5pa85Y2K5bCO6auU6IiHPC90ZXh0Pgo8dGV4dCB4PSI2NzYiIHk9IjQ4NyIgZmlsbD0iIzZhNWY0OCIgZm9udC1zaXplPSIxMSI+6LaF57K+5a+G5pS+6Zu75Yqg5bel77yIRURN77yJLyDno6jluorjgII8L3RleHQ+CjwvZz4KCjxyZWN0IHg9IjIiIHk9IjU5MCIgd2lkdGg9Ijk5NiIgaGVpZ2h0PSI2NiIgcng9IjkiIGZpbGw9IiMwZTE0MTkiLz4KPHRleHQgeD0iMjQiIHk9IjYxNiIgZmlsbD0iI2I3YzRkMCIgZm9udC1zaXplPSIxMi41Ij5aJmFtcDtaIFNUUk9URUMgc3VwcGxpZXMgc2Vydm8gY29tcG9uZW50cyBhbmQgZGlyZWN0LWRyaXZlIHNvbHV0aW9ucyBmb3IgZ2xvYmFsIHByZWNpc2lvbiBtYW51ZmFjdHVyaW5nLjwvdGV4dD4KPHRleHQgeD0iMjQiIHk9IjYzNyIgZmlsbD0iI2Q5YjI0YyIgZm9udC1zaXplPSIxMi41IiBmb250LXdlaWdodD0iNzAwIj7okKzmtIvlnIvpmpsgWiZhbXA7WiBTVFJPVEVDIOKAlCDngrrlhajnkIPnsr7lr4boo73pgKDmj5DkvpvkvLrmnI3lhYPku7boiIfnm7TpqYXmlbTpq5Top6PmsbrmlrnmoYg8L3RleHQ+Cjwvc3ZnPgo=';
 const KB = {
   'factory-visit': {
@@ -3807,6 +3830,679 @@ const KB = {
         </div>
       </div>
     `
+  },
+  'power-supply': {
+    title: 'Overseas CNC Power Supply & Transformer Selection Guide',
+    title_zh: '海外 CNC 機台電源規格與變壓指南',
+    title_ko: '해외 CNC 전원 사양 및 트랜스 선정 가이드',
+    tags: ['power supply', 'voltage', 'frequency', '50Hz', '60Hz', 'transformer', 'isolation transformer', 'auto-transformer', 'kVA', 'grounding', 'phase', 'commissioning', '電源規格', '變壓器', '頻率', '接地', '裝機'],
+    published: '2026-07-22', updated: '2026-07-22',
+    body_ko: `
+      <img src="${IMG_POWERSUPPLY}" alt="CNC 기계, 강압 트랜스, 배전반과 50/60 Hz 전력망 구성" style="width:100%;height:auto;border:1px solid var(--border);border-radius:6px;margin:0 0 18px;display:block">
+      <h4>전원 호환성이 시운전 성패를 좌우하는 이유</h4>
+      CNC 공작기계를 해외에서 구매할 때 대부분의 관심은 기계 구조, 가공 능력, 주축 사양, 그리고 FANUC·Mitsubishi·Siemens·SYNTEC 같은 컨트롤러 브랜드에 집중됩니다. 그러나 해외 시운전 실패의 상당수는 더 기본적인 조건에서 비롯됩니다. 바로 <strong>설치 공장의 실제 전원 사양</strong>입니다.
+
+      <p style="margin-top:14px">CNC 기계는 단일 전기 부하가 아닙니다. 주축 드라이브, 서보 드라이브, 제어 트랜스, 유압 펌프, 절삭유 펌프, 윤활 유닛, 주축 칠러, 칩 컨베이어, 바피더, 고압 절삭유(CTS) 장치 등 여러 구성품이 포함되며, 이들이 모두 같은 전압·주파수 허용 범위를 갖는 것은 아닙니다.</p>
+
+      <p>입력 전압 오류, 과도한 전압 변동, 주파수 불일치, 접지 불량, 트랜스 용량 부족은 과전압·저전압·과열·통신 알람을 반복적으로 발생시킬 수 있으며, 심한 경우 전원 모듈, 드라이브, 전자접촉기, 펌프 모터, 고가의 제어 기판까지 손상시킬 수 있습니다. 따라서 전원 호환성은 장비 도착 후가 아니라 <strong>견적 및 생산 착수 전에</strong> 확정해야 합니다.</p>
+
+      <div style="background:var(--surface2);border-left:3px solid var(--gold);border-radius:0 6px 6px 0;padding:14px 18px;margin:18px 0">
+        <div style="color:var(--gold);font-size:12px;letter-spacing:1px;margin-bottom:6px">핵심 원칙</div>
+        <div style="color:var(--text);font-size:13px;line-height:1.8">트랜스는 전압을 바꾸지만 주파수는 <strong>바꾸지 못합니다</strong>. 50 Hz를 60 Hz로, 또는 60 Hz를 50 Hz로 변환하려면 장비 자체의 호환성을 확인하거나, 공학적으로 설계된 주파수 변환 방식을 적용해야 합니다.</div>
+      </div>
+
+      <h4>1. 반드시 확인해야 할 4가지 전원 사양</h4>
+
+      <p style="margin-top:10px"><strong>전압.</strong> 국가 표준 전압만 참고하지 말고 공장 현장의 실측 전압을 확인해야 합니다. 대표적인 산업용 전압은 200, 208, 220, 230, 240, 380, 400, 415, 440, 460, 480 V입니다. 같은 국가 안에서도 지역, 전력회사, 산업단지, 노후 설비에 따라 전압이 다를 수 있습니다. 출하 전에 배전반 사진, 기존 설비 명판, 현장 실측값을 받아 두는 것이 좋습니다.</p>
+      <ul>
+        <li>선간 전압</li>
+        <li>상-중성선 전압</li>
+        <li>정격 전압 및 허용 변동률</li>
+        <li>생산 피크 시간대의 전압 변동</li>
+        <li>공장 트랜스 용량</li>
+        <li>메인 및 분기 차단기 용량</li>
+      </ul>
+
+      <p><strong>주파수.</strong> 산업용 전력망은 대부분 50 Hz 또는 60 Hz입니다. 주파수는 직입 기동 교류 유도 전동기의 회전수를 결정하므로 펌프 유량, 팬 풍량, 트랜스 온도 상승, 일부 접촉기·릴레이·코일의 동작 조건에 영향을 줍니다. 다음 항목은 개별 확인이 필요합니다.</p>
+      <ul>
+        <li>유압 펌프</li>
+        <li>절삭유 펌프</li>
+        <li>윤활 펌프</li>
+        <li>주축 칠러</li>
+        <li>제어반 팬</li>
+        <li>칩 컨베이어</li>
+        <li>오일 미스트 집진기</li>
+        <li>바피더 및 기타 외부 장치</li>
+      </ul>
+
+      <p><strong>상수 및 배전 방식.</strong> 대부분의 산업용 CNC는 3상 전원을 사용하지만 다음도 확인해야 합니다.</p>
+      <ul>
+        <li>3상 3선식 또는 3상 4선식</li>
+        <li>중성선 유무</li>
+        <li>접지 방식</li>
+        <li>상 순서</li>
+        <li>하이레그 델타(high-leg delta) 등 특수 배전 여부</li>
+        <li>보조 전원 전압</li>
+      </ul>
+      <p>중성선과 보호 접지는 기능이 다르며 서로 대체할 수 없습니다.</p>
+
+      <p><strong>공급 용량.</strong> 전압이 맞다고 용량이 충분한 것은 아닙니다. 기계 기동, 주축 가속, 급속 이송, 여러 주변 장치의 동시 운전 시 피크 부하까지 감당할 수 있어야 합니다.</p>
+      <ul>
+        <li>기계 정격 kVA</li>
+        <li>정격 및 전부하 전류</li>
+        <li>메인 차단기 용량</li>
+        <li>케이블 굵기</li>
+        <li>기동 및 순시 피크 전류</li>
+        <li>단락 용량</li>
+        <li>모든 주변 장치의 추가 부하</li>
+      </ul>
+
+      <h4>2. 주요 시장의 산업용 전원 조건</h4>
+      <p>아래 표는 초기 검토용 참고 자료이며, 현장 시공 사양으로 그대로 사용할 수 없습니다.</p>
+      <div style="overflow-x:auto">
+      <table style="width:100%;border-collapse:collapse;font-size:0.86rem;margin-top:4px">
+        <thead>
+          <tr style="border-bottom:1px solid var(--border)">
+            <th style="text-align:left;padding:8px 10px;color:var(--gold);font-weight:600">국가·지역</th>
+            <th style="text-align:left;padding:8px 10px;color:var(--text);font-weight:600">일반적인 산업용 전원</th>
+            <th style="text-align:left;padding:8px 10px;color:var(--text);font-weight:600">구매 시 확인 사항</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr style="border-bottom:1px solid var(--border)"><td style="padding:8px 10px;color:var(--text-dim)">대만</td><td style="padding:8px 10px">220 V 또는 380 V／60 Hz</td><td style="padding:8px 10px">기계 주전원과 공장 내 트랜스 구성 확인</td></tr>
+          <tr style="border-bottom:1px solid var(--border)"><td style="padding:8px 10px;color:var(--text-dim)">중국</td><td style="padding:8px 10px">주로 380 V／50 Hz</td><td style="padding:8px 10px">허용 전압 변동과 접지 요구사항 확인</td></tr>
+          <tr style="border-bottom:1px solid var(--border)"><td style="padding:8px 10px;color:var(--text-dim)">유럽</td><td style="padding:8px 10px">주로 400 V／50 Hz</td><td style="padding:8px 10px">CE 및 현지 전기안전 규정 확인</td></tr>
+          <tr style="border-bottom:1px solid var(--border)"><td style="padding:8px 10px;color:var(--text-dim)">미국·캐나다</td><td style="padding:8px 10px">208, 230, 240, 460 또는 480 V／60 Hz</td><td style="padding:8px 10px">배전 방식이 다양하므로 하이레그 델타 등 특수 구성 확인</td></tr>
+          <tr style="border-bottom:1px solid var(--border)"><td style="padding:8px 10px;color:var(--text-dim)">일본</td><td style="padding:8px 10px">주로 200 V. 동일본은 대체로 50 Hz, 서일본은 대체로 60 Hz</td><td style="padding:8px 10px">실제 설치 지역 기준으로 주파수 확인 필수</td></tr>
+          <tr style="border-bottom:1px solid var(--border)"><td style="padding:8px 10px;color:var(--text-dim)">한국</td><td style="padding:8px 10px">주로 380 V, 3상, 60 Hz</td><td style="padding:8px 10px">220 V 보조 전원 및 중성선 유무 확인</td></tr>
+          <tr style="border-bottom:1px solid var(--border)"><td style="padding:8px 10px;color:var(--text-dim)">스위스</td><td style="padding:8px 10px">주로 400 V, 3상, 50 Hz</td><td style="padding:8px 10px">CE 서류 및 현지 보호장치 요구사항 확인</td></tr>
+          <tr style="border-bottom:1px solid var(--border)"><td style="padding:8px 10px;color:var(--text-dim)">아르헨티나</td><td style="padding:8px 10px">주로 380／400 V, 3상, 50 Hz</td><td style="padding:8px 10px">전압 안정도와 서지 환경 확인 권장</td></tr>
+          <tr style="border-bottom:1px solid var(--border)"><td style="padding:8px 10px;color:var(--text-dim)">동남아시아</td><td style="padding:8px 10px">대부분 380～415 V／50 Hz</td><td style="padding:8px 10px">예외 있음 — 필리핀은 60 Hz가 일반적</td></tr>
+          <tr><td style="padding:8px 10px;color:var(--text-dim)">브라질</td><td style="padding:8px 10px">60 Hz. 전압은 주(州)와 공장에 따라 상이</td><td style="padding:8px 10px">국가명만으로 판단하지 말고 현장 실측값 확보</td></tr>
+        </tbody>
+      </table>
+      </div>
+      <p style="margin-top:12px;color:var(--text-dim);font-size:0.9rem">각국 표준은 참고 자료일 뿐입니다. 최종 사양은 설치 공장의 실측 전압, 배전 도면, 자격을 갖춘 전기 기술자의 확인을 근거로 해야 합니다.</p>
+
+      <h4>3. 전압은 바꿀 수 있지만, 주파수는?</h4>
+      <p>"전압이 다르면 트랜스를 달면 된다"는 생각은 문제의 절반만 해결합니다. 트랜스는 480 V를 220 V로 낮추거나 220 V를 380 V로 올릴 수 있지만, 입력이 60 Hz면 출력도 60 Hz이고 입력이 50 Hz면 출력도 50 Hz입니다. 트랜스를 적용하기 전에 기계 내부 모든 구성품이 설치지 주파수를 지원하는지 확인해야 합니다.</p>
+
+      <p style="margin-top:14px"><strong>서보 및 주축 계통.</strong> 최신 서보·주축 드라이브는 입력 교류를 직류로 정류한 뒤 제어 지령에 따라 출력을 생성하므로, 전력망 50／60 Hz가 서보 모터 속도를 직접 결정하지는 않습니다. 다만 이것이 기계 전체의 호환을 뜻하지는 않으므로 다음을 확인해야 합니다.</p>
+      <ul>
+        <li>드라이브 허용 입력 전압 및 주파수</li>
+        <li>전원 공급 모듈 사양</li>
+        <li>회생 유닛</li>
+        <li>제동 저항</li>
+        <li>라인 리액터</li>
+        <li>노이즈 필터</li>
+        <li>내부 팬 및 보조 전원</li>
+      </ul>
+
+      <p><strong>주변 유도 전동기.</strong> 절삭유 펌프, 유압 펌프, 팬, 칩 컨베이어는 직입 기동 유도 전동기를 쓰는 경우가 많아 회전수가 주파수를 그대로 따릅니다.</p>
+      <p style="margin-top:10px"><strong>60 Hz 사양을 50 Hz 전원에서 사용</strong> — 동기 속도가 약 16.7% 낮아지며 다음이 발생할 수 있습니다.</p>
+      <ul>
+        <li>절삭유 유량 저하</li>
+        <li>고압 CTS 압력 부족</li>
+        <li>유압 계통 유량 저하</li>
+        <li>방열 풍량 부족</li>
+        <li>가공부 칩 배출 능력 저하</li>
+      </ul>
+      <p>공급 전압을 적절한 V/Hz 비율에 맞춰 조정하지 않으면 모터 자속과 온도 상승도 증가할 수 있습니다.</p>
+      <p style="margin-top:10px"><strong>50 Hz 사양을 60 Hz 전원에서 사용</strong> — 회전수가 약 20% 상승합니다. 전류가 반드시 증가하는 것은 아니지만 다음이 발생할 수 있습니다.</p>
+      <ul>
+        <li>펌프 회전수가 설계값 초과</li>
+        <li>유량·압력·축동력 요구 변화</li>
+        <li>팬 또는 기계 구조물의 과속</li>
+        <li>베어링 수명 저하</li>
+        <li>소음 및 진동 증가</li>
+      </ul>
+      <p>특히 펌프 부하는 주의가 필요합니다. 원심 펌프는 유량, 양정, 소요 동력이 모두 회전수에 따라 변하므로, 모터가 도는지 여부만으로 판단할 수 없습니다.</p>
+
+      <p style="margin-top:14px"><strong>가장 확실한 방법</strong>은 발주 시점에 최종 설치지의 전압, 주파수, 상수, 접지 방식, 사용 가능 용량, 현지 법규를 제조사에 명확히 전달하는 것입니다. 제조사는 설치지 사양에 맞는 펌프, 팬, 칠러, 트랜스를 직접 구성할 수 있고, 필요하면 특정 모터에 인버터를 적용할 수도 있습니다. 다만 충분한 엔지니어링 검토 없이 인버터 한 대로 CNC 제어반 전체에 전원을 공급하는 방식은 권장하지 않습니다.</p>
+
+      <h4>4. 개별 확인이 필요한 CNC 하위 계통</h4>
+      <p><strong>메인 제어반</strong> — 메인 스위치, 차단기, 라인 리액터, EMI·노이즈 필터, 제어 트랜스, 전원 공급 장치, 서지 보호 장치, 접촉기·릴레이 코일 전압.</p>
+      <p><strong>CNC 및 드라이브 계통</strong> — CNC 컨트롤러, 서보 앰프, 주축 앰프, 회생 유닛, 제동 저항, 드라이브 냉각 팬, I/O 및 24 VDC 전원.</p>
+      <p><strong>유압·냉각·윤활 계통</strong> — 유압 펌프 모터, 일반 절삭유 펌프, 고압 CTS 펌프, 윤활 펌프, 주축 칠러, 오일 쿨러, 제어반 에어컨, 오일 미스트 집진기.</p>
+      <p><strong>외부 장치</strong> — 주변 장치가 본체와 같은 전원을 쓴다고 가정하면 안 됩니다. 바피더, 칩 컨베이어, 로봇, 갠트리 로더, 부품 배출 장치, 집진 설비, 서드파티 냉각 장치, 외부 안정화 장치나 트랜스를 각각 확인해야 합니다.</p>
+
+      <h4>5. 단권 트랜스와 절연 트랜스</h4>
+      <p>공장 전원과 기계 정격 전압이 다르면 일반적으로 트랜스가 필요합니다. 예를 들어 공장은 480 V인데 기계 정격 입력이 220 V라면 적절한 강압 트랜스가 있어야 합니다.</p>
+
+      <p style="margin-top:14px"><strong>단권 트랜스(Auto-transformer)</strong> — 1차와 2차가 권선 일부를 공유합니다. 크기가 작고 가벼우며 비용이 낮고 효율도 대체로 좋습니다. 한계는 전기적 절연이 없다는 점입니다. 1차측 공통 모드 노이즈와 고장 조건이 2차측으로 전달되기 쉬우며, 트랜스만으로 독립된 2차측 배전 계통을 구성할 수 없습니다. 전력 품질이 안정적이고 전압 변환비가 크지 않으며 절연이 특별히 요구되지 않고, 기계 제조사와 현지 전기 기술자가 사용을 확인한 경우에 적합합니다.</p>
+
+      <p style="margin-top:14px"><strong>절연 트랜스(Isolation Transformer)</strong> — 1차와 2차가 물리적으로 분리된 권선을 사용해 자기적으로 에너지를 전달합니다. 전기적 절연을 제공하고 설계 요구에 맞는 2차측 배전 구성을 지원하며, 정전 차폐를 적용하면 일부 공통 모드 고주파 노이즈를 줄이는 데 도움이 됩니다. 5축 머시닝센터, 고정밀 복합 선반, 전력 품질이 불안정한 공장, 프레스·용접기 등 대형 유도성 부하를 같은 계통에서 쓰는 현장, 제조사나 현지 법규가 절연을 요구하는 경우, 제어 계통이 전원 품질에 민감한 경우에 적합합니다.</p>
+
+      <p style="margin-top:14px">절연 트랜스는 <strong>완전한 전원 보호 시스템이 아닙니다</strong>. 낙뢰 서지, 고주파 노이즈, 순간 전압 강하를 막으려면 서지 보호 장치(SPD), EMI／RFI 필터, 라인 리액터, 전압 안정화 장치, 전압 감시 릴레이, 적절한 차폐 및 접지 설계가 함께 필요할 수 있습니다.</p>
+
+      <p style="margin-top:14px"><strong>접지와 중성선.</strong> 절연 트랜스 2차측에 중성점을 만들지 여부, 그리고 중성선과 보호 접지를 어떻게 연결할지는 현지 전기 법규, 제조사 전기 도면, 컨트롤러 설치 매뉴얼, 현장 접지 계통에 따라 결정해야 합니다. 설계 없이 중성선과 접지선을 임의로 연결해서는 안 됩니다. 접지 저항 역시 전 세계 모든 CNC 기계에 통용되는 단일 수치는 없습니다. "10 Ω 미만이어야 한다"를 일률적으로 적용하지 말고 장비 매뉴얼, 현지 법규, 현장 보호 설계를 따라야 합니다.</p>
+
+      <h4>6. 트랜스 용량(kVA) 선정</h4>
+      <p>트랜스 용량은 주축 모터 출력만으로도, 정상 운전 전류만으로도 결정할 수 없습니다. CNC 본체 정격 수요, 주축 가속 부하, 서보 급속 이송 부하, 유압 펌프, 절삭유 펌프, 주축 칠러, 칩 컨베이어, 바피더, 고압 CTS, 제어반 에어컨, 향후 추가될 수 있는 주변 장치, 고조파 및 비선형 부하, 트랜스 주위 온도와 방열 조건을 함께 고려해야 합니다.</p>
+      <p style="margin-top:14px">상세 부하 자료가 없을 때는 제조사가 제시한 총 수요 용량에 약 1.2～1.5배를 적용해 초기 검토 범위로 삼을 수 있습니다. 예를 들어 확정된 총 수요가 30 kVA라면 초기에는 36, 40, 45 kVA를 검토할 수 있습니다. 다만 이는 초기 추정 방식일 뿐이며, 모든 30 kVA 기계가 같은 용량을 써야 한다는 뜻은 아닙니다.</p>
+      <p style="margin-top:14px">최종 선정은 제조사 권장 입력 용량, 기계 정격 전류, 피크 및 동시 부하, 트랜스 임피던스, 허용 전압 강하, 환경 디레이팅, 현지 전기 규정에 따라야 합니다. 트랜스 용량이 부족하면 주축 가속이나 중절삭 시 전압이 급강하해 드라이브에 저전압 알람이 뜨고, 예기치 않은 정지로 이어지기 쉽습니다.</p>
+
+      <h4>7. 견적·발주 전에 확보할 정보</h4>
+      <p>해외 구매자가 제공해야 할 항목입니다.</p>
+      <ul>
+        <li>설치 국가·도시 및 공장 주소</li>
+        <li>선간 전압 실측값</li>
+        <li>상-중성선 전압 실측값</li>
+        <li>전력망 주파수</li>
+        <li>상수 및 중성선 유무</li>
+        <li>접지 방식</li>
+        <li>메인 차단기 용량 및 사용 가능 kVA</li>
+        <li>허용 전압 변동률</li>
+        <li>현지 전기 법규 또는 인증 요구사항</li>
+        <li>전체 주변 장치 목록</li>
+        <li>공장 주위 온도 및 습도</li>
+        <li>배전반 및 기존 설비 명판 사진</li>
+      </ul>
+      <p>확정된 전원 사양은 정식 견적서, 발주서, 기술 협의서, 기계 사양서, 출하 검수 문서에 기재하는 것이 좋습니다.</p>
+
+      <h4>8. 출하 전 전기 점검 체크리스트</h4>
+      <p><strong>기계 제조사·공급자</strong></p>
+      <ul>
+        <li>설치지 전압·주파수·상수 확인</li>
+        <li>모든 모터와 주변 장치 명판 대조</li>
+        <li>트랜스 입력·출력·탭 설정 확인</li>
+        <li>차단기, 퓨즈, 케이블 굵기 확인</li>
+        <li>접촉기·릴레이·솔레노이드 코일 전압 확인</li>
+        <li>전기 도면 및 부품표 갱신</li>
+        <li>기계 명판 갱신</li>
+        <li>모든 주변 장치를 부하 계산에 포함</li>
+        <li>상 순서, 절연, 보호 접지 시험</li>
+        <li>무부하 및 전부하 전류 기록, 알람·시험 기록 보관</li>
+      </ul>
+      <p><strong>해외 구매자·최종 사용자</strong></p>
+      <ul>
+        <li>현장 실측 전압 제공</li>
+        <li>메인 차단기 및 케이블 용량 확인</li>
+        <li>자격을 갖춘 전기 기술자 배치</li>
+        <li>기계 반입 전 배전 공사 완료</li>
+        <li>제조사 동의 없이 트랜스 탭을 변경하지 않을 것</li>
+        <li>전원 투입 전 상 순서와 접지 재확인</li>
+        <li>전력망이 불안정하면 SPD, 전압 안정화, 전원 감시 방안 검토</li>
+      </ul>
+      <p><strong>FAT 출하 검수</strong> — 여건이 허락하면 설치지에 가까운 전압·주파수로 통전 검수를 실시하고, 주축 기동 및 최고 회전수, 각 축 급속 이송, 유압 계통, 절삭유 펌프, 고압 CTS, 주축 칠러, 칩 컨베이어, 바피더, 안전 회로, 그리고 여러 장치 동시 운전 시의 전압·전류를 함께 시험합니다.</p>
+
+      <h4>9. 해외 설치에서 자주 발생하는 실수</h4>
+      <ul>
+        <li><strong>도착 후 트랜스를 추가하는 방식.</strong> 전압은 보정해도 주파수는 보정할 수 없어 주변 펌프와 팬이 여전히 맞지 않을 수 있습니다.</li>
+        <li><strong>CNC 컨트롤러만 확인.</strong> 컨트롤러와 서보 드라이브는 넓은 전압 범위를 지원해도 유압 펌프, 칠러, 칩 컨베이어는 그렇지 않을 수 있습니다.</li>
+        <li><strong>한 국가에 한 가지 전압만 있다고 가정.</strong> 북미, 브라질, 일본, 일부 동남아 시장은 공장별 확인이 특히 중요합니다.</li>
+        <li><strong>트랜스 용량을 딱 맞게 산정.</strong> 주축 가속, 펌프 기동, 주변 장치 동시 운전을 무시하면 전압 강하와 저전압 알람을 부르기 쉽습니다.</li>
+        <li><strong>절연 트랜스를 만능으로 여기는 것.</strong> 서지 보호, 필터링, 전압 안정화, 올바른 접지를 대체하지 못합니다.</li>
+        <li><strong>서드파티 주변 장치 누락.</strong> 바피더, 로봇, 고압 CTS, 오일 미스트 집진기는 다른 전원을 쓸 수 있습니다.</li>
+        <li><strong>트랜스 탭 임의 조정.</strong> 잘못 조정하면 하류 제어 전압이 비정상이 되어 전원 공급 장치, 코일, 드라이브가 손상될 수 있습니다.</li>
+      </ul>
+
+      <h4>Z&amp;Z STROTEC 실무 조언</h4>
+      <p>국가 간 CNC 설비 구매에서 가장 안전한 방법은 기계가 도착한 뒤 트랜스를 추가하는 것이 아니라, 제조 단계에서 설치 공장의 실제 전원에 맞춰 설계·구성·시험을 마치는 것입니다. 발주 확정 시 최소한 다음 내용을 계약서와 기술 사양서에 명시하십시오.</p>
+      <ul>
+        <li>공장 실제 입력 전압과 허용 변동률 (예: 480 V ±10%)</li>
+        <li>전력망 주파수 50 Hz 또는 60 Hz</li>
+        <li>모든 절삭유 펌프, 유압 펌프, 팬, 주변 모터가 설치지 주파수에 적합함</li>
+        <li>트랜스 동봉 여부</li>
+        <li>트랜스 형식 — 단권식 또는 절연식</li>
+        <li>트랜스 정격 kVA, 탭, 임피던스, 환경 디레이팅</li>
+        <li>현지 접지 및 전기 법규 요구사항</li>
+        <li>FAT 시험에 사용한 전압과 주파수</li>
+      </ul>
+      <p style="margin-top:14px">충실한 전원 계획은 드라이브와 모터 손상을 막을 뿐 아니라, 현장 시운전 지연, 예기치 않은 가동 중단, 이후의 보증 분쟁까지 줄여 줍니다.</p>
+
+      <p style="margin-top:18px">함께 보기: <button class="nav-btn" onclick="openKnowledge('servo-motor')" style="color:var(--gold);border:none;background:none;padding:0;font-size:inherit;text-decoration:underline;cursor:pointer">서보 모터 &amp; 드라이브 시스템</button>(드라이브·축 제어 선정), <button class="nav-btn" onclick="openKnowledge('coolant-cts')" style="color:var(--gold);border:none;background:none;padding:0;font-size:inherit;text-decoration:underline;cursor:pointer">절삭유 관리 &amp; CTS</button>(고압 펌프 요구사항), <button class="nav-btn" onclick="openMarket('usa')" style="color:var(--gold);border:none;background:none;padding:0;font-size:inherit;text-decoration:underline;cursor:pointer">미국 시장 프로필</button>(480 V／60 Hz 및 NFPA 79 요구사항).</p>
+
+      <p style="margin-top:14px;color:var(--text-dim);font-size:0.86rem;line-height:1.8"><em>본 문서는 일반적인 구매 및 수출 기획 정보를 제공합니다. 실제 배전, 트랜스 선정, 접지, 기계 결선은 장비 매뉴얼과 현장 조건에 따라 기계 제조사와 현지 유자격 전기 전문가가 설계하고 시행해야 합니다.</em></p>
+
+      <div style="text-align:center;margin-top:1.4rem">
+        <button class="btn-gold" onclick="showPage('inquiry')">공장 전원 정보와 함께 문의하기 →</button>
+      </div>
+`,
+    body_zh: `
+      <img src="${IMG_POWERSUPPLY}" alt="CNC 機台、降壓變壓器、電控箱與 50/60 Hz 電網配置" style="width:100%;height:auto;border:1px solid var(--border);border-radius:6px;margin:0 0 18px;display:block">
+      <h4>為何電源相容性決定裝機成敗</h4>
+      跨國採購 CNC 工具機時，買方通常最關心機械結構、加工能力、主軸規格及控制器品牌，例如 FANUC、Mitsubishi、Siemens 或 SYNTEC。然而，許多海外裝機問題並非源自機械精度，而是來自一項容易被忽略的基礎條件：<strong>目的地工廠的實際電源規格。</strong>
+
+      <p style="margin-top:14px">CNC 機台並非單一電氣負載。機台內部可能包含主軸驅動器、伺服驅動器、控制變壓器、油壓泵、冷卻泵、潤滑單元、主軸冷卻機、排屑機、送料機、高壓中心出水系統及其他周邊設備，這些元件未必具有相同的電壓與頻率容許範圍。</p>
+
+      <p>若輸入電壓錯誤、電壓波動過大、頻率不符、接地不良或變壓器容量不足，輕則造成機台頻繁出現過壓、欠壓、過熱及通訊警報；重則可能損壞電源模組、驅動器、接觸器、泵浦馬達或昂貴的控制板。因此，電源相容性必須在報價及機台投產前確認，而不是等設備抵達後才尋找變壓器補救。</p>
+
+      <div style="background:var(--surface2);border-left:3px solid var(--gold);border-radius:0 6px 6px 0;padding:14px 18px;margin:18px 0">
+        <div style="color:var(--gold);font-size:12px;letter-spacing:1px;margin-bottom:6px">核心原則</div>
+        <div style="color:var(--text);font-size:13px;line-height:1.8">變壓器可以改變電壓，但<strong>不能</strong>改變頻率。將 50 Hz 轉換為 60 Hz，或將 60 Hz 轉換為 50 Hz，必須確認所有設備本身是否相容，或採用經過工程設計的頻率轉換方案。</div>
+      </div>
+
+      <h4>一、必須確認的四項電源規格</h4>
+
+      <p style="margin-top:10px"><strong>電壓。</strong>首先應確認工廠現場的實際供電電壓，而不是只參考國家的標準電壓。全球常見工業電壓包括 200、208、220、230、240、380、400、415、440、460 及 480 V。即使位於同一國家，不同地區、電力公司、工業區或老舊廠房仍可能使用不同電壓。機台出貨前，買方最好提供配電盤照片、現有設備銘牌及現場實測值。</p>
+      <ul>
+        <li>線對線電壓</li>
+        <li>線對中性線電壓</li>
+        <li>額定電壓及容許變動率</li>
+        <li>生產尖峰時段的電壓波動</li>
+        <li>工廠變壓器容量</li>
+        <li>主開關與分路開關容量</li>
+      </ul>
+
+      <p><strong>頻率。</strong>全球工業電網主要使用 50 Hz 或 60 Hz。頻率決定直接接電的交流感應馬達轉速，因而影響泵浦流量、風扇風量、變壓器溫升，以及部分接觸器、繼電器與線圈的工作狀態。必須逐項確認：</p>
+      <ul>
+        <li>油壓泵</li>
+        <li>冷卻泵</li>
+        <li>潤滑泵</li>
+        <li>主軸冷卻機</li>
+        <li>電控箱風扇</li>
+        <li>排屑機</li>
+        <li>油霧回收機</li>
+        <li>送料機及其他外接設備</li>
+      </ul>
+
+      <p><strong>相數與配電方式。</strong>大多數工業 CNC 機台使用三相電，但仍須確認：</p>
+      <ul>
+        <li>三相三線或三相四線</li>
+        <li>是否提供中性線</li>
+        <li>接地系統</li>
+        <li>相序</li>
+        <li>是否存在高腳三角形（high-leg delta）等特殊配電</li>
+        <li>輔助電源電壓</li>
+      </ul>
+      <p>中性線與保護接地具有不同功能，不可互相替代。</p>
+
+      <p><strong>供電容量。</strong>電壓正確並不表示容量足夠。工廠還必須能承受機台啟動、主軸加速、快速移動及多個周邊同時運轉時的峰值負載：</p>
+      <ul>
+        <li>機台額定 kVA</li>
+        <li>額定及滿載電流</li>
+        <li>主開關容量</li>
+        <li>電纜線徑</li>
+        <li>啟動及瞬間峰值電流</li>
+        <li>短路容量</li>
+        <li>所有周邊設備的額外負載</li>
+      </ul>
+
+      <h4>二、全球常見工業電源差異</h4>
+      <p>以下資料僅供初期規劃，不能直接作為現場施工規格。</p>
+      <div style="overflow-x:auto">
+      <table style="width:100%;border-collapse:collapse;font-size:0.86rem;margin-top:4px">
+        <thead>
+          <tr style="border-bottom:1px solid var(--border)">
+            <th style="text-align:left;padding:8px 10px;color:var(--gold);font-weight:600">國家／地區</th>
+            <th style="text-align:left;padding:8px 10px;color:var(--text);font-weight:600">常見工業電源</th>
+            <th style="text-align:left;padding:8px 10px;color:var(--text);font-weight:600">採購注意事項</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr style="border-bottom:1px solid var(--border)"><td style="padding:8px 10px;color:var(--text-dim)">台灣</td><td style="padding:8px 10px">220 V 或 380 V／60 Hz</td><td style="padding:8px 10px">應確認機台主電源及廠內變壓器配置</td></tr>
+          <tr style="border-bottom:1px solid var(--border)"><td style="padding:8px 10px;color:var(--text-dim)">中國</td><td style="padding:8px 10px">常見 380 V／50 Hz</td><td style="padding:8px 10px">應確認容許電壓波動及接地要求</td></tr>
+          <tr style="border-bottom:1px solid var(--border)"><td style="padding:8px 10px;color:var(--text-dim)">歐洲</td><td style="padding:8px 10px">常見 400 V／50 Hz</td><td style="padding:8px 10px">同時確認 CE 及當地電氣安全規範</td></tr>
+          <tr style="border-bottom:1px solid var(--border)"><td style="padding:8px 10px;color:var(--text-dim)">美國、加拿大</td><td style="padding:8px 10px">208、230、240、460 或 480 V／60 Hz</td><td style="padding:8px 10px">配電方式多樣，須確認是否有高腳三角形等特殊配置</td></tr>
+          <tr style="border-bottom:1px solid var(--border)"><td style="padding:8px 10px;color:var(--text-dim)">日本</td><td style="padding:8px 10px">常見 200 V；東日本多為 50 Hz，西日本多為 60 Hz</td><td style="padding:8px 10px">必須依實際安裝地區確認頻率</td></tr>
+          <tr style="border-bottom:1px solid var(--border)"><td style="padding:8px 10px;color:var(--text-dim)">韓國</td><td style="padding:8px 10px">常見 380 V、三相、60 Hz</td><td style="padding:8px 10px">確認是否另有 220 V 輔助電源及中性線</td></tr>
+          <tr style="border-bottom:1px solid var(--border)"><td style="padding:8px 10px;color:var(--text-dim)">瑞士</td><td style="padding:8px 10px">常見 400 V、三相、50 Hz</td><td style="padding:8px 10px">確認 CE 文件與當地保護裝置要求</td></tr>
+          <tr style="border-bottom:1px solid var(--border)"><td style="padding:8px 10px;color:var(--text-dim)">阿根廷</td><td style="padding:8px 10px">常見 380／400 V、三相、50 Hz</td><td style="padding:8px 10px">建議確認電壓穩定度與突波環境</td></tr>
+          <tr style="border-bottom:1px solid var(--border)"><td style="padding:8px 10px;color:var(--text-dim)">東南亞</td><td style="padding:8px 10px">多數為 380～415 V／50 Hz</td><td style="padding:8px 10px">仍有例外，菲律賓常見 60 Hz，不能一概而論</td></tr>
+          <tr><td style="padding:8px 10px;color:var(--text-dim)">巴西</td><td style="padding:8px 10px">60 Hz，但電壓依州別與工廠而異</td><td style="padding:8px 10px">必須取得現場實測值，不能只依國家名稱設定</td></tr>
+        </tbody>
+      </table>
+      </div>
+      <p style="margin-top:12px;color:var(--text-dim);font-size:0.9rem">各國標準只能作為參考。最終規格應以安裝工廠的實測電壓、配電圖及合格電氣人員確認結果為準。</p>
+
+      <h4>三、電壓可以轉換，但頻率怎麼處理？</h4>
+      <p>「電壓不一樣就加裝變壓器」是常見想法，但只解決了一半的問題。變壓器可以把 480 V 降為 220 V，或把 220 V 升為 380 V，但輸入是 60 Hz 時輸出仍然是 60 Hz，輸入是 50 Hz 時輸出也仍然是 50 Hz。因此，使用變壓器之前還必須確認機台內所有元件是否支援目的地頻率。</p>
+
+      <p style="margin-top:14px"><strong>對伺服與主軸系統的影響。</strong>現代 CNC 伺服驅動器及主軸驅動器通常會先將輸入交流電整流成直流，再依控制命令產生輸出，因此電網 50／60 Hz 通常不會直接決定伺服馬達的運轉速度。但這不等於整台機台必然相容，仍須確認：</p>
+      <ul>
+        <li>驅動器容許輸入電壓及頻率</li>
+        <li>電源供應模組規格</li>
+        <li>回生單元</li>
+        <li>煞車電阻</li>
+        <li>線路電抗器</li>
+        <li>雜訊濾波器</li>
+        <li>內部風扇及周邊電源</li>
+      </ul>
+
+      <p><strong>對周邊感應馬達的影響。</strong>冷卻泵、油壓泵、風扇及排屑機常使用直接接電的交流感應馬達，其轉速與頻率密切相關。</p>
+      <p style="margin-top:10px"><strong>60 Hz 設備使用於 50 Hz 電源</strong>——馬達同步轉速約下降 16.7%，可能造成：</p>
+      <ul>
+        <li>冷卻泵流量下降</li>
+        <li>高壓中心出水壓力不足</li>
+        <li>油壓系統流量下降</li>
+        <li>散熱風量不足</li>
+        <li>加工區排屑能力下降</li>
+      </ul>
+      <p>若供電電壓未依適當 V/Hz 比例調整，馬達磁通及溫升也可能增加。</p>
+      <p style="margin-top:10px"><strong>50 Hz 設備使用於 60 Hz 電源</strong>——馬達轉速提高約 20%。實際電流不一定必然增加，但可能造成：</p>
+      <ul>
+        <li>泵浦轉速超出設計值</li>
+        <li>流量、壓力及軸功率需求改變</li>
+        <li>風扇或機械結構超速</li>
+        <li>軸承壽命下降</li>
+        <li>噪音與振動增加</li>
+      </ul>
+      <p>泵浦負載尤其需要注意，因為離心泵的流量、揚程與消耗功率都會隨轉速改變，不能只看馬達是否能轉動。</p>
+
+      <p style="margin-top:14px"><strong>建議解決方式</strong>是在下單時明確告知製造商最終安裝地的電壓、頻率、相數、接地系統、可用容量與當地法規。製造商可直接配置符合目的地規格的泵浦、風扇、冷卻機及變壓器，必要時也可為特定馬達配置適當的變頻器。但不建議在沒有完整工程評估的情況下，以單一變頻器供應整座 CNC 電控箱。</p>
+
+      <h4>四、CNC 機台各子系統的電源檢查</h4>
+      <p><strong>主電控箱</strong>——總開關、斷路器、線路電抗器、EMI／雜訊濾波器、控制變壓器、電源供應器、突波保護裝置、接觸器及繼電器線圈電壓。</p>
+      <p><strong>CNC 控制器及驅動系統</strong>——CNC 控制器、伺服放大器、主軸放大器、回生單元、煞車電阻、驅動器冷卻風扇、I/O 及 24 VDC 電源供應器。</p>
+      <p><strong>油壓、冷卻與潤滑系統</strong>——油壓泵馬達、一般冷卻泵、高壓中心出水泵、潤滑泵、主軸冷卻機、油冷卻機、電控箱冷氣、油霧回收機。</p>
+      <p><strong>外接周邊設備</strong>——不能假設周邊設備與主機使用相同電源。棒材送料機、排屑機、機器人、龍門上下料設備、工件接料裝置、吸屑或集塵設備、第三方冷卻系統，以及外接穩壓器或變壓器，都應個別確認。</p>
+
+      <h4>五、變壓器選型：自耦與隔離變壓器</h4>
+      <p>當工廠供電與機台額定電壓不同時，通常需要配置變壓器。例如工廠供電為 480 V，但機台額定輸入為 220 V，就需要適當的降壓變壓器。</p>
+
+      <p style="margin-top:14px"><strong>自耦變壓器（Auto-transformer）</strong>——一次側與二次側共用部分線圈。體積較小、重量較輕、成本較低、效率通常較高。限制在於：輸入與輸出沒有電氣隔離，一次側的共模雜訊及故障條件較可能傳遞至二次側，且無法單靠變壓器重新建立獨立的二次側配電系統。適用於電網品質穩定、電壓轉換比例不大、對電氣隔離沒有特殊要求，且機台製造商與當地電氣人員確認可以使用的情況。</p>
+
+      <p style="margin-top:14px"><strong>隔離變壓器（Isolation Transformer）</strong>——一次側與二次側使用獨立線圈，以磁場傳遞能量。具有電氣隔離，有利於建立符合設計要求的二次側配電方式；搭配靜電屏蔽層時，可降低部分共模高頻雜訊。適用於五軸加工中心、高精度車銑複合機、電網品質不穩定的工廠、同一廠區具有沖床或電焊機等大型感性負載、製造商或當地法規要求電氣隔離，以及控制系統對電源品質較敏感的場合。</p>
+
+      <p style="margin-top:14px">隔離變壓器<strong>並不等於</strong>完整的電源保護系統。若要防止雷擊突波、高頻雜訊或電壓驟降，可能仍需要突波保護器（SPD）、EMI／RFI 濾波器、線路電抗器、穩壓設備、電壓監控繼電器，以及適當的屏蔽與接地設計。</p>
+
+      <p style="margin-top:14px"><strong>接地與中性線注意事項。</strong>隔離變壓器二次側是否建立中性點，以及中性線與保護接地如何連接，必須依當地電氣法規、機台製造商電氣圖、控制器安裝手冊與現場接地系統決定，不能在未經設計的情況下任意將中性線與接地線連接。接地電阻也沒有適用全球所有 CNC 機台的單一數值，應依設備手冊、當地法規與現場保護設計確認，而不是一律套用「必須小於 10 Ω」。</p>
+
+      <h4>六、變壓器容量 kVA 應該如何選擇？</h4>
+      <p>變壓器容量不能只看主軸馬達功率，也不能只依正常運轉電流選擇。應納入 CNC 主機額定需求、主軸加速負載、伺服快速移動負載、油壓泵、冷卻泵、主軸冷卻機、排屑機、送料機、高壓中心出水、電控箱冷氣、未來可能增加的周邊設備、諧波與非線性負載，以及變壓器環境溫度及散熱條件。</p>
+      <p style="margin-top:14px">在缺乏完整負載資料時，可將機台製造商提供的總需求容量乘以約 1.2～1.5，作為初步預留範圍。例如製造商確認的總需求為 30 kVA，初期可能評估 36、40 或 45 kVA。但這只是初估方式，不代表所有 30 kVA 機台都必須配置相同容量。</p>
+      <p style="margin-top:14px">最終選型應依製造商建議輸入容量、機台額定電流、峰值及同時負載、變壓器阻抗、容許電壓降、環境降額與當地電氣規範決定。若變壓器容量不足，常見症狀是主軸加速或重切削時電壓驟降，使驅動器出現欠壓警報，甚至導致機台非預期停機。</p>
+
+      <h4>七、報價及下單前應取得的資料</h4>
+      <p>海外買家應提供：</p>
+      <ul>
+        <li>安裝國家與城市、工廠地址</li>
+        <li>線對線實測電壓</li>
+        <li>線對中性線實測電壓</li>
+        <li>電網頻率</li>
+        <li>相數、是否具有中性線</li>
+        <li>接地系統</li>
+        <li>主開關容量與可用 kVA</li>
+        <li>電壓容許變動率</li>
+        <li>當地電氣法規或驗證要求</li>
+        <li>完整周邊設備清單</li>
+        <li>工廠環境溫度與濕度</li>
+        <li>配電盤及現有設備銘牌照片</li>
+      </ul>
+      <p>確認完成後，建議將電源規格寫入正式報價單、採購單、技術協議、機台規格書及出廠驗收文件。</p>
+
+      <h4>八、出貨前電氣檢查清單</h4>
+      <p><strong>機台製造商／供應商</strong></p>
+      <ul>
+        <li>確認目的地電壓、頻率及相數</li>
+        <li>核對每一顆馬達與周邊設備銘牌</li>
+        <li>確認變壓器輸入、輸出及抽頭設定</li>
+        <li>確認斷路器、保險絲與電纜線徑</li>
+        <li>確認接觸器、繼電器及電磁閥線圈電壓</li>
+        <li>更新電氣圖與零件表</li>
+        <li>更新機台總銘牌</li>
+        <li>將所有周邊設備納入負載計算</li>
+        <li>測試相序、絕緣與保護接地</li>
+        <li>記錄空載及滿載電流，並保存警報與測試紀錄</li>
+      </ul>
+      <p><strong>海外買家／最終用戶</strong></p>
+      <ul>
+        <li>提供現場實測電壓</li>
+        <li>確認主開關及電纜容量</li>
+        <li>安排合格電氣技師</li>
+        <li>於機台進場前完成配電工程</li>
+        <li>不在未經製造商同意下改變變壓器抽頭</li>
+        <li>接電前再次確認相序與接地</li>
+        <li>若電網不穩，評估 SPD、穩壓及電源監控方案</li>
+      </ul>
+      <p><strong>FAT 出廠驗收</strong>——條件允許時，應以接近目的地的電壓及頻率進行通電出廠驗收，並測試主軸啟動及最高轉速、各軸快速移動、油壓系統、冷卻泵、高壓中心出水、主軸冷卻機、排屑機、送料機、安全迴路，以及多設備同時運轉時的電壓及電流。</p>
+
+      <h4>九、常見海外裝機錯誤</h4>
+      <ul>
+        <li><strong>抵達後再加裝變壓器。</strong>變壓器可能修正電壓，但不能修正頻率，周邊泵浦與風扇仍可能不相容。</li>
+        <li><strong>只確認 CNC 控制器。</strong>控制器與伺服驅動器可能支援寬電壓範圍，但油壓泵、冷卻機及排屑機未必支援。</li>
+        <li><strong>認為同一國家只有一種電壓。</strong>北美、巴西、日本及部分東南亞市場尤其需要逐廠確認。</li>
+        <li><strong>變壓器容量抓得剛剛好。</strong>忽略主軸加速、泵浦啟動及多個周邊同時運轉，容易造成電壓驟降與欠壓警報。</li>
+        <li><strong>認為隔離變壓器能解決所有電源問題。</strong>隔離變壓器不能取代突波保護、濾波、穩壓及正確接地。</li>
+        <li><strong>忘記第三方周邊設備。</strong>送料機、機器人、高壓中心出水及油霧回收機可能使用不同電壓。</li>
+        <li><strong>任意調整變壓器抽頭。</strong>調整錯誤可能使下游控制電壓異常，損壞電源供應器、線圈或驅動設備。</li>
+      </ul>
+
+      <h4>Z&amp;Z STROTEC 實務採購建議</h4>
+      <p>跨國採購 CNC 設備時，最安全的作法不是等機台到港後再加裝變壓器，而是在製造階段就依目的地工廠的實際電源完成設計、配置及測試。確認訂單時，至少應將以下內容寫入合約與技術規格書：</p>
+      <ul>
+        <li>工廠實際輸入電壓與容許變動率，例如 480 V ±10%</li>
+        <li>電網頻率為 50 Hz 或 60 Hz</li>
+        <li>機台所有冷卻泵、油壓泵、風扇及周邊馬達均符合目的地頻率</li>
+        <li>是否隨機提供變壓器</li>
+        <li>變壓器為自耦或隔離式</li>
+        <li>變壓器額定 kVA、抽頭、阻抗及環境降額</li>
+        <li>當地接地與電氣法規要求</li>
+        <li>FAT 測試使用的電壓與頻率</li>
+      </ul>
+      <p style="margin-top:14px">完善的電源規劃不只可以避免驅動器及馬達損壞，也能減少到廠試車延誤、非預期停機與日後的保固爭議。</p>
+
+      <p style="margin-top:18px">延伸閱讀：<button class="nav-btn" onclick="openKnowledge('servo-motor')" style="color:var(--gold);border:none;background:none;padding:0;font-size:inherit;text-decoration:underline;cursor:pointer">伺服馬達與驅動系統</button>（驅動與軸控選型）、<button class="nav-btn" onclick="openKnowledge('coolant-cts')" style="color:var(--gold);border:none;background:none;padding:0;font-size:inherit;text-decoration:underline;cursor:pointer">冷卻液管理與中心出水</button>（高壓泵浦需求），以及<button class="nav-btn" onclick="openMarket('usa')" style="color:var(--gold);border:none;background:none;padding:0;font-size:inherit;text-decoration:underline;cursor:pointer">美國市場資訊</button>（480 V／60 Hz 與 NFPA 79 要求）。</p>
+
+      <p style="margin-top:14px;color:var(--text-dim);font-size:0.86rem;line-height:1.8"><em>本文提供一般採購與出口規劃資訊。實際配電、變壓器選型、接地及機台接線，應由機台製造商與當地合格電氣專業人員依設備手冊及現場條件執行。</em></p>
+
+      <div style="text-align:center;margin-top:1.4rem">
+        <button class="btn-gold" onclick="showPage('inquiry')">提供廠內電源資料，立即詢價 →</button>
+      </div>
+`,
+    body: `
+      <img src="${IMG_POWERSUPPLY}" alt="CNC machine, step-down transformer, control cabinet and 50/60 Hz grid configuration" style="width:100%;height:auto;border:1px solid var(--border);border-radius:6px;margin:0 0 18px;display:block">
+      <h4>Why Power Compatibility Decides Commissioning</h4>
+      When buying a CNC machine internationally, attention usually goes to machine construction, machining capacity, spindle specification and controller brand — FANUC, Mitsubishi, Siemens or SYNTEC. Yet many overseas commissioning failures start somewhere more basic: <strong>the actual power supply available at the destination factory.</strong>
+
+      <p style="margin-top:14px">A CNC machine is not a single electrical load. It may contain spindle drives, servo drives, control transformers, hydraulic pumps, coolant pumps, lubrication units, spindle chillers, chip conveyors, bar feeders, high-pressure coolant systems and other accessories. These components do not necessarily share the same voltage and frequency tolerance.</p>
+
+      <p>Incorrect voltage, excessive fluctuation, incompatible frequency, poor grounding or an undersized transformer can cause overvoltage, undervoltage, overheating and communication alarms. In severe cases, power modules, drives, contactors, circuit boards or pump motors may be damaged. Power compatibility therefore belongs in the quotation stage — not after the machine arrives.</p>
+
+      <div style="background:var(--surface2);border-left:3px solid var(--gold);border-radius:0 6px 6px 0;padding:14px 18px;margin:18px 0">
+        <div style="color:var(--gold);font-size:12px;letter-spacing:1px;margin-bottom:6px">KEY RULE</div>
+        <div style="color:var(--text);font-size:13px;line-height:1.8">A transformer changes voltage, but it does <strong>not</strong> change frequency. Converting 50 Hz to 60 Hz, or 60 Hz to 50 Hz, requires equipment that is compatible in the first place, or a properly engineered frequency-conversion solution.</div>
+      </div>
+
+      <h4>1. Four Power Specifications to Confirm</h4>
+
+      <p style="margin-top:10px"><strong>Voltage.</strong> Confirm the factory's actual measured supply rather than relying only on the national standard. Common industrial voltages include 200, 208, 220, 230, 240, 380, 400, 415, 440, 460 and 480 V. Even within one country, voltage can differ between regions, utilities, industrial parks and older facilities. Before shipment, ask the buyer for panel photographs, existing machine nameplates and on-site measurements.</p>
+      <ul>
+        <li>Line-to-line voltage</li>
+        <li>Line-to-neutral voltage</li>
+        <li>Nominal voltage and permitted tolerance</li>
+        <li>Voltage fluctuation during peak production</li>
+        <li>Factory transformer capacity</li>
+        <li>Main and branch breaker capacity</li>
+      </ul>
+
+      <p><strong>Frequency.</strong> Industrial grids run at either 50 or 60 Hz. Frequency sets the speed of line-powered AC induction motors, and therefore affects pump flow, fan volume, transformer temperature rise, and the operating conditions of some contactors, relays and coils. Verify it specifically for:</p>
+      <ul>
+        <li>Hydraulic pumps</li>
+        <li>Coolant pumps</li>
+        <li>Lubrication pumps</li>
+        <li>Spindle chillers</li>
+        <li>Cabinet fans</li>
+        <li>Chip conveyors</li>
+        <li>Mist collectors</li>
+        <li>Bar feeders and other external equipment</li>
+      </ul>
+
+      <p><strong>Phase and distribution.</strong> Most industrial CNC machines take three-phase power, but still confirm:</p>
+      <ul>
+        <li>Three-wire or four-wire supply</li>
+        <li>Whether a neutral is available</li>
+        <li>Grounding system</li>
+        <li>Phase sequence</li>
+        <li>Whether high-leg delta or another special configuration is present</li>
+        <li>Auxiliary control voltage</li>
+      </ul>
+      <p>Neutral and protective earth serve different purposes and must never be treated as interchangeable.</p>
+
+      <p><strong>Available capacity.</strong> Correct voltage does not mean sufficient capacity. The facility must also absorb machine startup, spindle acceleration, rapid axis movement and several accessories running at once:</p>
+      <ul>
+        <li>Machine rated kVA</li>
+        <li>Rated and full-load current</li>
+        <li>Main breaker rating</li>
+        <li>Cable size</li>
+        <li>Starting and instantaneous peak current</li>
+        <li>Short-circuit capacity</li>
+        <li>Additional load from every accessory</li>
+      </ul>
+
+      <h4>2. Common Global Industrial Power Conditions</h4>
+      <p>Use the table for early planning only — never as an installation specification.</p>
+      <div style="overflow-x:auto">
+      <table style="width:100%;border-collapse:collapse;font-size:0.86rem;margin-top:4px">
+        <thead>
+          <tr style="border-bottom:1px solid var(--border)">
+            <th style="text-align:left;padding:8px 10px;color:var(--gold);font-weight:600">Market</th>
+            <th style="text-align:left;padding:8px 10px;color:var(--text);font-weight:600">Common industrial supply</th>
+            <th style="text-align:left;padding:8px 10px;color:var(--text);font-weight:600">Procurement note</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr style="border-bottom:1px solid var(--border)"><td style="padding:8px 10px;color:var(--text-dim)">Taiwan</td><td style="padding:8px 10px">220 or 380 V / 60 Hz</td><td style="padding:8px 10px">Confirm machine input and the in-plant transformer arrangement</td></tr>
+          <tr style="border-bottom:1px solid var(--border)"><td style="padding:8px 10px;color:var(--text-dim)">China</td><td style="padding:8px 10px">Commonly 380 V / 50 Hz</td><td style="padding:8px 10px">Confirm voltage tolerance and grounding requirements</td></tr>
+          <tr style="border-bottom:1px solid var(--border)"><td style="padding:8px 10px;color:var(--text-dim)">Europe</td><td style="padding:8px 10px">Commonly 400 V / 50 Hz</td><td style="padding:8px 10px">Confirm CE and local electrical safety requirements</td></tr>
+          <tr style="border-bottom:1px solid var(--border)"><td style="padding:8px 10px;color:var(--text-dim)">USA &amp; Canada</td><td style="padding:8px 10px">208, 230, 240, 460 or 480 V / 60 Hz</td><td style="padding:8px 10px">Distribution is varied — check for high-leg delta and similar configurations</td></tr>
+          <tr style="border-bottom:1px solid var(--border)"><td style="padding:8px 10px;color:var(--text-dim)">Japan</td><td style="padding:8px 10px">Commonly 200 V; eastern Japan largely 50 Hz, western Japan largely 60 Hz</td><td style="padding:8px 10px">Frequency must be confirmed against the actual installation region</td></tr>
+          <tr style="border-bottom:1px solid var(--border)"><td style="padding:8px 10px;color:var(--text-dim)">South Korea</td><td style="padding:8px 10px">Commonly 380 V, three-phase, 60 Hz</td><td style="padding:8px 10px">Confirm whether a neutral and 220 V auxiliary supply are available</td></tr>
+          <tr style="border-bottom:1px solid var(--border)"><td style="padding:8px 10px;color:var(--text-dim)">Switzerland</td><td style="padding:8px 10px">Commonly 400 V, three-phase, 50 Hz</td><td style="padding:8px 10px">Confirm CE documentation and local protective device requirements</td></tr>
+          <tr style="border-bottom:1px solid var(--border)"><td style="padding:8px 10px;color:var(--text-dim)">Argentina</td><td style="padding:8px 10px">Commonly 380/400 V, three-phase, 50 Hz</td><td style="padding:8px 10px">Check voltage stability and the surge environment</td></tr>
+          <tr style="border-bottom:1px solid var(--border)"><td style="padding:8px 10px;color:var(--text-dim)">Southeast Asia</td><td style="padding:8px 10px">Mostly 380–415 V / 50 Hz</td><td style="padding:8px 10px">Exceptions exist — the Philippines commonly runs 60 Hz</td></tr>
+          <tr><td style="padding:8px 10px;color:var(--text-dim)">Brazil</td><td style="padding:8px 10px">60 Hz, voltage varies by state and by facility</td><td style="padding:8px 10px">Obtain measured site data; the country name alone is not enough</td></tr>
+        </tbody>
+      </table>
+      </div>
+      <p style="margin-top:12px;color:var(--text-dim);font-size:0.9rem">National standards are a reference only. The final specification must rest on measured voltage at the installing plant, its distribution drawing, and confirmation by a qualified electrical professional.</p>
+
+      <h4>3. Voltage Can Be Changed — What About Frequency?</h4>
+      <p>"Just add a transformer" solves half the problem. A transformer can step 480 V down to 220 V, or 220 V up to 380 V, but a 60 Hz input stays 60 Hz on the output, and a 50 Hz input stays 50 Hz. Before relying on one, confirm that every component inside the machine supports the destination frequency.</p>
+
+      <p style="margin-top:14px"><strong>Servo and spindle systems.</strong> Modern servo and spindle drives normally rectify incoming AC to DC and then synthesise their output from control commands, so grid frequency does not directly set servo motor speed. That is not the same as saying the machine is compatible. Still verify:</p>
+      <ul>
+        <li>Drive permitted input voltage and frequency</li>
+        <li>Power supply module rating</li>
+        <li>Regenerative unit</li>
+        <li>Braking resistor</li>
+        <li>Line reactor</li>
+        <li>Noise filter</li>
+        <li>Internal fans and auxiliary supplies</li>
+      </ul>
+
+      <p><strong>Auxiliary induction motors.</strong> Coolant pumps, hydraulic pumps, fans and chip conveyors are commonly line-powered induction motors, whose speed follows frequency directly.</p>
+      <p style="margin-top:10px"><strong>60 Hz equipment on a 50 Hz supply</strong> — synchronous speed falls by about 16.7%, which can produce:</p>
+      <ul>
+        <li>Reduced coolant flow</li>
+        <li>Insufficient high-pressure CTS pressure</li>
+        <li>Reduced hydraulic delivery</li>
+        <li>Insufficient cooling airflow</li>
+        <li>Weaker chip evacuation in the cutting zone</li>
+      </ul>
+      <p>If supply voltage is not adjusted to keep a sensible V/Hz ratio, motor flux and temperature rise can also increase.</p>
+      <p style="margin-top:10px"><strong>50 Hz equipment on a 60 Hz supply</strong> — speed rises by about 20%. Current does not necessarily increase in every case, but it can produce:</p>
+      <ul>
+        <li>Pump speed beyond its design point</li>
+        <li>Changed flow, pressure and shaft power demand</li>
+        <li>Fans or mechanical assemblies running overspeed</li>
+        <li>Shortened bearing life</li>
+        <li>More noise and vibration</li>
+      </ul>
+      <p>Pump loads deserve particular care: for a centrifugal pump, flow, head and absorbed power all change with speed. Whether the motor merely turns is not the test.</p>
+
+      <p style="margin-top:14px"><strong>The dependable approach</strong> is to state the destination voltage, frequency, phase, grounding system, available capacity and local regulations at order stage. The builder can then fit pumps, fans, chillers and transformers that already match, and specify an inverter for an individual motor where that is appropriate. Feeding an entire CNC control cabinet from a single inverter is not advisable without a full engineering assessment.</p>
+
+      <h4>4. Subsystems That Need Individual Verification</h4>
+      <p><strong>Main control cabinet</strong> — main switch, breakers, line reactor, EMI/noise filter, control transformer, power supplies, surge protection, contactor and relay coil voltages.</p>
+      <p><strong>CNC and drive system</strong> — controller, servo amplifiers, spindle amplifier, regenerative unit, braking resistor, drive cooling fans, I/O and 24 VDC supplies.</p>
+      <p><strong>Hydraulic, cooling and lubrication</strong> — hydraulic pump motor, standard coolant pump, high-pressure CTS pump, lubrication pump, spindle chiller, oil cooler, cabinet air conditioner, mist collector.</p>
+      <p><strong>External equipment</strong> — do not assume accessories share the machine's supply. Check bar feeders, chip conveyors, robots, gantry loaders, parts catchers, extraction or dust collection, third-party cooling systems, and any external stabiliser or transformer separately.</p>
+
+      <h4>5. Auto-transformer vs. Isolation Transformer</h4>
+      <p>Where the factory supply differs from the machine's rated voltage, a transformer is usually required — for example a 480 V supply feeding a machine rated 220 V.</p>
+
+      <p style="margin-top:14px"><strong>Auto-transformer</strong> — primary and secondary share part of one winding. Compact, lighter, lower cost and generally efficient. Its limits: there is no galvanic isolation, primary-side common-mode noise and fault conditions can pass through more readily, and it cannot on its own establish a separately derived secondary system. Reasonable where grid quality is stable, the conversion ratio is modest, isolation is not specifically required, and both the machine builder and the local electrical professional accept it.</p>
+
+      <p style="margin-top:14px"><strong>Isolation transformer</strong> — separate primary and secondary windings coupled magnetically. It provides galvanic isolation, supports an engineered secondary distribution arrangement, and with an electrostatic shield can help attenuate some common-mode high-frequency noise. Worth specifying for five-axis machining centres, high-precision mill-turn machines, plants with unstable supply, sites sharing a feeder with punch presses, welders or large inductive loads, where the builder or local code requires isolation, or where the control system is sensitive to power quality.</p>
+
+      <p style="margin-top:14px">An isolation transformer is <strong>not</strong> a complete power-protection system. Guarding against lightning surge, high-frequency noise or voltage sag may still call for surge protective devices (SPD), EMI/RFI filters, line reactors, voltage regulation, voltage monitoring relays, and correct shielding and grounding.</p>
+
+      <p style="margin-top:14px"><strong>Grounding and neutral.</strong> Whether the isolation transformer's secondary establishes a neutral point, and how neutral bonds to protective earth, must follow local electrical code, the machine builder's electrical drawing, the controller installation manual and the site grounding system. Never bond neutral to earth without a designed arrangement. There is likewise no single grounding-resistance figure valid for every CNC machine worldwide — follow the equipment manual, local code and the site protection design rather than applying a blanket "must be below 10 Ω".</p>
+
+      <h4>6. Selecting Transformer Capacity (kVA)</h4>
+      <p>Capacity cannot be chosen from spindle motor power alone, nor from normal running current alone. Account for machine rated demand, spindle acceleration, servo rapid movement, hydraulic and coolant pumps, spindle chiller, chip conveyor, bar feeder, high-pressure coolant, cabinet air conditioner, accessories that may be added later, harmonic and non-linear loads, and the transformer's ambient temperature and ventilation.</p>
+      <p style="margin-top:14px">Where full load data is unavailable, roughly 1.2 to 1.5 times the builder's stated total demand can serve as an initial planning range. A confirmed 30 kVA requirement might lead to an early look at 36, 40 or 45 kVA. That is a starting estimate only — it does not mean every 30 kVA machine needs the same transformer.</p>
+      <p style="margin-top:14px">Final selection should follow the builder's recommended input capacity, machine rated current, peak and simultaneous loads, transformer impedance, permitted voltage drop, environmental derating and local electrical code. An undersized transformer tends to show up as voltage sag during spindle acceleration or heavy cuts, producing undervoltage alarms and unplanned stoppages.</p>
+
+      <h4>7. Information to Obtain Before Quotation</h4>
+      <p>The overseas buyer should supply:</p>
+      <ul>
+        <li>Installation country and city; factory address</li>
+        <li>Measured line-to-line voltage</li>
+        <li>Measured line-to-neutral voltage</li>
+        <li>Grid frequency</li>
+        <li>Number of phases; whether a neutral exists</li>
+        <li>Grounding arrangement</li>
+        <li>Main breaker capacity and available kVA</li>
+        <li>Permitted voltage tolerance</li>
+        <li>Local electrical code or certification requirements</li>
+        <li>Complete accessory list</li>
+        <li>Ambient temperature and humidity</li>
+        <li>Photographs of the distribution panel and existing machine nameplates</li>
+      </ul>
+      <p>Once agreed, write the confirmed power specification into the quotation, the purchase order, the technical agreement, the machine specification sheet and the factory acceptance documents.</p>
+
+      <h4>8. Pre-Shipment Electrical Checklist</h4>
+      <p><strong>Machine builder / supplier</strong></p>
+      <ul>
+        <li>Confirm destination voltage, frequency and phase</li>
+        <li>Check every motor and accessory nameplate</li>
+        <li>Confirm transformer input, output and tap settings</li>
+        <li>Confirm breakers, fuses and cable sizes</li>
+        <li>Confirm contactor, relay and solenoid coil voltages</li>
+        <li>Update the electrical drawing and parts list</li>
+        <li>Update the machine nameplate</li>
+        <li>Include every accessory in the load calculation</li>
+        <li>Test phase sequence, insulation and protective earth</li>
+        <li>Record no-load and full-load current; keep alarm and test records</li>
+      </ul>
+      <p><strong>Overseas buyer / end user</strong></p>
+      <ul>
+        <li>Provide measured site voltage</li>
+        <li>Confirm main breaker and cable capacity</li>
+        <li>Arrange a qualified electrician</li>
+        <li>Complete distribution work before the machine arrives</li>
+        <li>Do not change transformer taps without the builder's agreement</li>
+        <li>Re-check phase sequence and grounding before energising</li>
+        <li>Where the supply is unstable, evaluate SPD, voltage regulation and power monitoring</li>
+      </ul>
+      <p><strong>Factory acceptance test (FAT)</strong> — where conditions allow, run the powered acceptance test at voltage and frequency close to the destination, covering spindle start and top speed, rapid traverse on each axis, hydraulics, coolant pumps, high-pressure CTS, spindle chiller, chip conveyor, bar feeder, safety circuits, and voltage and current with several devices running together.</p>
+
+      <h4>9. Common Overseas Commissioning Mistakes</h4>
+      <ul>
+        <li><strong>Adding a transformer after arrival.</strong> It may correct voltage, but not frequency — auxiliary pumps and fans can still be incompatible.</li>
+        <li><strong>Checking only the CNC controller.</strong> Controller and servo drives may accept a wide voltage range while the hydraulic pump, chiller and chip conveyor do not.</li>
+        <li><strong>Assuming one voltage per country.</strong> North America, Brazil, Japan and parts of Southeast Asia in particular need plant-by-plant confirmation.</li>
+        <li><strong>Sizing the transformer exactly.</strong> Ignoring spindle acceleration, pump starting and simultaneous accessory operation invites voltage sag and undervoltage alarms.</li>
+        <li><strong>Treating an isolation transformer as a cure-all.</strong> It does not replace surge protection, filtering, regulation and correct grounding.</li>
+        <li><strong>Forgetting third-party accessories.</strong> Bar feeders, robots, high-pressure CTS and mist collectors may run on a different supply.</li>
+        <li><strong>Adjusting transformer taps freely.</strong> A wrong tap can distort downstream control voltage and damage power supplies, coils or drives.</li>
+      </ul>
+
+      <h4>Z&amp;Z STROTEC Procurement Advice</h4>
+      <p>The safer route in cross-border CNC procurement is not to add a transformer once the machine lands, but to design, configure and test for the destination supply during manufacture. At order confirmation, put at least the following into the contract and technical specification:</p>
+      <ul>
+        <li>Actual factory input voltage and permitted tolerance, e.g. 480 V ±10%</li>
+        <li>Grid frequency — 50 Hz or 60 Hz</li>
+        <li>Confirmation that all coolant pumps, hydraulic pumps, fans and accessory motors match the destination frequency</li>
+        <li>Whether a transformer is supplied with the machine</li>
+        <li>Auto-transformer or isolation type</li>
+        <li>Transformer rated kVA, taps, impedance and environmental derating</li>
+        <li>Local grounding and electrical code requirements</li>
+        <li>The voltage and frequency used for the FAT</li>
+      </ul>
+      <p style="margin-top:14px">Sound electrical planning does more than protect drives and motors: it reduces commissioning delays, unplanned downtime and later warranty disputes.</p>
+
+      <p style="margin-top:18px">Related reading: <button class="nav-btn" onclick="openKnowledge('servo-motor')" style="color:var(--gold);border:none;background:none;padding:0;font-size:inherit;text-decoration:underline;cursor:pointer">Servo Motor &amp; Drive Systems</button> for drive and axis selection, <button class="nav-btn" onclick="openKnowledge('coolant-cts')" style="color:var(--gold);border:none;background:none;padding:0;font-size:inherit;text-decoration:underline;cursor:pointer">Coolant Management &amp; CTS</button> for high-pressure pump requirements, and the <button class="nav-btn" onclick="openMarket('usa')" style="color:var(--gold);border:none;background:none;padding:0;font-size:inherit;text-decoration:underline;cursor:pointer">United States market profile</button> for 480 V / 60 Hz and NFPA 79 requirements.</p>
+
+      <p style="margin-top:14px;color:var(--text-dim);font-size:0.86rem;line-height:1.8"><em>This article provides general procurement and export-planning information. Final power distribution, transformer selection, grounding and machine connection must be designed and carried out by the machine builder and qualified local electrical professionals, according to the equipment manual and site conditions.</em></p>
+
+      <div style="text-align:center;margin-top:1.4rem">
+        <button class="btn-gold" onclick="showPage('inquiry')">Send an inquiry with your site power data →</button>
+      </div>
+`
   },
   'servo-motor': {
     title: 'Servo Motor & Drive Systems',
@@ -10763,7 +11459,7 @@ const LANG = {
     section_services: 'SERVICES ／ 貿易服務', section_about: 'ABOUT US ／ 關於我們',
     svc_cta_quote: '→ Request a quote', svc_cta_incoterms: '→ Trade terms guide', svc_cta_visit: '→ Learn more', svc_cta_about: '→ About us', svc_cta_main: 'Get a Quote · 立即詢價 →',
     kbq_comp_q: "I'm looking for machine components", kbq_exp_q: 'I need export support', kbq_visit_q: 'I want to source from Taiwan', kbq_proc_q: 'I want to improve my machining process',
-    kbq_c_barfeeder: 'Bar Feeder', kbq_c_linear: 'Linear Guide', kbq_c_servo: 'Servo Motor', kbq_c_tool: 'Tool Holder', kbq_c_exportdocs: 'Export Docs', kbq_c_customs: 'Customs', kbq_c_marine: 'Marine Insurance', kbq_c_factory: 'Factory Visit',
+    kbq_c_barfeeder: 'Bar Feeder', kbq_c_linear: 'Linear Guide', kbq_c_servo: 'Servo Motor', kbq_c_power: 'Power & Transformers', kbq_c_tool: 'Tool Holder', kbq_c_exportdocs: 'Export Docs', kbq_c_customs: 'Customs', kbq_c_marine: 'Marine Insurance', kbq_c_factory: 'Factory Visit',
     kbq_c_troubleshoot: 'Troubleshooting', kbq_c_cuttingtools: 'Cutting Tools', kbq_c_fluids: 'Cutting Fluids', kbq_c_materials: 'Materials', kbq_c_accuracy: 'Machine Accuracy', kbq_c_metrology: 'Metrology / QC',
     hero_cta2: 'Get a Quote →', home_all_columns: 'View all expert columns →', home_all_news: 'View all updates →',
     home_why_taiwan: 'WHY TAIWAN ／ 為什麼選台灣', twadv_1: "World's 5th-largest machine tool exporter", twadv_2: 'Taichung — the global machine-tool hub', twadv_3: 'Key products: CNC lathes & machining centers', twadv_4: 'Top export markets: China · USA · Korea', twadv_assoc: 'Industry bodies: TAMI · TMBA', twadv_more: 'Taiwan machine-tool makers & export record →',
@@ -10786,7 +11482,7 @@ const LANG = {
     tcat_Valves: 'Valves',
     tcat_Automation: 'Automation & Robotics',
     sidebar_knowledge: 'Knowledge Library', sidebar_export: 'Export Procedures', sidebar_markets: 'Markets', sidebar_industry: 'Industry',
-    sb_bar_feeder: ' Bar Feeder', sb_linear_guide: ' Linear Guide', sb_servo_motor: ' Servo Motor',
+    sb_bar_feeder: ' Bar Feeder', sb_linear_guide: ' Linear Guide', sb_servo_motor: ' Servo Motor', sb_power_supply: ' Power & Transformers',
     sb_cnc_lathe: ' CNC Lathe', sb_tool_holder: ' Tool Holder', sb_spindle: ' Spindle', sb_spindle_cooling: ' Spindle Cooling',
     sb_live_tool: ' Live Tool Holders', sb_live_tool_repl: ' Live Tool Replacement', sb_static_tool: ' Static Tool Holders', sb_collet: ' Collets & Chucks', sb_automation: ' Automation Loading', sb_chip_conveyor: ' Chip Conveyors', sb_coolant_cts: ' Coolant & CTS', sb_cutting_tools: ' Cutting Tools & Coatings', sb_troubleshooting: ' CNC Troubleshooting', sb_cutting_fluids: ' Cutting Fluids', sb_cnc_materials: ' Machining Materials', sb_machine_accuracy: ' Machine Accuracy', sb_metrology: ' Metrology & QC',
     sb_export_flow: ' Export Process Overview', sb_export_docs: ' Export Documents', sb_air_freight: ' Air Freight Guide', sb_shtc: ' SHTC Export Control', sb_payment_terms: ' Payment Terms', sb_marine: ' Marine Insurance', sb_customs: ' Customs Clearance',
@@ -10825,7 +11521,7 @@ const LANG = {
     section_services: '貿易服務', section_about: '關於我們',
     svc_cta_quote: '→ 前往詢價', svc_cta_incoterms: '→ 了解貿易條件', svc_cta_visit: '→ 了解更多', svc_cta_about: '→ 關於我們', svc_cta_main: '立即詢價 →',
     kbq_comp_q: '我在找機台零件', kbq_exp_q: '我需要出口協助', kbq_visit_q: '我想來台採購', kbq_proc_q: '我想優化加工製程',
-    kbq_c_barfeeder: '送料機', kbq_c_linear: '線性滑軌', kbq_c_servo: '伺服馬達', kbq_c_tool: '刀座', kbq_c_exportdocs: '出口文件', kbq_c_customs: '報關', kbq_c_marine: '海上保險', kbq_c_factory: '工廠參訪',
+    kbq_c_barfeeder: '送料機', kbq_c_linear: '線性滑軌', kbq_c_servo: '伺服馬達', kbq_c_power: '電源與變壓', kbq_c_tool: '刀座', kbq_c_exportdocs: '出口文件', kbq_c_customs: '報關', kbq_c_marine: '海上保險', kbq_c_factory: '工廠參訪',
     kbq_c_troubleshoot: '異常排除', kbq_c_cuttingtools: '刀具塗層', kbq_c_fluids: '切削液', kbq_c_materials: '加工材質', kbq_c_accuracy: '機械精度', kbq_c_metrology: '量測／品管',
     hero_cta2: '立即詢價 →', home_all_columns: '看全部專欄 →', home_all_news: '看全部消息 →',
     home_why_taiwan: '為什麼選台灣', twadv_1: '全球第五大工具機出口國', twadv_2: '台中——全球工具機重鎮', twadv_3: '主力產品：CNC 車床、加工中心', twadv_4: '主要出口市場：中國、美國、韓國', twadv_assoc: '產業公會：TAMI、TMBA', twadv_more: '台灣工具機製造商與出口實績 →',
@@ -10847,7 +11543,7 @@ const LANG = {
     tcat_Valves: '閥件',
     tcat_Automation: '自動化·機械手',
     sidebar_knowledge: '知識庫', sidebar_export: '出口流程', sidebar_markets: '市場', sidebar_industry: '產業',
-    sb_bar_feeder: ' 送料機', sb_linear_guide: ' 線性滑軌', sb_servo_motor: ' 伺服馬達',
+    sb_bar_feeder: ' 送料機', sb_linear_guide: ' 線性滑軌', sb_servo_motor: ' 伺服馬達', sb_power_supply: ' 電源與變壓',
     sb_cnc_lathe: ' CNC 車床', sb_tool_holder: ' 刀座', sb_spindle: ' 主軸', sb_spindle_cooling: ' 主軸冷卻',
     sb_live_tool: ' 動力刀座', sb_live_tool_repl: ' 動力刀座更換辨識', sb_static_tool: ' 非動力刀座', sb_collet: ' 筒夾/夾頭', sb_automation: ' 自動化上下料', sb_chip_conveyor: ' 鐵屑輸送機', sb_coolant_cts: ' 冷卻液與中心出水', sb_cutting_tools: ' 刀具與塗層', sb_troubleshooting: ' 加工異常排除', sb_cutting_fluids: ' 切削液／冷卻液', sb_cnc_materials: ' 加工材質指南', sb_machine_accuracy: ' 機械精度指南', sb_metrology: ' 量測與品管',
     sb_export_flow: ' 出口流程總覽', sb_export_docs: ' 出口文件', sb_air_freight: ' 國際空運指南', sb_shtc: ' 戰略物資出口管制', sb_payment_terms: ' 付款條件', sb_marine: ' 海上保險', sb_customs: ' 清關',
@@ -10887,7 +11583,7 @@ const LANG = {
     section_services: '서비스', section_about: '회사 소개',
     svc_cta_quote: '→ 견적 문의', svc_cta_incoterms: '→ 인코텀즈 안내', svc_cta_visit: '→ 자세히 보기', svc_cta_about: '→ 회사 소개', svc_cta_main: '견적 요청 →',
     kbq_comp_q: '기계 부품을 찾고 있어요', kbq_exp_q: '수출 지원이 필요해요', kbq_visit_q: '대만에서 구매하고 싶어요', kbq_proc_q: '가공 공정을 개선하고 싶어요',
-    kbq_c_barfeeder: '바피더', kbq_c_linear: '리니어 가이드', kbq_c_servo: '서보 모터', kbq_c_tool: '툴 홀더', kbq_c_exportdocs: '수출 서류', kbq_c_customs: '통관', kbq_c_marine: '해상 보험', kbq_c_factory: '공장 방문',
+    kbq_c_barfeeder: '바피더', kbq_c_linear: '리니어 가이드', kbq_c_servo: '서보 모터', kbq_c_power: '전원·트랜스', kbq_c_tool: '툴 홀더', kbq_c_exportdocs: '수출 서류', kbq_c_customs: '통관', kbq_c_marine: '해상 보험', kbq_c_factory: '공장 방문',
     kbq_c_troubleshoot: '트러블슈팅', kbq_c_cuttingtools: '절삭공구', kbq_c_fluids: '절삭유', kbq_c_materials: '가공 소재', kbq_c_accuracy: '기계 정밀도', kbq_c_metrology: '계측 / 품질검사',
     hero_cta2: '견적 요청 →', home_all_columns: '전체 칼럼 보기 →', home_all_news: '전체 소식 보기 →',
     home_why_taiwan: '왜 대만인가', twadv_1: '세계 5위 공작기계 수출국', twadv_2: '타이중 — 글로벌 공작기계 허브', twadv_3: '주요 제품: CNC 선반·머시닝센터', twadv_4: '주요 수출 시장: 중국·미국·한국', twadv_assoc: '업계 협회: TAMI, TMBA', twadv_more: '대만 공작기계 제조사 및 수출 실적 →',
@@ -10909,7 +11605,7 @@ const LANG = {
     tcat_Valves: '밸브',
     tcat_Automation: '자동화·로봇',
     sidebar_knowledge: '지식 라이브러리', sidebar_export: '수출 절차', sidebar_markets: '시장', sidebar_industry: '산업',
-    sb_bar_feeder: ' 바피더', sb_linear_guide: ' 리니어 가이드', sb_servo_motor: ' 서보 모터',
+    sb_bar_feeder: ' 바피더', sb_linear_guide: ' 리니어 가이드', sb_servo_motor: ' 서보 모터', sb_power_supply: ' 전원·트랜스',
     sb_cnc_lathe: ' CNC 선반', sb_tool_holder: ' 툴 홀더', sb_spindle: ' 스핀들', sb_spindle_cooling: ' 스핀들 냉각',
     sb_live_tool: ' 동력 공구대', sb_live_tool_repl: ' 라이브 툴 교체 식별', sb_static_tool: ' 비동력 공구대', sb_collet: ' 콜릿 & 척', sb_automation: ' 자동 로딩', sb_chip_conveyor: ' 칩 컨베이어', sb_coolant_cts: ' 절삭유 & CTS', sb_cutting_tools: ' 절삭공구 & 코팅', sb_troubleshooting: ' CNC 트러블슈팅', sb_cutting_fluids: ' 절삭유', sb_cnc_materials: ' 가공 소재 가이드', sb_machine_accuracy: ' 기계 정밀도 가이드', sb_metrology: ' 계측 & 품질검사',
     sb_export_flow: ' 수출 프로세스 개요', sb_export_docs: ' 수출 서류', sb_air_freight: ' 항공 화물 가이드', sb_shtc: ' SHTC 수출 통제', sb_payment_terms: ' 결제 조건', sb_marine: ' 해상보험', sb_customs: ' 통관',

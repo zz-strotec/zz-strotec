@@ -31,6 +31,12 @@
     <priority>0.8</priority>
   </url>
   <url>
+    <loc>https://zz-strotec.github.io/zz-strotec/knowledge/power-supply/</loc>
+    <lastmod>2026-07-22</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
     <loc>https://zz-strotec.github.io/zz-strotec/knowledge/servo-motor/</loc>
     <lastmod>2026-06-29</lastmod>
     <changefreq>monthly</changefreq>
