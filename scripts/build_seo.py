@@ -1,0 +1,169 @@
+#!/usr/bin/env python3
+"""
+build_seo.py  —  Generate a crawler-visible static mirror of the Knowledge Library.
+
+WHY: KB articles live inside the `const KB = {...}` JS object and are only injected
+into the DOM when a user clicks. AI/search crawlers don't run JS or click, and they
+strip <script> contents, so those articles are effectively invisible to them.
+This script emits every KB article as real DOM text (a hidden .page section) so
+crawlers ingest the full text, plus a buyer-query "question" heading per article
+for better query matching (GEO / AEO).
+
+IDEMPOTENT: rewrites everything between the KB-ARCHIVE markers. Safe to re-run after
+editing KB. Run after any KB change:  python scripts/build_seo.py index.html
+"""
+import re
+import sys
+import datetime
+
+# Buyer-query style headings (item 5: crawler-layer only). en / zh / ko.
+# Fallback to the article title if a key is missing here.
+QUESTIONS = {
+    'factory-visit': ('How can I visit CNC machine tool factories in Taiwan?',
+                      '如何安排來台灣參觀 CNC 工具機工廠？',
+                      '대만 CNC 공작기계 공장은 어떻게 방문하나요?'),
+    'trade-services': ('What services does a Taiwan machine tool trading company provide?',
+                       '台灣工具機貿易商能提供哪些服務？',
+                       '대만 공작기계 무역회사는 어떤 서비스를 제공하나요?'),
+    'bar-feeder': ('What is a bar feeder and how do I choose one for a CNC lathe?',
+                   '什麼是送料機？CNC 車床送料機如何選擇？',
+                   '바피더란 무엇이며 CNC 선반용으로 어떻게 선택하나요?'),
+    'linear-guide': ('How do I choose linear guides and rails for a machine tool?',
+                     '工具機線性滑軌如何選擇？',
+                     '공작기계 리니어 가이드는 어떻게 선택하나요?'),
+    'servo-motor': ('How do CNC servo motors and drive systems work?',
+                    'CNC 伺服馬達與驅動系統如何運作？',
+                    'CNC 서보모터와 드라이브 시스템은 어떻게 작동하나요?'),
+    'cnc-lathe': ('How do I read CNC lathe specifications when buying from Taiwan?',
+                  '採購台灣 CNC 車床時，規格表怎麼看？',
+                  '대만 CNC 선반 사양표는 어떻게 보나요?'),
+    'tool-holder': ('What types of tool holders and turrets are used on CNC lathes?',
+                    'CNC 車床的刀座與刀塔有哪些種類？',
+                    'CNC 선반 툴홀더와 터렛에는 어떤 종류가 있나요?'),
+    'spindle': ('How does a CNC machine spindle work and how do I choose one?',
+                'CNC 工具機主軸如何運作？如何選擇？',
+                'CNC 공작기계 스핀들은 어떻게 작동하며 어떻게 선택하나요?'),
+    'container-cbm': ('Which sea freight container should I use for CNC machine tools?',
+                      '進口 CNC 工具機該選哪種海運貨櫃？CBM 怎麼算？',
+                      'CNC 공작기계 해상 운송에는 어떤 컨테이너를 선택해야 하나요?'),
+    'export-docs': ('What documents are needed to export machine tools from Taiwan?',
+                    '從台灣出口工具機需要哪些文件？',
+                    '대만에서 공작기계를 수출하려면 어떤 서류가 필요한가요?'),
+    'marine-insurance': ('How does marine insurance work for machine tool shipments?',
+                         '機台出口的海上保險怎麼保？',
+                         '공작기계 해상 운송 보험은 어떻게 가입하나요?'),
+    'customs': ('How does customs clearance work when importing from Taiwan?',
+                '從台灣進口的報關流程是什麼？',
+                '대만에서 수입 시 통관 절차는 어떻게 되나요?'),
+    'live-tool': ('What are live tool holders and when do I need them?',
+                  '什麼是動力刀座？什麼時候需要動力刀座？',
+                  '라이브 툴홀더란 무엇이며 언제 필요한가요?'),
+    'live-tool-replacement': ('How do I identify a live tool holder for replacement or quotation?',
+                  '動力刀座損壞或停產，更換與詢價要確認哪些資料？',
+                  '교체용 라이브 툴 홀더는 어떻게 식별하고 견적을 요청하나요?'),
+    'static-tool': ('What are static tool holders on a CNC lathe?',
+                    'CNC 車床的靜力刀座是什麼？',
+                    'CNC 선반 정적 툴홀더란 무엇인가요?'),
+    'tw-brands': ('Who are the major Taiwan machine tool manufacturers?',
+                  '台灣主要的工具機製造廠有哪些？',
+                  '대만의 주요 공작기계 제조사는 어디인가요?'),
+    'maintenance': ('How do I maintain a CNC machine tool?',
+                    'CNC 工具機如何保養維護？',
+                    'CNC 공작기계는 어떻게 유지보수하나요?'),
+    'part-lifespan': ('How long do CNC machine spare parts last?',
+                      'CNC 工具機零件的壽命有多長？',
+                      'CNC 공작기계 소모품의 수명은 얼마나 되나요?'),
+    'import-duty': ('What is the import duty on machine tools?',
+                    '工具機進口關稅是多少？',
+                    '공작기계 수입 관세는 얼마인가요?'),
+    'gcode': ('What are the most common CNC G-code commands?',
+              '常用的 CNC G-code 指令有哪些？',
+              '자주 쓰는 CNC G코드 명령어는 무엇인가요?'),
+    'collet-chuck': ('What is the difference between a collet, chuck and guide bush?',
+                     '筒夾、夾頭、導套有什麼差別？',
+                     '콜릿, 척, 가이드 부시의 차이는 무엇인가요?'),
+    'green-manufacturing': ('What is ISO 14955 and how do I choose an energy-efficient CNC machine?',
+                            'ISO 14955 是什麼？如何挑選節能 CNC 工具機？',
+                            'ISO 14955이란 무엇이며 에너지 효율 CNC 기계는 어떻게 고르나요?'),
+    'automation': ('Gantry loader or robotic arm for CNC loading/unloading — which should I choose?',
+                   'CNC 自動上下料要選龍門式機械手還是多軸機械手臂？',
+                   'CNC 로딩/언로딩에는 갠트리 로더와 로봇 암 중 무엇을 선택해야 하나요?'),
+}
+
+START = '<!-- KB-ARCHIVE:START (auto-generated by scripts/build_seo.py — do not edit by hand) -->'
+END = '<!-- KB-ARCHIVE:END -->'
+
+
+def parse_kb(html):
+    """Return list of (key, title, title_zh, title_ko, body, body_zh, body_ko) in source order."""
+    start = html.index('const KB = {')
+    m = re.search(r'\nconst (TERMS|MARKETS|LANG)\b', html[start:])
+    region = html[start:start + (m.start() if m else len(html))]
+
+    # entry start positions
+    starts = [(mm.start(), mm.group(1)) for mm in re.finditer(r"^  '([a-z0-9-]+)':\s*\{", region, re.M)]
+    entries = []
+    for i, (pos, key) in enumerate(starts):
+        end = starts[i + 1][0] if i + 1 < len(starts) else len(region)
+        seg = region[pos:end]
+        def title(name):
+            mm = re.search(name + r":\s*'(.*?)'", seg)
+            return mm.group(1) if mm else ''
+        def body(name):
+            mm = re.search(name + r":\s*`(.*?)`", seg, re.S)
+            return mm.group(1).strip() if mm else ''
+        entries.append((
+            key,
+            title('title'), title('title_zh'), title('title_ko'),
+            body('body'), body('body_zh'), body('body_ko'),
+        ))
+    return entries
+
+
+def strip_imgs(s):
+    # crawlers don't need the inlined base64 images; drop them to avoid bloat
+    return re.sub(r'<img\b[^>]*>', '', s)
+
+
+def build_block(entries):
+    lines = [START,
+             '<div class="page" id="page-library-archive">',
+             '  <div class="section-title">KNOWLEDGE LIBRARY — FULL TEXT ARCHIVE &nbsp;／&nbsp; 知識庫全文</div>',
+             '  <p style="color:var(--text-dim);font-size:0.85rem">A crawler-readable mirror of every Knowledge Library article (English / 中文 / 한국어). The interactive versions open from the sidebar.</p>']
+    for (key, t, tzh, tko, b, bzh, bko) in entries:
+        qen, qzh, qko = QUESTIONS.get(key, (t, tzh or t, tko or t))
+        lines.append('  <article id="kbdoc-%s">' % key)
+        lines.append('    <h2>%s</h2>' % qen)
+        if t:
+            lines.append('    <h3>%s</h3>' % t)
+        lines.append(strip_imgs(b))
+        if qzh:
+            lines.append('    <h3 lang="zh-Hant">%s</h3>' % qzh)
+        if tzh:
+            lines.append('    <h4 lang="zh-Hant">%s</h4>' % tzh)
+        lines.append(strip_imgs(bzh))
+        if qko:
+            lines.append('    <h3 lang="ko">%s</h3>' % qko)
+        if tko:
+            lines.append('    <h4 lang="ko">%s</h4>' % tko)
+        lines.append(strip_imgs(bko))
+        lines.append('  </article>')
+    lines.append('</div>')
+    lines.append(END)
+    return '\n'.join(lines)
+
+
+def main():
+    # DEPRECATED (2026-07): the in-page KB-ARCHIVE mirror is retired. Every KB
+    # article now has its own canonical crawlable URL (/knowledge/<key>/),
+    # generated by scripts/gen-pages.js. Keeping a full-text mirror in the
+    # homepage only created duplicate content competing with those pages, so
+    # this script is now a no-op. Use:  node scripts/gen-pages.js
+    print('build_seo.py is DEPRECATED and does nothing.')
+    print('The KB archive mirror was removed to avoid duplicate content.')
+    print('Run instead:  node scripts/gen-pages.js')
+    return
+
+
+if __name__ == '__main__':
+    main()
