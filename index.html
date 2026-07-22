@@ -12289,7 +12289,7 @@ function toggleTermNote(id, row) {
 
   // Fires whether the form went through Formspree or fell back to mailto.
   wrap('submitInquiry', function () {
-    var it = document.getElementById('f-inquiry');
+    var it = document.getElementById('f-inquiry-type');
     var c  = document.getElementById('f-country');
     gtag('event', 'inquiry_submit', {
       inquiry_type:    it ? it.value : '',
