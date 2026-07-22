@@ -12291,8 +12291,10 @@ function zzTrack(name, params) {
   wrap('openMarket', function (key) {
     var t = mkTitle(key);
     vpv('#market-' + key, 'Market: ' + t);
+    // market_key is the dedicated dimension for market reporting; item_key
+    // carries the same value so market and knowledge events stay comparable.
     gtag('event', 'view_market', {
-      item_key: key, item_title: t, site_language: lang()
+      market_key: key, item_key: key, item_title: t, site_language: lang()
     });
   });
 
