@@ -12179,6 +12179,157 @@ function toggleTermNote(id, row) {
   r.style.display = open ? 'none' : 'table-row';
   if (row) { var c = row.querySelector('.tnote-caret'); if (c) c.style.transform = open ? '' : 'rotate(180deg)'; }
 }
+
+// ─── GA4 event tracking ───────────────────────────────────────────
+// This site is a single-page app: every article, market profile and column
+// lives under the same URL, so GA4's automatic page_view fires exactly once
+// and every hit collapses into one page title. This block sends a virtual
+// page_view per in-app navigation plus a handful of engagement events.
+// It wraps the existing functions instead of editing them, so navigation
+// behaviour is unchanged even if a tracking call throws.
+(function () {
+  if (typeof window.gtag !== 'function') return;
+
+  function lang() { return (typeof currentLang !== 'undefined') ? currentLang : 'en'; }
+
+  // switchLang() re-renders whatever detail panel is open so it appears in the
+  // new language. That is not a new article view, so suppress tracking for the
+  // duration of the call or every language toggle double-counts the article.
+  //
+  // It starts true for a second reason: the hash-routing block above restores
+  // a deep-linked article on DOMContentLoaded, and gtag's own automatic
+  // page_view has already counted that load. Our listener is registered after
+  // that one, so the restore runs muted and we unmute right after it.
+  var muted = true;
+
+  // Virtual pageview — path is the hash route so GA reports match the URLs
+  // users actually share.
+  function vpv(path, title) {
+    gtag('event', 'page_view', {
+      page_location: location.origin + location.pathname + path,
+      page_path:     location.pathname + path,
+      page_title:    title,
+      site_language: lang()
+    });
+  }
+
+  // Run `after` with the same arguments once the original function returns.
+  function wrap(name, after) {
+    var orig = window[name];
+    if (typeof orig !== 'function') return;
+    window[name] = function () {
+      var r = orig.apply(this, arguments);
+      if (!muted) { try { after.apply(this, arguments); } catch (e) {} }
+      return r;
+    };
+  }
+
+  function kbTitle(key) {
+    var it = (typeof KB !== 'undefined') && KB[key];
+    return it ? (it.title || key) : key;
+  }
+  function mkTitle(key) {
+    var it = (typeof MARKETS !== 'undefined') && MARKETS[key];
+    return it ? (it.title || key) : key;
+  }
+
+  wrap('showPage', function (id) {
+    vpv(id === 'home' ? '' : '#' + id, 'Page: ' + id);
+  });
+
+  wrap('showPageHome', function () {
+    vpv('', 'Page: home');
+  });
+
+  wrap('openColumn', function (id) {
+    if (id === 'column') { vpv('', 'Column index'); return; }
+    vpv('#' + id, 'Column: ' + id);
+    gtag('event', 'view_column', { column_id: id, site_language: lang() });
+  });
+
+  wrap('openKnowledge', function (key) {
+    var t = kbTitle(key);
+    vpv('#kb-' + key, 'KB: ' + t);
+    gtag('event', 'view_knowledge', {
+      item_key: key, item_title: t, site_language: lang()
+    });
+  });
+
+  wrap('openMarket', function (key) {
+    var t = mkTitle(key);
+    vpv('#market-' + key, 'Market: ' + t);
+    gtag('event', 'view_market', {
+      item_key: key, item_title: t, site_language: lang()
+    });
+  });
+
+  (function () {
+    var orig = window.switchLang;
+    if (typeof orig !== 'function') return;
+    window.switchLang = function (l) {
+      muted = true;
+      try { return orig.apply(this, arguments); }
+      finally {
+        muted = false;
+        try { gtag('event', 'switch_language', { new_language: l }); } catch (e) {}
+      }
+    };
+  })();
+
+  wrap('toggleTermNote', function (id) {
+    gtag('event', 'view_term', { term_id: id, site_language: lang() });
+  });
+
+  // GA4 recommended event — populates the built-in "site search" report.
+  wrap('doSearch', function () {
+    var el = document.getElementById('searchInput');
+    var q  = el ? el.value.trim() : '';
+    if (q) gtag('event', 'search', { search_term: q.toLowerCase(), site_language: lang() });
+  });
+
+  // Fires whether the form went through Formspree or fell back to mailto.
+  wrap('submitInquiry', function () {
+    var it = document.getElementById('f-inquiry');
+    var c  = document.getElementById('f-country');
+    gtag('event', 'inquiry_submit', {
+      inquiry_type:    it ? it.value : '',
+      inquiry_country: c ? c.value : '',
+      site_language:   lang()
+    });
+  });
+
+  // Only the success panel means the inquiry was actually accepted, so the
+  // lead conversion hangs off this rather than off the submit click.
+  wrap('showSuccess', function () {
+    gtag('event', 'generate_lead', { currency: 'USD', value: 0, site_language: lang() });
+  });
+
+  // Unmute after the deep-link restore, then record which article the visitor
+  // actually landed on — as a content event only, since the automatic
+  // page_view already covered the load itself.
+  document.addEventListener('DOMContentLoaded', function () {
+    muted = false;
+    var h = location.hash.replace('#', '');
+    if (!h) return;
+    if (h.indexOf('kb-') === 0) {
+      gtag('event', 'view_knowledge', {
+        item_key: h.slice(3), item_title: kbTitle(h.slice(3)),
+        site_language: lang(), landing: true
+      });
+    } else if (typeof COLUMNS !== 'undefined' && COLUMNS[h]) {
+      gtag('event', 'view_column', { column_id: h, site_language: lang(), landing: true });
+    }
+  });
+
+  // Any mailto / tel link anywhere on the page.
+  document.addEventListener('click', function (e) {
+    var a = e.target && e.target.closest && e.target.closest('a[href^="mailto:"], a[href^="tel:"]');
+    if (!a) return;
+    gtag('event', a.getAttribute('href').indexOf('tel:') === 0 ? 'contact_phone_click' : 'contact_email_click', {
+      link_url: a.getAttribute('href'), site_language: lang()
+    });
+  }, true);
+})();
 </script>
 </body>
 </html>
