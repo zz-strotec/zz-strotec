@@ -11069,6 +11069,11 @@ function submitInquiry() {
     return;
   }
 
+  // Validation passed, so this is a real attempt rather than a mis-click on an
+  // empty form. It is still only an attempt: generate_lead fires further down,
+  // and only when Formspree confirms it accepted the inquiry.
+  zzTrack('inquiry_submit_attempt', { inquiry_type: inquiryType, inquiry_country: country });
+
   const btn = document.getElementById('submit-btn');
   btn.disabled = true;
   btn.textContent = 'SENDING...';
@@ -11100,7 +11105,14 @@ Sent via Z&Z STROTEC Knowledge Hub`
     })
     .then(r => r.json())
     .then(d => {
-      if (d.ok || d.next) showSuccess();
+      if (d.ok || d.next) {
+        // The only branch where the inquiry is confirmed received.
+        zzTrack('generate_lead', {
+          inquiry_type: inquiryType, inquiry_country: country,
+          currency: 'USD', value: 0
+        });
+        showSuccess();
+      }
       else fallbackMailto(subject, body, TO_EMAIL);
     })
     .catch(() => fallbackMailto(subject, body, TO_EMAIL));
@@ -11110,6 +11122,10 @@ Sent via Z&Z STROTEC Knowledge Hub`
 }
 
 function fallbackMailto(subject, body, toEmail) {
+  // Handing off to the visitor's mail client is NOT a lead — we cannot know
+  // whether they ever pressed send. showSuccess() still runs so the UI reads
+  // the same, which is exactly why generate_lead must not hang off it.
+  zzTrack('mailto_fallback_open', {});
   window.location.href = `mailto:${toEmail}?subject=${subject}&body=${body}`;
   setTimeout(showSuccess, 800);
 }
@@ -12185,8 +12201,25 @@ function toggleTermNote(id, row) {
 // lives under the same URL, so GA4's automatic page_view fires exactly once
 // and every hit collapses into one page title. This block sends a virtual
 // page_view per in-app navigation plus a handful of engagement events.
-// It wraps the existing functions instead of editing them, so navigation
-// behaviour is unchanged even if a tracking call throws.
+// Navigation is instrumented by wrapping the existing functions rather than
+// editing them, so behaviour is unchanged even if a tracking call throws.
+// The inquiry form is the exception: telling a confirmed submission apart from
+// a validation failure or a mailto hand-off requires reporting from inside its
+// own branches, which it does through zzTrack() below.
+
+// Safe to call from anywhere, including before gtag has loaded or when an ad
+// blocker removed it. Never throws, so it cannot interrupt form submission.
+function zzTrack(name, params) {
+  try {
+    if (typeof window.gtag !== 'function') return;
+    var p = params || {};
+    if (!p.site_language) {
+      p.site_language = (typeof currentLang !== 'undefined') ? currentLang : 'en';
+    }
+    window.gtag('event', name, p);
+  } catch (e) {}
+}
+
 (function () {
   if (typeof window.gtag !== 'function') return;
 
@@ -12287,22 +12320,10 @@ function toggleTermNote(id, row) {
     if (q) gtag('event', 'search', { search_term: q.toLowerCase(), site_language: lang() });
   });
 
-  // Fires whether the form went through Formspree or fell back to mailto.
-  wrap('submitInquiry', function () {
-    var it = document.getElementById('f-inquiry-type');
-    var c  = document.getElementById('f-country');
-    gtag('event', 'inquiry_submit', {
-      inquiry_type:    it ? it.value : '',
-      inquiry_country: c ? c.value : '',
-      site_language:   lang()
-    });
-  });
-
-  // Only the success panel means the inquiry was actually accepted, so the
-  // lead conversion hangs off this rather than off the submit click.
-  wrap('showSuccess', function () {
-    gtag('event', 'generate_lead', { currency: 'USD', value: 0, site_language: lang() });
-  });
+  // The inquiry form is NOT wrapped. Wrapping it fired on validation failures
+  // too, and could not tell a confirmed Formspree submission apart from merely
+  // opening the visitor's mail client. Those events are emitted from inside
+  // submitInquiry() / fallbackMailto() via zzTrack() instead.
 
   // Unmute after the deep-link restore, then record which article the visitor
   // actually landed on — as a content event only, since the automatic
