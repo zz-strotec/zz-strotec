@@ -1370,6 +1370,9 @@
       <div class="sidebar-item" onclick="openMarket('turkey')">
         <span class="market-flag">🇹🇷</span> Turkey
       </div>
+      <div class="sidebar-item" onclick="openMarket('usa')">
+        <span class="market-flag">🇺🇸</span> United States
+      </div>
       <div class="sidebar-item" onclick="openMarket('mexico')">
         <span class="market-flag">🇲🇽</span> Mexico
       </div>
@@ -1897,6 +1900,12 @@
           <div class="card-title" data-zh-title="土耳其" data-ko-title="튀르키예">Turkey</div>
           <div class="card-desc" data-zh-desc="歐洲與中東橋接市場。國防產業蓬勃。汽車：福特、豐田、雷諾。建議以美元/歐元計價。" data-ko-desc="유럽과 중동의 교두보 시장. 방산 산업 호황. 자동차: 포드, 도요타, 르노. USD/EUR 계약 선호.">Bridge market between Europe and Middle East. Booming defense sector. Automotive: Ford, Toyota, Renault. USD/EUR contracts preferred.</div>
         </div>
+        <div class="card" onclick="openMarket('usa')">
+          <div class="badge badge-parts">🔵 Parts Supply</div>
+          <div class="card-tag" data-zh-tag="🇺🇸 北美洲" data-ko-tag="🇺🇸 북아메리카">🇺🇸 North America</div>
+          <div class="card-title" data-zh-title="美國" data-ko-title="미국">United States</div>
+          <div class="card-desc" data-zh-desc="全球最大工具機進口市場，台灣第二大出口目的地。MFN 約 4.4%，2026 對等協定採「MFN 與 15% 取其高」。需 NFPA 79／NRTL 認證。480V 60Hz。" data-ko-desc="세계 최대 공작기계 수입 시장, 대만 2위 수출국. MFN 약 4.4%, 2026 상호협정은 MFN과 15% 중 높은 쪽 적용. NFPA 79/NRTL 인증 필요. 480V 60Hz.">World's largest machine tool import market; Taiwan's #2 destination. MFN ~4.4%; 2026 reciprocal deal applies the higher of MFN or 15%. NFPA 79 / NRTL certification. 480V 60Hz.</div>
+        </div>
         <div class="card" onclick="openMarket('mexico')">
           <div class="badge badge-parts">🔵 Parts Supply</div>
           <div class="card-tag" data-zh-tag="🇲🇽 北美洲" data-ko-tag="🇲🇽 북아메리카">🇲🇽 North America</div>
@@ -2412,6 +2421,19 @@
     <div class="page" id="page-whatsnew">
       <div class="section-title">WHAT'S NEW &nbsp;／&nbsp; 最新消息 &nbsp;／&nbsp; 최신 소식</div>
       <div style="margin-bottom:28px">
+
+        <div class="whats-new-item">
+          <div class="whats-new-date">2026.07</div>
+          <div class="whats-new-content">
+            <div class="whats-new-title">🇺🇸 Market Insight — United States Added: Tariffs, NFPA 79 &amp; 480V Shipping Checklist</div>
+            <div style="color:var(--text-dim);font-size:0.82rem;margin-bottom:4px">新增美國市場頁：關稅、NFPA 79 電氣安規與 480V 出貨注意事項 ／ 미국 시장 프로필 신설: 관세, NFPA 79, 480V 출하 체크리스트</div>
+            <div class="whats-new-desc">The world's largest machine tool import market and Taiwan's #2 destination now has its own profile: MFN duty basis for HTS 8457/8458, how the 2026 reciprocal trade agreement applies the higher of MFN or 15%, NRTL/NFPA 79 electrical certification, 480V 60Hz shop power, ISF (10+2) filing, and why quoting FOB/FCA usually beats DDP. Our Taiwan Industry News feed has also been rebuilt around named sources with direct links to the original articles. Available in EN / 中文 / 한국어.</div>
+            <div style="margin-top:10px;display:flex;align-items:center;gap:10px;flex-wrap:wrap">
+              <span class="whats-new-tag">Market Insight</span>
+              <a class="nav-btn" href="/zz-strotec/markets/usa/" style="font-size:11px;padding:3px 12px;color:var(--gold);border:1px solid var(--gold);text-decoration:none;display:inline-block">🇺🇸 UNITED STATES →</a>
+            </div>
+          </div>
+        </div>
 
         <div class="whats-new-item">
           <div class="whats-new-date">2026.07</div>
@@ -3145,6 +3167,8 @@
     <div class="market-card" onclick="openMarket('vietnam')"><div class="market-header"><span class="market-flag">🇻🇳</span><div><div class="market-name" data-zh-name="越南" data-ko-name="베트남">Vietnam</div><div class="market-tag">Southeast Asia · USD</div></div></div><div class="market-detail" data-zh-detail="成長快速。三星/英特爾投資。關稅 0%。" data-ko-detail="빠른 성장. 삼성/인텔 투자. 관세 0%.">Fast growth. Samsung/Intel FDI. 0% duty.</div></div>
 
     <div class="market-card" onclick="openMarket('india')"><div class="market-header"><span class="market-flag">🇮🇳</span><div><div class="market-name" data-zh-name="印度" data-ko-name="인도">India</div><div class="market-tag">South Asia · USD</div></div></div><div class="market-detail" data-zh-detail="印度製造。PLI 方案。龐大汽車產業。" data-ko-detail="메이크 인 인디아. PLI 제도. 대형 자동차 산업.">Make in India. PLI schemes. Huge auto sector.</div></div>
+
+    <div class="market-card" onclick="openMarket('usa')"><div class="market-header"><span class="market-flag">🇺🇸</span><div><div class="market-name" data-zh-name="美國" data-ko-name="미국">United States</div><div class="market-tag">North America · USD</div></div></div><div class="market-detail" data-zh-detail="最大進口市場。MFN 與 15% 取其高。需 NFPA 79。" data-ko-detail="최대 수입 시장. MFN과 15% 중 높은 쪽. NFPA 79 필요.">Largest import market. Higher of MFN or 15%. NFPA 79.</div></div>
 
     <div class="market-card" onclick="openMarket('mexico')"><div class="market-header"><span class="market-flag">🇲🇽</span><div><div class="market-name" data-zh-name="墨西哥" data-ko-name="멕시코">Mexico</div><div class="market-tag">North America · USD</div></div></div><div class="market-detail" data-zh-detail="近岸製造熱潮。IMMEX 免稅進口。" data-ko-detail="니어쇼어링 붐. IMMEX 면세 수입.">Nearshoring boom. IMMEX duty-free.</div></div>
 
@@ -6223,7 +6247,7 @@ const KB = {
 
       <h4>아메리카</h4>
       <ul>
-        <li><strong>미국</strong>: 0~4.4%</li>
+        <li><strong>미국</strong>: MFN 기본 0~4.4%이나, 2026년 상호무역협정 이후 <strong>MFN과 15% 중 높은 쪽</strong>을 적용. 견적 전 HTS 코드별 현행 세율을 관세사에게 확인하십시오.</li>
         <li><strong>멕시코</strong>: MFN 세율 (대만-멕시코 FTA 없음); IMMEX는 수출 마킬라도라 한정</li>
         <li><strong>브라질</strong>: ⚠️ 2026년 관세 인상 — 총 현지 인도 비용 약 70~80%+ (2026년 초 ~10% 추가 관세 부과)</li>
         <li><strong>아르헨티나</strong>: 14~35% + 부가세 = 최대 60~70% 현지 인도 비용</li>
@@ -6285,7 +6309,7 @@ const KB = {
 
       <h4>美洲</h4>
       <ul>
-        <li><strong>美國</strong>：0–4.4%</li>
+        <li><strong>美國</strong>：MFN 基本稅率 0–4.4%，但自 2026 年對等貿易協定起，美方採「<strong>MFN 與 15% 取其高</strong>」。報價前請就該 HTS Code 向報關行確認現行稅率。</li>
         <li><strong>墨西哥</strong>：MFN 稅率（台墨無 FTA）；IMMEX 僅限出口導向保稅加工廠</li>
         <li><strong>巴西</strong>：⚠️ 2026 年關稅上調 — 完稅後約 70–80%+（2026 年初新增約 10% 進口關稅）</li>
         <li><strong>阿根廷</strong>：14–35% + 附加稅 = 完稅後最高 60–70%</li>
@@ -6347,7 +6371,7 @@ const KB = {
 
       <h4>Americas</h4>
       <ul>
-        <li><strong>USA</strong>: 0–4.4%</li>
+        <li><strong>USA</strong>: 0–4.4% MFN base — but since the 2026 reciprocal trade agreement the US applies <strong>the higher of MFN or 15%</strong>. Confirm the current rate for your HTS code with a broker before quoting.</li>
         <li><strong>Mexico</strong>: MFN rate (no Taiwan-Mexico FTA); IMMEX duty suspension for maquiladora exporters only</li>
         <li><strong>Brazil</strong>: ⚠️ 2026 tariff increase — total landed ~70–80%+ (additional ~10% duty added early 2026)</li>
         <li><strong>Argentina</strong>: 14–35% + surcharges = up to 60–70% landed</li>
@@ -9312,6 +9336,119 @@ const MARKETS = {
 
       <h4>Business Culture</h4>
       Formal, punctual, technically demanding. High quality expectations. German or English preferred for business. Long evaluation cycles — invest in technical demonstrations and documentation.
+    `
+  },
+  usa: {
+    title: '🇺🇸 United States — Market Profile',
+    title_zh: '🇺🇸 美國 — 市場資訊',
+    title_ko: '🇺🇸 미국 — 시장 프로필',
+    body_ko: `
+      <h4>시장 개요</h4>
+      미국은 세계 최대의 공작기계 수입 시장이자 대만 공작기계의 2위 수출 대상국입니다. TMBA 자료에 따르면 2025년 대미 수출액은 3억 1,805만 달러였습니다. 항공우주·방산, 의료기기, 석유·가스, 반도체 장비, 자동차·EV, 그리고 전국에 분포한 수많은 잡샵(job shop)이 수요를 뒷받침합니다.
+
+      <h4>수입 조건</h4>
+      <ul>
+        <li>기본 MFN 관세: NC 선반·머시닝센터(HTS 8457/8458) 기준 통상 4.4%. 부품(HTS 8466)은 세율이 다릅니다.</li>
+        <li>2026년 상호무역협정: 미국은 <strong>MFN 세율과 15% 중 높은 쪽</strong>을 적용합니다. 2026년 중 세율이 여러 차례 변경되었으므로, 견적 전 반드시 해당 HTS 코드의 현행 세율을 관세사와 서면으로 확인하십시오.</li>
+        <li>연방 부가세(VAT) 없음 — 도착지 주(州)의 판매세·사용세가 별도 부과됩니다.</li>
+        <li>통화: USD</li>
+        <li>수입자(Importer of Record)는 EIN과 세관 본드(customs bond)가 필요하며, 해상 화물은 선적 24시간 전 ISF(10+2) 신고가 필수입니다.</li>
+        <li>주요 항구: 로스앤젤레스·롱비치, 오클랜드, 시애틀·타코마(서안 — 대만에서 최단), 휴스턴, 서배너, 뉴욕·뉴저지</li>
+      </ul>
+
+      <h4>전기 및 안전 규격</h4>
+      <ul>
+        <li>산업기계 전기 규격 <strong>NFPA 79</strong> 준수. 보험사와 지역 감독관(AHJ)이 UL·Intertek(ETL)·CSA 등 NRTL 인증을 요구하는 경우가 많습니다.</li>
+        <li>기계 안전은 ANSI B11 계열 규격, 작업장 안전은 OSHA 규정을 따릅니다.</li>
+        <li>일반적인 공장 전원: 480V / 60Hz / 3상 (208~240V도 사용). 50Hz 사양 기계는 변압기 또는 사양 변경이 필요하므로 <strong>출하 전 반드시 확인</strong>하십시오.</li>
+        <li>영문 서류 필수. 도면·매뉴얼은 인치(imperial)와 미터법 병기를 선호합니다.</li>
+      </ul>
+
+      <h4>주요 수요 분야</h4>
+      항공우주·방산(워싱턴, 캘리포니아, 텍사스, 캔자스, 코네티컷), 의료기기(미네소타, 매사추세츠, 유타), 석유·가스(텍사스, 오클라호마, 루이지애나), 반도체·전자(애리조나, 텍사스, 오하이오 — 신규 팹 투자), 자동차·EV(미시간, 테네시, 켄터키, 사우스캐롤라이나), 전국의 일반 가공업체.
+
+      <h4>비즈니스 문화</h4>
+      직설적이고 속도가 빠르며, 가격과 납기를 중심으로 판단합니다. 상세 사양서, 레퍼런스, 확정 납기 약속을 요구합니다. <strong>사후 대응 속도와 예비 부품 확보 가능성이 결정적</strong>이며, 일본·한국·독일 브랜드와 직접 비교됩니다. 항공우주·자동차 공급망에서는 ISO 9001, AS9100, PPAP 대응이 요구되기도 합니다.
+
+      <h4>실용적 팁</h4>
+      <ul>
+        <li>로스앤젤레스·롱비치 또는 오클랜드 경유가 태평양 최단 운송</li>
+        <li>DDP 견적 전 HTS 분류와 현행 세율을 서면으로 확정 — 관세 부담이 급변할 수 있습니다</li>
+        <li>FOB/FCA 대만으로 견적하고 미국 바이어가 수입자가 되도록 하는 편이 안전합니다. 바이어가 직접 분류와 관세사를 통제할 수 있습니다</li>
+        <li>NRTL 전기 인증과 NFPA 79 대응은 초기에 예산화 — 도착 후 개조는 비용이 큽니다</li>
+      </ul>
+    `,
+    body_zh: `
+      <h4>市場概況</h4>
+      美國是全球最大的工具機進口市場，也是台灣工具機第二大出口目的地。依工具機公會（TMBA）資料，2025 年對美出口額為 3.1805 億美元。需求來自航太與國防、醫療器材、油氣、半導體設備、汽車與電動車，以及遍布全美的大量代工加工廠（job shop）。
+
+      <h4>進口條件</h4>
+      <ul>
+        <li>基本 MFN 關稅：NC 車床與加工中心（HTS 8457／8458）一般為 4.4%。零件（HTS 8466）稅率不同。</li>
+        <li>2026 年對等貿易協定：美方採「<strong>MFN 稅率與 15% 取其高</strong>」。2026 年內稅率歷經多次調整，<strong>報價前務必就該 HTS Code 向報關行取得書面現行稅率</strong>，切勿直接套用舊數字。</li>
+        <li>無聯邦增值稅（VAT）— 但依到貨州別課徵州銷售稅／使用稅。</li>
+        <li>貨幣：美元（USD）</li>
+        <li>進口人（Importer of Record）需具備 EIN 與海關保證金（customs bond）；海運須於裝船前 24 小時完成 ISF（10+2）申報。</li>
+        <li>主要港口：洛杉磯／長堤、奧克蘭、西雅圖／塔科馬（西岸 — 距台灣最近）、休士頓、薩凡納、紐約／紐澤西</li>
+      </ul>
+
+      <h4>電氣與安規</h4>
+      <ul>
+        <li>工業機械電氣規範須符合 <strong>NFPA 79</strong>。保險公司與地方主管機關（AHJ）常要求 UL、Intertek（ETL）或 CSA 等 NRTL 認證。</li>
+        <li>機械安全依 ANSI B11 系列標準，工作場所安全依 OSHA 規定。</li>
+        <li>常見廠務電源：480V／60Hz／三相（亦有 208~240V）。50Hz 規格機台需加變壓器或變更規格，<strong>出貨前必須確認</strong>。</li>
+        <li>文件須為英文；圖面與手冊以英制加公制併列為佳。</li>
+      </ul>
+
+      <h4>主要需求領域</h4>
+      航太與國防（華盛頓州、加州、德州、堪薩斯、康乃狄克）、醫療器材（明尼蘇達、麻州、猶他）、油氣（德州、奧克拉荷馬、路易斯安那）、半導體與電子（亞利桑那、德州、俄亥俄 — 新建晶圓廠投資）、汽車與電動車（密西根、田納西、肯塔基、南卡）、以及全美各地的一般加工廠。
+
+      <h4>商業文化</h4>
+      直接、快速，以價格與交期為主要判準。要求詳細規格書、實績推薦與明確交期承諾。<strong>售後回應速度與備品供應能力往往是成交關鍵</strong>，並會直接與日系、韓系、德系品牌比較。航太與汽車供應鏈客戶可能要求 ISO 9001、AS9100 或 PPAP 配合。
+
+      <h4>實務建議</h4>
+      <ul>
+        <li>經洛杉磯／長堤或奧克蘭出貨為太平洋最短航程</li>
+        <li>報 DDP 前先以書面確認 HTS 分類與現行稅率 — 稅負可能大幅變動</li>
+        <li>建議以 FOB／FCA 台灣報價，由美國買方擔任進口人：買方可自行掌握稅則分類並指定報關行</li>
+        <li>NRTL 電氣認證與 NFPA 79 合規請及早編列預算 — 到貨後改裝代價高昂</li>
+      </ul>
+    `,
+    body: `
+      <h4>Market Overview</h4>
+      The United States is the world's largest machine tool import market and Taiwan's second-largest export destination — US$318.05 million in 2025 according to TMBA. Demand is spread across aerospace & defense, medical devices, oil & gas, semiconductor equipment, automotive & EV, and a very large base of independent job shops.
+
+      <h4>Import Conditions</h4>
+      <ul>
+        <li>Base MFN duty: typically 4.4% for NC lathes and machining centers (HTS 8457/8458). Parts (HTS 8466) carry different rates.</li>
+        <li>2026 reciprocal trade agreement: the US applies <strong>the higher of its MFN rate or 15%</strong>. Rates moved several times during 2026 — <strong>get the current rate for your specific HTS code in writing from a customs broker before quoting</strong>, rather than reusing an older figure.</li>
+        <li>No federal VAT — state sales/use tax applies at the destination instead.</li>
+        <li>Currency: USD</li>
+        <li>The Importer of Record needs an EIN and a customs bond; ocean shipments require ISF (10+2) filing 24 hours before loading.</li>
+        <li>Main ports: Los Angeles/Long Beach, Oakland, Seattle-Tacoma (West Coast — shortest from Taiwan), Houston, Savannah, New York/New Jersey</li>
+      </ul>
+
+      <h4>Electrical & Safety</h4>
+      <ul>
+        <li>Industrial machinery wiring must meet <strong>NFPA 79</strong>. Insurers and the local authority having jurisdiction (AHJ) frequently require NRTL listing — UL, Intertek (ETL) or CSA.</li>
+        <li>Machine guarding follows the ANSI B11 series; workplace safety follows OSHA.</li>
+        <li>Typical shop power: 480V / 60Hz / 3-phase (208–240V also common). A 50Hz-configured machine needs a transformer or a specification change — <strong>confirm before shipping</strong>.</li>
+        <li>Documentation in English; drawings and manuals are best supplied in imperial alongside metric.</li>
+      </ul>
+
+      <h4>Key Demand Sectors</h4>
+      Aerospace & defense (WA, CA, TX, KS, CT), medical devices (MN, MA, UT), oil & gas (TX, OK, LA), semiconductor & electronics (AZ, TX, OH — new fab investment), automotive & EV (MI, TN, KY, SC), and general job shops nationwide.
+
+      <h4>Business Culture</h4>
+      Direct and fast-moving, driven by price and lead time. Expect detailed specifications, references, and firm delivery commitments. <strong>Response time on after-sales support and spare-parts availability is often the deciding factor</strong>, and you will be compared head-to-head with Japanese, Korean and German brands. Aerospace and automotive supply chains may require ISO 9001, AS9100 or PPAP participation.
+
+      <h4>Practical Tips</h4>
+      <ul>
+        <li>Ship via Los Angeles/Long Beach or Oakland for the shortest Pacific transit</li>
+        <li>Fix the HTS classification and current duty rate in writing before quoting DDP — the duty burden can shift materially</li>
+        <li>Prefer quoting FOB/FCA Taiwan and letting the US buyer act as Importer of Record: they then control classification and use their own broker</li>
+        <li>Budget for NRTL electrical certification and NFPA 79 compliance early — retrofitting after arrival is expensive</li>
+      </ul>
     `
   },
   mexico: {
