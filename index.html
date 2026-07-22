@@ -12274,10 +12274,19 @@ function zzTrack(name, params) {
     vpv('', 'Page: home');
   });
 
+  // COLUMNS[id] is an HTML string rather than an object, so the title is read
+  // back off the rendered page — openColumn has already injected it by now.
+  function colTitle(id) {
+    var el = document.getElementById('page-' + id);
+    var h  = el && el.querySelector('h1, h2');
+    return (h && h.textContent.trim()) || id;
+  }
+
   wrap('openColumn', function (id) {
     if (id === 'column') { vpv('', 'Column index'); return; }
-    vpv('#' + id, 'Column: ' + id);
-    gtag('event', 'view_column', { column_id: id, site_language: lang() });
+    var t = colTitle(id);
+    vpv('#' + id, 'Column: ' + t);
+    gtag('event', 'view_column', { column_id: id, item_title: t, site_language: lang() });
   });
 
   wrap('openKnowledge', function (key) {
@@ -12340,7 +12349,9 @@ function zzTrack(name, params) {
         site_language: lang(), landing: true
       });
     } else if (typeof COLUMNS !== 'undefined' && COLUMNS[h]) {
-      gtag('event', 'view_column', { column_id: h, site_language: lang(), landing: true });
+      gtag('event', 'view_column', {
+        column_id: h, item_title: colTitle(h), site_language: lang(), landing: true
+      });
     }
   });
 
