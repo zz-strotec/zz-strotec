@@ -1,9 +1,13 @@
 #!/usr/bin/env python3
 """Bake the site's provenance watermark into a photo.
 
-Matches the diagonal, semi-transparent "Z&Z STROTEC · zzstrotec.com" mark that
-commit fac94ba applied to the original 15 site images, so newly added photos
-stay visually consistent with them.
+Matches the diagonal, semi-transparent mark that commit fac94ba applied to the
+original 15 site images, so newly added photos stay visually consistent.
+
+The mark named zzstrotec.com until 2026-07-23, when the site moved to the
+registered domain zz-strotec.com. Images watermarked before that date still
+carry the old (unregistered) name baked in; re-run this script on the clean
+copies in photo/_original/ to bring them into line.
 
 Usage:  python3 scripts/watermark.py photo/some-image.jpg [more.jpg ...]
 
@@ -14,7 +18,7 @@ import sys
 import os
 from PIL import Image, ImageDraw, ImageFont
 
-TEXT = "Z&Z STROTEC · zzstrotec.com"
+TEXT = "Z&Z STROTEC · zz-strotec.com"
 ANGLE = 30          # degrees counter-clockwise, matching the existing images
 OPACITY = 14        # 0-255 white; deliberately near the noise floor, like the
                     # existing images where the mark only reads once you look

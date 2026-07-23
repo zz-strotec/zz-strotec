@@ -380,7 +380,7 @@ for (const [key, item] of Object.entries(KB)) {
   ].join('');
   renderEntry({
     depth: 2, url, title: item.title, titleZh: item.title_zh, titleKo: item.title_ko,
-    desc, ogImage: ogImg ? SITE + ogImg : '', bodyHtml,
+    desc, ogImage: absImg(ogImg), bodyHtml,
     published: item.published, updated: item.updated, tags: item.tags,
     schemaType: 'TechArticle', articleSection: item.articleSection || (item.tags && item.tags[0]) || 'Knowledge',
     crumb: `› <a href="${BASE}knowledge/">Knowledge</a> › ${attrEsc(item.title)}`,
