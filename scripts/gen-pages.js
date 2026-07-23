@@ -24,8 +24,8 @@ const path = require('path');
 const ROOT = path.resolve(__dirname, '..');
 const SRC = path.join(ROOT, 'index.html');
 
-const ORIGIN = 'https://zz-strotec.github.io';
-const BASE = '/zz-strotec/';                 // GitHub project-page base path
+const ORIGIN = 'https://zz-strotec.com';
+const BASE = '/';                            // custom domain — site served at root
 const SITE = ORIGIN + BASE;                  // full canonical base
 const TODAY = new Date().toISOString().slice(0, 10);
 
