@@ -15154,22 +15154,22 @@ const NEWS_HOME_MAX = 4;        // home shows at most this many current items
 // Last-resort copy, used only if news.json cannot be loaded (e.g. the page is
 // opened straight from the filesystem). Keep in sync with the top of news.json.
 const NEWS_FALLBACK = [
-  { title: 'June export orders hit a record high on AI demand; machinery orders up 17.6%',
-    title_zh: '6月外銷訂單創歷史新高，機械訂單年增 17.6%',
-    title_ko: '6월 수출 수주 AI 수요로 사상 최고, 기계 수주 17.6% 증가',
-    source: 'Focus Taiwan (CNA)', published: '2026-07-21', market: 'Taiwan',
-    url: 'https://focustaiwan.tw/business/202607210027',
-    summary: 'Export orders reached US$95.26bn in June (+59.4% YoY), a record high. Machinery orders rose 17.6% to US$2.18bn.',
-    summary_zh: '6月外銷訂單 952.6 億美元、年增 59.4%，創歷史新高。機械類訂單年增 17.6% 至 21.8 億美元。',
-    summary_ko: '6월 수출 수주 952.6억 달러(+59.4%)로 사상 최고. 기계 수주는 17.6% 늘어난 21.8억 달러.' },
-  { title: 'Taiwan machine tool & key component import/export statistics (monthly)',
-    title_zh: '台灣工具機及關鍵零組件進出口速報（每月）',
-    title_ko: '대만 공작기계·핵심부품 수출입 통계 (월간)',
-    source: 'TMBA 台灣工具機暨零組件工業同業公會', published: '2026-07-01', market: 'Taiwan',
-    url: 'https://www.tmba.org.tw/zh-TW/news/traditionandbusiness', evergreen: true,
-    summary: "The association's monthly trade data — the primary source behind most press coverage.",
-    summary_zh: '工具機公會每月進出口速報，多數媒體報導所引用的原始數據來源。',
-    summary_ko: '공작기계 협회의 월간 수출입 통계, 대부분 보도의 원출처.' }
+  { title: 'Machinery exports surpass NT$1tn in the first ten months',
+    title_zh: '機械出口前10月突破新台幣 1 兆元',
+    title_ko: '기계 수출, 1~10월 누계 1조 대만달러 돌파',
+    source: 'Taipei Times（引用臺灣機械工業同業公會 TAMI）', published: '2026-11-11', market: 'Taiwan',
+    url: 'https://www.taipeitimes.com/News/biz/archives/2026/11/11/2003867508',
+    summary: 'October machinery exports were US$3.593bn (+35% YoY), the 21st straight month of growth; the ten-month total was US$31.572bn (+21.8%). Machine tools grew 18.5% to US$167m in October.',
+    summary_zh: '10月機械出口 35.93 億美元、年增 35%，連續第 21 個月正成長；前10月累計 315.72 億美元、年增 21.8%。其中工具機10月成長 18.5% 至 1.67 億美元。',
+    summary_ko: '10월 기계 수출 35.93억 달러(+35%)로 21개월 연속 플러스 성장, 1~10월 누계 315.72억 달러(+21.8%). 공작기계는 10월 1.67억 달러(+18.5%).' },
+  { title: 'Machine tool association: finished-machine exports flat, key components keep growing',
+    title_zh: '工具機公會：整機出口持平，關鍵零組件續成長',
+    title_ko: '공작기계 협회: 완성기 수출 보합, 핵심부품은 계속 성장',
+    source: '中央社 CNA（引用台灣工具機暨零組件工業同業公會）', published: '2026-11-10', market: 'Taiwan',
+    url: 'https://www.cna.com.tw/news/afe/202611100113.aspx',
+    summary: 'October machine tool exports were US$167m (+18.49% YoY); the January-October total of US$1.659bn was 0.2% lower. Key components reached US$158m in October (+27.4%) and US$1.423bn for the ten months (+14.5%).',
+    summary_zh: '10月工具機整機出口 1.67 億美元、年增 18.49%；1至10月累計 16.59 億美元、年減 0.2%。關鍵零組件10月 1.58 億美元、年增 27.4%，累計 14.23 億美元、年增 14.5%。',
+    summary_ko: '10월 완성기 수출 1.67억 달러(+18.49%), 1~10월 누계 16.59억 달러(-0.2%). 핵심부품은 10월 1.58억 달러(+27.4%), 누계 14.23억 달러(+14.5%).' }
 ];
 
 let _newsItems = null;   // cached parsed items
