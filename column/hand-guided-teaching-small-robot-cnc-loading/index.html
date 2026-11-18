@@ -1,0 +1,332 @@
+<!doctype html>
+<html lang="en">
+<head>
+<!-- ── Frame guard ──────────────────────────────────────────────────────
+     GitHub Pages cannot send X-Frame-Options or a CSP frame-ancestors
+     header, and <meta http-equiv> cannot set frame-ancestors either, so the
+     only place left to refuse embedding is the page itself. The document is
+     hidden by the stylesheet and revealed again only when this script finds
+     itself in the top-level window. <noscript> restores the page for
+     visitors and crawlers running without JS.
+     Keep in sync with index.html. -->
+<style id="frame-guard">html{display:none !important}</style>
+<noscript><style>html{display:block !important}</style></noscript>
+<script>
+(function () {
+  if (window.self === window.top) {
+    var g = document.getElementById('frame-guard');
+    if (g) g.parentNode.removeChild(g);
+    return;
+  }
+  try { window.top.location.replace(window.self.location.href); }
+  catch (e) { /* Cross-origin parent: the escape is blocked, so the page
+                 simply stays hidden — which is the intended outcome. */ }
+})();
+</script>
+
+<!-- ── Google Consent Mode v2 ───────────────────────────────────────────
+     Denied by default in the EEA, the UK and Switzerland; granted in the
+     markets that do not require prior consent. Must run before gtag.js.
+     Keep in sync with index.html. -->
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+
+  gtag('consent', 'default', {
+    ad_storage: 'denied', ad_user_data: 'denied', ad_personalization: 'denied',
+    analytics_storage: 'denied', wait_for_update: 500,
+    region: ['AT','BE','BG','HR','CY','CZ','DK','EE','FI','FR','DE','GR','HU',
+             'IE','IT','LV','LT','LU','MT','NL','PL','PT','RO','SK','SI','ES',
+             'SE','IS','LI','NO','GB','CH']
+  });
+  gtag('consent', 'default', {
+    ad_storage: 'denied', ad_user_data: 'denied', ad_personalization: 'denied',
+    analytics_storage: 'granted'
+  });
+
+  try {
+    var zzConsent = localStorage.getItem('zz-consent');
+    if (zzConsent === 'granted' || zzConsent === 'denied') {
+      gtag('consent', 'update', { analytics_storage: zzConsent });
+    }
+  } catch (e) { /* storage blocked (private mode) → the defaults stand */ }
+</script>
+
+<!-- Google tag (gtag.js) — same property as index.html, so organic landings
+     on these static pages show up instead of being invisible to Analytics -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-LR7TGXJLS9"></script>
+<script>
+  gtag('js', new Date());
+  gtag('config', 'G-LR7TGXJLS9');
+  gtag('event', "view_column", {"column_id":"col-25","item_title":"Hand Guided Teaching on a Small Robot Arm: What It Actually Saves on a CNC Lathe","site_language":"en","landing":true});
+</script>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Hand Guided Robot Teaching for CNC Loading: What It Saves and What It Does Not | Z&amp;Z STROTEC</title>
+<meta name="description" content="A small robot arm you can teach by taking hold of it and moving it to the position you want is an easy thing to like. The demonstration takes two minutes,…">
+<link rel="canonical" href="https://zz-strotec.com/column/hand-guided-teaching-small-robot-cnc-loading/">
+<meta name="robots" content="index,follow,max-image-preview:large">
+<meta property="og:type" content="article">
+<meta property="og:title" content="Hand Guided Robot Teaching for CNC Loading: What It Saves and What It Does Not">
+<meta property="og:description" content="A small robot arm you can teach by taking hold of it and moving it to the position you want is an easy thing to like. The demonstration takes two minutes,…">
+<meta property="og:url" content="https://zz-strotec.com/column/hand-guided-teaching-small-robot-cnc-loading/">
+<meta property="og:site_name" content="Z&amp;Z STROTEC">
+<meta property="og:image" content="https://zz-strotec.com/assets/brand-logo.png">
+<meta name="twitter:card" content="summary_large_image">
+<script type="application/ld+json">{"@context":"https://schema.org","@type":"Article","headline":"Hand Guided Teaching on a Small Robot Arm: What It Actually Saves on a CNC Lathe","description":"A small robot arm you can teach by taking hold of it and moving it to the position you want is an easy thing to like. The demonstration takes two minutes,…","inLanguage":["en","zh-Hant","ko"],"articleSection":"Automation &middot; Robot Loading","datePublished":"2026-11-18","dateModified":"2026-11-18","author":{"@type":"Organization","name":"Z&Z STROTEC","url":"https://zz-strotec.com/"},"publisher":{"@type":"Organization","name":"Z&Z STROTEC","url":"https://zz-strotec.com/","logo":{"@type":"ImageObject","url":"https://zz-strotec.com/assets/brand-logo.png"}},"mainEntityOfPage":"https://zz-strotec.com/column/hand-guided-teaching-small-robot-cnc-loading/"}</script>
+<link rel="stylesheet" href="../../assets/kb-pages.css">
+<style>
+/* --- standalone SEO page chrome --- */
+body{margin:0}
+.kbp-header{display:flex;align-items:center;justify-content:space-between;gap:16px;
+  padding:14px 20px;border-bottom:1px solid var(--border);background:var(--surface)}
+.kbp-header a{color:var(--text);text-decoration:none}
+.kbp-brand{display:flex;align-items:center;gap:10px;font-weight:600;letter-spacing:1px}
+.kbp-brand img{height:28px;width:auto}
+.kbp-nav a{color:var(--text-dim);font-size:12px;letter-spacing:1px;margin-left:18px;text-decoration:none}
+.kbp-nav a:hover{color:var(--gold)}
+.kbp-wrap{max-width:860px;margin:0 auto;padding:28px 20px 60px}
+.kbp-crumb{font-size:12px;color:var(--text-dim);margin-bottom:18px}
+.kbp-crumb a{color:var(--text-dim);text-decoration:none}
+.kbp-crumb a:hover{color:var(--gold)}
+.kbp-h1{color:var(--text);font-size:1.7rem;line-height:1.35;margin:0 0 6px}
+.kbp-byline{color:var(--text-dim);font-size:.8rem;margin:0 0 22px}
+.kbp-cta{display:inline-block;margin:0 0 26px;padding:9px 20px;border:1px solid var(--gold);
+  border-radius:6px;color:var(--gold);font-size:13px;text-decoration:none}
+.kbp-cta:hover{background:var(--gold);color:#0d0d0d}
+.kbp-tags{margin-top:26px;display:flex;flex-wrap:wrap;gap:8px}
+.kbp-next{margin-top:32px;padding:22px 24px;background:var(--surface2);
+  border:1px solid var(--gold);border-radius:8px}
+.kbp-next .eb{font-size:10px;letter-spacing:2px;color:var(--gold);
+  text-transform:uppercase;margin-bottom:9px}
+.kbp-next .hd{color:var(--text);font-size:1.02rem;font-weight:600;line-height:1.5}
+.kbp-next .sub{color:var(--text-dim);font-size:.86rem;line-height:1.6;margin-top:3px}
+.kbp-next .bd{color:var(--text-dim);font-size:.9rem;line-height:1.8;margin-top:12px}
+.kbp-next .why{margin-top:16px;padding:12px 16px;background:var(--surface);
+  border-left:3px solid var(--gold);border-radius:0 5px 5px 0}
+.kbp-next .why b{display:block;font-size:10px;letter-spacing:1.5px;color:var(--gold);
+  font-weight:600;margin-bottom:6px}
+.kbp-next .why p{color:var(--text-dim);font-size:.85rem;line-height:1.75;margin:0}
+.kbp-next .why p+p{margin-top:5px}
+.kbp-next .row{display:flex;flex-wrap:wrap;gap:10px;margin-top:18px}
+.kbp-next a{display:inline-block;padding:10px 22px;border-radius:5px;font-size:12px;
+  letter-spacing:1.5px;text-decoration:none}
+.kbp-next .gold{background:var(--gold);border:1px solid var(--gold);color:#0d0d0d;font-weight:600}
+.kbp-next .blue{background:transparent;border:1px solid #5bbcff;color:#5bbcff}
+.kbp-body img{max-width:100%;height:auto}
+.kbp-footer{border-top:1px solid var(--border);padding:26px 20px;text-align:center;
+  color:var(--text-dim);font-size:12px;line-height:1.9}
+.kbp-footer a{color:var(--text-dim);text-decoration:none;margin:0 8px}
+.kbp-footer a:hover{color:var(--gold)}
+.kbp-hublist{list-style:none;padding:0;margin:18px 0 0;display:grid;
+  grid-template-columns:repeat(auto-fill,minmax(260px,1fr));gap:12px}
+.kbp-hublist a{display:block;padding:16px;border:1px solid var(--border);border-radius:8px;
+  background:var(--surface);color:var(--text);text-decoration:none;transition:border-color .15s}
+.kbp-hublist a:hover{border-color:var(--gold)}
+.kbp-hublist .t{font-weight:600;font-size:.98rem;margin-bottom:4px}
+.kbp-hublist .s{color:var(--text-dim);font-size:.82rem;line-height:1.5}
+.kbp-rel{margin-top:34px;padding-top:22px;border-top:1px solid var(--border)}
+.kbp-rel h2{font-size:.78rem;letter-spacing:2px;color:var(--gold);font-weight:600;
+  margin:0 0 14px;text-transform:uppercase}
+.kbp-rel ul{list-style:none;padding:0;margin:0;display:grid;
+  grid-template-columns:repeat(auto-fill,minmax(240px,1fr));gap:10px}
+.kbp-rel a{display:block;padding:11px 14px;border:1px solid var(--border);border-radius:6px;
+  color:var(--text);text-decoration:none;font-size:.9rem;line-height:1.5;
+  transition:border-color .15s}
+.kbp-rel a:hover{border-color:var(--gold)}
+.kbp-rel .s{display:block;color:var(--text-dim);font-size:.78rem;margin-top:3px}
+</style>
+</head>
+<body>
+<header class="kbp-header">
+  <a class="kbp-brand" href="/"><img src="../../assets/brand-logo.png" alt="Z&amp;Z STROTEC">Z&amp;Z STROTEC</a>
+  <nav class="kbp-nav">
+    <a href="/knowledge/">Knowledge</a>
+    <a href="/column/">Columns</a>
+    <a href="/markets/">Markets</a>
+    <a href="/terminology/">Terminology</a>
+    <a href="/">Full site →</a>
+  </nav>
+</header>
+<main class="kbp-wrap">
+  <div class="kbp-crumb"><a href="/">Home</a> › <a href="/column/">Columns</a> › Hand Guided Teaching on a Small Robot Arm: What It Actually Saves on a CNC Lathe</div>
+  
+  <a class="kbp-cta" href="/#col-25">View interactive version · 完整互動版 · 인터랙티브 버전 →</a>
+  <div class="kbp-body">
+<div style="background:var(--surface);border:1px solid var(--border);border-radius:8px;padding:32px;margin-bottom:28px">
+<div style="border-left:4px solid var(--gold);padding-left:16px;margin-bottom:28px"><span style="color:var(--gold);font-size:10px;letter-spacing:2px;text-transform:uppercase">Automation &middot; Robot Loading</span><h1 style="line-height:1.4;font-size:1.35rem">Hand Guided Teaching on a Small Robot Arm: What It Actually Saves on a CNC Lathe</h1><p lang="zh-Hant">手拉示教的小型機械手：在車床上下料，真正省掉的是什麼</p><p lang="ko">소형 로봇의 핸드가이드 교시: CNC 선반 상하차에서 실제로 줄어드는 것</p></div><div style="font-size:0.74rem;color:var(--text-dim)">Published: 2026-11-18 &middot; Written by Z&amp;Z STROTEC ／ 發布：2026-11-18 &middot; 撰文：Z&amp;Z STROTEC 萬洋國際 ／ 발행: 2026-11-18 &middot; 작성: Z&amp;Z STROTEC</div>
+
+<p lang="en" style="line-height:1.85;margin:12px 0;color:var(--text)">A small robot arm you can teach by taking hold of it and moving it to the position you want is an easy thing to like. The demonstration takes two minutes, nobody writes a line of code, and the arm repeats the move all afternoon. The question worth asking before an order is not whether the teaching method works, because it does, but which part of an automated loading job it removes and which parts it leaves exactly where they were. This article is written for the shop deciding whether to put one next to a CNC lathe or machining centre: where hand guided teaching genuinely pays, where a bar feeder or a dedicated loader is still the better answer, and the items on the machine side that decide whether the cell runs at all. No brand or model is recommended here, and the figures that matter are the ones on your own part and your own machine.</p>
+<p lang="zh-Hant" style="line-height:1.85;margin:12px 0;color:var(--text-dim)">一支用手拉著走、放到位就記住位置的小型機械手，很容易讓人喜歡：示範兩分鐘、不用寫程式，接下來整個下午它都重複同一個動作。但下單前真正該問的，不是這種示教方式能不能用（它可以），而是它在一整套上下料自動化裡，省掉了哪一段、又有哪幾段完全沒有被省掉。本文寫給正在考慮把它擺到 CNC 車床或加工中心旁邊的工廠：手拉示教真正划得來的場合、什麼情況下送料機或專用上下料機構仍然是更好的答案，以及機台這一側有哪些條件決定這套東西跑不跑得起來。文中不推薦任何品牌或型號，真正有意義的數字，是你自己工件與自己機台上的數字。</p>
+<p lang="ko" style="line-height:1.85;margin:12px 0;color:var(--text-dim)">손으로 잡아 원하는 위치로 옮기면 그 자리를 기억하는 소형 로봇은 호감을 얻기 쉽습니다. 시연은 2분이면 끝나고, 코드를 한 줄도 쓰지 않으며, 로봇은 오후 내내 같은 동작을 반복합니다. 다만 발주 전에 물어야 할 것은 이 교시 방식이 작동하는지가 아니라(작동합니다), 상하차 자동화 전체에서 어느 단계를 줄여 주고 어느 단계는 그대로 남는지입니다. 이 글은 CNC 선반이나 머시닝센터 옆에 로봇을 둘지 검토하는 공장을 위한 것입니다. 핸드가이드 교시가 실제로 유리한 상황, 바피더나 전용 로더가 여전히 더 나은 경우, 그리고 셀이 돌아갈지를 결정하는 장비 측 조건을 정리했습니다. 특정 브랜드나 모델은 권하지 않으며, 의미 있는 수치는 귀사의 공작물과 장비에서 나온 수치입니다.</p>
+<section style="border-top:1px solid var(--border);padding-top:18px;margin-top:26px"><div style="margin:0 0 12px"><h3 lang="en" style="line-height:1.6;font-size:1rem;margin:0">1. What hand guided teaching removes, and what it leaves</h3><h3 lang="zh-Hant" style="line-height:1.6;font-size:1rem;margin:0">1. 手拉示教省掉的是教導器，不是整套導入</h3><h3 lang="ko" style="line-height:1.6;font-size:1rem;margin:0">1. 핸드가이드 교시가 줄여 주는 것과 남는 것</h3></div>
+<p lang="en" style="line-height:1.85;margin:12px 0;color:var(--text)">Teaching by hand, also called direct teaching, free drive or lead through, means the operator physically moves the arm to each position and records it as a waypoint. What it removes is real: the pendant work, and the dependence on someone who can write and debug robot programs. For a shop with no automation engineer that is the difference between owning the cell and waiting for a visit. What it does not remove is everything else in the job: the fixture or nest that locates the part, the gripper and its fingers, the signals between the arm and the machine tool, the handling of chips and coolant, the risk assessment of the finished installation, and the person who commissions and signs for it. Those items, not the teaching, are where the engineering hours and most of the cost sit. A quotation that covers the arm is therefore not a quotation for the cell, and the two are worth separating line by line before comparing prices.</p>
+<p lang="zh-Hant" style="line-height:1.85;margin:12px 0;color:var(--text-dim)">手拉示教（也稱直接示教、自由導引、lead through）指的是：操作者用手把手臂移到每一個位置，然後把它記成一個點位。它省掉的東西是真的：教導器操作，以及對「會寫、會除錯機械手程式的人」的依賴。對沒有自動化工程師的工廠來說，這一點決定了你是自己能改，還是每次都要等人來。但它沒有省掉的，是這份工作的其他部分：定位工件的治具或放料座、夾爪與爪片、機械手與機台之間的訊號、切屑與切削液的處理、完成後整套設備的風險評估，以及負責試車與簽收的人。工程時數與大部分成本，都落在這些項目上，而不是示教。所以一張只報機械手的報價單，不等於一套上下料系統的報價；比價之前，應該要求把這兩者逐項分開列。</p>
+<p lang="ko" style="line-height:1.85;margin:12px 0;color:var(--text-dim)">핸드가이드 교시(직접 교시, 프리드라이브, 리드스루)는 작업자가 팔을 직접 각 위치로 옮겨 포인트로 저장하는 방식입니다. 줄여 주는 것은 분명합니다. 교시 펜던트 작업과, 로봇 프로그램을 작성하고 디버깅할 수 있는 인력에 대한 의존입니다. 자동화 엔지니어가 없는 공장에서는 직접 수정할 수 있는지, 매번 방문을 기다려야 하는지가 갈립니다. 그러나 나머지는 그대로 남습니다. 공작물을 위치 결정하는 지그와 적재대, 그리퍼와 조, 로봇과 공작기계 사이의 신호, 칩과 절삭유 처리, 완성된 설비의 위험성 평가, 시운전과 인수에 서명하는 담당자입니다. 엔지니어링 공수와 비용의 대부분은 교시가 아니라 이 항목들에 있습니다. 따라서 로봇만 포함한 견적은 셀 견적이 아니며, 비교 전에 두 가지를 항목별로 분리해 받아야 합니다.</p></section>
+<section style="border-top:1px solid var(--border);padding-top:18px;margin-top:26px"><div style="margin:0 0 12px"><h3 lang="en" style="line-height:1.6;font-size:1rem;margin:0">2. Changeover frequency decides this, not the cycle time</h3><h3 lang="zh-Hant" style="line-height:1.6;font-size:1rem;margin:0">2. 決定要不要上的是換線頻率，不是節拍</h3><h3 lang="ko" style="line-height:1.6;font-size:1rem;margin:0">2. 판단 기준은 사이클 타임이 아니라 품종 교체 빈도</h3></div>
+<p lang="en" style="line-height:1.85;margin:12px 0;color:var(--text)">The case for a hand taught arm is strongest where the product mix changes often and lots are small. Re teaching a few positions takes minutes, so the automation survives a shop that runs forty parts a month instead of four. The case is weakest in two situations. The first is one part running for months: a dedicated loader, a gantry or, for bar work, a bar feeder will be faster per piece and usually cheaper, and nobody needs the flexibility you paid for. The second is a very short cycle: load and unload time that cannot be hidden inside the cut lands directly on the takt, and an arm moving at a speed that is safe next to a person does not win that argument. Before anything else, write down your real changeover frequency, the number of different parts, and the cycle time of the job you want to automate. Those three numbers, not the demonstration, tell you whether this is the right kind of automation.</p>
+<p lang="zh-Hant" style="line-height:1.85;margin:12px 0;color:var(--text-dim)">手拉示教最划得來的場合，是品項換得頻繁、每批量又小的工廠。重新示教幾個點只要幾分鐘，所以這套自動化可以活在一個月要跑四十種工件、而不是四種工件的現場。最不划得來的有兩種情況。第一種是同一個工件連續跑好幾個月：專用上下料機構、龍門式取放，或棒料加工用送料機，單件速度更快、通常也更便宜，而你花錢買到的彈性沒有人會用到。第二種是節拍很短：上下料時間只要沒辦法藏在切削時間裡，就會直接加到節拍上，而一支要在人旁邊安全運轉、速度被限制的手臂，在這場比較裡贏不了。所以第一件事不是看示範，而是先寫下三個數字：真實的換線頻率、工件品項數，以及你想自動化那個工件的節拍時間。</p>
+<p lang="ko" style="line-height:1.85;margin:12px 0;color:var(--text-dim)">핸드가이드 로봇이 가장 유리한 경우는 품종이 자주 바뀌고 로트가 작은 공장입니다. 포인트 몇 개 재교시는 몇 분이면 되므로, 월 4종이 아니라 40종을 돌리는 현장에서도 자동화가 살아남습니다. 반대로 불리한 경우는 두 가지입니다. 첫째, 한 품목을 몇 달간 연속 생산하는 경우입니다. 전용 로더나 갠트리, 봉재 가공이라면 바피더가 개당 더 빠르고 보통 더 저렴하며, 비용을 들인 유연성은 쓰이지 않습니다. 둘째, 사이클 타임이 매우 짧은 경우입니다. 절삭 시간 안에 숨길 수 없는 상하차 시간은 택트에 그대로 더해지고, 사람 옆에서 안전한 속도로 움직이는 팔은 이 비교에서 이기지 못합니다. 시연보다 먼저 실제 품종 교체 빈도, 품목 수, 자동화하려는 작업의 사이클 타임을 적어 두십시오.</p></section>
+<section style="border-top:1px solid var(--border);padding-top:18px;margin-top:26px"><div style="margin:0 0 12px"><h3 lang="en" style="line-height:1.6;font-size:1rem;margin:0">3. The accuracy of a hand taught point comes from the fixture</h3><h3 lang="zh-Hant" style="line-height:1.6;font-size:1rem;margin:0">3. 手教出來的點位精度，是治具給的，不是手給的</h3><h3 lang="ko" style="line-height:1.6;font-size:1rem;margin:0">3. 손으로 가르친 포인트의 정밀도는 지그에서 나옵니다</h3></div>
+<p lang="en" style="line-height:1.85;margin:12px 0;color:var(--text)">Two numbers get mixed up here. Repeatability is the arm coming back to the same taught point, and it is the figure on the datasheet. The accuracy of where that point actually is, is the accuracy of the hand that taught it. Published comparisons of lead through against pendant teaching agree on this: hand guiding is fast but coarser, and the usual practice is to guide the arm roughly into place and then fine tune the last part of the move in jog increments. For machine loading that matters far less than people fear, on one condition: the part must be located by something other than the robot. A nest, a vee block, a locating pin, the chuck jaws themselves, or a pre pickup station all do that job. Design the cell so the arm only has to deliver the part inside the capture range of the locating feature, and let the fixture set the final position. Where you cannot, for example an unmachined casting arriving loose in a bin, the obstacle is no longer teaching but part presentation, and that is a vision and tooling budget rather than a robot budget.</p>
+<p lang="zh-Hant" style="line-height:1.85;margin:12px 0;color:var(--text-dim)">這裡有兩個常被混在一起的數字。重複定位精度，指的是手臂回到同一個示教點的能力，也就是規格表上那個值；而那個點「本身位在哪裡」的準確度，是教它的那隻手的準確度。公開的比較研究對這件事看法一致：手拉示教快，但比教導器粗；常見做法是先用手把手臂帶到大概位置，最後一小段再用寸動一格一格修。對上下料來說，這件事遠不如一般人擔心的那麼嚴重，前提只有一個：工件的定位不能交給機械手。放料座、V 型枕、定位銷、夾頭爪本身，或一個預取放站，都可以承擔這個角色。設計時讓手臂只要把工件送進定位機構的「容許抓取範圍」內，最後的位置由治具決定。做不到的情況，例如未加工鑄件散放在料箱裡，那麼卡住你的已經不是示教，而是供料呈現方式，那是視覺與夾治具的預算，不是機械手的預算。</p>
+<p lang="ko" style="line-height:1.85;margin:12px 0;color:var(--text-dim)">여기서 두 수치가 혼동됩니다. 반복 정밀도는 팔이 교시된 같은 포인트로 되돌아오는 능력이고, 규격표에 적힌 값입니다. 그 포인트가 실제로 올바른 위치인지의 정확도는 그것을 가르친 손의 정확도입니다. 리드스루와 펜던트 교시를 비교한 공개 연구들의 결론은 일치합니다. 핸드가이드는 빠르지만 거칠고, 대략 위치까지 손으로 옮긴 뒤 마지막 구간을 조그로 미세 조정하는 것이 일반적인 방법입니다. 상하차에서는 한 가지 조건만 지키면 이 점은 걱정만큼 중요하지 않습니다. 공작물의 위치 결정을 로봇에 맡기지 않는 것입니다. 적재대, V 블록, 위치 결정 핀, 척 조 자체, 예비 픽업 스테이션이 그 역할을 합니다. 팔은 위치 결정 기구가 받아들일 수 있는 범위 안까지만 가져다 놓고, 최종 위치는 지그가 잡도록 설계하십시오. 소재 주물이 상자에 흩어져 들어오는 경우라면 걸림돌은 교시가 아니라 공급 형태이며, 비전과 지그 예산의 문제입니다.</p></section>
+<section style="border-top:1px solid var(--border);padding-top:18px;margin-top:26px"><div style="margin:0 0 12px"><h3 lang="en" style="line-height:1.6;font-size:1rem;margin:0">4. Usable payload: deduct the gripper, then the centre of gravity</h3><h3 lang="zh-Hant" style="line-height:1.6;font-size:1rem;margin:0">4. 可用負載：先扣夾爪，再扣重心偏移</h3><h3 lang="ko" style="line-height:1.6;font-size:1rem;margin:0">4. 실사용 가반하중: 그리퍼를 빼고, 다시 무게중심을 빼십시오</h3></div>
+<p lang="en" style="line-height:1.85;margin:12px 0;color:var(--text)">The rated payload is for everything hanging on the end of the arm: the gripper, a quick change coupling if fitted, sensors, cabling and the part. A gripper of one to two kilograms is ordinary, so a nominal rating has already lost a noticeable share before the part is picked up. The second deduction is the centre of gravity. Builders publish payload against centre of gravity offset, and mass carried further from the wrist flange reduces what the arm can handle, as do some orientations and higher accelerations. Two practical consequences follow. A double gripper, which holds the finished part and the raw part at once so the spindle opens only once, roughly doubles the mass at the wrist and often decides the arm size on its own. And the figure to ask for is the payload against centre of gravity chart for the model being offered, with your gripper and part weights written into it, not the headline number in the brochure.</p>
+<p lang="zh-Hant" style="line-height:1.85;margin:12px 0;color:var(--text-dim)">標稱負載指的是掛在手臂末端的全部重量：夾爪、如果有的快換盤、感測器、配線，以及工件。一支夾爪一到兩公斤是很平常的事，所以在還沒夾到工件之前，標稱值已經被吃掉了相當一部分。第二層要扣的是重心。原廠會公布「負載對重心偏移」的曲線，重量離手腕法蘭越遠，手臂能承受的就越少；某些姿勢與較高的加速度也會讓可用值下降。這帶出兩個實務結論。第一，雙夾爪（同時抓著成品與毛坯，讓主軸只開一次）會讓末端重量大約加倍，常常光是這一項就決定了該選多大的手臂。第二，要跟供應商要的不是型錄上的標稱值，而是該型號的「負載對重心偏移」圖表，並且把你的夾爪與工件重量實際代進去看。</p>
+<p lang="ko" style="line-height:1.85;margin:12px 0;color:var(--text-dim)">정격 가반하중은 팔 끝에 매달리는 모든 것, 즉 그리퍼, 퀵체인지 커플링, 센서, 배선, 공작물을 합한 값입니다. 그리퍼 1~2kg은 흔하므로, 공작물을 집기 전에 이미 상당 부분이 소모됩니다. 두 번째 공제 항목은 무게중심입니다. 제조사는 무게중심 오프셋에 따른 가반하중 선도를 제공하며, 손목 플랜지에서 멀어질수록 다룰 수 있는 중량이 줄고, 일부 자세와 높은 가속도에서도 줄어듭니다. 실무적 결론은 두 가지입니다. 완성품과 소재를 동시에 잡아 주축을 한 번만 여는 더블 그리퍼는 손목 하중을 거의 두 배로 만들어 로봇 크기를 결정하는 요인이 되곤 합니다. 그리고 요청해야 할 자료는 카탈로그의 대표값이 아니라, 해당 모델의 무게중심 대비 가반하중 선도에 귀사의 그리퍼와 공작물 중량을 대입한 결과입니다.</p></section>
+<section style="border-top:1px solid var(--border);padding-top:18px;margin-top:26px"><div style="margin:0 0 12px"><h3 lang="en" style="line-height:1.6;font-size:1rem;margin:0">5. What the machine side has to provide</h3><h3 lang="zh-Hant" style="line-height:1.6;font-size:1rem;margin:0">5. 車床這一側必須具備的東西</h3><h3 lang="ko" style="line-height:1.6;font-size:1rem;margin:0">5. 장비 측에서 갖춰야 하는 것</h3></div>
+<p lang="en" style="line-height:1.85;margin:12px 0;color:var(--text)">The arm cannot be the only purchase. On the machine tool side a loading cell normally needs an automatic door, or an opening the arm can reach through; the chuck or vice able to open and close from the program, with a confirmation signal that it actually closed; a seating confirmation, in most cases air fed through the locating face with a pressure switch, so a part sitting on a chip is detected before the spindle turns; signals in both directions, machine ready, robot clear, cycle start, alarm and emergency stop, which on most lathes means the builder's robot interface or auxiliary input and output option rather than wires run by hand; and the M codes or parameters to drive all of it. Retrofitting this on a machine that was not specified for it is possible, but it is engineering work on the machine, with the builder's documentation and sometimes a control option involved. Ask for the interface documentation of your exact machine model before anyone quotes the cell, and treat a quotation that does not mention the machine side as incomplete.</p>
+<p lang="zh-Hant" style="line-height:1.85;margin:12px 0;color:var(--text-dim)">機械手不可能是唯一要買的東西。機台這一側，一套上下料通常需要：自動門，或是手臂伸得進去的開口；夾頭或虎鉗能由程式開合，並且有「確實夾緊」的確認訊號；落料確認，多數做法是從定位面吹氣配壓力開關，讓工件墊到切屑時在主軸轉起來之前就被抓出來；雙向訊號，包括機台就緒、機械手退出、循環啟動、警報與緊急停止，在多數車床上這意味著要用原廠的機械手介面或輔助 I/O 選配，而不是自己拉線；以及驅動這些動作的 M 代碼或參數。原本沒有規劃這些的機台要加裝並非不行，但那是在機台上做工程，需要原廠文件，有時還牽涉控制器選配。在任何人報這套系統之前，先要到你那台機器確切型號的介面文件；一份完全沒有提到機台這一側的報價，應該視為還沒報完。</p>
+<p lang="ko" style="line-height:1.85;margin:12px 0;color:var(--text-dim)">로봇만 구매해서는 되지 않습니다. 장비 측에는 보통 다음이 필요합니다. 자동문 또는 팔이 들어갈 개구부, 프로그램으로 개폐 가능한 척 또는 바이스와 실제로 닫혔음을 알리는 확인 신호, 대개 위치 결정면의 에어와 압력 스위치로 구성되는 착좌 확인(칩 위에 얹힌 공작물을 주축 회전 전에 검출), 장비 준비, 로봇 퇴피, 사이클 스타트, 알람, 비상정지 등 양방향 신호(대부분의 선반에서는 임의 배선이 아니라 제조사의 로봇 인터페이스 또는 보조 입출력 옵션을 의미합니다), 그리고 이를 구동하는 M 코드나 파라미터입니다. 해당 사양 없이 출고된 장비에 추가하는 것도 가능하지만, 이는 장비 측 엔지니어링이며 제조사 문서와 때로는 제어 옵션이 필요합니다. 견적 전에 해당 기종의 인터페이스 문서를 확보하고, 장비 측을 언급하지 않은 견적은 미완성으로 보십시오.</p></section>
+<section style="border-top:1px solid var(--border);padding-top:18px;margin-top:26px"><div style="margin:0 0 12px"><h3 lang="en" style="line-height:1.6;font-size:1rem;margin:0">6. Chips and coolant are what stop a cell that worked in the demonstration</h3><h3 lang="zh-Hant" style="line-height:1.6;font-size:1rem;margin:0">6. 讓示範時好好的系統在現場停下來的，是切屑與切削液</h3><h3 lang="ko" style="line-height:1.6;font-size:1rem;margin:0">6. 시연에서는 잘 돌던 셀을 멈추게 하는 것은 칩과 절삭유입니다</h3></div>
+<p lang="en" style="line-height:1.85;margin:12px 0;color:var(--text)">A chip on the locating face lifts the part and the dimension comes out wrong. A chip in the gripper fingers means a dropped part. Swarf and oil mist also reach the arm's joints, cabling and any exposed connector. None of this is exotic and the countermeasures are ordinary, but they have to be in the design rather than added after the first scrapped batch: air blast on the jaws and the locating face inside the cycle, the seating sensor from the previous section, a protective sleeve or cover on the arm, a protection rating appropriate to a machine that sprays coolant, and a tray, pallet or conveyor that presents parts at a known height so the arm always picks from the same place. Ask two questions of whoever offers the cell: what the protection rating of this model is in a coolant environment, and who services the arm locally when a joint or a cable needs replacing.</p>
+<p lang="zh-Hant" style="line-height:1.85;margin:12px 0;color:var(--text-dim)">一片切屑墊在定位面上，工件就被抬高，尺寸就是錯的；一片切屑卡在爪片之間，工件就掉。切屑與油霧同時也會到達手臂的關節、配線與任何外露接頭。這些都不是什麼稀奇的事，對策也很普通，但必須在設計時就放進去，而不是等報廢第一批工件之後再補：在循環中對爪面與定位面吹氣、上一節提到的落料感測、手臂加防護套或護罩、選擇對得上「會噴切削液的機台」的防護等級，以及用料盤、棧板或輸送帶把工件固定在已知高度，讓手臂每次都從同一個位置取料。另外要問提供這套系統的人兩個問題：這個型號在切削液環境下的防護等級是多少；以及關節或線材需要更換時，當地由誰維修。</p>
+<p lang="ko" style="line-height:1.85;margin:12px 0;color:var(--text-dim)">위치 결정면에 칩이 끼면 공작물이 들려 치수가 틀어지고, 그리퍼 조에 칩이 끼면 공작물을 떨어뜨립니다. 칩과 오일미스트는 로봇의 관절, 배선, 노출된 커넥터에도 도달합니다. 대책은 특별하지 않지만, 첫 불량 로트 이후에 덧붙이는 것이 아니라 설계 단계에 들어가 있어야 합니다. 사이클 내 조와 위치 결정면 에어 블로, 앞 절의 착좌 센서, 로봇용 보호 커버, 절삭유가 비산하는 환경에 맞는 보호 등급, 그리고 공작물을 일정한 높이로 제시하는 트레이·팔레트·컨베이어입니다. 공급자에게 두 가지를 확인하십시오. 절삭유 환경에서 해당 모델의 보호 등급, 그리고 관절이나 케이블 교체가 필요할 때 현지 서비스 주체입니다.</p></section>
+<section style="border-top:1px solid var(--border);padding-top:18px;margin-top:26px"><div style="margin:0 0 12px"><h3 lang="en" style="line-height:1.6;font-size:1rem;margin:0">7. Working next to people is a conclusion about the installation, not a product feature</h3><h3 lang="zh-Hant" style="line-height:1.6;font-size:1rem;margin:0">7. 「可以在人旁邊工作」是對整套應用的結論，不是產品特性</h3><h3 lang="ko" style="line-height:1.6;font-size:1rem;margin:0">7. 사람 옆에서 작동 가능하다는 것은 설비에 대한 결론이며 제품 특성이 아닙니다</h3></div>
+<p lang="en" style="line-height:1.85;margin:12px 0;color:var(--text)">The safety standards split the question in two. ISO 10218-1:2025 covers the robot itself, treated as partly completed machinery, while ISO 10218-2:2025 covers the application and the robot cell, including integration, commissioning, operation and maintenance. ISO/TS 15066:2016 supplements both on collaborative operation and is still listed by ISO as current. For a buyer the consequence is straightforward: no arm is safe or unsafe on its own, and no datasheet can tell you whether your installation needs a fence. That answer comes from a risk assessment of the installation you are actually building, by the method set out in ISO 12100, and it has to take in the rotating chuck, the open door, swarf, sharp edges on the part, coolant, the mass being carried and the way people move around the machine. In a machine shop such an assessment often ends with some guarding even where the arm limits its own force, and with reduced speed in the part of the cycle a person can reach into. Settle two things before the order rather than after: who carries out and signs that assessment, and who holds the conformity file for the completed installation in your country. [1][2][3][4]</p>
+<p lang="zh-Hant" style="line-height:1.85;margin:12px 0;color:var(--text-dim)">安全標準把這個問題分成兩半：ISO 10218-1:2025 管的是機械手本體，視為部分完成的機械；ISO 10218-2:2025 管的是應用與機械手單元，包含整合、試車、運轉與維護。ISO/TS 15066:2016 則補充前兩者關於協作運轉的部分，目前在 ISO 仍列為有效。對買方而言結論很直接：沒有哪一支手臂本身安全或不安全，也沒有任何規格表能告訴你你的現場要不要圍籬。這個答案來自對「你實際要建的那套設備」做風險評估，方法依 ISO 12100，而且必須把旋轉中的夾頭、打開的機台門、切屑、工件的銳邊、切削液、搬運中的重量，以及人在機台周邊怎麼走動，全部算進去。在加工現場，這種評估的結論常常是：即使手臂本身有力量限制，仍然要加上部分防護，並且在人手可以伸進去的那一段循環降低速度。有兩件事要在下單前談定，而不是下單後：由誰執行並簽署這份風險評估；以及完成後的整套設備，在你所在國家由誰持有符合性文件。[1][2][3][4]</p>
+<p lang="ko" style="line-height:1.85;margin:12px 0;color:var(--text-dim)">안전 표준은 이 문제를 둘로 나눕니다. ISO 10218-1:2025은 부분 완성 기계로서의 로봇 본체를 다루고, ISO 10218-2:2025은 통합, 시운전, 운전, 보수를 포함한 응용과 로봇 셀을 다룹니다. ISO/TS 15066:2016은 협동 운전에 관해 두 표준을 보완하며 현재도 ISO에서 유효 표준으로 등재되어 있습니다. 구매자 입장의 결론은 분명합니다. 어떤 로봇도 그 자체로 안전하거나 위험하지 않으며, 규격표는 귀사 설비에 방호 울타리가 필요한지 알려 주지 못합니다. 그 답은 실제로 구축하는 설비에 대한 위험성 평가에서 나오며, 방법은 ISO 12100을 따릅니다. 회전하는 척, 열린 장비 도어, 칩, 공작물의 예리한 모서리, 절삭유, 반송 중량, 사람의 통행 동선을 모두 포함해야 합니다. 가공 현장에서는 로봇이 힘을 제한하더라도 일부 방호를 두고, 사람이 손을 넣을 수 있는 구간에서 속도를 낮추는 결론이 자주 나옵니다. 발주 전에 두 가지를 정하십시오. 위험성 평가를 수행하고 서명하는 주체, 그리고 완성 설비의 적합성 문서를 귀국에서 보유하는 주체입니다. [1][2][3][4]</p></section>
+<section style="margin-top:24px"><h3>Before you ask for an automation quotation, have these ready / 問自動化報價之前，先備齊這些 / 자동화 견적 요청 전에 준비할 항목</h3><div style="overflow-x:auto"><table style="width:100%;border-collapse:collapse;font-size:0.85rem"><thead><tr><th scope="col" style="text-align:left;padding:10px;border-bottom:1px solid var(--border)">Item / 項目 / 항목</th><th scope="col" style="text-align:left;padding:10px;border-bottom:1px solid var(--border)">Record / 紀錄 / 기록</th></tr></thead><tbody>
+<tr><th scope="row" style="text-align:left;padding:10px;border-bottom:1px solid var(--border);font-weight:400">Part weight, diameter or envelope, material / 工件重量、直徑或外形尺寸、材質 / 공작물 중량, 직경 또는 외형, 재질</th><td style="padding:10px;border-bottom:1px solid var(--border)">&nbsp;</td></tr>
+<tr><th scope="row" style="text-align:left;padding:10px;border-bottom:1px solid var(--border);font-weight:400">Blank form: bar stock, casting, forging, pre cut billet, second operation / 毛坯型態：棒料、鑄件、鍛件、預切素材、二次加工件 / 소재 형태: 봉재, 주물, 단조품, 예비 절단재, 2차 가공품</th><td style="padding:10px;border-bottom:1px solid var(--border)">&nbsp;</td></tr>
+<tr><th scope="row" style="text-align:left;padding:10px;border-bottom:1px solid var(--border);font-weight:400">Cycle time of the job, and pieces per day / 該工件的節拍時間與每日件數 / 해당 작업의 사이클 타임과 일일 생산 수량</th><td style="padding:10px;border-bottom:1px solid var(--border)">&nbsp;</td></tr>
+<tr><th scope="row" style="text-align:left;padding:10px;border-bottom:1px solid var(--border);font-weight:400">Changeover frequency and number of different parts / 換線頻率與工件品項數 / 품종 교체 빈도와 품목 수</th><td style="padding:10px;border-bottom:1px solid var(--border)">&nbsp;</td></tr>
+<tr><th scope="row" style="text-align:left;padding:10px;border-bottom:1px solid var(--border);font-weight:400">Machine make and model, and whether it has an automatic door / 機台品牌型號，以及是否有自動門 / 장비 제조사·모델, 자동문 유무</th><td style="padding:10px;border-bottom:1px solid var(--border)">&nbsp;</td></tr>
+<tr><th scope="row" style="text-align:left;padding:10px;border-bottom:1px solid var(--border);font-weight:400">Whether the machine has a robot interface or auxiliary input and output option / 機台是否具備機械手介面或輔助 I/O 選配 / 로봇 인터페이스 또는 보조 입출력 옵션 유무</th><td style="padding:10px;border-bottom:1px solid var(--border)">&nbsp;</td></tr>
+<tr><th scope="row" style="text-align:left;padding:10px;border-bottom:1px solid var(--border);font-weight:400">How the chuck is actuated, and whether a closed and seated confirmation exists / 夾頭的驅動方式，以及是否有夾緊與落料確認 / 척 구동 방식, 클램프 및 착좌 확인 신호 유무</th><td style="padding:10px;border-bottom:1px solid var(--border)">&nbsp;</td></tr>
+<tr><th scope="row" style="text-align:left;padding:10px;border-bottom:1px solid var(--border);font-weight:400">Floor space available, and how material enters and leaves the machine / 可用地面空間，以及物料進出機台的方式 / 확보 가능한 바닥 면적, 자재 반입·반출 방식</th><td style="padding:10px;border-bottom:1px solid var(--border)">&nbsp;</td></tr>
+<tr><th scope="row" style="text-align:left;padding:10px;border-bottom:1px solid var(--border);font-weight:400">Coolant type and chip volume / 切削液型態與切屑量 / 절삭유 종류와 칩 발생량</th><td style="padding:10px;border-bottom:1px solid var(--border)">&nbsp;</td></tr>
+<tr><th scope="row" style="text-align:left;padding:10px;border-bottom:1px solid var(--border);font-weight:400">Who installs, performs the risk assessment and signs off locally / 在地由誰負責安裝、風險評估與驗收簽核 / 현지 설치·위험성 평가·인수 서명 담당</th><td style="padding:10px;border-bottom:1px solid var(--border)">&nbsp;</td></tr>
+<tr><th scope="row" style="text-align:left;padding:10px;border-bottom:1px solid var(--border);font-weight:400">Destination voltage and frequency, and the local safety regulations that apply / 目的地電壓與頻率，以及適用的當地安全法規 / 도착지 전압·주파수, 적용되는 현지 안전 법규</th><td style="padding:10px;border-bottom:1px solid var(--border)">&nbsp;</td></tr>
+</tbody></table></div></section>
+
+<h3>References / 參考資料 / 참고자료</h3>
+<ol>
+<li id="col25-ref-1"><a href="https://www.iso.org/standard/73933.html" target="_blank" rel="noopener noreferrer">ISO 10218-1:2025 — Robotics, safety requirements, Part 1: Industrial robots (Edition 3, published 2025-02; the robot as partly completed machinery)</a></li>
+<li id="col25-ref-2"><a href="https://www.iso.org/standard/73934.html" target="_blank" rel="noopener noreferrer">ISO 10218-2:2025 — Robotics, safety requirements, Part 2: Industrial robot applications and robot cells (Edition 2, published 2025-02; integration, commissioning, operation and maintenance)</a></li>
+<li id="col25-ref-3"><a href="https://www.iso.org/standard/62996.html" target="_blank" rel="noopener noreferrer">ISO/TS 15066:2016 — Robots and robotic devices, collaborative robots (supplements ISO 10218-1 and ISO 10218-2; listed by ISO as reviewed and confirmed in 2022)</a></li>
+<li id="col25-ref-4"><a href="https://www.iso.org/standard/51528.html" target="_blank" rel="noopener noreferrer">ISO 12100:2010 — Safety of machinery, general principles for design, risk assessment and risk reduction (ISO notes a replacement, ISO/DIS 12100.3, is expected)</a></li>
+</ol>
+
+<p lang="en" style="line-height:1.85;margin:12px 0;color:var(--text)">Sources checked 2026-11-18. Standard titles, editions and status were read from the ISO catalogue entries linked above; buy or consult the current text before relying on it, and confirm which edition is harmonised in your own jurisdiction. Nothing here is a safety assessment of any installation. The risk assessment, the guarding decision and the sign off for a completed cell belong to the machine owner and the qualified personnel and integrator who commission it.</p>
+<p lang="zh-Hant" style="line-height:1.85;margin:12px 0;color:var(--text-dim)">資料查核：2026-11-18。標準名稱、版次與狀態取自上方連結的 ISO 目錄頁；實際引用前請取得並閱讀現行條文，並確認在你所在的法域採用的是哪一版。本文不構成對任何一套設備的安全評估。風險評估、防護措施的決定，以及完成後的驗收簽核，屬於機台所有人，以及負責試車的合格人員與系統整合商的責任。</p>
+<p lang="ko" style="line-height:1.85;margin:12px 0;color:var(--text-dim)">자료 확인: 2026-11-18. 표준 명칭, 판차, 상태는 위에 링크한 ISO 카탈로그 항목에서 확인했습니다. 인용 전에 현행 본문을 확보해 확인하시고, 귀 지역에서 어떤 판이 채택되었는지 확인하십시오. 이 글은 특정 설비에 대한 안전 평가가 아닙니다. 위험성 평가, 방호 방식의 결정, 완성 셀의 인수 서명은 장비 소유자와 시운전을 담당하는 자격자 및 시스템 통합업체의 책임입니다.</p>
+<div style="background:linear-gradient(135deg,#12180f 0%,var(--surface2) 100%);border:1px solid var(--gold);border-radius:8px;padding:24px;text-align:center;margin:28px 0 16px">
+<h3 style="color:var(--text);margin:0 0 8px;font-size:1.05rem">Send the part and the machine model / 給我們工件與機台型號 / 공작물과 장비 모델을 보내주세요</h3>
+<p style="color:var(--text-dim);font-size:0.9rem;max-width:640px;margin:0 auto 20px">What we supply is the machine tool and the parts: lathes and machining centres, bar feeders for bar work, chucks, jaws, collets, tool holders and spares. We can go through the machine side of a loading project with you, whether the model you are looking at can take an automatic door and a robot interface, what the builder offers as an option, and what a retrofit on an existing machine involves, and we can put you in touch with integrators in Taiwan for the cell itself. Robot cells are assembled, installed, risk assessed and signed off locally, so tell us the destination country and we will be clear about what is in scope and what is not. Machines are quoted FOB Taiwan and parts are normally quoted EXW.</p>
+<button class="nav-btn" onclick="openInquiryTopic('machine','col-25','col-25')" style="color:var(--gold);border:1px solid var(--gold);padding:10px 28px;font-size:13px">SEND THE DETAILS / 傳工件與機台資料 / 자료 보내기 →</button>
+</div>
+
+<div style="padding-top:14px;border-top:1px solid var(--border);display:flex;align-items:center;gap:12px;flex-wrap:wrap">
+<button class="nav-btn" onclick="location.href='/knowledge/automation/'" style="font-size:11px;padding:4px 12px;color:var(--blue);border:1px solid var(--blue-dim)">Automation &amp; Robot Integration — Knowledge Article →</button>
+<button class="nav-btn" onclick="location.href='/column/beyond-blind-picking-how-3d-vision-supports-cnc/'" style="font-size:11px;padding:4px 12px;color:var(--blue);border:1px solid var(--blue-dim)">3D Vision for CNC Loading — Expert Column →</button>
+<button class="nav-btn" onclick="location.href='/column/bar-feeder-retrofit-compatibility/'" style="font-size:11px;padding:4px 12px;color:var(--blue);border:1px solid var(--blue-dim)">Bar Feeder Retrofit Compatibility — Expert Column →</button>
+<button class="nav-btn" onclick="location.href='/knowledge/bar-feeder/'" style="font-size:11px;padding:4px 12px;color:var(--blue);border:1px solid var(--blue-dim)">Bar Feeder Systems — Knowledge Article →</button>
+<button class="nav-btn" onclick="location.href='/knowledge/chuck-replacement/'" style="font-size:11px;padding:4px 12px;color:var(--blue);border:1px solid var(--blue-dim)">Chuck Replacement &amp; Jaws — Knowledge Article →</button>
+</div>
+</div></div>
+  <div class="kbp-tags"><span class="tag-pill">Expert Column</span><span class="tag-pill">Automation &middot; Robot Loading</span></div>
+  
+  <div class="kbp-next">
+    <div class="eb">Next step &nbsp;·&nbsp; 下一步 &nbsp;·&nbsp; 다음 단계</div>
+    <div class="hd">Have a specification in hand?</div>
+    <div class="sub">手上已經有規格了嗎？ &nbsp;·&nbsp; 사양이 이미 정해져 있으십니까?</div>
+    <div class="bd">Send us the machine model, the part number or a photo from the floor. We will come back on what is available and what it costs.</div>
+    <div class="bd">把機台型號、零件料號或現場照片寄給我們，我們會回覆供貨狀況與價格。<br>장비 모델명, 부품 번호 또는 현장 사진을 보내주시면 공급 가능 여부와 가격을 회신드립니다.</div>
+    <div class="why">
+      <b>WHY THROUGH Z&amp;Z &nbsp;·&nbsp; 為什麼透過萬洋 &nbsp;·&nbsp; Z&amp;Z를 통하는 이유</b>
+      <p>Multi-brand selection rather than one factory, spec and compatibility checks in writing, a test cut and inspection at the plant before the machine ships, export documentation, and the same part number still available years later. Installation and after-sales in Korea, Brazil, Switzerland and Argentina run through local agents; for other markets we supply parts and components.</p>
+      <p>不綁單一工廠的多品牌選型、白紙黑字的規格與相容性確認、出貨前在工廠端試車驗機、出口文件，以及數年後仍拿得到的同一料號。韓國、巴西、瑞士、阿根廷的安裝與售後由在地服務商執行，其他市場我們供應零件與零組件。</p>
+      <p>단일 공장에 묶이지 않는 다중 브랜드 선정, 문서로 남기는 사양·호환성 확인, 선적 전 공장 시운전과 검사, 수출 서류, 그리고 수년 뒤에도 확보 가능한 동일 품번. 한국·브라질·스위스·아르헨티나의 설치와 애프터서비스는 현지 대리점이 담당하며, 그 외 시장에는 부품을 공급합니다.</p>
+    </div>
+    <div class="row">
+      <a class="gold" href="/#inquiry" onclick="gtag('event','cta_inquiry_click',{cta_source:'column',item_key:'hand-guided-teaching-small-robot-cnc-loading',site_language:'en'})">Send an inquiry &nbsp;/&nbsp; 立即洽詢 →</a>
+      <a class="blue" href="/#subscribe" onclick="gtag('event','cta_subscribe_click',{cta_source:'column',item_key:'hand-guided-teaching-small-robot-cnc-loading',site_language:'en'})">Get new articles by email &nbsp;/&nbsp; 訂閱新文章通知</a>
+    </div>
+  </div>
+  <nav class="kbp-rel" aria-label="Related pages">
+    <h2>Related · 延伸閱讀 · 관련 자료</h2>
+    <ul><li><a href="/knowledge/bar-feeder/">Bar Feeder Systems<span class="s">送料機系統 · 바피더 시스템</span></a></li><li><a href="/knowledge/power-supply/">Overseas CNC Power Supply &amp; Transformer Selection Guide<span class="s">海外 CNC 機台電源規格與變壓指南 · 해외 CNC 전원 사양 및 트랜스 선정 가이드</span></a></li><li><a href="/knowledge/tw-brands/">Taiwan Machine Tool Manufacturers<span class="s">台灣工具機製造商 · 대만 공작기계 제조업체</span></a></li><li><a href="/knowledge/chuck-replacement/">How to Identify a Replacement Chuck or Collet Chuck<span class="s">夾頭與筒夾更換辨識指南 · 교체용 척·콜릿 척 식별 가이드</span></a></li><li><a href="/knowledge/cnc-lathe/">CNC Lathe Specification Guide<span class="s">CNC 車床規格指南 · CNC 선반 사양 가이드</span></a></li><li><a href="/knowledge/installation-sat/">CNC Machine Installation, Commissioning &amp; Site Acceptance Checklist<span class="s">CNC 機台到廠安裝、試車與驗收清單 · CNC 기계 설치·시운전·현장 인수검사(SAT) 체크리스트</span></a></li><li><a href="/terminology/">CNC Machine Tool Terminology<span class="s">術語對照表 · 용어집 — EN · 中文 · 한국어</span></a></li></ul>
+  </nav>
+</main>
+<footer class="kbp-footer">
+  <div>Z&amp;Z STROTEC CO., LTD. · 萬洋國際有限公司 — CNC machine-tool export &amp; knowledge hub</div>
+  <div style="margin-top:6px">Company Reg. No. / 統一編號 80235084 · <a href="tel:+886425341660">+886-4-2534-1660</a> · <a href="mailto:info@zz-strotec.com">info@zz-strotec.com</a></div>
+  <div>13F.-2, No. 135, Sec. 2, Zhongshan Rd., Tanzi Dist., Taichung City 42755, Taiwan (R.O.C.)</div>
+  <div style="margin-top:8px">
+    <a href="/">Full interactive site</a>·
+    <a href="/knowledge/">Knowledge Library</a>·
+    <a href="/column/">Expert Columns</a>·
+    <a href="/markets/">Markets</a>·
+    <a href="/terminology/">Terminology</a>·
+    <a href="/privacy/">Privacy Policy</a>
+  </div>
+  <div style="margin-top:10px;max-width:640px;margin-left:auto;margin-right:auto;line-height:1.8">Sponsored placements are clearly labelled and do not influence editorial content. · 贊助刊登一律明確標示，不影響內容編輯判斷.</div>
+</footer>
+<!-- ── Analytics consent banner ─────────────────────────────────────────
+     Keep in sync with index.html. -->
+<script>
+(function () {
+  var KEY = 'zz-consent';
+  var stored = null;
+  try { stored = localStorage.getItem(KEY); } catch (e) { return; }
+  if (stored === 'granted' || stored === 'denied') return;
+
+  var L = (navigator.language || 'en').toLowerCase();
+  var t = L.indexOf('zh') === 0
+    ? { msg: '本站使用 Google Analytics 了解訪客如何閱讀這些內容，以便持續改善。是否同意由您決定。', ok: '同意', no: '拒絕' }
+    : L.indexOf('ko') === 0
+    ? { msg: '본 사이트는 Google Analytics로 방문 통계를 수집해 콘텐츠를 개선합니다. 동의 여부는 직접 선택하실 수 있습니다.', ok: '동의', no: '거부' }
+    : { msg: 'We use Google Analytics to see how visitors read this knowledge hub, so we can keep improving it. It is your choice whether we may.',
+        ok: 'Accept', no: 'Decline' };
+
+  function build() {
+    var bar = document.createElement('div');
+    bar.setAttribute('role', 'dialog');
+    bar.setAttribute('aria-label', 'Analytics consent');
+    bar.style.cssText = 'position:fixed;left:0;right:0;bottom:0;z-index:99999;' +
+      'background:#0e1419;border-top:1px solid #1e2d3d;color:#93acc4;' +
+      'font-size:13px;line-height:1.7;padding:14px 18px;display:flex;' +
+      'flex-wrap:wrap;gap:12px;align-items:center;justify-content:center';
+
+    var msg = document.createElement('span');
+    msg.textContent = t.msg;
+    msg.style.cssText = 'flex:1 1 260px;max-width:640px';
+
+    function button(label, bg, fg, border) {
+      var b = document.createElement('button');
+      b.type = 'button';
+      b.textContent = label;
+      b.style.cssText = 'cursor:pointer;padding:7px 20px;font-size:12px;' +
+        'font-weight:600;letter-spacing:0.5px;border-radius:2px;' +
+        'background:' + bg + ';color:' + fg + ';border:1px solid ' + border;
+      return b;
+    }
+
+    var accept = button(t.ok, '#c9a84c', '#080c10', '#c9a84c');
+    var decline = button(t.no, 'transparent', '#93acc4', '#1e2d3d');
+
+    function choose(value) {
+      try { localStorage.setItem(KEY, value); } catch (e) {}
+      gtag('consent', 'update', { analytics_storage: value });
+      bar.parentNode.removeChild(bar);
+    }
+    accept.addEventListener('click', function () { choose('granted'); });
+    decline.addEventListener('click', function () { choose('denied'); });
+
+    bar.appendChild(msg);
+    bar.appendChild(accept);
+    bar.appendChild(decline);
+    document.body.appendChild(bar);
+  }
+
+  if (document.readyState === 'loading') {
+    document.addEventListener('DOMContentLoaded', build);
+  } else {
+    build();
+  }
+})();
+</script>
+</body>
+</html>
